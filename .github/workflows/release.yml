@@ -196,13 +196,13 @@ jobs:
           python-version: "3.${{ matrix.python3-version }}"
       - name: Download wheel (non-stable-ABI)
         if: matrix.python3-version == '10' || matrix.python3-version == '11'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: Linux_3.${{ matrix.python3-version }}_wheel
           path: wheelhouse/
       - name: Download wheel (stable-ABI)
         if: matrix.python3-version == '12' || matrix.python3-version == '13' || matrix.python3-version == '14'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: Linux_3.12_wheel
           path: wheelhouse/
@@ -235,13 +235,13 @@ jobs:
         python-version: "3.${{ matrix.python3-version }}"
     - name: Download wheel (non-stable-ABI)
       if: matrix.python3-version == '10' || matrix.python3-version == '11'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: Linux_aarch64_3.${{ matrix.python3-version }}_wheel
         path: wheelhouse/
     - name: Download wheel (stable-ABI)
       if: matrix.python3-version == '12' || matrix.python3-version == '13' || matrix.python3-version == '14'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: Linux_aarch64_3.12_wheel
         path: wheelhouse/
@@ -272,13 +272,13 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Download wheel (non-stable-ABI)
       if: matrix.python-version == '3.10' || matrix.python-version == '3.11'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: MacOS_x86_${{ matrix.python-version }}_wheel
         path: wheelhouse/
     - name: Download wheel (stable-ABI)
       if: matrix.python-version == '3.12' || matrix.python-version == '3.13' || matrix.python-version == '3.14'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: MacOS_x86_3.12_wheel
         path: wheelhouse/
@@ -309,13 +309,13 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Download wheel (non-stable-ABI)
       if: matrix.python-version == '3.10' || matrix.python-version == '3.11'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: MacOS_arm64_${{ matrix.python-version }}_wheel
         path: wheelhouse/
     - name: Download wheel (stable-ABI)
       if: matrix.python-version == '3.12' || matrix.python-version == '3.13' || matrix.python-version == '3.14'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: MacOS_arm64_3.12_wheel
         path: wheelhouse/
@@ -345,13 +345,13 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Download wheel (non-stable-ABI)
       if: matrix.python-version == '3.10' || matrix.python-version == '3.11'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: Windows_${{ matrix.python-version }}_wheel
         path: wheelhouse/
     - name: Download wheel (stable-ABI)
       if: matrix.python-version == '3.12' || matrix.python-version == '3.13' || matrix.python-version == '3.14'
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: Windows_3.12_wheel
         path: wheelhouse/
@@ -380,7 +380,7 @@ jobs:
       id-token: write
     steps:
     - name: Download all wheels
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         path: wheelhouse
     - name: Put them all in the dist folder
