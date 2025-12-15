@@ -212,7 +212,7 @@ jobs:
         with:
           format: YYYYMMDDHHmmss
       - name: ccache windows
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ steps.ninja-ccache-setup.outputs.ccache_dir }}
           key: tket-static-${{ matrix.os }}-${{ steps.current_time.outputs.formattedTime }}
@@ -490,7 +490,7 @@ jobs:
       with:
         format: YYYYMMDDHHmmss
     - name: ccache windows
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ${{ steps.ccache-setup.outputs.ccache_dir }}
         key: tket-dynamic-visual-studio-windows-2025-${{ steps.current_time.outputs.formattedTime }}
