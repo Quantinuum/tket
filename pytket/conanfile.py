@@ -52,7 +52,7 @@ class pytketRecipe(ConanFile):
 
         self.requires("gmp/tci-6.3.0@tket/stable")
         self.requires("nlohmann_json/3.12.0")
-        self.requires("nanobind/tci-2.10.1@tket/stable")
+        self.requires("nanobind/tci-2.10.2@tket/stable")
         self.requires("symengine/tci-0.14.0.2@tket/stable")
         self.requires("tkassert/0.3.4@tket/stable")
         self.requires(f"tket/{tket_version}@tket/stable")
