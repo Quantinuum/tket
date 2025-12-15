@@ -48,7 +48,7 @@ jobs:
         delocate-wheel -v -w "$GITHUB_WORKSPACE/wheelhouse/" "dist/pytket-"*".whl"
 
     - name: Save Wheel
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: pytket_wheel
         path: wheelhouse/
@@ -101,7 +101,7 @@ jobs:
         run: pytket_benchmarking pdf-report -s pytket-benchmarking-store/benchmarking_circuits/benchmarking_mini_set -c compilations_fc -c compilations_hh -x FullyConnected -x HeavyHex3x3 -o report.pdf
 
       - name: Save compiled circuits
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: automated_benchmarks_compiled
           path: |

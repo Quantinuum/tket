@@ -30,7 +30,7 @@ jobs:
         docker exec -e PY_TAG="cp3${{ matrix.python3-version }}-cp3${{ matrix.python3-version }}" -e CONAN_PROFILE=linux-x86_64-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildwheel"
         mkdir wheelhouse
         docker cp linux_build:/tket/pytket/audited/. wheelhouse/
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: Linux_3.${{ matrix.python3-version }}_wheel
         path: wheelhouse/
@@ -56,7 +56,7 @@ jobs:
         docker exec -e PY_TAG="cp3${{ matrix.python3-version }}-cp3${{ matrix.python3-version }}" -e CONAN_PROFILE=linux-armv8-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildwheel"
         mkdir wheelhouse
         docker cp linux_build:/tket/pytket/audited/. wheelhouse/
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: Linux_aarch64_3.${{ matrix.python3-version }}_wheel
         path: wheelhouse/
@@ -96,7 +96,7 @@ jobs:
         pip install -U pip build delocate
         TKET_VERSION=`cat ../TKET_VERSION` python -m build
         delocate-wheel -v -w "$GITHUB_WORKSPACE/wheelhouse/" "dist/pytket-"*".whl"
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: MacOS_x86_${{ matrix.python-version }}_wheel
         path: wheelhouse/
@@ -138,7 +138,7 @@ jobs:
         python${{ matrix.python-version }} -m pip install -U pip build delocate
         TKET_VERSION=`cat ../TKET_VERSION` python${{ matrix.python-version }} -m build
         delocate-wheel -v -w "$GITHUB_WORKSPACE/wheelhouse/" "dist/pytket-"*".whl"
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: MacOS_arm64_${{ matrix.python-version }}_wheel
         path: wheelhouse/
@@ -177,7 +177,7 @@ jobs:
         cd pytket
         python -m pip install -U pip build
         TKET_VERSION=`cat ../TKET_VERSION` python -m build --outdir "${{ github.workspace }}/wheelhouse"
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: Windows_${{ matrix.python-version }}_wheel
         path: wheelhouse/

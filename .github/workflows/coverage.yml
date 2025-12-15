@@ -86,7 +86,7 @@ jobs:
         gcovr --print-summary --html --html-details -r ./tket --exclude-lines-by-pattern '.*\b(TKET_ASSERT|CHECK)\(.*\);.*' --object-directory ${PWD}/build/tket/build/Debug/CMakeFiles/tket.dir/src -o test-coverage/index.html --decisions > test-coverage/summary.txt
         cat test-coverage/summary.txt
     - name: Upload artefact
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: test_coverage
         path: test-coverage/
