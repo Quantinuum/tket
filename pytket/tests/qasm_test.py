@@ -336,7 +336,7 @@ creg c[3];\nh q[0];\nh q[2];\ndifferent_comment )@#-( q[0],c[0];\n"""
 
 
 def test_hqs_conditional_params() -> None:
-    # https://github.com/CQCL/tket/issues/17
+    # https://github.com/quantinuum/tket/issues/17
     c = Circuit(1, 1)
     c.add_gate(OpType.PhasedX, [1, 0], [0], condition_bits=[0])
     s = circuit_to_qasm_str(c, header="hqslib1")
@@ -834,7 +834,7 @@ def test_rxxyyzz_conversion() -> None:
 
 
 def test_classical_assignment_order() -> None:
-    # https://github.com/CQCL/tket/issues/1013
+    # https://github.com/quantinuum/tket/issues/1013
     circ = Circuit(1)
     reg_meas = circ.add_c_register("c0", 1)
     reg_cond = circ.add_c_register("c1", 1)
@@ -959,7 +959,7 @@ def test_register_name_check() -> None:
 
 
 def test_conditional_custom() -> None:
-    # https://github.com/CQCL/tket/issues/1299
+    # https://github.com/quantinuum/tket/issues/1299
     qasm0 = """
     OPENQASM 2.0;
     include "qelib1.inc";
@@ -991,7 +991,7 @@ measure q[0] -> c[0];
 
 
 def test_nonstandard_gates() -> None:
-    # https://github.com/CQCL/tket/issues/1302
+    # https://github.com/quantinuum/tket/issues/1302
     circ = Circuit(2)
     circ.CS(0, 1)
     circ.ECR(0, 1)
@@ -1003,7 +1003,7 @@ def test_nonstandard_gates() -> None:
 
 
 def test_conditional_nonstandard_gates() -> None:
-    # https://github.com/CQCL/tket/issues/1301
+    # https://github.com/quantinuum/tket/issues/1301
     circ = Circuit(2, 1)
     circ.ZZMax(0, 1, condition=Bit(0))
     qasm = circuit_to_qasm_str(circ)
@@ -1011,7 +1011,7 @@ def test_conditional_nonstandard_gates() -> None:
 
 
 def test_const_condition() -> None:
-    # https://github.com/CQCL/tket/issues/1383
+    # https://github.com/quantinuum/tket/issues/1383
     circ = Circuit(1, 1)
     exp = create_bit_logic_exp(BitWiseOp.ONE, [])
     circ.H(0, condition=exp)
@@ -1033,7 +1033,7 @@ measure q[0] -> c[0];
 
 
 def test_conditional_multi_line_ops() -> None:
-    # https://github.com/CQCL/tket/issues/1491
+    # https://github.com/quantinuum/tket/issues/1491
     c = Circuit(0, 3)
     c.add_c_setbits(values=[True, True], args=[Bit(1), Bit(2)], condition=Bit(0))
     qasm = circuit_to_qasm_str(c, header="hqslib1")
@@ -1104,13 +1104,13 @@ def test_conditional_range_predicate() -> None:
     range_predicate = RangePredicateOp(2, 0, 2)
     c = Circuit(0, 5)
     c.add_gate(range_predicate, [1, 2, 4])
-    # https://github.com/CQCL/tket/issues/1642
+    # https://github.com/quantinuum/tket/issues/1642
     with pytest.raises(Exception) as errorinfo:
         qasm = circuit_to_qasm_str(c, header="hqslib1")
         assert "RangePredicate conditions must be an entire classical register" in str(
             errorinfo.value
         )
-    # https://github.com/CQCL/tket/issues/1508
+    # https://github.com/quantinuum/tket/issues/1508
     range_predicate = RangePredicateOp(6, 0, 27)
     c = Circuit(0, 6)
     c.add_gate(range_predicate, [0, 1, 2, 3, 4, 5, 5], condition=Bit(5))
@@ -1168,7 +1168,7 @@ def test_range_with_maxwidth() -> None:
 
 
 def test_range_predicates_with_non_scratch_bits() -> None:
-    # https://github.com/CQCL/tket/issues/1530
+    # https://github.com/quantinuum/tket/issues/1530
     range_predicate = RangePredicateOp(3, 0, 5)
     c = Circuit(2)
     d = c.add_c_register("d", 3)
@@ -1222,7 +1222,7 @@ if(e[0]==1) measure q[0] -> f[0];
 
 
 def test_multibitop() -> None:
-    # https://github.com/CQCL/tket/issues/1327
+    # https://github.com/quantinuum/tket/issues/1327
     c = Circuit()
     areg = c.add_c_register("a", 2)
     breg = c.add_c_register("b", 2)
@@ -1247,7 +1247,7 @@ c[1] = b[1] & c[0];
 
 
 def test_existing_name_conversion() -> None:
-    # https://github.com/CQCL/tket/issues/1605
+    # https://github.com/quantinuum/tket/issues/1605
     assert (
         circuit_from_qasm_str(
             """OPENQASM 2.0;
@@ -1264,7 +1264,7 @@ iswap qr[1],qr[2];"""
 
 
 def test_cnx() -> None:
-    # https://github.com/CQCL/tket/issues/1751
+    # https://github.com/quantinuum/tket/issues/1751
     c3 = Circuit(4)
     c3.add_gate(OpType.CnX, [0, 1, 2, 3])
     c3_qasm = circuit_to_qasm_str(c3)
@@ -1296,7 +1296,7 @@ c4x q[0],q[1],q[2],q[3],q[4];
 
 
 def test_inequality_condition() -> None:
-    # https://github.com/CQCL/tket/issues/1833
+    # https://github.com/quantinuum/tket/issues/1833
     qasm = """OPENQASM 2.0;
 include "qelib1.inc";
 creg c[2];
@@ -1310,7 +1310,7 @@ if (c[0] != 1) c[1] = 1;
 
 
 def test_bitreg_as_bit() -> None:
-    # https://github.com/CQCL/tket/issues/1896
+    # https://github.com/quantinuum/tket/issues/1896
     qasm = """OPENQASM 2.0;
 include "hqslib1.inc";
 creg a[1];
@@ -1376,7 +1376,7 @@ a[0] = a + b[0];
 
 
 def test_rng_reuse() -> None:
-    # https://github.com/CQCL/tket/issues/2013
+    # https://github.com/quantinuum/tket/issues/2013
     c = Circuit(1)
     r = c.add_c_register("r", 32)
     c.get_rng_num(r)

@@ -15,7 +15,7 @@ on:
 jobs:
   stale:
     # Don't run on forks
-    if: github.repository == 'CQCL/tket'
+    if: github.repository == 'quantinuum/tket'
 
     runs-on: ubuntu-latest
 

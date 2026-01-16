@@ -602,7 +602,7 @@ General:
 
 - Drop support for MacOS 11.
 
-[Full changelog](https://github.com/CQCL/tket/compare/v1.21.0...v1.22.0)
+[Full changelog](https://github.com/quantinuum/tket/compare/v1.21.0...v1.22.0)
 
 ## 1.21.0 (October 2023)
 
@@ -1590,7 +1590,7 @@ Bugfixes:
 
 Known issues:
 
-- There is an [issue](https://github.com/CQCL/pytket-docs/issues/24) with the use
+- There is an [issue](https://github.com/quantinuum/pytket-docs/issues/24) with the use
   of symbolic circuits on Windows, causing memory access violations in some
   circumstances.
 

@@ -361,7 +361,7 @@ SCENARIO(
 }
 
 SCENARIO("Frame Randomisation Segmentation Fault") {
-  // https://github.com/CQCL/tket/issues/1015
+  // https://github.com/quantinuum/tket/issues/1015
   PauliFrameRandomisation pfr;
   Circuit c(4);
   c.add_op<unsigned>(OpType::CX, {0, 2});
@@ -375,7 +375,7 @@ SCENARIO("Frame Randomisation Segmentation Fault") {
 }
 
 SCENARIO("Frame Randomisation non-real DAG") {
-  // https://github.com/CQCL/tket/issues/1015
+  // https://github.com/quantinuum/tket/issues/1015
   GIVEN("CnX gate with 3 controls") {
     PauliFrameRandomisation pfr;
     Circuit c(4);

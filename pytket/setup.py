@@ -165,8 +165,8 @@ setup(
     python_requires=">=3.10",
     project_urls={
         "Documentation": "https://docs.quantinuum.com/tket/api-docs/",
-        "Source": "https://github.com/CQCL/tket",
-        "Tracker": "https://github.com/CQCL/tket/issues",
+        "Source": "https://github.com/quantinuum/tket",
+        "Tracker": "https://github.com/quantinuum/tket/issues",
     },
     description="Quantum computing toolkit and interface to the TKET compiler",
     long_description=open("package.md").read(),  # noqa: SIM115
@@ -186,7 +186,7 @@ setup(
     ],
     extras_require={
         "ZX": [
-            "numba >= 0.61.0",
+            "numba >= 0.62.1",
             "quimb >= 1.8.2",
             "autoray >= 0.6.12",
         ],

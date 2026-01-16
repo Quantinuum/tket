@@ -2851,7 +2851,7 @@ SCENARIO("Confirm that LaTeX output compiles", "[latex][.long]") {
   c.add_conditional_gate<unsigned>(
       OpType::CU3, {1.04, 0.36, -0.36}, {0, 4}, {}, 0);
 
-  // https://github.com/CQCL/tket/issues/1363
+  // https://github.com/quantinuum/tket/issues/1363
   Qubit q1("q_1", 0);
   Bit c1("c_1", 0);
   c.add_qubit(q1);
@@ -2972,7 +2972,7 @@ SCENARIO("Invalid Measure operations") {
         circ.add_op<unsigned>(OpType::Measure, {0}), CircuitInvalidity);
   }
   GIVEN("Trying to add a Measure on non-existent wires") {
-    // https://github.com/CQCL/tket/issues/979
+    // https://github.com/quantinuum/tket/issues/979
     Circuit circ;
     REQUIRE_THROWS(circ.add_measure(0, 0));
     std::vector<Command> cmds = circ.get_commands();
@@ -3628,7 +3628,7 @@ SCENARIO("Finding subcircuits") {
 }
 
 SCENARIO("Filter conditional commands") {
-  // https://github.com/CQCL/tket/issues/1726
+  // https://github.com/quantinuum/tket/issues/1726
   GIVEN("Circuit with a conditional after a measure") {
     Circuit c(1, 1);
     c.add_measure(0, 0);

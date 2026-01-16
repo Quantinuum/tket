@@ -337,7 +337,7 @@ SCENARIO("Contextual optimization") {
     }
   }
   GIVEN("Circuit with quantum op following final measurement") {
-    // https://github.com/CQCL/tket/issues/1794
+    // https://github.com/quantinuum/tket/issues/1794
     Circuit c(1, 1);
     c.add_op<unsigned>(OpType::X, {0});
     c.add_op<unsigned>(OpType::Measure, {0, 0});

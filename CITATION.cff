@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you wish to cite TKET in any academic publications, we generally recommend citing our software overview paper. For any papers in which TKET is used please also cite the version."
-url: "https://github.com/CQCL/tket"
+url: "https://github.com/quantinuum/tket"
 preferred-citation:
   type: article
   authors:

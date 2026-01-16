@@ -3003,13 +3003,13 @@ class PhasePolyBox(Op):
     """
 
     @overload
-    def __init__(self, n_qubits: int, qubit_indices: Mapping[pytket._tket.unit_id.Qubit, int], phase_polynomial: dict[tuple[bool, ...], Union[sympy.core.expr.Expr, float]], linear_transformation: Annotated[NDArray[numpy.bool], dict(shape=(None, None), order='F')]) -> None:
+    def __init__(self, n_qubits: int, qubit_indices: Mapping[pytket._tket.unit_id.Qubit, int], phase_polynomial: dict[tuple[bool, ...], Union[sympy.core.expr.Expr, float]], linear_transformation: Annotated[NDArray[numpy.bool_], dict(shape=(None, None), order='F')]) -> None:
         """
         Construct from the number of qubits, the mapping from Qubit to index, the phase polynomial (map from bitstring to phase) and the linear transformation (boolean matrix)
         """
 
     @overload
-    def __init__(self, n_qubits: int, qubit_indices: Mapping[pytket._tket.unit_id.Qubit, int], phase_polynomial: Sequence[tuple[Sequence[bool], Union[sympy.core.expr.Expr, float]]], linear_transformation: Annotated[NDArray[numpy.bool], dict(shape=(None, None), order='F')]) -> None:
+    def __init__(self, n_qubits: int, qubit_indices: Mapping[pytket._tket.unit_id.Qubit, int], phase_polynomial: Sequence[tuple[Sequence[bool], Union[sympy.core.expr.Expr, float]]], linear_transformation: Annotated[NDArray[numpy.bool_], dict(shape=(None, None), order='F')]) -> None:
         """
         Construct from the number of qubits, the mapping from Qubit to index, the phase polynomial (list of bitstring phase pairs) and the linear transformation (boolean matrix)
 
@@ -3035,7 +3035,7 @@ class PhasePolyBox(Op):
         """Map from bitstring (basis state) to phase."""
 
     @property
-    def linear_transformation(self) -> Annotated[NDArray[numpy.bool], dict(shape=(None, None), order='F')]:
+    def linear_transformation(self) -> Annotated[NDArray[numpy.bool_], dict(shape=(None, None), order='F')]:
         """Boolean matrix corresponding to linear transformation."""
 
     def get_circuit(self) -> Circuit:

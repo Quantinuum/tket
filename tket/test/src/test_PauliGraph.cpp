@@ -695,7 +695,7 @@ SCENARIO("Test mutual diagonalisation of fully commuting sets") {
     REQUIRE(test_statevector_comparison(test1, test2));
   }
   GIVEN("A circuit with a classical bit") {
-    // https://github.com/CQCL/tket/issues/1578
+    // https://github.com/quantinuum/tket/issues/1578
     Circuit c0(0, 1);
     CircBox cbox(c0);
     Circuit c(0, 1);

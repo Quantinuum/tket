@@ -297,7 +297,7 @@ def test_symbolic_ops() -> None:
     beta = fresh_symbol("alpha")
     c.CRz(beta * 2, 1, 0)
     gamma = Symbol("gamma")
-    # https://github.com/CQCL/tket/issues/1068
+    # https://github.com/quantinuum/tket/issues/1068
     c.Rz(exp(gamma), 1)
     s_map = {alpha: 0.5, beta: 3.2, gamma: 1}
     assert c.is_symbolic()
@@ -342,7 +342,7 @@ def test_renaming_circbox_circuit() -> None:
 
 
 def test_subst_4() -> None:
-    # https://github.com/CQCL/tket/issues/219
+    # https://github.com/quantinuum/tket/issues/219
     m = fresh_symbol("m")
     c = Circuit(1)
     a = m / 4
@@ -709,7 +709,7 @@ def test_boxes() -> None:  # noqa: PLR0915
 
 
 def test_pauliexp_pair_box_serialisation() -> None:
-    # https://github.com/CQCL/tket/issues/1084
+    # https://github.com/quantinuum/tket/issues/1084
     p = PauliExpPairBox(
         [Pauli.Z, Pauli.X], 0.5, [Pauli.X, Pauli.Z], 0.2, CXConfigType.MultiQGate
     )
@@ -746,7 +746,7 @@ def test_state_prep_mid_circuit() -> None:
 
 
 def test_u1q_stability() -> None:
-    # https://github.com/CQCL/tket/issues/222
+    # https://github.com/quantinuum/tket/issues/222
     u = np.array(
         [
             [
@@ -1204,7 +1204,7 @@ def test_getting_registers() -> None:
 
 
 def test_getting_registers_with_non_consecutive_indices() -> None:
-    # https://github.com/CQCL/tket/issues/1160
+    # https://github.com/quantinuum/tket/issues/1160
     c = Circuit()
     c.add_qubit(Qubit(3))
     c.add_qubit(Qubit(2))
@@ -1223,7 +1223,7 @@ def test_getting_registers_with_non_consecutive_indices() -> None:
 
 
 def test_getting_registers_with_unindexed_bits() -> None:
-    # https://github.com/CQCL/tket/issues/1785
+    # https://github.com/quantinuum/tket/issues/1785
     c = Circuit()
     qubit = Qubit("q", [])
     bit = Bit("a", [])
@@ -1327,7 +1327,7 @@ def test_error_wrong_parameters() -> None:
 
 
 def test_symbol_subst() -> None:
-    # https://github.com/CQCL/tket/issues/999
+    # https://github.com/quantinuum/tket/issues/999
     d = Circuit(4)
     rz_op = Op.create(OpType.Rz, 0.3)
     pauli_x_op = Op.create(OpType.X)
@@ -1345,7 +1345,7 @@ def test_symbol_subst() -> None:
 
 
 def test_phase_order() -> None:
-    # https://github.com/CQCL/tket/issues/1073
+    # https://github.com/quantinuum/tket/issues/1073
     c = Circuit(2)
     c.Ry(0.0, 1)
     c.add_gate(OpType.Phase, [0.0], [])
@@ -1361,7 +1361,7 @@ def test_phase_order() -> None:
 
 
 def test_empty_multiplexed_rz() -> None:
-    # https://github.com/CQCL/tket/issues/1928
+    # https://github.com/quantinuum/tket/issues/1928
     ubox = Unitary1qBox(np.eye(2, dtype=complex))
 
     op0 = Op.create(OpType.noop)
@@ -1532,7 +1532,7 @@ def test_add_circbox_with_mixed_registers() -> None:
 
 
 def test_deserialization_from_junk() -> None:
-    # https://github.com/CQCL/tket/issues/1243
+    # https://github.com/quantinuum/tket/issues/1243
     with pytest.raises(RuntimeError):
         Circuit.from_dict(
             {
@@ -1571,7 +1571,7 @@ def test_wasm_serialization() -> None:
 
 
 def test_pickle_bit() -> None:
-    # https://github.com/CQCL/tket/issues/1293
+    # https://github.com/quantinuum/tket/issues/1293
     for b in [Bit(1), Bit("z", 0), Bit("z", (2, 0, 3))]:
         assert b == pickle.loads(pickle.dumps(b))
 
@@ -1664,7 +1664,7 @@ def test_cnx_vchain_arbitrary_ancillas() -> None:
 
 
 def test_c0z() -> None:
-    # https://github.com/CQCL/tket/issues/1873
+    # https://github.com/quantinuum/tket/issues/1873
     circ = Circuit(1).add_gate(OpType.CnZ, [0])
     cmds = circ.get_commands()
     assert len(cmds) == 1

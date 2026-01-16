@@ -25,7 +25,7 @@ As well as being an interface to the TKET compiler, pytket also provides an exte
 
 The `tket` (C++) API documentation (generated with `doxygen`, and still rather
 patchy) is available
-[here](https://cqcl.github.io/tket/tket/api/index.html).
+[here](https://quantinuum.github.io/tket/tket/api/index.html).
 
 The `pytket` (Python) API documentation is available
 [here](https://docs.quantinuum.com/tket/api-docs).
@@ -33,7 +33,7 @@ The `pytket` (Python) API documentation is available
 For getting started using pytket, check out the [user manual and notebook examples](https://docs.quantinuum.com/tket/user-guide/).
 
 
-The source content for the manual and notebook examples can be found in the [pytket-docs repository](https://github.com/CQCL/pytket-docs).
+The source content for the manual and notebook examples can be found in the [pytket-docs repository](https://github.com/quantinuum/pytket-docs).
 
 ## Extensions
 

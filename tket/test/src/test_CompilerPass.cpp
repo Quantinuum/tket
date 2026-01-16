@@ -811,7 +811,7 @@ SCENARIO("PeepholeOptimise2Q and FullPeepholeOptimise") {
     REQUIRE(FullPeepholeOptimise()->apply(cu1));
   }
   GIVEN("Symbolic circuit, FullPeepholeOptimise TK2") {
-    // https://github.com/CQCL/tket/issues/963
+    // https://github.com/quantinuum/tket/issues/963
     Sym a = SymEngine::symbol("a");
     Circuit circ(3);
     circ.add_op<unsigned>(OpType::CX, {0, 1});
@@ -835,7 +835,7 @@ SCENARIO("PeepholeOptimise2Q and FullPeepholeOptimise") {
     REQUIRE(test_unitary_comparison(circ, cu.get_circ_ref()));
   }
   GIVEN("An X + BRIDGE circuit") {
-    // https://github.com/CQCL/tket/issues/9
+    // https://github.com/quantinuum/tket/issues/9
     Circuit circ(3);
     circ.add_op<unsigned>(OpType::X, {1});
     circ.add_op<unsigned>(OpType::BRIDGE, {0, 1, 2});
@@ -856,7 +856,7 @@ SCENARIO("PeepholeOptimise2Q and FullPeepholeOptimise") {
     REQUIRE(circ.count_gates(OpType::TK2) == 1);
   }
   GIVEN("A circuit containing a Unitary1qBox") {
-    // https://github.com/CQCL/tket/issues/1750
+    // https://github.com/quantinuum/tket/issues/1750
     Circuit circ(3);
     circ.add_op<unsigned>(OpType::CX, {0, 2});
     Eigen::Matrix2cd u;
@@ -1462,7 +1462,7 @@ SCENARIO("Commute measurements to the end of a circuit") {
     // REQUIRE(final_command.get_args().front() == Node(3));
   }
   GIVEN("Measures targeting the same bit") {
-    // https://github.com/CQCL/tket/issues/1305
+    // https://github.com/quantinuum/tket/issues/1305
     Circuit c(4, 1);
     c.add_op<unsigned>(OpType::CX, {0, 1});
     c.add_measure(3, 0);
@@ -1680,7 +1680,7 @@ SCENARIO("CX mapping pass") {
     }
   }
   GIVEN("CXMappingPass preconditions") {
-    // https://github.com/CQCL/tket/issues/1597
+    // https://github.com/quantinuum/tket/issues/1597
     // Construct a circuit with a barrier and an implicit wire swap; check that
     // we can apply CXMappingPass.
     Circuit c(2, 2);
@@ -2190,7 +2190,7 @@ SCENARIO(
 
 SCENARIO("PauliExponentials") {
   GIVEN("A PhasedX gate") {
-    // https://github.com/CQCL/tket/issues/1244
+    // https://github.com/quantinuum/tket/issues/1244
     Circuit c(1);
     c.add_op<unsigned>(OpType::PhasedX, {0.5, 0.6}, {0});
     c.add_op<unsigned>(OpType::PhasedX, {0.6, 0.5}, {0});
@@ -2349,7 +2349,7 @@ SCENARIO("AutoSquash") {
 }
 
 SCENARIO("Efficient TK2 synthesis") {
-  // https://github.com/CQCL/tket/issues/1738
+  // https://github.com/quantinuum/tket/issues/1738
   GIVEN("A single YYPhase") {
     Circuit c(2);
     c.add_op<unsigned>(OpType::YYPhase, 0.3, {0, 1});

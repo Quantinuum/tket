@@ -22,9 +22,9 @@ The versions should match the current requirements as specified in the relevant
 
 ```
 cd ${TMP_DIR}
-wget -O boost_1_89_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.89.0/boost_1_89_0.tar.gz/download
-tar xzvf boost_1_89_0.tar.gz
-cd boost_1_89_0/
+wget -O boost_1_90_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.90.0/boost_1_90_0.tar.gz/download
+tar xzvf boost_1_90_0.tar.gz
+cd boost_1_90_0/
 ./bootstrap.sh --prefix=${INSTALL_DIR}
 ./b2
 ./b2 install
@@ -92,9 +92,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.11.0.tar.gz
-tar xzvf v3.11.0.tar.gz
-cd Catch2-3.11.0/
+wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.12.0.tar.gz
+tar xzvf v3.12.0.tar.gz
+cd Catch2-3.12.0/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
@@ -134,9 +134,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/wjakob/nanobind/archive/refs/tags/v2.9.2.tar.gz
-tar xzvf v2.9.2.tar.gz
-cd nanobind-2.9.2/
+wget https://github.com/wjakob/nanobind/archive/refs/tags/v2.10.2.tar.gz
+tar xzvf v2.10.2.tar.gz
+cd nanobind-2.10.2/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$(INSTALL_DIR) -DNB_TEST=OFF -DNB_USE_SUBMODULE_DEPS=OFF ..

@@ -178,6 +178,6 @@ def test_fullyconnected() -> None:
     assert bi.n_nodes == 10
     assert isinstance(bi.architecture, FullyConnected)
 
-    # https://github.com/CQCL/tket/issues/390
+    # https://github.com/quantinuum/tket/issues/390
     d = bi.to_dict()
     assert BackendInfo.from_dict(d) == bi

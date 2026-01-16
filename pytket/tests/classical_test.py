@@ -1342,7 +1342,7 @@ def test_sym_sub_range_pred() -> None:
 
 
 def test_depth_classical_only() -> None:
-    # https://github.com/CQCL/tket/issues/1673
+    # https://github.com/quantinuum/tket/issues/1673
     set_bits = SetBitsOp([True, True])
     multi_bit = MultiBitOp(set_bits, 2)
     assert multi_bit.multiplier == 2

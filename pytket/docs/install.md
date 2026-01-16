@@ -26,7 +26,7 @@ pip install --upgrade pytket
 
 TKET can be built from source by compiling the C++. This is now possible on MacOS, Windows and Linux (including ARM Linux).
 
-For instructions on how to do this see the [tket repository README](https://github.com/CQCL/tket#how-to-build-tket-and-pytket).
+For instructions on how to do this see the [tket repository README](https://github.com/quantinuum/tket#how-to-build-tket-and-pytket).
 
 ## Installation FAQs
 
@@ -47,11 +47,11 @@ because of an issue installing `scipy`. To fix this:
 
 ### Can I build TKET from source without using conan?
 
-Yes, this is possible. To do so this follow [this guide](https://github.com/CQCL/tket/blob/develop/build-without-conan.md) .
+Yes, this is possible. To do so this follow [this guide](https://github.com/quantinuum/tket/blob/develop/build-without-conan.md) .
 
 ### Do all versions of `pytket` work with Windows?
 
-`pytket` versions 0.6 and above are compatible with most recent versions of Windows. LTSC versions of Windows are not supported and an [issue](https://github.com/CQCL/pytket-docs/issues/36) has been reported with these.
+`pytket` versions 0.6 and above are compatible with most recent versions of Windows. LTSC versions of Windows are not supported and an [issue](https://github.com/quantinuum/pytket-docs/issues/36) has been reported with these.
 
 ### `pytket` installed but modules mentioned in the docs could not be found. Why?
 
@@ -69,11 +69,11 @@ As of pytket release 1.24.0 installing the latest version of pytket requires pyt
 
 As of pytket release 1.34.0 MacOS 12 is no longer supported: please upgrade to MacOS 13 or above to use the latest version of pytket.
 
-There is a [known issue](https://github.com/CQCL/tket/issues/926) with
+There is a [known issue](https://github.com/quantinuum/tket/issues/926) with
 installing pytket in a conda environment on MacOS: you may not be able to
 install versions more recent then 1.11.0. The only known remedy is to use an
 official Python distribution instead.
 
 ### I've tried the recommended actions here and it still won't work! What can I do?
 
-There is an [issue tracker](http://github.com/CQCL/tket/issues) on github for current issues. You might find others who have had similar problems there. If not, feel free to add an issue describing your problem and our development team will try to diagnose it and get back to you as soon as possible.
+There is an [issue tracker](http://github.com/quantinuum/tket/issues) on github for current issues. You might find others who have had similar problems there. If not, feel free to add an issue describing your problem and our development team will try to diagnose it and get back to you as soon as possible.

@@ -950,7 +950,7 @@ SCENARIO("QControlBox", "[boxes]") {
     REQUIRE(c->count_gates(OpType::CRz) == 1);
   }
   GIVEN("controlled PauliExpBox") {
-    // https://github.com/CQCL/tket/issues/1109
+    // https://github.com/quantinuum/tket/issues/1109
     PauliExpBox pbox(
         SymPauliTensor({Pauli::I, Pauli::Z, Pauli::I, Pauli::I}, 0.7));
     Op_ptr op = std::make_shared<PauliExpBox>(pbox);

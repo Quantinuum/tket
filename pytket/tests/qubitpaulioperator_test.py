@@ -133,7 +133,7 @@ def test_QubitPauliOperator_matrices() -> None:
         named_op.to_sparse_matrix([*named_qbs, Qubit("a", 1)]).toarray(),
     )
 
-    # https://github.com/CQCL/tket/issues/294
+    # https://github.com/quantinuum/tket/issues/294
     P = QubitPauliString({Qubit(0): Pauli.Z, Qubit(1): Pauli.I})
     H = QubitPauliOperator({P: 1})
     assert np.allclose(P.to_sparse_matrix().todense(), H.to_sparse_matrix().todense())
@@ -181,7 +181,7 @@ def test_QubitPauliOperator_serialization() -> None:
 
 
 def test_QubitPauliOperator_serialization_symbolic() -> None:
-    # https://github.com/CQCL/tket/issues/614
+    # https://github.com/quantinuum/tket/issues/614
     qps = [Qubit(i) for i in range(2)]
     qpsXY = QubitPauliString(qps, [Pauli.X, Pauli.Y])
     qpsZI = QubitPauliString(qps, [Pauli.Z, Pauli.I])

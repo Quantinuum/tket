@@ -586,13 +586,13 @@ def test_postprocess_4() -> None:
 
 
 def test_empty_backenresult() -> None:
-    # https://github.com/CQCL/tket/issues/961
+    # https://github.com/quantinuum/tket/issues/961
     r = BackendResult(counts=Counter(), c_bits=[Bit(name="A", index=0)])
     assert r.get_counts() == Counter()
 
 
 def test_int_type() -> None:
-    # https://github.com/CQCL/tket/issues/1677
+    # https://github.com/quantinuum/tket/issues/1677
     b = TketSimShotBackend(ignore_measures=True)
     c = Circuit(2).H(0).H(1).measure_all()
     c1 = b.get_compiled_circuit(c)

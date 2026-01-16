@@ -135,7 +135,7 @@ jobs:
         gcovr --print-summary --html --html-details -r ${GITHUB_WORKSPACE}/libs/${{ matrix.lib }} --exclude-lines-by-pattern '.*\bTKET_ASSERT\(.*\);' --object-directory ${GITHUB_WORKSPACE}/build/${{ matrix.lib }}/build/Debug/CMakeFiles/${{ matrix.lib }}.dir/src -o ${{ matrix.lib }}-coverage/index.html --decisions > ${{ matrix.lib }}-coverage/summary.txt
         cat ${{ matrix.lib }}-coverage/summary.txt
     - name: upload artefact
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: ${{ matrix.lib }}_coverage
         path: ${{ matrix.lib }}-coverage/
@@ -143,7 +143,7 @@ jobs:
       if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
       run: |
         # File may not exist if this is the very first time, so don't error.
-        wget https://cqcl.github.io/tket/${{ matrix.lib }}/test-coverage/summary.txt || true
+        wget https://quantinuum.github.io/tket/${{ matrix.lib }}/test-coverage/summary.txt || true
         if [[ -f summary.txt ]] ; then
           ./.github/workflows/compare-coverage summary.txt ${{ matrix.lib }}-coverage/summary.txt
         fi
@@ -161,7 +161,7 @@ jobs:
       with:
         ref: gh-pages
     - name: download artefact
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: ${{ matrix.lib }}_coverage
         path: ${{ matrix.lib }}-coverage/

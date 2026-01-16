@@ -300,7 +300,7 @@ SCENARIO("Test routing-related predicates' meet and implication") {
       REQUIRE_FALSE(con1->implies(*con3));
     }
     WHEN("Test implies (isolated nodes)") {
-      // https://github.com/CQCL/tket/issues/88
+      // https://github.com/quantinuum/tket/issues/88
       REQUIRE(con1->implies(*con5));
       REQUIRE_FALSE(con5->implies(*con1));
     }
@@ -456,7 +456,7 @@ SCENARIO("Test PlacementPredicate") {
 }
 
 SCENARIO("Test ConnectivityPredicate") {
-  // https://github.com/CQCL/tket/issues/683
+  // https://github.com/quantinuum/tket/issues/683
   Architecture arc(
       {{Node(0), Node(1)}, {Node(0), Node(2)}, {Node(1), Node(2)}});
   Circuit c(2, 2);

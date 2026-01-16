@@ -210,7 +210,7 @@ def make_circ() -> Circuit:
 
 
 def test_copy_and_flatten() -> None:
-    # See https://github.com/CQCL/tket/issues/1544
+    # See https://github.com/quantinuum/tket/issues/1544
     c0 = make_circ()
     c1 = make_circ()
     assert c0 == c1
@@ -231,7 +231,7 @@ c[2] = (c[0] ^ c[1]);
 
 
 def test_circbox() -> None:
-    # See https://github.com/CQCL/tket/issues/1544
+    # See https://github.com/quantinuum/tket/issues/1544
     c0 = make_circ()
     cbox = CircBox(c0)
     c1 = Circuit(0, 3)
@@ -262,7 +262,7 @@ c = (a | b);
 
 
 def test_biteq_bitneq_to_qasm() -> None:
-    # https://github.com/CQCL/tket/issues/1753
+    # https://github.com/quantinuum/tket/issues/1753
     c = Circuit(0, 3)
     c.add_clexpr(
         WiredClExpr(
@@ -291,7 +291,7 @@ c[2] = ((~(c[0] ^ 0)) & (c[1] ^ 1));
 
 
 def test_deserialization_from_pytket1_json() -> None:
-    # https://github.com/CQCL/tket/issues/1848
+    # https://github.com/quantinuum/tket/issues/1848
     for i in range(5):
         with open(
             Path(__file__).resolve().parent
@@ -341,7 +341,7 @@ def test_pickle() -> None:
 
 
 def test_circuit_dict_from_pytket1_dict_with_customgate() -> None:
-    # https://github.com/CQCL/tket/issues/2049
+    # https://github.com/quantinuum/tket/issues/2049
     a = Symbol("a")
     b = Symbol("b")
     setup = Circuit(3)

@@ -24,7 +24,7 @@ class TkwsmConan(ConanFile):
     version = "0.3.13"
     package_type = "library"
     license = "Apache 2"
-    url = "https://github.com/CQCL/tket"
+    url = "https://github.com/quantinuum/tket"
     description = "Weighted-subgraph-monomorphism algorithms library"
     settings = "os", "compiler", "build_type", "arch"
     options = {
@@ -75,7 +75,7 @@ class TkwsmConan(ConanFile):
         self.requires("tkassert/0.3.4@tket/stable")
         self.requires("tkrng/0.3.3@tket/stable")
         self.requires(
-            "boost/tci-1.89.0@tket/stable",
+            "boost/tci-1.90.0@tket/stable",
             transitive_headers=True,
             transitive_libs=False,
         )

@@ -8,7 +8,7 @@ kernelspec:
 Contains several functions for rendering interactive circuit diagrams.
 
 ```{note}
-Rendering circuits with `pytket.circuit.display` requires an internet connection. Using the pytket circuit renderer offline can be done by installing the [pytket-offline-display extension](https://github.com/CQCL/pytket-offline-renderer).
+Rendering circuits with `pytket.circuit.display` requires an internet connection. Using the pytket circuit renderer offline can be done by installing the [pytket-offline-display extension](https://github.com/quantinuum/pytket-offline-renderer).
 ```
 
 ```

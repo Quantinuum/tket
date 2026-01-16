@@ -24,7 +24,7 @@ class TketConan(ConanFile):
     name = "tket"
     package_type = "library"
     license = "Apache 2"
-    homepage = "https://github.com/CQCL/tket"
+    homepage = "https://github.com/quantinuum/tket"
     url = "https://github.com/conan-io/conan-center-index"
     description = "Quantum SDK"
     topics = ("quantum", "computation", "compiler")
@@ -140,7 +140,7 @@ class TketConan(ConanFile):
     def requirements(self):
         # libraries installed from remote:
         # https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs
-        self.requires("boost/tci-1.89.0@tket/stable", transitive_headers=True)
+        self.requires("boost/tci-1.90.0@tket/stable", transitive_headers=True)
         self.requires("eigen/5.0.1", transitive_headers=True)
         self.requires("nlohmann_json/3.12.0", transitive_headers=True)
         self.requires("symengine/tci-0.14.0.2@tket/stable", transitive_headers=True)
@@ -150,7 +150,7 @@ class TketConan(ConanFile):
         self.requires("tktokenswap/0.3.13@tket/stable")
         self.requires("tkwsm/0.3.13@tket/stable")
         if self.build_test():
-            self.test_requires("catch2/3.11.0@tket/stable")
+            self.test_requires("catch2/3.12.0@tket/stable")
         if self.build_proptest():
             self.test_requires("rapidcheck/tci-20231215@tket/stable")
 

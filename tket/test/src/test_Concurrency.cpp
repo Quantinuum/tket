@@ -29,7 +29,7 @@ namespace test_Concurrency {
 SCENARIO("Concurrent transforms") {
 #ifdef NDEBUG
   GIVEN("clifford_simp") {
-    // https://github.com/CQCL/tket/issues/1953
+    // https://github.com/quantinuum/tket/issues/1953
     const std::string json_str =
         R"({"bits": [], "commands": [{"args": [["q", [0]], ["q", [1]]], "op": {"type": "CX"}}, {"args": [["q", [0]], ["q", [1]]], "op": {"type": "CX"}}], "created_qubits": [], "discarded_qubits": [], "implicit_permutation": [[["q", [0]], ["q", [0]]], [["q", [1]], ["q", [1]]]], "phase": "0.0", "qubits": [["q", [0]], ["q", [1]]]})";
     Circuit circ = nlohmann::json::parse(json_str);
@@ -46,7 +46,7 @@ SCENARIO("Concurrent transforms") {
 SCENARIO("Concurrent circuit operations") {
 #ifdef NDEBUG
   GIVEN("Circuit construction and serialization") {
-    // https://github.com/CQCL/tket/issues/2009
+    // https://github.com/quantinuum/tket/issues/2009
     std::function<void(void)> func = []() {
       Circuit circ(2);
       circ.add_op<unsigned>(OpType::H, {0});

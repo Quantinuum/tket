@@ -143,7 +143,7 @@ SCENARIO("Symbolic squashing, correctness") {
   }
 
   GIVEN("Edge case where symengine atan2 returns nan (1)") {
-    // https://github.com/CQCL/tket/issues/304
+    // https://github.com/quantinuum/tket/issues/304
     Circuit circ(1);
     circ.add_op<unsigned>(OpType::Rx, {alpha}, {0});
     circ.add_op<unsigned>(OpType::Ry, {beta}, {0});
@@ -163,7 +163,7 @@ SCENARIO("Symbolic squashing, correctness") {
   }
 
   GIVEN("Edge case where symengine atan2 returns nan (2)") {
-    // https://github.com/CQCL/tket/issues/304
+    // https://github.com/quantinuum/tket/issues/304
     // and
     // https://github.com/symengine/symengine/issues/1875
     Circuit circ(1);

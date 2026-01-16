@@ -1,6 +1,6 @@
 Pytket is a python module for interfacing with TKET, a quantum computing toolkit and optimising compiler developed by [Quantinuum](https://www.quantinuum.com/). In addition to pytket there are several pytket extension modules for accessing a range of quantum hardware and classical simulators. The extension modules also allow circuit conversion between several widely used quantum software tools including qiskit, cirq and pennylane.
 
-The source code for the TKET compiler can be found in [this github repository](https://github.com/CQCL/tket).
+The source code for the TKET compiler can be found in [this github repository](https://github.com/quantinuum/tket).
 
 ## Installation
 
@@ -18,7 +18,7 @@ To install the pytket extension modules add a hyphen and the extension name to t
 
 For a list of pytket extensions see this page: https://docs.quantinuum.com/tket/api-docs/extensions.html.
 
-_Warning._ There is a [known issue](https://github.com/CQCL/tket/issues/926)
+_Warning._ There is a [known issue](https://github.com/quantinuum/tket/issues/926)
 with installing pytket in a conda environment on MacOS: you may not be able to
 install versions more recent then 1.11.0. The only known remedy is to use an
 official Python distribution instead.
@@ -31,7 +31,7 @@ To get started using pytket see the [user guide](https://docs.quantinuum.com/tke
 
 ## Support and Discussion
 
-For bugs and feature requests we recommend creating an issue on the [github repository](https://github.com/CQCL/tket).
+For bugs and feature requests we recommend creating an issue on the [github repository](https://github.com/quantinuum/tket).
 
 User support: tket-support@quantinuum.com
 

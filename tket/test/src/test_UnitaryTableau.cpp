@@ -644,7 +644,7 @@ SCENARIO("Synthesis of circuits from UnitaryRevTableau") {
     REQUIRE(res_tab == tab);
   }
   GIVEN("Another circuit containing more OpTypes") {
-    // https://github.com/CQCL/tket/issues/1268
+    // https://github.com/quantinuum/tket/issues/1268
     Circuit circ(2);
     circ.add_op<unsigned>(OpType::SX, {0});
     circ.add_op<unsigned>(OpType::SXdg, {1});

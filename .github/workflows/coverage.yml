@@ -86,7 +86,7 @@ jobs:
         gcovr --print-summary --html --html-details -r ./tket --exclude-lines-by-pattern '.*\b(TKET_ASSERT|CHECK)\(.*\);.*' --object-directory ${PWD}/build/tket/build/Debug/CMakeFiles/tket.dir/src -o test-coverage/index.html --decisions > test-coverage/summary.txt
         cat test-coverage/summary.txt
     - name: Upload artefact
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: test_coverage
         path: test-coverage/
@@ -99,19 +99,19 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Download artefact
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: test_coverage
         path: test-coverage/
     - name: Compare with latest report from main (short tests)
       if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
       run: |
-        wget https://cqcl.github.io/tket/tket/test-coverage-short/summary.txt
+        wget https://quantinuum.github.io/tket/tket/test-coverage-short/summary.txt
         ./.github/workflows/compare-coverage summary.txt test-coverage/summary.txt
     - name: Compare with latest report from main (full suite)
       if: github.event_name == 'schedule'
       run: |
-        wget https://cqcl.github.io/tket/tket/test-coverage/summary.txt
+        wget https://quantinuum.github.io/tket/tket/test-coverage/summary.txt
         ./.github/workflows/compare-coverage summary.txt test-coverage/summary.txt
 
   publish_coverage_short:
@@ -125,7 +125,7 @@ jobs:
       with:
         ref: gh-pages
     - name: Download artefact
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: test_coverage
         path: test-coverage/
@@ -154,7 +154,7 @@ jobs:
       with:
         ref: gh-pages
     - name: Download artefact
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: test_coverage
         path: test-coverage/

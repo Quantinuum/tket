@@ -690,7 +690,7 @@ def test_implicit_swaps_4() -> None:
 
 
 def test_implicit_swaps_5() -> None:
-    # https://github.com/CQCL/tket/issues/1923
+    # https://github.com/quantinuum/tket/issues/1923
     c = Circuit(2).SWAP(0, 1)
     assert Transform.OptimiseCliffords(True).apply(c)
     assert len(c.get_commands()) == 0
@@ -1205,7 +1205,7 @@ def test_custom_pass() -> None:
 
 
 def test_circuit_with_conditionals() -> None:
-    # https://github.com/CQCL/tket/issues/514
+    # https://github.com/quantinuum/tket/issues/514
     c = Circuit(3, 3)
     c.H(1).CX(1, 2).CX(0, 1)
     c.Measure(0, 0)
@@ -1224,7 +1224,7 @@ def test_circuit_with_conditionals() -> None:
 
 
 def test_KAK_with_CircBox() -> None:
-    # https://github.com/CQCL/tket/issues/1553
+    # https://github.com/quantinuum/tket/issues/1553
     cbox = CircBox(Circuit(2))
     c = Circuit(2).add_circbox(cbox, [0, 1]).add_circbox(cbox, [0, 1])
     assert not Transform.KAKDecomposition().apply(c)
@@ -1445,7 +1445,7 @@ def test_auto_rebase_with_swap_zzphase() -> None:  # noqa: PLR0915
 
 
 def test_zzphse_rebase_special_cases() -> None:
-    # https://github.com/CQCL/tket/issues/1902
+    # https://github.com/quantinuum/tket/issues/1902
     zzphase_rebase_no_swap = AutoRebase(
         {OpType.Rz, OpType.PhasedX, OpType.ZZPhase}, allow_swaps=False
     )

@@ -22,7 +22,7 @@ class test_tktokenswapRecipe(ConanFile):
     version = "0.3.13"
     package_type = "application"
     license = "Apache 2"
-    url = "https://github.com/CQCL/tket"
+    url = "https://github.com/quantinuum/tket"
     description = "Unit tests for tktokenswap"
     settings = "os", "compiler", "build_type", "arch"
     options = {"with_coverage": [True, False]}
@@ -61,4 +61,4 @@ class test_tktokenswapRecipe(ConanFile):
     def requirements(self):
         self.requires("tktokenswap/0.3.13")
         self.requires("tkrng/0.3.3@tket/stable")
-        self.requires("catch2/3.11.0@tket/stable")
+        self.requires("catch2/3.12.0@tket/stable")

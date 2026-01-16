@@ -383,7 +383,7 @@ SCENARIO(
     REQUIRE(tket_sim::compare_statevectors_or_unitaries(s0, s1));
   }
   GIVEN("A controlled phase") {
-    // https://github.com/CQCL/tket/issues/576
+    // https://github.com/quantinuum/tket/issues/576
     Circuit circ(1, 1);
     circ.add_conditional_gate<unsigned>(OpType::Rz, {2.}, {0}, {0}, 1);
     Transforms::squash_1qb_to_pqp(OpType::Rz, OpType::Ry).apply(circ);
@@ -1936,7 +1936,7 @@ static void check_conditions(PassPtr pp, const Circuit &c) {
 
 SCENARIO("Synthesis with conditional gates") {
   GIVEN("Circuit with conditional U1") {
-    // https://github.com/CQCL/tket/issues/394
+    // https://github.com/quantinuum/tket/issues/394
     Circuit c(3);
     c.add_c_register("c", 3);
     c.add_op<unsigned>(OpType::H, {0});
@@ -1956,7 +1956,7 @@ SCENARIO("Synthesis with conditional gates") {
   }
 
   GIVEN("SynthesiseTK with conditional 2-qubit gates") {
-    // https://github.com/CQCL/tket/issues/1708
+    // https://github.com/quantinuum/tket/issues/1708
     Circuit c(2, 1);
     c.add_conditional_gate<unsigned>(OpType::ZZPhase, {0.5}, {0, 1}, {0}, 1);
     CompilationUnit cu(c);
@@ -1991,7 +1991,7 @@ SCENARIO("Restricting ZZPhase gate angles.") {
 }
 
 SCENARIO("ZZPhase_to_Rz with symbolic angles") {
-  // https://github.com/CQCL/tket/issues/1051
+  // https://github.com/quantinuum/tket/issues/1051
   Sym asym = SymEngine::symbol("a");
   Expr a(asym);
   Circuit c(2);
@@ -2138,7 +2138,7 @@ SCENARIO("Test squash Rz PhasedX") {
   }
 
   GIVEN("Another symbolic circuit") {
-    // https://github.com/CQCL/tket/issues/1052
+    // https://github.com/quantinuum/tket/issues/1052
     Sym a = SymEngine::symbol("alpha");
     Expr alpha(a);
     Sym b = SymEngine::symbol("beta");
@@ -2157,7 +2157,7 @@ SCENARIO("Test squash Rz PhasedX") {
   }
 
   GIVEN("A circuit with classical control (1)") {
-    // https://github.com/CQCL/tket/issues/1324
+    // https://github.com/quantinuum/tket/issues/1324
     Circuit circ(3, 1);
     circ.add_op<unsigned>(OpType::CY, {0, 1});
     circ.add_conditional_gate<unsigned>(OpType::Rz, {1.0}, {1}, {0}, 1);
@@ -2177,7 +2177,7 @@ SCENARIO("Test squash Rz PhasedX") {
   }
 
   GIVEN("A circuit with classical control (2)") {
-    // https://github.com/CQCL/tket/issues/1324
+    // https://github.com/quantinuum/tket/issues/1324
     Circuit circ(3, 1);
     circ.add_op<unsigned>(OpType::CZ, {0, 1});
     circ.add_op<unsigned>(OpType::CX, {2, 0});
@@ -2197,7 +2197,7 @@ SCENARIO("Test squash Rz PhasedX") {
   }
 
   GIVEN("Chains of identically-controlled Rz and PhasedX") {
-    // https://github.com/CQCL/tket/issues/1723
+    // https://github.com/quantinuum/tket/issues/1723
     Circuit circ(1, 2);
     for (int i = 0; i < 10; i++) {
       circ.add_conditional_gate<unsigned>(OpType::Rz, {0.67 * i}, {0}, {0}, 1);
@@ -2211,7 +2211,7 @@ SCENARIO("Test squash Rz PhasedX") {
   }
 }
 
-// https://github.com/CQCL/tket/issues/535
+// https://github.com/quantinuum/tket/issues/535
 SCENARIO("squash_1qb_to_Rz_PhasedX should preserve phase") {
   Circuit circ(1);
   circ.add_op<unsigned>(OpType::H, {0});

@@ -212,7 +212,7 @@ jobs:
         with:
           format: YYYYMMDDHHmmss
       - name: ccache windows
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ steps.ninja-ccache-setup.outputs.ccache_dir }}
           key: tket-static-${{ matrix.os }}-${{ steps.current_time.outputs.formattedTime }}
@@ -331,17 +331,17 @@ jobs:
         poetry config virtualenvs.create false
         cd pytket/docs
         poetry install
-        # just build-strict # https://github.com/CQCL/tket/issues/2044
+        # just build-strict # https://github.com/quantinuum/tket/issues/2044
         just build
     - name: Upload artifact
       if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: pytket_docs
         path: pytket/docs/build/
     - name: Upload pytket coverage artefact
       if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: pytket_test_coverage
         path: pytket/tests/htmlcov
@@ -405,10 +405,16 @@ jobs:
       uses: actions/setup-python@v6
       with:
         python-version: '3.14'
-    - name: Build pytket
+    - name: Build pytket (with zx)
+      if: matrix.os == 'macos-26'
       run: |
         cd pytket
         pip install -e .[ZX] -v
+    - name: Build pytket (without zx)
+      if: matrix.os == 'macos-15-intel'
+      run: |
+        cd pytket
+        pip install -e . -v
     - name: Run doctests
       run: |
         cd pytket
@@ -422,7 +428,7 @@ jobs:
     - name: Check type stubs are up-to-date and run mypy
       if: matrix.os == 'macos-26' && (github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch')
       run: |
-        python -m pip install -U mypy nanobind
+        python -m pip install mypy nanobind==2.10.2
         cd pytket
         ./stub_generation/regenerate_stubs
         git diff --exit-code pytket/_tket && echo "Stubs are up-to-date" || exit 1  # fail if stubs change after regeneration
@@ -484,7 +490,7 @@ jobs:
       with:
         format: YYYYMMDDHHmmss
     - name: ccache windows
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ${{ steps.ccache-setup.outputs.ccache_dir }}
         key: tket-dynamic-visual-studio-windows-2025-${{ steps.current_time.outputs.formattedTime }}
@@ -559,7 +565,7 @@ jobs:
       with:
         ref: gh-pages
     - name: Download artefact
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: pytket_test_coverage
         path: htmlcov/
@@ -585,13 +591,13 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Download artefact
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: pytket_test_coverage
         path: pytket-test-coverage/
     - name: Compare with latest report from main
       run: |
-        wget https://cqcl.github.io/tket/pytket/test-coverage/cov.xml -O oldcov.xml
+        wget https://quantinuum.github.io/tket/pytket/test-coverage/cov.xml -O oldcov.xml
         ./.github/workflows/compare-pytket-coverage oldcov.xml pytket-test-coverage/cov.xml
 
   check_all_build_and_test_jobs_successful:

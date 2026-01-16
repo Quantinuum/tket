@@ -21,7 +21,7 @@ namespace test_ClassicalOps {
 
 SCENARIO("Circuit iteration") {
   GIVEN("Successive conditionals on the same unit") {
-    // https://github.com/CQCL/tket/issues/1673
+    // https://github.com/quantinuum/tket/issues/1673
     Circuit circ(2, 2);
     circ.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0, 1}, 3);
     circ.add_conditional_gate<unsigned>(OpType::Y, {}, {1}, {0}, 1);

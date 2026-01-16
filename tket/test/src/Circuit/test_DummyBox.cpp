@@ -53,7 +53,7 @@ SCENARIO("DummyBox") {
   }
 
   GIVEN("Phase op") {
-    // https://github.com/CQCL/tket/issues/2066
+    // https://github.com/quantinuum/tket/issues/2066
     Circuit c(1);
     c.add_op<unsigned>(OpType::Phase, 0.0, {});
     ResourceData data = c.get_resources();

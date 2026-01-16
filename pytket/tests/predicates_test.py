@@ -984,7 +984,7 @@ def test_rebase_custom_tk2() -> None:
 
 
 def test_repeat_pass_strict_check() -> None:
-    # https://github.com/CQCL/tket/issues/985
+    # https://github.com/quantinuum/tket/issues/985
     c0 = Circuit(1).PhasedX(angle0=0.3, angle1=0.2, qubit=0)
     squash_pass = SquashRzPhasedX()
     c1 = c0.copy()
@@ -1176,7 +1176,7 @@ def test_get_gate_set() -> None:
 
 
 def test_decompose_inside_conditionals() -> None:
-    # https://github.com/CQCL/tket/issues/1583
+    # https://github.com/quantinuum/tket/issues/1583
     cbox1 = CircBox(Circuit(1).H(0))
     cbox0 = CircBox(Circuit(1, 1).add_circbox(cbox1, [Qubit(0)], condition=Bit(0)))
     c = Circuit(1, 2).add_circbox(cbox0, [Qubit(0), Bit(0)], condition=Bit(1))

@@ -245,7 +245,7 @@ SCENARIO("ZX resynthesis with implicit permutation removed") {
 
 SCENARIO("ZXGraphlikeOptimisation") {
   GIVEN("Circuit with name") {
-    // https://github.com/CQCL/tket/issues/1821
+    // https://github.com/quantinuum/tket/issues/1821
     Circuit circ(2);
     circ.add_op<unsigned>(OpType::H, {0});
     circ.add_op<unsigned>(OpType::CX, {0, 1});

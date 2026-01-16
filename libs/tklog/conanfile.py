@@ -24,7 +24,7 @@ class TklogConan(ConanFile):
     version = "0.3.3"
     package_type = "library"
     license = "Apache 2"
-    url = "https://github.com/CQCL/tket"
+    url = "https://github.com/quantinuum/tket"
     description = "Simple logging library"
     settings = "os", "compiler", "build_type", "arch"
     options = {

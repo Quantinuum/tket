@@ -88,14 +88,14 @@ SCENARIO("SynthesiseCliffordResynthesis correctness") {
     check_clifford_resynthesis(c);
   }
   GIVEN("An Rz(0) gate and a ZZMax gate") {
-    // Test workaround for https://github.com/CQCL/tket/issues/1268
+    // Test workaround for https://github.com/quantinuum/tket/issues/1268
     Circuit c(2);
     c.add_op<unsigned>(OpType::Rz, 0., {0});
     c.add_op<unsigned>(OpType::ZZMax, {0, 1});
     check_clifford_resynthesis(c);
   }
   GIVEN("A troublesome circuit (1)") {
-    // https://github.com/CQCL/tket/issues/1279
+    // https://github.com/quantinuum/tket/issues/1279
     Circuit c(3);
     c.add_op<unsigned>(OpType::ECR, {1, 2});
     c.add_op<unsigned>(OpType::CnRy, 0., {0, 1});
@@ -112,7 +112,7 @@ SCENARIO("SynthesiseCliffordResynthesis correctness") {
     check_clifford_resynthesis(c);
   }
   GIVEN("A Clifford-angle NPhasedX on 1 qubit") {
-    // https://github.com/CQCL/tket/issues/1408
+    // https://github.com/quantinuum/tket/issues/1408
     Circuit c(1);
     c.add_op<unsigned>(OpType::NPhasedX, {0.5, 0.0}, {0});
     check_clifford_resynthesis(c);
@@ -124,7 +124,7 @@ SCENARIO("SynthesiseCliffordResynthesis correctness") {
   }
 
   GIVEN("A troublesome circuit (3)") {
-    // https://github.com/CQCL/tket/issues/1468
+    // https://github.com/quantinuum/tket/issues/1468
     Circuit c0(6);
     c0.add_op<unsigned>(OpType::XXPhase, 0.5, {1, 4});
     c0.add_op<unsigned>(OpType::XXPhase, 1.5, {2, 3});
