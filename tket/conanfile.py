@@ -48,6 +48,7 @@ class TketConan(ConanFile):
     exports_sources = (
         "CMakeLists.txt",
         "cmake/*",
+        "c_api/*",
         "src/*",
         "include/*",
         "test/*",
@@ -134,7 +135,7 @@ class TketConan(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.libs = ["tket"]
+        self.cpp_info.libs = ["tket", "tket_c"]
 
     def requirements(self):
         # libraries installed from remote:

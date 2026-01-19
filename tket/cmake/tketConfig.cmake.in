@@ -5,4 +5,5 @@ if(NOT TARGET tket::tket)
     include("${TKET_CMAKE_DIR}/tketTargets.cmake")
 endif()
 
-set(TKET_lIBRARIES tket::tket)
+set(TKET_LIBRARIES tket::tket)
+set(TKET_C_LIBRARIES tket::tket_c)

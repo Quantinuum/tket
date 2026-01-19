@@ -21,6 +21,8 @@ depgraph.png
 dist
 doc
 pytket/pytket/_version.py
+pytket/pytket/_tket/include
+pytket/pytket/_tket/conaninfo.json
 pytket/tests/qasm_test_files/testout.qasm
 pytket/tests/qasm_test_files/testout2.qasm
 pytket/tests/qasm_test_files/testout3.qasm
@@ -45,3 +47,17 @@ pytket/docs/quantinuum-sphinx/**
 *.jupyter_cache
 jupyter_execute/
 
+# For now:
+devenv.nix
+devenv.yaml
+devenv.lock
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml

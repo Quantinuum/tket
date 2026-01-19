@@ -64,7 +64,7 @@ class CMakeBuild(build_ext):
         build_dir = os.path.join(extsource, "build")
         shutil.rmtree(build_dir, ignore_errors=True)
         os.mkdir(build_dir)
-        install_dir = os.getenv("INSTALL_DIR")
+        install_dir = os.getenv("INSTALL_DIR") or os.path.join(build_dir, "install")
         subprocess.run(
             ["cmake", f"-DCMAKE_INSTALL_PREFIX={install_dir}", os.pardir],
             cwd=build_dir,
@@ -89,6 +89,8 @@ class CMakeBuild(build_ext):
         os.makedirs(extdir, exist_ok=True)
         for lib_name in lib_names:
             shutil.copy(os.path.join(lib_folder, lib_name), extdir)
+        include_folder = os.path.join(install_dir, "include")
+        shutil.copytree(include_folder, extdir + "/include", dirs_exist_ok=True)
 
 
 class ConanBuild(build_ext):
@@ -130,9 +132,12 @@ class ConanBuild(build_ext):
             lib_folder = os.path.join(compnode["package_folder"], "lib")
             for lib in os.listdir(lib_folder):
                 libpath = os.path.join(lib_folder, lib)
-                # Don't copy the `cmake` directory.
                 if not os.path.isdir(libpath):
                     shutil.copy(libpath, extdir)
+
+            include_folder = os.path.join(compnode["package_folder"], "include")
+            if os.path.exists(include_folder):
+                shutil.copytree(include_folder, extdir + "/include", dirs_exist_ok=True)
 
 
 plat_name = os.getenv("WHEEL_PLAT_NAME")

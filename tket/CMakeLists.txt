@@ -435,15 +435,18 @@ if (BUILD_TKET_PROPTEST)
     add_subdirectory(proptest)
 endif()
 
+add_subdirectory(tket_c) # defines the tket_c target
+
 include(GNUInstallDirs)
 set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/tket)
 
-install(TARGETS tket
+install(TARGETS tket tket_c
     EXPORT tket-targets
-    FILE_SET HEADERS)
+    FILE_SET HEADERS DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
 
 if(MSVC)
-    install(TARGETS tket
+    install(TARGETS tket tket_c
         RUNTIME DESTINATION bin
         RUNTIME DESTINATION lib
         ARCHIVE DESTINATION lib
