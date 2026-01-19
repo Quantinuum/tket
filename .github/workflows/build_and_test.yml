@@ -29,7 +29,11 @@ jobs:
       run: docker create --name linux_build -i -v /:/host quay.io/pypa/manylinux_2_28_aarch64:latest /bin/bash
     - name: Copy source
       run: docker cp . linux_build:/tket/
-    - name: Build and upload tket-c-api
-      run: |
-        docker start linux_build
-        docker exec -e CONAN_PROFILE=linux-x86_64-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
+    - name: Start container
+      run: docker start linux_build
+    - name: Build and upload tket-c-api (x86)
+      if: matrix.os == 'ubuntu-24.04'
+      run: docker exec -e CONAN_PROFILE=linux-x86_64-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
+    - name: Build and upload tket-c-api (arm64)
+      if: matrix.os == 'ubuntu-24.04-arm'
+      run: docker exec -e CONAN_PROFILE=linux-armv8-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
