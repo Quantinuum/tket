@@ -90,7 +90,6 @@ add_library(tket)
 
 set(PROFILE_COVERAGE no CACHE BOOL "Build library with profiling for test coverage")
 IF (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_link_options(tket PUBLIC -pthread)
     IF (PROFILE_COVERAGE)
         target_compile_options(tket PRIVATE -g --coverage)
         target_link_options(tket PUBLIC --coverage)
