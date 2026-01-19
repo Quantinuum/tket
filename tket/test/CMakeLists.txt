@@ -199,6 +199,7 @@ target_link_libraries(test-tket PRIVATE tktokenswap::tktokenswap)
 
 set(WITH_COVERAGE no CACHE BOOL "Link library with profiling for test coverage")
 IF (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_link_options(test-tket PUBLIC -pthread)
     IF (WITH_COVERAGE)
         target_link_options(test-tket PUBLIC --coverage)
     ENDIF()
