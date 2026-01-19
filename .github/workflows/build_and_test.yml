@@ -246,6 +246,36 @@ jobs:
           ccache -s  #show stats
           ccache -z  #show stats
 
+  build_tket_c_api_manylinux:
+    name: Build tket-c-api and upload to artifactory
+    strategy:
+      matrix:
+        os: ['ubuntu-24.04', 'ubuntu-24.04-arm']
+    needs: check_changes
+    if: (needs.check_changes.outputs.tket_or_c_api_changed == 'true') && (github.event_name == 'push')
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: '0'
+    - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+    - name: Set up container (x86)
+      if: matrix.os == 'ubuntu-24.04'
+      run: docker create --name linux_build -i -v /:/host quay.io/pypa/manylinux_2_28_x86_64:latest /bin/bash
+    - name: Set up container (arm64)
+      if: matrix.os == 'ubuntu-24.04-arm'
+      run: docker create --name linux_build -i -v /:/host quay.io/pypa/manylinux_2_28_aarch64:latest /bin/bash
+    - name: Copy source
+      run: docker cp . linux_build:/tket/
+    - name: Start container
+      run: docker start linux_build
+    - name: Build and upload tket-c-api (x86)
+      if: matrix.os == 'ubuntu-24.04'
+      run: docker exec -e CONAN_PROFILE=linux-x86_64-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
+    - name: Build and upload tket-c-api (arm64)
+      if: matrix.os == 'ubuntu-24.04-arm'
+      run: docker exec -e CONAN_PROFILE=linux-armv8-gcc14 -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
+
   build_test_pytket_ubuntu:
     name: Build and test pytket (ubuntu)
     needs: check_changes
