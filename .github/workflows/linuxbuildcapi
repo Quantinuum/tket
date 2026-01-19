@@ -24,7 +24,7 @@ ${PYEX} -m venv env
 ${PYEX} -m pip install conan
 CONAN_CMD=${PYBIN}/conan
 ${CONAN_CMD} profile detect
-DEFAULT_PROFILE_PATH=`conan profile path default`
+DEFAULT_PROFILE_PATH=`${CONAN_CMD} profile path default`
 PROFILE_PATH=./conan-profiles/${CONAN_PROFILE}
 diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
 cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
