@@ -32,4 +32,4 @@ conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/t
 conan create tket-c-api -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True
 
 # Upload to artifactory
-conan upload tket-c-api/${TKET_VERSION}@tket/stable -r=tket-libs
+conan upload --dry-run tket-c-api/${TKET_VERSION}@tket/stable -r=tket-libs
