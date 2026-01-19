@@ -93,7 +93,7 @@ jobs:
       run: |
         conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
         conan upload ${{ env.LIB_LABEL }} -r=tket-libs
-  manylinux (x86):
+  manylinux_x86:
     name: build library (manylinux x86)
     needs: changes
     if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
@@ -126,7 +126,7 @@ jobs:
         CONAN_PROFILE=linux-x86_64-gcc14
         EOF
         docker exec --env-file env-vars linux_build /bin/bash -c "/linuxbuildlib"
-  manylinux (arm64):
+  manylinux_arm64:
     name: build library (manylinux arm64)
     needs: changes
     if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
