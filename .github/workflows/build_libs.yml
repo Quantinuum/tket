@@ -93,8 +93,8 @@ jobs:
       run: |
         conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
         conan upload ${{ env.LIB_LABEL }} -r=tket-libs
-  manylinux:
-    name: build library (manylinux)
+  manylinux (x86):
+    name: build library (manylinux x86)
     needs: changes
     if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     runs-on: ubuntu-24.04
@@ -124,5 +124,38 @@ jobs:
         JFROG_ARTIFACTORY_TOKEN_3=${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }}
         JFROG_ARTIFACTORY_USER_3=${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
         CONAN_PROFILE=linux-x86_64-gcc14
+        EOF
+        docker exec --env-file env-vars linux_build /bin/bash -c "/linuxbuildlib"
+  manylinux (arm64):
+    name: build library (manylinux arm64)
+    needs: changes
+    if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      matrix:
+        lib: ${{ fromJson(needs.changes.outputs.libs) }}
+    env:
+      UPLOAD_PACKAGE: "NO"
+    steps:
+    - uses: actions/checkout@v6
+    - name: set up container
+      run: |
+        docker create --name linux_build -i -v /:/host quay.io/pypa/manylinux_2_28_aarch64:latest /bin/bash
+        docker cp ./libs/${{ matrix.lib }} linux_build:/
+        docker cp ./libver linux_build:/
+        docker cp ./.github/workflows/linuxbuildlib linux_build:/
+        docker cp ./conan-profiles linux_build:/
+    - name: determine whether to upload package
+      if: github.event_name == 'push'
+      run: echo "UPLOAD_PACKAGE=YES" >> ${GITHUB_ENV}
+    - name: build ${{ matrix.lib }}
+      run: |
+        docker start linux_build
+        cat <<EOF > env-vars
+        TKLIB=${{ matrix.lib }}
+        UPLOAD_PACKAGE=${UPLOAD_PACKAGE}
+        JFROG_ARTIFACTORY_TOKEN_3=${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }}
+        JFROG_ARTIFACTORY_USER_3=${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
+        CONAN_PROFILE=linux-armv8-gcc14
         EOF
         docker exec --env-file env-vars linux_build /bin/bash -c "/linuxbuildlib"
