@@ -26,7 +26,3 @@ ENDIF()
 
 add_executable(test src/test.cpp)
 target_link_libraries(test tket::tket)
-
-IF (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_link_options(test-tket PUBLIC -pthread)
-ENDIF()
