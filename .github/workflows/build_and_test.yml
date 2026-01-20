@@ -272,7 +272,7 @@ jobs:
     - name: Start container
       run: docker start linux_build
     - name: Build and upload tket-c-api
-      run: docker exec -e CONAN_PROFILE=${{ matrix.profile }} -e TKET_VERSION=`cat TKET_VERSION` linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
+      run: docker exec -e CONAN_PROFILE=${{ matrix.profile }} -e TKET_VERSION=`cat TKET_VERSION` -e JFROG_ARTIFACTORY_TOKEN_3=${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} -e JFROG_ARTIFACTORY_USER_3=${{ secrets.JFROG_ARTIFACTORY_USER_3 }} linux_build /bin/bash -c "/tket/.github/workflows/linuxbuildcapi"
 
   build_test_pytket_ubuntu:
     name: Build and test pytket (ubuntu)

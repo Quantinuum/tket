@@ -35,5 +35,6 @@ ${CONAN_CMD} create tket --user=tket --channel=stable -o boost/*:header_only=Tru
 ${CONAN_CMD} create tket-c-api -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True
 
 # Upload to artifactory
+${CONAN_CMD} remote login -p ${JFROG_ARTIFACTORY_TOKEN_3} tket-libs ${JFROG_ARTIFACTORY_USER_3}
 ${CONAN_CMD} upload tket/${TKET_VERSION}@tket/stable -r=tket-libs
 ${CONAN_CMD} upload tket-c-api/${TKET_VERSION}@tket/stable -r=tket-libs
