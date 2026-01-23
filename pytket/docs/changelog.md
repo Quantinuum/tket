@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fix bug in `ZXGraphlikeOptimisation` where floating-point errors prevented identifying Clifford generators when angles had large absolute values.
+
 ## 2.11.0 (November 2025)
 
 - Fix segfault from `Circuit::get_resources()` with 0-qubit gates.
