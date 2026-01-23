@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-01-20 08:05:56</td>
+      <td>2026-01-23 14:49:20</td>
     </tr>
     <tr>
       <th scrope="row">Warnings:</th>
@@ -45,8 +45,8 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>271</td>
-      <td>300</td>
+      <td>270</td>
+      <td>299</td>
       <td class="coverage-high">90.3%</td>
     </tr>
     <tr>
@@ -57,8 +57,8 @@
     </tr>
     <tr>
       <th scope="row">Branches:</th>
-      <td>365</td>
-      <td>690</td>
+      <td>367</td>
+      <td>694</td>
       <td class="coverage-low">52.9%</td>
     </tr>
     <tr>
@@ -135,7 +135,7 @@
         <a href="#l393">393</a>
       </td>
       <td>
-        <a href="#l393"> called 13 times</a>
+        <a href="#l393"> called 14 times</a>
       </td>
     </tr>
     <tr>
@@ -146,7 +146,7 @@
         <a href="#l300">300</a>
       </td>
       <td>
-        <a href="#l300"> called 15 times</a>
+        <a href="#l300"> called 16 times</a>
       </td>
     </tr>
     <tr>
@@ -157,7 +157,7 @@
         <a href="#l298">298</a>
       </td>
       <td>
-        <a href="#l298"> called 12 times</a>
+        <a href="#l298"> called 13 times</a>
       </td>
     </tr>
     <tr>
@@ -168,7 +168,7 @@
         <a href="#l77">77</a>
       </td>
       <td>
-        <a href="#l77"> called 16 times</a>
+        <a href="#l77"> called 17 times</a>
       </td>
     </tr>
   </table>
@@ -807,17 +807,19 @@
       <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
+        <summary class="linebranchSummary">2/4</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 2 times.</div>
+          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">PhasedGen</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ZXType</span><span class="o">::</span><span class="n">Hbox</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">QuantumType</span><span class="o">::</span><span class="n">Quantum</span><span class="p">);</span></td>
+      <td class="src coveredLine"><span class="w">      </span><span class="n">ZXGen</span><span class="o">::</span><span class="n">create_gen</span><span class="p">(</span><span class="n">ZXType</span><span class="o">::</span><span class="n">Hbox</span><span class="p">,</span><span class="w"> </span><span class="n">Expr</span><span class="p">(</span><span class="mi">-1</span><span class="p">),</span><span class="w"> </span><span class="n">QuantumType</span><span class="o">::</span><span class="n">Quantum</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
@@ -825,24 +827,26 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">ZXGen_ptr</span><span class="w"> </span><span class="n">chad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">PhasedGen</span><span class="o">&gt;</span><span class="p">(</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="n">ZXGen_ptr</span><span class="w"> </span><span class="n">chad</span><span class="w"> </span><span class="o">=</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l53" href="#l53">53</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
+        <summary class="linebranchSummary">2/4</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
+          <div class="takenBranch">&check; Branch 4 taken 2 times.</div>
+          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
       <td class="linecount coveredLine">2</td>
-      <td class="src coveredLine"><span class="w">      </span><span class="n">ZXType</span><span class="o">::</span><span class="n">Hbox</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">QuantumType</span><span class="o">::</span><span class="n">Classical</span><span class="p">);</span></td>
+      <td class="src coveredLine"><span class="w">      </span><span class="n">ZXGen</span><span class="o">::</span><span class="n">create_gen</span><span class="p">(</span><span class="n">ZXType</span><span class="o">::</span><span class="n">Hbox</span><span class="p">,</span><span class="w"> </span><span class="n">Expr</span><span class="p">(</span><span class="mi">-1</span><span class="p">),</span><span class="w"> </span><span class="n">QuantumType</span><span class="o">::</span><span class="n">Classical</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
@@ -1175,7 +1179,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="kt">bool</span><span class="w"> </span><span class="nf">Rewrite::rebase_to_zx_fun</span><span class="p">(</span><span class="n">ZXDiagram</span><span class="o">&amp;</span><span class="w"> </span><span class="n">diag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1184,7 +1188,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">ZXVertVec</span><span class="w"> </span><span class="n">verts</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1193,20 +1197,20 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">7/8</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 17 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
-          <div class="takenBranch">&check; Branch 6 taken 802 times.</div>
-          <div class="takenBranch">&check; Branch 7 taken 16 times.</div>
-          <div class="takenBranch">&check; Branch 9 taken 802 times.</div>
-          <div class="takenBranch">&check; Branch 10 taken 16 times.</div>
-          <div class="takenBranch">&check; Branch 12 taken 16 times.</div>
-          <div class="takenBranch">&check; Branch 13 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 1497 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 1497 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 17 times.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">834</td>
+      <td class="linecount coveredLine">1531</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">BGL_FORALL_VERTICES</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">diag</span><span class="p">.</span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">ZXGraph</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1215,14 +1219,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 802 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1497 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">802</td>
+      <td class="linecount coveredLine">1497</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">ZXType</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">.</span><span class="n">get_zxtype</span><span class="p">(</span><span class="n">v</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1231,16 +1235,16 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">9/12</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 802 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1497 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 3 taken 714 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 88 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 714 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 1395 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 102 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 1395 times.</div>
           <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
           <div class="takenBranch">&check; Branch 8 taken 33 times.</div>
-          <div class="takenBranch">&check; Branch 9 taken 681 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 1362 times.</div>
           <div class="takenBranch">&check; Branch 10 taken 33 times.</div>
-          <div class="takenBranch">&check; Branch 11 taken 769 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 1464 times.</div>
           <div class="takenBranch">&check; Branch 13 taken 33 times.</div>
           <div class="notTakenBranch">&cross; Branch 14 not taken.</div>
         </div>
@@ -1250,12 +1254,12 @@
         <details class="linedecisionDetails">
           <summary class="linedecisionSummary">2/2</summary>
           <div class="linedecisionContents">
-            <div class="takenDecision">&check; Decision 'true' taken 49 times.</div>
-            <div class="takenDecision">&check; Decision 'false' taken 753 times.</div>
+            <div class="takenDecision">&check; Decision 'true' taken 50 times.</div>
+            <div class="takenDecision">&check; Decision 'false' taken 1447 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">802</td>
+      <td class="linecount coveredLine">1497</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">is_boundary_type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">is_spider_type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="w"> </span><span class="n">verts</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1274,7 +1278,7 @@
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 5 taken 33 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 17 times.</div>
         </div>
         </details>
       </td>
@@ -1283,11 +1287,11 @@
           <summary class="linedecisionSummary">2/2</summary>
           <div class="linedecisionContents">
             <div class="takenDecision">&check; Decision 'true' taken 33 times.</div>
-            <div class="takenDecision">&check; Decision 'false' taken 16 times.</div>
+            <div class="takenDecision">&check; Decision 'false' taken 17 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">49</td>
+      <td class="linecount coveredLine">50</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ZXVert</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">verts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4306,7 +4310,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">32</td>
+      <td class="linecount coveredLine">34</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">verts</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -4315,7 +4319,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -4333,14 +4337,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 13 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">13</td>
       <td class="src coveredLine"><span class="n">Rewrite</span><span class="w"> </span><span class="nf">Rewrite::rebase_to_zx</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Rewrite</span><span class="p">(</span><span class="n">rebase_to_zx_fun</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -4358,7 +4362,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">15</td>
+      <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="kt">bool</span><span class="w"> </span><span class="nf">Rewrite::rebase_to_mbqc_fun</span><span class="p">(</span><span class="n">ZXDiagram</span><span class="o">&amp;</span><span class="w"> </span><span class="n">diag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4367,7 +4371,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">15</td>
+      <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">ZXVertVec</span><span class="w"> </span><span class="n">verts</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -4376,20 +4380,20 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">7/8</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 15 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 16 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
-          <div class="takenBranch">&check; Branch 6 taken 342 times.</div>
-          <div class="takenBranch">&check; Branch 7 taken 15 times.</div>
-          <div class="takenBranch">&check; Branch 9 taken 342 times.</div>
-          <div class="takenBranch">&check; Branch 10 taken 15 times.</div>
-          <div class="takenBranch">&check; Branch 12 taken 15 times.</div>
-          <div class="takenBranch">&check; Branch 13 taken 15 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 401 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 401 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 16 times.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">372</td>
+      <td class="linecount coveredLine">433</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">BGL_FORALL_VERTICES</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">diag</span><span class="p">.</span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">ZXGraph</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4398,14 +4402,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 342 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 401 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">342</td>
+      <td class="linecount coveredLine">401</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">ZXType</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">.</span><span class="n">get_zxtype</span><span class="p">(</span><span class="n">v</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -4414,17 +4418,17 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">9/12</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 342 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 401 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 3 taken 260 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 82 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 260 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 305 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 96 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 305 times.</div>
           <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
-          <div class="takenBranch">&check; Branch 8 taken 254 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 299 times.</div>
           <div class="takenBranch">&check; Branch 9 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 10 taken 254 times.</div>
-          <div class="takenBranch">&check; Branch 11 taken 88 times.</div>
-          <div class="takenBranch">&check; Branch 13 taken 254 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 299 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 102 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 299 times.</div>
           <div class="notTakenBranch">&cross; Branch 14 not taken.</div>
         </div>
         </details>
@@ -4433,12 +4437,12 @@
         <details class="linedecisionDetails">
           <summary class="linedecisionSummary">2/2</summary>
           <div class="linedecisionContents">
-            <div class="takenDecision">&check; Decision 'true' taken 269 times.</div>
-            <div class="takenDecision">&check; Decision 'false' taken 73 times.</div>
+            <div class="takenDecision">&check; Decision 'true' taken 315 times.</div>
+            <div class="takenDecision">&check; Decision 'false' taken 86 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">342</td>
+      <td class="linecount coveredLine">401</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">is_boundary_type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">is_MBQC_type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="w"> </span><span class="n">verts</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -4456,8 +4460,8 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 5 taken 254 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 15 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 299 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 16 times.</div>
         </div>
         </details>
       </td>
@@ -4465,12 +4469,12 @@
         <details class="linedecisionDetails">
           <summary class="linedecisionSummary">2/2</summary>
           <div class="linedecisionContents">
-            <div class="takenDecision">&check; Decision 'true' taken 254 times.</div>
-            <div class="takenDecision">&check; Decision 'false' taken 15 times.</div>
+            <div class="takenDecision">&check; Decision 'true' taken 299 times.</div>
+            <div class="takenDecision">&check; Decision 'false' taken 16 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">269</td>
+      <td class="linecount coveredLine">315</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ZXVert</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">verts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4479,9 +4483,9 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/7</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 254 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 299 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 3 taken 226 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 271 times.</div>
           <div class="takenBranch">&check; Branch 4 taken 26 times.</div>
           <div class="takenBranch">&check; Branch 5 taken 2 times.</div>
           <div class="notTakenBranch">&cross; Branch 6 not taken.</div>
@@ -4491,7 +4495,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">254</td>
+      <td class="linecount coveredLine">299</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">diag</span><span class="p">.</span><span class="n">get_zxtype</span><span class="p">(</span><span class="n">v</span><span class="p">))</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4502,11 +4506,11 @@
         <details class="linedecisionDetails">
           <summary class="linedecisionSummary">1/1</summary>
           <div class="linedecisionContents">
-            <div class="takenDecision">&check; Decision 'true' taken 226 times.</div>
+            <div class="takenDecision">&check; Decision 'true' taken 271 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">ZXType</span><span class="o">::</span><span class="no">ZSpider</span><span class="p">:</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4515,14 +4519,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 226 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 271 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">ZXGen_ptr</span><span class="w"> </span><span class="n">vgen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">.</span><span class="n">get_vertex_ZXGen_ptr</span><span class="p">(</span><span class="n">v</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -4531,7 +4535,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">PhasedGen</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">PhasedGen</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">vgen</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -4540,16 +4544,16 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/4</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 226 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 271 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 4 taken 226 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 271 times.</div>
           <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi2_mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">equiv_Clifford</span><span class="p">(</span><span class="n">vg</span><span class="p">.</span><span class="n">get_param</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -4558,7 +4562,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">ZXGen_ptr</span><span class="w"> </span><span class="n">new_gen</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -4567,8 +4571,8 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 135 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 91 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 157 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 114 times.</div>
         </div>
         </details>
       </td>
@@ -4576,12 +4580,12 @@
         <details class="linedecisionDetails">
           <summary class="linedecisionSummary">2/2</summary>
           <div class="linedecisionContents">
-            <div class="takenDecision">&check; Decision 'true' taken 135 times.</div>
-            <div class="takenDecision">&check; Decision 'false' taken 91 times.</div>
+            <div class="takenDecision">&check; Decision 'true' taken 157 times.</div>
+            <div class="takenDecision">&check; Decision 'false' taken 114 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pi2_mult</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -4590,8 +4594,8 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 134 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 151 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 6 times.</div>
         </div>
         </details>
       </td>
@@ -4599,12 +4603,12 @@
         <details class="linedecisionDetails">
           <summary class="linedecisionSummary">2/2</summary>
           <div class="linedecisionContents">
-            <div class="takenDecision">&check; Decision 'true' taken 134 times.</div>
-            <div class="takenDecision">&check; Decision 'false' taken 1 times.</div>
+            <div class="takenDecision">&check; Decision 'true' taken 151 times.</div>
+            <div class="takenDecision">&check; Decision 'false' taken 6 times.</div>
           </div>
         </details>
       </td>
-      <td class="linecount coveredLine">135</td>
+      <td class="linecount coveredLine">157</td>
       <td class="src coveredLine"><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pi2_mult</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></td>
     </tr>
     <tr class="source-line">
@@ -4613,7 +4617,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">134</td>
+      <td class="linecount coveredLine">151</td>
       <td class="src coveredLine"><span class="w">            </span><span class="n">new_gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZXGen</span><span class="o">::</span><span class="n">create_gen</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
@@ -4622,16 +4626,16 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/4</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 134 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 151 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 6 taken 134 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 151 times.</div>
           <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">268</td>
+      <td class="linecount coveredLine">302</td>
       <td class="src coveredLine"><span class="w">                </span><span class="n">ZXType</span><span class="o">::</span><span class="n">PX</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pi2_mult</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="n">vg</span><span class="p">.</span><span class="n">get_qtype</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -4649,7 +4653,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">1</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="w">            </span><span class="n">new_gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ZXGen</span><span class="o">::</span><span class="n">create_gen</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
@@ -4658,16 +4662,16 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/4</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 6 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 6 times.</div>
           <div class="notTakenBranch">&cross; Branch 7 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">2</td>
+      <td class="linecount coveredLine">12</td>
       <td class="src coveredLine"><span class="w">                </span><span class="n">ZXType</span><span class="o">::</span><span class="n">PY</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pi2_mult</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="n">vg</span><span class="p">.</span><span class="n">get_qtype</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -4694,20 +4698,20 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/8</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 91 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 114 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 5 taken 91 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 114 times.</div>
           <div class="notTakenBranch">&cross; Branch 6 not taken.</div>
-          <div class="takenBranch">&check; Branch 8 taken 91 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 114 times.</div>
           <div class="notTakenBranch">&cross; Branch 9 not taken.</div>
-          <div class="takenBranch">&check; Branch 11 taken 91 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 114 times.</div>
           <div class="notTakenBranch">&cross; Branch 12 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">91</td>
+      <td class="linecount coveredLine">114</td>
       <td class="src coveredLine"><span class="w">              </span><span class="n">ZXGen</span><span class="o">::</span><span class="n">create_gen</span><span class="p">(</span><span class="n">ZXType</span><span class="o">::</span><span class="n">XY</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">vg</span><span class="p">.</span><span class="n">get_param</span><span class="p">(),</span><span class="w"> </span><span class="o">*</span><span class="n">vg</span><span class="p">.</span><span class="n">get_qtype</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -4716,14 +4720,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 226 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 271 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">diag</span><span class="p">.</span><span class="n">set_vertex_ZXGen_ptr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">new_gen</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -4732,7 +4736,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">break</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -4741,7 +4745,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">226</td>
+      <td class="linecount coveredLine">271</td>
       <td class="src coveredLine"><span class="w">      </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -5573,7 +5577,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">32</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">verts</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -5582,7 +5586,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">15</td>
+      <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -5600,14 +5604,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 13 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 14 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">13</td>
+      <td class="linecount coveredLine">14</td>
       <td class="src coveredLine"><span class="n">Rewrite</span><span class="w"> </span><span class="nf">Rewrite::rebase_to_mbqc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Rewrite</span><span class="p">(</span><span class="n">rebase_to_mbqc_fun</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
