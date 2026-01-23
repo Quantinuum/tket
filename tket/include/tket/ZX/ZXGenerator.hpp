@@ -184,7 +184,7 @@ class ZXGen {
   static ZXGen_ptr create_gen(
       ZXType type, QuantumType qtype = QuantumType::Quantum);
   static ZXGen_ptr create_gen(
-      ZXType type, const Expr& param, QuantumType qtype = QuantumType::Quantum);
+      ZXType type, Expr param, QuantumType qtype = QuantumType::Quantum);
   static ZXGen_ptr create_gen(
       ZXType type, bool param, QuantumType qtype = QuantumType::Quantum);
 

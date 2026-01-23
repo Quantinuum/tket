@@ -34,7 +34,7 @@ SCENARIO("Check converting gates to spiders") {
     REQUIRE(zx.get_zxtype(x) == ZXType::XSpider);
     PhasedGen x_gen = zx.get_vertex_ZXGen<PhasedGen>(x);
     REQUIRE(x_gen.get_qtype() == QuantumType::Quantum);
-    REQUIRE(x_gen.get_param() == 1);
+    REQUIRE(x_gen.get_param() == 1.);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 1));
     REQUIRE(zx.n_vertices() == 3);
     REQUIRE(zx.n_wires() == 2);
@@ -70,7 +70,7 @@ SCENARIO("Check converting gates to spiders") {
     REQUIRE(zx.get_zxtype(z) == ZXType::ZSpider);
     PhasedGen z_gen = zx.get_vertex_ZXGen<PhasedGen>(z);
     REQUIRE(z_gen.get_qtype() == QuantumType::Quantum);
-    REQUIRE(z_gen.get_param() == 1);
+    REQUIRE(z_gen.get_param() == 1.);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 1));
     REQUIRE(zx.n_vertices() == 3);
     REQUIRE(zx.n_wires() == 2);
@@ -127,8 +127,8 @@ SCENARIO("Check converting gates to spiders") {
     REQUIRE(zx.get_zxtype(targ) == ZXType::XSpider);
     PhasedGen ctr_gen = zx.get_vertex_ZXGen<PhasedGen>(ctr);
     PhasedGen targ_gen = zx.get_vertex_ZXGen<PhasedGen>(targ);
-    REQUIRE(ctr_gen.get_param() == 0);
-    REQUIRE(targ_gen.get_param() == 0);
+    REQUIRE(ctr_gen.get_param() == 0.);
+    REQUIRE(targ_gen.get_param() == 0.);
     REQUIRE(ctr_gen.get_qtype() == QuantumType::Quantum);
     REQUIRE(targ_gen.get_qtype() == QuantumType::Quantum);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 2));
@@ -154,8 +154,8 @@ SCENARIO("Check converting gates to spiders") {
     REQUIRE(zx.get_zxtype(targ) == ZXType::ZSpider);
     PhasedGen ctr_gen = zx.get_vertex_ZXGen<PhasedGen>(ctr);
     PhasedGen targ_gen = zx.get_vertex_ZXGen<PhasedGen>(targ);
-    REQUIRE(ctr_gen.get_param() == 0);
-    REQUIRE(targ_gen.get_param() == 0);
+    REQUIRE(ctr_gen.get_param() == 0.);
+    REQUIRE(targ_gen.get_param() == 0.);
     REQUIRE(ctr_gen.get_qtype() == QuantumType::Quantum);
     REQUIRE(targ_gen.get_qtype() == QuantumType::Quantum);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 1));
@@ -184,8 +184,8 @@ SCENARIO("Check converting gates to spiders") {
     PhasedGen gen1 = zx.get_vertex_ZXGen<PhasedGen>(vert1);
     REQUIRE(zx.degree(vert0) == 3);
     REQUIRE(zx.degree(vert1) == 1);
-    REQUIRE(gen0.get_param() == 0);
-    REQUIRE(gen1.get_param() == 0);
+    REQUIRE(gen0.get_param() == 0.);
+    REQUIRE(gen1.get_param() == 0.);
     REQUIRE(gen0.get_qtype() == QuantumType::Classical);
     REQUIRE(gen1.get_qtype() == QuantumType::Classical);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 1));
@@ -213,8 +213,8 @@ SCENARIO("Check converting gates to spiders") {
     PhasedGen gen1 = zx.get_vertex_ZXGen<PhasedGen>(init);
     REQUIRE(zx.degree(discard) == 1);
     REQUIRE(zx.degree(init) == 1);
-    REQUIRE(gen0.get_param() == 0);
-    REQUIRE(gen1.get_param() == 0);
+    REQUIRE(gen0.get_param() == 0.);
+    REQUIRE(gen1.get_param() == 0.);
     REQUIRE(gen0.get_qtype() == QuantumType::Classical);
     REQUIRE(gen1.get_qtype() == QuantumType::Quantum);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 0.5));
@@ -370,7 +370,7 @@ SCENARIO("Check converting gates to spiders") {
     REQUIRE(zx.get_zxtype(x) == ZXType::XSpider);
     PhasedGen x_gen = zx.get_vertex_ZXGen<PhasedGen>(x);
     REQUIRE(x_gen.get_qtype() == QuantumType::Quantum);
-    REQUIRE(x_gen.get_param() == 0);
+    REQUIRE(x_gen.get_param() == 0.);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 0.5));
     REQUIRE(zx.n_vertices() == 2);
     REQUIRE(zx.n_wires() == 1);
@@ -392,7 +392,7 @@ SCENARIO("Check converting gates to spiders") {
     REQUIRE(zx.get_zxtype(z) == ZXType::ZSpider);
     PhasedGen z_gen = zx.get_vertex_ZXGen<PhasedGen>(z);
     REQUIRE(z_gen.get_qtype() == QuantumType::Classical);
-    REQUIRE(z_gen.get_param() == 0);
+    REQUIRE(z_gen.get_param() == 0.);
     REQUIRE(test_equiv_expr_c(zx.get_scalar(), 1));
     REQUIRE(zx.n_vertices() == 2);
     REQUIRE(zx.n_wires() == 1);
@@ -451,13 +451,13 @@ SCENARIO("Check converting gates to spiders") {
           REQUIRE(zx.degree(mid_v) == 3);
           REQUIRE(mid_gen.get_type() == ZXType::ZSpider);
           REQUIRE(mid_gen.get_qtype() == QuantumType::Quantum);
-          REQUIRE(mid_gen.get_param() == 0);
+          REQUIRE(mid_gen.get_param() == 0.);
           break;
         case 2:
           REQUIRE(zx.degree(mid_v) == 3);
           REQUIRE(mid_gen.get_type() == ZXType::XSpider);
           REQUIRE(mid_gen.get_qtype() == QuantumType::Quantum);
-          REQUIRE(mid_gen.get_param() == 0);
+          REQUIRE(mid_gen.get_param() == 0.);
           break;
         case 3:
           REQUIRE(zx.degree(mid_v) == 2);

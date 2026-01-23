@@ -243,7 +243,7 @@ SCENARIO("Check that diagram conversions achieve the correct form") {
       }
       ZXVertVec ins = doubled.get_boundary(ZXType::Input);
       CHECK(doubled.get_name(doubled.neighbours(ins[0])[0]) == "C-Z(0.3)");
-      CHECK(doubled.get_name(doubled.neighbours(ins[1])[0]) == "C-Z(-0.3)");
+      CHECK(doubled.get_name(doubled.neighbours(ins[1])[0]) == "C-Z(1.7)");
     }
     GIVEN("Embedding classical boundaries into quantum states") {
       ZXDiagram embedded = diag.to_quantum_embedding();

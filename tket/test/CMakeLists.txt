@@ -209,6 +209,7 @@ install(FILES
             src/test_circuits/bug777_circuit.json
             src/test_circuits/lexiroute_circuit.json
             src/test_circuits/lexiroute_circuit_relabel_to_ancilla.json
+            src/test_circuits/weirdzx.json
         DESTINATION bin)
 
 install(TARGETS test-tket DESTINATION "."
