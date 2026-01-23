@@ -48,9 +48,9 @@ Rewrite Rewrite::decompose_boxes() { return Rewrite(decompose_boxes_fun); }
 
 bool Rewrite::basic_wires_fun(ZXDiagram& diag) {
   ZXGen_ptr qhad =
-      std::make_shared<const PhasedGen>(ZXType::Hbox, -1, QuantumType::Quantum);
-  ZXGen_ptr chad = std::make_shared<const PhasedGen>(
-      ZXType::Hbox, -1, QuantumType::Classical);
+      ZXGen::create_gen(ZXType::Hbox, Expr(-1), QuantumType::Quantum);
+  ZXGen_ptr chad =
+      ZXGen::create_gen(ZXType::Hbox, Expr(-1), QuantumType::Classical);
   WireVec targets;
   BGL_FORALL_EDGES(w, *diag.graph, ZXGraph) {
     if (diag.get_wire_type(w) == ZXWireType::H) targets.push_back(w);

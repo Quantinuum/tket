@@ -77,7 +77,7 @@ bool Rewrite::remove_interior_cliffords_fun(ZXDiagram& diag) {
           *xi_op.get_qtype() == QuantumType::Classical)
         continue;
       // Update phase information
-      ZXGen_ptr xi_new_op = std::make_shared<const PhasedGen>(
+      ZXGen_ptr xi_new_op = ZXGen::create_gen(
           ZXType::ZSpider, xi_op.get_param() - spid.get_param(),
           *xi_op.get_qtype());
       diag.set_vertex_ZXGen_ptr(*xi, xi_new_op);
@@ -98,7 +98,7 @@ static void add_phase_to_vertices(
     ZXDiagram& diag, const ZXVertSeqSet& verts, const Expr& phase) {
   for (const ZXVert& v : verts.get<TagSeq>()) {
     const PhasedGen& old_spid = diag.get_vertex_ZXGen<PhasedGen>(v);
-    ZXGen_ptr new_spid = std::make_shared<const PhasedGen>(
+    ZXGen_ptr new_spid = ZXGen::create_gen(
         ZXType::ZSpider, old_spid.get_param() + phase, *old_spid.get_qtype());
     diag.set_vertex_ZXGen_ptr(v, new_spid);
   }
@@ -256,9 +256,9 @@ bool Rewrite::gadgetise_interior_paulis_fun(ZXDiagram& diag) {
     std::optional<unsigned> pi2_mult = equiv_Clifford(v_spid.get_param());
     Expr new_phase = ((*pi2_mult % 4 == 0) ? 1. : -1.) * u_spid.get_param();
     diag.set_vertex_ZXGen_ptr(
-        u, std::make_shared<PhasedGen>(ZXType::ZSpider, new_phase, vqtype));
+        u, ZXGen::create_gen(ZXType::ZSpider, new_phase, vqtype));
     diag.set_vertex_ZXGen_ptr(
-        v, std::make_shared<PhasedGen>(ZXType::ZSpider, 0., vqtype));
+        v, ZXGen::create_gen(ZXType::ZSpider, Expr(0.), vqtype));
 
     // Because `can_complement_neighbourhood` checks all neighbours,
     // v and u have the same QuantumType
@@ -310,8 +310,7 @@ bool Rewrite::extend_at_boundary_paulis_fun(ZXDiagram& diag) {
     // extend it
     ZXGen_ptr u_op = diag.get_vertex_ZXGen_ptr(u);
     QuantumType qtype = *u_op->get_qtype();
-    ZXGen_ptr id =
-        std::make_shared<const PhasedGen>(ZXType::ZSpider, 0., qtype);
+    ZXGen_ptr id = ZXGen::create_gen(ZXType::ZSpider, Expr(0.), qtype);
     ZXVert z1 = diag.add_vertex(id);
     ZXVert z2 = diag.add_vertex(u_op);
     diag.add_wire(u, z1, ZXWireType::H, qtype);
@@ -347,8 +346,8 @@ bool Rewrite::merge_gadgets_fun(ZXDiagram& diag) {
             diag.get_vertex_ZXGen<PhasedGen>(other_gadget).get_param();
         Expr this_param = diag.get_vertex_ZXGen<PhasedGen>(v).get_param();
         diag.set_vertex_ZXGen_ptr(
-            other_gadget, std::make_shared<PhasedGen>(
-                              ZXType::ZSpider, other_param + this_param));
+            other_gadget,
+            ZXGen::create_gen(ZXType::ZSpider, other_param + this_param));
         to_remove.push_back(v);
         to_remove.push_back(axis);
       }

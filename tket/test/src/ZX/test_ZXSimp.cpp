@@ -17,6 +17,7 @@
 #include <string>
 
 #include "tket/Converters/Converters.hpp"
+#include "tket/Predicates/PassGenerators.hpp"
 #include "tket/Predicates/PassLibrary.hpp"
 #include "tket/Transformations/Rebase.hpp"
 #include "tket/ZX/Rewrite.hpp"
@@ -256,6 +257,21 @@ SCENARIO("ZXGraphlikeOptimisation") {
     std::optional<std::string> name = circ1.get_name();
     REQUIRE(name.has_value());
     REQUIRE(*name == "Fred");
+  }
+}
+
+SCENARIO("Floating-point errors at large absolute phase values") {
+  GIVEN("Long circuit where phases accumulate lots under rewriting") {
+    // https://github.com/Quantinuum/tket/issues/2104
+    std::ifstream circuit_file("weirdzx.json");
+    nlohmann::json j = nlohmann::json::parse(circuit_file);
+    Circuit c = j.get<Circuit>();
+    OpTypeSet ops = {OpType::Input, OpType::Output, OpType::noop, OpType::SWAP,
+                     OpType::H,     OpType::Rz,     OpType::Rx,   OpType::X,
+                     OpType::Z,     OpType::CX,     OpType::CZ};
+    CompilationUnit cu(c);
+    gen_auto_rebase_pass(ops, false)->apply(cu);
+    REQUIRE_NOTHROW(ZXGraphlikeOptimisation()->apply(cu));
   }
 }
 

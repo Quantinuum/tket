@@ -125,14 +125,19 @@ ZXGen_ptr ZXGen::create_gen(ZXType type, QuantumType qtype) {
   return op;
 }
 
-ZXGen_ptr ZXGen::create_gen(ZXType type, const Expr& param, QuantumType qtype) {
+ZXGen_ptr ZXGen::create_gen(ZXType type, Expr param, QuantumType qtype) {
   ZXGen_ptr op;
   switch (type) {
     case ZXType::ZSpider:
     case ZXType::XSpider:
     case ZXType::XY:
     case ZXType::XZ:
-    case ZXType::YZ:
+    case ZXType::YZ: {
+      std::optional<double> mod = eval_expr_mod(param);
+      if (mod) param = *mod;
+      op = std::make_shared<const PhasedGen>(type, param, qtype);
+      break;
+    }
     case ZXType::Hbox: {
       op = std::make_shared<const PhasedGen>(type, param, qtype);
       break;
@@ -255,7 +260,7 @@ SymSet PhasedGen::free_symbols() const { return expr_free_symbols(param_); }
 
 ZXGen_ptr PhasedGen::symbol_substitution(
     const SymEngine::map_basic_basic& sub_map) const {
-  return std::make_shared<const PhasedGen>(type_, param_.subs(sub_map), qtype_);
+  return ZXGen::create_gen(type_, param_.subs(sub_map), qtype_);
 }
 
 std::string PhasedGen::get_name(bool) const {

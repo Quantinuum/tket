@@ -39,7 +39,7 @@ bool Rewrite::separate_boundaries_fun(ZXDiagram& diag) {
     }
     // New wires will inherit `w`'s `qtype`
     QuantumType wq = diag.get_qtype(w);
-    ZXGen_ptr id = std::make_shared<const PhasedGen>(ZXType::ZSpider, 0., wq);
+    ZXGen_ptr id = ZXGen::create_gen(ZXType::ZSpider, Expr(0.), wq);
     ZXVert z_at_b = diag.add_vertex(id);
     diag.add_wire(b, z_at_b, ZXWireType::Basic, wq);
     ZXVert z_at_o;
