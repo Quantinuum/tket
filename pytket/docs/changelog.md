@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.12.0 (January 2026)
 
 - Fix bug in `ZXGraphlikeOptimisation` where floating-point errors prevented identifying Clifford generators when angles had large absolute values.
 
