@@ -1,3 +1,5 @@
+"""The tailoring module provides access to noise tailoring tools."""
+
 from collections.abc import Mapping, Set
 
 import pytket._tket.circuit
