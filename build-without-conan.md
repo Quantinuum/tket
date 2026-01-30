@@ -134,9 +134,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/wjakob/nanobind/archive/refs/tags/v2.10.2.tar.gz
-tar xzvf v2.10.2.tar.gz
-cd nanobind-2.10.2/
+wget https://github.com/wjakob/nanobind/archive/refs/tags/v2.11.0.tar.gz
+tar xzvf v2.11.0.tar.gz
+cd nanobind-2.11.0/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$(INSTALL_DIR) -DNB_TEST=OFF -DNB_USE_SUBMODULE_DEPS=OFF ..
