@@ -14,15 +14,15 @@
 
 """Python Interface to tket"""
 
-import pytket.architecture  # noqa: I001
-from pytket.circuit import (
-    Circuit,
-    OpType,
-)
+import pytket.architecture
 import pytket.mapping
 import pytket.placement
 import pytket.transform
 from pytket._version import __version__
+from pytket.circuit import (
+    Circuit,
+    OpType,
+)
 from pytket.config import PytketConfig, get_config_file_path
 from pytket.unit_id import (
     Bit,
@@ -42,3 +42,15 @@ __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 If True, classical transforms and predicates, and QASM registers, with up to 64
 bits are supported."""
 bit_width_64 = True
+
+__all__ = [
+    "Bit",
+    "Circuit",
+    "OpType",
+    "PytketConfig",
+    "Qubit",
+    "__path__",
+    "__version__",
+    "bit_width_64",
+    "get_config_file_path",
+]
