@@ -588,6 +588,13 @@ void def_circuit(nb::class_<Circuit> &pyCircuit) {
           },
           ":return: a JSON serializable dictionary representation of "
           "the Circuit")
+      .def(
+          "to_json",
+          [](const Circuit &c) {
+            return json(c).dump();
+          },
+          ":return: a JSON serialized UTF-8 string representation of "
+          "the Circuit")
       .def_static(
           "from_dict",
           [](const nb::dict &circuit_dict) {
@@ -595,6 +602,14 @@ void def_circuit(nb::class_<Circuit> &pyCircuit) {
           },
           "Construct Circuit instance from JSON serializable "
           "dictionary representation of the Circuit.")
+      .def_static(
+          "from_json",
+          [](const std::string &circuit_str) {
+            Circuit c = json::parse(circuit_str);
+            return c;
+          },
+          "Construct Circuit instance from JSON serialized "
+          "UTF-8 string representation of the Circuit.")
       .def(
           "__getstate__",
           [](const Circuit &circ) {

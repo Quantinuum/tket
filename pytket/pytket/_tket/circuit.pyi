@@ -2115,10 +2115,19 @@ class Circuit:
     def to_dict(self) -> dict:
         """:return: a JSON serializable dictionary representation of the Circuit"""
 
+    def to_json(self) -> str:
+        """:return: a JSON serialized UTF-8 string representation of the Circuit"""
+
     @staticmethod
     def from_dict(arg: dict, /) -> Circuit:
         """
         Construct Circuit instance from JSON serializable dictionary representation of the Circuit.
+        """
+
+    @staticmethod
+    def from_json(arg: str, /) -> Circuit:
+        """
+        Construct Circuit instance from JSON serialized UTF-8 string representation of the Circuit.
         """
 
     def __getstate__(self) -> tuple: ...
