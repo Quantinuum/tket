@@ -589,10 +589,7 @@ void def_circuit(nb::class_<Circuit> &pyCircuit) {
           ":return: a JSON serializable dictionary representation of "
           "the Circuit")
       .def(
-          "to_json",
-          [](const Circuit &c) {
-            return json(c).dump();
-          },
+          "to_json", [](const Circuit &c) { return json(c).dump(); },
           ":return: a JSON serialized UTF-8 string representation of "
           "the Circuit")
       .def_static(
