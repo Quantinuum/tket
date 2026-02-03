@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+Features:
+
+- Add `to_json` and `from_json` methods to the Circuit class that allow direct serialisation to/from json strings.
+
+
 ## 2.12.0 (January 2026)
 
 - Fix bug in `ZXGraphlikeOptimisation` where floating-point errors prevented identifying Clifford generators when angles had large absolute values.
