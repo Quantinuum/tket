@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.13.0 (February 2026)
 
 Features:
 
