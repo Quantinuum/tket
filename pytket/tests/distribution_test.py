@@ -97,7 +97,7 @@ def test_mapping() -> None:
     assert ed1 == EmpiricalDistribution(Counter({0: 7, 1: 2}))
 
     pd = ProbabilityDistribution({(0, 0): 0.3, (0, 1): 0.3, (1, 0): 0.4, (1, 1): 0.0})
-    pd0 = pd.map(lambda x: sum(x))
+    pd0 = pd.map(sum)
     assert pd0 == ProbabilityDistribution({0: 0.3, 1: 0.7})
 
 

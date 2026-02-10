@@ -61,7 +61,8 @@ def test_generator_creation() -> None:
     spid_gen = diag.get_vertex_ZXGen(z_spid)
     assert repr(spid_gen) == "Q-Z(0.3)"
 
-    pytest.raises(RuntimeError, diag.add_vertex, ZXType.Triangle, 0.3)
+    with pytest.raises(RuntimeError):
+        diag.add_vertex(ZXType.Triangle, 0.3)
 
     tri = diag.add_vertex(ZXType.Triangle, QuantumType.Classical)
     tri_gen = diag.get_vertex_ZXGen(tri)
@@ -74,7 +75,8 @@ def test_diagram_creation() -> None:  # noqa: PLR0915
     x_spid = diag.add_vertex(ZXType.XSpider, 3.4)
     z_spid2 = diag.add_vertex(ZXType.ZSpider, 6.7, QuantumType.Classical)
 
-    pytest.raises(RuntimeError, diag.add_vertex, ZXType.ZXBox, 3.0)
+    with pytest.raises(RuntimeError):
+        diag.add_vertex(ZXType.ZXBox, 3.0)
 
     with pytest.raises(RuntimeError) as errorinfo:
         diag.check_validity()
