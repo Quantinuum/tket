@@ -577,6 +577,90 @@ SCENARIO("Complete synthesis") {
     REQUIRE(c2 == d2);
   }
 
+  GIVEN("XY rest") {
+    Circuit c(1);
+    c.add_op<unsigned>(OpType::H, {0});
+    c.add_op<unsigned>(OpType::S, {0});
+    c.add_op<unsigned>(OpType::Reset, {0});
+    // c is equivalent to Rest(X/Y);H;S
+    // GPS should implement Rest(X/Y) as H;S;Reset(Z/X);Sdg;H
+    Circuit d(1);
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::S, {0});
+    d.add_op<unsigned>(OpType::Reset, {0});
+    d.add_op<unsigned>(OpType::Sdg, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::S, {0});
+
+    REQUIRE(Transforms::greedy_pauli_optimisation().apply(c));
+    REQUIRE(c == d);
+  }
+
+  GIVEN("XZ rest") {
+    Circuit c(1);
+    c.add_op<unsigned>(OpType::H, {0});
+    c.add_op<unsigned>(OpType::Reset, {0});
+    // c is equivalent to Rest(X/Z);H
+    // GPS should implement Rest(X/Z) as H;Reset(Z/X);H
+    Circuit d(1);
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::Reset, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    REQUIRE(Transforms::greedy_pauli_optimisation().apply(c));
+    REQUIRE(c == d);
+  }
+
+  GIVEN("YX rest") {
+    Circuit c(1);
+    c.add_op<unsigned>(OpType::V, {0});
+    c.add_op<unsigned>(OpType::Reset, {0});
+    // c is equivalent to Rest(Y/X);V
+    // GPS should implement Rest(Y/X) as V;Reset(Z/X);Vdg
+    Circuit d(1);
+    d.add_op<unsigned>(OpType::V, {0});
+    d.add_op<unsigned>(OpType::Reset, {0});
+    d.add_op<unsigned>(OpType::Vdg, {0});
+    d.add_op<unsigned>(OpType::V, {0});
+    REQUIRE(Transforms::greedy_pauli_optimisation().apply(c));
+    REQUIRE(c == d);
+  }
+
+  GIVEN("YZ rest") {
+    Circuit c(1);
+    c.add_op<unsigned>(OpType::Sdg, {0});
+    c.add_op<unsigned>(OpType::H, {0});
+    c.add_op<unsigned>(OpType::Reset, {0});
+    // c is equivalent to Rest(Y/Z);Sdg;H
+    // GPS should implement Rest(Y/Z) as Sdg;H;Reset(Z/X);H;S
+    Circuit d(1);
+    d.add_op<unsigned>(OpType::Sdg, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::Reset, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    d.add_op<unsigned>(OpType::S, {0});
+    d.add_op<unsigned>(OpType::Sdg, {0});
+    d.add_op<unsigned>(OpType::H, {0});
+    REQUIRE(Transforms::greedy_pauli_optimisation().apply(c));
+    REQUIRE(c == d);
+  }
+
+  GIVEN("ZY rest") {
+    Circuit c(1);
+    c.add_op<unsigned>(OpType::Sdg, {0});
+    c.add_op<unsigned>(OpType::Reset, {0});
+    // c is equivalent to Rest(Z/Y);Sdg
+    // GPS should implement Rest(Z/Y) as Sdg;Reset(Z/X);S
+    Circuit d(1);
+    d.add_op<unsigned>(OpType::Sdg, {0});
+    d.add_op<unsigned>(OpType::Reset, {0});
+    d.add_op<unsigned>(OpType::S, {0});
+    d.add_op<unsigned>(OpType::Sdg, {0});
+    REQUIRE(Transforms::greedy_pauli_optimisation().apply(c));
+    REQUIRE(c == d);
+  }
+
   GIVEN("Circuit with measures, classicals, and resets") {
     Circuit circ(3, 1);
     circ.add_box(

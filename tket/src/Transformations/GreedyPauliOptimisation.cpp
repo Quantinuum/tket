@@ -442,8 +442,8 @@ static void consume_nodes(
           auto [q_index, supp_z, supp_x] = node.first_support();
           // conjugate the pair to +Z/X
           std::vector<OpType> optype_list = AA_TO_ZX.at({supp_z, supp_x});
-          for (auto it = optype_list.begin(); it != optype_list.end(); ++it) {
-            circ.add_op<unsigned>(*it, {q_index});
+          for (auto it = optype_list.rbegin(); it != optype_list.rend(); ++it) {
+            circ.add_op<unsigned>(SQ_CLIFF_DAGGER.at(*it), {q_index});
           }
           if (!node.z_sign()) {
             circ.add_op<unsigned>(OpType::X, {q_index});
@@ -458,8 +458,8 @@ static void consume_nodes(
           if (!node.x_sign()) {
             circ.add_op<unsigned>(OpType::Z, {q_index});
           }
-          for (auto it = optype_list.rbegin(); it != optype_list.rend(); ++it) {
-            circ.add_op<unsigned>(SQ_CLIFF_DAGGER.at(*it), {q_index});
+          for (auto it = optype_list.begin(); it != optype_list.end(); ++it) {
+            circ.add_op<unsigned>(*it, {q_index});
           }
           first_set.erase(first_set.begin() + i);
           break;
