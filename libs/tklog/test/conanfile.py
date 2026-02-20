@@ -60,4 +60,4 @@ class test_tklogRecipe(ConanFile):
 
     def requirements(self):
         self.requires("tklog/0.3.3")
-        self.requires("catch2/3.12.0@tket/stable")
+        self.requires("catch2/3.13.0@tket/stable")
