@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+Features:
+
+- Add `OpType.TwinPhasedX` and `OpType.PhasedXX`.
+
 ## 2.13.0 (February 2026)
 
 Features:
