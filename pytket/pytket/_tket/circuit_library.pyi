@@ -230,6 +230,9 @@ def XXPhase_using_TK2(arg: Union[sympy.core.expr.Expr, float], /) -> pytket._tke
 def XXPhase_using_CX(arg: Union[sympy.core.expr.Expr, float], /) -> pytket._tket.circuit.Circuit:
     """Equivalent to XXPhase, using CX and U3 gates"""
 
+def PhasedXX_using_CX(arg0: Union[sympy.core.expr.Expr, float], arg1: Union[sympy.core.expr.Expr, float], /) -> pytket._tket.circuit.Circuit:
+    """Equivalent to PhasedXX, using CX, Rz, Ry, S and Sdg gates"""
+
 def YYPhase_using_TK2(arg: Union[sympy.core.expr.Expr, float], /) -> pytket._tket.circuit.Circuit:
     """Equivalent to YYPhase, using a TK2 gate"""
 

@@ -53,6 +53,8 @@ static GatesData get_data() {
   data.input_data[2][2] = {
       OpType::PhasedISWAP,
       OpType::FSim,
+      OpType::TwinPhasedX,
+      OpType::PhasedXX,
   };
   data.input_data[2][3] = {
       OpType::CU3,

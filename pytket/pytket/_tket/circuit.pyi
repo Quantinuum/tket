@@ -353,6 +353,16 @@ class OpType(enum.IntEnum):
     :math:`(p, t) \mapsto \left[ \begin{array}{cccc} 1 & 0 & 0 & 0 \\ 0 & \cos\frac{\pi t}{2} & i\sin\frac{\pi t}{2}e^{2i\pi p} & 0 \\ 0 & i\sin\frac{\pi t}{2}e^{-2i\pi p} & \cos\frac{\pi t}{2} & 0 \\ 0 & 0 & 0 & 1 \end{array} \right]` (equivalent to: Rz(p)[0]; Rz(-p)[1]; ISWAP(t); Rz(-p)[0]; Rz(p)[1])
     """
 
+    TwinPhasedX = 123
+    r"""
+    :math:`(\alpha, \beta) \mapsto \mathrm{PhasedX}(\alpha, \beta) \otimes \mathrm{PhasedX}(\alpha, \beta)`
+    """
+
+    PhasedXX = 124
+    r"""
+    :math:`(\alpha, beta) \mapsto \mathrm{AAMS}(\alpha, -\beta, -\beta) = \left[ \begin{array}{cccc} \cos\frac{\pi\alpha}{2} & 0 & 0 & -i\sin\frac{\pi\alpha}{2} e^{2i\pi\beta} \\ 0 & \cos\frac{\pi\alpha}{2} & -i\sin\frac{\pi\alpha}{2} & 0 \\ 0 & -i\sin\frac{\pi\alpha}{2} & \cos\frac{\pi\alpha}{2} & 0 \\ -i\sin\frac{\pi\alpha}{2} e^{-2i\pi\beta} & 0 & 0 & \cos\frac{\pi\alpha}{2} \end{array} \right]`
+    """
+
     XXPhase = 74
     r"""
     :math:`(\alpha) \mapsto e^{-\frac12 i \pi\alpha (\mathrm{X} \otimes \mathrm{X})} = \left[ \begin{array}{cccc} \cos\frac{\pi\alpha}{2} & 0 & 0 & -i\sin\frac{\pi\alpha}{2} \\ 0 & \cos\frac{\pi\alpha}{2} & -i\sin\frac{\pi\alpha}{2} & 0 \\ 0 & -i\sin\frac{\pi\alpha}{2} & \cos\frac{\pi\alpha}{2} & 0 \\ -i\sin\frac{\pi\alpha}{2} & 0 & 0 & \cos\frac{\pi\alpha}{2} \end{array} \right]`
@@ -1458,6 +1468,20 @@ class Circuit:
     def PhasedISWAP(self, angle0: Union[sympy.core.expr.Expr, float], angle1: Union[sympy.core.expr.Expr, float], qubit0: int | pytket._tket.unit_id.Qubit, qubit1: int | pytket._tket.unit_id.Qubit, **kwargs: Any) -> Circuit:
         """
         Appends a PhasedISWAP gate with possibly symbolic angles (specified in half-turns) on the wires for the specified qubits.
+
+        :return: the new :py:class:`~.Circuit`
+        """
+
+    def TwinPhasedX(self, angle0: Union[sympy.core.expr.Expr, float], angle1: Union[sympy.core.expr.Expr, float], qubit0: int | pytket._tket.unit_id.Qubit, qubit1: int | pytket._tket.unit_id.Qubit, **kwargs: Any) -> Circuit:
+        """
+        Appends a TwinPhasedX gate with possibly symbolic angles (specified in half-turns) on the wires for the specified qubits.
+
+        :return: the new :py:class:`~.Circuit`
+        """
+
+    def PhasedXX(self, angle0: Union[sympy.core.expr.Expr, float], angle1: Union[sympy.core.expr.Expr, float], qubit0: int | pytket._tket.unit_id.Qubit, qubit1: int | pytket._tket.unit_id.Qubit, **kwargs: Any) -> Circuit:
+        """
+        Appends a PhasedXX gate with possibly symbolic angles (specified in half-turns) on the wires for the specified qubits.
 
         :return: the new :py:class:`~.Circuit`
         """

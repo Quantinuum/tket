@@ -19,6 +19,7 @@
 #include "tket/Gate/Gate.hpp"
 #include "tket/OpType/OpType.hpp"
 #include "tket/Utils/PauliTensor.hpp"
+#include "tket/Utils/UnitID.hpp"
 
 namespace tket {
 
@@ -264,6 +265,84 @@ void PauliGraph::apply_gate_at_end(
         SpPauliStabiliser pauli = cliff_.get_row_product(
             SpPauliStabiliser({{qbs.at(0), Pauli::Y}, {qbs.at(1), Pauli::Y}}));
         apply_pauli_gadget_at_end(pauli, angle);
+      }
+      break;
+    }
+    case OpType::TwinPhasedX: {
+      const Expr alpha = gate.get_params().at(0);
+      const Expr beta = gate.get_params().at(1);
+      std::optional<unsigned> cliff_alpha = equiv_Clifford(alpha);
+      std::optional<unsigned> cliff_beta = equiv_Clifford(beta);
+      for (unsigned i = 0; i < 2; i++) {  // PhasedX on qubit i
+        const Qubit qb = qbs.at(i);
+        // Rz(-b)
+        if (cliff_beta) {
+          for (unsigned i = 0; i < cliff_beta.value(); i++) {
+            cliff_.apply_gate_at_end(OpType::Sdg, {qb});
+          }
+        } else {
+          SpPauliStabiliser zpauli = cliff_.get_zrow(qb);
+          apply_pauli_gadget_at_end(zpauli, -beta);
+        }
+        // Rx(a)
+        if (cliff_alpha) {
+          for (unsigned i = 0; i < cliff_alpha.value(); i++) {
+            cliff_.apply_gate_at_end(OpType::V, {qb});
+          }
+        } else {
+          SpPauliStabiliser xpauli = cliff_.get_xrow(qb);
+          apply_pauli_gadget_at_end(xpauli, alpha);
+        }
+        // Rz(b)
+        if (cliff_beta) {
+          for (unsigned i = 0; i < cliff_beta.value(); i++) {
+            cliff_.apply_gate_at_end(OpType::S, {qb});
+          }
+        } else {
+          SpPauliStabiliser zpauli = cliff_.get_zrow(qb);
+          apply_pauli_gadget_at_end(zpauli, beta);
+        }
+      }
+      break;
+    }
+    case OpType::PhasedXX: {
+      Expr alpha = gate.get_params().at(0);
+      Expr beta = gate.get_params().at(1);
+      std::optional<unsigned> cliff_alpha = equiv_Clifford(alpha);
+      std::optional<unsigned> cliff_beta = equiv_Clifford(beta);
+      const Qubit qb0 = qbs.at(0);
+      const Qubit qb1 = qbs.at(1);
+      // Rz(-b) on qb0 and qb1
+      for (unsigned i = 0; i < 2; i++) {
+        if (cliff_beta) {
+          for (unsigned j = 0; j < cliff_beta.value(); j++) {
+            cliff_.apply_gate_at_end(OpType::Sdg, {qbs.at(i)});
+          }
+        } else {
+          apply_pauli_gadget_at_end(cliff_.get_zrow(qbs.at(i)), -beta);
+        }
+      }
+      // XXPhase
+      if (cliff_alpha) {
+        if (cliff_alpha.value() != 0) {
+          cliff_.apply_pauli_at_end(
+              SpPauliStabiliser({{qb0, Pauli::X}, {qb1, Pauli::X}}),
+              *cliff_alpha);
+        }
+      } else {
+        SpPauliStabiliser pauli = cliff_.get_row_product(
+            SpPauliStabiliser({{qb0, Pauli::X}, {qb1, Pauli::X}}));
+        apply_pauli_gadget_at_end(pauli, alpha);
+      }
+      // Rz(b) on qb0 and qb1
+      for (unsigned i = 0; i < 2; i++) {
+        if (cliff_beta) {
+          for (unsigned j = 0; j < cliff_beta.value(); j++) {
+            cliff_.apply_gate_at_end(OpType::S, {qbs.at(i)});
+          }
+        } else {
+          apply_pauli_gadget_at_end(cliff_.get_zrow(qbs.at(i)), beta);
+        }
       }
       break;
     }

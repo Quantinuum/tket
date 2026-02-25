@@ -137,6 +137,8 @@ static Eigen::MatrixXcd get_unitary_or_throw(
 #undef CASE_RETURN_1P
     CASE_RETURN_2P(U2)
     CASE_RETURN_2P(PhasedX)
+    CASE_RETURN_2P(TwinPhasedX)
+    CASE_RETURN_2P(PhasedXX)
     CASE_RETURN_2P(PhasedISWAP)
     CASE_RETURN_2P(FSim)
 #undef CASE_RETURN_2P

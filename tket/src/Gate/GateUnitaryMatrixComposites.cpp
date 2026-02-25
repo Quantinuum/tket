@@ -99,6 +99,20 @@ Eigen::MatrixXcd GateUnitaryMatrixImplementations::NPhasedX(
   return U;
 }
 
+Eigen::Matrix4cd GateUnitaryMatrixImplementations::TwinPhasedX(
+    double alpha, double beta) {
+  const Eigen::Matrix2cd phased_x = PhasedX(alpha, beta);
+  return Eigen::KroneckerProduct(phased_x, phased_x);
+}
+
+Eigen::Matrix4cd GateUnitaryMatrixImplementations::PhasedXX(
+    double alpha, double beta) {
+  const Eigen::Matrix2cd rz = Rz(beta);
+  const Eigen::Matrix2cd rzc = rz.conjugate();
+  return Eigen::KroneckerProduct(rz, rz) * XXPhase(alpha) *
+         Eigen::KroneckerProduct(rzc, rzc);
+}
+
 Eigen::MatrixXcd GateUnitaryMatrixImplementations::CnRy(
     unsigned int number_of_qubits, double alpha) {
   return GateUnitaryMatrixUtils::get_multi_controlled_gate_dense_unitary(

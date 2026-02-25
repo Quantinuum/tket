@@ -418,6 +418,31 @@ void GPGraph::apply_gate_at_end(
       pauli_rots.push_back({{Pauli::Z}, beta});
       break;
     }
+    case OpType::TwinPhasedX: {
+      Op_ptr phased_x = get_op_ptr(OpType::PhasedX, op->get_params());
+      for (unsigned i = 0; i < 2; i++) {
+        const Command cmd{phased_x, {args.at(i)}};
+        apply_gate_at_end(cmd, conditional, cond_bits, cond_value);
+      }
+      break;
+    }
+    case OpType::PhasedXX: {
+      const Expr alpha = op->get_params().at(0);
+      const Expr beta = op->get_params().at(1);
+      Op_ptr rz = get_op_ptr(OpType::Rz, beta);
+      Op_ptr rzm = get_op_ptr(OpType::Rz, -beta);
+      for (unsigned i = 0; i < 2; i++) {
+        const Command cmd{rzm, {args.at(i)}};
+        apply_gate_at_end(cmd, conditional, cond_bits, cond_value);
+      }
+      const Command cmd_xx{get_op_ptr(OpType::XXPhase, alpha), args};
+      apply_gate_at_end(cmd_xx, conditional, cond_bits, cond_value);
+      for (unsigned i = 0; i < 2; i++) {
+        const Command cmd{rz, {args.at(i)}};
+        apply_gate_at_end(cmd, conditional, cond_bits, cond_value);
+      }
+      break;
+    }
     case OpType::TK1: {
       pauli_rots.push_back({{Pauli::Z}, op->get_params().at(2)});
       pauli_rots.push_back({{Pauli::X}, op->get_params().at(1)});

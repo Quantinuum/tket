@@ -170,7 +170,10 @@ Op_ptr Gate::dagger() const {
                         minus_times(params_[2])});
     case OpType::PhasedX:
     case OpType::NPhasedX:
+    case OpType::TwinPhasedX:
+    case OpType::PhasedXX:
       // PhasedX(a,b).dagger() == PhasedX(-a,b)
+      // PhasedXX(a,b).dagger() == PhasedXX(-a,b)
       {
         return get_op_ptr(
             optype, {minus_times(params_[0]), params_[1]}, n_qubits_);
@@ -267,7 +270,8 @@ Op_ptr Gate::transpose() const {
       return get_op_ptr(OpType::TK1, {params_[2], params_[1], params_[0]});
     }
     case OpType::PhasedX:
-    case OpType::NPhasedX: {
+    case OpType::NPhasedX:
+    case OpType::TwinPhasedX: {
       // PhasedX(a,b).transpose() == PhasedX(a,-b)
       return get_op_ptr(
           optype, {params_[0], minus_times(params_[1])}, n_qubits_);
@@ -276,6 +280,11 @@ Op_ptr Gate::transpose() const {
       // PhasedISWAP(a,b).transpose() == PhasedISWAP(-a,b)
       return get_op_ptr(
           OpType::PhasedISWAP, {minus_times(params_[0]), params_[1]});
+    }
+    case OpType::PhasedXX: {
+      // PhasedXX(a,b).transpose() == PhasedXX(-a,-b)
+      return get_op_ptr(
+          OpType::PhasedXX, {minus_times(params_[0]), minus_times(params_[1])});
     }
 
     default: {
@@ -383,6 +392,8 @@ std::optional<double> Gate::is_identity() const {
     case OpType::Rz:
     case OpType::PhasedX:
     case OpType::NPhasedX:
+    case OpType::TwinPhasedX:
+    case OpType::PhasedXX:
     case OpType::XXPhase:
     case OpType::YYPhase:
     case OpType::ZZPhase:
@@ -479,6 +490,8 @@ bool Gate::is_clifford() const {
       });
     case OpType::PhasedX:
     case OpType::NPhasedX:
+    case OpType::TwinPhasedX:
+    case OpType::PhasedXX:
       return std::all_of(
                  params_.begin(), params_.end(),
                  [](const Expr& e) { return equiv_0(4 * e); }) ||
@@ -885,8 +898,9 @@ std::optional<Pauli> Gate::commuting_basis(port_t i) const {
     case OpType::CnZ: {
       return Pauli::Z;
     }
-    case OpType::NPhasedX: {
-      return std::nullopt;
+    case OpType::NPhasedX:
+    case OpType::TwinPhasedX: {
+      return tk1_commuting_basis({params_[1], params_[0], -params_[1], 0.});
     }
     case OpType::TK2: {
       return tk2_commuting_basis(params_);
@@ -939,6 +953,13 @@ std::optional<Pauli> Gate::commuting_basis(port_t i) const {
         return Pauli::Y;
       } else {
         return Pauli::Z;
+      }
+    }
+    case OpType::PhasedXX: {
+      if (equiv_0(params_[0]) || equiv_0(2 * params_[1])) {
+        return Pauli::X;
+      } else {
+        return std::nullopt;
       }
     }
     default: {

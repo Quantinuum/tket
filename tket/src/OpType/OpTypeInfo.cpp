@@ -128,6 +128,8 @@ const std::map<OpType, OpTypeInfo>& optypeinfo() {
       {OpType::ISWAP, {"ISWAP", "ISWAP", {4}, doubleq}},
       {OpType::PhasedX, {"PhasedX", "Ph$X$", {4, 2}, singleq}},
       {OpType::NPhasedX, {"NPhasedX", "n-Ph$X$", {4, 2}, std::nullopt}},
+      {OpType::TwinPhasedX, {"TwinPhasedX", "2-Ph$X$", {4, 2}, doubleq}},
+      {OpType::PhasedXX, {"PhasedXX", "Ph$XX$", {4, 1}, doubleq}},
       {OpType::ZZMax, {"ZZMax", "$ZZ(\\frac{\\pi}{4})$", {}, doubleq}},
       {OpType::XXPhase, {"XXPhase", "$R_{XX}$", {4}, doubleq}},
       {OpType::YYPhase, {"YYPhase", "$R_{YY}$", {4}, doubleq}},

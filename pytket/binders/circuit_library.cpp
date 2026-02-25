@@ -233,7 +233,10 @@ NB_MODULE(circuit_library, library_m) {
       "Equivalent to XXPhase, using a TK2 gate");
   library_m.def(
       "XXPhase_using_CX", &CircPool::XXPhase_using_CX,
-      "Equivalent to XXPhase, using CX and U3 gates ");
+      "Equivalent to XXPhase, using CX and U3 gates");
+  library_m.def(
+      "PhasedXX_using_CX", &CircPool::PhasedXX_using_CX,
+      "Equivalent to PhasedXX, using CX, Rz, Ry, S and Sdg gates");
   library_m.def(
       "YYPhase_using_TK2", &CircPool::YYPhase_using_TK2,
       "Equivalent to YYPhase, using a TK2 gate");

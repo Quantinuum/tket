@@ -894,6 +894,20 @@ Circuit XXPhase_using_CX(const Expr &alpha) {
   return c;
 }
 
+Circuit PhasedXX_using_CX(const Expr &alpha, const Expr &beta) {
+  Circuit c(2);
+  c.add_op<unsigned>(OpType::Rz, -beta, {0});
+  c.add_op<unsigned>(OpType::Rz, -beta, {1});
+  c.add_op<unsigned>(OpType::CX, {0, 1});
+  c.add_op<unsigned>(OpType::S, {0});
+  c.add_op<unsigned>(OpType::Ry, alpha, {0});
+  c.add_op<unsigned>(OpType::Sdg, {0});
+  c.add_op<unsigned>(OpType::CX, {0, 1});
+  c.add_op<unsigned>(OpType::Rz, beta, {0});
+  c.add_op<unsigned>(OpType::Rz, beta, {1});
+  return c;
+}
+
 Circuit YYPhase_using_TK2(const Expr &alpha) {
   Circuit c(2);
   c.add_op<unsigned>(OpType::TK2, {0, alpha, 0}, {0, 1});

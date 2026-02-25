@@ -806,6 +806,16 @@ enum class OpType {
    * Get 32-bit (little-endian) shot number
    */
   JobShotNum,
+
+  /**
+   * Two identical \ref PhasedX applied to different qubits
+   */
+  TwinPhasedX,
+
+  /**
+   * An \ref XXPhase conjugated by \ref Rz operations on both qubits
+   */
+  PhasedXX,
 };
 
 JSON_DECL(OpType)
