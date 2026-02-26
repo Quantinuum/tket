@@ -613,9 +613,10 @@ CliffordReductionPass::valid_insertion_point(
     port_t p = circ.get_source_port(*successor);
     if (circ.get_OpType_from_Vertex(v) == OpType::SWAP) p = 1 - p;
     return {{seq0max, lookup.at(circ.get_nth_in_edge(v, p))}};
-  } else if (circ.in_causal_order(
-                 circ.source(seq0max.e), circ.target(seq1max.e), true,
-                 v_to_depth, v_to_units, false)) {
+  } else if (
+      circ.in_causal_order(
+          circ.source(seq0max.e), circ.target(seq1max.e), true, v_to_depth,
+          v_to_units, false)) {
     // Search for any points in seq0 from future of seq1max
     EdgeSet candidates;
     std::map<Edge, InteractionPoint> lookup;
