@@ -95,7 +95,7 @@ jobs:
       - name: Check C++ code formatting
         run: |
           brew update
-          brew install clang-format@21
+          brew install clang-format@22
           git ls-files "*.cpp" "*.hpp" "*.h" | xargs clang-format -style=file -i
           git diff --exit-code
 
