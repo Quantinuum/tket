@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-02-26 21:32:45</td>
+      <td>2026-02-27 16:09:54</td>
     </tr>
   </table>
 </div>
@@ -81,13 +81,13 @@
     </tr>
     <tr>
       <td>
-        <a href="#l519">tket::CircPool::ControlDecompError::ControlDecompError(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a>
+        <a href="#l522">tket::CircPool::ControlDecompError::ControlDecompError(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a>
       </td>
       <td>
-        <a href="#l519">519</a>
+        <a href="#l522">522</a>
       </td>
       <td>
-        <a href="#l519"> not called</a>
+        <a href="#l522"> not called</a>
       </td>
     </tr>
   </table>
@@ -2371,7 +2371,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to YYPhase, using a TK2 gate */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to PhasedXX, using CX, Rz, Ry, S and Sdg gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l253" href="#l253">253</a></td>
@@ -2380,7 +2380,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">PhasedXX_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l254" href="#l254">254</a></td>
@@ -2398,7 +2398,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to YYPhase, using two CX gates and one Ry</span></td>
+      <td class="src "><span class="cm">/** Equivalent to YYPhase, using a TK2 gate */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l256" href="#l256">256</a></td>
@@ -2407,7 +2407,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * one Sdg and one S gate.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l257" href="#l257">257</a></td>
@@ -2416,7 +2416,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l258" href="#l258">258</a></td>
@@ -2425,7 +2425,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="cm">/** Equivalent to YYPhase, using two CX gates and one Ry</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l259" href="#l259">259</a></td>
@@ -2434,7 +2434,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * one Sdg and one S gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l260" href="#l260">260</a></td>
@@ -2443,7 +2443,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to ZZPhase, using a TK2 gate */</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l261" href="#l261">261</a></td>
@@ -2452,7 +2452,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ZZPhase_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l262" href="#l262">262</a></td>
@@ -2470,7 +2470,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to ZZPhase, using CX and Rz gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to ZZPhase, using a TK2 gate */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l264" href="#l264">264</a></td>
@@ -2479,7 +2479,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ZZPhase_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ZZPhase_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l265" href="#l265">265</a></td>
@@ -2497,7 +2497,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm">/** Equivalent to ZZPhase, using CX and Rz gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l267" href="#l267">267</a></td>
@@ -2506,7 +2506,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to XXPhase, using ZZPhase and H gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ZZPhase_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l268" href="#l268">268</a></td>
@@ -2515,7 +2515,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l269" href="#l269">269</a></td>
@@ -2524,7 +2524,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param alpha The gate parameter to the XXPhase gate.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l270" href="#l270">270</a></td>
@@ -2533,7 +2533,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit using ZZPhase.</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to XXPhase, using ZZPhase and H gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l271" href="#l271">271</a></td>
@@ -2542,7 +2542,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l272" href="#l272">272</a></td>
@@ -2551,7 +2551,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase_using_ZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @param alpha The gate parameter to the XXPhase gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l273" href="#l273">273</a></td>
@@ -2560,7 +2560,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit using ZZPhase.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l274" href="#l274">274</a></td>
@@ -2569,7 +2569,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l275" href="#l275">275</a></td>
@@ -2578,7 +2578,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to YYPhase, using ZZPhase and V/Vdg gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase_using_ZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l276" href="#l276">276</a></td>
@@ -2587,7 +2587,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l277" href="#l277">277</a></td>
@@ -2596,7 +2596,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param alpha The gate parameter to the YYPhase gate.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l278" href="#l278">278</a></td>
@@ -2605,7 +2605,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit using ZZPhase.</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to YYPhase, using ZZPhase and V/Vdg gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l279" href="#l279">279</a></td>
@@ -2614,7 +2614,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l280" href="#l280">280</a></td>
@@ -2623,7 +2623,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_ZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @param alpha The gate parameter to the YYPhase gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l281" href="#l281">281</a></td>
@@ -2632,7 +2632,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit using ZZPhase.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l282" href="#l282">282</a></td>
@@ -2641,7 +2641,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l283" href="#l283">283</a></td>
@@ -2650,7 +2650,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(0.5, 0, 0), using a single CX gate.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_ZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l284" href="#l284">284</a></td>
@@ -2668,7 +2668,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Using 1 CX yields an approximate decomposition of the TK2 gate which is</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l286" href="#l286">286</a></td>
@@ -2677,7 +2677,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * equivalent to a TK2(0.5, 0, 0) gate. This is always the optimal</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(0.5, 0, 0), using a single CX gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l287" href="#l287">287</a></td>
@@ -2686,7 +2686,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * 1-CX approximation of any TK2 gate, with respect to the squared trace</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l288" href="#l288">288</a></td>
@@ -2695,7 +2695,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * fidelity metric.</span></td>
+      <td class="src "><span class="cm"> * Using 1 CX yields an approximate decomposition of the TK2 gate which is</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l289" href="#l289">289</a></td>
@@ -2704,7 +2704,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * equivalent to a TK2(0.5, 0, 0) gate. This is always the optimal</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l290" href="#l290">290</a></td>
@@ -2713,7 +2713,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(0.5, 0, 0).</span></td>
+      <td class="src "><span class="cm"> * 1-CX approximation of any TK2 gate, with respect to the squared trace</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l291" href="#l291">291</a></td>
@@ -2722,7 +2722,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * fidelity metric.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l292" href="#l292">292</a></td>
@@ -2731,7 +2731,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_1xCX</span><span class="p">();</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l293" href="#l293">293</a></td>
@@ -2740,7 +2740,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(0.5, 0, 0).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l294" href="#l294">294</a></td>
@@ -2749,7 +2749,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l295" href="#l295">295</a></td>
@@ -2758,7 +2758,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, 0), using 2 CX gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_1xCX</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l296" href="#l296">296</a></td>
@@ -2767,7 +2767,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l297" href="#l297">297</a></td>
@@ -2776,7 +2776,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Using 2 CX gates we can implement any gate of the form TK2(α, β, 0). This is</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l298" href="#l298">298</a></td>
@@ -2785,7 +2785,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * the optimal 2-CX approximation for any TK2(α, β, γ), with respect to the</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, 0), using 2 CX gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l299" href="#l299">299</a></td>
@@ -2794,7 +2794,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * squared trace fidelity metric.</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l300" href="#l300">300</a></td>
@@ -2803,7 +2803,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * Using 2 CX gates we can implement any gate of the form TK2(α, β, 0). This is</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l301" href="#l301">301</a></td>
@@ -2812,7 +2812,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Requires 0.5 ≥ α ≥ β ≥ 0.</span></td>
+      <td class="src "><span class="cm"> * the optimal 2-CX approximation for any TK2(α, β, γ), with respect to the</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l302" href="#l302">302</a></td>
@@ -2821,7 +2821,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * squared trace fidelity metric.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l303" href="#l303">303</a></td>
@@ -2830,7 +2830,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, 0).</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l304" href="#l304">304</a></td>
@@ -2839,7 +2839,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * Requires 0.5 ≥ α ≥ β ≥ 0.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l305" href="#l305">305</a></td>
@@ -2848,7 +2848,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_2xCX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l306" href="#l306">306</a></td>
@@ -2857,7 +2857,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, 0).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l307" href="#l307">307</a></td>
@@ -2866,7 +2866,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l308" href="#l308">308</a></td>
@@ -2875,7 +2875,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), using 3 CX gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_2xCX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l309" href="#l309">309</a></td>
@@ -2884,7 +2884,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l310" href="#l310">310</a></td>
@@ -2893,7 +2893,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * This is an exact 3 CX decomposition of the TK2(α, β, γ) gate.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l311" href="#l311">311</a></td>
@@ -2902,7 +2902,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Prefer using `normalised_TK2_using_CX` unless you wish to explicitly use 3 CX</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), using 3 CX gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l312" href="#l312">312</a></td>
@@ -2911,7 +2911,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * or if α, β and γ are not normalised to the Weyl chamber.</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l313" href="#l313">313</a></td>
@@ -2920,7 +2920,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * This is an exact 3 CX decomposition of the TK2(α, β, γ) gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l314" href="#l314">314</a></td>
@@ -2929,7 +2929,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> * Prefer using `normalised_TK2_using_CX` unless you wish to explicitly use 3 CX</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l315" href="#l315">315</a></td>
@@ -2938,7 +2938,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * or if α, β and γ are not normalised to the Weyl chamber.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l316" href="#l316">316</a></td>
@@ -2947,7 +2947,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_3xCX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l317" href="#l317">317</a></td>
@@ -2956,7 +2956,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l318" href="#l318">318</a></td>
@@ -2965,7 +2965,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l319" href="#l319">319</a></td>
@@ -2974,7 +2974,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ) with minimal number of CX gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_3xCX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l320" href="#l320">320</a></td>
@@ -2983,7 +2983,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l321" href="#l321">321</a></td>
@@ -2992,7 +2992,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l322" href="#l322">322</a></td>
@@ -3001,7 +3001,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ) with minimal number of CX gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l323" href="#l323">323</a></td>
@@ -3010,7 +3010,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Decomposition is exact. The parameters must be normalised to the Weyl</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l324" href="#l324">324</a></td>
@@ -3019,7 +3019,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * chamber, i.e. it must hold 0.5 ≥ 𝛼 ≥ 𝛽 ≥ |𝛾|.</span></td>
+      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l325" href="#l325">325</a></td>
@@ -3028,7 +3028,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l326" href="#l326">326</a></td>
@@ -3037,7 +3037,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * In cases where hardware gate fidelities are known, it might be sensible to</span></td>
+      <td class="src "><span class="cm"> * Decomposition is exact. The parameters must be normalised to the Weyl</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l327" href="#l327">327</a></td>
@@ -3046,7 +3046,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * use TK2 decompositions that are inexact but less noisy. See DecomposeTK2</span></td>
+      <td class="src "><span class="cm"> * chamber, i.e. it must hold 0.5 ≥ 𝛼 ≥ 𝛽 ≥ |𝛾|.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l328" href="#l328">328</a></td>
@@ -3055,7 +3055,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * pass and transform.</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l329" href="#l329">329</a></td>
@@ -3064,7 +3064,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * In cases where hardware gate fidelities are known, it might be sensible to</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l330" href="#l330">330</a></td>
@@ -3073,7 +3073,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> * use TK2 decompositions that are inexact but less noisy. See DecomposeTK2</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l331" href="#l331">331</a></td>
@@ -3082,7 +3082,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * pass and transform.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l332" href="#l332">332</a></td>
@@ -3091,7 +3091,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">normalised_TK2_using_CX</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l333" href="#l333">333</a></td>
@@ -3100,7 +3100,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l334" href="#l334">334</a></td>
@@ -3109,7 +3109,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l335" href="#l335">335</a></td>
@@ -3118,7 +3118,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">normalised_TK2_using_CX</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l336" href="#l336">336</a></td>
@@ -3127,7 +3127,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ) with minimal number of CX gates.</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l337" href="#l337">337</a></td>
@@ -3136,7 +3136,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l338" href="#l338">338</a></td>
@@ -3145,7 +3145,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l339" href="#l339">339</a></td>
@@ -3154,7 +3154,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ) with minimal number of CX gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l340" href="#l340">340</a></td>
@@ -3163,7 +3163,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l341" href="#l341">341</a></td>
@@ -3172,7 +3172,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l342" href="#l342">342</a></td>
@@ -3181,7 +3181,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l343" href="#l343">343</a></td>
@@ -3190,7 +3190,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l344" href="#l344">344</a></td>
@@ -3199,7 +3199,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l345" href="#l345">345</a></td>
@@ -3208,7 +3208,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ)  up to a wire swap that is encoded in</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l346" href="#l346">346</a></td>
@@ -3217,7 +3217,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * the implicit qubit permutation of the Circuit with minimal number of</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l347" href="#l347">347</a></td>
@@ -3226,7 +3226,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * CX gates.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l348" href="#l348">348</a></td>
@@ -3235,7 +3235,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ)  up to a wire swap that is encoded in</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l349" href="#l349">349</a></td>
@@ -3244,7 +3244,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</span></td>
+      <td class="src "><span class="cm"> * the implicit qubit permutation of the Circuit with minimal number of</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l350" href="#l350">350</a></td>
@@ -3253,7 +3253,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * CX gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l351" href="#l351">351</a></td>
@@ -3262,7 +3262,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit, up to a wire swap, to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l352" href="#l352">352</a></td>
@@ -3271,7 +3271,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l353" href="#l353">353</a></td>
@@ -3280,7 +3280,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_CX_and_swap</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l354" href="#l354">354</a></td>
@@ -3289,7 +3289,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit, up to a wire swap, to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l355" href="#l355">355</a></td>
@@ -3298,7 +3298,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l356" href="#l356">356</a></td>
@@ -3307,7 +3307,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_CX_and_swap</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l357" href="#l357">357</a></td>
@@ -3316,7 +3316,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, 0, 0), using 1 ZZPhase gate.</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l358" href="#l358">358</a></td>
@@ -3325,7 +3325,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l359" href="#l359">359</a></td>
@@ -3334,7 +3334,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Using 1 ZZPhase gate we can implement any gate of the form TK2(α, 0, 0).</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l360" href="#l360">360</a></td>
@@ -3343,7 +3343,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * This is the optimal 1-ZZPhase approximation for any TK2(α, β, γ), with</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, 0, 0), using 1 ZZPhase gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l361" href="#l361">361</a></td>
@@ -3352,7 +3352,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * respect to the squared trace fidelity metric.</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l362" href="#l362">362</a></td>
@@ -3361,7 +3361,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * Using 1 ZZPhase gate we can implement any gate of the form TK2(α, 0, 0).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l363" href="#l363">363</a></td>
@@ -3370,7 +3370,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Requires 0.5 ≥ α ≥ 0.</span></td>
+      <td class="src "><span class="cm"> * This is the optimal 1-ZZPhase approximation for any TK2(α, β, γ), with</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l364" href="#l364">364</a></td>
@@ -3379,7 +3379,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * respect to the squared trace fidelity metric.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l365" href="#l365">365</a></td>
@@ -3388,7 +3388,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, 0).</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l366" href="#l366">366</a></td>
@@ -3397,7 +3397,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * Requires 0.5 ≥ α ≥ 0.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l367" href="#l367">367</a></td>
@@ -3406,7 +3406,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_1xZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l368" href="#l368">368</a></td>
@@ -3415,7 +3415,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, 0).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l369" href="#l369">369</a></td>
@@ -3424,7 +3424,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l370" href="#l370">370</a></td>
@@ -3433,7 +3433,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, 0), using 2 ZZPhase gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_1xZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l371" href="#l371">371</a></td>
@@ -3442,7 +3442,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l372" href="#l372">372</a></td>
@@ -3451,7 +3451,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Using 2 ZZPhase gates we can implement any gate of the form TK2(α, β, 0).</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l373" href="#l373">373</a></td>
@@ -3460,7 +3460,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * This is the optimal 2-ZZPhase approximation for any TK2(α, β, γ), with</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, 0), using 2 ZZPhase gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l374" href="#l374">374</a></td>
@@ -3469,7 +3469,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * respect to the squared trace fidelity metric.</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l375" href="#l375">375</a></td>
@@ -3478,7 +3478,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * Using 2 ZZPhase gates we can implement any gate of the form TK2(α, β, 0).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l376" href="#l376">376</a></td>
@@ -3487,7 +3487,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Warning: in practice, we would not expect this decomposition to be</span></td>
+      <td class="src "><span class="cm"> * This is the optimal 2-ZZPhase approximation for any TK2(α, β, γ), with</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l377" href="#l377">377</a></td>
@@ -3496,7 +3496,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * attractive on real hardware, as the same approximation fidelity can be</span></td>
+      <td class="src "><span class="cm"> * respect to the squared trace fidelity metric.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l378" href="#l378">378</a></td>
@@ -3505,7 +3505,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * obtained using 2 ZZMax gates, which would typically have (same or) higher</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l379" href="#l379">379</a></td>
@@ -3514,7 +3514,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * fidelity than variable angle ZZPhase gates.</span></td>
+      <td class="src "><span class="cm"> * Warning: in practice, we would not expect this decomposition to be</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l380" href="#l380">380</a></td>
@@ -3523,7 +3523,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * attractive on real hardware, as the same approximation fidelity can be</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l381" href="#l381">381</a></td>
@@ -3532,7 +3532,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, 0).</span></td>
+      <td class="src "><span class="cm"> * obtained using 2 ZZMax gates, which would typically have (same or) higher</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l382" href="#l382">382</a></td>
@@ -3541,7 +3541,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * fidelity than variable angle ZZPhase gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l383" href="#l383">383</a></td>
@@ -3550,7 +3550,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_2xZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l384" href="#l384">384</a></td>
@@ -3559,7 +3559,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, 0).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l385" href="#l385">385</a></td>
@@ -3568,7 +3568,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l386" href="#l386">386</a></td>
@@ -3577,7 +3577,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), using 3 ZZPhase gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">approx_TK2_using_2xZZPhase</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l387" href="#l387">387</a></td>
@@ -3586,7 +3586,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l388" href="#l388">388</a></td>
@@ -3595,7 +3595,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * This is an exact 3 ZZPhase decomposition of the TK2(α, β, γ) gate.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l389" href="#l389">389</a></td>
@@ -3604,7 +3604,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), using 3 ZZPhase gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l390" href="#l390">390</a></td>
@@ -3613,7 +3613,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Warning: in practice, we would not expect this decomposition to be attractive</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l391" href="#l391">391</a></td>
@@ -3622,7 +3622,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * on real hardware, as the same approximation fidelity can be obtained using</span></td>
+      <td class="src "><span class="cm"> * This is an exact 3 ZZPhase decomposition of the TK2(α, β, γ) gate.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l392" href="#l392">392</a></td>
@@ -3631,7 +3631,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * 3 ZZMax gates, which would typically have (same or) higher fidelity than</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l393" href="#l393">393</a></td>
@@ -3640,7 +3640,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * variable angle ZZPhase gates.</span></td>
+      <td class="src "><span class="cm"> * Warning: in practice, we would not expect this decomposition to be attractive</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l394" href="#l394">394</a></td>
@@ -3649,7 +3649,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * on real hardware, as the same approximation fidelity can be obtained using</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l395" href="#l395">395</a></td>
@@ -3658,7 +3658,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> * 3 ZZMax gates, which would typically have (same or) higher fidelity than</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l396" href="#l396">396</a></td>
@@ -3667,7 +3667,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * variable angle ZZPhase gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l397" href="#l397">397</a></td>
@@ -3676,7 +3676,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZPhase</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l398" href="#l398">398</a></td>
@@ -3685,7 +3685,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l399" href="#l399">399</a></td>
@@ -3694,7 +3694,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l400" href="#l400">400</a></td>
@@ -3703,7 +3703,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ)  up to a wire swap that is encoded in</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZPhase</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l401" href="#l401">401</a></td>
@@ -3712,7 +3712,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * the implicit qubit permutation of the Circuit with minimal number of</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l402" href="#l402">402</a></td>
@@ -3721,7 +3721,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * ZZPhase gates.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l403" href="#l403">403</a></td>
@@ -3730,7 +3730,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ)  up to a wire swap that is encoded in</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l404" href="#l404">404</a></td>
@@ -3739,7 +3739,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few ZZPhase gates as possible:</span></td>
+      <td class="src "><span class="cm"> * the implicit qubit permutation of the Circuit with minimal number of</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l405" href="#l405">405</a></td>
@@ -3748,7 +3748,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * (0, 1, 2 or 3 ZZphase).</span></td>
+      <td class="src "><span class="cm"> * ZZPhase gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l406" href="#l406">406</a></td>
@@ -3766,7 +3766,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit, up to a wire swap, to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> * A TK2-equivalent circuit with as few ZZPhase gates as possible:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l408" href="#l408">408</a></td>
@@ -3775,7 +3775,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * (0, 1, 2 or 3 ZZphase).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l409" href="#l409">409</a></td>
@@ -3784,7 +3784,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZPhase_and_swap</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l410" href="#l410">410</a></td>
@@ -3793,7 +3793,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit, up to a wire swap, to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l411" href="#l411">411</a></td>
@@ -3802,7 +3802,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l412" href="#l412">412</a></td>
@@ -3811,7 +3811,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZPhase_and_swap</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l413" href="#l413">413</a></td>
@@ -3820,7 +3820,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Either returns TK2(α, β, γ), or a wire swap and single qubit</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l414" href="#l414">414</a></td>
@@ -3829,7 +3829,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * corrections</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l415" href="#l415">415</a></td>
@@ -3838,7 +3838,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l416" href="#l416">416</a></td>
@@ -3847,7 +3847,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit, either a wire swap with single</span></td>
+      <td class="src "><span class="cm"> * @brief Either returns TK2(α, β, γ), or a wire swap and single qubit</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l417" href="#l417">417</a></td>
@@ -3856,7 +3856,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * qubit corrections or TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm"> * corrections</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l418" href="#l418">418</a></td>
@@ -3865,7 +3865,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l419" href="#l419">419</a></td>
@@ -3874,7 +3874,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_TK2_or_swap</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> * @return Circuit Equivalent circuit, either a wire swap with single</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l420" href="#l420">420</a></td>
@@ -3883,7 +3883,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * qubit corrections or TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l421" href="#l421">421</a></td>
@@ -3892,7 +3892,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l422" href="#l422">422</a></td>
@@ -3901,7 +3901,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Just a TK2(α, β, γ) gate */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_TK2_or_swap</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l423" href="#l423">423</a></td>
@@ -3910,7 +3910,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l424" href="#l424">424</a></td>
@@ -3928,7 +3928,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm">/** Just a TK2(α, β, γ) gate */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l426" href="#l426">426</a></td>
@@ -3937,7 +3937,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), using up to 3 ZZMax gates.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l427" href="#l427">427</a></td>
@@ -3946,7 +3946,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l428" href="#l428">428</a></td>
@@ -3955,7 +3955,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit equivalent to TK2(α, β, γ).</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l429" href="#l429">429</a></td>
@@ -3964,7 +3964,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), using up to 3 ZZMax gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l430" href="#l430">430</a></td>
@@ -3973,7 +3973,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZMax</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l431" href="#l431">431</a></td>
@@ -3982,7 +3982,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit equivalent to TK2(α, β, γ).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l432" href="#l432">432</a></td>
@@ -3991,7 +3991,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l433" href="#l433">433</a></td>
@@ -4000,7 +4000,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), up to a wire swap that is encoded in the</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZMax</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l434" href="#l434">434</a></td>
@@ -4009,7 +4009,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * implicit qubit permutation of the Circuit, using up to 3 ZZMax gates.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l435" href="#l435">435</a></td>
@@ -4018,7 +4018,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l436" href="#l436">436</a></td>
@@ -4027,7 +4027,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit equivalent to TK2(α, β, γ) up to a wire swap.</span></td>
+      <td class="src "><span class="cm"> * @brief Equivalent to TK2(α, β, γ), up to a wire swap that is encoded in the</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l437" href="#l437">437</a></td>
@@ -4036,7 +4036,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * implicit qubit permutation of the Circuit, using up to 3 ZZMax gates.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l438" href="#l438">438</a></td>
@@ -4045,7 +4045,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZMax_and_swap</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l439" href="#l439">439</a></td>
@@ -4054,7 +4054,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @return Circuit equivalent to TK2(α, β, γ) up to a wire swap.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l440" href="#l440">440</a></td>
@@ -4063,7 +4063,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l441" href="#l441">441</a></td>
@@ -4072,7 +4072,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK2, using only ISWAPMax and single-qubit gates */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ZZMax_and_swap</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l442" href="#l442">442</a></td>
@@ -4081,7 +4081,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ISWAPMax</span><span class="p">(</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l443" href="#l443">443</a></td>
@@ -4090,7 +4090,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l444" href="#l444">444</a></td>
@@ -4099,7 +4099,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">/** Equivalent to TK2, using only ISWAPMax and single-qubit gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l445" href="#l445">445</a></td>
@@ -4108,7 +4108,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK2, using only ISWAPMax and single-qubit gates, with an</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ISWAPMax</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l446" href="#l446">446</a></td>
@@ -4117,7 +4117,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *  implicit swap.</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l447" href="#l447">447</a></td>
@@ -4126,7 +4126,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l448" href="#l448">448</a></td>
@@ -4135,7 +4135,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ISWAPMax_and_swap</span><span class="p">(</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK2, using only ISWAPMax and single-qubit gates, with an</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l449" href="#l449">449</a></td>
@@ -4144,7 +4144,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *  implicit swap.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l450" href="#l450">450</a></td>
@@ -4153,7 +4153,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l451" href="#l451">451</a></td>
@@ -4162,7 +4162,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to XXPhase3, using three TK2 gates */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_ISWAPMax_and_swap</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l452" href="#l452">452</a></td>
@@ -4171,7 +4171,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase3_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l453" href="#l453">453</a></td>
@@ -4189,7 +4189,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to 3-qubit MS interaction, using CX and U3 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to XXPhase3, using three TK2 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l455" href="#l455">455</a></td>
@@ -4198,7 +4198,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase3_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase3_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l456" href="#l456">456</a></td>
@@ -4216,7 +4216,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to ESWAP, using a TK2 and (Clifford) TK1 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to 3-qubit MS interaction, using CX and U3 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l458" href="#l458">458</a></td>
@@ -4225,7 +4225,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ESWAP_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase3_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l459" href="#l459">459</a></td>
@@ -4243,7 +4243,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to ESWAP, using CX, X, S, Ry and U1 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to ESWAP, using a TK2 and (Clifford) TK1 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l461" href="#l461">461</a></td>
@@ -4252,7 +4252,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ESWAP_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ESWAP_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l462" href="#l462">462</a></td>
@@ -4270,7 +4270,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to FSim, using a TK2 and TK1 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to ESWAP, using CX, X, S, Ry and U1 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l464" href="#l464">464</a></td>
@@ -4279,7 +4279,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">FSim_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ESWAP_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l465" href="#l465">465</a></td>
@@ -4297,7 +4297,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to FSim, using CX, X, S, U1 and U3 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to FSim, using a TK2 and TK1 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l467" href="#l467">467</a></td>
@@ -4306,7 +4306,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">FSim_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">FSim_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l468" href="#l468">468</a></td>
@@ -4324,7 +4324,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to PhasedISWAP, using a TK2 and Rz gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to FSim, using CX, X, S, U1 and U3 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l470" href="#l470">470</a></td>
@@ -4333,7 +4333,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">PhasedISWAP_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">FSim_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l471" href="#l471">471</a></td>
@@ -4351,7 +4351,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to PhasedISWAP, using CX, U3 and Rz gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to PhasedISWAP, using a TK2 and Rz gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l473" href="#l473">473</a></td>
@@ -4360,7 +4360,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">PhasedISWAP_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">PhasedISWAP_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l474" href="#l474">474</a></td>
@@ -4378,7 +4378,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to AAMS, using a TK2 and Rz gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to PhasedISWAP, using CX, U3 and Rz gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l476" href="#l476">476</a></td>
@@ -4387,7 +4387,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">AAMS_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi1</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">PhasedISWAP_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l477" href="#l477">477</a></td>
@@ -4405,7 +4405,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to AAMS, using CX, Rz and U3 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to AAMS, using a TK2 and Rz gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l479" href="#l479">479</a></td>
@@ -4414,7 +4414,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">AAMS_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi1</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">AAMS_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi1</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l480" href="#l480">480</a></td>
@@ -4432,7 +4432,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Unwrap NPhasedX, into number_of_qubits PhasedX gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to AAMS, using CX, Rz and U3 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l482" href="#l482">482</a></td>
@@ -4441,7 +4441,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">NPhasedX_using_PhasedX</span><span class="p">(</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">AAMS_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi1</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l483" href="#l483">483</a></td>
@@ -4450,7 +4450,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number_of_qubits</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l484" href="#l484">484</a></td>
@@ -4459,7 +4459,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">/** Unwrap NPhasedX, into number_of_qubits PhasedX gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l485" href="#l485">485</a></td>
@@ -4468,7 +4468,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** TK2(a, b, c)-equivalent circuit, using normalised TK2 and single-qb gates */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">NPhasedX_using_PhasedX</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l486" href="#l486">486</a></td>
@@ -4477,7 +4477,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_normalised_TK2</span><span class="p">(</span></td>
+      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number_of_qubits</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l487" href="#l487">487</a></td>
@@ -4486,7 +4486,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l488" href="#l488">488</a></td>
@@ -4495,7 +4495,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">/** TK2(a, b, c)-equivalent circuit, using normalised TK2 and single-qb gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l489" href="#l489">489</a></td>
@@ -4504,7 +4504,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** converts a TK1 gate to a circuit using PhasedX and Rz gates */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_normalised_TK2</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l490" href="#l490">490</a></td>
@@ -4513,7 +4513,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_PhasedXRz</span><span class="p">(</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l491" href="#l491">491</a></td>
@@ -4522,7 +4522,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l492" href="#l492">492</a></td>
@@ -4531,7 +4531,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">/** converts a TK1 gate to a circuit using PhasedX and Rz gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l493" href="#l493">493</a></td>
@@ -4540,7 +4540,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** converts a TK1 gate to a circuit using PhasedX gates */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_PhasedXRz</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l494" href="#l494">494</a></td>
@@ -4549,7 +4549,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_PhasedX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l495" href="#l495">495</a></td>
@@ -4567,7 +4567,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz and Rx gates */</span></td>
+      <td class="src "><span class="cm">/** converts a TK1 gate to a circuit using PhasedX gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l497" href="#l497">497</a></td>
@@ -4576,7 +4576,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzrx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_PhasedX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l498" href="#l498">498</a></td>
@@ -4594,7 +4594,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using Rx and Ry gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz and Rx gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l500" href="#l500">500</a></td>
@@ -4603,7 +4603,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rxry</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzrx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l501" href="#l501">501</a></td>
@@ -4621,7 +4621,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz and H gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using Rx and Ry gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l503" href="#l503">503</a></td>
@@ -4630,7 +4630,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rxry</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l504" href="#l504">504</a></td>
@@ -4648,7 +4648,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz and SX gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz and H gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l506" href="#l506">506</a></td>
@@ -4657,7 +4657,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzsx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l507" href="#l507">507</a></td>
@@ -4675,7 +4675,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz, X and SX gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz and SX gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l509" href="#l509">509</a></td>
@@ -4684,7 +4684,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzxsx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzsx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l510" href="#l510">510</a></td>
@@ -4702,7 +4702,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Just a TK1(α, β, γ) gate */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using Rz, X and SX gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l512" href="#l512">512</a></td>
@@ -4711,7 +4711,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_tk1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzxsx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l513" href="#l513">513</a></td>
@@ -4729,7 +4729,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using a U3 gate */</span></td>
+      <td class="src "><span class="cm">/** Just a TK1(α, β, γ) gate */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l515" href="#l515">515</a></td>
@@ -4738,7 +4738,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_u3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_tk1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l516" href="#l516">516</a></td>
@@ -4756,7 +4756,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">ControlDecompError</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using a U3 gate */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l518" href="#l518">518</a></td>
@@ -4765,7 +4765,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w"> </span><span class="k">public</span><span class="o">:</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_u3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l519" href="#l519">519</a></td>
@@ -4773,8 +4773,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">ControlDecompError</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">message</span><span class="p">)</span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l520" href="#l520">520</a></td>
@@ -4782,8 +4782,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">ControlDecompError</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l521" href="#l521">521</a></td>
@@ -4792,7 +4792,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
+      <td class="src "><span class="w"> </span><span class="k">public</span><span class="o">:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l522" href="#l522">522</a></td>
@@ -4800,8 +4800,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">ControlDecompError</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">message</span><span class="p">)</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l523" href="#l523">523</a></td>
@@ -4809,8 +4809,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l524" href="#l524">524</a></td>
@@ -4819,7 +4819,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Get an n-qubit incrementer circuit with linear depth and O(n^2) gate</span></td>
+      <td class="src "><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l525" href="#l525">525</a></td>
@@ -4828,7 +4828,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * count. There exists a global phase difference</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l526" href="#l526">526</a></td>
@@ -4837,7 +4837,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l527" href="#l527">527</a></td>
@@ -4846,7 +4846,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> * @brief Get an n-qubit incrementer circuit with linear depth and O(n^2) gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l528" href="#l528">528</a></td>
@@ -4855,7 +4855,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n number of qubits</span></td>
+      <td class="src "><span class="cm"> * count. There exists a global phase difference</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l529" href="#l529">529</a></td>
@@ -4864,7 +4864,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param lsb set to false if we don&#39;t want to toggle the least significant bit</span></td>
+      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l530" href="#l530">530</a></td>
@@ -4873,7 +4873,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CRx, X</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l531" href="#l531">531</a></td>
@@ -4882,7 +4882,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @param n number of qubits</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l532" href="#l532">532</a></td>
@@ -4891,7 +4891,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_linear_depth</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lsb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @param lsb set to false if we don&#39;t want to toggle the least significant bit</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l533" href="#l533">533</a></td>
@@ -4900,7 +4900,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CRx, X</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l534" href="#l534">534</a></td>
@@ -4909,7 +4909,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l535" href="#l535">535</a></td>
@@ -4918,7 +4918,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Implement CnU gate with linear depth and O(n^2) gate count.</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_linear_depth</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lsb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l536" href="#l536">536</a></td>
@@ -4927,7 +4927,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l537" href="#l537">537</a></td>
@@ -4936,7 +4936,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l538" href="#l538">538</a></td>
@@ -4945,7 +4945,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n number of controls</span></td>
+      <td class="src "><span class="cm"> * @brief Implement CnU gate with linear depth and O(n^2) gate count.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l539" href="#l539">539</a></td>
@@ -4954,7 +4954,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param u the controlled 2x2 unitary matrix</span></td>
+      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l540" href="#l540">540</a></td>
@@ -4963,7 +4963,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CRx, TK1, U1, and CU3</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l541" href="#l541">541</a></td>
@@ -4972,7 +4972,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @param n number of controls</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l542" href="#l542">542</a></td>
@@ -4981,7 +4981,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_linear_depth_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @param u the controlled 2x2 unitary matrix</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l543" href="#l543">543</a></td>
@@ -4990,7 +4990,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CRx, TK1, U1, and CU3</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l544" href="#l544">544</a></td>
@@ -4999,7 +4999,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_1_qubit</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l545" href="#l545">545</a></td>
@@ -5008,7 +5008,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_linear_depth_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l546" href="#l546">546</a></td>
@@ -5017,7 +5017,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_n_qubits</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l547" href="#l547">547</a></td>
@@ -5026,7 +5026,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_1_qubit</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l548" href="#l548">548</a></td>
@@ -5035,7 +5035,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_normal_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l549" href="#l549">549</a></td>
@@ -5044,7 +5044,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_n_qubits</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l550" href="#l550">550</a></td>
@@ -5053,7 +5053,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_gray_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l551" href="#l551">551</a></td>
@@ -5062,7 +5062,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_normal_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l552" href="#l552">552</a></td>
@@ -5071,7 +5071,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l553" href="#l553">553</a></td>
@@ -5080,7 +5080,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Implement CnX gate with floor((n-1)/2) ancilla qubits, using H, T, and</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_gray_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l554" href="#l554">554</a></td>
@@ -5089,7 +5089,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * CX gates (https://arxiv.org/abs/1508.03273).</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l555" href="#l555">555</a></td>
@@ -5098,7 +5098,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l556" href="#l556">556</a></td>
@@ -5107,7 +5107,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n Number of controls</span></td>
+      <td class="src "><span class="cm"> * @brief Implement CnX gate with floor((n-1)/2) ancilla qubits, using H, T, and</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l557" href="#l557">557</a></td>
@@ -5116,7 +5116,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param zeroed_ancillas If true, the gate will be implemented assuming that</span></td>
+      <td class="src "><span class="cm"> * CX gates (https://arxiv.org/abs/1508.03273).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l558" href="#l558">558</a></td>
@@ -5125,7 +5125,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * all ancilla qubits start in state |0&gt;. If false, uses an implementation that</span></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l559" href="#l559">559</a></td>
@@ -5134,7 +5134,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * uses ancilla qubits in arbitrary states.</span></td>
+      <td class="src "><span class="cm"> * @param n Number of controls</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l560" href="#l560">560</a></td>
@@ -5143,7 +5143,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit with control qubits at indices 0, ..., n - 1, target qubit n,</span></td>
+      <td class="src "><span class="cm"> * @param zeroed_ancillas If true, the gate will be implemented assuming that</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l561" href="#l561">561</a></td>
@@ -5152,7 +5152,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * ancilla qubits n + 1, ... , n + floor((n-1)/2), and the following gate</span></td>
+      <td class="src "><span class="cm"> * all ancilla qubits start in state |0&gt;. If false, uses an implementation that</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l562" href="#l562">562</a></td>
@@ -5161,7 +5161,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * counts:</span></td>
+      <td class="src "><span class="cm"> * uses ancilla qubits in arbitrary states.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l563" href="#l563">563</a></td>
@@ -5170,7 +5170,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *   * 8n - 9 T, 6n - 6 CX, 4n - 6 H if zeroed_ancillas = true</span></td>
+      <td class="src "><span class="cm"> * @return Circuit with control qubits at indices 0, ..., n - 1, target qubit n,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l564" href="#l564">564</a></td>
@@ -5179,7 +5179,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *   * 8n - 8 T, 8n - 12 CX, 4n - 6 H if zeroed_ancillas = false (for n = 3, the</span></td>
+      <td class="src "><span class="cm"> * ancilla qubits n + 1, ... , n + floor((n-1)/2), and the following gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l565" href="#l565">565</a></td>
@@ -5188,7 +5188,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * circuit has 14 CX gates)</span></td>
+      <td class="src "><span class="cm"> * counts:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l566" href="#l566">566</a></td>
@@ -5197,7 +5197,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> *   * 8n - 9 T, 6n - 6 CX, 4n - 6 H if zeroed_ancillas = true</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l567" href="#l567">567</a></td>
@@ -5206,7 +5206,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_vchain_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">zeroed_ancillas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> *   * 8n - 8 T, 8n - 12 CX, 4n - 6 H if zeroed_ancillas = false (for n = 3, the</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l568" href="#l568">568</a></td>
@@ -5215,7 +5215,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * circuit has 14 CX gates)</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l569" href="#l569">569</a></td>
@@ -5224,7 +5224,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRy_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l570" href="#l570">570</a></td>
@@ -5233,7 +5233,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_vchain_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">zeroed_ancillas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l571" href="#l571">571</a></td>
@@ -5242,7 +5242,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRx_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l572" href="#l572">572</a></td>
@@ -5251,7 +5251,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRy_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l573" href="#l573">573</a></td>
@@ -5260,7 +5260,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRz_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l574" href="#l574">574</a></td>
@@ -5269,7 +5269,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRx_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l575" href="#l575">575</a></td>
@@ -5278,7 +5278,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l576" href="#l576">576</a></td>
@@ -5287,7 +5287,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Given a 2x2 numerical unitary matrix U and the number of control</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRz_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l577" href="#l577">577</a></td>
@@ -5296,7 +5296,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * qubits n return the decomposed CnU gate</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l578" href="#l578">578</a></td>
@@ -5305,7 +5305,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l579" href="#l579">579</a></td>
@@ -5314,7 +5314,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param u</span></td>
+      <td class="src "><span class="cm"> * @brief Given a 2x2 numerical unitary matrix U and the number of control</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l580" href="#l580">580</a></td>
@@ -5323,7 +5323,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CX, TK1, U1, and CU3</span></td>
+      <td class="src "><span class="cm"> * qubits n return the decomposed CnU gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l581" href="#l581">581</a></td>
@@ -5332,7 +5332,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @param n</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l582" href="#l582">582</a></td>
@@ -5341,7 +5341,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @param u</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l583" href="#l583">583</a></td>
@@ -5350,7 +5350,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CX, TK1, U1, and CU3</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l584" href="#l584">584</a></td>
@@ -5359,7 +5359,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l585" href="#l585">585</a></td>
@@ -5368,7 +5368,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Given a gate and the number of control qubits n,</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l586" href="#l586">586</a></td>
@@ -5377,7 +5377,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * return the n-qubit controlled version of that gate using the gray code</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l587" href="#l587">587</a></td>
@@ -5386,7 +5386,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * decomposition method. This method can handle gates with symbolic parameters</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l588" href="#l588">588</a></td>
@@ -5395,7 +5395,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n</span></td>
+      <td class="src "><span class="cm"> * @brief Given a gate and the number of control qubits n,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l589" href="#l589">589</a></td>
@@ -5404,7 +5404,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param gate</span></td>
+      <td class="src "><span class="cm"> * return the n-qubit controlled version of that gate using the gray code</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l590" href="#l590">590</a></td>
@@ -5413,7 +5413,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CX, CRx, CRy, CRz, CU1, TK1, U1, and CU3</span></td>
+      <td class="src "><span class="cm"> * decomposition method. This method can handle gates with symbolic parameters</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l591" href="#l591">591</a></td>
@@ -5422,7 +5422,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @param n</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l592" href="#l592">592</a></td>
@@ -5431,7 +5431,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Gate_ptr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gate</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @param gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l593" href="#l593">593</a></td>
@@ -5440,7 +5440,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CX, CRx, CRy, CRz, CU1, TK1, U1, and CU3</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l594" href="#l594">594</a></td>
@@ -5449,7 +5449,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l595" href="#l595">595</a></td>
@@ -5458,7 +5458,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Linear decomposition method for n-qubit controlled SU(2) gate</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Gate_ptr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gate</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l596" href="#l596">596</a></td>
@@ -5467,7 +5467,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * expressed as Rz(alpha)Ry(theta)Rz(beta) (multiplication order).</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l597" href="#l597">597</a></td>
@@ -5476,7 +5476,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Implements lemma 7.9 in https://arxiv.org/abs/quant-ph/9503016</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l598" href="#l598">598</a></td>
@@ -5485,7 +5485,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n</span></td>
+      <td class="src "><span class="cm"> * @brief Linear decomposition method for n-qubit controlled SU(2) gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l599" href="#l599">599</a></td>
@@ -5494,7 +5494,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param alpha</span></td>
+      <td class="src "><span class="cm"> * expressed as Rz(alpha)Ry(theta)Rz(beta) (multiplication order).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l600" href="#l600">600</a></td>
@@ -5503,7 +5503,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param theta</span></td>
+      <td class="src "><span class="cm"> * Implements lemma 7.9 in https://arxiv.org/abs/quant-ph/9503016</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l601" href="#l601">601</a></td>
@@ -5512,7 +5512,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param beta</span></td>
+      <td class="src "><span class="cm"> * @param n</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l602" href="#l602">602</a></td>
@@ -5521,7 +5521,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit</span></td>
+      <td class="src "><span class="cm"> * @param alpha</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l603" href="#l603">603</a></td>
@@ -5530,7 +5530,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @param theta</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l604" href="#l604">604</a></td>
@@ -5539,7 +5539,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnSU2_linear_decomp</span><span class="p">(</span></td>
+      <td class="src "><span class="cm"> * @param beta</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l605" href="#l605">605</a></td>
@@ -5548,7 +5548,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
+      <td class="src "><span class="cm"> * @return Circuit</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l606" href="#l606">606</a></td>
@@ -5557,7 +5557,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l607" href="#l607">607</a></td>
@@ -5566,7 +5566,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to Rx, using GPI and GPI2 gates */</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnSU2_linear_decomp</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l608" href="#l608">608</a></td>
@@ -5575,7 +5575,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">Rx_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
+      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l609" href="#l609">609</a></td>
@@ -5593,7 +5593,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to Ry, using GPI and GPI2 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to Rx, using GPI and GPI2 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l611" href="#l611">611</a></td>
@@ -5602,7 +5602,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">Ry_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">Rx_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l612" href="#l612">612</a></td>
@@ -5620,7 +5620,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to Rz, using GPI gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to Ry, using GPI and GPI2 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l614" href="#l614">614</a></td>
@@ -5629,7 +5629,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">Rz_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">Ry_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l615" href="#l615">615</a></td>
@@ -5647,7 +5647,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to XXPhase, using AAMS gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to Rz, using GPI gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l617" href="#l617">617</a></td>
@@ -5656,7 +5656,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">Rz_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l618" href="#l618">618</a></td>
@@ -5674,7 +5674,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to YYPhase, using AAMS gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to XXPhase, using AAMS gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l620" href="#l620">620</a></td>
@@ -5683,7 +5683,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">XXPhase_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l621" href="#l621">621</a></td>
@@ -5701,7 +5701,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to ZZPhase, using AAMS, GPI and GPI2 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to YYPhase, using AAMS gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l623" href="#l623">623</a></td>
@@ -5710,7 +5710,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ZZPhase_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">YYPhase_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l624" href="#l624">624</a></td>
@@ -5728,7 +5728,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK1, using GPI and GPI2 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to ZZPhase, using AAMS, GPI and GPI2 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l626" href="#l626">626</a></td>
@@ -5737,7 +5737,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK1_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">ZZPhase_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l627" href="#l627">627</a></td>
@@ -5755,7 +5755,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Equivalent to TK2, using AAMS, GPI and GPI2 gates */</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK1, using GPI and GPI2 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l629" href="#l629">629</a></td>
@@ -5764,7 +5764,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK1_using_GPI</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l630" href="#l630">630</a></td>
@@ -5782,7 +5782,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace CircPool</span></td>
+      <td class="src "><span class="cm">/** Equivalent to TK2, using AAMS, GPI and GPI2 gates */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l632" href="#l632">632</a></td>
@@ -5791,7 +5791,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_AAMS</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l633" href="#l633">633</a></td>
@@ -5800,10 +5800,37 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace tket</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l634" href="#l634">634</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace CircPool</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l635" href="#l635">635</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l636" href="#l636">636</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace tket</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l637" href="#l637">637</a></td>
       <td class="linebranch">
       </td>
       <td class="linedecision">
