@@ -1071,6 +1071,8 @@ PassPtr gen_greedy_pauli_simp(
       OpType::Measure,
       OpType::PhasedX,
       OpType::TK1,
+      OpType::TwinPhasedX,
+      OpType::PhasedXX,
       OpType::Reset,
       OpType::Conditional,
       OpType::PauliExpBox,

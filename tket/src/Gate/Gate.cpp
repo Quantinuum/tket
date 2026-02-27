@@ -956,7 +956,9 @@ std::optional<Pauli> Gate::commuting_basis(port_t i) const {
       }
     }
     case OpType::PhasedXX: {
-      if (equiv_0(params_[0]) || equiv_0(2 * params_[1])) {
+      if (equiv_0(params_[0])) {
+        return Pauli::I;
+      } else if (equiv_0(2 * params_[1])) {
         return Pauli::X;
       } else {
         return std::nullopt;
