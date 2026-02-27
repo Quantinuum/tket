@@ -1256,6 +1256,8 @@ SCENARIO("Test Pauli Graph Synthesis Pass") {
     circ.add_op<unsigned>(OpType::XXPhase, 0.25, {1, 2});
     circ.add_op<unsigned>(OpType::YYPhase, 0.25, {2, 0});
     circ.add_op<unsigned>(OpType::PhasedX, {0.25, 1.75}, {0});
+    circ.add_op<unsigned>(OpType::TwinPhasedX, {0.25, 0.25}, {0, 1});
+    circ.add_op<unsigned>(OpType::PhasedXX, {1.25, 0.25}, {1, 2});
     // ... and some with Clifford angles...
     circ.add_op<unsigned>(OpType::Rz, 0.5, {0});
     circ.add_op<unsigned>(OpType::Rx, 1.0, {1});
@@ -1267,6 +1269,8 @@ SCENARIO("Test Pauli Graph Synthesis Pass") {
     circ.add_op<unsigned>(OpType::PhasedX, {3.5, 0.5}, {0});
     circ.add_op<unsigned>(OpType::SX, {1});
     circ.add_op<unsigned>(OpType::SXdg, {2});
+    circ.add_op<unsigned>(OpType::TwinPhasedX, {3.5, 0.5}, {0, 1});
+    circ.add_op<unsigned>(OpType::PhasedXX, {3.5, 0.5}, {1, 2});
 
     CompilationUnit cu(circ);
     graph_synth->apply(cu);
@@ -2390,6 +2394,47 @@ SCENARIO("RxFromSX") {
     c0.add_op<unsigned>(OpType::Rx, -0.5, {1});
     c0.add_phase(0.25);
     REQUIRE(c1 == c0);
+  }
+}
+
+SCENARIO("Compilation for Sol") {
+  GIVEN("Unitary decompositions of Sol gates") {
+    Circuit c(2);
+    c.add_op<unsigned>(OpType::TwinPhasedX, {0.1, 0.2}, {0, 1});
+    c.add_op<unsigned>(OpType::PhasedXX, {0.3, 0.4}, {0, 1});
+    Circuit c1(2);
+    c1.add_op<unsigned>(OpType::PhasedX, {0.1, 0.2}, {0});
+    c1.add_op<unsigned>(OpType::PhasedX, {0.1, 0.2}, {1});
+    c1.add_op<unsigned>(OpType::Rz, -0.4, {0});
+    c1.add_op<unsigned>(OpType::Rz, -0.4, {1});
+    c1.add_op<unsigned>(OpType::XXPhase, 0.3, {0, 1});
+    c1.add_op<unsigned>(OpType::Rz, 0.4, {0});
+    c1.add_op<unsigned>(OpType::Rz, 0.4, {1});
+    REQUIRE(test_unitary_comparison(c, c1));
+  }
+  GIVEN("Rebase and optimization for Sol gateset") {
+    Circuit c(3);
+    c.add_op<unsigned>(OpType::H, {0});
+    c.add_op<unsigned>(OpType::CX, {0, 1});
+    c.add_op<unsigned>(OpType::TwinPhasedX, {0.1, 0.2}, {0, 1});
+    c.add_op<unsigned>(OpType::PhasedXX, {0.3, 0.4}, {0, 1});
+    c.add_op<unsigned>(OpType::S, {1});
+    c.add_op<unsigned>(OpType::CX, {1, 2});
+    c.add_op<unsigned>(OpType::CY, {2, 1});
+    c.add_op<unsigned>(OpType::T, {2});
+    c.add_op<unsigned>(OpType::CZ, {1, 2});
+    c.add_op<unsigned>(OpType::YYPhase, 0.25, {1, 2});
+    CompilationUnit cu(c);
+    REQUIRE(gen_greedy_pauli_simp()->apply(cu));
+    REQUIRE(FullPeepholeOptimise()->apply(cu));
+    Circuit cx(2);
+    cx.add_op<unsigned>(OpType::CX, {0, 1});
+    PassPtr sol_rebase = gen_rebase_pass(
+        {OpType::TK2, OpType::PhasedXX, OpType::TwinPhasedX, OpType::PhasedX,
+         OpType::Rz},
+        cx, CircPool::tk1_to_PhasedXRz);
+    REQUIRE(sol_rebase->apply(cu));
+    REQUIRE(test_unitary_comparison(c, cu.get_circ_ref(), true));
   }
 }
 

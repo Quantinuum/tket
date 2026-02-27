@@ -194,6 +194,18 @@ SCENARIO("Check op retrieval overloads are working correctly.", "[ops]") {
     CHECK(
         nphasedx->transpose()->get_params() ==
         std::vector<SymEngine::Expression>{0.5, 0.5});
+    const Op_ptr twinphasedx = (get_op_ptr(OpType::TwinPhasedX, {0.5, -0.5}));
+    CHECK(twinphasedx->get_name() == "TwinPhasedX(0.5, 1.5)");
+    CHECK(twinphasedx->get_params().size() == 2);
+    CHECK(
+        twinphasedx->transpose()->get_params() ==
+        std::vector<SymEngine::Expression>{0.5, 0.5});
+    const Op_ptr phasedxx = (get_op_ptr(OpType::PhasedXX, {0.5, -0.5}));
+    CHECK(phasedxx->get_name() == "PhasedXX(0.5, 0.5)");  // last param is mod 1
+    CHECK(phasedxx->get_params().size() == 2);
+    CHECK(
+        phasedxx->transpose()->get_params() ==
+        std::vector<SymEngine::Expression>{-0.5, 0.5});
     const Op_ptr phase = (get_op_ptr(OpType::Phase, 0.5));
     CHECK(phase->get_name() == "Phase(0.5)");
     REQUIRE(*phase->transpose() == *phase);
@@ -405,6 +417,18 @@ SCENARIO("Commutation relations") {
     Op_ptr op = get_op_ptr(OpType::Rx, 2.32);
     REQUIRE(op->commuting_basis(0) == Pauli::X);
   }
+  GIVEN("A PhasedXX") {
+    Op_ptr op = get_op_ptr(OpType::PhasedXX, std::vector<Expr>{0.2, 0.3});
+    REQUIRE(op->commuting_basis(0) == std::nullopt);
+  }
+  GIVEN("A PhasedXX that is an XXPhase") {
+    Op_ptr op = get_op_ptr(OpType::PhasedXX, std::vector<Expr>{0.2, 0.});
+    REQUIRE(op->commuting_basis(0) == Pauli::X);
+  }
+  GIVEN("A PhasedXX that is a noop") {
+    Op_ptr op = get_op_ptr(OpType::PhasedXX, std::vector<Expr>{0., 0.1});
+    REQUIRE(op->commuting_basis(0) == Pauli::I);
+  }
   GIVEN("A nested conditional") {
     Circuit c0(1, 1);
     c0.add_conditional_gate<unsigned>(OpType::X, {}, {0}, {0}, 1);
@@ -532,6 +556,20 @@ SCENARIO("Check some daggers work correctly", "[ops]") {
     const Op_ptr op = get_op_ptr(OpType::ECR);
     const Op_ptr daggered = (op)->dagger();
     REQUIRE(daggered->get_type() == OpType::ECR);
+  }
+  WHEN("Check TwinPhasedX gets daggered correctly") {
+    const Op_ptr op = get_op_ptr(OpType::TwinPhasedX, {0.5, 0.5});
+    const Op_ptr daggered = (op)->dagger();
+    REQUIRE(daggered->get_type() == OpType::TwinPhasedX);
+    REQUIRE(test_equiv_val(daggered->get_params()[0], -0.5));
+    REQUIRE(test_equiv_val(daggered->get_params()[1], 0.5));
+  }
+  WHEN("Check PhasedXX gets daggered correctly") {
+    const Op_ptr op = get_op_ptr(OpType::PhasedXX, {0.5, 0.5});
+    const Op_ptr daggered = (op)->dagger();
+    REQUIRE(daggered->get_type() == OpType::PhasedXX);
+    REQUIRE(test_equiv_val(daggered->get_params()[0], -0.5));
+    REQUIRE(test_equiv_val(daggered->get_params()[1], 0.5));
   }
   WHEN("Check Phase gets daggered correctly") {
     const Op_ptr op = get_op_ptr(OpType::Phase, 0.5);
