@@ -1189,6 +1189,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3af69fb15e2b2171790069c2ace78f06cb">RNGIndex</a>
 , <a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a2eed401ed9a97d7c0299cd59ae2da439">RNGNum</a>
 , <a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a7bc80edb8250993563c75db2daee1665">JobShotNum</a>
+, <a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a28d907e30b9bc2572c0bdcc57e613bb3">TwinPhasedX</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3ac53d1c05e50055098ba0e0bd0658aa92">PhasedXX</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a13e81344da4794f2648eb9a7b286fcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named operation types.  <a href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3">More...</a><br /></td></tr>
@@ -5577,6 +5580,10 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a13e81344da4794f2648eb9a7b286fcf3a7bc80edb8250993563c75db2daee1665" name="a13e81344da4794f2648eb9a7b286fcf3a7bc80edb8250993563c75db2daee1665"></a>JobShotNum&#160;</td><td class="fielddoc"><p>Get 32-bit (little-endian) shot number. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a13e81344da4794f2648eb9a7b286fcf3a28d907e30b9bc2572c0bdcc57e613bb3" name="a13e81344da4794f2648eb9a7b286fcf3a28d907e30b9bc2572c0bdcc57e613bb3"></a>TwinPhasedX&#160;</td><td class="fielddoc"><p>Two identical <a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a667abdbcc77f7dead35f32f2efeebd3b">PhasedX</a> applied to different qubits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a13e81344da4794f2648eb9a7b286fcf3ac53d1c05e50055098ba0e0bd0658aa92" name="a13e81344da4794f2648eb9a7b286fcf3ac53d1c05e50055098ba0e0bd0658aa92"></a>PhasedXX&#160;</td><td class="fielddoc"><p>An <a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a464c865608c43e719808fdfada936330">XXPhase</a> conjugated by <a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3aca877e9e6cc89dfdd87b1797169c9a9e">Rz</a> operations on both qubits. </p>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="OpType_8hpp_source.html#l00029">29</a> of file <a class="el" href="OpType_8hpp_source.html">OpType.hpp</a>.</p>
@@ -6191,7 +6198,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all classical gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00105">105</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00107">107</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -6212,7 +6219,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all controlled gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00135">135</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00137">137</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -6254,7 +6261,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all gates over more than one qubit. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00057">57</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00058">58</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -6275,7 +6282,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all opaque classical gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00147">147</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00149">149</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -6296,7 +6303,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all measurement and reset gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00127">127</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00129">129</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -6317,7 +6324,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all gates over a single qubit. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00091">91</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00093">93</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -6338,7 +6345,7 @@ e^{-i\pi\beta} \end{array} \right] \) </p>
 
 <p>Set of all single-qubit gates that can be expressed as TK1. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00079">79</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00081">81</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -9555,7 +9562,7 @@ template&lt;&gt; </div>
 <p>It is the caller's responsibility to provide a valid transform: there are no checks on this.</p>
 <dl class="section return"><dt>Returns</dt><dd>compilation pass that applies the supplied transform </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01175">1175</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01178">1178</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -9596,7 +9603,7 @@ template&lt;&gt; </div>
 <p>It is the caller's responsibility to provide a valid transform: there are no checks on this.</p>
 <dl class="section return"><dt>Returns</dt><dd>compilation pass that applies the supplied transform </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01193">1193</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01196">1196</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -12178,7 +12185,7 @@ template&lt;arithmetic T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01147">1147</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01150">1150</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -12603,7 +12610,7 @@ template&lt;arithmetic T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>PassPtr </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01017">1017</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01018">1018</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -12956,7 +12963,7 @@ template&lt;arithmetic T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01123">1123</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01126">1126</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -12986,7 +12993,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01104">1104</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01107">1107</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -13052,7 +13059,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01010">1010</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01011">1011</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -14474,7 +14481,7 @@ template&lt;&gt; </div>
 
 <p>Test for Barrier "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00164">164</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00166">166</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14496,7 +14503,7 @@ template&lt;&gt; </div>
 
 <p>Test for input or output for classical "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00195">195</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00197">197</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14518,7 +14525,7 @@ template&lt;&gt; </div>
 
 <p>Test for input, creation, output or discard quantum "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00191">191</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00193">193</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14540,7 +14547,7 @@ template&lt;&gt; </div>
 
 <p>Test for input or output for RNG "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00203">203</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00205">205</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14562,7 +14569,7 @@ template&lt;&gt; </div>
 
 <p>Test for input, creation, output or discard "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00186">186</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00188">188</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14584,7 +14591,7 @@ template&lt;&gt; </div>
 
 <p>Test for input or output for wasm "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00199">199</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00201">201</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14606,7 +14613,7 @@ template&lt;&gt; </div>
 
 <p>Test for boxes (complex packaged operations) </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00211">211</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00213">213</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14628,7 +14635,7 @@ template&lt;&gt; </div>
 
 <p>Test for purely classical gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00302">302</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00304">304</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14650,7 +14657,7 @@ template&lt;&gt; </div>
 
 <p>Test for Clifford operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00287">287</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00289">289</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14672,7 +14679,7 @@ template&lt;&gt; </div>
 
 <p>Test for controlled gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00306">306</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00308">308</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14694,7 +14701,7 @@ template&lt;&gt; </div>
 
 <p>Test for output or discard quantum "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00170">170</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00172">172</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14716,7 +14723,7 @@ template&lt;&gt; </div>
 
 <p>Test for output "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00180">180</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00182">182</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14738,7 +14745,7 @@ template&lt;&gt; </div>
 
 <p>Test for flowops (just for high-level control flow) </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00241">241</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00243">243</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14760,7 +14767,7 @@ template&lt;&gt; </div>
 
 <p>Test for elementary gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00207">207</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00209">209</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14782,7 +14789,7 @@ template&lt;&gt; </div>
 
 <p>Test for input or creation quantum "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00166">166</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00168">168</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14804,7 +14811,7 @@ template&lt;&gt; </div>
 
 <p>Test for input "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00174">174</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00176">176</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14826,7 +14833,7 @@ template&lt;&gt; </div>
 
 <p>Test for initial and final "ops". </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00156">156</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00158">158</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14848,7 +14855,7 @@ template&lt;&gt; </div>
 
 <p>Test for gates over more than one qubit. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00263">263</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00265">265</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14870,7 +14877,7 @@ template&lt;&gt; </div>
 
 <p>Test for non-invertible operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00276">276</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00278">278</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14892,7 +14899,7 @@ template&lt;&gt; </div>
 
 <p>Test for opaque classical gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00310">310</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00312">312</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14914,7 +14921,7 @@ template&lt;&gt; </div>
 
 <p>Test for rotations around Pauli axes. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00257">257</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00259">259</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14936,7 +14943,7 @@ template&lt;&gt; </div>
 
 <p>Test for measurement and reset gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00298">298</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00300">300</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -14988,7 +14995,7 @@ template&lt;&gt; </div>
 
 <p>Test for rotations (including controlled rotations) </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00247">247</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00249">249</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -15010,7 +15017,7 @@ template&lt;&gt; </div>
 
 <p>Test for gates over a single qubit. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00267">267</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00269">269</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -15032,7 +15039,7 @@ template&lt;&gt; </div>
 
 <p>Test for single-qubit gates that can be expressed as TK1. </p>
 
-<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00272">272</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OpTypeFunctions_8cpp_source.html#l00274">274</a> of file <a class="el" href="OpTypeFunctions_8cpp_source.html">OpTypeFunctions.cpp</a>.</p>
 
 </div>
 </div>
@@ -15091,7 +15098,7 @@ template&lt;&gt; </div>
 <p>Check whether the given TK2 angles represent a SWAP gate up to a phase, and return the phase if so. </p>
 <dl class="section return"><dt>Returns</dt><dd>The phase (as a multiple of pi) if the TK2 is a SWAP up to a phase. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircUtils_8cpp_source.html#l01399">1399</a> of file <a class="el" href="CircUtils_8cpp_source.html">CircUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircUtils_8cpp_source.html#l01403">1403</a> of file <a class="el" href="CircUtils_8cpp_source.html">CircUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -16498,7 +16505,7 @@ template&lt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::tuple&lt;<a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a>, std::array&lt;Expr, 3&gt;, <a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a>&gt; pre circuit, normalised TK2 angles and post circuit (in this order) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircUtils_8cpp_source.html#l01268">1268</a> of file <a class="el" href="CircUtils_8cpp_source.html">CircUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircUtils_8cpp_source.html#l01272">1272</a> of file <a class="el" href="CircUtils_8cpp_source.html">CircUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -16639,7 +16646,7 @@ template&lt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PauliGraph_8cpp_source.html#l00025">25</a> of file <a class="el" href="PauliGraph_8cpp_source.html">PauliGraph.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PauliGraph_8cpp_source.html#l00026">26</a> of file <a class="el" href="PauliGraph_8cpp_source.html">PauliGraph.cpp</a>.</p>
 
 </div>
 </div>
@@ -17594,7 +17601,7 @@ template&lt;&gt; </div>
 
 <p>Builds a sequence of PauliSimp (gen_synthesise_pauli_graph) and FullPeepholeOptimise. </p>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01158">1158</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01161">1161</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -18845,7 +18852,7 @@ template&lt;&gt; </div>
 <p>@ pre n &lt; 32</p>
 <dl class="section return"><dt>Returns</dt><dd>compilation pass that performs rounding </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01164">1164</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l01167">1167</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -21288,7 +21295,7 @@ template&lt;typename UnitA , typename UnitB &gt; </div>
 <code>c</code> has no implicit wireswaps </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>the returned circuit has a single default qubit register, whose initial qubits act as the controls over the other qubits, which correspond to those of <code>c</code> in the same order </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircUtils_8cpp_source.html#l01253">1253</a> of file <a class="el" href="CircUtils_8cpp_source.html">CircUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircUtils_8cpp_source.html#l01257">1257</a> of file <a class="el" href="CircUtils_8cpp_source.html">CircUtils.cpp</a>.</p>
 
 </div>
 </div>

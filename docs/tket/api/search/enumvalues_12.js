@@ -10,5 +10,6 @@ var searchData=
   ['too_5fmany_5fqubits_7',['TOO_MANY_QUBITS',['../structtket_1_1GateUnitaryMatrixError.html#af611ef0f8913f3c63ce098c0050f12a1a0645ebbaa30e95de8b700b89a5d60c65',1,'tket::GateUnitaryMatrixError']]],
   ['transpose_8',['transpose',['../namespacetket.html#a0f814e0f8e98465926bde71420d68cf6aa0384d313f8d9e42660fa7de18b7ed9e',1,'tket']]],
   ['tree_9',['Tree',['../namespacetket.html#a372ac8e74a26d74ac66c0a2233f532c7a3b0c14770e6bd663518496da60f524da',1,'tket']]],
-  ['triangle_10',['Triangle',['../namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a5e5500cb2b82eb72d550de644bd1b64b',1,'tket::zx']]]
+  ['triangle_10',['Triangle',['../namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a5e5500cb2b82eb72d550de644bd1b64b',1,'tket::zx']]],
+  ['twinphasedx_11',['TwinPhasedX',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a28d907e30b9bc2572c0bdcc57e613bb3',1,'tket']]]
 ];

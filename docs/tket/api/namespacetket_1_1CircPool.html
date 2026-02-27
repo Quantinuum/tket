@@ -289,6 +289,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ada5e5bbca33cc5c5495839565b08c03c" id="r_ada5e5bbca33cc5c5495839565b08c03c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Circuit.html">Circuit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1CircPool.html#ada5e5bbca33cc5c5495839565b08c03c">XXPhase_using_CX</a> (const <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &amp;alpha)</td></tr>
 <tr class="memdesc:ada5e5bbca33cc5c5495839565b08c03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to XXPhase, using CX and U3 gates.  <br /></td></tr>
 <tr class="separator:ada5e5bbca33cc5c5495839565b08c03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923b18cc95a384491fc1810c4db3bc25" id="r_a923b18cc95a384491fc1810c4db3bc25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Circuit.html">Circuit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1CircPool.html#a923b18cc95a384491fc1810c4db3bc25">PhasedXX_using_CX</a> (const <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &amp;alpha, const <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &amp;beta)</td></tr>
+<tr class="memdesc:a923b18cc95a384491fc1810c4db3bc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to PhasedXX, using CX, Rz, Ry, S and Sdg gates.  <br /></td></tr>
+<tr class="separator:a923b18cc95a384491fc1810c4db3bc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36f01c92350b6d4bb633df6476181dc0" id="r_a36f01c92350b6d4bb633df6476181dc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Circuit.html">Circuit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1CircPool.html#a36f01c92350b6d4bb633df6476181dc0">YYPhase_using_TK2</a> (const <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &amp;alpha)</td></tr>
 <tr class="memdesc:a36f01c92350b6d4bb633df6476181dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to YYPhase, using a TK2 gate.  <br /></td></tr>
 <tr class="separator:a36f01c92350b6d4bb633df6476181dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -527,7 +530,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to AAMS, using CX, Rz and U3 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01330">1330</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01344">1344</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -565,7 +568,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to AAMS, using a TK2 and Rz gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01320">1320</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01334">1334</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -588,7 +591,7 @@ Functions</h2></td></tr>
 <p>Using 1 CX yields an approximate decomposition of the TK2 gate which is equivalent to a TK2(0.5, 0, 0) gate. This is always the optimal 1-CX approximation of any TK2 gate, with respect to the squared trace fidelity metric.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(0.5, 0, 0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00947">947</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00961">961</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -613,7 +616,7 @@ Functions</h2></td></tr>
 <p>Requires 0.5 ≥ α ≥ 0.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, 0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01074">1074</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01088">1088</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -648,7 +651,7 @@ Functions</h2></td></tr>
 <p>Requires 0.5 ≥ α ≥ β ≥ 0.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, 0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00957">957</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00971">971</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -683,7 +686,7 @@ Functions</h2></td></tr>
 <p>Warning: in practice, we would not expect this decomposition to be attractive on real hardware, as the same approximation fidelity can be obtained using 2 ZZMax gates, which would typically have (same or) higher fidelity than variable angle ZZPhase gates.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, 0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01078">1078</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01092">1092</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2031,7 +2034,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to ESWAP, using CX, X, S, Ry and U1 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01252">1252</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01266">1266</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2053,7 +2056,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to ESWAP, using a TK2 and (Clifford) TK1 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01240">1240</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01254">1254</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2085,7 +2088,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to FSim, using CX, X, S, U1 and U3 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01280">1280</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01294">1294</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2117,7 +2120,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to FSim, using a TK2 and TK1 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01269">1269</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01283">1283</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2410,7 +2413,7 @@ Functions</h2></td></tr>
 <p>In cases where hardware gate fidelities are known, it might be sensible to use TK2 decompositions that are inexact but less noisy. See DecomposeTK2 pass and transform.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00985">985</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00999">999</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2448,7 +2451,7 @@ Functions</h2></td></tr>
 
 <p>Unwrap NPhasedX, into number_of_qubits PhasedX gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01342">1342</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01356">1356</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2480,7 +2483,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to PhasedISWAP, using CX, U3 and Rz gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01307">1307</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01321">1321</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2512,7 +2515,39 @@ Functions</h2></td></tr>
 
 <p>Equivalent to PhasedISWAP, using a TK2 and Rz gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01297">1297</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01311">1311</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a923b18cc95a384491fc1810c4db3bc25" name="a923b18cc95a384491fc1810c4db3bc25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923b18cc95a384491fc1810c4db3bc25">&#9670;&#160;</a></span>PhasedXX_using_CX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtket_1_1Circuit.html">Circuit</a> tket::CircPool::PhasedXX_using_CX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &amp;&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &amp;&#160;</td>
+          <td class="paramname"><em>beta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Equivalent to PhasedXX, using CX, Rz, Ry, S and Sdg gates. </p>
+
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00897">897</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2534,7 +2569,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to Rx, using GPI and GPI2 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01543">1543</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01557">1557</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2556,7 +2591,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to Ry, using GPI and GPI2 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01552">1552</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01566">1566</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2578,7 +2613,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to Rz, using GPI gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01561">1561</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01575">1575</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2658,7 +2693,7 @@ Functions</h2></td></tr>
 
 <p>converts a TK1 gate to a circuit using PhasedX gates </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01536">1536</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01550">1550</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2696,7 +2731,7 @@ Functions</h2></td></tr>
 
 <p>converts a TK1 gate to a circuit using PhasedX and Rz gates </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01520">1520</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01534">1534</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2734,7 +2769,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using Rx and Ry gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01503">1503</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01517">1517</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2772,7 +2807,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using Rz and H gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01446">1446</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01460">1460</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2810,7 +2845,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using Rz and Rx gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01495">1495</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01509">1509</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2848,7 +2883,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using Rz and SX gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01438">1438</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01452">1452</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2886,7 +2921,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using Rz, X and SX gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01442">1442</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01456">1456</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2924,7 +2959,7 @@ Functions</h2></td></tr>
 
 <p>Just a TK1(α, β, γ) gate. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01489">1489</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01503">1503</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -2962,7 +2997,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using a U3 gate. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01513">1513</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01527">1527</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3000,7 +3035,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK1, using GPI and GPI2 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01592">1592</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01606">1606</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3040,7 +3075,7 @@ Functions</h2></td></tr>
 <p>This is an exact 3 CX decomposition of the TK2(α, β, γ) gate. Prefer using <code>normalised_TK2_using_CX</code> unless you wish to explicitly use 3 CX or if α, β and γ are not normalised to the Weyl chamber.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00970">970</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00984">984</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3078,7 +3113,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK2, using AAMS, GPI and GPI2 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01603">1603</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01617">1617</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3118,7 +3153,7 @@ Functions</h2></td></tr>
 <p>A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00999">999</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01013">1013</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3158,7 +3193,7 @@ Functions</h2></td></tr>
 <p>A TK2-equivalent circuit with as few CX gates as possible (0, 1, 2 or 3 CX).</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit, up to a wire swap, to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01056">1056</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01070">1070</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3196,7 +3231,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK2, using only ISWAPMax and single-qubit gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01188">1188</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01202">1202</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3234,7 +3269,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to TK2, using only ISWAPMax and single-qubit gates, with an implicit swap. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01205">1205</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01219">1219</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3272,7 +3307,7 @@ Functions</h2></td></tr>
 
 <p><a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a605943552629c6e31b20ee3733694927">TK2(a, b, c)</a>-equivalent circuit, using normalised TK2 and single-qb gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01351">1351</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01365">1365</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3310,7 +3345,7 @@ Functions</h2></td></tr>
 
 <p>Just a TK2(α, β, γ) gate. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01144">1144</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01158">1158</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3349,7 +3384,7 @@ Functions</h2></td></tr>
 <p>Either returns TK2(α, β, γ), or a wire swap and single qubit corrections. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit, either a wire swap with single qubit corrections or TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01133">1133</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01147">1147</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3388,7 +3423,7 @@ Functions</h2></td></tr>
 <p>Equivalent to TK2(α, β, γ), using up to 3 ZZMax gates. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> equivalent to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01150">1150</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01164">1164</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3427,7 +3462,7 @@ Functions</h2></td></tr>
 <p>Equivalent to TK2(α, β, γ), up to a wire swap that is encoded in the implicit qubit permutation of the <a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a>, using up to 3 ZZMax gates. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> equivalent to TK2(α, β, γ) up to a wire swap. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01167">1167</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01181">1181</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3468,7 +3503,7 @@ Functions</h2></td></tr>
 <p>Warning: in practice, we would not expect this decomposition to be attractive on real hardware, as the same approximation fidelity can be obtained using 3 ZZMax gates, which would typically have (same or) higher fidelity than variable angle ZZPhase gates.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01085">1085</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01099">1099</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3508,7 +3543,7 @@ Functions</h2></td></tr>
 <p>A TK2-equivalent circuit with as few ZZPhase gates as possible: (0, 1, 2 or 3 ZZphase).</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit, up to a wire swap, to TK2(α, β, γ). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01112">1112</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01126">1126</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3572,7 +3607,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to 3-qubit MS interaction, using CX and U3 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01231">1231</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01245">1245</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3594,7 +3629,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to XXPhase3, using three TK2 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01223">1223</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01237">1237</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3616,7 +3651,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to XXPhase, using AAMS gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01568">1568</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01582">1582</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3689,7 +3724,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit using ZZPhase. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00927">927</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00941">941</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3711,7 +3746,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to YYPhase, using AAMS gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01574">1574</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01588">1588</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3733,7 +3768,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to YYPhase, using two CX gates and one Ry one Sdg and one S gate. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00903">903</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00917">917</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3755,7 +3790,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to YYPhase, using a TK2 gate. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00897">897</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00911">911</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3784,7 +3819,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> Equivalent circuit using ZZPhase. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00937">937</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00951">951</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3848,7 +3883,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to ZZPhase, using AAMS, GPI and GPI2 gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01580">1580</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l01594">1594</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3870,7 +3905,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to ZZPhase, using CX and Rz gates. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00919">919</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00933">933</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
@@ -3892,7 +3927,7 @@ Functions</h2></td></tr>
 
 <p>Equivalent to ZZPhase, using a TK2 gate. </p>
 
-<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00913">913</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircPool_8cpp_source.html#l00927">927</a> of file <a class="el" href="CircPool_8cpp_source.html">CircPool.cpp</a>.</p>
 
 </div>
 </div>
