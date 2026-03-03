@@ -312,11 +312,6 @@ get_information_content(const Eigen::Matrix4cd &X) {
         "Non-unitary matrix passed to get_information_content");
   }
 
-  Eigen::Matrix2cd PauliX, PauliY, PauliZ;
-  PauliX << 0, 1, 1, 0;
-  PauliY << 0, -i_, i_, 0;
-  PauliZ << 1, 0, 0, -1;
-
   // change of basis for SU(2) x SU(2) -> SO(4)
   Mat4 MagicM;
   MagicM << 1, 0, 0, i_, 0, i_, 1, 0, 0, i_, -1, 0, 1, 0, 0, -i_;
