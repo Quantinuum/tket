@@ -373,12 +373,6 @@ get_information_content(const Eigen::Matrix4cd &X) {
   const Mat4 tmp = (-i_ * thetas).asDiagonal();
   const auto eigs_sqrt_inv = tmp.exp();
 
-  Mat4 Q2 = eigv.transpose();
-  Mat4 Q1 = Xprime * Q2.transpose() * eigs_sqrt_inv;
-
-  // we now have Xprime = Q1 * exp(i thetas) * Q2
-  // with Q1,Q2 in SO(4), exp(i thetas) in SU(4)
-
   // transform to Pauli basis exp(i k_i σ_ii)
   Eigen::Matrix4d basis_change;
   basis_change << 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1,
@@ -388,11 +382,15 @@ get_information_content(const Eigen::Matrix4cd &X) {
         return mod(d, 4);
       });
 
+  Mat4 Q2 = eigv.transpose();
   // we need to ensure that det(Q) == 1 so that K1,K2 \in SU(2) x SU(2)
   if (Q2.determinant().real() < 0) {
     Q2.row(3) = -Q2.row(3);
-    Q1 = Xprime * Q2.transpose() * eigs_sqrt_inv;
   }
+  Mat4 Q1 = Xprime * Q2.transpose() * eigs_sqrt_inv;
+
+  // we now have Xprime = Q1 * exp(i thetas) * Q2
+  // with Q1,Q2 in SO(4), exp(i thetas) in SU(4)
 
   // these are our local operations (left and right)
   Mat4 K1 = MagicM * Q1 * MagicM.adjoint();
