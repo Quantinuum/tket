@@ -320,9 +320,7 @@ def SquashTK1() -> BasePass:
     """Squash sequences of single-qubit gates to TK1 gates."""
 
 def SquashRzPhasedX() -> BasePass:
-    """
-    Squash single qubit gates into PhasedX and Rz gates. Also remove identity gates. Commute Rz gates to the back if possible.
-    """
+    """Squash single qubit gates into PhasedX and Rz gates."""
 
 def FlattenRegisters() -> BasePass:
     """
