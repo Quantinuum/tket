@@ -82,6 +82,7 @@ from pytket._tket.unit_id import (
     Qubit,
     QubitRegister,
     UnitID,
+    UnitType,
 )
 
 from .clexpr import wired_clexpr_from_logic_exp
