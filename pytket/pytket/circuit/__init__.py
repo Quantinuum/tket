@@ -25,9 +25,11 @@ from typing import (
 
 from pytket import wasm
 from pytket._tket.circuit import (
+    BarrierOp,
     BasisOrder,
     CircBox,
     Circuit,
+    ClassicalEvalOp,
     ClBitVar,
     ClExpr,
     ClExprOp,
@@ -36,6 +38,7 @@ from pytket._tket.circuit import (
     Command,
     Conditional,
     ConjugationBox,
+    CopyBitsOp,
     CustomGate,
     CustomGateDef,
     CXConfigType,
@@ -67,6 +70,7 @@ from pytket._tket.circuit import (
     Unitary1qBox,
     Unitary2qBox,
     Unitary3qBox,
+    WASMOp,
     WiredClExpr,
     fresh_symbol,
 )
