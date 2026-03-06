@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+
+- Don't cancel two-qubit gates when running `SquashRzPhasedX` pass.
+
+## 2.14.0 (March 2026)
+
+Features:
+
+- Add `OpType.TwinPhasedX` and `OpType.PhasedXX`.
+
 ## 2.13.0 (February 2026)
 
 Features:

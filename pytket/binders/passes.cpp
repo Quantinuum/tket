@@ -585,8 +585,7 @@ NB_MODULE(passes, m) {
       "Squash sequences of single-qubit gates to TK1 gates.");
   m.def(
       "SquashRzPhasedX", &SquashRzPhasedX,
-      "Squash single qubit gates into PhasedX and Rz gates. Also remove "
-      "identity gates. Commute Rz gates to the back if possible.");
+      "Squash single qubit gates into PhasedX and Rz gates.");
   m.def(
       "FlattenRegisters", &FlattenRegisters,
       "Merges all quantum and classical registers into their "

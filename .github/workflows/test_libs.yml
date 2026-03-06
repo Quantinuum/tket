@@ -135,7 +135,7 @@ jobs:
         gcovr --print-summary --html --html-details -r ${GITHUB_WORKSPACE}/libs/${{ matrix.lib }} --exclude-lines-by-pattern '.*\bTKET_ASSERT\(.*\);' --object-directory ${GITHUB_WORKSPACE}/build/${{ matrix.lib }}/build/Debug/CMakeFiles/${{ matrix.lib }}.dir/src -o ${{ matrix.lib }}-coverage/index.html --decisions > ${{ matrix.lib }}-coverage/summary.txt
         cat ${{ matrix.lib }}-coverage/summary.txt
     - name: upload artefact
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ matrix.lib }}_coverage
         path: ${{ matrix.lib }}-coverage/
@@ -161,7 +161,7 @@ jobs:
       with:
         ref: gh-pages
     - name: download artefact
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: ${{ matrix.lib }}_coverage
         path: ${{ matrix.lib }}-coverage/

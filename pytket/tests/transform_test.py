@@ -40,6 +40,7 @@ from pytket.passes import (
     CustomPass,
     CustomRoutingPass,
     CXMappingPass,
+    DecomposeBoxes,
     DefaultMappingPass,
     FullMappingPass,
     FullPeepholeOptimise,
@@ -49,6 +50,7 @@ from pytket.passes import (
     RemoveRedundancies,
     RoutingPass,
     SequencePass,
+    SquashRzPhasedX,
     SynthesiseTket,
 )
 from pytket.pauli import Pauli
@@ -1509,3 +1511,20 @@ def test_clifford_push() -> None:
     assert coms[5].op.type == OpType.ExplicitModifier
     assert coms[6].op.type == OpType.ExplicitModifier
     assert coms[7].op.type == OpType.CopyBits
+
+
+# https://github.com/Quantinuum/tket/issues/2121
+def test_single_qubit_squash() -> None:
+    c = Circuit(2).CX(0, 1).Rz(0.25, 0).Rz(-0.25, 0).CX(0, 1)
+    assert SquashRzPhasedX().apply(c)
+    assert c == Circuit(2).CX(0, 1).CX(0, 1)
+    assert not SquashRzPhasedX().apply(c)
+
+    yz_exp = PauliExpBox([Pauli.Y, Pauli.Z], -0.2)
+    pauli_circ = Circuit(2)
+    pauli_circ.add_gate(yz_exp, [0, 1])
+    pauli_circ.add_gate(yz_exp, [0, 1])
+    DecomposeBoxes().apply(pauli_circ)
+    assert pauli_circ.n_gates_of_type(OpType.CX) == 4
+    assert SquashRzPhasedX().apply(pauli_circ)
+    assert pauli_circ.n_gates_of_type(OpType.CX) == 4

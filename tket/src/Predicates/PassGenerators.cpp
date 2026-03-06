@@ -979,15 +979,16 @@ PassPtr gen_pauli_exponentials(
   Transform t = Transforms::synthesise_pauli_graph(strat, cx_config);
   PredicatePtr ccontrol_pred = std::make_shared<NoClassicalControlPredicate>();
   PredicatePtr mid_pred = std::make_shared<NoMidMeasurePredicate>();
-  OpTypeSet ins = {OpType::Z,       OpType::X,           OpType::Y,
-                   OpType::S,       OpType::Sdg,         OpType::V,
-                   OpType::Vdg,     OpType::H,           OpType::CX,
-                   OpType::CY,      OpType::CZ,          OpType::SWAP,
-                   OpType::Rz,      OpType::Rx,          OpType::Ry,
-                   OpType::T,       OpType::Tdg,         OpType::ZZMax,
-                   OpType::ZZPhase, OpType::PhaseGadget, OpType::XXPhase,
-                   OpType::YYPhase, OpType::PauliExpBox, OpType::Measure,
-                   OpType::PhasedX, OpType::SX,          OpType::SXdg};
+  OpTypeSet ins = {OpType::Z,           OpType::X,           OpType::Y,
+                   OpType::S,           OpType::Sdg,         OpType::V,
+                   OpType::Vdg,         OpType::H,           OpType::CX,
+                   OpType::CY,          OpType::CZ,          OpType::SWAP,
+                   OpType::Rz,          OpType::Rx,          OpType::Ry,
+                   OpType::T,           OpType::Tdg,         OpType::ZZMax,
+                   OpType::ZZPhase,     OpType::PhaseGadget, OpType::XXPhase,
+                   OpType::YYPhase,     OpType::PauliExpBox, OpType::Measure,
+                   OpType::PhasedX,     OpType::SX,          OpType::SXdg,
+                   OpType::TwinPhasedX, OpType::PhasedXX};
   PredicatePtr in_gates = std::make_shared<GateSetPredicate>(ins);
   PredicatePtrMap precons{
       CompilationUnit::make_type_pair(ccontrol_pred),
@@ -1071,6 +1072,8 @@ PassPtr gen_greedy_pauli_simp(
       OpType::Measure,
       OpType::PhasedX,
       OpType::TK1,
+      OpType::TwinPhasedX,
+      OpType::PhasedXX,
       OpType::Reset,
       OpType::Conditional,
       OpType::PauliExpBox,

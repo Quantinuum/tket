@@ -249,6 +249,9 @@ Circuit XXPhase_using_TK2(const Expr &alpha);
 /** Equivalent to XXPhase, using CX and U3 gates */
 Circuit XXPhase_using_CX(const Expr &alpha);
 
+/** Equivalent to PhasedXX, using CX, Rz, Ry, S and Sdg gates */
+Circuit PhasedXX_using_CX(const Expr &alpha, const Expr &beta);
+
 /** Equivalent to YYPhase, using a TK2 gate */
 Circuit YYPhase_using_TK2(const Expr &alpha);
 

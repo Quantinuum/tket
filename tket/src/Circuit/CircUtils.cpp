@@ -612,6 +612,10 @@ Circuit with_CX(Gate_ptr op) {
       return CircPool::NPhasedX_using_PhasedX(n, params[0], params[1]);
     case OpType::AAMS:
       return CircPool::AAMS_using_CX(params[0], params[1], params[2]);
+    case OpType::TwinPhasedX:
+      return CircPool::NPhasedX_using_PhasedX(2, params[0], params[1]);
+    case OpType::PhasedXX:
+      return CircPool::PhasedXX_using_CX(params[0], params[1]);
     default:
       throw CircuitInvalidity("Cannot decompose " + op->get_name());
   }

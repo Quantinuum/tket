@@ -48,7 +48,8 @@ const OpTypeSet& all_gate_types() {
       OpType::FSim,        OpType::Sycamore,    OpType::ISWAPMax,
       OpType::PhasedISWAP, OpType::XXPhase3,    OpType::NPhasedX,
       OpType::TK2,         OpType::Phase,       OpType::GPI,
-      OpType::GPI2,        OpType::AAMS};
+      OpType::GPI2,        OpType::AAMS,        OpType::TwinPhasedX,
+      OpType::PhasedXX};
   static std::unique_ptr<const OpTypeSet> gates =
       std::make_unique<const OpTypeSet>(optypes);
   return *gates;
@@ -69,7 +70,8 @@ const OpTypeSet& all_multi_qubit_types() {
       OpType::CnY,         OpType::BRIDGE,   OpType::ESWAP,
       OpType::FSim,        OpType::Sycamore, OpType::ISWAPMax,
       OpType::PhasedISWAP, OpType::XXPhase3, OpType::NPhasedX,
-      OpType::TK2,         OpType::AAMS};
+      OpType::TK2,         OpType::AAMS,     OpType::TwinPhasedX,
+      OpType::XXPhase};
   static std::unique_ptr<const OpTypeSet> gates =
       std::make_unique<const OpTypeSet>(optypes);
   return *gates;

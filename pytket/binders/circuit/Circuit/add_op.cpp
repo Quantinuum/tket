@@ -1503,6 +1503,21 @@ void init_circuit_add_op(nb::class_<Circuit> &c) {
           nb::arg("angle0"), nb::arg("angle1"), nb::arg("qubit0"),
           nb::arg("qubit1"), nb::arg("kwargs"))
       .def(
+          "TwinPhasedX",
+          add_gate_method_aa_qq(OpType::TwinPhasedX, "TwinPhasedX"),
+          "Appends a TwinPhasedX gate with possibly symbolic angles "
+          "(specified in half-turns) on the wires for the specified qubits."
+          "\n\n:return: the new :py:class:`~.Circuit`",
+          nb::arg("angle0"), nb::arg("angle1"), nb::arg("qubit0"),
+          nb::arg("qubit1"), nb::arg("kwargs"))
+      .def(
+          "PhasedXX", add_gate_method_aa_qq(OpType::PhasedXX, "PhasedXX"),
+          "Appends a PhasedXX gate with possibly symbolic angles (specified in "
+          "half-turns) on the wires for the specified qubits."
+          "\n\n:return: the new :py:class:`~.Circuit`",
+          nb::arg("angle0"), nb::arg("angle1"), nb::arg("qubit0"),
+          nb::arg("qubit1"), nb::arg("kwargs"))
+      .def(
           "measure_all",
           [](Circuit *circ) {
             opt_reg_info_t creg_info = circ->get_reg_info("c");

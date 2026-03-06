@@ -397,6 +397,22 @@ NB_MODULE(circuit, m) {
           "(equivalent to: Rz(p)[0]; Rz(-p)[1]; ISWAP(t); "
           "Rz(-p)[0]; Rz(p)[1])")
       .value(
+          "TwinPhasedX", OpType::TwinPhasedX,
+          ":math:`(\\alpha, \\beta) \\mapsto \\mathrm{PhasedX}(\\alpha, "
+          "\\beta) \\otimes \\mathrm{PhasedX}(\\alpha, \\beta)`")
+      .value(
+          "PhasedXX", OpType::PhasedXX,
+          ":math:`(\\alpha, beta) \\mapsto \\mathrm{AAMS}(\\alpha, -\\beta, "
+          "-\\beta) = \\left[ \\begin{array}{cccc} "
+          "\\cos\\frac{\\pi\\alpha}{2} & 0 & 0 & "
+          "-i\\sin\\frac{\\pi\\alpha}{2} e^{2i\\pi\\beta} \\\\ 0 & "
+          "\\cos\\frac{\\pi\\alpha}{2} & "
+          "-i\\sin\\frac{\\pi\\alpha}{2} & 0 \\\\ 0 & "
+          "-i\\sin\\frac{\\pi\\alpha}{2} & "
+          "\\cos\\frac{\\pi\\alpha}{2} & 0 \\\\ "
+          "-i\\sin\\frac{\\pi\\alpha}{2} e^{-2i\\pi\\beta} & 0 & 0 & "
+          "\\cos\\frac{\\pi\\alpha}{2} \\end{array} \\right]`")
+      .value(
           "XXPhase", OpType::XXPhase,
           ":math:`(\\alpha) \\mapsto e^{-\\frac12 i \\pi\\alpha "
           "(\\mathrm{X} \\otimes \\mathrm{X})} = \\left[ "

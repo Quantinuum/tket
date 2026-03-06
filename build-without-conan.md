@@ -92,9 +92,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.12.0.tar.gz
-tar xzvf v3.12.0.tar.gz
-cd Catch2-3.12.0/
+wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.13.0.tar.gz
+tar xzvf v3.13.0.tar.gz
+cd Catch2-3.13.0/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
@@ -134,9 +134,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/wjakob/nanobind/archive/refs/tags/v2.11.0.tar.gz
-tar xzvf v2.11.0.tar.gz
-cd nanobind-2.11.0/
+wget https://github.com/wjakob/nanobind/archive/refs/tags/v2.12.0.tar.gz
+tar xzvf v2.12.0.tar.gz
+cd nanobind-2.12.0/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$(INSTALL_DIR) -DNB_TEST=OFF -DNB_USE_SUBMODULE_DEPS=OFF ..
