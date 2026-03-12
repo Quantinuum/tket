@@ -3,6 +3,7 @@ install-dev:
     uv pip install ../.
 
 install: prepare
+    uv sync
     uv pip install -U pytket
 
 prepare:
@@ -10,7 +11,6 @@ prepare:
     cp pytket-docs-theming/conf.py .
 
 build *SPHINX_ARGS: install
-    uv pip install -U pytket --python .venv
     uv run sphinx-build {{SPHINX_ARGS}} -b html . build
 
 linkcheck: prepare
@@ -42,3 +42,6 @@ cleanup:
     # Clean up config files in the event the build fails
     rm -rf _static
     rm -f conf.py
+
+cleanup-env:
+    rm -rf .venv
