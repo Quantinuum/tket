@@ -1,6 +1,6 @@
 install-dev:
     uv sync
-    uv pip install ../.
+    uv pip install ../.[ZX] -v
 
 install: prepare
     uv sync
