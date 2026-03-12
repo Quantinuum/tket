@@ -361,7 +361,7 @@ jobs:
       timeout-minutes: 20
       run: |
         cd pytket/docs
-        uv sync --system
+        uv pip sync --system uv.lock
         just build-strict # https://github.com/quantinuum/tket/issues/2044
     - name: Upload artifact
       if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
