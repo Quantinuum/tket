@@ -120,7 +120,7 @@ compiled_circ = nairobi_device.get_compiled_circuit(circ)
 result = backend.run_circuit(compiled_circ, n_shots=100)
 ```
 
-Here the default compilation pass is applied by {external+pytket-qiskit:py:meth}`pytket.extensions.qiskit.IBMQBackend.get_compiled_circuit`. See [this page](https://docs.quantinuum.com/tket/extensions/pytket-qiskit/#default-compilation) for more details.
+Here the default compilation pass is applied by `IBMQBackend.get_compiled_circuit`. See [this page](https://docs.quantinuum.com/tket/extensions/pytket-qiskit/#default-compilation) for more details.
 
 As an alternative, We can experiment with constructing our own circuit compilation routines in pytket. Passes from the {py:mod}`pytket.passes` module can be applied individually or composed in sequence.
 See the section of the user manual on [circuit compilation](https://docs.quantinuum.com/tket/user-guide/manual/manual_compiler.html) and the corresponding [notebook example](https://docs.quantinuum.com/tket/user-guide/examples/circuit_compilation/compilation_example.html) for more.
