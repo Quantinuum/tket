@@ -361,6 +361,7 @@ jobs:
       timeout-minutes: 20
       run: |
         cd pytket/docs
+        uv sync
         uv pip install -e ../.[ZX] -v
         just build-strict
     - name: Upload artifact
