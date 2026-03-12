@@ -15,7 +15,7 @@ build *SPHINX_ARGS: install
     uv run sphinx-build {{SPHINX_ARGS}} -b html . build -D html_title="pytket v$VERSION API documentation"
 
 linkcheck: prepare
-    VERSION=$(poetry run python -c "import pytket; print(pytket.__version__)") && \
+    VERSION=$(uv run python -c "import pytket; print(pytket.__version__)") && \
     uv run sphinx-build -W -b linkcheck . build
 
 
