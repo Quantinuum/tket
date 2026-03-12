@@ -1,4 +1,4 @@
-install-dev:
+install-dev: prepare
     uv sync
     uv pip install ../.[ZX] -v
 
