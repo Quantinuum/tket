@@ -15,15 +15,13 @@ build *SPHINX_ARGS: install
     uv run sphinx-build {{SPHINX_ARGS}} -b html . build -D html_title="pytket v$VERSION API documentation"
 
 linkcheck: prepare
-    VERSION=$(uv run python -c "import pytket; print(pytket.__version__)") && \
     uv run sphinx-build -W -b linkcheck . build
 
 
 coverage: prepare
     uv run sphinx-build -W -v -b coverage . build/coverage
 
-build-strict: install
-    VERSION=$(uv run python -c "import pytket; print(pytket.__version__)") && \
+build-strict:
     just build -W # Fail on sphinx warnings
     just linkcheck
     just coverage
