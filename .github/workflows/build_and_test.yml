@@ -358,7 +358,7 @@ jobs:
         pip install poetry==2.1.4
         poetry config virtualenvs.create false
         cd pytket/docs
-        poetry install
+        uv sync
         # just build-strict # https://github.com/quantinuum/tket/issues/2044
         just build
     - name: Upload artifact
