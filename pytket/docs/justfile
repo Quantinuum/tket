@@ -1,27 +1,28 @@
 install-dev:
-    poetry install
-    poetry run pip install ../.
+    uv sync
+    uv pip install ../.
 
-install:
-    poetry install
-    poetry run pip install -U pytket
+install: prepare
+    uv pip install -U pytket
 
 prepare:
     cp -R pytket-docs-theming/_static .
     cp pytket-docs-theming/conf.py .
 
-build *SPHINX_ARGS: prepare
-    VERSION=$(poetry run python -c "import pytket; print(pytket.__version__)") && \
-    poetry run sphinx-build {{SPHINX_ARGS}} -b html . build -D html_title="pytket v$VERSION API documentation"
+build *SPHINX_ARGS: install
+    uv pip install -U pytket --python .venv
+    uv run sphinx-build {{SPHINX_ARGS}} -b html . build
 
 linkcheck: prepare
-    poetry run sphinx-build -W -b linkcheck . build
+    VERSION=$(poetry run python -c "import pytket; print(pytket.__version__)") && \
+    uv run sphinx-build -W -b linkcheck . build -D html_title="pytket v$VERSION API documentation"
+
 
 coverage: prepare
-    poetry run sphinx-build -W -v -b coverage . build/coverage
+    uv run sphinx-build -W -v -b coverage . build/coverage
 
-build-strict: prepare
-    VERSION=$(poetry run python -c "import pytket; print(pytket.__version__)") && \
+build-strict: install
+    VERSION=$(uv run python -c "import pytket; print(pytket.__version__)") && \
     just build -W # Fail on sphinx warnings
     just linkcheck
     just coverage

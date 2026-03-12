@@ -1,22 +1,16 @@
-[tool.poetry]
-package-mode = false
-name = "docs"
+[project]
+name = "pytket-api-docs"
 version = "0.1.0"
 description = ""
-authors = ["aidanCQ <aidan.keay@quantinuum.com>"]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-sphinx = "^7.3.7"
-sphinx-copybutton = "^0.5.2"
-ipykernel = "^6.29.4"
-enum-tools = { extras = ["sphinx"], version = "^0.12.0" }
-furo = "^2024.5.6"
-myst-nb = "^1.1.2"
-sphinxcontrib-googleanalytics = "^0.4"
-quantinuum-sphinx = "^0.2.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.10,<4"
+dependencies = [
+  "sphinx>=7.3.7,<8.0.0",
+  "sphinx-copybutton>=0.5.2,<0.6.0",
+  "ipykernel>=6.29.4,<7.0.0",
+  "enum-tools[sphinx]>=0.12.0,<0.13.0",
+  "furo>=2024.5.6,<2025.0.0",
+  "myst-nb>=1.1.2,<2.0.0",
+  "sphinxcontrib-googleanalytics>=0.4,<0.5",
+  "quantinuum-sphinx>=0.2.0,<0.3.0",
+]
