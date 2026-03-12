@@ -361,8 +361,8 @@ jobs:
       timeout-minutes: 20
       run: |
         cd pytket/docs
-        export UV_NO_VENV=1 && uv sync
-        just build-strict # https://github.com/quantinuum/tket/issues/2044
+        uv pip install -e ../.[ZX] -v
+        just build-strict
     - name: Upload artifact
       if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
       uses: actions/upload-artifact@v7
