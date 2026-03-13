@@ -62,6 +62,9 @@ display.md
 .. autoenum:: pytket.circuit.CXConfigType
 ```
 
+```{eval-rst}
+.. autoenum:: pytket.circuit.EdgeType
+```
 
 ```{eval-rst}
 .. autoclass:: pytket.circuit.CircBox
@@ -309,6 +312,15 @@ display.md
 ```
 
 ```{eval-rst}
+.. autoclass:: pytket.circuit.ClassicalOp
+
+   .. automethod:: __init__
+   .. autoproperty:: n_input_outputs
+   .. autoproperty:: n_inputs
+   .. autoproperty:: n_outputs
+```
+
+```{eval-rst}
 .. autoclass:: pytket.circuit.CopyBitsOp
 
    .. automethod:: __init__
@@ -418,6 +430,13 @@ display.md
 
 ```{eval-rst}
 .. autoclass:: pytket.circuit.BarrierOp
+
+   .. automethod:: __init__
+   .. autoproperty:: data
+```
+
+```{eval-rst}
+.. autoclass:: pytket.circuit.MetaOp
 
    .. automethod:: __init__
    .. autoproperty:: data
