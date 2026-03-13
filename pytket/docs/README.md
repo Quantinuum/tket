@@ -20,15 +20,14 @@ cd pytket/docs
 
 The steps outlined below can be performed with the [just command runner](https://github.com/casey/just).
 
-## Install (requires a [poetry](https://python-poetry.org/) installation).
+## Install (requires a [uv](https://docs.astral.sh/uv/) installation).
 
-(use `just install-dev` to install a develop wheel of pytket)
+To install the dependencies needed for the local docs build, run
 
 ```shell
 just install
 ```
 
-use `just install-dev` to install a develop wheel of pytket
 
 ## Build the html
 

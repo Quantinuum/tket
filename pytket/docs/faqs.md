@@ -28,7 +28,7 @@ See the manual section on [unitary synthesis](https://docs.quantinuum.com/tket/u
 
 Q: How can I convert my qiskit {py:class}`qiskit.circuit.QuantumCircuit` to a pytket {py:class}`~.Circuit`?
 
-A: This can be achieved using the {external+pytket-qiskit:py:func}`pytket.extensions.qiskit.qiskit_to_tk` function from the [pytket-qiskit extension](https://docs.quantinuum.com/tket/extensions/pytket-qiskit/)
+A: This can be achieved using the `qiskit_to_tk` function from the [pytket-qiskit extension](https://docs.quantinuum.com/tket/extensions/pytket-qiskit/)
 
 ```
 from qiskit import QuantumCircuit
@@ -43,7 +43,7 @@ qc.cx(0, 1)
 tk_circ = qiskit_to_tk(qc)
 ```
 
-Conversion in the opposite direction can be accomplished using {external+pytket-qiskit:py:func}`pytket.extensions.qiskit.tk_to_qiskit`. In the case where there is no replacement for a pytket operation in qiskit the unsupported operation will be implemented in terms of the available gates.
+Conversion in the opposite direction can be accomplished using `qiskit_to_tk`. In the case where there is no replacement for a pytket operation in qiskit the unsupported operation will be implemented in terms of the available gates.
 
 Note here that `pytket` and `qiskit` use different qubit ordering conventions so care should be taken when
 converting between circuit formats and interpreting results.

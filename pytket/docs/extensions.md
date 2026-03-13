@@ -36,9 +36,6 @@ A full list of available pytket backends is shown below.
 {py:class}`~pytket.extensions.pyquil.backends.forest.ForestBackend`
 \- A backend for running circuits on remote Rigetti devices.
 
-{py:class}`~pytket.extensions.aqt.backends.aqt.AQTBackend`[AQTBackend]
-\- Interface to an AQT device or simulator.
-
 {py:class}`~pytket.extensions.iqm.backends.iqm.IQMBackend`
 \- Interface to an IQM device or simulator.
 
@@ -65,9 +62,6 @@ A full list of available pytket backends is shown below.
 {py:class}`~pytket.extensions.qiskit.backends.aer.AerStateBackend` - Backend for running simulations on the Qiskit Aer Statevector simulator.
 
 {py:class}`~pytket.extensions.pyquil.backends.forest.ForestStateBackend` - State-based interface to a Rigetti device.
-
-{py:class}`~pytket.extensions.projectq.backends.projectq_backend.ProjectQBackend`
-\- Backend for running statevector simulations on the ProjectQ simulator.
 
 {py:class}`~pytket.extensions.quest.backends.quest_backend.QuESTBackend` - Interface to the [QUEST simulator](https://quest.qtechtheory.org/docs/).
 
@@ -114,12 +108,10 @@ Use `QulacsBackend(result_type="density_matrix")`.
 :caption: 'Extensions:'
 :maxdepth: 0
 
-pytket-aqt <https://quantinuum.github.io/pytket-aqt/api/index.html>
 pytket-braket <https://docs.quantinuum.com/tket/extensions/pytket-braket>
 pytket-cirq <https://docs.quantinuum.com/tket/extensions/pytket-cirq>
 pytket-iqm <https://docs.quantinuum.com/tket/extensions/pytket-iqm>
 pytket-pennylane <https://docs.quantinuum.com/tket/extensions/pytket-pennylane>
-pytket-projectq <https://docs.quantinuum.com/tket/extensions/pytket-projectq>
 pytket-pyquil <https://docs.quantinuum.com/tket/extensions/pytket-pyquil>
 pytket-pysimplex <https://docs.quantinuum.com/tket/extensions/pytket-pysimplex>
 pytket-pyzx <https://docs.quantinuum.com/tket/extensions/pytket-pyzx>
