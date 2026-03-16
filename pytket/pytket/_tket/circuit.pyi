@@ -360,7 +360,7 @@ class OpType(enum.IntEnum):
 
     PhasedXX = 124
     r"""
-    :math:`(\alpha, beta) \mapsto \mathrm{AAMS}(\alpha, -\beta, -\beta) = \left[ \begin{array}{cccc} \cos\frac{\pi\alpha}{2} & 0 & 0 & -i\sin\frac{\pi\alpha}{2} e^{2i\pi\beta} \\ 0 & \cos\frac{\pi\alpha}{2} & -i\sin\frac{\pi\alpha}{2} & 0 \\ 0 & -i\sin\frac{\pi\alpha}{2} & \cos\frac{\pi\alpha}{2} & 0 \\ -i\sin\frac{\pi\alpha}{2} e^{-2i\pi\beta} & 0 & 0 & \cos\frac{\pi\alpha}{2} \end{array} \right]`
+    :math:`(\alpha, \beta) \mapsto \mathrm{AAMS}(\alpha, \beta, \beta) = \left[ \begin{array}{cccc} \cos\frac{\pi\alpha}{2} & 0 & 0 & -i\sin\frac{\pi\alpha}{2} e^{-2i\pi\beta} \\ 0 & \cos\frac{\pi\alpha}{2} & -i\sin\frac{\pi\alpha}{2} & 0 \\ 0 & -i\sin\frac{\pi\alpha}{2} & \cos\frac{\pi\alpha}{2} & 0 \\ -i\sin\frac{\pi\alpha}{2} e^{2i\pi\beta} & 0 & 0 & \cos\frac{\pi\alpha}{2} \end{array} \right]`
     """
 
     XXPhase = 74
