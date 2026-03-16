@@ -402,15 +402,15 @@ NB_MODULE(circuit, m) {
           "\\beta) \\otimes \\mathrm{PhasedX}(\\alpha, \\beta)`")
       .value(
           "PhasedXX", OpType::PhasedXX,
-          ":math:`(\\alpha, beta) \\mapsto \\mathrm{AAMS}(\\alpha, -\\beta, "
-          "-\\beta) = \\left[ \\begin{array}{cccc} "
+          ":math:`(\\alpha, \\beta) \\mapsto \\mathrm{AAMS}(\\alpha, \\beta, "
+          "\\beta) = \\left[ \\begin{array}{cccc} "
           "\\cos\\frac{\\pi\\alpha}{2} & 0 & 0 & "
-          "-i\\sin\\frac{\\pi\\alpha}{2} e^{2i\\pi\\beta} \\\\ 0 & "
+          "-i\\sin\\frac{\\pi\\alpha}{2} e^{-2i\\pi\\beta} \\\\ 0 & "
           "\\cos\\frac{\\pi\\alpha}{2} & "
           "-i\\sin\\frac{\\pi\\alpha}{2} & 0 \\\\ 0 & "
           "-i\\sin\\frac{\\pi\\alpha}{2} & "
           "\\cos\\frac{\\pi\\alpha}{2} & 0 \\\\ "
-          "-i\\sin\\frac{\\pi\\alpha}{2} e^{-2i\\pi\\beta} & 0 & 0 & "
+          "-i\\sin\\frac{\\pi\\alpha}{2} e^{2i\\pi\\beta} & 0 & 0 & "
           "\\cos\\frac{\\pi\\alpha}{2} \\end{array} \\right]`")
       .value(
           "XXPhase", OpType::XXPhase,
