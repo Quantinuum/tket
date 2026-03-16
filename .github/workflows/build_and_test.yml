@@ -33,7 +33,7 @@ jobs:
       uses: actions/setup-python@v6
       with:
         python-version: '3.12'
-    - uses: dorny/paths-filter@v3.0.2
+    - uses: dorny/paths-filter@v4.0.1
       id: filter
       with:
         base: ${{ github.ref }}
