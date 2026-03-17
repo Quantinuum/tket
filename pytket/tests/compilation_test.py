@@ -12,17 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from typing import cast
+
 import pytest
 
 from pytket.architecture import Architecture
-from pytket.circuit import Circuit, OpType, reg_eq
-from pytket.circuit.logic_exp import if_bit, if_not_bit
+from pytket.circuit import CircBox, Circuit, Conditional, OpType, reg_eq
+from pytket.circuit.logic_exp import if_bit
 from pytket.passes import (
     CXMappingPass,
     FullPeepholeOptimise,
     PassSelector,
+    combine_cond_pass,
     scratch_reg_resize_pass,
-    combine_cond_pass
 )
 from pytket.placement import Placement
 from pytket.unit_id import _TEMP_BIT_NAME, _TEMP_BIT_REG_BASE
@@ -314,6 +316,7 @@ def test_resize_scratch_registers() -> None:
     scratch_reg_resize_pass(10).apply(c_compiled)
     assert circ == c_compiled
 
+
 def test_cond_combine() -> None:
     circ = Circuit(1, 2)
     for _ in range(10):
@@ -326,6 +329,8 @@ def test_cond_combine() -> None:
 
     assert len(cmds) == 2
     for c in cmds:
-        assert(c.op.type == OpType.Conditional)
-        assert(c.op.op.type == OpType.CircBox)
-        assert(len(c.op.op.get_circuit().get_commands()) == 10)
+        assert c.op.type == OpType.Conditional
+        cond = cast("Conditional", c.op)
+        assert cond.op.type == OpType.CircBox
+        box = cast("CircBox", cond.op)
+        assert len(box.get_circuit().get_commands()) == 10
