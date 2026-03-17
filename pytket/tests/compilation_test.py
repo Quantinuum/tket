@@ -16,11 +16,13 @@ import pytest
 
 from pytket.architecture import Architecture
 from pytket.circuit import Circuit, OpType, reg_eq
+from pytket.circuit.logic_exp import if_bit, if_not_bit
 from pytket.passes import (
     CXMappingPass,
     FullPeepholeOptimise,
     PassSelector,
     scratch_reg_resize_pass,
+    combine_cond_pass
 )
 from pytket.placement import Placement
 from pytket.unit_id import _TEMP_BIT_NAME, _TEMP_BIT_REG_BASE
@@ -311,3 +313,19 @@ def test_resize_scratch_registers() -> None:
     c_compiled = circ.copy()
     scratch_reg_resize_pass(10).apply(c_compiled)
     assert circ == c_compiled
+
+def test_cond_combine() -> None:
+    circ = Circuit(1, 2)
+    for _ in range(10):
+        circ.add_gate(OpType.PhasedX, [1, 0], [0], condition=if_bit(circ.bits[0]))
+    for _ in range(10):
+        circ.add_gate(OpType.H, [0], condition=if_bit(circ.bits[1]))
+
+    combine_cond_pass().apply(circ)
+    cmds = circ.get_commands()
+
+    assert len(cmds) == 2
+    for c in cmds:
+        assert(c.op.type == OpType.Conditional)
+        assert(c.op.op.type == OpType.CircBox)
+        assert(len(c.op.op.get_circuit().get_commands()) == 10)
