@@ -15,3 +15,7 @@
 """Parser from Quipper ASCII to tket circuits"""
 
 from .quipper import circuit_from_quipper
+
+__all__ = [
+    "circuit_from_quipper",
+]

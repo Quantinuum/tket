@@ -27,3 +27,15 @@ from .qasm import (
     circuit_to_qasm_io,
     circuit_to_qasm_str,
 )
+
+__all__ = [
+    "circuit_from_qasm",
+    "circuit_from_qasm_io",
+    "circuit_from_qasm_str",
+    "circuit_from_qasm_str_wasm",
+    "circuit_from_qasm_str_wasmmh",
+    "circuit_from_qasm_wasm",
+    "circuit_to_qasm",
+    "circuit_to_qasm_io",
+    "circuit_to_qasm_str",
+]
