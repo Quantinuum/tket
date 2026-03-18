@@ -69,7 +69,7 @@ from pytket.circuit.logic_exp import (
     reg_lt,
     reg_neq,
 )
-from pytket.passes import DecomposeClassicalExp
+from pytket.passes import DecomposeClassicalExp, combine_cond_pass
 
 curr_file_path = Path(__file__).resolve().parent
 
@@ -1309,6 +1309,7 @@ def test_conditional_wasm_iii() -> None:
     c.add_wasm_to_reg("add_one", w, [c2], [c2], condition=b[1])
 
     assert c.depth() == 2
+    breakpoint()
     assert (
         str(c.get_commands()[0])
         == "IF ([b[0]] == 1) THEN WASM c0[0], c0[1], c0[2], c1[0], c1[1], c1[2], c1[3], c2[0], c2[1], c2[2], c2[3], c2[4], _w[0];"
@@ -1331,6 +1332,43 @@ def test_conditional_wasm_iv() -> None:
         == "IF ([controlreg[0]] == 1) THEN WASM c[0], c[1], _w[0];"
     )
 
+def test_conditional_wasm_condcombine() -> None:
+    w = wasm.WasmFileHandler("testfile.wasm")
+
+    c = Circuit(6, 6)
+    c0 = c.add_c_register("c0", 3)
+    c1 = c.add_c_register("c1", 4)
+    c2 = c.add_c_register("c2", 5)
+
+    b = c.add_c_register("b", 2)
+
+    c.add_wasm_to_reg("multi", w, [c0, c1], [c2], condition=b[0])
+    c.add_clexpr_from_logicexp(c0 | c1, c2.to_list(), condition=b[0])
+    c.add_wasm_to_reg("add_one", w, [c2], [c2], condition=b[1])
+    c.add_clexpr_from_logicexp(c2 & 3, c2.to_list(), condition=b[1])
+    combine_cond_pass().apply(c)
+
+    # note that WASM states are not printed as part of the CircBox args
+    assert c.depth() == 2
+    assert(
+        str(c.get_commands()[0])
+        == "IF ([b[0]] == 1) THEN CircBox c0[0], c0[1], c0[2], c1[0], c1[1], c1[2], c1[3], c2[0], c2[1], c2[2], c2[3], c2[4];"
+    )
+    sub0 = c.get_commands()[0].op.op.get_circuit()
+    assert(
+        str(sub0.get_commands()[0])
+        == "WASM c0[0], c0[1], c0[2], c1[0], c1[1], c1[2], c1[3], c2[0], c2[1], c2[2], c2[3], c2[4], _w[0];"
+    )
+
+    assert(
+        str(c.get_commands()[1])
+        == "IF ([b[1]] == 1) THEN CircBox c2[0], c2[1], c2[2], c2[3], c2[4];"
+    )
+    sub1 = c.get_commands()[1].op.op.get_circuit()
+    assert(
+        str(sub1.get_commands()[0])
+        == "WASM c2[0], c2[1], c2[2], c2[3], c2[4], c2[0], c2[1], c2[2], c2[3], c2[4], _w[0];"
+    )
 
 def test_sym_sub_range_pred() -> None:
     c = Circuit(1, 2)
