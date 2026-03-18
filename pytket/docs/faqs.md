@@ -43,7 +43,7 @@ qc.cx(0, 1)
 tk_circ = qiskit_to_tk(qc)
 ```
 
-Conversion in the opposite direction can be accomplished using `qiskit_to_tk`. In the case where there is no replacement for a pytket operation in qiskit the unsupported operation will be implemented in terms of the available gates.
+Conversion in the opposite direction can be accomplished using `tk_to_qiskit`. In the case where there is no replacement for a pytket operation in qiskit the unsupported operation will be implemented in terms of the available gates.
 
 Note here that `pytket` and `qiskit` use different qubit ordering conventions so care should be taken when
 converting between circuit formats and interpreting results.
