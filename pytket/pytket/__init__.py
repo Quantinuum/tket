@@ -14,10 +14,6 @@
 
 """Python Interface to tket"""
 
-import pytket.architecture
-import pytket.mapping
-import pytket.placement
-import pytket.transform
 from pytket._version import __version__
 from pytket.circuit import (
     Circuit,
@@ -53,4 +49,5 @@ __all__ = [
     "__version__",
     "bit_width_64",
     "get_config_file_path",
+    "pytket",
 ]

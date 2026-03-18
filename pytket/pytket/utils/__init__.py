@@ -43,3 +43,31 @@ from .results import (
 from .stats import gate_counts
 from .symbolic import circuit_apply_symbolic_statevector, circuit_to_symbolic_unitary
 from .term_sequence import gen_term_sequence_circuit
+
+__all__ = [
+    "EmpiricalDistribution",
+    "Graph",
+    "OutcomeArray",
+    "ProbabilityDistribution",
+    "QubitPauliOperator",
+    "append_pauli_measurement",
+    "circuit_apply_symbolic_statevector",
+    "circuit_to_symbolic_unitary",
+    "compare_statevectors",
+    "compare_unitaries",
+    "convex_combination",
+    "counts_from_shot_table",
+    "expectation_from_counts",
+    "expectation_from_shots",
+    "gate_counts",
+    "gen_term_sequence_circuit",
+    "get_operator_expectation_value",
+    "get_pauli_expectation_value",
+    "permute_basis_indexing",
+    "permute_qubits_in_statevector",
+    "permute_rows_cols_in_unitary",
+    "prepare_circuit",
+    "probs_from_counts",
+    "probs_from_state",
+    "readout_counts",
+]

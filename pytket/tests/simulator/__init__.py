@@ -14,3 +14,9 @@
 
 from .tket_sim_backend import TketSimBackend, TketSimShotBackend
 from .tket_sim_wrapper import TketSimWrapper
+
+__all__ = [
+    "TketSimBackend",
+    "TketSimShotBackend",
+    "TketSimWrapper",
+]

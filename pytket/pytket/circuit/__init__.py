@@ -16,12 +16,8 @@
 tket :py:class:`~.Circuit` data structure.
 This module is provided in binary form during the PyPI installation."""
 
-from collections.abc import Callable, Sequence
-from typing import (
-    Any,
-    Optional,
-    Union,
-)
+from collections.abc import Sequence
+from typing import Any, Union
 
 from pytket import wasm
 from pytket._tket.circuit import (
@@ -364,6 +360,7 @@ setattr(Circuit, "add_clexpr_from_logicexp", add_clexpr_from_logicexp)  # noqa: 
 __all__ = [
     "_DEBUG_ONE_REG_PREFIX",
     "_DEBUG_ZERO_REG_PREFIX",
+    "BarrierOp",
     "BasisOrder",
     "BinaryOp",
     "Bit",
@@ -376,15 +373,20 @@ __all__ = [
     "ClExprOp",
     "ClOp",
     "ClRegVar",
+    "ClassicalEvalOp",
+    "ClassicalOp",
     "Command",
     "Conditional",
     "ConjugationBox",
+    "CopyBitsOp",
     "CustomGate",
     "CustomGateDef",
     "DiagonalBox",
     "DummyBox",
+    "EdgeType",
     "ExpBox",
     "LogicExp",
+    "MetaOp",
     "MultiBitOp",
     "MultiplexedRotationBox",
     "MultiplexedTensoredU2Box",
@@ -413,9 +415,11 @@ __all__ = [
     "ToffoliBox",
     "ToffoliBoxSynthStrat",
     "UnitID",
+    "UnitType",
     "Unitary1qBox",
     "Unitary2qBox",
     "Unitary3qBox",
+    "WASMOp",
     "WiredClExpr",
     "fresh_symbol",
     "if_bit",

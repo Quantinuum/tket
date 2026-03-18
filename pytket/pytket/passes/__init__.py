@@ -20,3 +20,11 @@ from .combinecondpass import CombineCondPass
 from .passselector import PassSelector
 from .resizeregpass import scratch_reg_resize_pass
 from .script import compilation_pass_from_script, compilation_pass_grammar
+
+__all__ = [
+    "CombineCondPass",
+    "PassSelector",
+    "compilation_pass_from_script",
+    "compilation_pass_grammar",
+    "scratch_reg_resize_pass",
+]
