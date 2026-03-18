@@ -1332,20 +1332,34 @@ def test_conditional_wasm_iv() -> None:
         == "IF ([controlreg[0]] == 1) THEN WASM c[0], c[1], _w[0];"
     )
 
-def test_conditional_wasm_condcombine() -> None:
+def test_condcombine_wasm_rng() -> None:
     w = wasm.WasmFileHandler("testfile.wasm")
 
     c = Circuit(6, 6)
     c0 = c.add_c_register("c0", 3)
     c1 = c.add_c_register("c1", 4)
     c2 = c.add_c_register("c2", 5)
-
     b = c.add_c_register("b", 2)
 
+    seed = c.add_c_register("seed", 64)
+    bound = c.add_c_register("bound", 32)
+    index = c.add_c_register("index", 32)
+    num = c.add_c_register("num", 32)
+
     c.add_wasm_to_reg("multi", w, [c0, c1], [c2], condition=b[0])
-    c.add_clexpr_from_logicexp(c0 | c1, c2.to_list(), condition=b[0])
+    c.set_rng_seed(seed, condition=b[0])
+    c.add_c_setbits([True], [bound[1]], condition=b[0])
+    c.set_rng_bound(bound, condition=b[0])
+    c.set_rng_index(index, condition=b[0])
+    c.get_rng_num(num, condition=b[0])
+
     c.add_wasm_to_reg("add_one", w, [c2], [c2], condition=b[1])
-    c.add_clexpr_from_logicexp(c2 & 3, c2.to_list(), condition=b[1])
+    c.add_c_setbits([True], [seed[1]], condition=b[1])
+    c.set_rng_seed(seed, condition=b[1])
+    c.add_c_setbits([True], [bound[2]], condition=b[1])
+    c.set_rng_bound(bound, condition=b[1])
+    c.set_rng_index(index, condition=b[1])
+    c.get_rng_num(num, condition=b[1])
     combine_cond_pass().apply(c)
 
     # note that WASM states are not printed as part of the CircBox args
