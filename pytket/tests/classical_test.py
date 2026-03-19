@@ -1394,7 +1394,29 @@ def test_condcombine_wasm_rng() -> None:
     )
 
 
+def test_condcombine_condmutate() -> None:
+    c = Circuit(1, 1)
+    q = c.qubits[0]
+    b = c.bits[0]
 
+    # the transform should break this up into two boxes
+    # because the measure has the predicate bit as an operand
+    c.H(q, condition=b)
+    c.X(q, condition=b)
+    c.Measure(q, b, condition=b)
+    c.Reset(q, condition=b)
+    c.X(q, condition=b)
+
+    combine_cond_pass().apply(c)
+    cmds = c.get_commands()
+
+    assert c.depth() == 2
+    assert len(cmds) == 2
+
+    assert (repr(cmds[0].op.op.get_circuit())
+            == "[H q[0]; X q[0]; Measure q[0] --> c[0]; ]")
+    assert (repr(cmds[1].op.op.get_circuit())
+            == "[Reset q[0]; X q[0]; ]")
 
 def test_sym_sub_range_pred() -> None:
     c = Circuit(1, 2)

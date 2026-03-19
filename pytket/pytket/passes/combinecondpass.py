@@ -77,12 +77,15 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
     max_rreg = -1
     max_sub_wreg = -1
     max_sub_rreg = -1
+    # true if we need to emit the subcircuit before proceeding
+    # due to a condition bit being used as an operand
+    break_dep = False
 
     for cmd in circuit.get_commands():
         cond = extract_cond(cmd)
-        # if this is not part of the ongoing subsequence,
-        # emit the previous subsequence to the new circuit
-        if curr_cond is not None and curr_cond != cond:
+        # if this is not part of the ongoing subsequence or we need to emit due to a
+        # write to the predicate, emit the ongoing subsequence to the new circuit
+        if curr_cond is not None and (break_dep or curr_cond != cond):
             emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
             sub_circ = Circuit()
@@ -90,6 +93,7 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
             max_sub_wreg = -1
             max_sub_rreg = -1
             curr_cond = None
+            break_dep = False
 
         # if this is a conditional, add it to the ongoing subcircuit
         # otherwise, emit it directly.
@@ -97,6 +101,10 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
             cond_op = cast("Conditional", cmd.op)
             width = cond_op.width
             for arg in cmd.args[width:]:
+                # this is overly conservative, because it will unnecessarily
+                # break up reads of the predicate value. to do better we need
+                # to distinguish the op's read and write operands
+                break_dep = arg in cond[1] 
                 if arg not in sub_args:
                     if isinstance(arg, unit_id.Bit):
                         sub_circ.add_bit(arg)
