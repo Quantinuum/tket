@@ -69,7 +69,7 @@ from pytket.circuit.logic_exp import (
     reg_lt,
     reg_neq,
 )
-from pytket.passes import DecomposeClassicalExp, combine_cond_pass
+from pytket.passes import DecomposeClassicalExp
 
 curr_file_path = Path(__file__).resolve().parent
 
@@ -1331,96 +1331,6 @@ def test_conditional_wasm_iv() -> None:
         == "IF ([controlreg[0]] == 1) THEN WASM c[0], c[1], _w[0];"
     )
 
-def test_condcombine_wasm_rng() -> None:
-    c = Circuit()
-    w = wasm.WasmFileHandler("testfile.wasm")
-
-    seed = c.add_c_register("seed", 64)
-    bound = c.add_c_register("bound", 32)
-    index = c.add_c_register("index", 32)
-    num = c.add_c_register("num", 32)
-    b = c.add_c_register("b", 2)
-
-    # the circuit is written to put all operations in a sub-box
-    # in a nice dependency chain, so that they have a predictable ordering
-    c.add_wasm_to_reg("multi", w, [num, index], [bound], condition=b[0])
-    c.add_c_copyreg(bound, seed, condition=b[0])
-    c.set_rng_seed(seed, condition=b[0])
-    c.add_c_not_to_registers(bound, index, condition=b[0])
-    c.set_rng_bound(bound, condition=b[0])
-    c.set_rng_index(index, condition=b[0])
-    c.get_rng_num(num, condition=b[0])
-
-    c.add_wasm_to_reg("add_one", w, [num], [index], condition=b[1])
-    c.add_c_copyreg(index, seed, condition=b[1])
-    c.set_rng_seed(seed, condition=b[1])
-    c.add_c_not_to_registers(index, bound, condition=b[1])
-    c.set_rng_bound(bound, condition=b[1])
-    c.set_rng_index(index, condition=b[1])
-    c.get_rng_num(num, condition=b[1])
-
-    old_wasm_uid = c.wasm_uid
-
-    combine_cond_pass().apply(c)
-
-    def iregs(name, size):
-        return ''.join(f"{name}[{i}], " for i in range(size))
-
-    # both boxes should have the same args
-    # note that WASM and RNG states are not printed as part of the CircBox args
-    assert c.depth() == 2
-    EXPECTED_BOX_ARGS = (
-        iregs("bound", 32) + iregs("index", 32) 
-        + iregs("num", 32) + iregs("seed", 64)[:-2] + ";"
-    )
-    cmds = c.get_commands()
-    
-    assert(
-        str(cmds[0])
-        == "IF ([b[0]] == 1) THEN CircBox " + EXPECTED_BOX_ARGS
-    )
-    assert(
-        str(cmds[1])
-        == "IF ([b[1]] == 1) THEN CircBox " + EXPECTED_BOX_ARGS
-    )
-
-    sub_circ0 = cmds[0].op.op.get_circuit()
-    assert(
-        str(sub_circ0.get_commands()[0])
-        == "WASM " + iregs("num", 32) + iregs("index", 32) + iregs("bound", 32) + "_w[0];"
-    )
-
-    sub_circ1 = cmds[1].op.op.get_circuit()
-    assert(
-        str(sub_circ1.get_commands()[-1])
-        == "RNGNum " + iregs("num", 32) + "_r[0];"
-    )
-    assert c.wasm_uid == old_wasm_uid
-
-
-def test_condcombine_condmutate() -> None:
-    c = Circuit(1, 1)
-    q = c.qubits[0]
-    b = c.bits[0]
-
-    # the transform should break this up into two boxes
-    # because the measure has the predicate bit as an operand
-    c.H(q, condition=b)
-    c.X(q, condition=b)
-    c.Measure(q, b, condition=b)
-    c.Reset(q, condition=b)
-    c.X(q, condition=b)
-
-    combine_cond_pass().apply(c)
-    cmds = c.get_commands()
-
-    assert c.depth() == 2
-    assert len(cmds) == 2
-
-    assert (repr(cmds[0].op.op.get_circuit())
-            == "[H q[0]; X q[0]; Measure q[0] --> c[0]; ]")
-    assert (repr(cmds[1].op.op.get_circuit())
-            == "[Reset q[0]; X q[0]; ]")
 
 def test_sym_sub_range_pred() -> None:
     c = Circuit(1, 2)

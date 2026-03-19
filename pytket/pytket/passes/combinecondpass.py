@@ -25,6 +25,7 @@ def extract_cond(cmd: Command) -> tuple[int, list[Any]] | None:
         return (cmd.op.value, cmd.args[: cmd.op.width])
     return None
 
+
 def append_cmd(circ: Circuit, cmd: Command) -> None:
     # if we were given a conditional, unwrap and append the inner op
     if isinstance(cmd.op, Conditional):
@@ -35,25 +36,25 @@ def append_cmd(circ: Circuit, cmd: Command) -> None:
         cond_args = 0
 
     if isinstance(the_op, BarrierOp):
-        if cmd.opgroup is not None:
-            circ.add_barrier(cmd.args[cond_args:], the_op.data, opgroup=cmd.opgroup)
-        else:
-            circ.add_barrier(cmd.args[cond_args:], the_op.data)
+        circ.add_barrier(cmd.args[cond_args:], the_op.data)
+    elif cmd.opgroup is not None:
+        circ.add_gate(the_op, cmd.args[cond_args:], opgroup=cmd.opgroup)
     else:
-        if cmd.opgroup is not None:
-            circ.add_gate(the_op, cmd.args[cond_args:], opgroup=cmd.opgroup)
-        else:
-            circ.add_gate(the_op, cmd.args[cond_args:]) 
+        circ.add_gate(the_op, cmd.args[cond_args:])
+
 
 def emit_cond_box(
-    top_circ: Circuit, sub_circ: Circuit, cond: tuple[int, list[Any]],
-    max_wreg: int, max_rreg: int
+    top_circ: Circuit,
+    sub_circ: Circuit,
+    cond: tuple[int, list[Any]],
+    max_wreg: int,
+    max_rreg: int,
 ) -> None:
     # add WASM and RNG args
     if max_wreg > -1:
-        sub_circ._add_w_register(max_wreg+1)
+        sub_circ._add_w_register(max_wreg + 1)  # noqa: SLF001
     if max_rreg > -1:
-        sub_circ._add_r_register(max_rreg+1)
+        sub_circ._add_r_register(max_rreg + 1)  # noqa: SLF001
 
     cond_value = cond[0]
     cond_args = cond[1]
@@ -75,11 +76,12 @@ def emit_cond_box(
             condition_value=cond_value,
         )
 
-def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
+
+def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
     """Walk the sequence of commands in the circuit and combine contiguous subsequences
     of conditionals with the same predicate into conditional boxes. Note that the pass
     currently does not propagate opgroup names to the parent Boxes, but the group names
-    should still be present on the gates within the box. """
+    should still be present on the gates within the box."""
 
     # the output circuit
     new_circuit = Circuit(0, circuit.name)
@@ -128,19 +130,19 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
                 # this is overly conservative, because it will unnecessarily
                 # break up reads of the predicate value. to do better we need
                 # to distinguish the op's read and write operands somehow
-                break_dep = arg in cond[1] 
+                break_dep = arg in cond[1]
                 if arg not in sub_args:
                     if isinstance(arg, unit_id.Bit):
                         sub_circ.add_bit(arg)
                     elif isinstance(arg, unit_id.Qubit):
                         sub_circ.add_qubit(arg)
                     elif isinstance(arg, unit_id.WasmState):
-                        reg_id_s = str(arg).split('[')[1].split(']')[0]
+                        reg_id_s = str(arg).split("[")[1].split("]")[0]
                         reg_id = int(reg_id_s)
                         max_wreg = max(max_wreg, reg_id)
                         max_sub_wreg = max(max_sub_wreg, reg_id)
                     elif isinstance(arg, unit_id.RngState):
-                        reg_id_s = str(arg).split('[')[1].split(']')[0]
+                        reg_id_s = str(arg).split("[")[1].split("]")[0]
                         reg_id = int(reg_id_s)
                         max_rreg = max(max_rreg, reg_id)
                         max_sub_rreg = max(max_sub_rreg, reg_id)
@@ -159,12 +161,12 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
 
     # add WASM and RNG states if necessary
     if max_wreg > -1:
-        new_circuit._add_w_register(max_wreg+1)
+        new_circuit._add_w_register(max_wreg + 1)  # noqa: SLF001
     if max_rreg > -1:
-        new_circuit._add_r_register(max_rreg+1)
-        
+        new_circuit._add_r_register(max_rreg + 1)  # noqa: SLF001
+
     return new_circuit
 
 
-def combine_cond_pass() -> BasePass:
+def CombineCondPass() -> BasePass:
     return CustomPass(combine_conditionals, label="combine_conditionals")

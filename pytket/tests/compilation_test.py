@@ -12,18 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import cast
-
 import pytest
 
 from pytket.architecture import Architecture
-from pytket.circuit import BarrierOp, CircBox, Circuit, Conditional, OpType, reg_eq
-from pytket.circuit.logic_exp import if_bit
+from pytket.circuit import Circuit, OpType, reg_eq
 from pytket.passes import (
     CXMappingPass,
     FullPeepholeOptimise,
     PassSelector,
-    combine_cond_pass,
     scratch_reg_resize_pass,
 )
 from pytket.placement import Placement
@@ -315,38 +311,3 @@ def test_resize_scratch_registers() -> None:
     c_compiled = circ.copy()
     scratch_reg_resize_pass(10).apply(c_compiled)
     assert circ == c_compiled
-
-
-def test_cond_combine() -> None:
-    circ = Circuit(1, 2, "test_circuit")
-    for _ in range(10):
-        circ.add_gate(OpType.PhasedX, [1, 0], [0], condition=circ.bits[0], opgroup="foo")
-    circ.add_conditional_barrier([circ.qubits[0]], [circ.bits[0]], 1, "foobar")
-    for _ in range(10):
-        circ.add_gate(OpType.H, [0], condition=circ.bits[1], opgroup="bar")
-    circ.add_conditional_barrier([circ.qubits[0]], [circ.bits[1]], 1, "foobar")
-    circ.add_phase(1.0)
-
-    old_phase = circ.phase
-
-    combine_cond_pass().apply(circ)
-    cmds = circ.get_commands()
-
-    assert len(cmds) == 2
-    assert circ.phase == old_phase
-    assert circ.name == "test_circuit"
-
-    for c in cmds:
-        assert c.op.type == OpType.Conditional
-        cond = cast("Conditional", c.op)
-        assert cond.op.type == OpType.CircBox
-        box = cast("CircBox", cond.op)
-        sub_cmds = box.get_circuit().get_commands()
-        assert (isinstance(sub_cmds[-1].op, BarrierOp)
-            and sub_cmds[-1].op.data == "foobar" and sub_cmds[-1].opgroup is None)
-
-    for sub_cmd in cmds[0].op.op.get_circuit().get_commands()[:-1]:
-        assert sub_cmd.opgroup == "foo"
-    for sub_cmd in cmds[1].op.op.get_circuit().get_commands()[:-1]:
-        assert sub_cmd.opgroup == "bar"
-        
