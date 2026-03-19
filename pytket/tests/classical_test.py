@@ -1309,7 +1309,6 @@ def test_conditional_wasm_iii() -> None:
     c.add_wasm_to_reg("add_one", w, [c2], [c2], condition=b[1])
 
     assert c.depth() == 2
-    breakpoint()
     assert (
         str(c.get_commands()[0])
         == "IF ([b[0]] == 1) THEN WASM c0[0], c0[1], c0[2], c1[0], c1[1], c1[2], c1[3], c2[0], c2[1], c2[2], c2[3], c2[4], _w[0];"
@@ -1333,56 +1332,69 @@ def test_conditional_wasm_iv() -> None:
     )
 
 def test_condcombine_wasm_rng() -> None:
+    c = Circuit()
     w = wasm.WasmFileHandler("testfile.wasm")
-
-    c = Circuit(6, 6)
-    c0 = c.add_c_register("c0", 3)
-    c1 = c.add_c_register("c1", 4)
-    c2 = c.add_c_register("c2", 5)
-    b = c.add_c_register("b", 2)
 
     seed = c.add_c_register("seed", 64)
     bound = c.add_c_register("bound", 32)
     index = c.add_c_register("index", 32)
     num = c.add_c_register("num", 32)
+    b = c.add_c_register("b", 2)
 
-    c.add_wasm_to_reg("multi", w, [c0, c1], [c2], condition=b[0])
+    # the circuit is written to put all operations in a sub-box
+    # in a nice dependency chain, s
+    c.add_wasm_to_reg("multi", w, [num, index], [bound], condition=b[0])
+    c.add_c_copyreg(bound, seed, condition=b[0])
     c.set_rng_seed(seed, condition=b[0])
-    c.add_c_setbits([True], [bound[1]], condition=b[0])
+    c.add_c_not_to_registers(bound, index, condition=b[0])
     c.set_rng_bound(bound, condition=b[0])
     c.set_rng_index(index, condition=b[0])
     c.get_rng_num(num, condition=b[0])
 
-    c.add_wasm_to_reg("add_one", w, [c2], [c2], condition=b[1])
-    c.add_c_setbits([True], [seed[1]], condition=b[1])
+    c.add_wasm_to_reg("add_one", w, [num], [index], condition=b[1])
+    c.add_c_copyreg(index, seed, condition=b[1])
     c.set_rng_seed(seed, condition=b[1])
-    c.add_c_setbits([True], [bound[2]], condition=b[1])
+    c.add_c_not_to_registers(index, bound, condition=b[1])
     c.set_rng_bound(bound, condition=b[1])
     c.set_rng_index(index, condition=b[1])
     c.get_rng_num(num, condition=b[1])
     combine_cond_pass().apply(c)
 
-    # note that WASM states are not printed as part of the CircBox args
+    def iregs(name, size):
+        return ''.join(f"{name}[{i}], " for i in range(size))
+
+    # both boxes should have the same args
+    # note that WASM and RNG states are not printed as part of the CircBox args
     assert c.depth() == 2
-    assert(
-        str(c.get_commands()[0])
-        == "IF ([b[0]] == 1) THEN CircBox c0[0], c0[1], c0[2], c1[0], c1[1], c1[2], c1[3], c2[0], c2[1], c2[2], c2[3], c2[4];"
+    EXPECTED_BOX_ARGS = (
+        iregs("bound", 32) + iregs("index", 32) 
+        + iregs("num", 32) + iregs("seed", 64)[:-2] + ";"
     )
-    sub0 = c.get_commands()[0].op.op.get_circuit()
+    cmds = c.get_commands()
+    
     assert(
-        str(sub0.get_commands()[0])
-        == "WASM c0[0], c0[1], c0[2], c1[0], c1[1], c1[2], c1[3], c2[0], c2[1], c2[2], c2[3], c2[4], _w[0];"
+        str(cmds[0])
+        == "IF ([b[0]] == 1) THEN CircBox " + EXPECTED_BOX_ARGS
+    )
+    assert(
+        str(cmds[1])
+        == "IF ([b[1]] == 1) THEN CircBox " + EXPECTED_BOX_ARGS
     )
 
+    sub_circ0 = cmds[0].op.op.get_circuit()
     assert(
-        str(c.get_commands()[1])
-        == "IF ([b[1]] == 1) THEN CircBox c2[0], c2[1], c2[2], c2[3], c2[4];"
+        str(sub_circ0.get_commands()[0])
+        == "WASM " + iregs("num", 32) + iregs("index", 32) + iregs("bound", 32) + "_w[0];"
     )
-    sub1 = c.get_commands()[1].op.op.get_circuit()
+
+    sub_circ1 = cmds[1].op.op.get_circuit()
     assert(
-        str(sub1.get_commands()[0])
-        == "WASM c2[0], c2[1], c2[2], c2[3], c2[4], c2[0], c2[1], c2[2], c2[3], c2[4], _w[0];"
+        str(sub_circ1.get_commands()[-1])
+        == "RNGNum " + iregs("num", 32) + "_r[0];"
     )
+
+
+
 
 def test_sym_sub_range_pred() -> None:
     c = Circuit(1, 2)

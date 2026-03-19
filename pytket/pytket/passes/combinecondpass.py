@@ -21,28 +21,33 @@ from .._tket.passes import BasePass, CustomPass
 
 
 def extract_cond(cmd: Command) -> tuple[int, list[Any]] | None:
-    if isinstance(cmd.op, Conditional):
+    if isinstance(cmd.op, Conditional) and not isinstance(cmd.op.op, CircBox):
         return (cmd.op.value, cmd.args[: cmd.op.width])
     return None
 
 def emit_cond_box(
-    top_circ: Circuit, sub_circ: Circuit, cond: tuple[int, list[Any]], max_wreg: int
+    top_circ: Circuit, sub_circ: Circuit, cond: tuple[int, list[Any]],
+    max_wreg: int, max_rreg: int
 ) -> None:
+    # add WASM and RNG args
     if max_wreg > -1:
         sub_circ._add_w_register(max_wreg+1)
+    if max_rreg > -1:
+        sub_circ._add_r_register(max_rreg+1)
+
     cond_value = cond[0]
     cond_args = cond[1]
-    sub_arg_list = sub_circ.qubits + sub_circ.bits
     if len(sub_circ.get_commands()) == 1:
         # if there was only one predicated op, don't emit a CircBox
         sub_cmd = sub_circ.get_commands()[0]
         top_circ.add_gate(
             sub_cmd.op,
-            sub_arg_list,
+            sub_cmd.args,
             condition_bits=cond_args,
             condition_value=cond_value,
         )
     else:
+        sub_arg_list = sub_circ.qubits + sub_circ.bits
         top_circ.add_gate(
             CircBox(sub_circ),
             sub_arg_list,
@@ -67,21 +72,23 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
     sub_circ = Circuit()
     # arg set for the current subsequence
     sub_args = set()
-    # largest WASM state ID seen in the whole circuit
+    # largest WASM/RNG ID seen in the total circuit/current subsequence
     max_wreg = -1
-    # largest WASM state ID seen in the current subsequence
+    max_rreg = -1
     max_sub_wreg = -1
+    max_sub_rreg = -1
 
     for cmd in circuit.get_commands():
         cond = extract_cond(cmd)
         # if this is not part of the ongoing subsequence,
         # emit the previous subsequence to the new circuit
         if curr_cond is not None and curr_cond != cond:
-            emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg)
+            emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
             sub_circ = Circuit()
             sub_args.clear()
             max_sub_wreg = -1
+            max_sub_rreg = -1
             curr_cond = None
 
         # if this is a conditional, add it to the ongoing subcircuit
@@ -101,7 +108,10 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
                         max_wreg = max(max_wreg, reg_id)
                         max_sub_wreg = max(max_sub_wreg, reg_id)
                     elif isinstance(arg, unit_id.RngState):
-                        raise RuntimeError("TODO")
+                        reg_id_s = str(arg).split('[')[1].split(']')[0]
+                        reg_id = int(reg_id_s)
+                        max_rreg = max(max_rreg, reg_id)
+                        max_sub_rreg = max(max_sub_rreg, reg_id)
                     else:
                         raise ValueError("Unknown arg type")
                     sub_args.add(arg)
@@ -118,12 +128,14 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
 
     # emit final if necessary
     if curr_cond is not None:
-        emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg)
+        emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
     # add WASM states if necessary
     if max_wreg > -1:
         new_circuit._add_w_register(max_wreg+1)
-
+    if max_rreg > -1:
+        new_circuit._add_r_register(max_rreg+1)
+        
     return new_circuit
 
 
