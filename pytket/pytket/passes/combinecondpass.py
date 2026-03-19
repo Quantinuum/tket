@@ -25,6 +25,26 @@ def extract_cond(cmd: Command) -> tuple[int, list[Any]] | None:
         return (cmd.op.value, cmd.args[: cmd.op.width])
     return None
 
+def append_cmd(circ: Circuit, cmd: Command) -> None:
+    # if we were given a conditional, unwrap and append the inner op
+    if isinstance(cmd.op, Conditional):
+        the_op = cmd.op.op
+        cond_args = cmd.op.width
+    else:
+        the_op = cmd.op
+        cond_args = 0
+
+    if isinstance(the_op, BarrierOp):
+        if cmd.opgroup is not None:
+            circ.add_barrier(cmd.args[cond_args:], the_op.data, opgroup=cmd.opgroup)
+        else:
+            circ.add_barrier(cmd.args[cond_args:], the_op.data)
+    else:
+        if cmd.opgroup is not None:
+            circ.add_gate(the_op, cmd.args[cond_args:], opgroup=cmd.opgroup)
+        else:
+            circ.add_gate(the_op, cmd.args[cond_args:]) 
+
 def emit_cond_box(
     top_circ: Circuit, sub_circ: Circuit, cond: tuple[int, list[Any]],
     max_wreg: int, max_rreg: int
@@ -57,10 +77,14 @@ def emit_cond_box(
 
 def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
     """Walk the sequence of commands in the circuit and combine contiguous subsequences
-    of conditionals with the same predicate into conditional boxes."""
+    of conditionals with the same predicate into conditional boxes. Note that the pass
+    currently does not propagate opgroup names to the parent Boxes, but the group names
+    should still be present on the gates within the box. """
 
     # the output circuit
-    new_circuit = Circuit()
+    new_circuit = Circuit(0, circuit.name)
+    new_circuit.add_phase(circuit.phase)
+    # wasm_uid should get set automatically as we add WASM ops
     for qb in circuit.qubits:
         new_circuit.add_qubit(qb)
     for cb in circuit.bits:
@@ -84,7 +108,7 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
     for cmd in circuit.get_commands():
         cond = extract_cond(cmd)
         # if this is not part of the ongoing subsequence or we need to emit due to a
-        # write to the predicate, emit the ongoing subsequence to the new circuit
+        # possible write to the predicate, emit the ongoing subsequence to the new circuit
         if curr_cond is not None and (break_dep or curr_cond != cond):
             emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
@@ -103,7 +127,7 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
             for arg in cmd.args[width:]:
                 # this is overly conservative, because it will unnecessarily
                 # break up reads of the predicate value. to do better we need
-                # to distinguish the op's read and write operands
+                # to distinguish the op's read and write operands somehow
                 break_dep = arg in cond[1] 
                 if arg not in sub_args:
                     if isinstance(arg, unit_id.Bit):
@@ -124,21 +148,16 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912
                         raise ValueError("Unknown arg type")
                     sub_args.add(arg)
 
-            if isinstance(cond_op.op, BarrierOp):
-                sub_circ.add_barrier(cmd.args[width:])
-            else:
-                sub_circ.add_gate(cond_op.op, cmd.args[width:])
+            append_cmd(sub_circ, cmd)
             curr_cond = cond
-        elif isinstance(cmd.op, BarrierOp):
-            new_circuit.add_barrier(cmd.args)
         else:
-            new_circuit.add_gate(cmd.op, cmd.args)
+            append_cmd(new_circuit, cmd)
 
     # emit final if necessary
     if curr_cond is not None:
         emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
-    # add WASM states if necessary
+    # add WASM and RNG states if necessary
     if max_wreg > -1:
         new_circuit._add_w_register(max_wreg+1)
     if max_rreg > -1:

@@ -1342,7 +1342,7 @@ def test_condcombine_wasm_rng() -> None:
     b = c.add_c_register("b", 2)
 
     # the circuit is written to put all operations in a sub-box
-    # in a nice dependency chain, s
+    # in a nice dependency chain, so that they have a predictable ordering
     c.add_wasm_to_reg("multi", w, [num, index], [bound], condition=b[0])
     c.add_c_copyreg(bound, seed, condition=b[0])
     c.set_rng_seed(seed, condition=b[0])
@@ -1358,6 +1358,9 @@ def test_condcombine_wasm_rng() -> None:
     c.set_rng_bound(bound, condition=b[1])
     c.set_rng_index(index, condition=b[1])
     c.get_rng_num(num, condition=b[1])
+
+    old_wasm_uid = c.wasm_uid
+
     combine_cond_pass().apply(c)
 
     def iregs(name, size):
@@ -1392,6 +1395,7 @@ def test_condcombine_wasm_rng() -> None:
         str(sub_circ1.get_commands()[-1])
         == "RNGNum " + iregs("num", 32) + "_r[0];"
     )
+    assert c.wasm_uid == old_wasm_uid
 
 
 def test_condcombine_condmutate() -> None:
