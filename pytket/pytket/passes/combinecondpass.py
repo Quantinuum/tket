@@ -130,7 +130,7 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
                 # this is overly conservative, because it will unnecessarily
                 # break up reads of the predicate value. to do better we need
                 # to distinguish the op's read and write operands somehow
-                break_dep = arg in cond[1]
+                break_dep = break_dep or arg in cond[1]
                 if arg not in sub_args:
                     if isinstance(arg, unit_id.Bit):
                         sub_circ.add_bit(arg)
@@ -169,4 +169,6 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
 
 
 def CombineCondPass() -> BasePass:
+    """ Create a pass which combines contiguous groups of conditional gates with the same
+        predicate into conditional boxes. """
     return CustomPass(combine_conditionals, label="combine_conditionals")
