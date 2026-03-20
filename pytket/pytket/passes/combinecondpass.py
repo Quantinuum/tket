@@ -169,6 +169,6 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
 
 
 def CombineCondPass() -> BasePass:
-    """ Create a pass which combines contiguous groups of conditional gates with the same
-        predicate into conditional boxes. """
+    """Create a pass which combines contiguous groups of conditional gates with the same
+    predicate into conditional boxes."""
     return CustomPass(combine_conditionals, label="combine_conditionals")
