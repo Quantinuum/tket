@@ -1,0 +1,85 @@
+name: Test building pytket sphinx documentation
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+   build_pytket_and_test_sphinx_docs:
+    name: Build and test pytket (ubuntu)
+    needs: check_changes
+    if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+      with:
+          enable-cache: true
+          version: "0.10.9"
+    - uses: actions/checkout@v6
+      with: 
+        submodules: true
+    - uses: extractions/setup-just@v3
+      with:
+        just-version: 1.5.0
+    - name: Select Python 3.12
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.12'
+    - name: Install conan
+      uses: turtlebrowser/get-conan@v1.2
+    - name: Set up conan
+      run: |
+        conan profile detect
+        DEFAULT_PROFILE_PATH=`conan profile path default`
+        PROFILE_PATH=./conan-profiles/ubuntu-24.04
+        diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
+        cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
+        conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
+    - name: ccache
+      uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: tket-dynamic-ubuntu-24.04
+    - name: further ccache config
+      run: |
+        ccache --set-config base_dir=${HOME}
+        ccache --set-config compiler_check=content
+        ccache -p
+    - name: Build tket
+      if: needs.check_changes.outputs.tket_changed == 'true'
+      run: conan create tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
+    - name: Install tket
+      if: needs.check_changes.outputs.tket_changed != 'true'
+      run: conan install --requires tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
+    - name: Set up Python (pull request)
+      if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.10'
+    - name: Set up Python (push)
+      if: github.event_name == 'push'
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.11'
+    - name: Test building the Python Sphinx docs
+      if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+      timeout-minutes: 20
+      run: |
+        cd pytket/docs
+        just install-dev
+        just build-strict
+    - name: Upload artifact
+      if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+      uses: actions/upload-artifact@v7
+      with:
+        name: pytket_docs
+        path: pytket/docs/build/
+    - name: Upload package
+      if: github.event_name == 'push' && needs.check_changes.outputs.tket_changed == 'true'
+      run: |
+        conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
+        conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
