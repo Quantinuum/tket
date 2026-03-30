@@ -47,8 +47,6 @@ jobs:
         ccache --set-config base_dir=${HOME}
         ccache --set-config compiler_check=content
         ccache -p
-    - name: Build tket
-      run: conan create tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
     - name: Install tket
       run: conan create tket --user=tket --channel=stable --build=missing -o "boost/*":header_only=True -o "tklog/*":shared=True -o "tket/*":shared=True -tf ""
     - name: Set up Python (pull request)
