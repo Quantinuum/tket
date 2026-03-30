@@ -21,10 +21,13 @@ import pytest
 from sympy import Symbol
 
 import pytket.circuit_library as _library
+import pytket.wasm
 from pytket.architecture import Architecture
 from pytket.circuit import (
+    BarrierOp,
     CircBox,
     Circuit,
+    Conditional,
     Node,
     OpType,
     PauliExpBox,
@@ -36,6 +39,7 @@ from pytket.mapping import LexiLabellingMethod, LexiRouteRoutingMethod, MappingM
 from pytket.passes import (
     AutoRebase,
     AutoSquash,
+    CombineCondPass,
     CommuteThroughMultis,
     CustomPass,
     CustomRoutingPass,
@@ -1528,3 +1532,146 @@ def test_single_qubit_squash() -> None:
     assert pauli_circ.n_gates_of_type(OpType.CX) == 4
     assert SquashRzPhasedX().apply(pauli_circ)
     assert pauli_circ.n_gates_of_type(OpType.CX) == 4
+
+
+def test_condcombine_basic() -> None:
+    circ = Circuit(1, 2, "test_circuit")
+    for _ in range(10):
+        circ.add_gate(
+            OpType.PhasedX, [1, 0], [0], condition=circ.bits[0], opgroup="foo"
+        )
+    circ.add_conditional_barrier([circ.qubits[0]], [circ.bits[0]], 1, "foobar")
+    for _ in range(10):
+        circ.add_gate(OpType.H, [0], condition=circ.bits[1], opgroup="bar")
+    circ.add_conditional_barrier([circ.qubits[0]], [circ.bits[1]], 1, "foobar")
+    circ.add_phase(1.0)
+
+    old_phase = circ.phase
+
+    CombineCondPass().apply(circ)
+    cmds = circ.get_commands()
+
+    assert len(cmds) == 2
+    assert circ.phase == old_phase
+    assert circ.name == "test_circuit"
+    assert isinstance(cmds[0].op, Conditional)
+    assert isinstance(cmds[0].op.op, CircBox)
+    assert isinstance(cmds[1].op, Conditional)
+    assert isinstance(cmds[1].op.op, CircBox)
+
+    for c in cmds:
+        assert c.op.type == OpType.Conditional
+        assert isinstance(c.op, Conditional)
+        assert c.op.op.type == OpType.CircBox
+        assert isinstance(c.op.op, CircBox)
+        sub_cmds = c.op.op.get_circuit().get_commands()
+        assert (
+            isinstance(sub_cmds[-1].op, BarrierOp)
+            and sub_cmds[-1].op.data == "foobar"
+            and sub_cmds[-1].opgroup is None
+        )
+
+    sub_circ0 = cmds[0].op.op.get_circuit()
+    for sub_cmd in sub_circ0.get_commands()[:-1]:
+        assert sub_cmd.opgroup == "foo"
+    sub_circ1 = cmds[1].op.op.get_circuit()
+    for sub_cmd in sub_circ1.get_commands()[:-1]:
+        assert sub_cmd.opgroup == "bar"
+
+
+def test_condcombine_wasm_rng() -> None:
+    c = Circuit()
+    w = pytket.wasm.WasmFileHandler("testfile.wasm")
+
+    seed = c.add_c_register("seed", 64)
+    bound = c.add_c_register("bound", 32)
+    index = c.add_c_register("index", 32)
+    num = c.add_c_register("num", 32)
+    b = c.add_c_register("b", 2)
+
+    # the circuit is written to put all operations in a sub-box
+    # in a nice dependency chain, so that they have a predictable ordering
+    c.add_wasm_to_reg("multi", w, [num, index], [bound], condition=b[0])
+    c.add_c_copyreg(bound, seed, condition=b[0])
+    c.set_rng_seed(seed, condition=b[0])
+    c.add_c_not_to_registers(bound, index, condition=b[0])
+    c.set_rng_bound(bound, condition=b[0])
+    c.set_rng_index(index, condition=b[0])
+    c.get_rng_num(num, condition=b[0])
+
+    c.add_wasm_to_reg("add_one", w, [num], [index], condition=b[1])
+    c.add_c_copyreg(index, seed, condition=b[1])
+    c.set_rng_seed(seed, condition=b[1])
+    c.add_c_not_to_registers(index, bound, condition=b[1])
+    c.set_rng_bound(bound, condition=b[1])
+    c.set_rng_index(index, condition=b[1])
+    c.get_rng_num(num, condition=b[1])
+
+    old_wasm_uid = c.wasm_uid
+
+    CombineCondPass().apply(c)
+
+    def iregs(name: str, size: int) -> str:
+        return "".join(f"{name}[{i}], " for i in range(size))
+
+    # both boxes should have the same args
+    # note that WASM and RNG states are not printed as part of the CircBox args
+    assert c.depth() == 2
+    EXPECTED_BOX_ARGS = (
+        iregs("bound", 32)
+        + iregs("index", 32)
+        + iregs("num", 32)
+        + iregs("seed", 64)[:-2]
+        + ";"
+    )
+    cmds = c.get_commands()
+
+    assert str(cmds[0]) == "IF ([b[0]] == 1) THEN CircBox " + EXPECTED_BOX_ARGS
+    assert str(cmds[1]) == "IF ([b[1]] == 1) THEN CircBox " + EXPECTED_BOX_ARGS
+    assert isinstance(cmds[0].op, Conditional)
+    assert isinstance(cmds[0].op.op, CircBox)
+    assert isinstance(cmds[1].op, Conditional)
+    assert isinstance(cmds[1].op.op, CircBox)
+
+    sub_circ0 = cmds[0].op.op.get_circuit()
+    assert (
+        str(sub_circ0.get_commands()[0])
+        == "WASM "
+        + iregs("num", 32)
+        + iregs("index", 32)
+        + iregs("bound", 32)
+        + "_w[0];"
+    )
+
+    sub_circ1 = cmds[1].op.op.get_circuit()
+    assert str(sub_circ1.get_commands()[-1]) == "RNGNum " + iregs("num", 32) + "_r[0];"
+    assert c.wasm_uid == old_wasm_uid
+
+
+def test_condcombine_condmutate() -> None:
+    c = Circuit(1, 1)
+    q = c.qubits[0]
+    b = c.bits[0]
+
+    # the transform should break this up into two boxes
+    # because the measure has the predicate bit as an operand
+    c.H(q, condition=b)
+    c.X(q, condition=b)
+    c.Measure(q, b, condition=b)
+    c.Reset(q, condition=b)
+    c.X(q, condition=b)
+
+    CombineCondPass().apply(c)
+    cmds = c.get_commands()
+
+    assert c.depth() == 2
+    assert len(cmds) == 2
+    assert isinstance(cmds[0].op, Conditional)
+    assert isinstance(cmds[0].op.op, CircBox)
+    assert isinstance(cmds[1].op, Conditional)
+    assert isinstance(cmds[1].op.op, CircBox)
+
+    assert (
+        repr(cmds[0].op.op.get_circuit()) == "[H q[0]; X q[0]; Measure q[0] --> c[0]; ]"
+    )
+    assert repr(cmds[1].op.op.get_circuit()) == "[Reset q[0]; X q[0]; ]"

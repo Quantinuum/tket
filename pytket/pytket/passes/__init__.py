@@ -16,6 +16,7 @@
 
 from pytket._tket.passes import *
 
+from .combinecondpass import CombineCondPass
 from .passselector import PassSelector
 from .resizeregpass import scratch_reg_resize_pass
 from .script import compilation_pass_from_script, compilation_pass_grammar

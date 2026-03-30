@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.16.0 (March 2026)
+
+Features:
+
+- Add `passes.CondCombinePass` which combines sequences of conditional gates into conditional boxes.
+
 ## 2.15.0 (March 2026)
 
 Fixes:
