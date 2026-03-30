@@ -9,8 +9,30 @@ on:
       - main
 
 jobs:
-   build_pytket_and_test_sphinx_docs:
+  check_changes:
+    name: Check tket library version
+    runs-on: ubuntu-24.04
+    outputs:
+      pytket_or_workflow_changed: ${{ steps.filter.outputs.pytket_or_workflow }}
+    steps:
+    - uses: actions/checkout@v6
+    - name: Select Python 3.12
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.12'
+    - uses: dorny/paths-filter@v4.0.1
+      id: filter
+      with:
+        base: ${{ github.ref }}
+        filters: |
+          pytket_or_workflow:
+            - 'pytket/**'
+            - '.github/workflows/build_pytket_docs.yml'
+
+  build_pytket_and_test_sphinx_docs:
     name: Build and test pytket (ubuntu)
+    needs: check_changes
+    if: needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
     runs-on: ubuntu-24.04
     steps:
     - name: Install uv
