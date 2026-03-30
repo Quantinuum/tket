@@ -86,7 +86,7 @@ jobs:
       timeout-minutes: 20
       run: |
         cd pytket/docs
-        just install-dev
+        just install-dev # Installs a develop wheel of pytket
         just build-strict
     - name: Upload artifact
       if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
