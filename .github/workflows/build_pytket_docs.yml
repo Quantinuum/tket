@@ -11,6 +11,7 @@ on:
 jobs:
    build_pytket_and_test_sphinx_docs:
     name: Build and test pytket (ubuntu)
+    runs-on: ubuntu-24.04
     steps:
     - name: Install uv
       uses: astral-sh/setup-uv@v5
