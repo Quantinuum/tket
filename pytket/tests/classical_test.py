@@ -1100,7 +1100,7 @@ def composite_bit_logic_exps(
     for _ in range(terms):
         chosen_operator = draw(operators)
         if chosen_operator is operator.not_:
-            exp = chosen_operator(exp)
+            exp = chosen_operator(exp)  # type: ignore
         else:
             exp = chosen_operator(exp, draw(strategies.one_of(bits, constants)))
     return exp
