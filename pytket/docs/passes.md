@@ -62,10 +62,6 @@ For more on pytket passes see the [compilation](https://docs.quantinuum.com/tket
 ```
 
 ```{eval-rst}
-.. autofunction:: pytket.passes.combinecondpass.CombineCondPass
-```
-
-```{eval-rst}
 .. autoenum:: pytket.passes.SafetyMode
 ```
 
@@ -315,6 +311,12 @@ For more on pytket passes see the [compilation](https://docs.quantinuum.com/tket
 
 ```{eval-rst}
 .. automethod:: pytket.passes.ZZPhaseToRz
+```
+
+```{eval-rst}
+.. automodule:: pytket.passes.combinecondpass
+
+.. autofunction:: pytket.passes.combinecondpass.CombineCondPass
 ```
 
 ## pytket.passes.resizeregpass
