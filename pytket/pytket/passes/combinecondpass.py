@@ -20,13 +20,13 @@ from pytket.circuit import BarrierOp, CircBox, Circuit, Command, Conditional
 from .._tket.passes import BasePass, CustomPass
 
 
-def extract_cond(cmd: Command) -> tuple[int, list[Any]] | None:
+def _extract_cond(cmd: Command) -> tuple[int, list[Any]] | None:
     if isinstance(cmd.op, Conditional) and not isinstance(cmd.op.op, CircBox):
         return (cmd.op.value, cmd.args[: cmd.op.width])
     return None
 
 
-def append_cmd(circ: Circuit, cmd: Command) -> None:
+def _append_cmd(circ: Circuit, cmd: Command) -> None:
     # if we were given a conditional, unwrap and append the inner op
     if isinstance(cmd.op, Conditional):
         the_op = cmd.op.op
@@ -43,7 +43,7 @@ def append_cmd(circ: Circuit, cmd: Command) -> None:
         circ.add_gate(the_op, cmd.args[cond_args:])
 
 
-def emit_cond_box(
+def _emit_cond_box(
     top_circ: Circuit,
     sub_circ: Circuit,
     cond: tuple[int, list[Any]],
@@ -77,7 +77,7 @@ def emit_cond_box(
         )
 
 
-def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
+def _combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
     """Walk the sequence of commands in the circuit and combine contiguous subsequences
     of conditionals with the same predicate into conditional boxes. Note that the pass
     currently does not propagate opgroup names to the parent Boxes, but the group names
@@ -108,11 +108,11 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
     break_dep = False
 
     for cmd in circuit.get_commands():
-        cond = extract_cond(cmd)
+        cond = _extract_cond(cmd)
         # if this is not part of the ongoing subsequence or we need to emit due to a
         # possible write to the predicate, emit the ongoing subsequence to the new circuit
         if curr_cond is not None and (break_dep or curr_cond != cond):
-            emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
+            _emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
             sub_circ = Circuit()
             sub_args.clear()
@@ -150,14 +150,14 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
                         raise ValueError("Unknown arg type")
                     sub_args.add(arg)
 
-            append_cmd(sub_circ, cmd)
+            _append_cmd(sub_circ, cmd)
             curr_cond = cond
         else:
-            append_cmd(new_circuit, cmd)
+            _append_cmd(new_circuit, cmd)
 
     # emit final if necessary
     if curr_cond is not None:
-        emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
+        _emit_cond_box(new_circuit, sub_circ, curr_cond, max_sub_wreg, max_sub_rreg)
 
     # add WASM and RNG states if necessary
     if max_wreg > -1:
@@ -171,4 +171,4 @@ def combine_conditionals(circuit: Circuit) -> Circuit:  # noqa: PLR0912, PLR0915
 def CombineCondPass() -> BasePass:
     """Create a pass which combines contiguous groups of conditional gates with the same
     predicate into conditional boxes."""
-    return CustomPass(combine_conditionals, label="combine_conditionals")
+    return CustomPass(_combine_conditionals, label="combine_conditionals")
