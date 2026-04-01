@@ -62,6 +62,10 @@ For more on pytket passes see the [compilation](https://docs.quantinuum.com/tket
 ```
 
 ```{eval-rst}
+.. autofunction:: pytket.passes.combinecondpass.CombineCondPass
+```
+
+```{eval-rst}
 .. autoenum:: pytket.passes.SafetyMode
 ```
 
