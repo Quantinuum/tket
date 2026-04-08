@@ -13,7 +13,7 @@ pip install pytket-quantinuum
 
 
 ```{warning}
-The following extensions are now unmaintained
+The following extensions are now unmaintained:
 
 pytket-cirq, pytket-pennylane, pytket-pyquil, pytket-pysimplex ,pytket-pyzx, pytket-stim, pytket-quest
 
