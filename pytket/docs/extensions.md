@@ -3,7 +3,7 @@
 The pytket extensions are separate python modules which allow pytket to interface with backends from a range of providers including quantum devices from Quantinuum and IBM.
 In pytket a {py:class}`~.Backend` represents a connection to a QPU (Quantum Processing Unit) or simulator for processing quantum circuits. One can also access additional quantum devices and simulators via the cloud through the extensions for [Braket](inv:pytket-braket:std:doc#index).
 
-Additionally, the extensions allow pytket to cross-compile circuits from different quantum computing libraries e.g. [qiskit](inv:pytket-qiskit:std:doc#index). This enables pytket's compilation features to be used in conjunction with other software tools.
+Additionally, the extensions allow pytket to cross-compile circuits from different quantum computing libraries such [qiskit](inv:pytket-qiskit:std:doc#index). This enables pytket's compilation features to be used in conjunction with other software tools.
 
 The additional modules can be installed adding the extension name to the installation command for pytket. For example pytket-quantinuum can be installed by running
 
@@ -18,7 +18,7 @@ The following extensions are now unmaintained:
 pytket-cirq, pytket-pennylane, pytket-pyquil, pytket-pysimplex ,pytket-pyzx, pytket-stim, pytket-quest
 
 
-The source code will remain on github in the `Quantinuum` organistion and the packages will be on pypi. However there will be no active maintenance of these projects.
+The source code will remain on the [Quantinuum github organisation](https://github.com/Quantinuum/), though will be archived. The most recent package version (as of April 2026) will remain on pypi. There will be no active maintenance of these projects.
 ```
 
 The types of {py:class}`~.Backend` available in pytket are the following:
