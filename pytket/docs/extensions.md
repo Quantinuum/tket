@@ -15,10 +15,10 @@ pip install pytket-quantinuum
 ```{warning}
 The following extensions are now unmaintained
 
-pytket-cirq ,pytket-pennylane ,pytket-pyquil ,pytket-pysimplex ,pytket-pyzx ,pytket-stim, pytket-quest
+pytket-cirq, pytket-pennylane, pytket-pyquil, pytket-pysimplex ,pytket-pyzx, pytket-stim, pytket-quest
 
 
-The source code will remain on github in the `Quantinuum` organistion but there will be no active maintenance of these projects.
+The source code will remain on github in the `Quantinuum` organistion and the packages will be on pypi. However there will be no active maintenance of these projects.
 ```
 
 The types of {py:class}`~.Backend` available in pytket are the following:
