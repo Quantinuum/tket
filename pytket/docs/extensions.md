@@ -11,6 +11,16 @@ The additional modules can be installed adding the extension name to the install
 pip install pytket-quantinuum
 ```
 
+
+```{warning}
+The following extensions are now unmaintained
+
+pytket-cirq ,pytket-pennylane ,pytket-pyquil ,pytket-pysimplex ,pytket-pyzx ,pytket-stim, pytket-quest
+
+
+The source code will remain on github in the `Quantinuum` organistion but there will be no active maintenance of these projects.
+```
+
 The types of {py:class}`~.Backend` available in pytket are the following:
 
 ## Types of Backend
@@ -20,7 +30,7 @@ The types of {py:class}`~.Backend` available in pytket are the following:
 - **Emulators** - These classically simulate a circuit and produce shots based results. Sometimes emulators use a noise model and have connectivity constraints to emulate real QPUs. E.g. {py:class}`~pytket.extensions.qiskit.backends.ibmq_emulator.IBMQEmulatorBackend`.
 - **Statevector Simulators** - Calculates the pure quantum state prepared by a circuit returning a vector/ndarray. An Example of a statevector simulator is the {py:class}`~pytket.extensions.qiskit.backends.aer.AerStateBackend`.
 - **Unitary Simulators** - Unitary simulators calculate the unitary operator that is applied by a circuit. A unitary matrix/ndarray is returned {py:class}`~pytket.extensions.qiskit.backends.aer.AerUnitaryBackend` is an example of such a simulator.
-- **Density Matrix Simulators** - These simulators compute the density matrix prepared by a circuit. The result can be a statistical mixture of states in contrast to statevector simulation. E.g. {py:class}`~pytket.extensions.cirq.backends.qiskit.AerDensityMatrixBackend`.
+- **Density Matrix Simulators** - These simulators compute the density matrix prepared by a circuit. The result can be a statistical mixture of states in contrast to statevector simulation. E.g. {py:class}`~pytket.extensions.qiskit.backends.aer.AerDensityMatrixBackend`.
 
 A full list of available pytket backends is shown below.
 
