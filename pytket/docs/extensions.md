@@ -18,7 +18,7 @@ The following extensions are now unmaintained:
 pytket-cirq, pytket-pennylane, pytket-pyquil, pytket-pysimplex ,pytket-pyzx, pytket-stim, pytket-quest
 
 
-The source code will remain on the [Quantinuum github organisation](https://github.com/Quantinuum/), though will be archived. The most recent package version (as of April 2026) will remain on pypi. There will be no active maintenance of these projects.
+The source code will remain on the [Quantinuum github organisation](https://github.com/Quantinuum/), though will be archived. The packages will remain on pypi. There will be no active maintenance of these projects.
 ```
 
 The types of {py:class}`~.Backend` available in pytket are the following:
