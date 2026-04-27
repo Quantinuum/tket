@@ -81,8 +81,8 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "(Apple)?Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Winconsistent-missing-override -Wloop-analysis")
 endif()
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    # Work around gcc bug related to std::optional, and warning from Eigen.
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=maybe-uninitialized -Wno-error=stringop-overflow")
+    # Work around gcc bug related to std::optional; warning from Eigen; and warnings from symengine about ciso646.
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=maybe-uninitialized -Wno-error=stringop-overflow -Wno-cpp")
 endif()
 
 

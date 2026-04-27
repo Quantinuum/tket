@@ -62,6 +62,10 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "(Apple)?Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
     # remove -Wno-deprecated-declarations once https://github.com/boostorg/boost/issues/688 is resolved
 endif()
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    # Work around warnings from symengine about ciso646.
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-cpp")
+endif()
 
 if (UNIX)
     # Allow binder libraries to load other shared libraries from same directory.
