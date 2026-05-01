@@ -136,7 +136,7 @@ PathHandler PathHandler::construct_acyclic_handler() const {
 
       current_layer_vertices.push_back(vert);
       vertices_in_tree[vert] = 1;
-      parents_neighbours[vert] = {};
+      parents_neighbours[vert] = std::pair<unsigned int, unsigned int>{};
     }
     next_layer_vertices.clear();
   }
