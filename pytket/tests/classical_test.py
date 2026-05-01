@@ -69,7 +69,7 @@ from pytket.circuit.logic_exp import (
     reg_lt,
     reg_neq,
 )
-from pytket.passes import DecomposeClassicalExp
+from pytket.passes import DecomposeBoxes, DecomposeClassicalExp
 
 curr_file_path = Path(__file__).resolve().parent
 
@@ -902,6 +902,27 @@ def test_wasm_circuit_bits() -> None:
 
 T = TypeVar("T")
 DrawType = Callable[[SearchStrategy[T]], T]
+
+
+def test_wasm_box() -> None:
+
+    wasm_module = wasm.WasmFileHandler("testfile.wasm")
+
+    A = BitRegister("A", 1)
+    B = BitRegister("B", 1)
+
+    c0 = Circuit()
+    c0.add_c_register(A)
+    c0.add_c_register(B)
+    c0.add_wasm_to_reg("add_one", wasm_module, [A], [B])
+    c0box = CircBox(c0)
+
+    c1 = Circuit()
+    c1.add_c_register(A)
+    c1.add_c_register(B)
+    c1.add_circbox_regwise(c0box, qregs=[], cregs=[A, B])
+
+    DecomposeBoxes().apply(c1)
 
 
 @strategies.composite
