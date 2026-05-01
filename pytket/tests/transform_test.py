@@ -1621,7 +1621,8 @@ def test_condcombine_wasm_rng() -> None:
         iregs("bound", 32)
         + iregs("index", 32)
         + iregs("num", 32)
-        + iregs("seed", 64)[:-2]
+        + iregs("seed", 64)
+        + iregs("_w", 1)[:-2]
         + ";"
     )
     cmds = c.get_commands()

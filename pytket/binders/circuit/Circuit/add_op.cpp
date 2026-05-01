@@ -146,6 +146,29 @@ Circuit *add_gate_method_any(
       }
     }
   }
+
+  // check if there are wasm wires in the signature
+            
+  op_signature_t sig = new_op->get_signature();
+
+  unsigned count_wasm_sig = 0;
+  for (EdgeType e : sig) {
+    if (e == EdgeType::WASM) {
+      ++count_wasm_sig;
+    }
+  }
+
+  unsigned count_wasm_args = 0;
+  for (UnitID uid : new_args) {
+    if (uid.type() == UnitType::WasmState) {
+      ++count_wasm_args;
+    }
+  }
+
+  if (count_wasm_args != count_wasm_sig) {
+    new_args.push_back(WasmState(0));
+  }
+
   circ->add_op(new_op, new_args, opgroup);
   return circ;
 }
@@ -577,6 +600,29 @@ void init_circuit_add_op(nb::class_<Circuit> &c) {
                 args.push_back(Bit(name, i));
               }
             }
+
+            // check if there are wasm wires in the signature
+
+            op_signature_t sig = box.get_signature();
+
+            unsigned count_wasm_sig = 0;
+            for (EdgeType e : sig) {
+              if (e == EdgeType::WASM) {
+                ++count_wasm_sig;
+              }
+            }
+
+            unsigned count_wasm_args = 0;
+            for (UnitID uid : args) {
+              if (uid.type() == UnitType::WasmState) {
+                ++count_wasm_args;
+              }
+            }
+
+            if (count_wasm_args != count_wasm_sig) {
+              args.push_back(WasmState(0));
+            }
+
             return add_gate_method_any(
                 circ, std::make_shared<CircBox>(box), args, kwargs);
           },
