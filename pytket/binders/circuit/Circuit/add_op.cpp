@@ -148,7 +148,7 @@ Circuit *add_gate_method_any(
   }
 
   // check if there are wasm wires in the signature
-            
+
   op_signature_t sig = new_op->get_signature();
 
   unsigned count_wasm_sig = 0;
@@ -602,6 +602,7 @@ void init_circuit_add_op(nb::class_<Circuit> &c) {
             }
 
             // check if there are wasm wires in the signature
+
             op_signature_t sig = box.get_signature();
 
             unsigned count_wasm_sig = 0;
