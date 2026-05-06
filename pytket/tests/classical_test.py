@@ -925,6 +925,22 @@ def test_wasm_box() -> None:
     DecomposeBoxes().apply(c1)
 
 
+def test_rng_box() -> None:
+
+    A = BitRegister("A", 32)
+
+    c0 = Circuit()
+    c0.add_c_register(A)
+    c0.get_rng_num(A)
+    c0box = CircBox(c0)
+
+    c1 = Circuit()
+    c1.add_c_register(A)
+    c1.add_circbox_regwise(c0box, qregs=[], cregs=[A])
+
+    DecomposeBoxes().apply(c1) # melf
+
+
 @strategies.composite
 def bit_register(
     draw: DrawType,

@@ -165,8 +165,26 @@ Circuit *add_gate_method_any(
     }
   }
 
+  unsigned count_rng_sig = 0;
+  for (EdgeType e : sig) {
+    if (e == EdgeType::RNG) {
+      ++count_rng_sig;
+    }
+  }
+
+  unsigned count_rng_args = 0;
+  for (UnitID uid : new_args) {
+    if (uid.type() == UnitType::RngState) {
+      ++count_rng_args;
+    }
+  }
+
   if (count_wasm_args != count_wasm_sig) {
     new_args.push_back(WasmState(0));
+  }
+
+  if (count_rng_args != count_rng_sig) {
+    new_args.push_back(RngState(0));
   }
 
   circ->add_op(new_op, new_args, opgroup);
@@ -619,8 +637,26 @@ void init_circuit_add_op(nb::class_<Circuit> &c) {
               }
             }
 
+            unsigned count_rng_sig = 0;
+            for (EdgeType e : sig) {
+              if (e == EdgeType::RNG) {
+                ++count_rng_sig;
+              }
+            }
+
+            unsigned count_rng_args = 0;
+            for (UnitID uid : args) {
+              if (uid.type() == UnitType::RngState) {
+                ++count_rng_args;
+              }
+            }
+
             if (count_wasm_args != count_wasm_sig) {
               args.push_back(WasmState(0));
+            }
+
+            if (count_rng_args != count_rng_sig) {
+              args.push_back(RngState(0));
             }
 
             return add_gate_method_any(
