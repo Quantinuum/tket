@@ -1615,7 +1615,6 @@ def test_condcombine_wasm_rng() -> None:
         return "".join(f"{name}[{i}], " for i in range(size))
 
     # both boxes should have the same args
-    # note that WASM and RNG states are not printed as part of the CircBox args
     assert c.depth() == 2
     EXPECTED_BOX_ARGS = (
         iregs("bound", 32)
