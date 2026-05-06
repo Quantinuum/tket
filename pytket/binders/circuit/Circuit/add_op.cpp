@@ -179,6 +179,8 @@ Circuit *add_gate_method_any(
     }
   }
 
+  // potentially still effected by:
+  //  https://github.com/Quantinuum/tket/issues/2154
   if (count_wasm_args != count_wasm_sig) {
     new_args.push_back(WasmState(0));
   }
@@ -651,6 +653,8 @@ void init_circuit_add_op(nb::class_<Circuit> &c) {
               }
             }
 
+            // potentially still effected by:
+            // https://github.com/Quantinuum/tket/issues/2154
             if (count_wasm_args != count_wasm_sig) {
               args.push_back(WasmState(0));
             }
