@@ -2350,6 +2350,24 @@ SCENARIO("AutoSquash") {
     REQUIRE_THROWS_AS(gen_auto_squash_pass({OpType::Rx}), Unsupported);
     REQUIRE_THROWS_AS(gen_auto_squash_pass({}), Unsupported);
   }
+  GIVEN("Squashing PhasedX and Rz with a symbolic circuit") {
+    // https://github.com/Quantinuum/tket/issues/2152
+    Sym asym = SymEngine::symbol("a");
+    Expr alpha(asym);
+    Circuit circ0(2);
+    circ0.add_op<unsigned>(OpType::PhasedX, {0.5, 0.5}, {1});
+    circ0.add_op<unsigned>(OpType::Rz, alpha, {1});
+    circ0.add_op<unsigned>(OpType::PhasedX, {0.5, 0.0}, {1});
+    circ0.add_op<unsigned>(OpType::ZZPhase, 1.0, {0, 1});
+    CompilationUnit cu(circ0);
+    gen_auto_squash_pass({OpType::PhasedX, OpType::Rz})->apply(cu);
+    Circuit circ1 = cu.get_circ_ref();
+    symbol_map_t symmap;
+    symmap[asym] = 0.0;
+    circ0.symbol_substitution(symmap);
+    circ1.symbol_substitution(symmap);
+    REQUIRE(test_unitary_comparison(circ0, circ1));
+  }
 }
 
 SCENARIO("Efficient TK2 synthesis") {
