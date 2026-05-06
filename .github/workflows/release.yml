@@ -10,9 +10,6 @@ jobs:
   build_Windows_wheels:
     name: Build Windows wheels
     runs-on: windows-2025
-    strategy:
-      matrix:
-        python-version: ['3.10', '3.11', '3.12']
     steps:
     - uses: actions/checkout@v6
       with:
@@ -21,7 +18,7 @@ jobs:
     - name: Select Python ${{ matrix.python-version }}
       uses: actions/setup-python@v6
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.11'
     - name: Install conan
       uses: turtlebrowser/get-conan@v1.2
     - name: Set up conan
