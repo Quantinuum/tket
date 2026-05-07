@@ -228,7 +228,12 @@ SCENARIO("generating circ with wasm") {
 
     CircBox circbox(u);
     Circuit major_circ(0, 1);
-    major_circ.add_box(circbox, {0});
+    unit_vector_t new_args;
+    new_args.push_back(Bit(0));
+    new_args.push_back(WasmState(0));
+    new_args.push_back(WasmState(1));
+    new_args.push_back(WasmState(2));
+    major_circ.add_op(std::make_shared<CircBox>(circbox), new_args);
 
     REQUIRE(major_circ.depth() == 1);
     REQUIRE(major_circ.get_wasm_file_uid() == wasm_file);

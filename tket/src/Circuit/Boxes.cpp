@@ -82,7 +82,11 @@ CircBox::CircBox(const Circuit &circ) : Box(OpType::CircBox) {
   }
   signature_ = op_signature_t(circ.n_qubits(), EdgeType::Quantum);
   op_signature_t bits(circ.n_bits(), EdgeType::Classical);
+  op_signature_t wasmwire(circ._number_of_wasm_wires, EdgeType::WASM);
+  op_signature_t rngwire(circ._number_of_rng_wires, EdgeType::RNG);
   signature_.insert(signature_.end(), bits.begin(), bits.end());
+  signature_.insert(signature_.end(), wasmwire.begin(), wasmwire.end());
+  signature_.insert(signature_.end(), rngwire.begin(), rngwire.end());
   circ_ = std::make_shared<Circuit>(circ);
 }
 

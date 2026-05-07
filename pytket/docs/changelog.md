@@ -1,5 +1,10 @@
 # Changelog
 
+# 2.17.0 (unreleased)
+
+Fixes:
+- Fix handling of wasm function calls in circuit boxes
+
 ## 2.16.0 (March 2026)
 
 Features:

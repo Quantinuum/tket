@@ -69,7 +69,7 @@ from pytket.circuit.logic_exp import (
     reg_lt,
     reg_neq,
 )
-from pytket.passes import DecomposeClassicalExp
+from pytket.passes import DecomposeBoxes, DecomposeClassicalExp
 
 curr_file_path = Path(__file__).resolve().parent
 
@@ -902,6 +902,52 @@ def test_wasm_circuit_bits() -> None:
 
 T = TypeVar("T")
 DrawType = Callable[[SearchStrategy[T]], T]
+
+
+def test_wasm_box() -> None:
+
+    wasm_module = wasm.WasmFileHandler("testfile.wasm")
+
+    A = BitRegister("A", 1)
+    B = BitRegister("B", 1)
+
+    c0 = Circuit()
+    c0.add_c_register(A)
+    c0.add_c_register(B)
+    c0.add_wasm_to_reg("add_one", wasm_module, [A], [B])
+    c0box = CircBox(c0)
+
+    c1 = Circuit()
+    c1.add_c_register(A)
+    c1.add_c_register(B)
+    c1.add_circbox_regwise(c0box, qregs=[], cregs=[A, B])
+
+    DecomposeBoxes().apply(c1)
+
+    assert c1.depth() == 1
+    assert str(c1.get_commands()[0]) == "WASM A[0], B[0], _w[0];"
+
+
+def test_rng_box() -> None:
+
+    A = BitRegister("A", 32)
+
+    c0 = Circuit()
+    c0.add_c_register(A)
+    c0.get_rng_num(A)
+    c0box = CircBox(c0)
+
+    c1 = Circuit()
+    c1.add_c_register(A)
+    c1.add_circbox_regwise(c0box, qregs=[], cregs=[A])
+
+    DecomposeBoxes().apply(c1)
+
+    assert c1.depth() == 1
+    assert (
+        str(c1.get_commands()[0])
+        == "RNGNum A[0], A[1], A[2], A[3], A[4], A[5], A[6], A[7], A[8], A[9], A[10], A[11], A[12], A[13], A[14], A[15], A[16], A[17], A[18], A[19], A[20], A[21], A[22], A[23], A[24], A[25], A[26], A[27], A[28], A[29], A[30], A[31], _r[0];"
+    )
 
 
 @strategies.composite
