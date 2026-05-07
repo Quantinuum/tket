@@ -9,7 +9,7 @@ jobs:
 
   build_Windows_wheels:
     name: Build Windows wheels
-    runs-on: windows-2025
+    runs-on: windows-2025-vs2026
     steps:
     - uses: actions/checkout@v6
       with:
@@ -26,7 +26,7 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/windows-2025
+        PROFILE_PATH=./conan-profiles/windows-2025-vs2026
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
