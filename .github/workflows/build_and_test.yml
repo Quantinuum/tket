@@ -156,95 +156,96 @@ jobs:
         conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
         conan upload tket-c-api/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
 
-  build_test_tket_windows:
-    name: Build and test (tket)
-    needs: check_changes
-    if: needs.check_changes.outputs.tket_or_c_api_changed == 'true'
-    strategy:
-      matrix:
-        os: ['windows-2025']
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Select Python 3.12
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-      - name: Install conan
-        uses: turtlebrowser/get-conan@v1.2
-      - name: Set up conan
-        shell: bash
-        run: |
-          conan profile detect
-          DEFAULT_PROFILE_PATH=`conan profile path default`
-          PROFILE_PATH=./conan-profiles/${{ matrix.os }}
-          diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
-          cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
-          conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
-      - name: normalize line endings in conanfile and src directory
-        # This is necessary to ensure consistent revisions across platforms.
-        # Conan's revision hash is composed of hashes of all the exported files,
-        # so we must normalize the line endings in these.
-        run: |
-          $tket_files = Get-ChildItem "tket" -File -Recurse
-          $tket_files += Get-Item "TKET_VERSION"
-          $tket_c_api_files = Get-ChildItem "tket-c-api" -File -Recurse
-          $tket_files += $tket_c_api_files
-          foreach ($f in $tket_files) {
-            $normalized_file = [IO.File]::ReadAllText($f) -replace "`r`n", "`n"
-            [IO.File]::WriteAllText($f, $normalized_file)
-          }
-      - name: ninja ccache setup
-        # This is what hendrikmuhs/ccache-action does, but for windows (theirs is buggy on windows)
-        id: ninja-ccache-setup
-        run: |
-          choco upgrade ccache ninja
-          $ccache_dir = ccache --get-config cache_dir
-          echo ccache_dir=$ccache_dir >> $env:GITHUB_OUTPUT
-          ccache --set-config=max_size='500M'
-          ccache --set-config=compression=true
-          ccache --set-config compiler_check=content
-          ccache --set-config namespace=WITH_TESTS
-          ccache -p
-      - name: Get current time
-        uses: josStorer/get-current-time@v2.1.2
-        id: current_time
-        with:
-          format: YYYYMMDDHHmmss
-      - name: ccache windows
-        uses: actions/cache@v5
-        with:
-          path: ${{ steps.ninja-ccache-setup.outputs.ccache_dir }}
-          key: tket-static-${{ matrix.os }}-${{ steps.current_time.outputs.formattedTime }}
-          restore-keys: |
-            tket-static-${{ matrix.os }}-
-      - name: Build tket
-        # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
-        # Necessary because setting ccache base_dir doesn't currently work on windows
-        run: |
-          conan build tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-          conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-      - name: Build tket-c-api
-        # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
-        # Necessary because setting ccache base_dir doesn't currently work on windows
-        run: |
-          conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-          conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-      - name: Upload packages
-        if: github.event_name == 'push'
-        run: |
-          ccache --set-config namespace=WITHOUT_TESTS
-          conan build tket --user=tket --channel=stable -o boost/*:header_only=True
-          conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True
-          conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True
-          conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True
-          conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
-          conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
-          conan upload tket-c-api/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
-      - name: ccache stats
-        run: |
-          ccache -s  #show stats
-          ccache -z  #show stats
+# Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
+  # build_test_tket_windows:
+  #   name: Build and test (tket)
+  #   needs: check_changes
+  #   if: needs.check_changes.outputs.tket_or_c_api_changed == 'true'
+  #   strategy:
+  #     matrix:
+  #       os: ['windows-2025']
+  #   runs-on: ${{ matrix.os }}
+  #   steps:
+  #     - uses: actions/checkout@v6
+  #     - name: Select Python 3.12
+  #       uses: actions/setup-python@v6
+  #       with:
+  #         python-version: '3.12'
+  #     - name: Install conan
+  #       uses: turtlebrowser/get-conan@v1.2
+  #     - name: Set up conan
+  #       shell: bash
+  #       run: |
+  #         conan profile detect
+  #         DEFAULT_PROFILE_PATH=`conan profile path default`
+  #         PROFILE_PATH=./conan-profiles/${{ matrix.os }}
+  #         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
+  #         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
+  #         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
+  #     - name: normalize line endings in conanfile and src directory
+  #       # This is necessary to ensure consistent revisions across platforms.
+  #       # Conan's revision hash is composed of hashes of all the exported files,
+  #       # so we must normalize the line endings in these.
+  #       run: |
+  #         $tket_files = Get-ChildItem "tket" -File -Recurse
+  #         $tket_files += Get-Item "TKET_VERSION"
+  #         $tket_c_api_files = Get-ChildItem "tket-c-api" -File -Recurse
+  #         $tket_files += $tket_c_api_files
+  #         foreach ($f in $tket_files) {
+  #           $normalized_file = [IO.File]::ReadAllText($f) -replace "`r`n", "`n"
+  #           [IO.File]::WriteAllText($f, $normalized_file)
+  #         }
+  #     - name: ninja ccache setup
+  #       # This is what hendrikmuhs/ccache-action does, but for windows (theirs is buggy on windows)
+  #       id: ninja-ccache-setup
+  #       run: |
+  #         choco upgrade ccache ninja
+  #         $ccache_dir = ccache --get-config cache_dir
+  #         echo ccache_dir=$ccache_dir >> $env:GITHUB_OUTPUT
+  #         ccache --set-config=max_size='500M'
+  #         ccache --set-config=compression=true
+  #         ccache --set-config compiler_check=content
+  #         ccache --set-config namespace=WITH_TESTS
+  #         ccache -p
+  #     - name: Get current time
+  #       uses: josStorer/get-current-time@v2.1.2
+  #       id: current_time
+  #       with:
+  #         format: YYYYMMDDHHmmss
+  #     - name: ccache windows
+  #       uses: actions/cache@v5
+  #       with:
+  #         path: ${{ steps.ninja-ccache-setup.outputs.ccache_dir }}
+  #         key: tket-static-${{ matrix.os }}-${{ steps.current_time.outputs.formattedTime }}
+  #         restore-keys: |
+  #           tket-static-${{ matrix.os }}-
+  #     - name: Build tket
+  #       # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
+  #       # Necessary because setting ccache base_dir doesn't currently work on windows
+  #       run: |
+  #         conan build tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+  #         conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+  #     - name: Build tket-c-api
+  #       # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
+  #       # Necessary because setting ccache base_dir doesn't currently work on windows
+  #       run: |
+  #         conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+  #         conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+  #     - name: Upload packages
+  #       if: github.event_name == 'push'
+  #       run: |
+  #         ccache --set-config namespace=WITHOUT_TESTS
+  #         conan build tket --user=tket --channel=stable -o boost/*:header_only=True
+  #         conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True
+  #         conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True
+  #         conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True
+  #         conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
+  #         conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
+  #         conan upload tket-c-api/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
+  #     - name: ccache stats
+  #       run: |
+  #         ccache -s  #show stats
+  #         ccache -z  #show stats
 
   build_tket_c_api_manylinux:
     name: Build tket-c-api and upload to artifactory
@@ -454,120 +455,121 @@ jobs:
         conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
         conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
 
-  build_test_pytket_windows:
-    name: Build and test pytket (windows)
-    needs: check_changes
-    if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
-    runs-on: windows-2025
-    steps:
-    - uses: actions/checkout@v6
-    - name: Select Python 3.12
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.12'
-    - name: Install conan
-      uses: turtlebrowser/get-conan@v1.2
-    - name: Set up conan
-      shell: bash
-      run: |
-        conan profile detect
-        DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/windows-2025
-        diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
-        cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
-        conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
-    - name: normalize line endings in conanfile and src directory
-      # This is necessary to ensure consistent revisions across platforms.
-      # Conan's revision hash is composed of hashes of all the exported files,
-      # so we must normalize the line endings in these.
-      run: |
-             $tket_files = Get-ChildItem "tket" -File -Recurse
-             $tket_files += Get-Item "TKET_VERSION"
-             foreach ($f in $tket_files) {
-             $normalized_file = [IO.File]::ReadAllText($f) -replace "`r`n", "`n"
-             [IO.File]::WriteAllText($f, $normalized_file)
-             }
-    - name: ccache setup
-        # This is what hendrikmuhs/ccache-action does, but for windows (theirs is buggy on windows)
-      id: ccache-setup
-      run: |
-        choco upgrade ccache
-        $ccache_dir = ccache --get-config cache_dir
-        echo ccache_dir=$ccache_dir >> $env:GITHUB_OUTPUT
-        ccache --set-config=max_size='500M'
-        ccache --set-config=compression=true
-        ccache --set-config compiler_check=content
-        ccache --set-config namespace=WITH_TESTS
-        ccache -p
-    - name: Get current time
-      uses: josStorer/get-current-time@v2.1.2
-      id: current_time
-      with:
-        format: YYYYMMDDHHmmss
-    - name: ccache windows
-      uses: actions/cache@v5
-      with:
-        path: ${{ steps.ccache-setup.outputs.ccache_dir }}
-        key: tket-dynamic-visual-studio-windows-2025-${{ steps.current_time.outputs.formattedTime }}
-        restore-keys: |
-          tket-dynamic-visual-studio-windows-2025
-    - name: get ccache path
-      id: ccache-path
-      shell: bash
-      run: |
-        ccache --shimgen-noop > ccache-info.txt || true
-        a=$(cat ccache-info.txt | grep executable)
-        # strip off the initial "  path to executable: "
-        b=${a:22}
-        echo "ccache_path=${b}" >> $GITHUB_OUTPUT
-    - name: Build tket
-      if: needs.check_changes.outputs.tket_changed == 'true'
-      run: |
-        $env:TKET_VSGEN_CCACHE_EXE = '${{ steps.ccache-path.outputs.ccache_path }}'
-        conan build tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
-        conan export-pkg tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
-    - name: Install tket
-      if: needs.check_changes.outputs.tket_changed != 'true'
-      run: conan install --requires tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
-    - name: Set up Python 3.10
-      if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.10'
-    - name: Set up Python 3.11
-      if: github.event_name == 'push'
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.11'
-    - name: Set up Python 3.12
-      if: github.event_name == 'schedule'
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.12'
-    - name: Build pytket
-      shell: bash
-      run: |
-        cd pytket
-        pip install -e .[ZX] -v
-    - name: Run doctests
-      run: |
-        cd pytket
-        pip install pytest
-        pytest --doctest-modules pytket
-    - name: Test pytket
-      run: |
-        cd pytket/tests
-        pip install -r requirements.txt
-        pytest --ignore=simulator/
-    - name: Upload package
-      if: github.event_name == 'push' && needs.check_changes.outputs.tket_changed == 'true'
-      run: |
-        conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
-        conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
-    - name: ccache stats
-      run: |
-        ccache -s  #show stats
-        ccache -z  #show stats
+# Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
+  # build_test_pytket_windows:
+  #   name: Build and test pytket (windows)
+  #   needs: check_changes
+  #   if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
+  #   runs-on: windows-2025
+  #   steps:
+  #   - uses: actions/checkout@v6
+  #   - name: Select Python 3.12
+  #     uses: actions/setup-python@v6
+  #     with:
+  #       python-version: '3.12'
+  #   - name: Install conan
+  #     uses: turtlebrowser/get-conan@v1.2
+  #   - name: Set up conan
+  #     shell: bash
+  #     run: |
+  #       conan profile detect
+  #       DEFAULT_PROFILE_PATH=`conan profile path default`
+  #       PROFILE_PATH=./conan-profiles/windows-2025
+  #       diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
+  #       cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
+  #       conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
+  #   - name: normalize line endings in conanfile and src directory
+  #     # This is necessary to ensure consistent revisions across platforms.
+  #     # Conan's revision hash is composed of hashes of all the exported files,
+  #     # so we must normalize the line endings in these.
+  #     run: |
+  #            $tket_files = Get-ChildItem "tket" -File -Recurse
+  #            $tket_files += Get-Item "TKET_VERSION"
+  #            foreach ($f in $tket_files) {
+  #            $normalized_file = [IO.File]::ReadAllText($f) -replace "`r`n", "`n"
+  #            [IO.File]::WriteAllText($f, $normalized_file)
+  #            }
+  #   - name: ccache setup
+  #       # This is what hendrikmuhs/ccache-action does, but for windows (theirs is buggy on windows)
+  #     id: ccache-setup
+  #     run: |
+  #       choco upgrade ccache
+  #       $ccache_dir = ccache --get-config cache_dir
+  #       echo ccache_dir=$ccache_dir >> $env:GITHUB_OUTPUT
+  #       ccache --set-config=max_size='500M'
+  #       ccache --set-config=compression=true
+  #       ccache --set-config compiler_check=content
+  #       ccache --set-config namespace=WITH_TESTS
+  #       ccache -p
+  #   - name: Get current time
+  #     uses: josStorer/get-current-time@v2.1.2
+  #     id: current_time
+  #     with:
+  #       format: YYYYMMDDHHmmss
+  #   - name: ccache windows
+  #     uses: actions/cache@v5
+  #     with:
+  #       path: ${{ steps.ccache-setup.outputs.ccache_dir }}
+  #       key: tket-dynamic-visual-studio-windows-2025-${{ steps.current_time.outputs.formattedTime }}
+  #       restore-keys: |
+  #         tket-dynamic-visual-studio-windows-2025
+  #   - name: get ccache path
+  #     id: ccache-path
+  #     shell: bash
+  #     run: |
+  #       ccache --shimgen-noop > ccache-info.txt || true
+  #       a=$(cat ccache-info.txt | grep executable)
+  #       # strip off the initial "  path to executable: "
+  #       b=${a:22}
+  #       echo "ccache_path=${b}" >> $GITHUB_OUTPUT
+  #   - name: Build tket
+  #     if: needs.check_changes.outputs.tket_changed == 'true'
+  #     run: |
+  #       $env:TKET_VSGEN_CCACHE_EXE = '${{ steps.ccache-path.outputs.ccache_path }}'
+  #       conan build tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
+  #       conan export-pkg tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
+  #   - name: Install tket
+  #     if: needs.check_changes.outputs.tket_changed != 'true'
+  #     run: conan install --requires tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
+  #   - name: Set up Python 3.10
+  #     if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+  #     uses: actions/setup-python@v6
+  #     with:
+  #       python-version: '3.10'
+  #   - name: Set up Python 3.11
+  #     if: github.event_name == 'push'
+  #     uses: actions/setup-python@v6
+  #     with:
+  #       python-version: '3.11'
+  #   - name: Set up Python 3.12
+  #     if: github.event_name == 'schedule'
+  #     uses: actions/setup-python@v6
+  #     with:
+  #       python-version: '3.12'
+  #   - name: Build pytket
+  #     shell: bash
+  #     run: |
+  #       cd pytket
+  #       pip install -e .[ZX] -v
+  #   - name: Run doctests
+  #     run: |
+  #       cd pytket
+  #       pip install pytest
+  #       pytest --doctest-modules pytket
+  #   - name: Test pytket
+  #     run: |
+  #       cd pytket/tests
+  #       pip install -r requirements.txt
+  #       pytest --ignore=simulator/
+  #   - name: Upload package
+  #     if: github.event_name == 'push' && needs.check_changes.outputs.tket_changed == 'true'
+  #     run: |
+  #       conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
+  #       conan upload tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -r=tket-libs
+  #   - name: ccache stats
+  #     run: |
+  #       ccache -s  #show stats
+  #       ccache -z  #show stats
 
   publish_pytket_coverage:
     name: Publish pytket coverage
@@ -615,6 +617,44 @@ jobs:
         wget https://quantinuum.github.io/tket/pytket/test-coverage/cov.xml -O oldcov.xml
         ./.github/workflows/compare-pytket-coverage oldcov.xml pytket-test-coverage/cov.xml
 
+# Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
+  # check_all_build_and_test_jobs_successful:
+  #   name: All build and test jobs successful (or skipped)
+  #   needs:
+  #     - check_changes
+  #     - check_docs_tket
+  #     - check_format_tket
+  #     - build_test_tket
+  #     - build_test_tket_windows
+  #     - publish_pytket_coverage
+  #     - build_test_pytket_macos
+  #     - build_test_pytket_ubuntu
+  #     - build_test_pytket_windows
+  #     - publish_pytket_coverage
+  #     - check_pytket_coverage
+  #   if: always()
+  #   runs-on: ubuntu-24.04
+  #   steps:
+  #     - shell: python
+  #       name: Check job results
+  #       run: |
+  #         results = {
+  #             "check_changes": "${{ needs.check_changes.result }}",
+  #             "check_docs_tket": "${{ needs.check_docs_tket.result }}",
+  #             "check_format_tket": "${{ needs.check_format_tket.result }}",
+  #             "build_test_tket": "${{ needs.build_test_tket.result }}",
+  #             "build_test_tket_windows": "${{ needs.build_test_tket_windows.result }}",
+  #             "publish_pytket_coverage": "${{ needs.publish_pytket_coverage.result }}",
+  #             "build_test_pytket_macos": "${{ needs.build_test_pytket_macos.result }}",
+  #             "build_test_pytket_ubuntu": "${{ needs.build_test_pytket_ubuntu.result }}",
+  #             "build_test_pytket_windows": "${{ needs.build_test_pytket_windows.result }}",
+  #             "publish_pytket_coverage": "${{ needs.publish_pytket_coverage.result }}",
+  #             "check_pytket_coverage": "${{ needs.check_pytket_coverage.result }}"
+  #         }
+  #         failed_jobs = [job for job, status in results.items() if status in ("failure", "cancelled")]
+  #         if failed_jobs:
+  #             print(f"Job(s) failed or cancelled: {', '.join(failed_jobs)}")
+  #             raise Exception
   check_all_build_and_test_jobs_successful:
     name: All build and test jobs successful (or skipped)
     needs:
@@ -622,11 +662,9 @@ jobs:
       - check_docs_tket
       - check_format_tket
       - build_test_tket
-      - build_test_tket_windows
       - publish_pytket_coverage
       - build_test_pytket_macos
       - build_test_pytket_ubuntu
-      - build_test_pytket_windows
       - publish_pytket_coverage
       - check_pytket_coverage
     if: always()
@@ -640,11 +678,9 @@ jobs:
               "check_docs_tket": "${{ needs.check_docs_tket.result }}",
               "check_format_tket": "${{ needs.check_format_tket.result }}",
               "build_test_tket": "${{ needs.build_test_tket.result }}",
-              "build_test_tket_windows": "${{ needs.build_test_tket_windows.result }}",
               "publish_pytket_coverage": "${{ needs.publish_pytket_coverage.result }}",
               "build_test_pytket_macos": "${{ needs.build_test_pytket_macos.result }}",
               "build_test_pytket_ubuntu": "${{ needs.build_test_pytket_ubuntu.result }}",
-              "build_test_pytket_windows": "${{ needs.build_test_pytket_windows.result }}",
               "publish_pytket_coverage": "${{ needs.publish_pytket_coverage.result }}",
               "check_pytket_coverage": "${{ needs.check_pytket_coverage.result }}"
           }
