@@ -132,11 +132,8 @@ Transform normalise_TK2();
  * @brief Squash single qubit gates into PhasedX and Rz gates.
  *
  * Commute Rzs to the back if possible.
- *
- * @param always_squash_symbols whether to squash symbols regardless of
- *        complexity increase
  */
-Transform squash_1qb_to_Rz_PhasedX(bool always_squash_symbols = false);
+Transform squash_1qb_to_Rz_PhasedX();
 
 /**
  * Generate a transform that rounds all angles to the nearest \f$ \pi / 2^n \f$.
