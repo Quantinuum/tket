@@ -63,9 +63,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
-        # os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2025']
-        os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26']
+        os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2025']
         lib: ${{ fromJson(needs.set_libs_matrix.outputs.libs) }}
     runs-on: ${{ matrix.os }}
     steps:

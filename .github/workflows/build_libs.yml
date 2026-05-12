@@ -46,9 +46,7 @@ jobs:
     if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     strategy:
       matrix:
-        # Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
-        # os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2025']
-        os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26']
+        os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2025']
         lib: ${{ fromJson(needs.changes.outputs.libs) }}
         build_type: ['Release', 'Debug']
     runs-on: ${{ matrix.os }}
