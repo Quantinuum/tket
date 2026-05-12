@@ -162,7 +162,7 @@ jobs:
     if: needs.check_changes.outputs.tket_or_c_api_changed == 'true'
     strategy:
       matrix:
-        os: ['windows-2025']
+        os: ['windows-2022']
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
@@ -458,7 +458,7 @@ jobs:
     name: Build and test pytket (windows)
     needs: check_changes
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
-    runs-on: windows-2025
+    runs-on: windows-2022
     steps:
     - uses: actions/checkout@v6
     - name: Select Python 3.12
@@ -472,7 +472,7 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/windows-2025
+        PROFILE_PATH=./conan-profiles/windows-2022
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
@@ -508,9 +508,9 @@ jobs:
       uses: actions/cache@v5
       with:
         path: ${{ steps.ccache-setup.outputs.ccache_dir }}
-        key: tket-dynamic-visual-studio-windows-2025-${{ steps.current_time.outputs.formattedTime }}
+        key: tket-dynamic-visual-studio-windows-2022-${{ steps.current_time.outputs.formattedTime }}
         restore-keys: |
-          tket-dynamic-visual-studio-windows-2025
+          tket-dynamic-visual-studio-windows-2022
     - name: get ccache path
       id: ccache-path
       shell: bash

@@ -46,14 +46,14 @@ jobs:
     if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     strategy:
       matrix:
-        os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2025']
+        os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2022']
         lib: ${{ fromJson(needs.changes.outputs.libs) }}
         build_type: ['Release', 'Debug']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v6
     - name: normalize line endings in conanfile and src directory
-      if: matrix.os == 'windows-2025'
+      if: matrix.os == 'windows-2022'
       # This is necessary to ensure consistent revisions across platforms.
       # Conan's revision hash is composed of hashes all the exported files, so
       # we must normalize the line endings in these.
