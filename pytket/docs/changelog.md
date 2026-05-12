@@ -3,7 +3,8 @@
 # 2.17.0 (unreleased)
 
 Fixes:
-- Fix handling of wasm function calls in circuit boxes
+- Fix handling of wasm function calls in circuit boxes.
+- Fix handling of symbolic circuits in Transforms::squash_1qb_to_Rz_PhasedX().
 
 ## 2.16.0 (March 2026)
 
