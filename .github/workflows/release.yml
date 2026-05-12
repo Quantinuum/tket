@@ -143,45 +143,44 @@ jobs:
         name: MacOS_arm64_${{ matrix.python-version }}_wheel
         path: wheelhouse/
 
-# Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
-  # build_Windows_wheels:
-  #   name: Build Windows wheels
-  #   runs-on: windows-2025
-  #   strategy:
-  #     matrix:
-  #       python-version: ['3.10', '3.11', '3.12']
-  #   steps:
-  #   - uses: actions/checkout@v6
-  #     with:
-  #       fetch-depth: '0'
-  #   - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-  #   - name: Select Python ${{ matrix.python-version }}
-  #     uses: actions/setup-python@v6
-  #     with:
-  #       python-version: ${{ matrix.python-version }}
-  #   - name: Install conan
-  #     uses: turtlebrowser/get-conan@v1.2
-  #   - name: Set up conan
-  #     shell: bash
-  #     run: |
-  #       conan profile detect
-  #       DEFAULT_PROFILE_PATH=`conan profile path default`
-  #       PROFILE_PATH=./conan-profiles/windows-2025
-  #       diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
-  #       cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
-  #       conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
-  #   - name: Build tket
-  #     run: conan create tket --user tket --channel stable --build=missing -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
-  #   - name: Build wheel
-  #     shell: bash
-  #     run: |
-  #       cd pytket
-  #       python -m pip install -U pip build
-  #       TKET_VERSION=`cat ../TKET_VERSION` python -m build --outdir "${{ github.workspace }}/wheelhouse"
-  #   - uses: actions/upload-artifact@v7
-  #     with:
-  #       name: Windows_${{ matrix.python-version }}_wheel
-  #       path: wheelhouse/
+  build_Windows_wheels:
+    name: Build Windows wheels
+    runs-on: windows-2022
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: '0'
+    - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+    - name: Select Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install conan
+      uses: turtlebrowser/get-conan@v1.2
+    - name: Set up conan
+      shell: bash
+      run: |
+        conan profile detect
+        DEFAULT_PROFILE_PATH=`conan profile path default`
+        PROFILE_PATH=./conan-profiles/windows-2022
+        diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
+        cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
+        conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
+    - name: Build tket
+      run: conan create tket --user tket --channel stable --build=missing -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
+    - name: Build wheel
+      shell: bash
+      run: |
+        cd pytket
+        python -m pip install -U pip build
+        TKET_VERSION=`cat ../TKET_VERSION` python -m build --outdir "${{ github.workspace }}/wheelhouse"
+    - uses: actions/upload-artifact@v7
+      with:
+        name: Windows_${{ matrix.python-version }}_wheel
+        path: wheelhouse/
 
   test_linux_wheels:
     name: Test linux wheels
@@ -332,50 +331,47 @@ jobs:
         python${{ matrix.python-version }} -m pip install -r requirements.txt
         python${{ matrix.python-version }} -m pytest --ignore=simulator/
 
-# Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
-  # test_Windows_wheels:
-  #   name: Test Windows wheels
-  #   needs: build_Windows_wheels
-  #   runs-on: windows-2025
-  #   strategy:
-  #     matrix:
-  #       python-version: ['3.10', '3.11', '3.12', '3.13', '3.14']
-  #   steps:
-  #   - name: Set up Python ${{ matrix.python-version }}
-  #     uses: actions/setup-python@v6
-  #     with:
-  #       python-version: ${{ matrix.python-version }}
-  #   - name: Download wheel (non-stable-ABI)
-  #     if: matrix.python-version == '3.10' || matrix.python-version == '3.11'
-  #     uses: actions/download-artifact@v8
-  #     with:
-  #       name: Windows_${{ matrix.python-version }}_wheel
-  #       path: wheelhouse/
-  #   - name: Download wheel (stable-ABI)
-  #     if: matrix.python-version == '3.12' || matrix.python-version == '3.13' || matrix.python-version == '3.14'
-  #     uses: actions/download-artifact@v8
-  #     with:
-  #       name: Windows_3.12_wheel
-  #       path: wheelhouse/
-  #   - name: Install wheel
-  #     shell: bash
-  #     run: for i in wheelhouse/pytket-*.whl ; do pip install $i ; done
-  #   - uses: actions/checkout@v6
-  #     with:
-  #         path: tket
-  #   - name: Run tests
-  #     run: |
-  #       pip install pytest hypothesis
-  #       cd tket/pytket/tests
-  #       pip install -r requirements.txt
-  #       pytest --ignore=simulator/
+  test_Windows_wheels:
+    name: Test Windows wheels
+    needs: build_Windows_wheels
+    runs-on: windows-2022
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12', '3.13', '3.14']
+    steps:
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Download wheel (non-stable-ABI)
+      if: matrix.python-version == '3.10' || matrix.python-version == '3.11'
+      uses: actions/download-artifact@v8
+      with:
+        name: Windows_${{ matrix.python-version }}_wheel
+        path: wheelhouse/
+    - name: Download wheel (stable-ABI)
+      if: matrix.python-version == '3.12' || matrix.python-version == '3.13' || matrix.python-version == '3.14'
+      uses: actions/download-artifact@v8
+      with:
+        name: Windows_3.12_wheel
+        path: wheelhouse/
+    - name: Install wheel
+      shell: bash
+      run: for i in wheelhouse/pytket-*.whl ; do pip install $i ; done
+    - uses: actions/checkout@v6
+      with:
+          path: tket
+    - name: Run tests
+      run: |
+        pip install pytest hypothesis
+        cd tket/pytket/tests
+        pip install -r requirements.txt
+        pytest --ignore=simulator/
 
   publish_to_pypi:
     name: Publish to pypi
     if: github.event_name == 'release'
-    # Temporarily disabling Windows builds (https://github.com/Quantinuum/tket/issues/2153).
-    # needs: [test_linux_wheels, test_linux_aarch64_wheels, test_macos_x86_wheels, test_macos_arm64_wheels, test_Windows_wheels]
-    needs: [test_linux_wheels, test_linux_aarch64_wheels, test_macos_x86_wheels, test_macos_arm64_wheels]
+    needs: [test_linux_wheels, test_linux_aarch64_wheels, test_macos_x86_wheels, test_macos_arm64_wheels, test_Windows_wheels]
     runs-on: ubuntu-latest
     environment:
       name: release
