@@ -14,8 +14,13 @@
 
 #include "tket/Transformations/RzPhasedXSquash.hpp"
 
+#include <algorithm>
 #include <memory>
+#include <tkassert/Assert.hpp>
+#include <vector>
 
+#include "tket/Circuit/Command.hpp"
+#include "tket/OpType/OpType.hpp"
 #include "tket/Transformations/BasicOptimisation.hpp"
 #include "tket/Transformations/Decomposition.hpp"
 #include "tket/Transformations/PQPSquash.hpp"
@@ -93,15 +98,20 @@ std::pair<Circuit, Gate_ptr> RzPhasedXSquasher::flush(
   return {replacement, rz3_gate};
 }
 
-Transform squash_1qb_to_Rz_PhasedX(bool always_squash_symbols) {
-  return Transform([always_squash_symbols](Circuit &circ) {
+Transform squash_1qb_to_Rz_PhasedX() {
+  return Transform([](Circuit &circ) {
     bool reverse = false;
     bool success = decompose_ZX().apply(circ);
     auto squasher = std::make_unique<RzPhasedXSquasher>(reverse);
-    return SingleQubitSquash(
-               std::move(squasher), circ, reverse, always_squash_symbols)
-               .squash() ||
-           success;
+    success =
+        SingleQubitSquash(std::move(squasher), circ, reverse, true).squash() ||
+        success;
+    // Assert that all the Rx gates resulting from decompose_ZX() have gone.
+    std::vector<Command> cmds = circ.get_commands();
+    TKET_ASSERT(!std::any_of(cmds.begin(), cmds.end(), [](const Command &cmd) {
+      return cmd.get_op_ptr()->get_type() == OpType::Rx;
+    }));
+    return success;
   });
 }
 

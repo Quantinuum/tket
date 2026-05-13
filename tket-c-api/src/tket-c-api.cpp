@@ -149,7 +149,7 @@ TketError tket_clifford_simp(
 TketError tket_squash_phasedx_rz(TketCircuit *tc) {
   if (!tc) return TKET_ERROR_NULL_POINTER;
 
-  Transforms::squash_1qb_to_Rz_PhasedX(true).apply(tc->circuit);
+  Transforms::squash_1qb_to_Rz_PhasedX().apply(tc->circuit);
 
   return TKET_SUCCESS;
 }

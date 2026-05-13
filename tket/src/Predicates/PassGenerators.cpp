@@ -270,7 +270,7 @@ PassPtr gen_auto_rebase_pass(const OpTypeSet& allowed_gates, bool allow_swaps) {
 PassPtr gen_auto_squash_pass(const OpTypeSet& singleqs) {
   auto find_squash = [singleqs]() {
     if (singleqs.contains(OpType::Rz) && singleqs.contains(OpType::PhasedX)) {
-      return Transforms::squash_1qb_to_Rz_PhasedX(false);
+      return Transforms::squash_1qb_to_Rz_PhasedX();
     } else {
       auto tk1_replacement = find_tk1_replacement(singleqs);
       return Transforms::squash_factory(singleqs, tk1_replacement, false);

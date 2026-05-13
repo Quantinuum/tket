@@ -2148,7 +2148,7 @@ SCENARIO("Test squash Rz PhasedX") {
     circ.add_op<unsigned>(OpType::PhasedX, {alpha, beta}, {0});
     circ.add_op<unsigned>(OpType::Rz, 0.5, {0});
     circ.add_op<unsigned>(OpType::PhasedX, {0.5, 0.5}, {0});
-    Transforms::squash_1qb_to_Rz_PhasedX(true).apply(circ);
+    Transforms::squash_1qb_to_Rz_PhasedX().apply(circ);
     OpTypeSet allowed = {OpType::Rz, OpType::PhasedX};
     for (const Command &cmd : circ) {
       OpType optype = cmd.get_op_ptr()->get_type();
