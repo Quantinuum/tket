@@ -83,7 +83,7 @@ var searchData=
   ['squaregrid_80',['squaregrid',['../classtket_1_1SquareGrid.html#a3c45792cee75766421b7b9e062559cda',1,'tket::SquareGrid::SquareGrid()'],['../classtket_1_1SquareGrid.html',1,'tket::SquareGrid']]],
   ['squash_81',['squash',['../classtket_1_1SingleQubitSquash.html#a4b047244a4c5ed04dd34665149216a06',1,'tket::SingleQubitSquash']]],
   ['squash_5f1qb_5fto_5fpqp_82',['squash_1qb_to_pqp',['../namespacetket_1_1Transforms.html#a8d602ed5ee73002e620a6bdd0f39b754',1,'tket::Transforms']]],
-  ['squash_5f1qb_5fto_5frz_5fphasedx_83',['squash_1qb_to_Rz_PhasedX',['../namespacetket_1_1Transforms.html#a90e92f1a8fb65391bba982bb11f84fe9',1,'tket::Transforms']]],
+  ['squash_5f1qb_5fto_5frz_5fphasedx_83',['squash_1qb_to_Rz_PhasedX',['../namespacetket_1_1Transforms.html#a69d0a33ab14018f00d76b7bcea8ff987',1,'tket::Transforms']]],
   ['squash_5f1qb_5fto_5ftk1_84',['squash_1qb_to_tk1',['../namespacetket_1_1Transforms.html#af45f1a2172f52f2bea73d710a2ed9ca6',1,'tket::Transforms']]],
   ['squash_5fbetween_85',['squash_between',['../classtket_1_1SingleQubitSquash.html#a307fe285340de6edd20c2770dbab2ede',1,'tket::SingleQubitSquash']]],
   ['squash_5ffactory_86',['squash_factory',['../namespacetket_1_1Transforms.html#aba553c4d1868e9e807791ee31ecf5b71',1,'tket::Transforms']]],
