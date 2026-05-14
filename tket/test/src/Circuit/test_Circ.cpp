@@ -1518,6 +1518,15 @@ SCENARIO("Test depth_2q method") {
     circ.add_op<unsigned>(OpType::CZ, {2, 3});
     REQUIRE(circ.depth_2q() == 2);
   }
+  GIVEN("Pathological case") {
+    // https://github.com/Quantinuum/tket/issues/2161
+    Circuit circ(2, 2);
+    circ.add_op<unsigned>(OpType::H, {0});
+    circ.add_measure(0, 0);
+    circ.add_conditional_gate<unsigned>(OpType::X, {}, {0}, {0, 1}, 0);
+    circ.add_measure(1, 1);
+    REQUIRE(circ.depth_2q() == 0);
+  }
 }
 
 SCENARIO("Test extracting slice segments") {
