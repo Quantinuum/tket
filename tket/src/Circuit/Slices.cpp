@@ -14,6 +14,8 @@
 
 #include "tket/Circuit/Slices.hpp"
 
+#include <algorithm>
+
 #include "tket/Circuit/Circuit.hpp"
 
 namespace tket {
@@ -201,49 +203,77 @@ static std::shared_ptr<b_frontier_t> get_next_b_frontier(
   return next_b_frontier;
 }
 
-CutFrontier Circuit::next_cut(
-    std::shared_ptr<const unit_frontier_t> u_frontier,
-    std::shared_ptr<const b_frontier_t> b_frontier,
-    const std::function<bool(Op_ptr)>& skip_func) const {
-  auto next_slice = std::make_shared<Slice>();
-  VertexSet next_slice_lookup;
-  VertexSet bad_vertices;
-  std::list<Edge> all_edges;
-  EdgeSet edge_lookup;
+// Utility container for an extendable list of edges with fast membership
+// checking.
+class EdgeBundle {
+ public:
+  EdgeBundle() : edge_vec(), edge_set() {}
+  void add(const Edge& e) {
+    edge_vec.push_back(e);
+    edge_set.insert(e);
+  }
+  bool contains(const Edge& e) const { return edge_set.contains(e); }
+  const EdgeVec& get() const { return edge_vec; }
+  void clear() {
+    edge_vec.clear();
+    edge_set.clear();
+  }
+
+ private:
+  EdgeVec edge_vec;
+  EdgeSet edge_set;
+};
+
+// Return all the edges contained in the two frontiers, except for any classical
+// edges in the unit frontier whose bit also has an edge in the boolean frontier
+// with a different target.
+static EdgeBundle next_edges_from_frontiers(
+    const Circuit& circ, std::shared_ptr<const unit_frontier_t> u_frontier,
+    std::shared_ptr<const b_frontier_t> b_frontier) {
+  EdgeBundle edges;
   for (const std::pair<UnitID, Edge>& pair : u_frontier->get<TagKey>()) {
     const UnitID& unit = pair.first;
     const Edge& e = pair.second;
     if (unit.type() == UnitType::Bit) {
-      Vertex targ = target(e);
+      Vertex targ = circ.target(e);
       b_frontier_t::const_iterator found =
           b_frontier->get<TagKey>().find(Bit(unit));
       if (found != b_frontier->get<TagKey>().end()) {
-        bool still_live = false;
-        for (const Edge& e : found->second) {
-          if (target(e) != targ) {
-            still_live = true;
-            break;
-          }
+        auto b_edges = found->second;
+        if (std::any_of(
+                b_edges.begin(), b_edges.end(),
+                [&circ, &targ](const Edge& b_edge) {
+                  return circ.target(b_edge) != targ;
+                })) {
+          continue;
         }
-        if (still_live) continue;
       }
     }
-    all_edges.push_back(e);
-    edge_lookup.insert(e);
+    edges.add(e);
   }
   for (const std::pair<Bit, EdgeVec>& pair : b_frontier->get<TagKey>()) {
     for (const Edge& e : pair.second) {
-      all_edges.push_back(e);
-      edge_lookup.insert(e);
+      edges.add(e);
     }
   }
+  return edges;
+}
+
+CutFrontier Circuit::next_cut(
+    std::shared_ptr<const unit_frontier_t> u_frontier,
+    std::shared_ptr<const b_frontier_t> b_frontier,
+    const std::function<bool(Op_ptr)>& skip_func) const {
+  EdgeBundle all_edges =
+      next_edges_from_frontiers(*this, u_frontier, b_frontier);
+
+  VertexSet bad_vertices;
   if (skip_func) {
     // advance through skippable
     bool can_skip;
     do {
       can_skip = false;
       VertexSet skip_slice_lookup;
-      for (const Edge& e : all_edges) {
+      for (const Edge& e : all_edges.get()) {
         Vertex try_v = target(e);
         if (detect_final_Op(try_v) ||
             (!skip_func(get_Op_ptr_from_Vertex(try_v))))
@@ -253,7 +283,7 @@ CutFrontier Circuit::next_cut(
         if (!good_vertex) continue;
         const EdgeVec ins = get_in_edges(try_v);
         for (const Edge& in : ins) {
-          if (edge_lookup.find(in) == edge_lookup.end()) {
+          if (!all_edges.contains(in)) {
             good_vertex = false;
             break;
           }
@@ -269,27 +299,27 @@ CutFrontier Circuit::next_cut(
             *this, b_frontier, u_frontier, skip_slice_lookup);
         u_frontier = get_next_u_frontier(*this, u_frontier, skip_slice_lookup);
         bad_vertices = {};
-        all_edges = {};
-        edge_lookup = {};
+        all_edges.clear();
 
         for (const std::pair<UnitID, Edge>& pair : u_frontier->get<TagKey>()) {
           Edge e = pair.second;
-          all_edges.push_back(e);
-          edge_lookup.insert(e);
+          all_edges.add(e);
         }
         for (const std::pair<Bit, EdgeVec>& pair : b_frontier->get<TagKey>()) {
           for (const Edge& edge : pair.second) {
             Edge e = edge;
-            all_edges.push_back(e);
-            edge_lookup.insert(e);
+            all_edges.add(e);
           }
         }
         can_skip = true;
       }
     } while (can_skip);
   }
+
   // find the next slice first
-  for (const Edge& e : all_edges) {
+  auto next_slice = std::make_shared<Slice>();
+  VertexSet next_slice_lookup;
+  for (const Edge& e : all_edges.get()) {
     Vertex try_v = target(e);
     if (detect_final_Op(try_v)) continue;
     if (next_slice_lookup.find(try_v) != next_slice_lookup.end())
@@ -298,7 +328,7 @@ CutFrontier Circuit::next_cut(
     if (!good_vertex) continue;
     const EdgeVec ins = get_in_edges(try_v);
     for (const Edge& in : ins) {
-      if (edge_lookup.find(in) == edge_lookup.end()) {
+      if (!all_edges.contains(in)) {
         good_vertex = false;
         bad_vertices.insert(try_v);
         break;
