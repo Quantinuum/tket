@@ -214,10 +214,6 @@ class EdgeBundle {
   }
   bool contains(const Edge& e) const { return edge_set.contains(e); }
   const EdgeVec& get() const { return edge_vec; }
-  void clear() {
-    edge_vec.clear();
-    edge_set.clear();
-  }
 
  private:
   EdgeVec edge_vec;
