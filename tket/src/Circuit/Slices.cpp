@@ -299,18 +299,7 @@ CutFrontier Circuit::next_cut(
             *this, b_frontier, u_frontier, skip_slice_lookup);
         u_frontier = get_next_u_frontier(*this, u_frontier, skip_slice_lookup);
         bad_vertices = {};
-        all_edges.clear();
-
-        for (const std::pair<UnitID, Edge>& pair : u_frontier->get<TagKey>()) {
-          Edge e = pair.second;
-          all_edges.add(e);
-        }
-        for (const std::pair<Bit, EdgeVec>& pair : b_frontier->get<TagKey>()) {
-          for (const Edge& edge : pair.second) {
-            Edge e = edge;
-            all_edges.add(e);
-          }
-        }
+        all_edges = next_edges_from_frontiers(*this, u_frontier, b_frontier);
         can_skip = true;
       }
     } while (can_skip);
