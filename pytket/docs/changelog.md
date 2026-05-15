@@ -1,6 +1,12 @@
 # Changelog
 
-# 2.17.0 (May 2026)
+## 2.18.0 (May 2026)
+
+Fixes:
+- Fix bug in circuit slicing logic that caused crashes when computing depth
+  under certain circumstances.
+
+## 2.17.0 (May 2026)
 
 Fixes:
 - Fix handling of wasm function calls in circuit boxes.
