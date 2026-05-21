@@ -299,7 +299,7 @@ jobs:
     needs: build_macos_arm64_wheels
     strategy:
       matrix:
-        os: ['macos-14', 'macos-26']
+        os: ['macos-15-intel', 'macos-26']
         python-version: ['3.10', '3.11', '3.12', '3.13', '3.14']
     runs-on: ${{ matrix.os }}
     steps:
