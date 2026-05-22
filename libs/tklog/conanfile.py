@@ -16,7 +16,7 @@ from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 from conan.errors import ConanInvalidConfiguration
 
-required_conan_version = ">=2.4"
+required_conan_version = ">=2.5"
 
 
 class TklogConan(ConanFile):
