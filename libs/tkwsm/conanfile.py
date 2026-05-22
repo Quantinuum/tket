@@ -21,7 +21,7 @@ required_conan_version = ">=2.4"
 
 class TkwsmConan(ConanFile):
     name = "tkwsm"
-    version = "0.3.13"
+    version = "0.3.14"
     package_type = "library"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
@@ -72,10 +72,10 @@ class TkwsmConan(ConanFile):
         self.cpp_info.libs = ["tkwsm"]
 
     def requirements(self):
-        self.requires("tkassert/0.3.4@tket/stable")
-        self.requires("tkrng/0.3.3@tket/stable")
+        self.requires("tkassert/0.3.5@tket/stable")
+        self.requires("tkrng/0.3.4@tket/stable")
         self.requires(
-            "boost/tci-1.90.0@tket/stable",
+            "boost/tci-1.91.0@tket/stable",
             transitive_headers=True,
             transitive_libs=False,
         )

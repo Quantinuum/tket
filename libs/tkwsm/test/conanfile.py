@@ -19,7 +19,7 @@ from conan.errors import ConanInvalidConfiguration
 
 class test_tkwsmRecipe(ConanFile):
     name = "test-tkwsm"
-    version = "0.3.13"
+    version = "0.3.14"
     package_type = "application"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
@@ -59,7 +59,7 @@ class test_tkwsmRecipe(ConanFile):
         cmake.install()
 
     def requirements(self):
-        self.requires("tkwsm/0.3.13")
-        self.requires("tkassert/0.3.4@tket/stable")
-        self.requires("tkrng/0.3.3@tket/stable")
+        self.requires("tkwsm/0.3.14")
+        self.requires("tkassert/0.3.5@tket/stable")
+        self.requires("tkrng/0.3.4@tket/stable")
         self.requires("catch2/3.15.0@tket/stable")
