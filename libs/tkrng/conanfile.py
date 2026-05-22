@@ -21,7 +21,7 @@ required_conan_version = ">=2.4"
 
 class TkrngConan(ConanFile):
     name = "tkrng"
-    version = "0.3.3"
+    version = "0.3.4"
     package_type = "library"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
