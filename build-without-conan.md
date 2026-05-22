@@ -22,9 +22,9 @@ The versions should match the current requirements as specified in the relevant
 
 ```
 cd ${TMP_DIR}
-wget -O boost_1_90_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.90.0/boost_1_90_0.tar.gz/download
-tar xzvf boost_1_90_0.tar.gz
-cd boost_1_90_0/
+wget -O boost_1_91_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.91.0/boost_1_91_0.tar.gz/download
+tar xzvf boost_1_91_0.tar.gz
+cd boost_1_91_0/
 ./bootstrap.sh --prefix=${INSTALL_DIR}
 ./b2
 ./b2 install
@@ -92,9 +92,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.14.0.tar.gz
-tar xzvf v3.14.0.tar.gz
-cd Catch2-3.14.0/
+wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.15.0.tar.gz
+tar xzvf v3.15.0.tar.gz
+cd Catch2-3.15.0/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
