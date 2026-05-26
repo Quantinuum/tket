@@ -2,58 +2,20 @@ name: build libraries
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch: {}
-
+      - ae/fix-libs
 jobs:
-  changes:
-    runs-on: ubuntu-24.04
-    outputs:
-      tklog: ${{ steps.filter.outputs.tklog }}
-      tkassert: ${{ steps.filter.outputs.tkassert }}
-      tkrng: ${{ steps.filter.outputs.tkrng }}
-      tktokenswap: ${{ steps.filter.outputs.tktokenswap }}
-      tkwsm: ${{ steps.filter.outputs.tkwsm }}
-      libs: ${{ steps.filter.outputs.changes }}
-    steps:
-    - uses: actions/checkout@v6
-    - uses: dorny/paths-filter@v4.0.1
-      id: filter
-      with:
-        base: ${{ github.ref }}
-        filters: |
-          tklog:
-            - 'libs/tklog/conanfile.py'
-            - '.github/workflows/build_libs.yml'
-          tkassert:
-            - 'libs/tkassert/conanfile.py'
-            - '.github/workflows/build_libs.yml'
-          tkrng:
-            - 'libs/tkrng/conanfile.py'
-            - '.github/workflows/build_libs.yml'
-          tktokenswap:
-            - 'libs/tktokenswap/conanfile.py'
-            - '.github/workflows/build_libs.yml'
-          tkwsm:
-            - 'libs/tkwsm/conanfile.py'
-            - '.github/workflows/build_libs.yml'
   build_libraries:
     name: build library
-    needs: changes
-    if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     strategy:
       matrix:
         os: ['ubuntu-24.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2025-vs2026']
-        lib: ${{ fromJson(needs.changes.outputs.libs) }}
+        lib: ['tklog', 'tkrng']
         build_type: ['Release', 'Debug']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v6
     - name: normalize line endings in conanfile and src directory
-      if: matrix.os == 'windows-2022'
+      if: matrix.os == 'windows-2025-vs2026'
       # This is necessary to ensure consistent revisions across platforms.
       # Conan's revision hash is composed of hashes all the exported files, so
       # we must normalize the line endings in these.
@@ -89,18 +51,15 @@ jobs:
         lib_label=`./libver ${{ matrix.lib }}.json ${{ matrix.lib }}`
         echo "LIB_LABEL=${lib_label}" >> $GITHUB_ENV
     - name: upload package
-      if: github.event_name == 'push'
       run: |
         conan remote login -p ${{ secrets.JFROG_ARTIFACTORY_TOKEN_3 }} tket-libs ${{ secrets.JFROG_ARTIFACTORY_USER_3 }}
         conan upload ${{ env.LIB_LABEL }} -r=tket-libs
   manylinux_x86:
     name: build library (manylinux x86)
-    needs: changes
-    if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        lib: ${{ fromJson(needs.changes.outputs.libs) }}
+        lib: ['tklog', 'tkrng']
     env:
       UPLOAD_PACKAGE: "NO"
     steps:
@@ -113,7 +72,6 @@ jobs:
         docker cp ./.github/workflows/linuxbuildlib linux_build:/
         docker cp ./conan-profiles linux_build:/
     - name: determine whether to upload package
-      if: github.event_name == 'push'
       run: echo "UPLOAD_PACKAGE=YES" >> ${GITHUB_ENV}
     - name: build ${{ matrix.lib }}
       run: |
@@ -128,12 +86,10 @@ jobs:
         docker exec --env-file env-vars linux_build /bin/bash -c "/linuxbuildlib"
   manylinux_arm64:
     name: build library (manylinux arm64)
-    needs: changes
-    if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     runs-on: ubuntu-24.04-arm
     strategy:
       matrix:
-        lib: ${{ fromJson(needs.changes.outputs.libs) }}
+        lib: ['tklog', 'tkrng']
     env:
       UPLOAD_PACKAGE: "NO"
     steps:
@@ -146,7 +102,6 @@ jobs:
         docker cp ./.github/workflows/linuxbuildlib linux_build:/
         docker cp ./conan-profiles linux_build:/
     - name: determine whether to upload package
-      if: github.event_name == 'push'
       run: echo "UPLOAD_PACKAGE=YES" >> ${GITHUB_ENV}
     - name: build ${{ matrix.lib }}
       run: |
