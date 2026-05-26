@@ -22,7 +22,7 @@ The versions should match the current requirements as specified in the relevant
 
 ```
 cd ${TMP_DIR}
-wget -O boost_1_91_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.91.0/boost_1_91_0.tar.gz/download
+wget https://archives.boost.io/release/1.91.0/source/boost_1_91_0.tar.gz
 tar xzvf boost_1_91_0.tar.gz
 cd boost_1_91_0/
 ./bootstrap.sh --prefix=${INSTALL_DIR}
