@@ -13,7 +13,9 @@ install-dev: prepare
 # replace _tket module in the html pages.
 # Apple MACOSX and Linux have differing sed replace syntax
 replace:
-    if [[ "$OSTYPE" == "darwin"* ]]; then
+    #!/usr/bin/env bash
+
+    if [[ "$OSTYPE" == darwin* ]]; then
         find build/ -type f -name "*.html" | xargs sed -e 's/pytket._tket/pytket/g' -i ""
         sed -i '' 's/pytket._tket/pytket/g' build/searchindex.js
     else
