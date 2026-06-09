@@ -10,9 +10,15 @@ install-dev: prepare
     uv sync
     uv pip install ../.[ZX] -v
 
+# replace _tket module in the html pages.
+replace:
+    find build/ -type f -name "*.html" | xargs sed -i '' 's/pytket._tket/pytket/g'
+    sed -i '' 's/pytket._tket/pytket/g' build/searchindex.js
+
 build *SPHINX_ARGS:
     VERSION=$(uv run python -c "import pytket; print(pytket.__version__)") && \
     uv run sphinx-build {{SPHINX_ARGS}} -b html . build -D html_title="pytket v$VERSION API documentation"
+    just replace
 
 linkcheck: prepare
     uv run sphinx-build -W -b linkcheck . build
