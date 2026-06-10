@@ -10,23 +10,9 @@ install-dev: prepare
     uv sync
     uv pip install ../.[ZX] -v
 
-# replace _tket module in the html pages.
-# Apple MACOSX and Linux have differing sed replace syntax
-replace:
-    #!/usr/bin/env bash
-
-    if [[ "$OSTYPE" == darwin* ]]; then
-        find build/ -type f -name "*.html" | xargs sed -e 's/pytket._tket/pytket/g' -i ""
-        sed -i '' 's/pytket._tket/pytket/g' build/searchindex.js
-    else
-        find build/ -type f -name "*.html" | xargs sed -i 's/pytket._tket/pytket/g'
-        sed -i 's/pytket._tket/pytket/g' build/searchindex.js
-    fi
-
 build *SPHINX_ARGS:
     VERSION=$(uv run python -c "import pytket; print(pytket.__version__)") && \
     uv run sphinx-build {{SPHINX_ARGS}} -b html . build -D html_title="pytket v$VERSION API documentation"
-    just replace
 
 linkcheck: prepare
     uv run sphinx-build -W -b linkcheck . build
