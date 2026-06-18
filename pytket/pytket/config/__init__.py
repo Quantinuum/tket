@@ -22,3 +22,11 @@ from .pytket_config import (
     load_config_file,
     write_config_file,
 )
+
+__all__ = [
+    "PytketConfig",
+    "PytketExtConfig",
+    "get_config_file_path",
+    "load_config_file",
+    "write_config_file",
+]
