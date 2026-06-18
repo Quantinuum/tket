@@ -10,7 +10,7 @@ on:
 
 jobs:
   changes:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       tklog: ${{ steps.filter.outputs.tklog }}
       tkassert: ${{ steps.filter.outputs.tkassert }}
@@ -46,7 +46,7 @@ jobs:
     if: ${{ needs.changes.outputs.libs != '[]' && needs.changes.outputs.libs != '' }}
     strategy:
       matrix:
-        os: ['ubuntu-24.04', 'ubuntu-26.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2022', 'windows-2025-vs2026']
+        os: ['ubuntu-26.04', 'macos-15', 'macos-15-intel', 'macos-26', 'windows-2022', 'windows-2025-vs2026']
         lib: ${{ fromJson(needs.changes.outputs.libs) }}
         build_type: ['Release', 'Debug']
     runs-on: ${{ matrix.os }}

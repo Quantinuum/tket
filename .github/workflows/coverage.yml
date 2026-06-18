@@ -19,7 +19,7 @@ concurrency:
 jobs:
 
   changes:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       tket: ${{ steps.filter.outputs.tket }}
     steps:
@@ -37,7 +37,7 @@ jobs:
     name: Generate coverage report
     needs: changes
     if: needs.changes.outputs.tket == 'true' || github.event_name == 'schedule'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
     - name: Select Python 3.12
@@ -50,7 +50,7 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/ubuntu-24.04
+        PROFILE_PATH=./conan-profiles/ubuntu-26.04
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
@@ -95,7 +95,7 @@ jobs:
     name: Check coverage
     needs: generate_coverage
     if: ((github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch') && needs.changes.outputs.tket == 'true') || github.event_name == 'schedule'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
     - name: Download artefact
@@ -119,7 +119,7 @@ jobs:
     needs: generate_coverage
     concurrency: gh_pages
     if: github.event_name == 'push' && needs.changes.outputs.tket == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
       with:
@@ -148,7 +148,7 @@ jobs:
     needs: check_coverage
     concurrency: gh_pages
     if: github.event_name == 'schedule'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
       with:

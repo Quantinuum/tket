@@ -8,7 +8,7 @@ on:
 jobs:
   check_changes:
     name: Check for changes to pytket or workflow
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       pytket_or_workflow_changed: ${{ steps.filter.outputs.pytket_or_workflow }}
     steps:
@@ -26,7 +26,7 @@ jobs:
     name: Build and test pytket (ubuntu)
     needs: check_changes
     if: needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - name: Install uv
       uses: astral-sh/setup-uv@v7
@@ -49,14 +49,14 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/ubuntu-24.04
+        PROFILE_PATH=./conan-profiles/ubuntu-26.04
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
     - name: ccache
       uses: hendrikmuhs/ccache-action@v1.2
       with:
-        key: tket-dynamic-ubuntu-24.04
+        key: tket-dynamic-ubuntu-26.04
     - name: further ccache config
       run: |
         ccache --set-config base_dir=${HOME}
