@@ -12,9 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "tket/Architecture/Architecture.hpp"
-
+// This must be the first include since it includes Python.h.
+// https://docs.python.org/3/c-api/intro.html#include-files
+// clang-format off
 #include <nanobind/nanobind.h>
+// clang-format on
+
+#include "tket/Architecture/Architecture.hpp"
 
 #include <vector>
 

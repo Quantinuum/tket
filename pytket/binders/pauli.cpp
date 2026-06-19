@@ -12,9 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// This must be the first include since it includes Python.h.
+// https://docs.python.org/3/c-api/intro.html#include-files
+// clang-format off
+#include <nanobind/nanobind.h>
+// clang-format on
+
 #include <nanobind/eigen/dense.h>
 #include <nanobind/eigen/sparse.h>
-#include <nanobind/nanobind.h>
 #include <nanobind/operators.h>
 
 #include "deleted_hash.hpp"
