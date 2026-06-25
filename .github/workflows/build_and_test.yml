@@ -28,7 +28,7 @@ jobs:
       pytket_or_workflow_changed: ${{ steps.filter.outputs.pytket_or_workflow }}
       tket_ver: ${{ steps.tket_ver.outputs.tket_ver }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Select Python 3.12
       uses: actions/setup-python@v6
       with:
@@ -81,7 +81,7 @@ jobs:
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.doxyfile_or_workflow_changed == 'true'
     runs-on: 'ubuntu-24.04'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Check doxygen
         run: |
           sudo apt install -y doxygen graphviz
@@ -91,7 +91,7 @@ jobs:
     name: Check C++ code formatting
     runs-on: 'macos-latest'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Check C++ code formatting
         run: |
           brew update
@@ -108,7 +108,7 @@ jobs:
         os: ['ubuntu-24.04', 'macos-15-intel', 'macos-26']
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: apt update
       if: matrix.os == 'ubuntu-24.04'
       run: sudo apt update
@@ -165,7 +165,7 @@ jobs:
         os: ['windows-2022']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Select Python 3.12
         uses: actions/setup-python@v6
         with:
@@ -261,7 +261,7 @@ jobs:
     if: (needs.check_changes.outputs.tket_or_c_api_changed == 'true') && (github.event_name == 'push')
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -280,7 +280,7 @@ jobs:
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with: 
         submodules: true
     - name: Select Python 3.12
@@ -375,7 +375,7 @@ jobs:
         os: ['macos-15-intel', 'macos-26']
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Select Python 3.12
       uses: actions/setup-python@v6
       with:
@@ -460,7 +460,7 @@ jobs:
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Select Python 3.12
       uses: actions/setup-python@v6
       with:
@@ -576,7 +576,7 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         ref: gh-pages
     - name: Download artefact
@@ -604,7 +604,7 @@ jobs:
     if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Download artefact
       uses: actions/download-artifact@v8
       with:

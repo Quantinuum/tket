@@ -19,7 +19,7 @@ jobs:
       tkwsm: ${{ steps.filter.outputs.tkwsm }}
       libs: ${{ steps.filter.outputs.changes }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: dorny/paths-filter@v4.0.1
       id: filter
       with:
@@ -51,7 +51,7 @@ jobs:
         build_type: ['Release', 'Debug']
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: normalize line endings in conanfile and src directory
       if: matrix.os == 'windows-2022'
       # This is necessary to ensure consistent revisions across platforms.
@@ -104,7 +104,7 @@ jobs:
     env:
       UPLOAD_PACKAGE: "NO"
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: set up container
       run: |
         docker create --name linux_build -i -v /:/host quay.io/pypa/manylinux_2_28_x86_64:latest /bin/bash
@@ -137,7 +137,7 @@ jobs:
     env:
       UPLOAD_PACKAGE: "NO"
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: set up container
       run: |
         docker create --name linux_build -i -v /:/host quay.io/pypa/manylinux_2_28_aarch64:latest /bin/bash

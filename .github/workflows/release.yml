@@ -16,7 +16,7 @@ jobs:
       matrix:
         python3-version: ['10', '11', '12']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -42,7 +42,7 @@ jobs:
       matrix:
         python3-version: ['10', '11', '12']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -68,7 +68,7 @@ jobs:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -110,7 +110,7 @@ jobs:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -150,7 +150,7 @@ jobs:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -208,7 +208,7 @@ jobs:
           path: wheelhouse/
       - name: Install wheel
         run: pip install wheelhouse/pytket-*.whl
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           path: tket
       - name: Setup tests
@@ -226,7 +226,7 @@ jobs:
       matrix:
         python3-version: ['10', '11', '12', '13', '14']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         path: tket
     - name: Set up Python 3.${{ matrix.python3-version }}
@@ -247,7 +247,7 @@ jobs:
         path: wheelhouse/
     - name: Install wheel
       run: pip install wheelhouse/pytket-*.whl
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         path: tket
     - name: Setup tests
@@ -282,7 +282,7 @@ jobs:
       with:
         name: MacOS_x86_3.12_wheel
         path: wheelhouse/
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         path: tket
     - name: Install wheel
@@ -319,7 +319,7 @@ jobs:
       with:
         name: MacOS_arm64_3.12_wheel
         path: wheelhouse/
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         path: tket
     - name: Install wheel
@@ -358,7 +358,7 @@ jobs:
     - name: Install wheel
       shell: bash
       run: for i in wheelhouse/pytket-*.whl ; do pip install $i ; done
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
           path: tket
     - name: Run tests
