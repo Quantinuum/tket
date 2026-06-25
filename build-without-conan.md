@@ -92,9 +92,9 @@ cmake --install .
 
 ```
 cd ${TMP_DIR}
-wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.15.0.tar.gz
-tar xzvf v3.15.0.tar.gz
-cd Catch2-3.15.0/
+wget https://github.com/catchorg/Catch2/archive/refs/tags/v3.15.1.tar.gz
+tar xzvf v3.15.1.tar.gz
+cd Catch2-3.15.1/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
