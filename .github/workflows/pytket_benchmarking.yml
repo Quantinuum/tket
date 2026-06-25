@@ -12,7 +12,7 @@ jobs:
     runs-on: macos-15
 
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         fetch-depth: '0'
 
@@ -77,7 +77,7 @@ jobs:
           pip list
 
       - name: Checkout pytket-benchmarking-store
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: quantinuum/pytket-benchmarking-store
           path: pytket-benchmarking-store
