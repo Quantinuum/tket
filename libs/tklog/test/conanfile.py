@@ -19,7 +19,7 @@ from conan.errors import ConanInvalidConfiguration
 
 class test_tklogRecipe(ConanFile):
     name = "test-tklog"
-    version = "0.3.4"
+    version = "0.3.5"
     package_type = "application"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
@@ -59,5 +59,5 @@ class test_tklogRecipe(ConanFile):
         cmake.install()
 
     def requirements(self):
-        self.requires("tklog/0.3.4")
+        self.requires("tklog/0.3.5")
         self.requires("catch2/3.15.1@tket/stable")

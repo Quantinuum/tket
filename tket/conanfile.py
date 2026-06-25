@@ -143,11 +143,11 @@ class TketConan(ConanFile):
         self.requires("eigen/5.0.1", transitive_headers=True)
         self.requires("nlohmann_json/3.12.0", transitive_headers=True)
         self.requires("symengine/tci-0.14.0.2@tket/stable", transitive_headers=True)
-        self.requires("tkassert/0.3.5@tket/stable", transitive_headers=True)
-        self.requires("tklog/0.3.4@tket/stable")
-        self.requires("tkrng/0.3.4@tket/stable")
-        self.requires("tktokenswap/0.3.14@tket/stable")
-        self.requires("tkwsm/0.3.14@tket/stable")
+        self.requires("tkassert/0.3.6@tket/stable", transitive_headers=True)
+        self.requires("tklog/0.3.5@tket/stable")
+        self.requires("tkrng/0.3.5@tket/stable")
+        self.requires("tktokenswap/0.3.15@tket/stable")
+        self.requires("tkwsm/0.3.15@tket/stable")
         if self.build_test():
             self.test_requires("catch2/3.15.1@tket/stable")
         if self.build_proptest():
