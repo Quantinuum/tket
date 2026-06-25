@@ -54,12 +54,12 @@ class pytketRecipe(ConanFile):
         self.requires("nlohmann_json/3.12.0")
         self.requires("nanobind/tci-2.12.0@tket/stable")
         self.requires("symengine/tci-0.14.0.2@tket/stable")
-        self.requires("tkassert/0.3.5@tket/stable")
+        self.requires("tkassert/0.3.6@tket/stable")
         self.requires(f"tket/{tket_version}@tket/stable")
-        self.requires("tklog/0.3.4@tket/stable")
-        self.requires("tkrng/0.3.4@tket/stable")
-        self.requires("tktokenswap/0.3.14@tket/stable")
-        self.requires("tkwsm/0.3.14@tket/stable")
+        self.requires("tklog/0.3.5@tket/stable")
+        self.requires("tkrng/0.3.5@tket/stable")
+        self.requires("tktokenswap/0.3.15@tket/stable")
+        self.requires("tkwsm/0.3.15@tket/stable")
 
     def export(self):
         # Copy the TKET_VERSION file to the export folder
