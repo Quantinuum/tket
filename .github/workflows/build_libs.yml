@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v7
     - name: normalize line endings in conanfile and src directory
-      if: matrix.os == 'windows-2022' || matrix.os == 'windows-2025-vs2026'
+      if: matrix.os == 'windows-2022'
       # This is necessary to ensure consistent revisions across platforms.
       # Conan's revision hash is composed of hashes all the exported files, so
       # we must normalize the line endings in these.
