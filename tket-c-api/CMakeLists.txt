@@ -45,6 +45,10 @@ if (WIN32)
 else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wunreachable-code -Wunused")
 endif()
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    # Work around warnings from symengine about ciso646.
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-cpp")
+endif()
 
 if (NOT TARGET symengine::symengine)
     add_library(symengine::symengine ALIAS symengine)
