@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   changes:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       tket: ${{ steps.filter.outputs.tket }}
     steps:
@@ -28,7 +28,7 @@ jobs:
             - 'tket/**'
             - '.github/workflows/valgrind.yml'
   check:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: changes
     if: needs.changes.outputs.tket == 'true'
     steps:
@@ -45,7 +45,7 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/ubuntu-24.04
+        PROFILE_PATH=./conan-profiles/ubuntu-26.04
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0

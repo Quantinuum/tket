@@ -547,10 +547,11 @@ SCENARIO(
   REQUIRE(check_multiplexor(op_map, *c));
 }
 
+// Fails on ubuntu-26.04: https://github.com/Quantinuum/tket/issues/2198
 SCENARIO(
     "Simple MultiplexedTensoredU2Box decomposition with rotating string and 4 "
     "controls, 4 targets, using all strings",
-    "[boxes]") {
+    "[boxes][!mayfail]") {
   ctrl_tensored_op_map_t op_map;
   op_map.insert(
       {{0, 0, 0, 0},

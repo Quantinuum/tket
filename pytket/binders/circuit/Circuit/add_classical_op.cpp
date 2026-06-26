@@ -14,7 +14,11 @@
 
 #define STR(x) #x
 
+// This must be the first include since it includes Python.h.
+// https://docs.python.org/3/c-api/intro.html#include-files
+// clang-format off
 #include <nanobind/nanobind.h>
+// clang-format on
 
 #include <bitset>
 #include <string>

@@ -19,7 +19,7 @@ concurrency:
 jobs:
   check_changes:
     name: Check tket library version
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       tket_or_workflow_changed: ${{ steps.filter.outputs.tket_or_workflow }}
       tket_or_c_api_changed: ${{ steps.filter.outputs.tket_or_c_api }}
@@ -79,7 +79,7 @@ jobs:
     name: Check documentation build
     needs: check_changes
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.doxyfile_or_workflow_changed == 'true'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-26.04'
     steps:
       - uses: actions/checkout@v7
       - name: Check doxygen
@@ -105,12 +105,12 @@ jobs:
     if: needs.check_changes.outputs.tket_or_c_api_changed == 'true'
     strategy:
       matrix:
-        os: ['ubuntu-24.04', 'macos-15-intel', 'macos-26']
+        os: ['ubuntu-26.04', 'macos-15-intel', 'macos-26']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v7
     - name: apt update
-      if: matrix.os == 'ubuntu-24.04'
+      if: matrix.os == 'ubuntu-26.04'
       run: sudo apt update
     - name: Select Python 3.12
       uses: actions/setup-python@v6
@@ -127,7 +127,7 @@ jobs:
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
     - name: Install runtime test requirements
-      if: matrix.os == 'ubuntu-24.04' && github.event_name == 'schedule'
+      if: matrix.os == 'ubuntu-26.04' && github.event_name == 'schedule'
       run: |
         sudo apt install texlive texlive-latex-extra latexmk
         mkdir -p ~/texmf/tex/latex
@@ -251,10 +251,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: 'ubuntu-24.04'
+          - os: 'ubuntu-26.04'
             container: 'manylinux_2_28_x86_64'
             profile: 'linux-x86_64-gcc14'
-          - os: 'ubuntu-24.04-arm'
+          - os: 'ubuntu-26.04-arm'
             container: 'manylinux_2_28_aarch64'
             profile: 'linux-armv8-gcc14'
     needs: check_changes
@@ -278,7 +278,7 @@ jobs:
     name: Build and test pytket (ubuntu)
     needs: check_changes
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true' || needs.check_changes.outputs.pytket_or_workflow_changed == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
       with: 
@@ -293,14 +293,14 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/ubuntu-24.04
+        PROFILE_PATH=./conan-profiles/ubuntu-26.04
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
     - name: ccache
       uses: hendrikmuhs/ccache-action@v1.2
       with:
-        key: tket-dynamic-ubuntu-24.04
+        key: tket-dynamic-ubuntu-26.04
     - name: further ccache config
       run: |
         ccache --set-config base_dir=${HOME}
@@ -574,7 +574,7 @@ jobs:
     needs: build_test_pytket_ubuntu
     concurrency: gh_pages
     if: github.event_name == 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
       with:
@@ -602,7 +602,7 @@ jobs:
     name: Check pytket line and branch coverage
     needs: build_test_pytket_ubuntu
     if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
     - name: Download artefact
@@ -630,7 +630,7 @@ jobs:
       - publish_pytket_coverage
       - check_pytket_coverage
     if: always()
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - shell: python
         name: Check job results

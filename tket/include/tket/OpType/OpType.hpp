@@ -808,12 +808,13 @@ enum class OpType {
   JobShotNum,
 
   /**
-   * Two identical \ref PhasedX applied to different qubits
+   * Two identical \ref OpType::PhasedX applied to different qubits
    */
   TwinPhasedX,
 
   /**
-   * An \ref XXPhase conjugated by \ref Rz operations on both qubits
+   * An \ref OpType::XXPhase conjugated by \ref OpType::Rz operations on both
+   * qubits
    */
   PhasedXX,
 };

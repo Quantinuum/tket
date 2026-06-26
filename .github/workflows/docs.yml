@@ -9,7 +9,7 @@ on:
 
 jobs:
   build_docs:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
     - name: Install Doxygen
@@ -24,7 +24,7 @@ jobs:
   publish_docs:
     needs: build_docs
     concurrency: gh_pages
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@v7
       with:
