@@ -19,7 +19,7 @@ from conan.errors import ConanInvalidConfiguration
 
 class test_tktokenswapRecipe(ConanFile):
     name = "test-tktokenswap"
-    version = "0.3.14"
+    version = "0.3.15"
     package_type = "application"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
@@ -59,6 +59,6 @@ class test_tktokenswapRecipe(ConanFile):
         cmake.install()
 
     def requirements(self):
-        self.requires("tktokenswap/0.3.14")
-        self.requires("tkrng/0.3.4@tket/stable")
+        self.requires("tktokenswap/0.3.15")
+        self.requires("tkrng/0.3.5@tket/stable")
         self.requires("catch2/3.15.1@tket/stable")

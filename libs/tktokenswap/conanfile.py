@@ -21,7 +21,7 @@ required_conan_version = ">=2.5"
 
 class TktokenswapConan(ConanFile):
     name = "tktokenswap"
-    version = "0.3.14"
+    version = "0.3.15"
     package_type = "library"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
@@ -72,7 +72,7 @@ class TktokenswapConan(ConanFile):
         self.cpp_info.libs = ["tktokenswap"]
 
     def requirements(self):
-        self.requires("tklog/0.3.4@tket/stable")
-        self.requires("tkassert/0.3.5@tket/stable", transitive_headers=True)
-        self.requires("tkrng/0.3.4@tket/stable")
+        self.requires("tklog/0.3.5@tket/stable")
+        self.requires("tkassert/0.3.6@tket/stable", transitive_headers=True)
+        self.requires("tkrng/0.3.5@tket/stable")
         self.requires("boost/tci-1.91.0@tket/stable", transitive_libs=False)

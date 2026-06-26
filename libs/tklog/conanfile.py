@@ -21,7 +21,7 @@ required_conan_version = ">=2.5"
 
 class TklogConan(ConanFile):
     name = "tklog"
-    version = "0.3.4"
+    version = "0.3.5"
     package_type = "library"
     license = "Apache 2"
     url = "https://github.com/quantinuum/tket"
