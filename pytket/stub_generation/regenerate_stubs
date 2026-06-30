@@ -64,6 +64,9 @@ def gen_module_stubs(modname, private_exceptions, output_file, n_special_replace
         stub = sub_and_check(
             "types.UnionType\\[Sequence\\[int\\], None\\]", "Sequence[int] | None", stub, n_special_replacements
         )
+        stub = sub_and_check(
+            "Union\\[Sequence\\[int\\], None\\]", "Sequence[int] | None", stub, n_special_replacements
+        )
         f.write(stub)
 
 

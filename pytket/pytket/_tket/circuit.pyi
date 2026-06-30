@@ -1,6 +1,5 @@
 from collections.abc import Iterator, Mapping, Sequence, Set
 import enum
-import types
 from typing import Annotated, Any, Union, overload
 
 import numpy
@@ -2810,8 +2809,7 @@ class ToffoliBox(Op):
         """
 
     @overload
-    def __init__(self, n_qubits: int, permutation: Sequence[tuple[Sequence[bool], Sequence[bool]]], rotation_axis: OpType = pytket._tket.circuit.OpType.Ry) -> None:
-        """Constructor for backward compatibility. Subject to deprecation."""
+    def __init__(self, n_qubits: int, permutation: Sequence[tuple[Sequence[bool], Sequence[bool]]], rotation_axis: OpType = pytket._tket.circuit.OpType.Ry) -> None: ...
 
     @overload
     def __init__(self, permutation: dict[tuple[bool, ...], Sequence[bool]], strat: ToffoliBoxSynthStrat, rotation_axis: OpType = pytket._tket.circuit.OpType.Ry) -> None:

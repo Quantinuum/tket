@@ -240,18 +240,21 @@ class PytketStubGen(StubGen):
             self.write_ln(f"{name} = {fn_name}\n")
             return
 
-        # Special handling for nanobind functions with overloads
-        if type(fn).__module__ == "nanobind":
-            fn = cast(NbFunction, fn)
-            self.put_nb_func(fn, name)
-            return
-
-        if isinstance(fn, staticmethod):
-            self.write_ln("@staticmethod")
+        # Unwrap staticmethod/classmethod descriptors.
+        if is_staticmethod := isinstance(fn, staticmethod):
             fn = fn.__func__
-        elif isinstance(fn, classmethod):
+        if is_classmethod := isinstance(fn, classmethod):
             self.write_ln("@classmethod")
             fn = fn.__func__
+
+        # Special handling for nanobind functions with overloads.
+        if type(fn).__module__ == "nanobind":
+            fn = cast(NbFunction, fn)
+            self.put_nb_func(fn, name, is_classmethod=is_classmethod)
+            return
+
+        if is_staticmethod:
+            self.write_ln("@staticmethod")
 
         if name is None:
             name = fn.__name__
