@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-06-26 12:07:51</td>
+      <td>2026-06-30 15:30:48</td>
     </tr>
   </table>
 </div>
@@ -47,9 +47,9 @@
     </tr>
     <tr>
       <th scope="row">Functions:</th>
-      <td>34</td>
-      <td>67</td>
-      <td class="coverage-low">50.7%</td>
+      <td>38</td>
+      <td>71</td>
+      <td class="coverage-low">53.5%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -191,6 +191,39 @@
     </tr>
     <tr>
       <td>
+        <a href="#l125">std::shared_ptr&lt;tket::Op const&gt; tket::set_box_id&lt;tket::PauliExpBox&gt;(tket::PauliExpBox&amp;, boost::uuids::uuid)</a>
+      </td>
+      <td>
+        <a href="#l125">125</a>
+      </td>
+      <td>
+        <a href="#l125"> called 1 time</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#l125">std::shared_ptr&lt;tket::Op const&gt; tket::set_box_id&lt;tket::PauliExpCommutingSetBox&gt;(tket::PauliExpCommutingSetBox&amp;, boost::uuids::uuid)</a>
+      </td>
+      <td>
+        <a href="#l125">125</a>
+      </td>
+      <td>
+        <a href="#l125"> called 1 time</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#l125">std::shared_ptr&lt;tket::Op const&gt; tket::set_box_id&lt;tket::PauliExpPairBox&gt;(tket::PauliExpPairBox&amp;, boost::uuids::uuid)</a>
+      </td>
+      <td>
+        <a href="#l125">125</a>
+      </td>
+      <td>
+        <a href="#l125"> called 1 time</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <a href="#l125">std::shared_ptr&lt;tket::Op const&gt; tket::set_box_id&lt;tket::PhasePolyBox&gt;(tket::PhasePolyBox&amp;, boost::uuids::uuid)</a>
       </td>
       <td>
@@ -236,6 +269,17 @@
     <tr>
       <td>
         <a href="#l125">std::shared_ptr&lt;tket::Op const&gt; tket::set_box_id&lt;tket::StatePreparationBox&gt;(tket::StatePreparationBox&amp;, boost::uuids::uuid)</a>
+      </td>
+      <td>
+        <a href="#l125">125</a>
+      </td>
+      <td>
+        <a href="#l125"> called 1 time</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#l125">std::shared_ptr&lt;tket::Op const&gt; tket::set_box_id&lt;tket::TermSequenceBox&gt;(tket::TermSequenceBox&amp;, boost::uuids::uuid)</a>
       </td>
       <td>
         <a href="#l125">125</a>
@@ -2016,7 +2060,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">55</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="n">Op_ptr</span><span class="w"> </span><span class="n">set_box_id</span><span class="p">(</span><span class="n">BoxT</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">boost</span><span class="o">::</span><span class="n">uuids</span><span class="o">::</span><span class="n">uuid</span><span class="w"> </span><span class="n">newid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2025,7 +2069,7 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">55</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">b</span><span class="p">.</span><span class="n">id_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newid</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2034,14 +2078,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 29 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 33 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount coveredLine">55</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">BoxT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
