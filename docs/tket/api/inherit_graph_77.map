@@ -1,3 +1,27 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1internal_1_1GateUnitaryMatrixVariableQubits.html" title="Gates taking a variable number of qubits are treated as a special case." alt="" coords="5,5,197,45"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,239,193,301"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base__with__ind.html" title=" " alt="" coords="244,76,424,155"/>
+<area shape="poly" id="edge125_Node000000_Node000001" title=" " alt="" coords="156,228,239,172,271,153,268,157,242,176,160,232"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper_3_01Derived_00_01Graph_00_01PMap_00_01true_01_4.html" title=" " alt="" coords="509,5,695,84"/>
+<area shape="poly" id="edge133_Node000000_Node000002" title=" " alt="" coords="114,224,134,183,161,137,196,95,239,61,271,46,306,35,376,22,446,20,511,27,506,29,446,26,377,28,307,40,273,51,242,66,199,99,165,140,138,185,119,226"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper_3_01Derived_00_01Graph_00_01void_00_01true_01_4.html" title=" " alt="" coords="509,113,695,192"/>
+<area shape="poly" id="edge135_Node000000_Node000003" title=" " alt="" coords="190,231,240,215,380,184,511,163,506,166,381,189,241,221,193,236"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="241,231,427,309"/>
+<area shape="poly" id="edge128_Node000000_Node000004" title=" " alt="" coords="207,268,243,269,238,271,209,272"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="241,333,427,412"/>
+<area shape="poly" id="edge130_Node000000_Node000006" title=" " alt="" coords="185,305,245,332,240,334,186,310"/>
+<area shape="rect" id="Node000009" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper_3_01Derived_00_01Graph_00_01void_00_01false_01_4.html" title=" " alt="" coords="241,436,427,515"/>
+<area shape="poly" id="edge134_Node000000_Node000009" title=" " alt="" coords="134,311,184,367,242,421,260,435,255,436,239,425,180,370,134,316"/>
+<area shape="rect" id="Node000010" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="241,540,427,619"/>
+<area shape="poly" id="edge136_Node000000_Node000010" title=" " alt="" coords="117,313,139,362,166,417,201,473,243,524,259,540,253,539,239,528,197,476,162,420,134,364,116,318"/>
+<area shape="poly" id="edge126_Node000001_Node000002" title=" " alt="" coords="437,86,511,68,506,71,440,90"/>
+<area shape="poly" id="edge127_Node000001_Node000003" title=" " alt="" coords="438,127,511,139,506,141,440,132"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map_3_01Derived_00_01Graphcfa47bde86c884f69e14e6cfeef5bec2.html" title=" " alt="" coords="497,228,707,307"/>
+<area shape="poly" id="edge129_Node000004_Node000005" title=" " alt="" coords="441,266,499,267,494,269,443,271"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map_3_01Derived_00_01Graph4f93c7182dd20c8b27502165efbd87e3.html" title=" " alt="" coords="497,331,707,409"/>
+<area shape="poly" id="edge131_Node000006_Node000007" title=" " alt="" coords="442,369,499,370,494,372,443,374"/>
+<area shape="rect" id="Node000008" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map.html" title=" " alt="" coords="486,433,718,512"/>
+<area shape="poly" id="edge132_Node000006_Node000008" title=" " alt="" coords="441,410,497,432,492,433,441,415"/>
+<area shape="rect" id="Node000011" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map.html" title=" " alt="" coords="475,536,729,631"/>
+<area shape="poly" id="edge137_Node000010_Node000011" title=" " alt="" coords="442,578,477,581,472,582,443,584"/>
 </map>

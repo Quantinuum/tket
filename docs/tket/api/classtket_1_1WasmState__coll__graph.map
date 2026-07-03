@@ -1,5 +1,5 @@
 <map id="tket::WasmState" name="tket::WasmState">
-<area shape="rect" id="Node000001" title="Location holding a wasm UID." alt="" coords="5,79,135,104"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="22,5,118,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,44,73,79,67,79,67,44"/>
+<area shape="rect" id="Node000001" title="Location holding a wasm UID." alt="" coords="5,81,134,109"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="22,5,117,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,47,72,81,67,80,68,51"/>
 </map>

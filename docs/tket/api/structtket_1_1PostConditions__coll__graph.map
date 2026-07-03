@@ -1,11 +1,7 @@
 <map id="tket::PostConditions" name="tket::PostConditions">
-<area shape="rect" id="Node000001" title=" " alt="" coords="119,284,271,309"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,181,172,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,234,105,258,122,272,142,281,139,286,119,276,101,262,89,236"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="10,93,167,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,132,91,181,86,181,86,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="69,5,108,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="91,45,91,93,86,93,86,45"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="196,181,352,221"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="257,235,236,262,211,286,207,282,232,258,252,232"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="105,123,256,151"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,172,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,63,107,82,118,97,132,110,150,123,145,122,129,114,113,101,102,84,96,68"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="196,5,352,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,63,247,101,231,114,214,125,212,120,228,110,242,97,262,66"/>
 </map>

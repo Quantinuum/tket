@@ -1,9 +1,9 @@
 <map id="include/tket/Graphs/GraphColouring.hpp" name="include/tket/Graphs/GraphColouring.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="53,5,207,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,76,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,48,66,86,62,82,107,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="101,93,159,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,46,133,79,127,79,127,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="184,93,247,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,44,194,82,191,86,149,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="51,5,205,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,75,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,49,67,89,63,85,102,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,98,157,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,48,130,83,126,81,126,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,98,243,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,48,190,87,185,87,149,53"/>
 </map>

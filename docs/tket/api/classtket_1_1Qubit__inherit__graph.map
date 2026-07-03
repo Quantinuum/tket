@@ -1,7 +1,7 @@
 <map id="tket::Qubit" name="tket::Qubit">
-<area shape="rect" id="Node000001" title="Location holding a qubit." alt="" coords="8,79,99,104"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="9,152,98,177"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,118,56,152,51,152,51,118"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,5,101,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,44,56,79,51,79,51,44"/>
+<area shape="rect" id="Node000001" title="Location holding a qubit." alt="" coords="8,81,98,109"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="9,157,97,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,123,56,157,50,156,51,126"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,5,101,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,46,56,81,50,80,52,51"/>
 </map>

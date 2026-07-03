@@ -1,5 +1,5 @@
 <map id="tket::MaxTwoQubitGatesPredicate" name="tket::MaxTwoQubitGatesPredicate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,248,104"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Predicate.html" title=" " alt="" coords="69,5,185,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,44,129,79,124,79,124,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,247,109"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Predicate.html" title=" " alt="" coords="68,5,184,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,47,128,82,124,79,124,51"/>
 </map>

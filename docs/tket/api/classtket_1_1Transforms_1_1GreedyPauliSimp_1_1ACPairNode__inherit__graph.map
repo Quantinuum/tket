@@ -1,9 +1,9 @@
 <map id="tket::Transforms::GreedyPauliSimp::ACPairNode" name="tket::Transforms::GreedyPauliSimp::ACPairNode">
-<area shape="rect" id="Node000001" title="Base class for nodes defined by a pair of anti&#45;commuting Pauli strings." alt="" coords="236,37,419,77"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliPropagation.html" title="Defines how a Pauli X and a Pauli Z on the same qubit get propagated from right to left through a Cli..." alt="" coords="467,5,669,45"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="432,41,466,36,467,41,433,46"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1Reset.html" title="Reset operation defined by a pair of anti&#45;commuting strings For example, a tket Reset OpType can be d..." alt="" coords="477,69,659,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="433,69,477,75,476,80,432,74"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="5,37,188,77"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,55,236,55,236,60,201,60"/>
+<area shape="rect" id="Node000001" title="Base class for nodes defined by a pair of anti&#45;commuting Pauli strings." alt="" coords="235,40,416,85"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliPropagation.html" title="Defines how a Pauli X and a Pauli Z on the same qubit get propagated from right to left through a Cli..." alt="" coords="464,5,666,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="431,44,466,42,461,43,432,50"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1Reset.html" title="Reset operation defined by a pair of anti&#45;commuting strings For example, a tket Reset OpType can be d..." alt="" coords="474,75,656,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="431,75,477,84,471,84,431,80"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="5,40,187,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,60,237,62,232,63,202,65"/>
 </map>

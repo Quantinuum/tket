@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,149,31"/>
-<area shape="rect" id="Node000001" href="$classtket_1_1DistancesFromArchitecture.html" title="Directly get distances from an architecture object, but evaluated lazily." alt="" coords="197,5,428,31"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="163,15,197,15,197,21,163,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,149,33"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1DistancesFromArchitecture.html" title="Directly get distances from an architecture object, but evaluated lazily." alt="" coords="197,5,427,33"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="164,17,199,19,194,19,164,22"/>
 </map>

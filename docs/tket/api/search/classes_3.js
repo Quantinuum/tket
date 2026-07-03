@@ -12,9 +12,8 @@ var searchData=
   ['directedgraph_3c_20qubit_20_3e_9',['DirectedGraph&lt; Qubit &gt;',['../classtket_1_1graphs_1_1DirectedGraph.html',1,'tket::graphs']]],
   ['directedgraphbase_10',['DirectedGraphBase',['../classtket_1_1graphs_1_1DirectedGraphBase.html',1,'tket::graphs']]],
   ['directedgraphbase_3c_20node_20_3e_11',['DirectedGraphBase&lt; Node &gt;',['../classtket_1_1graphs_1_1DirectedGraphBase.html',1,'tket::graphs']]],
-  ['directedgraphbase_3c_20qubit_20_3e_12',['DirectedGraphBase&lt; Qubit &gt;',['../classtket_1_1graphs_1_1DirectedGraphBase.html',1,'tket::graphs']]],
-  ['directednesspredicate_13',['DirectednessPredicate',['../classtket_1_1DirectednessPredicate.html',1,'tket']]],
-  ['distancesfromarchitecture_14',['DistancesFromArchitecture',['../classtket_1_1DistancesFromArchitecture.html',1,'tket']]],
-  ['dummybox_15',['DummyBox',['../classtket_1_1DummyBox.html',1,'tket']]],
-  ['dummyboxnotdecomposable_16',['DummyBoxNotDecomposable',['../classtket_1_1DummyBoxNotDecomposable.html',1,'tket']]]
+  ['directednesspredicate_12',['DirectednessPredicate',['../classtket_1_1DirectednessPredicate.html',1,'tket']]],
+  ['distancesfromarchitecture_13',['DistancesFromArchitecture',['../classtket_1_1DistancesFromArchitecture.html',1,'tket']]],
+  ['dummybox_14',['DummyBox',['../classtket_1_1DummyBox.html',1,'tket']]],
+  ['dummyboxnotdecomposable_15',['DummyBoxNotDecomposable',['../classtket_1_1DummyBoxNotDecomposable.html',1,'tket']]]
 ];

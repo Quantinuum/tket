@@ -1,9 +1,9 @@
 <map id="tket::TermSequenceBox" name="tket::TermSequenceBox">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,240,180,265"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="53,167,133,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,206,95,240,90,240,90,206"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="56,93,129,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,132,95,167,90,167,90,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="20,5,165,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,59,95,93,90,93,90,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,249,180,277"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="53,174,132,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,215,95,250,90,248,91,219"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="56,98,129,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,139,95,174,90,173,91,144"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="20,5,165,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="93,63,95,98,90,97,92,68"/>
 </map>

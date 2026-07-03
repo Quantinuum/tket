@@ -1,5 +1,7 @@
 <map id="tket::graphs::detail::TreeSearch&lt; Graph, void, true &gt;" name="tket::graphs::detail::TreeSearch&lt; Graph, void, true &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="252,20,411,75"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="5,5,204,89"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,45,252,45,252,50,218,50"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="259,70,417,132"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="5,5,211,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,71,261,81,256,82,226,76"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="9,108,207,203"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,126,261,119,256,120,223,131"/>
 </map>

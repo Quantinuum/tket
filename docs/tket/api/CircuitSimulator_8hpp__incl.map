@@ -1,19 +1,19 @@
 <map id="include/tket/Circuit/Simulation/CircuitSimulator.hpp" name="include/tket/Circuit/Simulation/CircuitSimulator.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="143,5,375,45"/>
-<area shape="rect" id="Node000002" href="$Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="66,93,245,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,48,183,87,180,83,233,43"/>
-<area shape="rect" id="Node000004" href="$EigenConfig_8hpp.html" title="Include this file rather than including the Eigen headers directly." alt="" coords="308,93,499,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,43,371,84,369,89,293,48"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,84,199"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,121,74,168,71,164,137,117"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="109,174,255,199"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="372,121,228,172,226,167,370,116"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="280,174,383,199"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="395,121,353,165,349,162,391,117"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="407,174,543,199"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="416,117,457,162,453,165,412,121"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="568,167,780,207"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="443,116,597,160,595,165,442,121"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="805,167,994,207"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="482,116,792,164,791,169,481,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="142,5,373,50"/>
+<area shape="rect" id="Node000002" href="$Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="65,98,242,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,49,183,90,180,86,228,52"/>
+<area shape="rect" id="Node000004" href="$EigenConfig_8hpp.html" title="Include this file rather than including the Eigen headers directly." alt="" coords="304,98,493,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,48,366,90,361,90,294,53"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,182,83,210"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="138,126,75,175,72,170,133,127"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="107,182,253,210"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="366,126,230,179,228,174,361,127"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="277,182,379,210"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="390,125,350,173,347,168,385,127"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="403,182,538,210"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="411,124,452,171,447,170,409,129"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="562,174,774,218"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="442,124,585,169,580,169,442,129"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="798,174,986,218"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="489,124,785,173,780,174,489,129"/>
 </map>

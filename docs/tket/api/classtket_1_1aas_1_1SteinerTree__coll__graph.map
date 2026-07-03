@@ -1,9 +1,9 @@
 <map id="tket::aas::SteinerTree" name="tket::aas::SteinerTree">
-<area shape="rect" id="Node000001" title="This class is creating a steiner tree, which is a mst including all the nodes of a given phase gadget..." alt="" coords="227,108,386,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,192,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,49,222,82,279,105,277,110,220,86,149,54"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="217,13,397,38"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,52,309,108,304,108,304,52"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="421,13,579,38"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="479,49,455,69,427,86,394,100,360,111,359,105,392,95,424,82,452,64,476,45"/>
+<area shape="rect" id="Node000001" title="This class is creating a steiner tree, which is a mst including all the nodes of a given phase gadget..." alt="" coords="226,123,384,151"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,191,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,56,218,97,272,122,267,122,215,101,144,61"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="215,14,394,42"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="307,55,307,124,302,121,303,59"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="419,14,577,42"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="481,52,457,79,427,101,399,115,369,125,368,120,397,110,425,97,453,75,476,55"/>
 </map>

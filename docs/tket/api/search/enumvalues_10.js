@@ -24,7 +24,7 @@ var searchData=
   ['regxor_21',['RegXor',['../namespacetket.html#acffc43c78feac1b0fb37d8d034369b1da3a2dfc09463da26e7cac361e6a30e25f',1,'tket']]],
   ['regzero_22',['RegZero',['../namespacetket.html#acffc43c78feac1b0fb37d8d034369b1daa1953c33eb52341d360a010776405f69',1,'tket']]],
   ['remove_23',['Remove',['../classtket_1_1Circuit.html#a8c16bfe4c55bd9f2d3565c0dd9377931a1063e38cb53d94d386f21227fcd84717',1,'tket::Circuit']]],
-  ['reset_24',['reset',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a526d688f37a86d3c3f27d0c5016eb71d',1,'tket::Reset'],['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a17eec2f5b6466bdc2248a76fe8c9a2c4a526d688f37a86d3c3f27d0c5016eb71d',1,'tket::Transforms::GreedyPauliSimp::Reset']]],
+  ['reset_24',['Reset',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a526d688f37a86d3c3f27d0c5016eb71d',1,'tket::Reset'],['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a17eec2f5b6466bdc2248a76fe8c9a2c4a526d688f37a86d3c3f27d0c5016eb71d',1,'tket::Transforms::GreedyPauliSimp::Reset']]],
   ['right_25',['Right',['../namespacetket.html#a75732ecf6e963fb7b73ca798e8d12671a92b09c7c48c520c3c55e497875da437c',1,'tket']]],
   ['rng_26',['RNG',['../namespacetket.html#a4c73a949b027dea7f23b1d5a1bdd526ea4dac8e95765c2a94a1337db76426d0ab',1,'tket']]],
   ['rngbound_27',['RNGBound',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3af74aa6391a4be57902ecd98ea6792007',1,'tket']]],

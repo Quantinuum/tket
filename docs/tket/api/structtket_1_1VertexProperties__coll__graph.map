@@ -1,11 +1,5 @@
 <map id="tket::VertexProperties" name="tket::VertexProperties">
-<area shape="rect" id="Node000001" title="Description of a node in a circuit, representing some operation." alt="" coords="71,284,234,309"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="49,196,256,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,235,155,283,150,283,150,235"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="116,108,189,133"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="155,147,155,195,150,195,150,147"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,151,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="104,55,145,106,141,109,100,58"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1OpDesc.html" title="Operation descriptor." alt="" coords="175,13,280,38"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="212,50,164,110,160,106,208,47"/>
+<area shape="rect" id="Node000001" title="Description of a node in a circuit, representing some operation." alt="" coords="27,106,189,134"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,211,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,47,111,106,105,105,106,50"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="tket::MultiplexedTensoredU2Box" name="tket::MultiplexedTensoredU2Box">
-<area shape="rect" id="Node000001" title="Multiplexed&#45;Tensored&#45;U2 gate." alt="" coords="5,240,195,280"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="60,167,140,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,206,103,240,97,240,97,206"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="63,93,137,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,132,103,167,97,167,97,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="27,5,173,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,59,103,93,97,93,97,59"/>
+<area shape="rect" id="Node000001" title="Multiplexed&#45;Tensored&#45;U2 gate." alt="" coords="5,249,194,294"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="60,174,139,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,215,102,250,97,248,98,219"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="63,98,136,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,139,102,174,97,173,98,144"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="27,5,172,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,63,102,98,97,97,99,68"/>
 </map>

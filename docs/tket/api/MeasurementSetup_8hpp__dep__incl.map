@@ -1,9 +1,9 @@
 <map id="include/tket/MeasurementSetup/MeasurementSetup.hpp" name="include/tket/MeasurementSetup/MeasurementSetup.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="138,5,357,45"/>
-<area shape="rect" id="Node000002" href="$MeasurementReduction_8hpp.html" title=" " alt="" coords="5,93,252,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,56,156,95,153,91,208,51"/>
-<area shape="rect" id="Node000004" href="$MeasurementSetup_8cpp.html" title=" " alt="" coords="276,93,456,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="286,51,341,91,338,95,283,56"/>
-<area shape="rect" id="Node000003" href="$MeasurementReduction_8cpp.html" title=" " alt="" coords="25,181,233,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,147,131,181,126,181,126,147"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="137,5,354,50"/>
+<area shape="rect" id="Node000002" href="$MeasurementReduction_8hpp.html" title=" " alt="" coords="5,98,251,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,61,158,100,154,95,208,58"/>
+<area shape="rect" id="Node000004" href="$MeasurementSetup_8cpp.html" title=" " alt="" coords="274,98,454,143"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="286,57,338,97,333,98,285,62"/>
+<area shape="rect" id="Node000003" href="$MeasurementReduction_8cpp.html" title=" " alt="" coords="24,191,232,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,156,130,192,126,189,126,160"/>
 </map>

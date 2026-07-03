@@ -1,5 +1,5 @@
 <map id="tket::Bit" name="tket::Bit">
-<area shape="rect" id="Node000001" title="Location holding a bit." alt="" coords="17,79,90,104"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,5,101,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,44,56,79,51,79,51,44"/>
+<area shape="rect" id="Node000001" title="Location holding a bit." alt="" coords="17,81,89,109"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,5,101,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,47,56,81,50,80,51,51"/>
 </map>

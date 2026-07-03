@@ -1,13 +1,13 @@
 <map id="src/Placement/RelabelledGraphWSM.hpp" name="src/Placement/RelabelledGraphWSM.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="290,5,477,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,175,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,48,168,92,166,87,318,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="199,101,285,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="354,48,274,96,271,91,351,43"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="310,101,457,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="386,46,386,87,381,87,381,46"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="481,101,723,126"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="432,43,561,93,559,98,430,48"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="747,93,918,133"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="477,42,734,90,733,96,476,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="287,5,473,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,174,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,50,174,96,173,90,308,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="198,106,283,134"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="349,50,274,100,272,95,344,51"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="307,106,453,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="382,48,382,92,378,89,378,52"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="477,106,718,134"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="433,48,555,100,549,100,432,53"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="742,98,912,143"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="474,44,729,97,724,98,473,49"/>
 </map>

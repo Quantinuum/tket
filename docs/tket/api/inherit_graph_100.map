@@ -1,9 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1Placement.html" title=" " alt="" coords="5,31,129,56"/>
-<area shape="rect" id="Node000001" href="$classtket_1_1GraphPlacement.html" title=" " alt="" coords="177,31,340,56"/>
-<area shape="poly" id="edge139_Node000000_Node000001" title=" " alt="" coords="143,41,177,41,177,46,143,46"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1LinePlacement.html" title=" " alt="" coords="414,5,565,31"/>
-<area shape="poly" id="edge140_Node000001_Node000002" title=" " alt="" coords="354,30,413,24,414,29,354,36"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1NoiseAwarePlacement.html" title=" " alt="" coords="388,55,591,80"/>
-<area shape="poly" id="edge141_Node000001_Node000003" title=" " alt="" coords="354,51,388,54,388,59,354,56"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1MultiGateReorder.html" title=" " alt="" coords="5,5,175,33"/>
 </map>

@@ -1,19 +1,19 @@
 <map id="include/tket/Placement" name="include/tket/Placement">
-<area shape="rect" id="node1" href="dir_15c26b951420bea477ecbe574e082e73.html" title="Characterisation" alt="" coords="26,125,155,151"/>
-<area shape="rect" id="node2" href="dir_3aae3de30bb768cfc8ec223ba5137c72.html" title="Circuit" alt="" coords="180,125,244,151"/>
-<area shape="rect" id="node3" href="dir_759b4cf8789b41309cb92109f4c73e0a.html" title="Architecture" alt="" coords="268,125,369,151"/>
-<area shape="rect" id="node4" href="dir_7e1d8adf2d43944832ed723e816b7cfc.html" title="Graphs" alt="" coords="394,125,462,151"/>
-<area shape="rect" id="node5" href="dir_c841b5efcc984abdbed030c4c9202c93.html" title="Utils" alt="" coords="486,125,538,151"/>
-<area shape="rect" id="node6" href="dir_5203c0d6d890d782c111076a610aa9e3.html" title="Placement" alt="" coords="273,52,364,77"/>
-<area shape="poly" id="edge1" href="dir_000029_000004.html" alt="" coords="283,80,142,124,140,119,281,75"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000029_000004.html" title="1" alt="" coords="143,121,152,135"/>
-<area shape="poly" id="edge2" href="dir_000029_000006.html" alt="" coords="303,80,242,120,239,115,300,75"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000029_000006.html" title="1" alt="" coords="245,115,254,129"/>
-<area shape="poly" id="edge3" href="dir_000029_000002.html" alt="" coords="321,78,321,112,316,112,316,78"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000029_000002.html" title="2" alt="" coords="322,100,332,114"/>
-<area shape="poly" id="edge4" href="dir_000029_000016.html" alt="" coords="338,75,400,115,397,120,335,80"/>
-<area shape="rect" id="edge4-headlabel" href="dir_000029_000016.html" title="1" alt="" coords="395,101,404,116"/>
-<area shape="poly" id="edge5" href="dir_000029_000039.html" alt="" coords="351,75,474,120,473,125,349,80"/>
-<area shape="rect" id="edge5-headlabel" href="dir_000029_000039.html" title="2" alt="" coords="467,106,477,120"/>
-<area shape="rect" id="clust1" href="dir_154db623cdae00eafb0308d7c4021b5c.html" title="tket" alt="" coords="16,16,549,161"/>
+<area shape="rect" id="node1" href="dir_15c26b951420bea477ecbe574e082e73.html" title="Characterisation" alt="" coords="26,130,155,158"/>
+<area shape="rect" id="node2" href="dir_3aae3de30bb768cfc8ec223ba5137c72.html" title="Circuit" alt="" coords="179,130,242,158"/>
+<area shape="rect" id="node3" href="dir_759b4cf8789b41309cb92109f4c73e0a.html" title="Architecture" alt="" coords="266,130,366,158"/>
+<area shape="rect" id="node4" href="dir_7e1d8adf2d43944832ed723e816b7cfc.html" title="Graphs" alt="" coords="390,130,458,158"/>
+<area shape="rect" id="node5" href="dir_c841b5efcc984abdbed030c4c9202c93.html" title="Utils" alt="" coords="482,130,534,158"/>
+<area shape="rect" id="node6" href="dir_5203c0d6d890d782c111076a610aa9e3.html" title="Placement" alt="" coords="271,54,361,82"/>
+<area shape="poly" id="edge1" href="dir_000029_000004.html" alt="" coords="274,84,146,127,144,122,278,81"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000029_000004.html" title="1" alt="" coords="147,123,155,140"/>
+<area shape="poly" id="edge2" href="dir_000029_000006.html" alt="" coords="300,82,243,123,240,119,295,83"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000029_000006.html" title="1" alt="" coords="245,118,253,135"/>
+<area shape="poly" id="edge3" href="dir_000029_000002.html" alt="" coords="318,81,318,116,314,113,314,85"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000029_000002.html" title="2" alt="" coords="320,103,328,120"/>
+<area shape="poly" id="edge4" href="dir_000029_000016.html" alt="" coords="336,80,395,121,390,121,335,85"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000029_000016.html" title="1" alt="" coords="391,104,399,121"/>
+<area shape="poly" id="edge5" href="dir_000029_000039.html" alt="" coords="351,80,471,127,465,128,350,85"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000029_000039.html" title="2" alt="" coords="464,110,472,127"/>
+<area shape="rect" id="clust1" href="dir_154db623cdae00eafb0308d7c4021b5c.html" title="tket" alt="" coords="16,16,544,168"/>
 </map>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['t_0',['T',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3ab9ece18c950afbfa6b0fdbfa4ff731d3',1,'tket']]],
-  ['target_1',['target',['../namespacetket.html#a8e33f26891628ded8365c5855a6e832dac41a31890959544c6523af684561abe5',1,'tket::Target'],['../namespacetket_1_1zx.html#a4a9af3f5180d9fb71107b0e917d71a4dac41a31890959544c6523af684561abe5',1,'tket::zx::Target']]],
+  ['target_1',['Target',['../namespacetket.html#a8e33f26891628ded8365c5855a6e832dac41a31890959544c6523af684561abe5',1,'tket::Target'],['../namespacetket_1_1zx.html#a4a9af3f5180d9fb71107b0e917d71a4dac41a31890959544c6523af684561abe5',1,'tket::zx::Target']]],
   ['tdg_2',['Tdg',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a9827db27d53fd083b867fdf13593809f',1,'tket']]],
   ['termsequencebox_3',['TermSequenceBox',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a5c2e478b69195074f4c292c9021ec106',1,'tket']]],
   ['tk1_4',['TK1',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a461e9cbc1ae4c0b4e456c027bfb805ec',1,'tket']]],

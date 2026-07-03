@@ -1,0 +1,13 @@
+<map id="runtime_error" name="runtime_error">
+<area shape="rect" id="Node000001" title="STL class." alt="" coords="167,84,277,112"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="356,5,500,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,74,324,43,366,33,361,35,326,48,262,78"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="366,57,490,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="292,86,368,78,363,80,293,91"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="352,109,504,137"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="292,104,354,114,349,114,292,109"/>
+<area shape="rect" id="Node000006" href="$structtket_1_1GateUnitaryMatrixError.html" title="We do not wish to couple tightly to exception classes elsewhere." alt="" coords="325,161,531,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="262,117,326,146,366,161,361,161,324,151,261,122"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,84,119,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,95,169,97,164,99,135,100"/>
+</map>

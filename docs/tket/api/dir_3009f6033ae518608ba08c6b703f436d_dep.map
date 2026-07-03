@@ -1,10 +1,10 @@
 <map id="include/tket/Ops" name="include/tket/Ops">
-<area shape="rect" id="node1" href="dir_4f7bc6ea18239182560ddb1425948beb.html" title="OpType" alt="" coords="27,125,98,151"/>
-<area shape="rect" id="node2" href="dir_c841b5efcc984abdbed030c4c9202c93.html" title="Utils" alt="" coords="122,125,174,151"/>
-<area shape="rect" id="node3" href="dir_3009f6033ae518608ba08c6b703f436d.html" title="Ops" alt="" coords="82,52,129,77"/>
-<area shape="poly" id="edge1" href="dir_000023_000025.html" alt="" coords="101,79,79,115,74,112,96,76"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000023_000025.html" title="3" alt="" coords="82,107,91,121"/>
-<area shape="poly" id="edge2" href="dir_000023_000039.html" alt="" coords="115,76,136,112,132,115,110,79"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000023_000039.html" title="6" alt="" coords="134,98,144,113"/>
-<area shape="rect" id="clust1" href="dir_154db623cdae00eafb0308d7c4021b5c.html" title="tket" alt="" coords="16,16,185,161"/>
+<area shape="rect" id="node1" href="dir_4f7bc6ea18239182560ddb1425948beb.html" title="OpType" alt="" coords="27,130,96,158"/>
+<area shape="rect" id="node2" href="dir_c841b5efcc984abdbed030c4c9202c93.html" title="Utils" alt="" coords="120,130,171,158"/>
+<area shape="rect" id="node3" href="dir_3009f6033ae518608ba08c6b703f436d.html" title="Ops" alt="" coords="80,54,126,82"/>
+<area shape="poly" id="edge1" href="dir_000023_000025.html" alt="" coords="97,81,78,118,74,115,93,84"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000023_000025.html" title="3" alt="" coords="81,109,89,126"/>
+<area shape="poly" id="edge2" href="dir_000023_000039.html" alt="" coords="111,80,133,117,128,117,109,85"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000023_000039.html" title="6" alt="" coords="132,101,140,118"/>
+<area shape="rect" id="clust1" href="dir_154db623cdae00eafb0308d7c4021b5c.html" title="tket" alt="" coords="16,16,181,168"/>
 </map>

@@ -1,31 +1,31 @@
 <map id="include/tket/Predicates/Predicates.hpp" name="include/tket/Predicates/Predicates.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="539,5,709,45"/>
-<area shape="rect" id="Node000002" href="$CompilationUnit_8hpp.html" title=" " alt="" coords="539,93,709,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="627,59,627,93,621,93,621,59"/>
-<area shape="rect" id="Node000003" href="$CompilerPass_8hpp.html" title=" " alt="" coords="223,181,393,221"/>
-<area shape="poly" id="edge16_Node000001_Node000003" title=" " alt="" coords="526,49,469,68,413,96,386,116,361,139,324,183,320,179,357,135,383,112,411,91,467,64,525,44"/>
-<area shape="rect" id="Node000006" href="$PassGenerators_8cpp.html" title=" " alt="" coords="261,357,507,383"/>
-<area shape="poly" id="edge17_Node000001_Node000006" title=" " alt="" coords="582,55,528,95,486,134,471,154,459,182,455,200,457,216,470,246,482,275,482,292,476,311,464,327,449,341,416,360,413,355,446,336,460,323,471,308,477,291,477,276,465,248,452,218,450,200,453,181,467,151,482,131,525,91,578,51"/>
-<area shape="rect" id="Node000008" href="$PassLibrary_8cpp.html" title=" " alt="" coords="575,357,791,383"/>
-<area shape="poly" id="edge18_Node000001_Node000008" title=" " alt="" coords="677,50,702,69,723,92,737,114,744,134,751,181,754,250,749,310,728,339,703,359,700,355,725,335,744,308,748,250,745,182,739,135,732,116,719,95,698,73,673,55"/>
-<area shape="rect" id="Node000010" href="$Predicates_8cpp.html" title=" " alt="" coords="841,101,1053,126"/>
-<area shape="poly" id="edge19_Node000001_Node000010" title=" " alt="" coords="709,46,904,98,903,103,707,51"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="542,140,378,184,376,179,541,134"/>
-<area shape="poly" id="edge14_Node000002_Node000006" title=" " alt="" coords="656,142,670,160,680,180,684,202,678,222,657,252,632,277,603,298,571,316,507,343,449,360,447,355,506,338,569,311,600,294,628,273,653,248,674,220,679,201,675,182,665,163,652,145"/>
-<area shape="poly" id="edge15_Node000002_Node000008" title=" " alt="" coords="682,138,706,156,724,180,737,214,740,244,734,274,724,310,711,337,695,359,691,355,707,334,719,308,729,273,735,244,732,216,719,183,702,160,679,143"/>
-<area shape="rect" id="Node000009" href="$CompilationUnit_8cpp.html" title=" " alt="" coords="469,181,665,221"/>
-<area shape="poly" id="edge13_Node000002_Node000009" title=" " alt="" coords="606,146,582,183,577,180,601,144"/>
-<area shape="rect" id="Node000004" href="$PassGenerators_8hpp.html" title=" " alt="" coords="45,269,216,309"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="258,230,171,272,168,267,256,225"/>
-<area shape="rect" id="Node000005" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,357,237,383"/>
-<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="210,216,104,237,61,253,35,271,30,280,29,288,36,308,47,323,61,336,92,355,90,359,57,340,43,327,31,311,23,289,25,278,31,268,59,248,103,232,209,211"/>
-<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="290,235,276,272,275,290,281,308,293,324,309,337,345,355,342,360,306,341,290,328,276,311,270,291,271,271,285,233"/>
-<area shape="rect" id="Node000007" href="$PassLibrary_8hpp.html" title=" " alt="" coords="291,269,461,309"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="334,231,363,267,359,271,329,234"/>
-<area shape="poly" id="edge12_Node000003_Node000008" title=" " alt="" coords="370,224,474,267,661,355,659,360,472,272,368,229"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="129,323,125,357,120,357,124,323"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="205,311,348,355,346,360,203,316"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="303,316,159,360,158,355,301,311"/>
-<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="382,323,385,357,380,357,377,323"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="463,310,638,355,637,360,462,315"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="539,5,708,50"/>
+<area shape="rect" id="Node000002" href="$CompilationUnit_8hpp.html" title=" " alt="" coords="539,98,708,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="625,63,626,99,621,97,622,68"/>
+<area shape="rect" id="Node000003" href="$CompilerPass_8hpp.html" title=" " alt="" coords="226,191,395,235"/>
+<area shape="poly" id="edge16_Node000001_Node000003" title=" " alt="" coords="522,52,469,73,416,100,389,121,364,146,327,192,323,188,360,142,385,117,413,96,467,68,527,49"/>
+<area shape="rect" id="Node000006" href="$PassGenerators_8cpp.html" title=" " alt="" coords="260,376,504,404"/>
+<area shape="poly" id="edge17_Node000001_Node000006" title=" " alt="" coords="578,58,529,100,487,141,473,162,461,191,457,211,459,228,471,260,482,291,481,309,474,329,463,345,449,359,417,378,415,373,445,354,459,342,469,327,476,308,476,292,466,262,454,230,452,211,456,190,469,159,483,138,526,96,574,61"/>
+<area shape="rect" id="Node000008" href="$PassLibrary_8cpp.html" title=" " alt="" coords="572,376,787,404"/>
+<area shape="poly" id="edge18_Node000001_Node000008" title=" " alt="" coords="679,56,704,75,723,96,737,120,744,141,750,190,753,264,749,329,728,357,702,378,700,373,724,354,744,327,748,264,745,191,739,142,732,122,719,100,700,79,679,61"/>
+<area shape="rect" id="Node000010" href="$Predicates_8cpp.html" title=" " alt="" coords="841,106,1052,134"/>
+<area shape="poly" id="edge19_Node000001_Node000010" title=" " alt="" coords="715,52,902,105,897,106,715,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="532,149,386,193,384,188,537,146"/>
+<area shape="poly" id="edge14_Node000002_Node000006" title=" " alt="" coords="657,152,672,172,682,193,685,215,679,236,659,266,633,291,604,313,573,332,509,360,450,378,449,373,507,355,571,327,601,309,630,287,654,263,675,234,680,215,677,194,667,174,655,157"/>
+<area shape="poly" id="edge15_Node000002_Node000008" title=" " alt="" coords="684,148,707,167,723,189,738,226,741,258,735,290,723,329,710,356,693,378,691,373,706,353,719,327,730,289,736,258,733,227,719,192,703,171,683,154"/>
+<area shape="rect" id="Node000009" href="$CompilationUnit_8cpp.html" title=" " alt="" coords="470,191,665,235"/>
+<area shape="poly" id="edge13_Node000002_Node000009" title=" " alt="" coords="604,154,583,192,579,188,600,158"/>
+<area shape="rect" id="Node000004" href="$PassGenerators_8hpp.html" title=" " alt="" coords="44,283,214,328"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="251,244,173,285,171,281,255,241"/>
+<area shape="rect" id="Node000005" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,376,237,404"/>
+<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="209,228,104,251,60,266,34,285,28,295,26,305,34,327,45,342,58,354,90,375,85,376,55,359,41,345,29,329,21,305,23,294,30,282,58,262,102,245,212,224"/>
+<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="289,247,274,288,273,308,279,327,291,342,306,355,342,376,337,375,303,359,287,346,275,329,268,309,269,287,285,250"/>
+<area shape="rect" id="Node000007" href="$PassLibrary_8hpp.html" title=" " alt="" coords="290,283,459,328"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="335,245,362,284,357,283,333,250"/>
+<area shape="poly" id="edge12_Node000003_Node000008" title=" " alt="" coords="377,239,473,281,658,375,652,376,471,286,377,244"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="127,342,125,377,120,374,123,345"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="211,331,344,375,339,376,210,336"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="295,334,162,378,161,373,290,333"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="380,341,383,377,379,374,376,345"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="470,330,633,375,628,376,470,335"/>
 </map>

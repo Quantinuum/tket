@@ -1,3 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,5,200,75"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1AbstractGraph.html" title="Abstract class for representing graphs." alt="" coords="5,36,243,64"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1CompleteGraph.html" title=" " alt="" coords="291,5,537,33"/>
+<area shape="poly" id="edge114_Node000000_Node000001" title=" " alt="" coords="258,33,293,32,288,33,259,38"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1DirectedGraphBase.html" title=" " alt="" coords="314,57,514,102"/>
+<area shape="poly" id="edge115_Node000000_Node000002" title=" " alt="" coords="258,61,316,69,311,69,258,66"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1DirectedGraph.html" title=" " alt="" coords="604,26,804,71"/>
+<area shape="poly" id="edge116_Node000002_Node000003" title=" " alt="" coords="529,64,601,59,606,59,530,70"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1graphs_1_1DirectedGraph.html" title="DirectedGraph instances are loop&#45;free directed graphs." alt="" coords="585,95,823,122"/>
+<area shape="poly" id="edge118_Node000002_Node000005" title=" " alt="" coords="530,88,587,96,582,96,529,93"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1QubitGraph.html" title="Instance of DirectedGraph to hold dependencies between Qubit UnitID objects as given from some Circui..." alt="" coords="871,35,1000,62"/>
+<area shape="poly" id="edge117_Node000003_Node000004" title=" " alt="" coords="820,46,873,48,868,49,820,51"/>
 </map>

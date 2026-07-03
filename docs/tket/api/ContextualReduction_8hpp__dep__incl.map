@@ -1,15 +1,15 @@
 <map id="include/tket/Transformations/ContextualReduction.hpp" name="include/tket/Transformations/ContextualReduction.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="275,5,482,45"/>
-<area shape="rect" id="Node000002" href="$PassGenerators_8hpp.html" title=" " alt="" coords="171,93,341,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="342,55,285,95,282,91,339,51"/>
-<area shape="rect" id="Node000003" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,181,237,207"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="263,44,208,64,183,78,161,95,145,116,134,139,125,182,120,180,129,138,140,113,157,91,180,73,206,59,261,39"/>
-<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="261,181,507,207"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="382,59,386,181,381,181,377,59"/>
-<area shape="rect" id="Node000005" href="$PassLibrary_8cpp.html" title=" " alt="" coords="416,101,632,126"/>
-<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="424,50,506,98,503,103,421,55"/>
-<area shape="rect" id="Node000006" href="$ContextualReduction_8cpp.html" title=" " alt="" coords="656,93,845,133"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="474,46,670,91,669,96,473,51"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="213,143,143,183,140,179,210,138"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="300,138,367,179,364,183,297,143"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="275,5,482,50"/>
+<area shape="rect" id="Node000002" href="$PassGenerators_8hpp.html" title=" " alt="" coords="171,98,340,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="340,58,286,100,284,95,335,60"/>
+<area shape="rect" id="Node000003" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,191,237,218"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="258,46,207,68,182,82,160,100,144,121,134,146,124,192,120,189,129,145,140,119,156,96,179,78,205,63,262,44"/>
+<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="260,191,504,218"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="381,64,384,191,380,189,377,67"/>
+<area shape="rect" id="Node000005" href="$PassLibrary_8cpp.html" title=" " alt="" coords="416,106,631,134"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="427,56,505,106,500,106,426,61"/>
+<area shape="rect" id="Node000006" href="$ContextualReduction_8cpp.html" title=" " alt="" coords="655,98,843,143"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="482,51,663,97,658,98,482,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,150,144,193,141,188,205,151"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="302,149,365,190,359,190,301,154"/>
 </map>

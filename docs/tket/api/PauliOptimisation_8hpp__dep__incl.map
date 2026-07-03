@@ -1,30 +1,30 @@
 <map id="include/tket/Transformations/PauliOptimisation.hpp" name="include/tket/Transformations/PauliOptimisation.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1569,5,1775,45"/>
-<area shape="rect" id="Node000002" href="$PauliExpBoxes_8hpp.html" title=" " alt="" coords="826,93,974,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1555,42,975,106,974,101,1555,37"/>
-<area shape="rect" id="Node000003" href="$Boxes_8cpp.html" title=" " alt="" coords="5,189,163,214"/>
-<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="1555,36,1221,59,814,96,493,133,175,184,137,191,136,186,174,179,493,128,813,91,1221,54,1554,31"/>
-<area shape="rect" id="Node000010" href="$PassGenerators_8hpp.html" title=" " alt="" coords="1648,93,1819,133"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1696,55,1722,92,1718,95,1691,58"/>
-<area shape="rect" id="Node000011" href="$CompilerPass_8cpp.html" title=" " alt="" coords="1556,189,1788,214"/>
-<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1654,58,1639,94,1635,113,1639,133,1651,163,1666,187,1661,190,1646,165,1633,134,1630,113,1633,93,1649,56"/>
-<area shape="rect" id="Node000012" href="$PassGenerators_8cpp.html" title=" " alt="" coords="1812,189,2057,214"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1746,48,1789,67,1832,91,1862,115,1890,142,1928,187,1924,190,1886,145,1859,119,1829,96,1787,71,1743,53"/>
-<area shape="rect" id="Node000013" href="$PauliOptimisation_8cpp.html" title=" " alt="" coords="1893,93,2061,133"/>
-<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1753,46,1911,91,1910,96,1751,52"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="812,122,528,144,352,161,175,184,135,191,134,186,174,179,351,156,527,138,812,117"/>
-<area shape="rect" id="Node000004" href="$PauliExpBoxes_8cpp.html" title=" " alt="" coords="187,189,399,214"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="813,129,411,184,364,191,363,186,410,179,812,123"/>
-<area shape="rect" id="Node000005" href="$PauliExpBoxUnitaryCalculator_8cpp.html" title=" " alt="" coords="423,181,670,221"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="813,138,625,184,624,179,812,133"/>
-<area shape="rect" id="Node000006" href="$PauliGraphConverters_8cpp.html" title=" " alt="" coords="694,181,885,221"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="866,144,815,183,812,179,863,140"/>
-<area shape="rect" id="Node000007" href="$GreedyPauliConverters_8cpp.html" title=" " alt="" coords="909,181,1112,221"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="937,140,988,179,985,183,934,144"/>
-<area shape="rect" id="Node000008" href="$GreedyPauliOps_8cpp.html" title=" " alt="" coords="1137,181,1293,221"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="983,134,1146,179,1145,184,982,140"/>
-<area shape="rect" id="Node000009" href="$GreedyPauliOptimisation_8cpp.html" title=" " alt="" coords="1317,181,1531,221"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="988,126,1317,180,1316,185,988,132"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1714,146,1683,190,1678,187,1710,143"/>
-<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1791,136,1909,186,1907,191,1789,141"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1560,5,1767,50"/>
+<area shape="rect" id="Node000002" href="$PauliExpBoxes_8hpp.html" title=" " alt="" coords="820,98,968,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1542,43,968,113,968,108,1547,43"/>
+<area shape="rect" id="Node000003" href="$Boxes_8cpp.html" title=" " alt="" coords="5,199,162,227"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="1542,36,1213,63,809,101,491,139,175,193,137,201,136,196,174,188,490,134,809,95,1213,57,1548,36"/>
+<area shape="rect" id="Node000010" href="$PassGenerators_8hpp.html" title=" " alt="" coords="1640,98,1810,143"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1688,61,1713,99,1708,97,1685,65"/>
+<area shape="rect" id="Node000011" href="$CompilerPass_8cpp.html" title=" " alt="" coords="1548,199,1779,227"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1644,62,1631,99,1628,120,1631,142,1643,172,1657,200,1652,197,1638,175,1626,143,1623,120,1626,97,1640,65"/>
+<area shape="rect" id="Node000012" href="$PassGenerators_8cpp.html" title=" " alt="" coords="1803,199,2047,227"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1744,53,1785,72,1824,96,1854,121,1880,149,1918,200,1914,198,1876,153,1850,125,1821,100,1783,77,1743,59"/>
+<area shape="rect" id="Node000013" href="$PauliOptimisation_8cpp.html" title=" " alt="" coords="1885,98,2052,143"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1751,52,1898,98,1893,97,1751,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="802,127,523,150,349,169,175,193,135,201,134,196,174,188,348,164,523,145,808,126"/>
+<area shape="rect" id="Node000004" href="$PauliExpBoxes_8cpp.html" title=" " alt="" coords="186,199,397,227"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="807,135,409,193,363,201,362,196,408,188,803,132"/>
+<area shape="rect" id="Node000005" href="$PauliExpBoxUnitaryCalculator_8cpp.html" title=" " alt="" coords="421,191,666,235"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="808,144,628,193,627,187,803,145"/>
+<area shape="rect" id="Node000006" href="$PauliGraphConverters_8cpp.html" title=" " alt="" coords="690,191,880,235"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="859,152,812,193,810,188,854,153"/>
+<area shape="rect" id="Node000007" href="$GreedyPauliConverters_8cpp.html" title=" " alt="" coords="904,191,1106,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="933,150,981,191,976,189,931,155"/>
+<area shape="rect" id="Node000008" href="$GreedyPauliOps_8cpp.html" title=" " alt="" coords="1130,191,1285,235"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="983,144,1135,190,1129,190,982,150"/>
+<area shape="rect" id="Node000009" href="$GreedyPauliOptimisation_8cpp.html" title=" " alt="" coords="1310,191,1524,235"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="983,134,1297,188,1312,193,1307,193,1296,193,983,139"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1704,154,1674,201,1671,196,1699,157"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1787,147,1899,199,1893,198,1786,152"/>
 </map>

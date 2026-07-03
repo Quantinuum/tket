@@ -1,16 +1,16 @@
 <map id="include/tket/Mapping" name="include/tket/Mapping">
-<area shape="rect" id="node1" href="dir_31faeae75877c1e51238ac0f002e7d66.html" title="ArchAwareSynth" alt="" coords="26,125,155,151"/>
-<area shape="rect" id="node2" href="dir_3aae3de30bb768cfc8ec223ba5137c72.html" title="Circuit" alt="" coords="180,125,244,151"/>
-<area shape="rect" id="node3" href="dir_759b4cf8789b41309cb92109f4c73e0a.html" title="Architecture" alt="" coords="268,125,369,151"/>
-<area shape="rect" id="node4" href="dir_c841b5efcc984abdbed030c4c9202c93.html" title="Utils" alt="" coords="394,125,446,151"/>
-<area shape="rect" id="node5" href="dir_cff4e635eecb78419a7b5ba58709376a.html" title="Mapping" alt="" coords="226,52,305,77"/>
-<area shape="poly" id="edge1" href="dir_000019_000000.html" alt="" coords="238,80,133,122,131,118,236,75"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000019_000000.html" title="1" alt="" coords="135,119,144,133"/>
-<area shape="poly" id="edge2" href="dir_000019_000006.html" alt="" coords="259,79,231,116,227,113,254,76"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000019_000006.html" title="3" alt="" coords="234,109,243,123"/>
-<area shape="poly" id="edge3" href="dir_000019_000002.html" alt="" coords="276,76,304,113,300,116,272,79"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000019_000002.html" title="4" alt="" coords="301,98,311,113"/>
-<area shape="poly" id="edge4" href="dir_000019_000039.html" alt="" coords="291,75,383,117,381,122,289,80"/>
-<area shape="rect" id="edge4-headlabel" href="dir_000019_000039.html" title="4" alt="" coords="377,103,386,117"/>
-<area shape="rect" id="clust1" href="dir_154db623cdae00eafb0308d7c4021b5c.html" title="tket" alt="" coords="16,16,457,161"/>
+<area shape="rect" id="node1" href="dir_31faeae75877c1e51238ac0f002e7d66.html" title="ArchAwareSynth" alt="" coords="26,130,155,158"/>
+<area shape="rect" id="node2" href="dir_3aae3de30bb768cfc8ec223ba5137c72.html" title="Circuit" alt="" coords="179,130,242,158"/>
+<area shape="rect" id="node3" href="dir_759b4cf8789b41309cb92109f4c73e0a.html" title="Architecture" alt="" coords="266,130,366,158"/>
+<area shape="rect" id="node4" href="dir_c841b5efcc984abdbed030c4c9202c93.html" title="Utils" alt="" coords="390,130,442,158"/>
+<area shape="rect" id="node5" href="dir_cff4e635eecb78419a7b5ba58709376a.html" title="Mapping" alt="" coords="224,54,301,82"/>
+<area shape="poly" id="edge1" href="dir_000019_000000.html" alt="" coords="229,84,136,126,134,121,234,82"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000019_000000.html" title="1" alt="" coords="137,122,145,139"/>
+<area shape="poly" id="edge2" href="dir_000019_000006.html" alt="" coords="256,81,230,119,227,115,251,84"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000019_000006.html" title="3" alt="" coords="233,111,241,128"/>
+<area shape="poly" id="edge3" href="dir_000019_000002.html" alt="" coords="273,80,300,118,295,117,271,85"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000019_000002.html" title="4" alt="" coords="299,101,307,118"/>
+<area shape="poly" id="edge4" href="dir_000019_000039.html" alt="" coords="291,80,379,123,373,124,290,85"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000019_000039.html" title="4" alt="" coords="373,106,381,123"/>
+<area shape="rect" id="clust1" href="dir_154db623cdae00eafb0308d7c4021b5c.html" title="tket" alt="" coords="16,16,452,168"/>
 </map>

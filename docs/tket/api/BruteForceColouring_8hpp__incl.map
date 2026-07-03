@@ -1,9 +1,9 @@
 <map id="src/Graphs/BruteForceColouring.hpp" name="src/Graphs/BruteForceColouring.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,260,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="12,79,83,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,33,73,72,70,68,117,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="107,79,158,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,31,135,65,130,65,130,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="182,79,259,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,29,197,68,194,72,145,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,260,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="14,81,83,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,76,73,73,69,115,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="107,81,158,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,32,135,66,130,64,131,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="182,81,259,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,31,196,71,191,71,147,36"/>
 </map>

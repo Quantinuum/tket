@@ -1,9 +1,9 @@
 <map id="tket::graphs::utils::detail::graph_utils_impl_with_map&lt; Graph, Map, PMap &gt;" name="tket::graphs::utils::detail::graph_utils_impl_with_map&lt; Graph, Map, PMap &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="756,5,943,75"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map.html" title=" " alt="" coords="476,5,708,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="722,37,756,37,756,43,722,43"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="241,5,428,75"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,37,476,37,476,43,442,43"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,13,193,67"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="207,37,241,37,241,43,207,43"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="828,14,1015,92"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map.html" title=" " alt="" coords="542,5,780,101"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="796,51,830,53,825,53,796,56"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="276,5,494,101"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="509,51,544,53,539,53,510,56"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,5,228,101"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,51,278,53,273,53,243,56"/>
 </map>

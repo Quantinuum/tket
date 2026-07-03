@@ -1,9 +1,9 @@
 <map id="tket::Placement" name="tket::Placement">
-<area shape="rect" id="Node000001" title=" " alt="" coords="119,5,243,31"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1GraphPlacement.html" title=" " alt="" coords="99,79,262,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,44,183,79,178,79,178,44"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1LinePlacement.html" title=" " alt="" coords="5,152,156,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="155,114,99,154,95,150,152,110"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1NoiseAwarePlacement.html" title=" " alt="" coords="181,152,383,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="210,110,267,150,264,154,207,114"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="119,5,242,33"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1GraphPlacement.html" title=" " alt="" coords="99,81,262,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,47,183,82,178,80,179,51"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1LinePlacement.html" title=" " alt="" coords="5,157,156,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="153,118,100,158,97,154,148,119"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1NoiseAwarePlacement.html" title=" " alt="" coords="180,157,381,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="211,116,265,156,260,156,210,121"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="tket::zx::BasicGen" name="tket::zx::BasicGen">
-<area shape="rect" id="Node000001" title="Virtual subclass of ZXGen for undirected (commutative) generators." alt="" coords="5,79,144,104"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="13,5,136,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,44,77,79,72,79,72,44"/>
+<area shape="rect" id="Node000001" title="Virtual subclass of ZXGen for undirected (commutative) generators." alt="" coords="5,81,144,109"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="14,5,135,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,47,77,81,72,80,73,51"/>
 </map>

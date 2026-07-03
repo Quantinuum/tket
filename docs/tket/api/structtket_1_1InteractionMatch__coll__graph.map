@@ -1,7 +1,7 @@
 <map id="tket::InteractionMatch" name="tket::InteractionMatch">
-<area shape="rect" id="Node000001" title="Represents a position to which two 2q Clifford gadgets could be commuted to Assumes:" alt="" coords="99,108,265,133"/>
-<area shape="rect" id="Node000002" href="$structtket_1_1InteractionPoint.html" title="Represents a position that one port of a 2qb Clifford gadget could be commuted to (towards the end of..." alt="" coords="5,5,164,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,39,173,106,169,110,103,42"/>
-<area shape="rect" id="Node000003" href="$structtket_1_1RevInteractionPoint.html" title="Represents a position that one port of a 2qb Clifford gadget could be commuted to (towards the start ..." alt="" coords="188,5,371,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="261,42,195,110,191,106,257,39"/>
+<area shape="rect" id="Node000001" title="Represents a position to which two 2q Clifford gadgets could be commuted to Assumes:" alt="" coords="98,128,262,156"/>
+<area shape="rect" id="Node000002" href="$structtket_1_1InteractionPoint.html" title="Represents a position that one port of a 2qb Clifford gadget could be commuted to (towards the end of..." alt="" coords="5,5,163,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,43,172,127,167,128,102,47"/>
+<area shape="rect" id="Node000003" href="$structtket_1_1RevInteractionPoint.html" title="Represents a position that one port of a 2qb Clifford gadget could be commuted to (towards the start ..." alt="" coords="186,5,368,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,45,192,130,189,126,255,46"/>
 </map>

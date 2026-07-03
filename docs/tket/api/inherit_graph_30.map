@@ -1,3 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1CXMaker.html" title=" " alt="" coords="5,5,119,31"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1BasePass.html" title=" " alt="" coords="5,109,121,137"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1RepeatPass.html" title=" " alt="" coords="212,5,342,33"/>
+<area shape="poly" id="edge97_Node000000_Node000001" title=" " alt="" coords="89,97,125,69,168,43,214,29,210,32,170,48,128,73,93,101"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1RepeatUntilSatisfiedPass.html" title=" " alt="" coords="169,57,385,85"/>
+<area shape="poly" id="edge98_Node000000_Node000002" title=" " alt="" coords="135,103,219,84,215,87,137,108"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1RepeatWithMetricPass.html" title=" " alt="" coords="177,109,377,137"/>
+<area shape="poly" id="edge99_Node000000_Node000003" title=" " alt="" coords="136,121,179,122,174,124,137,126"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1SequencePass.html" title=" " alt="" coords="204,161,350,189"/>
+<area shape="poly" id="edge100_Node000000_Node000004" title=" " alt="" coords="136,138,219,160,215,162,136,143"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1StandardPass.html" title=" " alt="" coords="206,213,348,241"/>
+<area shape="poly" id="edge101_Node000000_Node000005" title=" " alt="" coords="91,145,128,173,170,198,208,214,203,214,168,203,125,178,90,150"/>
 </map>

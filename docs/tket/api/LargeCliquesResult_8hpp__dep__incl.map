@@ -1,7 +1,7 @@
 <map id="include/tket/Graphs/LargeCliquesResult.hpp" name="include/tket/Graphs/LargeCliquesResult.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="157,5,335,45"/>
-<area shape="rect" id="Node000002" href="$GraphColouring_8cpp.html" title=" " alt="" coords="5,93,228,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,55,137,95,134,91,202,50"/>
-<area shape="rect" id="Node000003" href="$LargeCliquesResult_8cpp.html" title=" " alt="" coords="252,93,499,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="290,50,358,91,355,95,287,55"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="157,5,335,50"/>
+<area shape="rect" id="Node000002" href="$GraphColouring_8cpp.html" title=" " alt="" coords="5,98,228,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,58,138,100,136,95,196,59"/>
+<area shape="rect" id="Node000003" href="$LargeCliquesResult_8cpp.html" title=" " alt="" coords="252,98,498,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="294,56,357,98,352,97,292,61"/>
 </map>

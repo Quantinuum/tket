@@ -1,11 +1,11 @@
 <map id="include/tket/Graphs/AdjacencyData.hpp" name="include/tket/Graphs/AdjacencyData.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="63,5,215,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,56,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,48,60,87,57,83,111,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="80,93,123,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,47,115,82,110,80,127,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="147,93,205,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,44,167,80,162,82,145,47"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="230,93,293,119"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="170,43,233,84,230,88,167,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="60,5,212,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,56,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,50,61,90,58,86,106,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="79,98,120,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,49,114,85,110,82,124,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="144,98,202,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,48,163,84,158,83,144,53"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="226,98,288,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="168,48,228,89,222,89,167,53"/>
 </map>

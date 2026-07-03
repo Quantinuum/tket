@@ -1,5 +1,5 @@
 <map id="include/tket/Mapping/RoutingMethodCircuit.hpp" name="include/tket/Mapping/RoutingMethodCircuit.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="10,5,205,45"/>
-<area shape="rect" id="Node000002" href="$RoutingMethodCircuit_8cpp.html" title=" " alt="" coords="5,93,209,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,59,110,93,105,93,105,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="10,5,204,50"/>
+<area shape="rect" id="Node000002" href="$RoutingMethodCircuit_8cpp.html" title=" " alt="" coords="5,98,209,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,64,109,99,105,97,105,68"/>
 </map>

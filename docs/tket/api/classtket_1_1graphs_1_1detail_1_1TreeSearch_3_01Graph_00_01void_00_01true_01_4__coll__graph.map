@@ -1,13 +1,19 @@
 <map id="tket::graphs::detail::TreeSearch&lt; Graph, void, true &gt;" name="tket::graphs::detail::TreeSearch&lt; Graph, void, true &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="735,42,893,97"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="487,27,685,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="699,67,734,67,734,72,699,72"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="179,7,365,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,32,487,51,486,56,367,37"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,7,65,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="79,17,178,17,178,23,79,23"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="191,57,353,82"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="367,67,486,67,486,72,367,72"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="189,107,355,147"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="369,106,486,85,487,90,369,112"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="631,212,790,273"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="377,146,582,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="597,211,634,223,628,223,597,217"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="36,39,222,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="199,34,236,29,276,28,316,32,354,44,386,64,415,89,458,146,453,145,411,93,383,68,352,49,315,37,275,33,237,34,202,38"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="381,249,578,345"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="218,68,300,91,333,105,355,120,365,135,369,150,369,178,368,205,371,219,379,234,391,249,385,248,374,237,366,221,363,206,364,178,364,151,360,138,351,124,330,110,298,96,219,74"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="48,363,210,391"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="174,353,213,331,251,302,262,285,275,268,295,257,312,252,352,242,400,224,395,226,354,247,314,257,297,262,278,272,266,288,255,306,216,335,176,358"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="212,391,281,395,317,391,352,383,390,366,423,346,428,345,392,371,354,389,318,397,281,400,212,396"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="46,247,212,291"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="196,238,276,212,379,194,374,197,277,217,198,243"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="173,298,222,327,277,349,303,353,329,352,378,345,383,344,329,358,302,358,276,354,220,332,172,303"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,103,253,198"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="267,149,353,156,379,161,374,163,352,161,269,154"/>
+<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="227,205,255,233,263,250,265,267,268,281,278,293,301,305,327,312,383,317,377,318,326,318,299,310,275,297,263,283,260,268,258,252,250,236,226,210"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="593,268,628,262,634,260,594,273"/>
 </map>

@@ -4,7 +4,7 @@ var searchData=
   ['ccx_1',['CCX',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a5f36659cd231606e67248c8a6476b0b6',1,'tket']]],
   ['ch_2',['CH',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a1ee0bf89c5d1032317d13a2e022793c8',1,'tket']]],
   ['circbox_3',['CircBox',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a2e7c6b58cca98f2fe44f8548645ba6ad',1,'tket']]],
-  ['classical_4',['classical',['../namespacetket.html#a5339172fa072164a0c7baa91f2e5b536a2091523979dbedcad728958414922c72',1,'tket::Classical'],['../namespacetket.html#a4c73a949b027dea7f23b1d5a1bdd526ea2091523979dbedcad728958414922c72',1,'tket::Classical'],['../namespacetket_1_1zx.html#ae5c1261d41bb456a2457d06f3c52b9ffa2091523979dbedcad728958414922c72',1,'tket::zx::Classical']]],
+  ['classical_4',['Classical',['../namespacetket.html#a5339172fa072164a0c7baa91f2e5b536a2091523979dbedcad728958414922c72',1,'tket::Classical'],['../namespacetket.html#a4c73a949b027dea7f23b1d5a1bdd526ea2091523979dbedcad728958414922c72',1,'tket::Classical'],['../namespacetket_1_1zx.html#ae5c1261d41bb456a2457d06f3c52b9ffa2091523979dbedcad728958414922c72',1,'tket::zx::Classical']]],
   ['classicalnode_5',['ClassicalNode',['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a17eec2f5b6466bdc2248a76fe8c9a2c4a6ea5379b45e30e9da876276aab683109',1,'tket::Transforms::GreedyPauliSimp']]],
   ['classicaltransform_6',['ClassicalTransform',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a5d588264bfb80d9b94a293d436849215',1,'tket']]],
   ['clear_7',['Clear',['../namespacetket.html#a927f86cd8e86326952a143fdc6222ec7adc30bc0c7914db5918da4263fce93ad2',1,'tket']]],

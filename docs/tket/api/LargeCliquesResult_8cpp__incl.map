@@ -1,19 +1,19 @@
 <map id="src/Graphs/LargeCliquesResult.cpp" name="src/Graphs/LargeCliquesResult.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="89,5,336,31"/>
-<area shape="rect" id="Node000002" href="$LargeCliquesResult_8hpp.html" title=" " alt="" coords="5,79,191,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,33,138,73,135,69,194,29"/>
-<area shape="rect" id="Node000006" href="$AdjacencyData_8hpp.html" title=" " alt="" coords="215,86,442,111"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="231,29,302,76,299,80,228,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="51,167,121,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,119,92,154,87,153,92,118"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="233,167,275,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="137,116,221,159,219,163,134,121"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="145,167,208,192"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="119,117,157,155,153,159,115,121"/>
-<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="320,113,276,159,272,155,316,110"/>
-<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="307,114,212,163,210,158,305,109"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="382,167,433,192"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="342,110,388,155,384,159,338,113"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="299,167,358,192"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="331,112,331,153,326,153,326,112"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="89,5,335,33"/>
+<area shape="rect" id="Node000002" href="$LargeCliquesResult_8hpp.html" title=" " alt="" coords="5,81,190,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,35,142,74,139,69,196,32"/>
+<area shape="rect" id="Node000006" href="$AdjacencyData_8hpp.html" title=" " alt="" coords="214,90,440,117"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="231,31,299,80,294,81,230,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="54,174,123,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,124,94,159,89,157,93,128"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="233,174,274,201"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="140,124,221,167,216,169,138,129"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="146,174,209,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="120,124,157,162,151,162,118,129"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="317,117,277,164,274,160,313,119"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="305,117,216,168,214,163,300,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="380,174,431,201"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="341,115,385,163,380,162,338,120"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="298,174,356,201"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="329,116,329,160,325,157,325,120"/>
 </map>

@@ -1,36 +1,32 @@
 <map id="tket::CXMaker" name="tket::CXMaker">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1121,279,1235,305"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Circuit.html" title="A circuit." alt="" coords="905,245,1003,270"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="994,273,1042,288,1082,293,1121,293,1121,299,1081,298,1041,293,993,278"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1SliceIterator.html" title=" " alt="" coords="1111,171,1245,197"/>
-<area shape="poly" id="edge10_Node000003_Node000002" title=" " alt="" coords="1006,238,1137,194,1139,199,1008,243"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1154,208,1123,230,1088,248,1045,258,1003,261,1003,256,1044,253,1086,243,1121,225,1150,204"/>
-<area shape="rect" id="Node000004" href="$structtket_1_1CutFrontier.html" title=" " alt="" coords="891,83,1017,109"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1001,111,1088,146,1146,169,1144,174,1086,150,999,116"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="477,7,657,33"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="671,27,767,41,867,61,924,81,922,86,866,67,766,46,671,32"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="215,7,344,33"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="358,17,477,17,477,23,358,23"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="34,7,73,33"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,17,214,17,214,23,87,23"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="488,57,647,97"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="660,79,891,90,890,96,660,84"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="496,121,639,161"/>
-<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="653,145,1111,177,1110,182,652,150"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="652,132,866,109,890,106,891,111,867,115,653,138"/>
-<area shape="rect" id="Node000010" href="$classtket_1_1Circuit_1_1CommandIterator.html" title=" " alt="" coords="457,187,677,213"/>
-<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="691,210,867,235,906,243,905,248,866,240,691,215"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="498,237,637,277"/>
-<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="650,255,905,255,905,260,650,260"/>
-<area shape="rect" id="Node000012" href="$classtket_1_1WasmState.html" title="Location holding a wasm UID." alt="" coords="215,253,344,278"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="358,260,497,257,498,262,358,266"/>
-<area shape="rect" id="Node000013" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,279,101,305"/>
-<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="115,282,214,270,215,276,115,287"/>
-<area shape="rect" id="Node000015" href="$classtket_1_1RngState.html" title="Location holding an RNG UID." alt="" coords="222,303,337,329"/>
-<area shape="poly" id="edge17_Node000015_Node000013" title=" " alt="" coords="115,296,222,307,221,313,114,301"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="498,301,637,341"/>
-<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="650,308,866,275,904,267,906,272,867,280,651,314"/>
-<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="350,315,498,317,497,323,350,320"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="537,366,597,391"/>
-<area shape="poly" id="edge18_Node000002_Node000016" title=" " alt="" coords="611,378,664,378,729,373,799,360,866,336,889,322,910,304,941,269,945,272,914,307,892,326,868,341,800,365,730,378,664,383,611,384"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1004,334,1117,362"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Circuit.html" title="A circuit." alt="" coords="787,279,883,307"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="866,314,893,331,923,343,964,350,1007,354,1002,354,963,356,921,349,891,336,865,319"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1SliceIterator.html" title=" " alt="" coords="994,199,1127,227"/>
+<area shape="poly" id="edge9_Node000003_Node000002" title=" " alt="" coords="890,271,1017,228,1022,227,891,276"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1041,238,1010,269,971,292,927,302,884,302,883,297,926,297,969,288,1007,265,1036,240"/>
+<area shape="rect" id="Node000004" href="$structtket_1_1CutFrontier.html" title=" " alt="" coords="772,95,898,123"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="881,127,1031,199,1026,199,880,132"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="449,16,629,44"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="644,42,749,66,810,95,804,95,747,72,645,47"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="150,16,312,44"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="327,28,451,29,447,32,328,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="460,68,618,113"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="633,94,774,104,769,106,634,99"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="468,143,610,187"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="625,170,996,206,991,208,625,175"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="624,152,747,131,791,123,786,124,748,137,626,158"/>
+<area shape="rect" id="Node000009" href="$classtket_1_1Circuit_1_1CommandIterator.html" title=" " alt="" coords="429,220,649,248"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="664,247,748,262,797,279,791,278,747,268,664,252"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="470,272,608,317"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="624,291,789,293,783,293,624,297"/>
+<area shape="rect" id="Node000011" href="$classtket_1_1WasmState.html" title="Location holding a wasm UID." alt="" coords="167,288,295,316"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="310,298,472,295,467,297,311,303"/>
+<area shape="rect" id="Node000012" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,316,101,344"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="115,318,169,311,164,314,116,323"/>
+<area shape="rect" id="Node000014" href="$classtket_1_1RngState.html" title="Location holding an RNG UID." alt="" coords="174,342,288,370"/>
+<area shape="poly" id="edge16_Node000014_Node000012" title=" " alt="" coords="116,337,177,347,172,349,116,342"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="470,341,608,386"/>
+<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="623,349,747,322,796,308,801,307,748,327,624,354"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="303,355,472,362,467,362,303,360"/>
 </map>

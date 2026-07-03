@@ -1,14 +1,14 @@
 <map id="tket::NeighbourPlacements::Result" name="tket::NeighbourPlacements::Result">
-<area shape="rect" id="Node000001" title=" " alt="" coords="91,345,289,385"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,243,172,283"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,290,173,343,169,347,115,294"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Qubit.html" title="Location holding a qubit." alt="" coords="38,80,129,105"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="84,119,82,155,82,180,89,242,83,243,77,180,77,155,79,119"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="127,155,216,180"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="110,112,159,152,155,156,106,116"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="35,5,131,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="86,45,86,80,81,80,81,45"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="154,192,107,244,103,241,150,189"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="196,250,387,275"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="272,287,211,347,207,343,268,283"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="89,378,287,422"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,260,171,305"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,314,172,377,167,378,116,319"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Qubit.html" title="Location holding a qubit." alt="" coords="38,82,127,110"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,123,82,159,82,187,88,260,83,259,77,187,77,159,80,128"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="129,159,218,187"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="110,117,160,158,155,160,110,123"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="35,5,130,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="83,46,85,82,80,82,82,51"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="152,202,107,261,103,258,155,197"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="195,268,384,296"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="270,307,209,379,205,375,265,309"/>
 </map>

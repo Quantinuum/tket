@@ -1,9 +1,9 @@
 <map id="src/Graphs/ColouringPriority.hpp" name="src/Graphs/ColouringPriority.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="284,5,515,31"/>
-<area shape="rect" id="Node000002" href="$BruteForceColouring_8cpp.html" title=" " alt="" coords="5,79,260,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,37,177,81,175,76,342,32"/>
-<area shape="rect" id="Node000003" href="$ColouringPriority_8cpp.html" title=" " alt="" coords="285,79,514,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="402,44,402,79,397,79,397,44"/>
-<area shape="rect" id="Node000004" href="$GraphColouring_8cpp.html" title=" " alt="" coords="539,79,761,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="454,32,610,76,609,81,452,37"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="283,5,512,33"/>
+<area shape="rect" id="Node000002" href="$BruteForceColouring_8cpp.html" title=" " alt="" coords="5,81,259,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="338,38,180,83,179,78,332,37"/>
+<area shape="rect" id="Node000003" href="$ColouringPriority_8cpp.html" title=" " alt="" coords="283,81,512,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="399,47,399,82,395,79,395,51"/>
+<area shape="rect" id="Node000004" href="$GraphColouring_8cpp.html" title=" " alt="" coords="536,81,758,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="457,35,605,80,599,81,456,40"/>
 </map>

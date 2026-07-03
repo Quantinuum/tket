@@ -1,15 +1,15 @@
 <map id="tket::PredicateOp" name="tket::PredicateOp">
-<area shape="rect" id="Node000001" title="A classical operation with single output bit." alt="" coords="131,313,265,339"/>
-<area shape="rect" id="Node000006" href="$classtket_1_1ExplicitPredicateOp.html" title="A predicate defined explicitly by a truth table." alt="" coords="5,387,188,412"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="172,349,115,389,112,384,169,344"/>
-<area shape="rect" id="Node000007" href="$classtket_1_1RangePredicateOp.html" title="A predicate defined by a range of values in binary encoding." alt="" coords="212,387,387,412"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="227,344,284,384,281,389,224,349"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="119,240,277,265"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,279,201,313,195,313,195,279"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="133,167,263,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,206,201,240,195,240,195,206"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="161,93,235,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="201,132,201,167,195,167,195,132"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="125,5,271,45"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="201,59,201,93,195,93,195,59"/>
+<area shape="rect" id="Node000001" title="A classical operation with single output bit." alt="" coords="129,325,263,353"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1ExplicitPredicateOp.html" title="A predicate defined explicitly by a truth table." alt="" coords="5,401,187,428"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="169,361,115,403,112,398,163,363"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1RangePredicateOp.html" title="A predicate defined by a range of values in binary encoding." alt="" coords="210,401,384,428"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="227,360,282,400,277,400,226,365"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="117,249,275,277"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,291,198,326,194,323,194,295"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="131,174,261,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,215,199,250,193,248,195,220"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="160,98,232,126"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,139,199,174,193,173,195,144"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="124,5,268,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="197,63,199,98,193,97,195,68"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="tket::Transforms::GreedyPauliSimp::SingleNode" name="tket::Transforms::GreedyPauliSimp::SingleNode">
-<area shape="rect" id="Node000001" title="Base class for nodes defined by a single Pauli string." alt="" coords="236,37,419,77"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1MidMeasure.html" title="Measurement that has quantum or classical successors." alt="" coords="467,5,649,45"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="432,40,466,35,467,41,433,45"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliRotation.html" title="A Pauli exponential defined by a dense Pauli string and a rotation angle." alt="" coords="467,69,649,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="433,69,467,74,466,79,432,74"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="5,37,188,77"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,55,236,55,236,60,201,60"/>
+<area shape="rect" id="Node000001" title="Base class for nodes defined by a single Pauli string." alt="" coords="235,40,416,85"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1MidMeasure.html" title="Measurement that has quantum or classical successors." alt="" coords="464,5,645,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="431,44,466,41,461,42,432,49"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliRotation.html" title="A Pauli exponential defined by a dense Pauli string and a rotation angle." alt="" coords="464,75,645,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="432,76,466,83,461,83,431,81"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="5,40,187,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,60,237,62,232,63,202,65"/>
 </map>

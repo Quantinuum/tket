@@ -1,7 +1,7 @@
 <map id="tket::zx::Flow" name="tket::zx::Flow">
-<area shape="rect" id="Node000001" title="Data structure for flow in qubit MBQC." alt="" coords="161,108,270,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,196,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,52,203,106,199,110,133,56"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="220,13,440,38"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="307,48,231,110,228,106,304,44"/>
+<area shape="rect" id="Node000001" title="Data structure for flow in qubit MBQC." alt="" coords="159,123,268,151"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,195,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,58,202,122,197,123,133,63"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="218,14,438,42"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="306,52,229,125,226,120,300,53"/>
 </map>

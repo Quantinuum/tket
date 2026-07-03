@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structtket_1_1internal_1_1GateUnitarySparseMatrix.html" title="For getting sparse unitary matrices directly for specific gates, without constructing the dense matri..." alt="" coords="5,5,197,45"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,5,199,84"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="247,5,471,84"/>
+<area shape="poly" id="edge138_Node000000_Node000001" title=" " alt="" coords="214,42,249,44,243,45,215,47"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__impl.html" title=" " alt="" coords="519,14,689,76"/>
+<area shape="poly" id="edge139_Node000001_Node000002" title=" " alt="" coords="487,42,521,45,516,45,487,47"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="tket::zx::ZXBox" name="tket::zx::ZXBox">
-<area shape="rect" id="Node000001" title=" " alt="" coords="20,152,141,177"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXDirected.html" title="Virtual subclass of ZXGen for directed (non&#45;commutative) generators." alt="" coords="5,79,156,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,118,83,152,78,152,78,118"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="19,5,142,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,44,83,79,78,79,78,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="20,157,141,184"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXDirected.html" title="Virtual subclass of ZXGen for directed (non&#45;commutative) generators." alt="" coords="5,81,156,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,123,83,157,78,155,79,126"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="20,5,141,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,46,83,81,78,80,79,51"/>
 </map>

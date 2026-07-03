@@ -1,3 +1,17 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structtket_1_1TagID.html" title=" " alt="" coords="5,5,96,31"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1RoutingMethod.html" title=" " alt="" coords="5,177,159,205"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1AASLabellingMethod.html" title=" " alt="" coords="226,5,414,33"/>
+<area shape="poly" id="edge167_Node000000_Node000001" title=" " alt="" coords="97,162,140,102,170,70,205,44,235,32,231,35,208,48,174,74,144,105,101,165"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1AASRouteRoutingMethod.html" title=" " alt="" coords="212,57,429,85"/>
+<area shape="poly" id="edge168_Node000000_Node000002" title=" " alt="" coords="107,165,151,128,205,94,238,84,234,87,208,99,154,132,110,168"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1BoxDecompositionRoutingMethod.html" title=" " alt="" coords="207,109,434,154"/>
+<area shape="poly" id="edge169_Node000000_Node000003" title=" " alt="" coords="153,171,231,152,227,156,156,175"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1LexiLabellingMethod.html" title=" " alt="" coords="226,177,415,205"/>
+<area shape="poly" id="edge170_Node000000_Node000004" title=" " alt="" coords="173,189,227,190,223,192,175,194"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1LexiRouteRoutingMethod.html" title=" " alt="" coords="211,229,430,257"/>
+<area shape="poly" id="edge171_Node000000_Node000005" title=" " alt="" coords="164,206,256,227,251,230,164,212"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1MultiGateReorderRoutingMethod.html" title=" " alt="" coords="211,281,430,326"/>
+<area shape="poly" id="edge172_Node000000_Node000006" title=" " alt="" coords="115,211,159,240,208,266,239,280,233,281,206,271,156,244,115,217"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1RoutingMethodCircuit.html" title=" " alt="" coords="223,349,418,377"/>
+<area shape="poly" id="edge173_Node000000_Node000007" title=" " alt="" coords="100,216,144,278,174,309,208,336,232,349,227,349,205,340,170,313,140,281,98,221"/>
 </map>

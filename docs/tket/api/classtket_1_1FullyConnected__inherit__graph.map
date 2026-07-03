@@ -1,9 +1,9 @@
 <map id="tket::FullyConnected" name="tket::FullyConnected">
-<area shape="rect" id="Node000001" title=" " alt="" coords="47,269,202,295"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1ArchitectureBase.html" title=" " alt="" coords="29,167,220,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,235,127,269,122,269,122,235"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1CompleteGraph.html" title=" " alt="" coords="20,79,229,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,132,127,167,122,167,122,132"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1AbstractGraph.html" title="Abstract class for representing graphs." alt="" coords="5,5,244,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="127,44,127,79,122,79,122,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="32,300,187,328"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1ArchitectureBase.html" title=" " alt="" coords="14,191,205,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,266,112,301,107,299,108,270"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1CompleteGraph.html" title=" " alt="" coords="5,98,214,143"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,156,112,191,107,190,108,161"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1AbstractGraph.html" title=" " alt="" coords="10,5,209,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="110,63,112,98,107,97,109,68"/>
 </map>

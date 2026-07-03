@@ -1,5 +1,13 @@
 <map id="tket::BoolPauli" name="tket::BoolPauli">
-<area shape="rect" id="Node000001" title="Boolean encoding of Pauli &lt;x, z&gt; = &lt;false, false&gt; ==&gt; I &lt;x, z&gt; = &lt;false, true&gt; ==&gt; Z &lt;x,..." alt="" coords="339,27,453,53"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,232,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,37,339,37,339,43,246,43"/>
+<area shape="rect" id="Node000001" title="Boolean encoding of Pauli &lt;x, z&gt; = &lt;false, false&gt; ==&gt; I &lt;x, z&gt; = &lt;false, true&gt; ==&gt; Z &lt;x,..." alt="" coords="38,81,152,108"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="323,74,509,118"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="167,92,324,94,320,97,168,98"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="323,143,509,188"/>
+<area shape="poly" id="edge5_Node000004_Node000001" title=" " alt="" coords="159,111,209,124,325,149,320,151,208,129,159,116"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="626,57,851,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="608,62,521,47,420,36,314,34,261,38,209,47,162,63,122,82,119,78,160,58,208,41,260,33,313,28,420,30,522,42,614,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="524,93,628,96,623,96,525,99"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="524,140,601,124,623,122,628,121,603,129,525,146"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,193,185,220"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="200,210,249,208,298,202,357,189,362,188,299,208,250,213,200,215"/>
 </map>

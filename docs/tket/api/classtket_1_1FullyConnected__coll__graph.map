@@ -1,13 +1,11 @@
 <map id="tket::FullyConnected" name="tket::FullyConnected">
-<area shape="rect" id="Node000001" title=" " alt="" coords="47,449,202,475"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1ArchitectureBase.html" title=" " alt="" coords="29,345,220,400"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,414,127,449,122,449,122,414"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1CompleteGraph.html" title=" " alt="" coords="20,256,229,296"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,310,127,345,122,345,122,310"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1AbstractGraph.html" title="Abstract class for representing graphs." alt="" coords="5,181,244,207"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="127,220,127,256,122,256,122,220"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="71,93,179,119"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="127,133,127,181,122,181,122,133"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="105,5,144,31"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="127,45,127,93,122,93,122,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="32,405,187,433"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1ArchitectureBase.html" title=" " alt="" coords="14,294,205,356"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,369,112,406,107,404,108,373"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1CompleteGraph.html" title=" " alt="" coords="5,200,214,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,258,112,294,107,293,108,263"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1AbstractGraph.html" title=" " alt="" coords="10,106,209,151"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="110,164,112,200,107,199,109,169"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="43,5,176,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="110,46,112,106,107,105,109,51"/>
 </map>

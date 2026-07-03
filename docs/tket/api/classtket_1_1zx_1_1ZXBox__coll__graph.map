@@ -1,11 +1,11 @@
 <map id="tket::zx::ZXBox" name="tket::zx::ZXBox">
-<area shape="rect" id="Node000001" title=" " alt="" coords="112,196,233,221"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXDirected.html" title="Virtual subclass of ZXGen for directed (non&#45;commutative) generators." alt="" coords="5,101,156,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,134,163,194,159,198,100,138"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="19,5,142,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,44,83,101,78,101,78,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="181,93,351,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="239,145,186,198,183,194,235,141"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1zx_1_1ZXDiagram.html" title=" " alt="" coords="190,5,342,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,44,269,93,263,93,263,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="111,224,231,251"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXDirected.html" title="Virtual subclass of ZXGen for directed (non&#45;commutative) generators." alt="" coords="5,114,156,142"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,152,163,222,157,224,100,156"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="20,5,141,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,46,83,114,78,113,79,51"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="179,106,350,151"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,162,184,225,181,221,233,163"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1zx_1_1ZXDiagram.html" title=" " alt="" coords="189,5,340,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="266,47,267,106,262,104,263,51"/>
 </map>

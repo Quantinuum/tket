@@ -1,5 +1,5 @@
 <map id="tket::ConnectivityPredicate" name="tket::ConnectivityPredicate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,204,104"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Predicate.html" title=" " alt="" coords="47,5,163,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,44,107,79,102,79,102,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,203,109"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Predicate.html" title=" " alt="" coords="46,5,162,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,47,106,82,102,79,102,51"/>
 </map>

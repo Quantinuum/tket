@@ -20,8 +20,9 @@ var searchData=
   ['treesearch_3c_20args_2e_2e_2e_20_3e_17',['TreeSearch&lt; Args... &gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearch.html',1,'tket::graphs::detail']]],
   ['treesearch_3c_20graph_2c_20void_2c_20true_20_3e_18',['TreeSearch&lt; Graph, void, true &gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearch_3_01Graph_00_01void_00_01true_01_4.html',1,'tket::graphs::detail']]],
   ['treesearchbase_19',['TreeSearchBase',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html',1,'tket::graphs::detail']]],
-  ['treesearchbase_3c_20args_2e_2e_2e_2c_20boost_3a_3aassociative_5fproperty_5fmap_3c_20void_20_3e_20_3e_20',['TreeSearchBase&lt; Args..., boost::associative_property_map&lt; void &gt; &gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html',1,'tket::graphs::detail']]],
+  ['treesearchbase_3c_20graph_2c_20boost_3a_3aassociative_5fproperty_5fmap_3c_20pmap_20_3e_20_3e_20',['TreeSearchBase&lt; Graph, boost::associative_property_map&lt; PMap &gt; &gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html',1,'tket::graphs::detail']]],
   ['treesearchbase_3c_20graph_2c_20boost_3a_3aassociative_5fproperty_5fmap_3c_20void_20_3e_20_3e_21',['TreeSearchBase&lt; Graph, boost::associative_property_map&lt; void &gt; &gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html',1,'tket::graphs::detail']]],
   ['treesearchbase_3c_20graph_2c_20decltype_28boost_3a_3aget_28boost_3a_3avertex_5findex_2c_20std_3a_3adeclval_3c_20graph_20_3e_28_29_29_29_3e_22',['TreeSearchBase&lt; Graph, decltype(boost::get(boost::vertex_index, std::declval&lt; Graph &gt;()))&gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html',1,'tket::graphs::detail']]],
-  ['twoqbfidelities_23',['TwoQbFidelities',['../structtket_1_1Transforms_1_1TwoQbFidelities.html',1,'tket::Transforms']]]
+  ['treesearchbase_3c_20graph_2c_20pmap_20_3e_23',['TreeSearchBase&lt; Graph, PMap &gt;',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html',1,'tket::graphs::detail']]],
+  ['twoqbfidelities_24',['TwoQbFidelities',['../structtket_1_1Transforms_1_1TwoQbFidelities.html',1,'tket::Transforms']]]
 ];

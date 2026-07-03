@@ -1,9 +1,9 @@
 <map id="tket::MultiplexedRotationBox" name="tket::MultiplexedRotationBox">
-<area shape="rect" id="Node000001" title="Multiplexed single&#45;axis rotations." alt="" coords="5,240,216,265"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="71,167,151,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,206,113,240,108,240,108,206"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="74,93,147,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,132,113,167,108,167,108,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="38,5,183,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="113,59,113,93,108,93,108,59"/>
+<area shape="rect" id="Node000001" title="Multiplexed single&#45;axis rotations." alt="" coords="5,249,216,277"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="71,174,150,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,215,113,250,108,248,109,219"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="74,98,147,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,139,113,174,108,172,109,144"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="38,5,183,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,63,113,98,108,97,110,68"/>
 </map>

@@ -1,11 +1,11 @@
 <map id="src/Graphs/ColouringPriority.hpp" name="src/Graphs/ColouringPriority.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="44,5,275,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,33,73,74,71,69,139,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,143,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,32,137,68,132,65,151,30"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="167,79,226,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,30,187,65,182,68,163,32"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="251,79,313,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="180,28,252,69,249,74,178,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="41,5,271,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,75,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,33,75,75,72,70,133,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,81,141,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,32,135,69,131,65,147,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="164,81,222,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,31,183,68,177,67,161,36"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="246,81,308,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="178,31,246,72,240,73,177,36"/>
 </map>

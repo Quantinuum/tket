@@ -1,7 +1,7 @@
 <map id="tket::MetaOp" name="tket::MetaOp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="25,167,131,192"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="41,93,115,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,132,81,167,75,167,75,132"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,151,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,59,81,93,75,93,75,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="25,174,130,201"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="41,98,114,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,140,80,174,75,172,76,143"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,150,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,63,80,98,75,97,76,68"/>
 </map>

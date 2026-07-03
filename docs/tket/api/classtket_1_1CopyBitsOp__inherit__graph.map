@@ -1,11 +1,11 @@
 <map id="tket::CopyBitsOp" name="tket::CopyBitsOp">
-<area shape="rect" id="Node000001" title="An operation to copy some bit values." alt="" coords="19,313,150,339"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="5,240,164,265"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,279,87,313,82,313,82,279"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="19,167,150,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,206,87,240,82,240,82,206"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="48,93,121,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,132,87,167,82,167,82,132"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="12,5,157,45"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,59,87,93,82,93,82,59"/>
+<area shape="rect" id="Node000001" title="An operation to copy some bit values." alt="" coords="19,325,150,353"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="5,249,164,277"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,291,87,325,82,324,83,295"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="19,174,150,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,215,87,249,82,248,83,220"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="48,98,121,126"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,139,87,174,82,173,84,144"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="12,5,157,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="85,63,87,98,82,97,84,68"/>
 </map>

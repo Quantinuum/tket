@@ -1,9 +1,9 @@
 <map id="include/tket/Predicates/PassLibrary.hpp" name="include/tket/Predicates/PassLibrary.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="299,5,469,45"/>
-<area shape="rect" id="Node000002" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,93,237,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="309,52,160,96,159,91,307,47"/>
-<area shape="rect" id="Node000003" href="$PassGenerators_8cpp.html" title=" " alt="" coords="261,93,507,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="387,59,387,93,381,93,381,59"/>
-<area shape="rect" id="Node000004" href="$PassLibrary_8cpp.html" title=" " alt="" coords="531,93,747,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="459,47,602,91,601,96,457,52"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="298,5,467,50"/>
+<area shape="rect" id="Node000002" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,98,237,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="301,55,164,100,162,95,296,55"/>
+<area shape="rect" id="Node000003" href="$PassGenerators_8cpp.html" title=" " alt="" coords="260,98,504,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="384,64,384,99,380,96,380,68"/>
+<area shape="rect" id="Node000004" href="$PassLibrary_8cpp.html" title=" " alt="" coords="528,98,743,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="464,53,598,97,592,97,464,58"/>
 </map>

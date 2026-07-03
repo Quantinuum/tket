@@ -1,17 +1,17 @@
 <map id="tket::UnitID" name="tket::UnitID">
-<area shape="rect" id="Node000001" title="Location holding a bit or qubit of information." alt="" coords="163,5,259,31"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Bit.html" title="Location holding a bit." alt="" coords="5,79,79,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,38,71,81,69,76,170,34"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Qubit.html" title="Location holding a qubit." alt="" coords="103,79,194,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,43,161,80,157,77,190,39"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1RngState.html" title="Location holding an RNG UID." alt="" coords="218,79,333,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="233,39,267,77,263,80,229,43"/>
-<area shape="rect" id="Node000007" href="$classtket_1_1WasmState.html" title="Location holding a wasm UID." alt="" coords="357,79,487,104"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="259,32,389,76,387,81,257,37"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="104,152,193,177"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="151,118,151,152,146,152,146,118"/>
-<area shape="rect" id="Node000006" href="$classtket_1_1RngNode.html" title="RNG UID." alt="" coords="218,152,333,177"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="278,118,278,152,273,152,273,118"/>
-<area shape="rect" id="Node000008" href="$classtket_1_1WasmNode.html" title="WASM UID." alt="" coords="357,152,487,177"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="425,118,425,152,419,152,419,118"/>
+<area shape="rect" id="Node000001" title="Location holding a bit or qubit of information." alt="" coords="162,5,257,33"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Bit.html" title="Location holding a bit." alt="" coords="5,81,78,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,42,73,83,70,78,167,37"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Qubit.html" title="Location holding a qubit." alt="" coords="102,81,192,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,43,160,82,156,79,186,47"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1RngState.html" title="Location holding an RNG UID." alt="" coords="216,81,329,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="231,42,264,81,258,80,230,48"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1WasmState.html" title="Location holding a wasm UID." alt="" coords="353,81,482,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="261,36,383,80,378,81,260,41"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="103,157,191,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="149,123,149,158,144,155,145,126"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1RngNode.html" title="RNG UID." alt="" coords="216,157,329,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="274,123,274,158,270,155,270,126"/>
+<area shape="rect" id="Node000008" href="$classtket_1_1WasmNode.html" title="WASM UID." alt="" coords="353,157,482,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="419,123,420,158,415,155,416,126"/>
 </map>

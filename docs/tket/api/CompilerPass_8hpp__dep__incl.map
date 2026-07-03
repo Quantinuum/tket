@@ -1,18 +1,18 @@
 <map id="include/tket/Predicates/CompilerPass.hpp" name="include/tket/Predicates/CompilerPass.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="291,5,461,45"/>
-<area shape="rect" id="Node000002" href="$PassGenerators_8hpp.html" title=" " alt="" coords="168,93,339,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="339,55,282,95,279,91,336,51"/>
-<area shape="rect" id="Node000003" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,181,237,207"/>
-<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="278,39,214,59,184,75,158,95,143,116,133,139,125,182,119,181,128,138,138,113,154,91,181,70,212,54,276,34"/>
-<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="261,181,507,207"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="380,59,386,181,381,181,375,59"/>
-<area shape="rect" id="Node000005" href="$PassLibrary_8hpp.html" title=" " alt="" coords="413,93,584,133"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="416,51,473,91,470,95,413,55"/>
-<area shape="rect" id="Node000006" href="$PassLibrary_8cpp.html" title=" " alt="" coords="531,181,747,207"/>
-<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="476,35,540,55,570,71,598,91,615,113,628,137,639,180,634,182,623,139,611,116,594,95,567,76,538,60,474,41"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="211,143,142,183,139,179,209,138"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="298,138,366,179,363,183,295,143"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="400,138,177,184,176,179,399,133"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="461,143,402,183,399,179,458,139"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="545,138,619,179,617,183,543,142"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="294,5,463,50"/>
+<area shape="rect" id="Node000002" href="$PassGenerators_8hpp.html" title=" " alt="" coords="171,98,340,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="340,58,286,100,284,95,335,60"/>
+<area shape="rect" id="Node000003" href="$CompilerPass_8cpp.html" title=" " alt="" coords="5,191,237,218"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="276,42,216,63,186,79,160,100,144,121,134,146,124,192,120,189,129,145,140,119,156,96,183,75,214,59,281,39"/>
+<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="260,191,504,218"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="381,64,384,191,380,189,377,67"/>
+<area shape="rect" id="Node000005" href="$PassLibrary_8hpp.html" title=" " alt="" coords="416,98,586,143"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="420,57,474,98,469,97,419,62"/>
+<area shape="rect" id="Node000006" href="$PassLibrary_8cpp.html" title=" " alt="" coords="528,191,743,218"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="478,38,543,59,573,75,600,96,617,119,628,145,637,192,632,189,623,146,612,121,596,100,570,79,541,63,478,43"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,150,144,193,141,188,205,151"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="302,149,365,190,359,190,301,154"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="402,146,183,193,182,187,400,141"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="460,151,402,192,400,188,455,152"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="550,148,617,191,611,190,549,153"/>
 </map>

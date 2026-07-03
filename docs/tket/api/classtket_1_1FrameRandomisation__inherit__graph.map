@@ -1,9 +1,9 @@
 <map id="tket::FrameRandomisation" name="tket::FrameRandomisation">
-<area shape="rect" id="Node000001" title=" " alt="" coords="153,5,347,31"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1PauliFrameRandomisation.html" title=" " alt="" coords="5,79,231,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,39,141,81,138,76,216,35"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1UniversalFrameRandomisation.html" title=" " alt="" coords="255,79,511,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="285,35,363,76,360,81,282,39"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1PowerCycle.html" title=" " alt="" coords="53,152,183,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,118,121,152,115,152,115,118"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,5,346,33"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1PauliFrameRandomisation.html" title=" " alt="" coords="5,81,230,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,43,142,83,140,78,215,39"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1UniversalFrameRandomisation.html" title=" " alt="" coords="254,81,509,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="287,38,361,80,355,81,286,44"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1PowerCycle.html" title=" " alt="" coords="52,157,183,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,123,120,157,115,155,116,126"/>
 </map>

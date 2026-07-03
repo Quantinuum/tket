@@ -1,9 +1,9 @@
 <map id="include/tket/Mapping/LexiRoute.hpp" name="include/tket/Mapping/LexiRoute.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="267,5,426,45"/>
-<area shape="rect" id="Node000002" href="$LexiLabelling_8cpp.html" title=" " alt="" coords="5,101,224,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,53,146,103,145,98,282,48"/>
-<area shape="rect" id="Node000003" href="$LexiRoute_8cpp.html" title=" " alt="" coords="248,101,445,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="349,59,349,100,344,100,344,59"/>
-<area shape="rect" id="Node000004" href="$LexiRouteRoutingMethod_8cpp.html" title=" " alt="" coords="470,93,690,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="412,48,530,91,528,96,410,53"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="266,5,423,50"/>
+<area shape="rect" id="Node000002" href="$LexiLabelling_8cpp.html" title=" " alt="" coords="5,106,223,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,56,149,108,147,103,273,56"/>
+<area shape="rect" id="Node000003" href="$LexiRoute_8cpp.html" title=" " alt="" coords="246,106,443,134"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="347,64,347,107,342,104,343,67"/>
+<area shape="rect" id="Node000004" href="$LexiRouteRoutingMethod_8cpp.html" title=" " alt="" coords="467,98,686,143"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="415,53,524,97,518,98,414,59"/>
 </map>

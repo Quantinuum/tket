@@ -1,19 +1,19 @@
 <map id="tket::Transforms::GreedyPauliSimp::PauliNode" name="tket::Transforms::GreedyPauliSimp::PauliNode">
-<area shape="rect" id="Node000001" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="5,133,188,173"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ACPairNode.html" title="Base class for nodes defined by a pair of anti&#45;commuting Pauli strings." alt="" coords="247,37,429,77"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,125,235,87,268,75,270,80,237,92,151,130"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ClassicalNode.html" title="Black box node for classical Ops." alt="" coords="245,101,431,141"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="201,137,244,131,245,136,202,142"/>
-<area shape="rect" id="Node000006" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ConditionalBlock.html" title="Conditional block for rotations." alt="" coords="236,165,440,205"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="202,165,236,169,236,174,201,170"/>
-<area shape="rect" id="Node000007" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1SingleNode.html" title="Base class for nodes defined by a single Pauli string." alt="" coords="247,229,429,269"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="151,177,237,215,270,227,268,232,235,220,149,182"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliPropagation.html" title="Defines how a Pauli X and a Pauli Z on the same qubit get propagated from right to left through a Cli..." alt="" coords="488,5,691,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,41,487,36,488,41,443,47"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1Reset.html" title="Reset operation defined by a pair of anti&#45;commuting strings For example, a tket Reset OpType can be d..." alt="" coords="498,69,681,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="444,68,498,75,497,80,443,73"/>
-<area shape="rect" id="Node000008" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1MidMeasure.html" title="Measurement that has quantum or classical successors." alt="" coords="498,197,681,237"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="443,233,497,226,498,232,444,239"/>
-<area shape="rect" id="Node000009" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliRotation.html" title="A Pauli exponential defined by a dense Pauli string and a rotation angle." alt="" coords="498,261,681,301"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="444,260,498,267,497,272,443,265"/>
+<area shape="rect" id="Node000001" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="5,144,187,189"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ACPairNode.html" title="Base class for nodes defined by a pair of anti&#45;commuting Pauli strings." alt="" coords="246,40,427,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,134,234,95,267,84,263,87,236,99,153,139"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ClassicalNode.html" title="Black box node for classical Ops." alt="" coords="244,109,429,154"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="202,148,245,144,241,146,203,154"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ConditionalBlock.html" title="Conditional block for rotations." alt="" coords="235,179,438,223"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="202,179,237,186,232,187,202,184"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1SingleNode.html" title="Base class for nodes defined by a single Pauli string." alt="" coords="246,248,427,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="152,193,236,233,268,248,262,247,234,238,151,199"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliPropagation.html" title="Defines how a Pauli X and a Pauli Z on the same qubit get propagated from right to left through a Cli..." alt="" coords="486,5,688,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,45,488,41,483,43,443,50"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1Reset.html" title="Reset operation defined by a pair of anti&#45;commuting strings For example, a tket Reset OpType can be d..." alt="" coords="496,75,678,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="442,74,499,84,494,85,443,80"/>
+<area shape="rect" id="Node000008" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1MidMeasure.html" title="Measurement that has quantum or classical successors." alt="" coords="496,179,678,223"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="434,241,501,224,506,223,435,246"/>
+<area shape="rect" id="Node000009" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliRotation.html" title="A Pauli exponential defined by a dense Pauli string and a rotation angle." alt="" coords="496,248,678,293"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="442,268,499,270,494,270,443,273"/>
 </map>

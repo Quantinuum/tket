@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1LexiRoute.html" title="A class for modifying a Circuit held in a MappingFrontier object with either an Architecture permitte..." alt="" coords="5,5,125,31"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,66,171,128"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="219,5,459,84"/>
+<area shape="poly" id="edge143_Node000000_Node000001" title=" " alt="" coords="185,74,221,69,216,71,187,79"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base__with__ind.html" title=" " alt="" coords="249,108,428,187"/>
+<area shape="poly" id="edge144_Node000000_Node000002" title=" " alt="" coords="186,114,251,129,246,130,186,119"/>
 </map>

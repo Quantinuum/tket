@@ -1,5 +1,5 @@
 <map id="tket::Transforms::GreedyPauliSimp::ConditionalBlock" name="tket::Transforms::GreedyPauliSimp::ConditionalBlock">
-<area shape="rect" id="Node000001" title="Conditional block for rotations." alt="" coords="5,93,209,133"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="16,5,199,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,59,110,93,105,93,105,59"/>
+<area shape="rect" id="Node000001" title="Conditional block for rotations." alt="" coords="5,98,209,143"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="16,5,198,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,64,109,99,105,97,105,68"/>
 </map>

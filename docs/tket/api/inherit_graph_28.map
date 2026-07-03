@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1CompilationUnit.html" title=" " alt="" coords="5,5,167,31"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1AbstractSquasher.html" title="Abstract Squasher interface." alt="" coords="5,44,174,72"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1Transforms_1_1PQPSquasher.html" title="Implements the AbstractSquasher interface for SingleQubitSquash." alt="" coords="222,14,442,42"/>
+<area shape="poly" id="edge94_Node000000_Node000001" title=" " alt="" coords="189,43,224,41,219,42,190,48"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1StandardSquasher.html" title="Implements the AbstractSquasher interface for SingleQubitSquash." alt="" coords="236,65,428,110"/>
+<area shape="poly" id="edge96_Node000000_Node000003" title=" " alt="" coords="189,68,238,76,233,76,189,73"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1RzPhasedXSquasher.html" title="Squash Rx, Rz gates into PhasedX and Rz gates." alt="" coords="490,5,687,50"/>
+<area shape="poly" id="edge95_Node000001_Node000002" title=" " alt="" coords="457,25,492,27,487,28,458,30"/>
 </map>

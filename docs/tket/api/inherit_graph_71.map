@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structtket_1_1graphs_1_1utils_1_1detail_1_1is__directed__struct.html" title=" " alt="" coords="5,5,187,75"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="5,124,211,203"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1detail_1_1TreeSearch_3_01Graph_00_01void_00_01true_01_4.html" title=" " alt="" coords="277,36,435,97"/>
+<area shape="poly" id="edge119_Node000000_Node000001" title=" " alt="" coords="223,116,274,98,279,97,225,121"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1detail_1_1TreeSearch.html" title=" " alt="" coords="259,133,453,195"/>
+<area shape="poly" id="edge120_Node000000_Node000003" title=" " alt="" coords="226,161,261,164,255,164,226,166"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="9,5,207,101"/>
+<area shape="poly" id="edge121_Node000002_Node000001" title=" " alt="" coords="222,57,279,61,274,63,223,62"/>
 </map>

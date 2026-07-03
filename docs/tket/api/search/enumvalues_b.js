@@ -1,7 +1,7 @@
 var searchData=
 [
   ['matching_0',['Matching',['../namespacetket.html#aaa9022e831653e0daea704d481725e3baca1b12f70c0a8471440324a11e4590af',1,'tket']]],
-  ['measure_1',['measure',['../namespacetket.html#a5339172fa072164a0c7baa91f2e5b536a0cbbe0321e0c40dfa77a159ef6bfad6b',1,'tket::Measure'],['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a0cbbe0321e0c40dfa77a159ef6bfad6b',1,'tket::Measure']]],
+  ['measure_1',['Measure',['../namespacetket.html#a5339172fa072164a0c7baa91f2e5b536a0cbbe0321e0c40dfa77a159ef6bfad6b',1,'tket::Measure'],['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a0cbbe0321e0c40dfa77a159ef6bfad6b',1,'tket::Measure']]],
   ['merge_2',['Merge',['../classtket_1_1Circuit.html#a8c16bfe4c55bd9f2d3565c0dd9377931a68be4837f6c739877233e527a996dd00',1,'tket::Circuit']]],
   ['midmeasure_3',['MidMeasure',['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a17eec2f5b6466bdc2248a76fe8c9a2c4a3e13a308faee88597d93b239d7a5a4ee',1,'tket::Transforms::GreedyPauliSimp']]],
   ['multibit_4',['MultiBit',['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a1a267ae20c0b76a944af1589009da8df',1,'tket']]],

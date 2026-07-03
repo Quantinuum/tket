@@ -1,9 +1,9 @@
 <map id="tket::zx::BasicGen" name="tket::zx::BasicGen">
-<area shape="rect" id="Node000001" title="Virtual subclass of ZXGen for undirected (commutative) generators." alt="" coords="98,79,237,104"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1CliffordGen.html" title="Implementation of BasicGen for Clifford generators." alt="" coords="5,152,156,177"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,115,97,154,93,150,141,110"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1zx_1_1PhasedGen.html" title="Implementation of BasicGen for phased generators, e.g." alt="" coords="180,152,331,177"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,110,243,150,239,154,190,115"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="106,5,229,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,44,170,79,165,79,165,44"/>
+<area shape="rect" id="Node000001" title="Virtual subclass of ZXGen for undirected (commutative) generators." alt="" coords="98,81,236,109"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1CliffordGen.html" title="Implementation of BasicGen for Clifford generators." alt="" coords="5,157,156,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,118,97,158,94,154,138,119"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1zx_1_1PhasedGen.html" title="Implementation of BasicGen for phased generators, e.g." alt="" coords="180,157,330,184"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,116,242,156,237,156,194,121"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="106,5,228,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,47,170,82,165,80,166,51"/>
 </map>

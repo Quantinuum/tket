@@ -1,3 +1,95 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structtket_1_1BestTsaWithArch.html" title="A simple wrapper around BestFullTsa from TokenSwapping, using Architecture objects directly to find d..." alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,1262,150,1307"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1CompositeGateDef.html" title=" " alt="" coords="198,1244,376,1272"/>
+<area shape="poly" id="edge47_Node000000_Node000001" title=" " alt="" coords="164,1271,199,1268,195,1271,166,1276"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="251,1296,323,1324"/>
+<area shape="poly" id="edge48_Node000000_Node000002" title=" " alt="" coords="164,1292,253,1304,248,1307,165,1298"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1BarrierOp.html" title=" " alt="" coords="431,620,547,648"/>
+<area shape="poly" id="edge49_Node000002_Node000003" title=" " alt="" coords="337,1303,358,1295,374,1281,388,1258,397,1229,406,1156,405,1068,399,974,393,879,392,790,400,715,409,684,422,659,439,646,436,650,426,662,413,686,405,716,397,790,399,878,405,973,411,1068,411,1156,402,1231,392,1261,378,1285,360,1299,339,1308"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="450,672,529,700"/>
+<area shape="poly" id="edge50_Node000002_Node000004" title=" " alt="" coords="337,1302,358,1294,374,1281,388,1261,401,1235,424,1165,443,1080,458,988,477,813,486,703,488,698,482,814,463,989,448,1081,429,1166,406,1237,393,1264,378,1285,360,1299,340,1307"/>
+<area shape="rect" id="Node000029" href="$classtket_1_1ClExprOp.html" title=" " alt="" coords="432,1217,546,1245"/>
+<area shape="poly" id="edge75_Node000002_Node000029" title=" " alt="" coords="337,1294,375,1281,423,1255,454,1244,449,1247,425,1260,377,1286,339,1299"/>
+<area shape="rect" id="Node000030" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="424,1269,554,1297"/>
+<area shape="poly" id="edge76_Node000002_Node000030" title=" " alt="" coords="338,1301,426,1291,421,1293,339,1306"/>
+<area shape="rect" id="Node000043" href="$classtket_1_1Conditional.html" title="Decorates another op, adding a QASM&#45;style classical condition." alt="" coords="425,1321,553,1349"/>
+<area shape="poly" id="edge89_Node000002_Node000043" title=" " alt="" coords="338,1314,427,1326,422,1328,339,1319"/>
+<area shape="rect" id="Node000044" href="$classtket_1_1FlowOp.html" title=" " alt="" coords="438,1373,541,1401"/>
+<area shape="poly" id="edge90_Node000002_Node000044" title=" " alt="" coords="338,1326,453,1372,448,1373,337,1332"/>
+<area shape="rect" id="Node000045" href="$classtket_1_1Gate.html" title=" " alt="" coords="446,1425,532,1453"/>
+<area shape="poly" id="edge91_Node000002_Node000045" title=" " alt="" coords="316,1331,366,1371,425,1410,452,1425,446,1424,423,1415,363,1375,315,1337"/>
+<area shape="rect" id="Node000046" href="$classtket_1_1MetaOp.html" title=" " alt="" coords="436,1477,542,1505"/>
+<area shape="poly" id="edge92_Node000002_Node000046" title=" " alt="" coords="307,1334,357,1398,389,1432,426,1462,448,1477,443,1476,422,1467,386,1436,353,1401,305,1339"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1CircBox.html" title="Operation defined as a circuit." alt="" coords="666,5,770,33"/>
+<area shape="poly" id="edge51_Node000004_Node000005" title=" " alt="" coords="540,669,552,658,565,634,573,605,580,531,579,444,572,350,566,256,566,170,575,97,586,67,600,44,614,32,630,24,667,17,663,20,632,29,617,37,604,48,590,70,581,98,571,170,572,256,578,350,584,444,586,531,578,606,570,636,556,661,544,672"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1ConjugationBox.html" title="Box to express computations that follow the compute&#45;action&#45;uncompute pattern." alt="" coords="639,57,797,85"/>
+<area shape="poly" id="edge52_Node000004_Node000006" title=" " alt="" coords="540,669,552,658,564,636,572,609,579,542,578,462,573,376,568,290,568,211,577,144,587,117,600,96,617,82,641,74,637,78,620,87,604,100,591,120,582,146,573,211,573,290,578,376,583,462,584,542,577,610,569,638,556,661,544,672"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1CustomGate.html" title=" " alt="" coords="650,109,786,137"/>
+<area shape="poly" id="edge53_Node000004_Node000007" title=" " alt="" coords="541,668,552,658,563,638,570,614,577,553,577,480,573,402,569,325,570,252,579,192,588,167,600,148,623,131,652,123,648,127,625,136,604,152,593,170,584,193,575,253,575,324,578,402,582,480,582,553,575,615,568,640,556,661,545,672"/>
+<area shape="rect" id="Node000008" href="$classtket_1_1DiagonalBox.html" title="Box to synthesise a diagonal operator." alt="" coords="649,161,787,189"/>
+<area shape="poly" id="edge54_Node000004_Node000008" title=" " alt="" coords="541,668,552,657,571,627,583,598,590,569,592,540,585,483,571,427,557,371,552,315,556,286,564,258,579,229,600,200,622,184,651,175,647,179,625,188,604,204,583,232,569,260,561,287,558,315,563,370,576,426,590,482,597,540,595,570,588,600,576,630,556,661,545,672"/>
+<area shape="rect" id="Node000009" href="$classtket_1_1DummyBox.html" title="A placeholder operation that holds resource data." alt="" coords="652,213,784,241"/>
+<area shape="poly" id="edge55_Node000004_Node000009" title=" " alt="" coords="541,668,552,657,569,631,580,605,586,579,588,554,583,503,571,453,560,404,557,354,560,328,568,303,581,278,600,252,624,235,654,227,650,230,626,240,604,256,585,281,572,305,565,330,562,354,565,403,577,452,588,502,594,554,592,580,585,607,574,633,556,661,545,672"/>
+<area shape="rect" id="Node000010" href="$classtket_1_1ExpBox.html" title="Two&#45;qubit operation defined in terms of a hermitian matrix and a phase." alt="" coords="666,265,770,293"/>
+<area shape="poly" id="edge56_Node000004_Node000010" title=" " alt="" coords="541,668,552,657,567,635,577,612,585,567,581,523,572,480,563,436,561,393,564,371,571,348,583,326,600,304,614,292,631,284,668,277,664,280,632,289,617,297,604,308,588,329,576,351,569,372,566,393,568,436,577,479,586,523,590,568,582,613,572,637,556,661,545,672"/>
+<area shape="rect" id="Node000011" href="$classtket_1_1MultiplexedRotationBox.html" title="Multiplexed single&#45;axis rotations." alt="" coords="613,317,823,345"/>
+<area shape="poly" id="edge57_Node000004_Node000011" title=" " alt="" coords="540,668,552,658,574,619,582,580,579,543,572,505,566,468,565,430,574,392,600,355,618,343,614,348,604,358,579,395,570,431,571,467,578,504,585,542,587,581,579,620,556,661,545,672"/>
+<area shape="rect" id="Node000012" href="$classtket_1_1MultiplexedTensoredU2Box.html" title="Multiplexed&#45;Tensored&#45;U2 gate." alt="" coords="624,369,812,414"/>
+<area shape="poly" id="edge58_Node000004_Node000012" title=" " alt="" coords="540,668,552,657,570,628,578,599,578,570,574,541,571,513,572,483,580,454,600,424,625,408,622,412,604,428,585,456,577,484,576,512,579,541,583,570,583,600,575,630,556,661,544,671"/>
+<area shape="rect" id="Node000013" href="$classtket_1_1MultiplexedU2Box.html" title="Multiplexed U2 gate." alt="" coords="631,437,805,465"/>
+<area shape="poly" id="edge59_Node000004_Node000013" title=" " alt="" coords="541,667,552,657,567,635,574,612,574,567,573,544,575,521,583,498,601,476,633,458,629,462,604,480,588,501,580,522,578,544,579,567,579,613,572,637,556,661,545,671"/>
+<area shape="rect" id="Node000014" href="$classtket_1_1MultiplexorBox.html" title="Multiplexed ops." alt="" coords="642,489,794,517"/>
+<area shape="poly" id="edge60_Node000004_Node000014" title=" " alt="" coords="541,667,552,657,564,641,571,625,574,593,579,560,587,544,601,528,619,515,643,508,639,511,622,520,604,532,591,547,584,562,580,593,576,627,569,644,556,661,545,670"/>
+<area shape="rect" id="Node000015" href="$classtket_1_1PauliExpBox.html" title="Operation defined as the exponential of a tensor of Pauli operators." alt="" coords="651,541,785,569"/>
+<area shape="poly" id="edge61_Node000004_Node000015" title=" " alt="" coords="541,665,553,657,568,638,575,619,583,599,601,580,624,567,653,560,649,563,626,572,604,584,588,602,580,620,573,641,556,661,545,669"/>
+<area shape="rect" id="Node000016" href="$classtket_1_1PauliExpCommutingSetBox.html" title=" " alt="" coords="602,593,834,621"/>
+<area shape="poly" id="edge62_Node000004_Node000016" title=" " alt="" coords="539,663,553,657,577,643,601,631,644,620,640,623,603,636,579,648,556,662,542,667"/>
+<area shape="rect" id="Node000017" href="$classtket_1_1PauliExpPairBox.html" title=" " alt="" coords="639,645,797,673"/>
+<area shape="poly" id="edge63_Node000004_Node000017" title=" " alt="" coords="543,677,641,667,636,670,546,682"/>
+<area shape="rect" id="Node000018" href="$classtket_1_1PhasePolyBox.html" title="A PhasePolyBox is capable of representing arbitrary Circuits made up of CNOT and RZ,..." alt="" coords="645,697,791,725"/>
+<area shape="poly" id="edge64_Node000004_Node000018" title=" " alt="" coords="543,689,647,702,642,704,545,694"/>
+<area shape="rect" id="Node000019" href="$classtket_1_1ProjectorAssertionBox.html" title=" " alt="" coords="619,749,817,777"/>
+<area shape="poly" id="edge65_Node000004_Node000019" title=" " alt="" coords="531,704,603,734,648,748,643,750,601,739,532,710"/>
+<area shape="rect" id="Node000020" href="$classtket_1_1QControlBox.html" title="Wraps another quantum op, adding control qubits." alt="" coords="650,801,786,829"/>
+<area shape="poly" id="edge66_Node000004_Node000020" title=" " alt="" coords="511,709,553,750,577,769,604,786,652,805,647,806,601,791,574,774,549,754,512,714"/>
+<area shape="rect" id="Node000021" href="$classtket_1_1StabiliserAssertionBox.html" title=" " alt="" coords="617,853,819,881"/>
+<area shape="poly" id="edge67_Node000004_Node000021" title=" " alt="" coords="503,711,543,777,571,810,604,838,629,852,624,853,601,843,567,814,539,780,503,716"/>
+<area shape="rect" id="Node000022" href="$classtket_1_1StatePreparationBox.html" title="Box to synthesise a statevector." alt="" coords="624,905,812,933"/>
+<area shape="poly" id="edge68_Node000004_Node000022" title=" " alt="" coords="498,712,514,754,535,802,565,850,583,872,604,890,626,904,621,905,601,895,579,875,560,853,530,805,509,756,497,717"/>
+<area shape="rect" id="Node000023" href="$classtket_1_1TermSequenceBox.html" title=" " alt="" coords="631,957,805,985"/>
+<area shape="poly" id="edge69_Node000004_Node000023" title=" " alt="" coords="495,713,508,765,527,827,559,890,579,918,604,942,633,960,628,961,601,947,575,921,554,892,522,829,502,766,494,718"/>
+<area shape="rect" id="Node000024" href="$classtket_1_1ToffoliBox.html" title="Box to synthesise a state permutation." alt="" coords="659,1009,777,1037"/>
+<area shape="poly" id="edge70_Node000004_Node000024" title=" " alt="" coords="493,713,502,774,520,850,534,890,552,928,576,964,604,994,630,1010,661,1020,656,1021,628,1015,601,999,571,967,548,931,529,892,515,852,497,775,491,718"/>
+<area shape="rect" id="Node000025" href="$classtket_1_1Unitary1qBox.html" title="One&#45;qubit operation defined as a unitary matrix." alt="" coords="646,1061,790,1089"/>
+<area shape="poly" id="edge71_Node000004_Node000025" title=" " alt="" coords="491,713,497,784,513,873,527,921,546,967,572,1009,604,1047,624,1060,648,1070,643,1071,621,1065,601,1050,567,1013,542,969,522,922,508,874,492,784,490,718"/>
+<area shape="rect" id="Node000026" href="$classtket_1_1Unitary2qBox.html" title="Two&#45;qubit operation defined as a unitary matrix (ILO&#45;BE)." alt="" coords="646,1113,790,1141"/>
+<area shape="poly" id="edge72_Node000004_Node000026" title=" " alt="" coords="495,712,511,803,534,918,566,1028,584,1070,604,1099,624,1112,649,1123,643,1123,621,1117,600,1102,580,1073,561,1030,529,920,506,804,494,717"/>
+<area shape="rect" id="Node000027" href="$classtket_1_1Unitary3qBox.html" title="Three&#45;qubit operation defined as a unitary matrix (ILO&#45;BE)." alt="" coords="646,1165,790,1193"/>
+<area shape="poly" id="edge73_Node000004_Node000027" title=" " alt="" coords="494,712,508,813,531,944,545,1010,563,1070,582,1118,604,1151,624,1164,648,1175,643,1175,621,1169,600,1154,578,1121,558,1071,540,1011,525,945,503,813,493,717"/>
+<area shape="rect" id="Node000028" href="$classtket_1_1UnitaryTableauBox.html" title="Encapsulation of a unitary stabilizer tableau as a Box to use within a circuit." alt="" coords="629,1217,807,1245"/>
+<area shape="poly" id="edge74_Node000004_Node000028" title=" " alt="" coords="494,712,506,822,527,969,542,1044,559,1111,580,1166,604,1203,631,1222,626,1222,600,1206,576,1168,554,1113,537,1045,522,970,501,823,492,717"/>
+<area shape="rect" id="Node000031" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="639,1269,797,1297"/>
+<area shape="poly" id="edge77_Node000030_Node000031" title=" " alt="" coords="569,1281,641,1283,636,1284,570,1286"/>
+<area shape="rect" id="Node000041" href="$classtket_1_1OpaqueClassicalOp.html" title="An opaque classical operation with no parameters and fixed signature." alt="" coords="628,1321,808,1349"/>
+<area shape="poly" id="edge87_Node000030_Node000041" title=" " alt="" coords="568,1298,656,1320,651,1321,568,1304"/>
+<area shape="rect" id="Node000042" href="$classtket_1_1WASMOp.html" title="Op containing a classical wasm function call." alt="" coords="661,1373,775,1401"/>
+<area shape="poly" id="edge88_Node000030_Node000042" title=" " alt="" coords="546,1302,556,1308,571,1321,580,1334,589,1347,604,1358,632,1370,663,1381,658,1381,630,1376,601,1363,585,1350,576,1338,567,1325,553,1312,545,1307"/>
+<area shape="rect" id="Node000032" href="$classtket_1_1ClassicalTransformOp.html" title="A general classical operation where all inputs are also outputs." alt="" coords="882,1139,1077,1166"/>
+<area shape="poly" id="edge78_Node000031_Node000032" title=" " alt="" coords="811,1266,832,1254,848,1236,855,1217,863,1197,880,1177,901,1168,906,1166,883,1181,867,1200,860,1219,853,1239,835,1259,813,1271"/>
+<area shape="rect" id="Node000033" href="$classtket_1_1CopyBitsOp.html" title="An operation to copy some bit values." alt="" coords="914,1191,1044,1218"/>
+<area shape="poly" id="edge79_Node000031_Node000033" title=" " alt="" coords="808,1262,833,1254,856,1242,881,1229,916,1220,921,1218,883,1234,859,1246,835,1259,809,1267"/>
+<area shape="rect" id="Node000034" href="$classtket_1_1ModifyingOp.html" title="A classical operation with one output bit which is also an input bit." alt="" coords="911,1243,1048,1270"/>
+<area shape="poly" id="edge80_Node000031_Node000034" title=" " alt="" coords="812,1271,913,1263,908,1264,813,1276"/>
+<area shape="rect" id="Node000036" href="$classtket_1_1MultiBitOp.html" title="A classical operation applied simultaneously to multiple bits." alt="" coords="918,1295,1041,1322"/>
+<area shape="poly" id="edge82_Node000031_Node000036" title=" " alt="" coords="813,1290,920,1302,915,1303,813,1295"/>
+<area shape="rect" id="Node000037" href="$classtket_1_1PredicateOp.html" title="A classical operation with single output bit." alt="" coords="913,1347,1046,1374"/>
+<area shape="poly" id="edge83_Node000031_Node000037" title=" " alt="" coords="807,1299,835,1307,859,1319,883,1331,921,1346,916,1346,881,1336,857,1324,833,1312,807,1304"/>
+<area shape="rect" id="Node000040" href="$classtket_1_1SetBitsOp.html" title="An operation to set some bits to specified values." alt="" coords="920,1399,1038,1426"/>
+<area shape="poly" id="edge86_Node000031_Node000040" title=" " alt="" coords="812,1295,835,1308,853,1327,860,1347,867,1366,883,1384,901,1394,922,1404,917,1403,899,1399,880,1388,863,1369,855,1349,848,1330,832,1312,811,1300"/>
+<area shape="rect" id="Node000035" href="$classtket_1_1ExplicitModifierOp.html" title="A modifying operation defined explicitly by a truth table." alt="" coords="1129,1243,1302,1270"/>
+<area shape="poly" id="edge81_Node000034_Node000035" title=" " alt="" coords="1063,1254,1131,1256,1126,1257,1063,1259"/>
+<area shape="rect" id="Node000038" href="$classtket_1_1ExplicitPredicateOp.html" title="A predicate defined explicitly by a truth table." alt="" coords="1125,1321,1306,1349"/>
+<area shape="poly" id="edge84_Node000037_Node000038" title=" " alt="" coords="1061,1349,1127,1345,1122,1345,1062,1354"/>
+<area shape="rect" id="Node000039" href="$classtket_1_1RangePredicateOp.html" title="A predicate defined by a range of values in binary encoding." alt="" coords="1128,1373,1303,1401"/>
+<area shape="poly" id="edge85_Node000037_Node000039" title=" " alt="" coords="1061,1367,1131,1377,1126,1377,1061,1372"/>
 </map>

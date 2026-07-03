@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structtket_1_1graphs_1_1WeightedEdge.html" title="Weighted edge." alt="" coords="5,5,205,31"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="5,32,196,93"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1detail_1_1TreeSearch.html" title=" " alt="" coords="244,40,415,85"/>
+<area shape="poly" id="edge122_Node000000_Node000001" title=" " alt="" coords="211,60,246,62,240,63,211,65"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1BFS.html" title=" " alt="" coords="464,5,605,50"/>
+<area shape="poly" id="edge123_Node000001_Node000002" title=" " alt="" coords="430,43,466,39,461,40,431,48"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1DFS.html" title=" " alt="" coords="463,75,605,119"/>
+<area shape="poly" id="edge124_Node000001_Node000003" title=" " alt="" coords="430,77,465,85,460,85,430,82"/>
 </map>

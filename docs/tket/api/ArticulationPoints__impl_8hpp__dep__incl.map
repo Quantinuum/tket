@@ -1,9 +1,9 @@
 <map id="include/tket/Graphs/ArticulationPoints_impl.hpp" name="include/tket/Graphs/ArticulationPoints_impl.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="178,5,326,60"/>
-<area shape="rect" id="Node000002" href="$ArticulationPoints_8hpp.html" title=" " alt="" coords="167,108,337,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,74,255,108,249,108,249,74"/>
-<area shape="rect" id="Node000003" href="$Architecture_8cpp.html" title=" " alt="" coords="5,196,240,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="211,157,143,198,140,194,208,153"/>
-<area shape="rect" id="Node000004" href="$ArticulationPoints_8cpp.html" title=" " alt="" coords="264,196,501,221"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="297,153,365,194,362,198,294,157"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="178,5,325,67"/>
+<area shape="rect" id="Node000002" href="$ArticulationPoints_8hpp.html" title=" " alt="" coords="167,115,336,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,81,254,116,249,113,250,85"/>
+<area shape="rect" id="Node000003" href="$Architecture_8cpp.html" title=" " alt="" coords="5,208,239,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="207,168,144,209,141,205,202,169"/>
+<area shape="rect" id="Node000004" href="$ArticulationPoints_8cpp.html" title=" " alt="" coords="262,208,499,235"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="299,166,363,207,357,207,298,171"/>
 </map>

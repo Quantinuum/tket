@@ -1,7 +1,7 @@
 <map id="tket::MultiplexedU2Commands" name="tket::MultiplexedU2Commands">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,196,228,221"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="47,93,186,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,147,119,196,114,196,114,147"/>
-<area shape="rect" id="Node000003" href="$structtket_1_1GateSpec.html" title=" " alt="" coords="58,5,175,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,44,119,93,114,93,114,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,224,228,251"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="47,106,186,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,165,119,224,114,222,114,168"/>
+<area shape="rect" id="Node000003" href="$structtket_1_1GateSpec.html" title=" " alt="" coords="58,5,175,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,46,119,106,114,105,115,51"/>
 </map>

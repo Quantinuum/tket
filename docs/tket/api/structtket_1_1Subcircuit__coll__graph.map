@@ -1,9 +1,9 @@
 <map id="tket::Subcircuit" name="tket::Subcircuit">
-<area shape="rect" id="Node000001" title="Structure to describe a convex region of the interaction graph." alt="" coords="301,63,420,88"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="22,5,175,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,31,278,53,309,60,308,65,277,58,175,36"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,55,192,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,73,301,73,301,78,205,78"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="27,119,170,159"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,116,307,86,308,91,184,121"/>
+<area shape="rect" id="Node000001" title="Structure to describe a convex region of the interaction graph." alt="" coords="304,83,422,111"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="22,23,175,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,46,280,64,330,82,325,83,279,69,190,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,75,192,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,94,306,96,301,98,207,100"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="27,144,170,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,148,279,125,323,112,329,111,280,130,186,153"/>
 </map>

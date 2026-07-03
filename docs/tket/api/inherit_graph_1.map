@@ -1,5 +1,90 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,160,31"/>
-<area shape="rect" id="Node000001" href="$classtket_1_1NeighboursFromArchitecture.html" title="Stores and returns upon request the adjacent vertices to a given vertex on a graph,..." alt="" coords="208,5,449,31"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="174,15,208,15,208,21,174,21"/>
+<area shape="rect" id="Node000000" href="$classexception.html" title="STL class." alt="" coords="19,1057,105,1085"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="177,1057,295,1085"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="119,1069,178,1069,174,1073,122,1073"/>
+<area shape="rect" id="Node000042" title=" " alt="" coords="167,1109,305,1137"/>
+<area shape="poly" id="edge42_Node000000_Node000042" title=" " alt="" coords="118,1086,189,1107,185,1110,121,1091"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1AASRouteError.html" title=" " alt="" coords="417,177,566,205"/>
+<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="234,1042,236,873,240,754,248,624,263,496,283,378,297,327,312,282,330,244,351,216,381,196,418,187,415,191,383,201,355,220,335,247,317,284,302,328,289,380,268,497,254,625,245,754,241,873,239,1042"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1ArchitectureInvalidity.html" title=" " alt="" coords="394,229,589,257"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="234,1042,237,882,252,650,266,529,287,420,314,329,332,294,351,268,371,253,396,244,392,248,373,258,355,272,336,297,319,331,292,421,271,530,257,650,243,882,240,1042"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1BadCommand.html" title=" " alt="" coords="418,281,565,309"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="235,1041,239,891,255,674,270,562,290,460,316,377,333,345,351,320,365,308,382,300,420,291,416,295,384,305,368,313,355,324,337,347,321,379,295,462,275,563,260,674,244,891,240,1042"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1BadOpType.html" title="Operation type not valid in the current context." alt="" coords="428,333,555,361"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="235,1042,241,900,258,698,273,595,293,501,318,423,334,393,351,371,368,358,387,349,430,342,426,346,388,354,370,362,355,374,338,396,323,425,298,502,278,596,263,699,246,901,240,1042"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1CircPool_1_1ControlDecompError.html" title=" " alt="" coords="384,385,600,430"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="236,1042,244,913,264,733,279,641,298,557,322,488,336,461,351,440,384,419,382,423,355,444,340,463,327,490,303,558,284,642,269,734,250,914,241,1042"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1CircuitInequality.html" title=" " alt="" coords="411,453,572,481"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="236,1041,246,922,266,757,281,673,300,597,323,534,337,510,351,492,378,474,412,465,409,469,381,479,355,496,341,513,328,537,305,598,287,674,271,758,251,923,241,1042"/>
+<area shape="rect" id="Node000008" href="$classtket_1_1CircuitInvalidity.html" title=" " alt="" coords="413,505,570,533"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="237,1041,248,932,270,782,285,707,303,638,325,582,351,544,379,526,414,517,411,521,382,530,355,548,330,585,309,640,290,708,275,783,253,932,242,1042"/>
+<area shape="rect" id="Node000009" href="$classtket_1_1ClExprWiringError.html" title=" " alt="" coords="407,557,576,585"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="238,1041,250,941,273,808,289,740,307,679,327,630,351,596,377,579,408,570,405,574,379,584,355,600,332,632,312,681,294,742,279,809,256,942,243,1042"/>
+<area shape="rect" id="Node000010" href="$classtket_1_1DummyBoxNotDecomposable.html" title="Exception indicating that dummy boxes cannot be decomposed." alt="" coords="366,609,617,637"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="238,1042,253,951,277,833,310,720,329,676,351,647,370,635,367,640,355,650,334,679,315,722,282,834,258,952,244,1043"/>
+<area shape="rect" id="Node000011" href="$classtket_1_1IncompatibleCompilerPasses.html" title=" " alt="" coords="392,661,591,706"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="235,1041,241,974,258,887,273,840,293,795,319,753,351,716,370,702,394,693,390,697,373,707,355,720,323,756,298,797,278,842,264,888,246,975,240,1042"/>
+<area shape="rect" id="Node000012" href="$classtket_1_1IncorrectPredicate.html" title=" " alt="" coords="406,729,578,757"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="237,1041,245,983,264,909,279,870,298,832,322,798,351,768,376,753,407,744,403,748,379,757,355,772,326,801,303,835,284,872,269,910,250,984,242,1042"/>
+<area shape="rect" id="Node000013" href="$classtket_1_1InvalidParameterCount.html" title="Wrong number of parameters for an operation." alt="" coords="390,781,593,809"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="239,1042,251,993,272,932,304,871,326,843,351,820,391,801,388,805,355,824,330,847,309,874,277,934,256,994,244,1043"/>
+<area shape="rect" id="Node000014" href="$classtket_1_1InvalidUnitConversion.html" title="Conversion invalid." alt="" coords="392,833,591,861"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="243,1042,257,1003,280,956,311,910,351,872,394,854,390,858,355,876,315,914,285,959,262,1005,248,1044"/>
+<area shape="rect" id="Node000015" href="$classtket_1_1JsonError.html" title=" " alt="" coords="436,885,548,913"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="249,1042,289,981,318,950,352,924,393,906,437,899,433,903,394,912,354,928,322,954,293,985,254,1045"/>
+<area shape="rect" id="Node000016" href="$classtket_1_1LexiRouteError.html" title=" " alt="" coords="416,937,567,965"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="258,1045,299,1007,352,974,383,963,418,956,414,960,385,968,354,979,303,1012,262,1048"/>
+<area shape="rect" id="Node000017" href="$classtket_1_1LexicographicalComparisonError.html" title=" " alt="" coords="374,989,609,1034"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="308,1052,395,1032,391,1036,312,1056"/>
+<area shape="rect" id="Node000018" href="$classtket_1_1MappingFrontierError.html" title=" " alt="" coords="396,1057,587,1085"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="309,1069,398,1069,394,1073,312,1073"/>
+<area shape="rect" id="Node000019" href="$classtket_1_1MappingManagerError.html" title=" " alt="" coords="392,1109,591,1137"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="309,1085,354,1094,416,1107,412,1110,352,1099,311,1090"/>
+<area shape="rect" id="Node000020" href="$classtket_1_1MidCircuitMeasurementNotAllowed.html" title=" " alt="" coords="386,1161,597,1206"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="295,1090,307,1096,322,1109,331,1122,340,1135,354,1146,388,1162,383,1165,352,1151,336,1138,326,1125,318,1113,303,1100,297,1095"/>
+<area shape="rect" id="Node000021" href="$classtket_1_1MissingEdge.html" title=" " alt="" coords="424,1229,560,1257"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="300,1091,307,1096,319,1112,326,1128,330,1159,335,1189,342,1202,355,1216,387,1233,425,1243,421,1245,385,1238,351,1220,338,1205,330,1190,325,1160,321,1129,315,1114,303,1100,301,1096"/>
+<area shape="rect" id="Node000022" href="$classtket_1_1MissingVertex.html" title=" " alt="" coords="418,1281,565,1309"/>
+<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="301,1092,307,1096,322,1119,329,1141,330,1185,331,1227,339,1247,355,1266,384,1284,420,1294,416,1297,382,1289,351,1271,334,1250,326,1228,324,1185,324,1142,317,1121,303,1100,302,1097"/>
+<area shape="rect" id="Node000023" href="$classtket_1_1PassNotSerializable.html" title=" " alt="" coords="400,1333,583,1361"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="301,1092,307,1096,325,1126,333,1155,333,1184,329,1212,326,1239,327,1266,335,1293,355,1319,376,1333,402,1344,397,1346,373,1338,351,1322,330,1295,322,1267,321,1239,324,1211,327,1183,327,1156,320,1128,303,1099,302,1097"/>
+<area shape="rect" id="Node000024" href="$classtket_1_1PauliExpBoxInvalidity.html" title=" " alt="" coords="394,1385,589,1413"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="302,1092,307,1096,328,1133,336,1169,334,1204,328,1238,323,1272,323,1305,332,1338,355,1371,373,1384,396,1395,391,1397,370,1389,351,1374,327,1340,317,1306,318,1272,323,1238,329,1203,331,1169,324,1135,303,1099,303,1097"/>
+<area shape="rect" id="Node000025" href="$classtket_1_1PredicateNotSerializable.html" title=" " alt="" coords="384,1437,599,1465"/>
+<area shape="poly" id="edge26_Node000001_Node000025" title=" " alt="" coords="302,1092,307,1096,322,1118,332,1140,339,1182,336,1224,328,1265,320,1305,318,1345,328,1384,339,1403,355,1423,369,1434,386,1444,381,1445,366,1438,351,1426,335,1406,323,1386,313,1345,315,1304,323,1264,331,1223,334,1183,327,1141,317,1121,303,1099,303,1097"/>
+<area shape="rect" id="Node000026" href="$classtket_1_1SubstitutionFailure.html" title=" " alt="" coords="404,1489,579,1517"/>
+<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="302,1092,307,1096,324,1122,335,1147,341,1171,343,1196,338,1244,327,1292,317,1338,314,1384,317,1406,324,1429,337,1452,355,1475,377,1491,406,1502,401,1504,375,1496,351,1478,332,1455,319,1431,312,1408,309,1384,312,1337,322,1290,333,1243,337,1196,336,1172,330,1148,319,1124,303,1099,303,1097"/>
+<area shape="rect" id="Node000027" href="$classtket_1_1SymbolsNotSupported.html" title="Exception indicating that symbolic values are not supported." alt="" coords="392,1541,591,1569"/>
+<area shape="poly" id="edge28_Node000001_Node000027" title=" " alt="" coords="302,1092,307,1096,326,1125,338,1154,344,1182,346,1210,340,1264,327,1318,314,1371,310,1423,313,1449,321,1475,334,1501,355,1527,372,1540,394,1551,389,1553,369,1545,351,1530,330,1503,316,1477,308,1450,304,1423,309,1370,321,1317,335,1263,341,1210,339,1183,333,1155,321,1128,303,1099,303,1097"/>
+<area shape="rect" id="Node000028" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1GreedyPauliSimpError.html" title=" " alt="" coords="374,1593,609,1638"/>
+<area shape="poly" id="edge29_Node000001_Node000028" title=" " alt="" coords="302,1092,307,1096,318,1115,325,1139,333,1198,333,1267,330,1341,327,1415,328,1483,336,1539,344,1561,355,1579,376,1597,371,1598,351,1582,339,1564,331,1540,322,1483,321,1415,324,1341,328,1267,327,1198,320,1140,313,1118,303,1099,303,1097"/>
+<area shape="rect" id="Node000029" href="$classtket_1_1UnknownPauliPartitionStrat.html" title=" " alt="" coords="392,1662,592,1707"/>
+<area shape="poly" id="edge30_Node000001_Node000029" title=" " alt="" coords="302,1092,307,1096,319,1118,328,1145,335,1212,334,1291,329,1376,325,1460,325,1538,334,1603,343,1628,355,1648,372,1663,394,1675,388,1676,369,1667,351,1652,338,1630,328,1604,320,1538,320,1460,324,1376,329,1291,330,1213,322,1147,314,1120,303,1099,303,1097"/>
+<area shape="rect" id="Node000030" href="$classtket_1_1UnsatisfiedPredicate.html" title=" " alt="" coords="398,1731,586,1758"/>
+<area shape="poly" id="edge31_Node000001_Node000030" title=" " alt="" coords="302,1092,307,1096,321,1121,330,1152,337,1227,335,1316,328,1412,321,1507,321,1594,324,1633,330,1667,340,1695,355,1717,374,1732,399,1743,394,1745,372,1737,351,1721,336,1698,325,1668,319,1634,315,1594,316,1507,322,1411,329,1316,332,1228,324,1153,316,1123,303,1099,303,1098"/>
+<area shape="rect" id="Node000031" href="$classtket_1_1Unsupported.html" title=" " alt="" coords="423,1783,560,1810"/>
+<area shape="poly" id="edge32_Node000001_Node000031" title=" " alt="" coords="302,1092,307,1096,322,1123,331,1156,339,1238,336,1334,328,1437,320,1540,319,1634,322,1676,329,1713,339,1744,355,1768,369,1780,386,1789,425,1799,420,1800,384,1794,366,1785,351,1772,335,1746,323,1714,317,1677,313,1635,315,1540,322,1437,330,1334,333,1238,326,1157,317,1125,303,1099,303,1098"/>
+<area shape="rect" id="Node000033" href="$classtket_1_1aas_1_1InvalidCostCalculation.html" title=" " alt="" coords="376,1835,607,1862"/>
+<area shape="poly" id="edge34_Node000001_Node000033" title=" " alt="" coords="303,1093,307,1096,323,1125,333,1161,338,1202,340,1249,337,1352,327,1464,319,1574,317,1676,320,1721,327,1761,338,1794,355,1820,378,1839,373,1839,351,1824,334,1796,322,1762,314,1722,311,1676,313,1574,322,1463,331,1352,335,1249,333,1203,327,1162,318,1127,303,1099,304,1098"/>
+<area shape="rect" id="Node000034" href="$classtket_1_1aas_1_1InvalidRowOperation.html" title=" " alt="" coords="381,1887,602,1914"/>
+<area shape="poly" id="edge35_Node000001_Node000034" title=" " alt="" coords="303,1093,307,1096,324,1127,334,1165,340,1210,342,1260,337,1371,327,1490,317,1608,314,1717,318,1766,325,1808,337,1844,355,1872,367,1883,384,1893,378,1894,364,1887,351,1876,332,1846,320,1810,312,1766,309,1718,312,1608,322,1489,332,1370,337,1260,335,1210,329,1166,319,1129,303,1099,304,1098"/>
+<area shape="rect" id="Node000035" href="$classtket_1_1aas_1_1NoHamiltonPath.html" title=" " alt="" coords="396,1939,587,1966"/>
+<area shape="poly" id="edge36_Node000001_Node000035" title=" " alt="" coords="303,1093,307,1096,325,1129,336,1170,342,1218,344,1271,338,1389,327,1516,316,1642,312,1759,315,1810,323,1856,336,1894,355,1924,374,1939,398,1951,393,1951,371,1944,351,1928,331,1896,318,1857,310,1811,307,1759,310,1642,321,1516,333,1389,338,1271,337,1218,331,1171,320,1131,303,1099,304,1098"/>
+<area shape="rect" id="Node000036" href="$classtket_1_1graphs_1_1EdgeDoesNotExistError.html" title=" " alt="" coords="394,1990,589,2035"/>
+<area shape="poly" id="edge37_Node000001_Node000036" title=" " alt="" coords="303,1093,307,1096,326,1131,337,1175,344,1225,346,1281,340,1406,328,1541,316,1675,312,1799,315,1854,322,1903,336,1944,355,1976,373,1992,397,2005,391,2005,370,1996,351,1980,331,1946,317,1904,310,1854,306,1799,311,1675,323,1540,335,1406,341,1281,339,1225,332,1176,321,1133,303,1099,304,1098"/>
+<area shape="rect" id="Node000037" href="$classtket_1_1graphs_1_1NodeDoesNotExistError.html" title=" " alt="" coords="394,2060,590,2104"/>
+<area shape="poly" id="edge38_Node000001_Node000037" title=" " alt="" coords="303,1093,307,1096,327,1134,340,1181,346,1235,348,1296,342,1431,328,1576,314,1720,309,1854,312,1913,320,1966,334,2010,355,2045,373,2061,396,2074,390,2074,370,2065,351,2049,329,2013,315,1967,307,1914,304,1854,309,1720,322,1575,336,1430,343,1296,341,1235,334,1182,322,1136,303,1099,304,1098"/>
+<area shape="rect" id="Node000038" href="$classtket_1_1graphs_1_1NodesNotConnected.html" title="Exception thrown because two nodes are disconnected from one another." alt="" coords="353,5,630,33"/>
+<area shape="poly" id="edge39_Node000001_Node000038" title=" " alt="" coords="236,1041,247,829,269,511,285,350,304,209,326,102,338,65,351,43,367,31,365,36,355,46,343,67,331,103,309,210,291,351,275,511,252,829,241,1042"/>
+<area shape="rect" id="Node000039" href="$classtket_1_1graphs_1_1detail_1_1NoSelectedComponent.html" title="Exception raised when subarchitecture is empty." alt="" coords="402,57,581,102"/>
+<area shape="poly" id="edge40_Node000001_Node000039" title=" " alt="" coords="236,1042,249,842,273,547,289,398,307,267,328,167,339,133,351,112,374,94,404,83,400,87,377,98,355,116,344,135,333,169,312,268,294,399,278,547,254,842,241,1042"/>
+<area shape="rect" id="Node000040" href="$classtket_1_1zx_1_1ZXError.html" title="Error messages." alt="" coords="428,125,555,153"/>
+<area shape="poly" id="edge41_Node000001_Node000040" title=" " alt="" coords="236,1041,249,851,274,572,290,432,308,309,328,215,339,184,351,164,368,151,387,142,430,134,426,138,388,147,370,155,355,168,344,186,333,217,313,310,295,433,279,573,255,851,242,1042"/>
+<area shape="rect" id="Node000032" href="$classtket_1_1SimpleOnly.html" title=" " alt="" coords="678,1783,808,1810"/>
+<area shape="poly" id="edge33_Node000031_Node000032" title=" " alt="" coords="575,1794,681,1796,676,1797,576,1799"/>
+<area shape="rect" id="Node000043" href="$structtket_1_1GateUnitaryMatrixError.html" title="We do not wish to couple tightly to exception classes elsewhere." alt="" coords="388,2128,595,2156"/>
+<area shape="poly" id="edge43_Node000042_Node000043" title=" " alt="" coords="239,1150,253,1359,276,1666,292,1821,310,1957,332,2060,343,2094,355,2115,370,2127,390,2139,385,2138,368,2132,351,2118,338,2097,326,2061,305,1958,286,1822,271,1667,247,1360,238,1155"/>
+<area shape="rect" id="Node000041" title=" " alt="" coords="5,1109,119,1137"/>
+<area shape="poly" id="edge44_Node000041_Node000001" title=" " alt="" coords="123,1102,189,1083,185,1088,127,1106"/>
+<area shape="poly" id="edge45_Node000041_Node000042" title=" " alt="" coords="132,1121,168,1121,164,1125,136,1125"/>
 </map>

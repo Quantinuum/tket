@@ -1,7 +1,7 @@
 <map id="include/tket/Utils/CosSinDecomposition.hpp" name="include/tket/Utils/CosSinDecomposition.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="179,5,375,45"/>
-<area shape="rect" id="Node000002" href="$ThreeQubitConversion_8cpp.html" title=" " alt="" coords="5,93,268,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,54,159,95,156,91,230,50"/>
-<area shape="rect" id="Node000003" href="$CosSinDecomposition_8cpp.html" title=" " alt="" coords="293,93,541,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="323,50,397,91,395,95,321,54"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="178,5,373,50"/>
+<area shape="rect" id="Node000002" href="$ThreeQubitConversion_8cpp.html" title=" " alt="" coords="5,98,268,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,58,160,100,158,95,223,59"/>
+<area shape="rect" id="Node000003" href="$CosSinDecomposition_8cpp.html" title=" " alt="" coords="292,98,539,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="326,56,395,98,390,97,325,61"/>
 </map>

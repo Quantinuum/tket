@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1LexicographicalComparison.html" title="A class for running lexicographical comparisons of SWAP gates for some architecture and set of intera..." alt="" coords="5,5,240,31"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__base.html" title=" " alt="" coords="5,5,228,101"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper.html" title=" " alt="" coords="276,5,494,101"/>
+<area shape="poly" id="edge140_Node000000_Node000001" title=" " alt="" coords="243,51,278,53,273,53,243,56"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__helper__with__map.html" title=" " alt="" coords="542,5,780,101"/>
+<area shape="poly" id="edge141_Node000001_Node000002" title=" " alt="" coords="509,51,544,53,539,53,510,56"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1utils_1_1detail_1_1graph__utils__impl__with__map.html" title=" " alt="" coords="828,14,1015,92"/>
+<area shape="poly" id="edge142_Node000002_Node000003" title=" " alt="" coords="796,51,830,53,825,53,796,56"/>
 </map>

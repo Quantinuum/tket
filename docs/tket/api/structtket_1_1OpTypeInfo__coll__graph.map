@@ -1,9 +1,9 @@
 <map id="tket::OpTypeInfo" name="tket::OpTypeInfo">
-<area shape="rect" id="Node000001" title="General information about an OpType." alt="" coords="112,197,240,223"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="31,95,118,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,132,98,152,113,171,129,185,148,195,145,199,126,189,109,175,93,155,82,134"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,144,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,59,77,94,72,94,72,59"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="142,95,322,120"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,133,185,199,180,196,216,131"/>
+<area shape="rect" id="Node000001" title="General information about an OpType." alt="" coords="90,222,217,250"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="31,99,118,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,139,120,197,141,222,136,222,115,200,84,143"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,144,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="75,63,77,99,72,98,74,68"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="142,99,322,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,141,220,172,205,200,178,224,175,220,200,197,215,170,225,144"/>
 </map>

@@ -1,13 +1,13 @@
 <map id="tket::SquareGrid" name="tket::SquareGrid">
-<area shape="rect" id="Node000001" title=" " alt="" coords="61,431,188,456"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Architecture.html" title=" " alt="" coords="57,357,192,383"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,396,127,431,122,431,122,396"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1ArchitectureBase.html" title=" " alt="" coords="33,255,216,309"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,323,127,357,122,357,122,323"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1DirectedGraph.html" title=" " alt="" coords="24,167,225,207"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="127,220,127,255,122,255,122,220"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1graphs_1_1DirectedGraphBase.html" title=" " alt="" coords="24,79,225,119"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="127,133,127,166,122,166,122,133"/>
-<area shape="rect" id="Node000006" href="$classtket_1_1graphs_1_1AbstractGraph.html" title="Abstract class for representing graphs." alt="" coords="5,5,244,31"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="127,44,127,79,122,79,122,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="42,469,169,496"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Architecture.html" title=" " alt="" coords="39,393,172,421"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,435,108,469,103,467,104,438"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1ArchitectureBase.html" title=" " alt="" coords="14,283,197,345"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,358,108,393,103,392,104,363"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1DirectedGraph.html" title=" " alt="" coords="5,191,206,235"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="106,248,108,283,103,282,105,253"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1graphs_1_1DirectedGraphBase.html" title=" " alt="" coords="5,98,206,143"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="106,156,108,191,103,190,105,161"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1graphs_1_1AbstractGraph.html" title=" " alt="" coords="6,5,205,50"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="106,63,108,98,103,98,105,68"/>
 </map>

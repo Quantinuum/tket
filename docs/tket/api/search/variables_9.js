@@ -9,6 +9,5 @@ var searchData=
   ['indices_6',['indices',['../structtket_1_1CycleCom.html#a9b942c2fb4cfcb34b1af8226afeef33e',1,'tket::CycleCom']]],
   ['initial_7',['initial',['../structtket_1_1unit__bimaps__t.html#a1fca0baa886897fdae1f4e5d254e4d21',1,'tket::unit_bimaps_t']]],
   ['invert_8',['invert',['../structtket_1_1MeasurementSetup_1_1MeasurementBitMap.html#af9d500a65edb9ef7311cc63f02185ac4',1,'tket::MeasurementSetup::MeasurementBitMap']]],
-  ['is_5fdirected_9',['is_directed',['../namespacetket_1_1graphs_1_1utils.html#a255e98d680b4e852561d0cc464466beb',1,'tket::graphs::utils']]],
-  ['iswapmax_10',['ISWAPMax',['../GateUnitaryMatrixFixedMatrices_8cpp.html#a85426d4ae6732fe3b374714d8945d595',1,'GateUnitaryMatrixFixedMatrices.cpp']]]
+  ['is_5fdirected_9',['is_directed',['../namespacetket_1_1graphs_1_1utils.html#a255e98d680b4e852561d0cc464466beb',1,'tket::graphs::utils']]]
 ];

@@ -1,8 +1,5 @@
 <map id="tket::graphs::ColouringPriority::NodeData" name="tket::graphs::ColouringPriority::NodeData">
-<area shape="rect" id="Node000001" title="Contains extra data about a vertex." alt="" coords="5,196,221,236"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="83,5,143,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,44,107,93,108,149,113,195,108,196,102,149,101,93,107,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="163,93,349,119"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="145,35,238,91,235,95,143,40"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,129,140,198,137,194,228,125"/>
+<area shape="rect" id="Node000001" title="Contains extra data about a vertex." alt="" coords="5,128,221,173"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="20,5,206,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,47,116,129,110,127,111,50"/>
 </map>

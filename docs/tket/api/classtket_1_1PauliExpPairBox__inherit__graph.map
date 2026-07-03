@@ -1,9 +1,9 @@
 <map id="tket::PauliExpPairBox" name="tket::PauliExpPairBox">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,240,164,265"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="45,167,125,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,206,87,240,82,240,82,206"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="48,93,121,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,132,87,167,82,167,82,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="12,5,157,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,59,87,93,82,93,82,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,249,164,277"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="45,174,124,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,215,87,250,82,248,83,219"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="48,98,121,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,139,87,174,82,173,83,144"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="12,5,157,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,63,87,98,82,97,84,68"/>
 </map>

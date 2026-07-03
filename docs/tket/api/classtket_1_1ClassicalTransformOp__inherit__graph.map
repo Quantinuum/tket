@@ -1,11 +1,11 @@
 <map id="tket::ClassicalTransformOp" name="tket::ClassicalTransformOp">
-<area shape="rect" id="Node000001" title="A general classical operation where all inputs are also outputs." alt="" coords="5,313,201,339"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="24,240,183,265"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,279,106,313,101,313,101,279"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="38,167,169,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,206,106,240,101,240,101,206"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="67,93,140,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="106,132,106,167,101,167,101,132"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="31,5,176,45"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="106,59,106,93,101,93,101,59"/>
+<area shape="rect" id="Node000001" title="A general classical operation where all inputs are also outputs." alt="" coords="5,325,201,353"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalEvalOp.html" title=" " alt="" coords="24,249,182,277"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,291,105,326,101,324,101,295"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="38,174,168,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,215,106,250,100,248,102,220"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="67,98,139,126"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="104,139,106,174,100,173,102,144"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="31,5,175,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="104,63,106,98,100,97,102,68"/>
 </map>

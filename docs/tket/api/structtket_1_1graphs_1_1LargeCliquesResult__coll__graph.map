@@ -1,9 +1,7 @@
 <map id="tket::graphs::LargeCliquesResult" name="tket::graphs::LargeCliquesResult">
-<area shape="rect" id="Node000001" title="Try to find large cliques in a single connected component of a graph." alt="" coords="5,284,196,324"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="23,181,178,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,235,103,284,98,284,98,235"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="17,93,184,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,132,103,181,98,181,98,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="71,5,131,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,45,103,93,98,93,98,45"/>
+<area shape="rect" id="Node000001" title="Try to find large cliques in a single connected component of a graph." alt="" coords="5,224,196,268"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="24,106,177,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,165,103,224,98,222,99,168"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,5,183,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,46,103,106,98,105,100,51"/>
 </map>

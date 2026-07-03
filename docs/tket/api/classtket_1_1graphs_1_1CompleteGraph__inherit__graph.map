@@ -1,5 +1,5 @@
 <map id="tket::graphs::CompleteGraph&lt; T &gt;" name="tket::graphs::CompleteGraph&lt; T &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,252,104"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1AbstractGraph.html" title="Abstract class for representing graphs." alt="" coords="9,5,248,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,44,131,79,126,79,126,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,252,109"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1AbstractGraph.html" title="Abstract class for representing graphs." alt="" coords="10,5,247,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,47,131,82,126,79,127,51"/>
 </map>

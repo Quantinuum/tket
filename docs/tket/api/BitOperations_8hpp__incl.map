@@ -1,9 +1,9 @@
 <map id="src/Circuit/Simulation/BitOperations.hpp" name="src/Circuit/Simulation/BitOperations.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="46,5,207,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,72,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,48,64,86,60,82,104,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="97,93,157,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,46,129,79,124,79,124,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="181,93,243,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,44,191,82,187,86,146,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="44,5,205,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,71,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,49,65,89,61,85,99,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="95,98,154,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,48,127,83,122,81,123,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="179,98,241,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,48,188,87,183,87,146,53"/>
 </map>

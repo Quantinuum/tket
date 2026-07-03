@@ -1,5 +1,5 @@
 <map id="tket::ChoiMixTableau" name="tket::ChoiMixTableau">
-<area shape="rect" id="Node000001" title=" " alt="" coords="15,93,173,119"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1SymplecticTableau.html" title=" " alt="" coords="5,5,183,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,45,97,93,91,93,91,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="15,106,172,134"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1SymplecticTableau.html" title=" " alt="" coords="5,5,182,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,47,96,106,91,105,91,50"/>
 </map>

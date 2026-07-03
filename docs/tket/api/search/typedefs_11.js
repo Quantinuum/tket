@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['sequence_5fset_5ft_0',['sequence_set_t',['../namespacetket.html#a681192e5f3d9b52875aa271821a7087e',1,'tket']]],
-  ['sequenced_5fbimap_5ft_1',['sequenced_bimap_t',['../namespacetket.html#ab833809f61dc0113df230395ed560ea4',1,'tket']]],
-  ['sequenced_5fmap_5ft_2',['sequenced_map_t',['../namespacetket.html#a28f9577cad4f1a896981f6105029ac03',1,'tket']]],
+  ['sequence_5fset_5ft_0',['sequence_set_t',['../namespacetket.html#a4ea451eebd7d7bf37246592ec6b0e3ba',1,'tket']]],
+  ['sequenced_5fbimap_5ft_1',['sequenced_bimap_t',['../namespacetket.html#a3c3e5df04932c9bd8830db895225bbd1',1,'tket']]],
+  ['sequenced_5fmap_5ft_2',['sequenced_map_t',['../namespacetket.html#a6000cfc11563df994e2df099e9d4a5b4',1,'tket']]],
   ['simpletransformation_3',['SimpleTransformation',['../classtket_1_1Transform.html#a6235b0ea0326e7d860cbda3b89de6c92',1,'tket::Transform']]],
   ['simuint_4',['SimUInt',['../namespacetket_1_1tket__sim_1_1internal.html#ac9f00fbd46d4fb84f77cd2f5f469e663',1,'tket::tket_sim::internal']]],
   ['slice_5',['Slice',['../namespacetket.html#a21f0f23e5214bb9a3a411cfa66359c5a',1,'tket']]],

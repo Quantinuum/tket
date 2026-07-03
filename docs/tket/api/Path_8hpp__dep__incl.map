@@ -1,28 +1,28 @@
 <map id="include/tket/ArchAwareSynth/Path.hpp" name="include/tket/ArchAwareSynth/Path.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="471,5,681,45"/>
-<area shape="rect" id="Node000002" href="$SteinerTree_8hpp.html" title=" " alt="" coords="369,93,578,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="544,56,498,95,494,91,541,52"/>
-<area shape="rect" id="Node000012" href="$Path_8cpp.html" title=" " alt="" coords="603,93,755,133"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="611,52,658,91,654,95,608,56"/>
-<area shape="rect" id="Node000003" href="$SteinerForest_8hpp.html" title=" " alt="" coords="161,181,370,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,141,312,184,310,179,414,136"/>
-<area shape="rect" id="Node000004" href="$SteinerForest_8cpp.html" title=" " alt="" coords="5,269,157,309"/>
-<area shape="poly" id="edge12_Node000002_Node000004" title=" " alt="" coords="355,132,235,153,184,168,149,184,129,203,112,226,90,270,85,268,107,223,125,199,147,179,182,162,234,148,354,126"/>
-<area shape="rect" id="Node000007" href="$AASRoute_8hpp.html" title=" " alt="" coords="394,181,553,221"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="476,147,476,181,471,181,471,147"/>
-<area shape="rect" id="Node000009" href="$PassGenerators_8hpp.html" title=" " alt="" coords="577,181,748,221"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="528,137,622,179,620,184,526,141"/>
-<area shape="rect" id="Node000011" href="$SteinerTree_8cpp.html" title=" " alt="" coords="772,181,924,221"/>
-<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="569,134,772,180,771,185,568,139"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,230,123,272,120,267,211,225"/>
-<area shape="rect" id="Node000005" href="$AASRoute_8cpp.html" title=" " alt="" coords="182,277,378,302"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="273,234,281,276,275,277,268,235"/>
-<area shape="rect" id="Node000006" href="$PassGenerators_8cpp.html" title=" " alt="" coords="403,277,648,302"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="336,223,492,274,490,279,335,228"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="419,229,307,279,305,274,417,225"/>
-<area shape="rect" id="Node000008" href="$RoutingMethodJson_8cpp.html" title=" " alt="" coords="673,269,877,309"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="554,223,709,267,708,272,552,228"/>
-<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="623,231,545,279,542,274,620,226"/>
-<area shape="rect" id="Node000010" href="$CompilerPass_8cpp.html" title=" " alt="" coords="901,277,1133,302"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="754,222,971,274,970,279,753,227"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="468,5,676,50"/>
+<area shape="rect" id="Node000002" href="$SteinerTree_8hpp.html" title=" " alt="" coords="366,98,574,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="539,59,496,100,493,95,534,62"/>
+<area shape="rect" id="Node000012" href="$Path_8cpp.html" title=" " alt="" coords="599,98,750,143"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="608,58,652,98,647,97,607,63"/>
+<area shape="rect" id="Node000003" href="$SteinerForest_8hpp.html" title=" " alt="" coords="160,191,368,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,150,314,193,312,188,409,148"/>
+<area shape="rect" id="Node000004" href="$SteinerForest_8cpp.html" title=" " alt="" coords="5,283,157,328"/>
+<area shape="poly" id="edge12_Node000002_Node000004" title=" " alt="" coords="349,138,233,162,183,177,149,193,128,213,111,237,90,285,85,282,107,234,124,209,146,188,181,172,232,157,353,136"/>
+<area shape="rect" id="Node000007" href="$AASRoute_8hpp.html" title=" " alt="" coords="392,191,549,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="472,156,473,192,468,189,469,160"/>
+<area shape="rect" id="Node000009" href="$PassGenerators_8hpp.html" title=" " alt="" coords="574,191,743,235"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="530,147,616,190,611,190,529,152"/>
+<area shape="rect" id="Node000011" href="$SteinerTree_8cpp.html" title=" " alt="" coords="767,191,918,235"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="575,144,756,188,769,193,764,193,755,193,574,150"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="209,242,126,285,123,281,204,243"/>
+<area shape="rect" id="Node000005" href="$AASRoute_8cpp.html" title=" " alt="" coords="181,292,376,320"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="271,248,279,292,274,290,268,253"/>
+<area shape="rect" id="Node000006" href="$PassGenerators_8cpp.html" title=" " alt="" coords="400,292,644,320"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="340,238,487,291,482,292,340,244"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="414,242,307,294,305,289,408,243"/>
+<area shape="rect" id="Node000008" href="$RoutingMethodJson_8cpp.html" title=" " alt="" coords="669,283,872,328"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="557,238,701,283,696,283,556,243"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="616,243,543,294,541,289,611,245"/>
+<area shape="rect" id="Node000010" href="$CompilerPass_8cpp.html" title=" " alt="" coords="896,292,1127,320"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="758,237,963,291,957,291,757,242"/>
 </map>

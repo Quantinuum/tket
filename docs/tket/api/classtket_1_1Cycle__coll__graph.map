@@ -1,11 +1,13 @@
 <map id="tket::Cycle" name="tket::Cycle">
-<area shape="rect" id="Node000001" title=" " alt="" coords="144,284,235,309"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,189,203,214"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,227,119,243,129,258,144,271,161,281,158,286,141,276,125,262,114,246,107,229"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="227,181,365,221"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,234,247,262,212,286,209,282,244,258,271,230"/>
-<area shape="rect" id="Node000004" href="$structtket_1_1CycleCom.html" title=" " alt="" coords="235,93,357,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="299,132,299,181,293,181,293,132"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="206,5,386,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="299,45,299,93,293,93,293,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,324,243,352"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,215,202,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,255,122,278,136,299,150,311,168,324,163,323,147,316,131,302,117,281,109,260"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="15,106,192,134"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,147,106,215,101,214,102,152"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="226,207,365,251"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="282,264,257,302,225,326,223,322,254,298,278,266"/>
+<area shape="rect" id="Node000005" href="$structtket_1_1CycleCom.html" title=" " alt="" coords="235,106,356,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="297,147,298,207,293,205,294,152"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="206,5,385,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="297,46,298,106,293,104,294,51"/>
 </map>

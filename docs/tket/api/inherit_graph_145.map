@@ -1,17 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,80,101,105"/>
-<area shape="rect" id="Node000001" href="$classtket_1_1Bit.html" title="Location holding a bit." alt="" coords="177,5,251,31"/>
-<area shape="poly" id="edge176_Node000000_Node000001" title=" " alt="" coords="87,71,148,40,176,28,178,33,150,44,90,76"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Qubit.html" title="Location holding a qubit." alt="" coords="169,55,259,80"/>
-<area shape="poly" id="edge177_Node000000_Node000002" title=" " alt="" coords="114,80,168,72,169,77,115,86"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1RngState.html" title="Location holding an RNG UID." alt="" coords="157,104,271,129"/>
-<area shape="poly" id="edge179_Node000000_Node000004" title=" " alt="" coords="115,99,157,105,156,111,114,104"/>
-<area shape="rect" id="Node000006" href="$classtket_1_1WasmState.html" title="Location holding a wasm UID." alt="" coords="149,153,279,179"/>
-<area shape="poly" id="edge181_Node000000_Node000006" title=" " alt="" coords="92,109,150,138,180,151,178,156,148,143,89,114"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="347,55,436,80"/>
-<area shape="poly" id="edge178_Node000002_Node000003" title=" " alt="" coords="273,65,347,65,347,70,273,70"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1RngNode.html" title="RNG UID." alt="" coords="334,104,449,129"/>
-<area shape="poly" id="edge180_Node000004_Node000005" title=" " alt="" coords="285,114,334,114,334,119,285,119"/>
-<area shape="rect" id="Node000007" href="$classtket_1_1WasmNode.html" title="WASM UID." alt="" coords="327,153,456,179"/>
-<area shape="poly" id="edge182_Node000006_Node000007" title=" " alt="" coords="292,163,326,163,326,169,292,169"/>
+<area shape="rect" id="Node000000" href="$structtket_1_1Transforms_1_1GreedyPauliSimp_1_1hash__optype__pauli.html" title=" " alt="" coords="5,5,221,50"/>
 </map>

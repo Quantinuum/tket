@@ -1,7 +1,7 @@
 <map id="include/tket/Mapping/AASRoute.hpp" name="include/tket/Mapping/AASRoute.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,295,45"/>
-<area shape="rect" id="Node000002" href="$AASRoute_8cpp.html" title=" " alt="" coords="5,101,201,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,56,120,102,117,98,178,52"/>
-<area shape="rect" id="Node000003" href="$RoutingMethodJson_8cpp.html" title=" " alt="" coords="225,93,429,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,52,304,91,301,95,250,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,294,50"/>
+<area shape="rect" id="Node000002" href="$AASRoute_8cpp.html" title=" " alt="" coords="5,106,201,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,59,121,108,118,104,174,60"/>
+<area shape="rect" id="Node000003" href="$RoutingMethodJson_8cpp.html" title=" " alt="" coords="225,98,429,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="254,57,303,98,298,97,253,62"/>
 </map>

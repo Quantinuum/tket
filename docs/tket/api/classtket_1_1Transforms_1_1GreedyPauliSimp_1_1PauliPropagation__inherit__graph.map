@@ -1,7 +1,7 @@
 <map id="tket::Transforms::GreedyPauliSimp::PauliPropagation" name="tket::Transforms::GreedyPauliSimp::PauliPropagation">
-<area shape="rect" id="Node000001" title="Defines how a Pauli X and a Pauli Z on the same qubit get propagated from right to left through a Cli..." alt="" coords="5,181,208,221"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ACPairNode.html" title="Base class for nodes defined by a pair of anti&#45;commuting Pauli strings." alt="" coords="15,93,198,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,147,109,181,104,181,104,147"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="15,5,198,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,59,109,93,104,93,104,59"/>
+<area shape="rect" id="Node000001" title="Defines how a Pauli X and a Pauli Z on the same qubit get propagated from right to left through a Cli..." alt="" coords="5,191,208,235"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ACPairNode.html" title="Base class for nodes defined by a pair of anti&#45;commuting Pauli strings." alt="" coords="16,98,197,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,156,109,191,104,190,105,160"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Transforms_1_1GreedyPauliSimp_1_1PauliNode.html" title="Base class for nodes in the Greedy Pauli graph." alt="" coords="16,5,197,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,63,109,98,104,97,106,68"/>
 </map>

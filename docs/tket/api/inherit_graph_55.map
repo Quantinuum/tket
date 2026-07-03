@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html" title=" " alt="" coords="5,5,212,75"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1FrameRandomisation.html" title=" " alt="" coords="5,32,199,60"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1PauliFrameRandomisation.html" title=" " alt="" coords="262,5,486,33"/>
+<area shape="poly" id="edge102_Node000000_Node000001" title=" " alt="" coords="214,32,264,30,259,31,214,38"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1UniversalFrameRandomisation.html" title=" " alt="" coords="247,57,502,85"/>
+<area shape="poly" id="edge104_Node000000_Node000003" title=" " alt="" coords="214,54,249,59,244,59,214,59"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1PowerCycle.html" title=" " alt="" coords="550,5,680,33"/>
+<area shape="poly" id="edge103_Node000001_Node000002" title=" " alt="" coords="502,17,553,19,547,19,502,22"/>
 </map>

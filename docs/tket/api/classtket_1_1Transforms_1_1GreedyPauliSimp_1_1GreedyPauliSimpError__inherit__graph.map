@@ -1,7 +1,7 @@
 <map id="tket::Transforms::GreedyPauliSimp::GreedyPauliSimpError" name="tket::Transforms::GreedyPauliSimp::GreedyPauliSimpError">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,152,241,192"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="64,79,183,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,118,126,152,121,152,121,118"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="66,5,181,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,44,126,79,121,79,121,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,241,201"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="64,81,182,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,123,125,157,121,155,121,127"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="66,5,180,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,46,126,81,120,80,122,51"/>
 </map>

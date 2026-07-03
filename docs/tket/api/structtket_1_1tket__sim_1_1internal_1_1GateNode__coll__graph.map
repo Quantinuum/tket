@@ -1,7 +1,7 @@
 <map id="tket::tket_sim::internal::GateNode" name="tket::tket_sim::internal::GateNode">
-<area shape="rect" id="Node000001" title=" " alt="" coords="111,93,281,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,184,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,38,177,91,174,95,115,42"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="209,5,389,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="278,42,219,95,215,91,274,38"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="111,106,280,151"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,183,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,42,177,105,172,106,116,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="207,5,386,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="276,44,218,107,214,103,271,45"/>
 </map>

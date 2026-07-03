@@ -1,7 +1,7 @@
 <map id="include/tket/Circuit/DummyBox.hpp" name="include/tket/Circuit/DummyBox.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="113,5,257,45"/>
-<area shape="rect" id="Node000002" href="$Circuit_8cpp.html" title=" " alt="" coords="5,93,165,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,56,102,95,99,91,149,52"/>
-<area shape="rect" id="Node000003" href="$DummyBox_8cpp.html" title=" " alt="" coords="189,93,384,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,52,273,91,270,95,219,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="113,5,257,50"/>
+<area shape="rect" id="Node000002" href="$Circuit_8cpp.html" title=" " alt="" coords="5,98,165,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,59,103,100,100,95,144,61"/>
+<area shape="rect" id="Node000003" href="$DummyBox_8cpp.html" title=" " alt="" coords="189,98,384,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,57,273,98,267,97,223,62"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="tket::graphs::AbstractGraph&lt; T &gt;" name="tket::graphs::AbstractGraph&lt; T &gt;">
-<area shape="rect" id="Node000001" title="Abstract class for representing graphs." alt="" coords="5,181,244,207"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="71,93,179,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,133,127,181,122,181,122,133"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="105,5,144,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,45,127,93,122,93,122,45"/>
+<area shape="rect" id="Node000001" title="Abstract class for representing graphs." alt="" coords="5,207,243,234"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="70,106,178,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,148,127,207,121,205,122,151"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="105,5,143,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,46,127,106,121,105,123,51"/>
 </map>

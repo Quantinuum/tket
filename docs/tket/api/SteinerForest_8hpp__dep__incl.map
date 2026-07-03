@@ -1,9 +1,9 @@
 <map id="include/tket/ArchAwareSynth/SteinerForest.hpp" name="include/tket/ArchAwareSynth/SteinerForest.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="175,5,385,45"/>
-<area shape="rect" id="Node000002" href="$SteinerForest_8cpp.html" title=" " alt="" coords="5,93,157,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,53,126,96,124,91,223,48"/>
-<area shape="rect" id="Node000003" href="$AASRoute_8cpp.html" title=" " alt="" coords="182,101,378,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="283,59,283,100,277,100,277,59"/>
-<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="403,101,648,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="348,47,494,98,492,103,346,52"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="174,5,382,50"/>
+<area shape="rect" id="Node000002" href="$SteinerForest_8cpp.html" title=" " alt="" coords="5,98,157,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,56,129,100,127,95,215,58"/>
+<area shape="rect" id="Node000003" href="$AASRoute_8cpp.html" title=" " alt="" coords="181,106,376,134"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="280,64,281,107,276,104,276,67"/>
+<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="400,106,644,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="351,53,489,106,484,106,350,58"/>
 </map>

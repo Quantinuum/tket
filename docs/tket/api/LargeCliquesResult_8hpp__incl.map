@@ -1,9 +1,9 @@
 <map id="include/tket/Graphs/LargeCliquesResult.hpp" name="include/tket/Graphs/LargeCliquesResult.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="33,5,211,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,76,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,47,65,85,61,82,100,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="101,93,143,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,46,125,79,119,79,119,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="168,93,231,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,44,180,82,176,85,139,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="31,5,209,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,75,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,49,65,88,62,84,97,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,98,141,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,48,122,83,118,81,118,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="165,98,227,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,48,176,86,171,86,139,53"/>
 </map>

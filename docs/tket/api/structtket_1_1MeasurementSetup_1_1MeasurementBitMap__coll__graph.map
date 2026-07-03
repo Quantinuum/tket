@@ -1,5 +1,5 @@
 <map id="tket::MeasurementSetup::MeasurementBitMap" name="tket::MeasurementSetup::MeasurementBitMap">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,188,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="7,5,187,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,44,99,93,94,93,94,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,106,187,151"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="6,5,186,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,47,99,106,93,105,94,51"/>
 </map>

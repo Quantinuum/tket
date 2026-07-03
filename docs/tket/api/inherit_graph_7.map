@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtket_1_1aas_1_1CNotSwapSynth.html" title="object to store and perform the swap nased cnot synthesis" alt="" coords="5,5,196,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,159,33"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1NeighboursFromArchitecture.html" title="Stores and returns upon request the adjacent vertices to a given vertex on a graph,..." alt="" coords="207,5,447,33"/>
+<area shape="poly" id="edge46_Node000000_Node000001" title=" " alt="" coords="174,17,209,19,204,19,174,22"/>
 </map>

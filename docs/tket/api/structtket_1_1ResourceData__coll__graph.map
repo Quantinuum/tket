@@ -1,10 +1,10 @@
 <map id="tket::ResourceData" name="tket::ResourceData">
-<area shape="rect" id="Node000001" title=" " alt="" coords="783,45,929,70"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="401,71,644,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="657,78,758,68,782,65,783,70,759,73,658,83"/>
-<area shape="rect" id="Node000003" href="$structtket_1_1ResourceBounds.html" title=" " alt="" coords="125,36,288,76"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="301,46,312,45,535,32,633,31,759,39,787,42,787,47,758,44,633,37,536,38,312,51,302,51"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,64,401,75,401,80,302,69"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,43,44,69"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="58,53,125,53,125,59,58,59"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="792,69,938,96"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="408,95,649,140"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,119,768,110,824,97,829,97,769,115,665,124"/>
+<area shape="rect" id="Node000003" href="$structtket_1_1ResourceBounds.html" title=" " alt="" coords="129,59,291,104"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="306,63,315,63,442,54,542,50,641,53,769,63,795,68,789,68,768,68,641,58,542,55,443,59,315,68,307,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,89,411,103,405,104,306,95"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,67,44,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="59,79,130,79,127,83,60,84"/>
 </map>

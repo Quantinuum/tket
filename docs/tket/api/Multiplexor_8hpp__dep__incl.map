@@ -1,11 +1,11 @@
 <map id="include/tket/Circuit/Multiplexor.hpp" name="include/tket/Circuit/Multiplexor.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="370,5,514,45"/>
-<area shape="rect" id="Node000002" href="$DiagonalBox_8cpp.html" title=" " alt="" coords="5,93,207,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,49,156,96,155,91,356,44"/>
-<area shape="rect" id="Node000003" href="$Multiplexor_8cpp.html" title=" " alt="" coords="231,93,421,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="404,55,345,95,342,91,401,51"/>
-<area shape="rect" id="Node000004" href="$StatePreparation_8cpp.html" title=" " alt="" coords="446,93,673,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="483,51,544,91,541,95,481,55"/>
-<area shape="rect" id="Node000005" href="$ToffoliBox_8cpp.html" title=" " alt="" coords="697,93,880,119"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="528,43,738,91,737,96,527,49"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="368,5,512,50"/>
+<area shape="rect" id="Node000002" href="$DiagonalBox_8cpp.html" title=" " alt="" coords="5,98,206,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,53,160,100,159,95,352,48"/>
+<area shape="rect" id="Node000003" href="$Multiplexor_8cpp.html" title=" " alt="" coords="230,98,419,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="400,58,344,100,342,95,395,60"/>
+<area shape="rect" id="Node000004" href="$StatePreparation_8cpp.html" title=" " alt="" coords="443,98,669,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="484,57,540,98,535,97,482,62"/>
+<area shape="rect" id="Node000005" href="$ToffoliBox_8cpp.html" title=" " alt="" coords="694,98,875,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="527,47,732,97,726,98,527,52"/>
 </map>

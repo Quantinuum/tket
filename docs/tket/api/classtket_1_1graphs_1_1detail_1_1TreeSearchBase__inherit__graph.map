@@ -1,11 +1,9 @@
 <map id="tket::graphs::detail::TreeSearchBase&lt; Graph, BoostPMap &gt;" name="tket::graphs::detail::TreeSearchBase&lt; Graph, BoostPMap &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,66,196,121"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearch.html" title=" " alt="" coords="255,37,427,77"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,74,255,68,256,73,210,80"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1graphs_1_1detail_1_1TreeSearch.html" title=" " alt="" coords="244,102,439,157"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="210,107,244,112,243,117,209,112"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1BFS.html" title=" " alt="" coords="487,5,629,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,40,486,33,487,38,442,45"/>
-<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1DFS.html" title=" " alt="" coords="487,69,629,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="442,69,487,76,486,81,441,75"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="64,5,254,67"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1graphs_1_1detail_1_1TreeSearch.html" title=" " alt="" coords="73,115,244,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,80,161,115,156,114,157,85"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1graphs_1_1BFS.html" title=" " alt="" coords="5,208,147,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,170,97,209,94,206,127,172"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1graphs_1_1DFS.html" title=" " alt="" coords="170,208,312,252"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="189,169,225,208,219,207,187,174"/>
 </map>

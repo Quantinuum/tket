@@ -1,7 +1,5 @@
 <map id="tket::zx::ZXVertProperties" name="tket::zx::ZXVertProperties">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,196,193,221"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="15,93,184,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,147,102,196,97,196,97,147"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="38,5,161,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,44,102,93,97,93,97,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,193,151"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="15,5,183,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,64,102,123,96,122,97,67"/>
 </map>

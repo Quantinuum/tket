@@ -1,16 +1,12 @@
 <map id="tket::RepeatUntilSatisfiedPass" name="tket::RepeatUntilSatisfiedPass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="203,447,420,472"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1BasePass.html" title=" " alt="" coords="253,372,369,397"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,412,314,446,309,446,309,412"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="243,181,409,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,231,369,245,369,260,369,306,366,326,356,349,345,363,332,374,329,370,342,360,352,347,361,325,364,306,363,260,363,246,356,233"/>
-<area shape="rect" id="Node000006" href="$structtket_1_1PostConditions.html" title=" " alt="" coords="163,284,315,309"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="258,231,243,247,238,265,239,283,234,284,232,264,238,244,254,227"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="247,93,405,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="329,132,329,181,323,181,323,132"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="307,5,345,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="329,45,329,93,323,93,323,45"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="260,318,303,370,299,373,256,322"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="5,181,161,221"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="92,234,98,247,106,258,133,275,164,286,162,291,131,280,103,262,93,250,87,236"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,301,222,328"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1BasePass.html" title=" " alt="" coords="56,224,171,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,265,116,301,111,299,112,269"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,5,185,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,63,106,150,114,224,109,223,101,151,100,68"/>
+<area shape="rect" id="Node000004" href="$structtket_1_1PostConditions.html" title=" " alt="" coords="182,123,333,151"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="113,62,125,81,138,97,159,111,184,122,179,124,157,115,135,101,120,84,112,67"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="224,161,134,225,131,221,228,158"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="218,5,374,50"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="285,63,264,124,260,121,281,67"/>
 </map>

@@ -1,13 +1,13 @@
 <map id="include/tket/Utils/HelperFunctions.hpp" name="include/tket/Utils/HelperFunctions.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="227,5,385,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,159,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,48,145,91,143,86,256,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="183,101,250,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="288,48,241,93,237,89,284,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="275,101,337,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="309,46,309,87,303,87,303,46"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="362,101,413,126"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,44,369,89,365,92,322,47"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="437,101,500,126"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="343,43,436,92,434,97,340,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="224,5,382,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,158,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,50,149,94,147,89,247,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="182,106,248,134"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="284,49,240,97,237,93,280,51"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="272,106,334,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="305,48,305,92,301,89,301,52"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="358,106,408,134"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="323,48,364,95,359,94,321,53"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="432,106,494,134"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="342,48,429,99,424,99,340,53"/>
 </map>

@@ -1,3 +1,41 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structtket_1_1SubgraphMonomorphisms_1_1Parameters.html" title=" " alt="" coords="5,5,231,45"/>
+<area shape="rect" id="Node000000" href="$classtket_1_1Predicate.html" title=" " alt="" coords="5,489,121,517"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1CliffordCircuitPredicate.html" title=" " alt="" coords="187,5,392,33"/>
+<area shape="poly" id="edge148_Node000000_Node000001" title=" " alt="" coords="64,474,75,377,95,248,109,183,125,124,144,76,167,43,188,29,185,34,171,46,149,78,130,125,114,184,100,249,80,378,70,474"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1CommutableMeasuresPredicate.html" title="Asserts that any internal measurements can be commuted to the end of the circuit." alt="" coords="189,57,390,102"/>
+<area shape="poly" id="edge149_Node000000_Node000002" title=" " alt="" coords="60,474,62,401,75,305,89,253,107,202,133,154,167,112,190,97,187,101,171,116,138,157,112,204,94,254,81,306,68,402,66,474"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1ConnectivityPredicate.html" title=" " alt="" coords="191,125,388,153"/>
+<area shape="poly" id="edge150_Node000000_Node000003" title=" " alt="" coords="62,473,66,409,81,325,94,281,112,238,136,199,167,164,192,149,189,154,170,168,141,202,117,241,99,283,86,327,71,410,67,474"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1DefaultRegisterPredicate.html" title=" " alt="" coords="181,177,398,205"/>
+<area shape="poly" id="edge151_Node000000_Node000004" title=" " alt="" coords="63,474,71,419,88,349,101,312,118,277,140,244,167,216,189,203,186,208,170,220,144,248,123,280,106,315,93,350,76,420,69,474"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1DirectednessPredicate.html" title=" " alt="" coords="189,229,390,257"/>
+<area shape="poly" id="edge152_Node000000_Node000005" title=" " alt="" coords="66,474,77,428,95,372,125,316,144,290,167,268,190,255,187,260,170,272,148,294,129,319,100,374,82,429,71,475"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1GateSetPredicate.html" title="Asserts that all operations are in the specified set of types." alt="" coords="206,281,373,309"/>
+<area shape="poly" id="edge153_Node000000_Node000006" title=" " alt="" coords="70,474,84,438,104,396,131,355,167,320,207,302,204,306,170,324,135,358,108,399,88,440,75,475"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1MaxNClRegPredicate.html" title="Asserts that the circuit only contains N classical registers or less." alt="" coords="194,333,385,361"/>
+<area shape="poly" id="edge154_Node000000_Node000007" title=" " alt="" coords="76,475,113,421,138,394,167,372,196,360,193,364,170,376,142,398,117,425,81,477"/>
+<area shape="rect" id="Node000008" href="$classtket_1_1MaxNQubitsPredicate.html" title=" " alt="" coords="192,385,387,413"/>
+<area shape="poly" id="edge155_Node000000_Node000008" title=" " alt="" coords="88,477,125,449,168,423,205,412,201,416,170,428,128,453,93,480"/>
+<area shape="rect" id="Node000009" href="$classtket_1_1MaxTwoQubitGatesPredicate.html" title=" " alt="" coords="169,437,410,465"/>
+<area shape="poly" id="edge156_Node000000_Node000009" title=" " alt="" coords="134,484,168,475,224,464,220,468,169,480,138,488"/>
+<area shape="rect" id="Node000010" href="$classtket_1_1NoBarriersPredicate.html" title="Asserts that the circuit contains no OpType::Barrier." alt="" coords="197,489,382,517"/>
+<area shape="poly" id="edge157_Node000000_Node000010" title=" " alt="" coords="134,501,199,501,195,505,137,505"/>
+<area shape="rect" id="Node000011" href="$classtket_1_1NoClassicalBitsPredicate.html" title=" " alt="" coords="181,541,398,569"/>
+<area shape="poly" id="edge158_Node000000_Node000011" title=" " alt="" coords="135,518,169,526,225,539,220,542,168,531,137,523"/>
+<area shape="rect" id="Node000012" href="$classtket_1_1NoClassicalControlPredicate.html" title="Asserts that there are no conditional gates in the circuit." alt="" coords="201,593,378,638"/>
+<area shape="poly" id="edge159_Node000000_Node000012" title=" " alt="" coords="90,525,128,553,170,578,203,593,198,595,167,583,125,557,92,530"/>
+<area shape="rect" id="Node000013" href="$classtket_1_1NoFastFeedforwardPredicate.html" title=" " alt="" coords="169,661,410,689"/>
+<area shape="poly" id="edge160_Node000000_Node000013" title=" " alt="" coords="76,529,114,591,140,622,170,648,192,660,187,662,167,652,136,626,110,594,77,534"/>
+<area shape="rect" id="Node000014" href="$classtket_1_1NoMidMeasurePredicate.html" title="Asserts that any measurements occur at the end of the circuit." alt="" coords="183,713,396,741"/>
+<area shape="poly" id="edge161_Node000000_Node000014" title=" " alt="" coords="71,529,86,570,106,615,134,661,170,698,192,712,187,714,167,703,129,664,101,618,81,571,71,535"/>
+<area shape="rect" id="Node000015" href="$classtket_1_1NoSymbolsPredicate.html" title="Asserts that no gates in the circuit have symbolic parameters." alt="" coords="195,765,384,793"/>
+<area shape="poly" id="edge162_Node000000_Node000015" title=" " alt="" coords="68,530,80,580,98,639,127,700,147,727,170,750,197,767,192,768,167,755,143,730,123,703,93,641,75,581,68,535"/>
+<area shape="rect" id="Node000016" href="$classtket_1_1NoWireSwapsPredicate.html" title=" " alt="" coords="187,817,392,845"/>
+<area shape="poly" id="edge163_Node000000_Node000016" title=" " alt="" coords="66,530,74,590,91,663,104,702,121,739,143,773,170,802,190,816,185,817,167,807,139,776,117,741,99,704,86,665,69,591,65,535"/>
+<area shape="rect" id="Node000017" href="$classtket_1_1NormalisedTK2Predicate.html" title="Asserts that all TK2 gates are normalised." alt="" coords="182,869,397,897"/>
+<area shape="poly" id="edge164_Node000000_Node000017" title=" " alt="" coords="64,530,70,599,84,686,97,732,115,777,139,819,170,855,189,869,184,869,167,858,135,822,110,779,92,734,78,687,64,600,64,535"/>
+<area shape="rect" id="Node000018" href="$classtket_1_1PlacementPredicate.html" title=" " alt="" coords="197,921,382,949"/>
+<area shape="poly" id="edge165_Node000000_Node000018" title=" " alt="" coords="68,530,83,619,104,732,134,838,151,879,171,907,199,926,194,926,167,910,147,882,129,840,99,733,78,620,68,535"/>
+<area shape="rect" id="Node000019" href="$classtket_1_1UserDefinedPredicate.html" title=" " alt="" coords="192,973,387,1001"/>
+<area shape="poly" id="edge166_Node000000_Node000019" title=" " alt="" coords="67,530,81,629,101,757,114,822,131,880,149,927,171,959,194,976,188,976,167,962,145,930,126,882,109,823,96,758,75,630,67,535"/>
 </map>

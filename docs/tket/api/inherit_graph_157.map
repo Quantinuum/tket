@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classtket_1_1UnitID.html" title="Location holding a bit or qubit of information." alt="" coords="5,84,101,112"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1Bit.html" title="Location holding a bit." alt="" coords="177,5,249,33"/>
+<area shape="poly" id="edge182_Node000000_Node000001" title=" " alt="" coords="90,74,147,43,179,32,174,35,150,48,93,78"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Qubit.html" title="Location holding a qubit." alt="" coords="168,57,258,85"/>
+<area shape="poly" id="edge183_Node000000_Node000002" title=" " alt="" coords="115,85,170,77,166,80,117,90"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1RngState.html" title="Location holding an RNG UID." alt="" coords="156,109,270,137"/>
+<area shape="poly" id="edge185_Node000000_Node000004" title=" " alt="" coords="116,105,158,113,153,115,116,110"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1WasmState.html" title="Location holding a wasm UID." alt="" coords="149,161,277,189"/>
+<area shape="poly" id="edge187_Node000000_Node000006" title=" " alt="" coords="94,117,150,146,179,161,173,161,148,151,92,122"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Node.html" title="Architectural qubit location." alt="" coords="345,57,433,85"/>
+<area shape="poly" id="edge184_Node000002_Node000003" title=" " alt="" coords="273,69,347,70,342,72,274,74"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1RngNode.html" title="RNG UID." alt="" coords="332,109,446,137"/>
+<area shape="poly" id="edge186_Node000004_Node000005" title=" " alt="" coords="285,121,335,123,329,124,286,126"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1WasmNode.html" title="WASM UID." alt="" coords="325,161,453,189"/>
+<area shape="poly" id="edge188_Node000006_Node000007" title=" " alt="" coords="292,173,327,175,322,175,292,178"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="tket::NeighboursFromArchitecture" name="tket::NeighboursFromArchitecture">
-<area shape="rect" id="Node000001" title="Stores and returns upon request the adjacent vertices to a given vertex on a graph,..." alt="" coords="5,79,247,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="49,5,203,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,44,129,79,123,79,123,44"/>
+<area shape="rect" id="Node000001" title="Stores and returns upon request the adjacent vertices to a given vertex on a graph,..." alt="" coords="5,81,246,109"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="49,5,202,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,47,128,82,123,79,124,51"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="include/tket/Transformations/CliffordReductionPass.hpp" name="include/tket/Transformations/CliffordReductionPass.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="102,5,309,45"/>
-<area shape="rect" id="Node000002" href="$CliffordReductionPass_8cpp.html" title=" " alt="" coords="5,93,200,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,56,127,95,124,91,170,52"/>
-<area shape="rect" id="Node000003" href="$OptimisationPass_8cpp.html" title=" " alt="" coords="225,93,391,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,52,287,91,284,95,237,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="100,5,306,50"/>
+<area shape="rect" id="Node000002" href="$CliffordReductionPass_8cpp.html" title=" " alt="" coords="5,98,199,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,59,128,100,125,95,166,61"/>
+<area shape="rect" id="Node000003" href="$OptimisationPass_8cpp.html" title=" " alt="" coords="223,98,389,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,58,284,98,279,97,238,63"/>
 </map>

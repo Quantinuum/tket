@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vertexproperties_0',['VertexProperties',['../structtket_1_1VertexProperties.html',1,'tket']]]
+  ['vector_0',['vector',['../classvector.html',1,'']]],
+  ['vertexproperties_1',['VertexProperties',['../structtket_1_1VertexProperties.html',1,'tket']]]
 ];

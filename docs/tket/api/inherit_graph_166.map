@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classtket_1_1zx_1_1ZXGen.html" title="Abstract class for a ZX generator." alt="" coords="5,96,127,124"/>
+<area shape="rect" id="Node000001" href="$classtket_1_1zx_1_1BasicGen.html" title="Virtual subclass of ZXGen for undirected (commutative) generators." alt="" coords="188,44,326,72"/>
+<area shape="poly" id="edge189_Node000000_Node000001" title=" " alt="" coords="133,89,206,71,202,74,136,94"/>
+<area shape="rect" id="Node000004" href="$classtket_1_1zx_1_1BoundaryGen.html" title="Implementation of ZXGen for boundary vertices." alt="" coords="175,96,340,124"/>
+<area shape="poly" id="edge192_Node000000_Node000004" title=" " alt="" coords="142,107,177,109,172,111,143,112"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1zx_1_1ZXDirected.html" title="Virtual subclass of ZXGen for directed (non&#45;commutative) generators." alt="" coords="182,148,332,176"/>
+<area shape="poly" id="edge193_Node000000_Node000005" title=" " alt="" coords="135,126,206,146,201,148,134,131"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1zx_1_1CliffordGen.html" title="Implementation of BasicGen for Clifford generators." alt="" coords="392,5,542,33"/>
+<area shape="poly" id="edge190_Node000001_Node000002" title=" " alt="" coords="341,40,394,32,389,34,343,45"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1zx_1_1PhasedGen.html" title="Implementation of BasicGen for phased generators, e.g." alt="" coords="392,57,542,85"/>
+<area shape="poly" id="edge191_Node000001_Node000003" title=" " alt="" coords="342,61,394,66,389,67,343,66"/>
+<area shape="rect" id="Node000006" href="$classtket_1_1zx_1_1DirectedGen.html" title="Implementation of ZXDirected for actual generators in the prop setting (e.g." alt="" coords="388,135,546,162"/>
+<area shape="poly" id="edge194_Node000005_Node000006" title=" " alt="" coords="348,153,390,153,385,154,348,159"/>
+<area shape="rect" id="Node000007" href="$classtket_1_1zx_1_1ZXBox.html" title=" " alt="" coords="407,187,527,214"/>
+<area shape="poly" id="edge195_Node000005_Node000007" title=" " alt="" coords="348,176,409,189,404,189,348,181"/>
+</map>

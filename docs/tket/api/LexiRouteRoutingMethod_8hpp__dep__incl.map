@@ -1,9 +1,9 @@
 <map id="include/tket/Mapping/LexiRouteRoutingMethod.hpp" name="include/tket/Mapping/LexiRouteRoutingMethod.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="242,5,461,45"/>
-<area shape="rect" id="Node000002" href="$LexiRouteRoutingMethod_8cpp.html" title=" " alt="" coords="5,93,225,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,53,168,96,166,91,286,48"/>
-<area shape="rect" id="Node000003" href="$RoutingMethodJson_8cpp.html" title=" " alt="" coords="249,93,453,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="354,59,354,93,349,93,349,59"/>
-<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="478,101,723,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="420,47,568,98,567,103,418,52"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="242,5,460,50"/>
+<area shape="rect" id="Node000002" href="$LexiRouteRoutingMethod_8cpp.html" title=" " alt="" coords="5,98,225,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,55,172,100,171,95,278,56"/>
+<area shape="rect" id="Node000003" href="$RoutingMethodJson_8cpp.html" title=" " alt="" coords="249,98,453,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="353,64,353,99,349,96,349,68"/>
+<area shape="rect" id="Node000004" href="$PassGenerators_8cpp.html" title=" " alt="" coords="477,106,721,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="425,53,565,106,560,106,424,58"/>
 </map>

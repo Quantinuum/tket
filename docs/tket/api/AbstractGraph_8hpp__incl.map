@@ -1,13 +1,13 @@
 <map id="include/tket/Graphs/AbstractGraph.hpp" name="include/tket/Graphs/AbstractGraph.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="141,5,289,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,80,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,48,81,90,79,85,172,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="104,93,147,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,48,151,86,147,82,191,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="171,93,258,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,46,217,79,212,79,212,46"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="282,93,342,119"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="240,43,289,82,285,87,237,48"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="366,93,429,119"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="259,43,359,85,357,90,257,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="138,5,286,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,80,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,53,84,93,82,89,165,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="103,98,144,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,49,151,89,148,85,186,51"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="169,98,254,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,48,214,84,210,81,210,52"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="278,98,338,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="238,48,283,88,278,87,236,53"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="362,98,424,126"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="261,48,353,91,348,92,259,53"/>
 </map>

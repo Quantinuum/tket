@@ -1,7 +1,7 @@
 <map id="include/tket/Architecture/NeighboursFromArchitecture.hpp" name="include/tket/Architecture/NeighboursFromArchitecture.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="81,5,321,45"/>
-<area shape="rect" id="Node000002" href="$BestTsaWithArch_8cpp.html" title=" " alt="" coords="5,93,184,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,56,120,95,117,91,165,52"/>
-<area shape="rect" id="Node000003" href="$NeighboursFromArchitecture_8cpp.html" title=" " alt="" coords="208,93,411,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,52,287,91,284,95,234,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="81,5,320,50"/>
+<area shape="rect" id="Node000002" href="$BestTsaWithArch_8cpp.html" title=" " alt="" coords="5,98,183,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,59,121,100,118,95,161,61"/>
+<area shape="rect" id="Node000003" href="$NeighboursFromArchitecture_8cpp.html" title=" " alt="" coords="207,98,408,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,58,285,98,279,97,237,63"/>
 </map>

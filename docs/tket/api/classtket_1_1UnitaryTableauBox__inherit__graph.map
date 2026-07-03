@@ -1,9 +1,9 @@
 <map id="tket::UnitaryTableauBox" name="tket::UnitaryTableauBox">
-<area shape="rect" id="Node000001" title="Encapsulation of a unitary stabilizer tableau as a Box to use within a circuit." alt="" coords="5,240,184,265"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="55,167,135,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,206,97,240,92,240,92,206"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="58,93,131,119"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,132,97,167,92,167,92,132"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="22,5,167,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="97,59,97,93,92,93,92,59"/>
+<area shape="rect" id="Node000001" title="Encapsulation of a unitary stabilizer tableau as a Box to use within a circuit." alt="" coords="5,249,183,277"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1Box.html" title="Abstract class for an operation from which a circuit can be extracted." alt="" coords="54,174,134,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,215,96,250,92,248,92,219"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="58,98,130,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,139,97,174,91,173,93,144"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="22,5,166,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,63,97,98,91,97,93,68"/>
 </map>

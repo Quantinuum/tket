@@ -1,17 +1,17 @@
 <map id="tket::OpaqueClassicalOp" name="tket::OpaqueClassicalOp">
-<area shape="rect" id="Node000001" title="An opaque classical operation with no parameters and fixed signature." alt="" coords="262,271,443,296"/>
-<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="287,196,418,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,236,355,270,350,270,350,236"/>
-<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="191,108,264,133"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,139,337,194,334,198,254,143"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,151,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="121,50,210,106,208,110,118,55"/>
-<area shape="rect" id="Node000005" href="$classtket_1_1OpDesc.html" title="Operation descriptor." alt="" coords="175,13,280,38"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="230,52,230,108,225,108,225,52"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="309,108,396,133"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="355,147,355,195,350,195,350,147"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="305,5,443,45"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="369,59,358,108,353,107,364,58"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="420,108,603,133"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="479,142,375,198,373,193,477,138"/>
+<area shape="rect" id="Node000001" title="An opaque classical operation with no parameters and fixed signature." alt="" coords="259,301,440,328"/>
+<area shape="rect" id="Node000002" href="$classtket_1_1ClassicalOp.html" title="A purely classical operation." alt="" coords="284,224,415,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,265,352,302,347,299,348,269"/>
+<area shape="rect" id="Node000003" href="$classtket_1_1Op.html" title="Abstract class representing an operation type." alt="" coords="189,123,262,151"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,158,336,223,330,223,253,163"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,150,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="120,57,210,121,205,123,119,62"/>
+<area shape="rect" id="Node000005" href="$classtket_1_1OpDesc.html" title="Operation descriptor." alt="" coords="173,14,278,42"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="227,55,228,123,223,122,224,60"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="306,123,393,151"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="351,164,352,224,347,222,348,168"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="302,5,440,50"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="365,63,354,124,350,121,362,68"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="417,123,599,151"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="477,158,372,225,370,221,472,160"/>
 </map>

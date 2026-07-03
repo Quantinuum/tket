@@ -1,9 +1,9 @@
 <map id="include/tket/Transformations/ThreeQubitSquash.hpp" name="include/tket/Transformations/ThreeQubitSquash.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="255,5,462,45"/>
-<area shape="rect" id="Node000002" href="$PassGenerators_8cpp.html" title=" " alt="" coords="5,101,251,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="296,53,160,103,158,98,294,48"/>
-<area shape="rect" id="Node000003" href="$OptimisationPass_8cpp.html" title=" " alt="" coords="275,93,442,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="361,59,361,93,356,93,356,59"/>
-<area shape="rect" id="Node000004" href="$ThreeQubitSquash_8cpp.html" title=" " alt="" coords="466,93,638,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="415,49,511,91,509,96,413,53"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="254,5,460,50"/>
+<area shape="rect" id="Node000002" href="$PassGenerators_8cpp.html" title=" " alt="" coords="5,106,250,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="291,56,162,108,160,103,285,56"/>
+<area shape="rect" id="Node000003" href="$OptimisationPass_8cpp.html" title=" " alt="" coords="274,98,440,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="359,64,359,99,355,96,355,68"/>
+<area shape="rect" id="Node000004" href="$ThreeQubitSquash_8cpp.html" title=" " alt="" coords="463,98,634,143"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="417,54,506,98,501,98,416,60"/>
 </map>
