@@ -1,5 +1,7 @@
 # Changelog
 
+## 2.18.1 (July 2026)
+
 ## 2.18.0 (May 2026)
 
 Fixes:
