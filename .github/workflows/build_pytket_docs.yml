@@ -13,7 +13,7 @@ jobs:
       pytket_or_workflow_changed: ${{ steps.filter.outputs.pytket_or_workflow }}
     steps:
     - uses: actions/checkout@v7
-    - uses: dorny/paths-filter@v4.0.1
+    - uses: dorny/paths-filter@v4.0.2
       id: filter
       with:
         base: ${{ github.ref }}
