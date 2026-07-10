@@ -94,6 +94,7 @@ def _use_vue_dev_build() -> bool:
         "on",
     )
 
+
 RenderCircuit = dict[str, str | float | dict] | Circuit
 Orientation = Literal["row"] | Literal["column"]
 
