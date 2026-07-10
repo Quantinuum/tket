@@ -66,6 +66,22 @@ loader = PrefixLoader(
 
 jinja_env = Environment(loader=loader, extensions=[IncludeRawExtension])
 
+
+def _use_vue_dev_build() -> bool:
+    """Whether to load the development build of Vue.
+
+    The development build emits extra runtime warnings that are useful when
+    debugging the circuit renderer. Set the ``PYTKET_CIRCUIT_RENDERER_DEV``
+    environment variable to a truthy value to enable it; otherwise the
+    production build is used.
+    """
+    return os.environ.get("PYTKET_CIRCUIT_RENDERER_DEV", "").lower() in (
+        "1",
+        "true",
+        "yes",
+        "on",
+    )
+
 RenderCircuit = dict[str, str | float | dict] | Circuit
 Orientation = Literal["row"] | Literal["column"]
 
@@ -230,6 +246,7 @@ class CircuitRenderer:
                 "min_height": self.config.min_height,
                 "min_width": self.config.min_width,
                 "view_format": orient or self.config.orient,
+                "vue_dev": _use_vue_dev_build(),
             }
         )
         if jupyter:
