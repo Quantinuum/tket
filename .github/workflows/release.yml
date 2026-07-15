@@ -11,7 +11,7 @@ on:
 jobs:
   build_Linux_wheels:
     name: Build manylinux
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         python3-version: ['10', '11', '12']
@@ -37,7 +37,7 @@ jobs:
 
   build_Linux_aarch64_wheels:
     name: Build manylinux aarch64
-    runs-on: 'ubuntu-24.04-arm'
+    runs-on: 'ubuntu-26.04-arm'
     strategy:
       matrix:
         python3-version: ['10', '11', '12']
@@ -185,7 +185,7 @@ jobs:
   test_linux_wheels:
     name: Test linux wheels
     needs: build_Linux_wheels
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         python3-version: ['10', '11', '12', '13', '14']
@@ -221,7 +221,7 @@ jobs:
   test_linux_aarch64_wheels:
     name: Test linux aarch64 wheels
     needs: build_Linux_aarch64_wheels
-    runs-on: 'ubuntu-24.04-arm'
+    runs-on: 'ubuntu-26.04-arm'
     strategy:
       matrix:
         python3-version: ['10', '11', '12', '13', '14']
