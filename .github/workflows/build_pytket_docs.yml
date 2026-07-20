@@ -40,7 +40,7 @@ jobs:
       with:
         just-version: 1.5.0
     - name: Select Python 3.12
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
         python-version: '3.12'
     - name: Install conan
@@ -65,7 +65,7 @@ jobs:
     - name: Install tket
       run: conan create tket --user=tket --channel=stable --build=missing -o "boost/*":header_only=True -o "tklog/*":shared=True -o "tket/*":shared=True -tf ""
     - name: Set up Python (pull request)
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
         python-version: '3.11'
     - name: Test building the Python Sphinx docs
