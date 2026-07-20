@@ -26,7 +26,7 @@
         <circuit-display-container
                 :circuit-element-str="'#circuit-json-to-display'"
                 :init-render-options="initRenderOptions"
-                view-format="{{view_format}}"
+                {% if view_format %}view-format="{{view_format}}"{% endif %}
         ></circuit-display-container>
     </div>
     <script type="application/javascript">

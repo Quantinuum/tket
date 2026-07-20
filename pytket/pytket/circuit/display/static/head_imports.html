@@ -1,5 +1,5 @@
-<!-- Download Vue 3-->
-<script type="application/javascript" src="https://unpkg.com/vue@3"></script>
+<!-- Download Vue 3 (production build by default; development build for debugging) -->
+<script type="application/javascript" src="https://unpkg.com/vue@3/dist/{% if vue_dev %}vue.global.js{% else %}vue.global.prod.js{% endif %}"></script>
 <!-- Download Circuit Renderer with styles -->
 <script type="application/javascript" src="https://unpkg.com/pytket-circuit-renderer@0.10/dist/pytket-circuit-renderer.umd.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/pytket-circuit-renderer@0.10/dist/pytket-circuit-renderer.css">
@@ -10,7 +10,7 @@
         const loadVue = new Promise(resolve => {
             const vueFallback = document.createElement("script")
             vueFallback.type = "application/javascript"
-            vueFallback.src = "https://cdn.jsdelivr.net/npm/vue@3"
+            vueFallback.src = "https://cdn.jsdelivr.net/npm/vue@3/dist/{% if vue_dev %}vue.global.js{% else %}vue.global.prod.js{% endif %}"
             vueFallback.async = false
             vueFallback.defer = false
             vueFallback.addEventListener('load', () => {
