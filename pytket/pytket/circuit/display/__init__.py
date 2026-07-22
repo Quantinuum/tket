@@ -66,6 +66,35 @@ loader = PrefixLoader(
 
 jinja_env = Environment(loader=loader, extensions=[IncludeRawExtension])
 
+
+def _use_vue_dev_build() -> bool:
+    """Whether to load the development build of Vue.
+
+    During development Vue provides a number of features that improve the
+    debugging experience but are useless (and add a small performance overhead)
+    in production:
+
+    - warnings for common errors and pitfalls;
+    - props / events validation;
+    - reactivity debugging hooks;
+    - devtools integration.
+
+    The production build (dist files ending in ``.prod.js``) is pre-minified
+    with all of these development-only code branches removed. Set the
+    ``PYTKET_CIRCUIT_RENDERER_DEV`` environment variable to a truthy value to
+    load the development build instead; otherwise the production build is used.
+
+    See https://vuejs.org/guide/best-practices/production-deployment for
+    details.
+    """
+    return os.environ.get("PYTKET_CIRCUIT_RENDERER_DEV", "").lower() in (
+        "1",
+        "true",
+        "yes",
+        "on",
+    )
+
+
 RenderCircuit = dict[str, str | float | dict] | Circuit
 Orientation = Literal["row"] | Literal["column"]
 
@@ -230,6 +259,7 @@ class CircuitRenderer:
                 "min_height": self.config.min_height,
                 "min_width": self.config.min_width,
                 "view_format": orient or self.config.orient,
+                "vue_dev": _use_vue_dev_build(),
             }
         )
         if jupyter:
