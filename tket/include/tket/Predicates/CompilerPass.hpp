@@ -18,6 +18,7 @@
 #include "Predicates.hpp"
 #include "tket/Transformations/Transform.hpp"
 #include "tket/Utils/Json.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -82,7 +83,8 @@ struct PostConditions {
 /**
  * @brief Default callback when applying a pass (does nothing)
  */
-void trivial_callback(const CompilationUnit&, const nlohmann::json&);
+void TKET_EXPORT
+trivial_callback(const CompilationUnit&, const nlohmann::json&);
 
 /* Passes are used to generate full sequences of rewrite rules for Circuits. It
    internally stores pre and postcons which are composed together. Whenever a
@@ -95,7 +97,7 @@ void trivial_callback(const CompilationUnit&, const nlohmann::json&);
 // Predicates
 // TODO: Super Unsafe AKA Cowabunga Mode := check nothing, allow everything
 
-class BasePass {
+class TKET_EXPORT BasePass {
  public:
   BasePass() {}
 
@@ -116,7 +118,7 @@ class BasePass {
       const PassCallback& before_apply = trivial_callback,
       const PassCallback& after_apply = trivial_callback) const = 0;
 
-  friend PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
+  friend TKET_EXPORT PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
 
   virtual std::string to_string() const = 0;
 
@@ -158,8 +160,10 @@ class BasePass {
       const PassConditions& lhs, const PassConditions& rhs, bool strict = true);
 };
 
+TKET_EXPORT PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
+
 /* Basic Pass that all combinators can be used on */
-class StandardPass : public BasePass {
+class TKET_EXPORT StandardPass : public BasePass {
  public:
   /**
    * @brief Construct a new StandardPass object with info about the pass.
@@ -188,7 +192,7 @@ class StandardPass : public BasePass {
 };
 
 /* Runs a sequence of Passes */
-class SequencePass : public BasePass {
+class TKET_EXPORT SequencePass : public BasePass {
  public:
   SequencePass() {}
   explicit SequencePass(const std::vector<PassPtr>& ptvec, bool strict = true);
@@ -207,7 +211,7 @@ class SequencePass : public BasePass {
   nlohmann::json get_config() const override;
   std::vector<PassPtr> get_sequence() const { return seq_; }
 
-  friend PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
+  friend TKET_EXPORT PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
 
  private:
   std::vector<PassPtr> seq_;
@@ -216,7 +220,7 @@ class SequencePass : public BasePass {
 /* Repeats a Pass until it returns `false`, or if `strict_check` is `true`
  * until it stops modifying the circuit.
  */
-class RepeatPass : public BasePass {
+class TKET_EXPORT RepeatPass : public BasePass {
  public:
   explicit RepeatPass(const PassPtr& pass, bool strict_check = false);
   bool apply(
@@ -259,7 +263,7 @@ class RepeatPass : public BasePass {
   bool strict_check_;
 };
 
-class RepeatWithMetricPass : public BasePass {
+class TKET_EXPORT RepeatWithMetricPass : public BasePass {
  public:
   RepeatWithMetricPass(const PassPtr& pass, const Transform::Metric& metric);
   bool apply(
@@ -276,7 +280,7 @@ class RepeatWithMetricPass : public BasePass {
   Transform::Metric metric_;
 };
 
-class RepeatUntilSatisfiedPass : public BasePass {
+class TKET_EXPORT RepeatUntilSatisfiedPass : public BasePass {
  public:
   RepeatUntilSatisfiedPass(const PassPtr& pass, const PredicatePtr& to_satisfy);
   RepeatUntilSatisfiedPass(
@@ -299,11 +303,11 @@ class RepeatUntilSatisfiedPass : public BasePass {
   PredicatePtr pred_;
 };
 
-nlohmann::json serialise(const BasePass& bp);
-nlohmann::json serialise(const PassPtr& pp);
-nlohmann::json serialise(const std::vector<PassPtr>& pp);
+TKET_EXPORT nlohmann::json serialise(const BasePass& bp);
+TKET_EXPORT nlohmann::json serialise(const PassPtr& pp);
+TKET_EXPORT nlohmann::json serialise(const std::vector<PassPtr>& pp);
 
-PassPtr deserialise(
+TKET_EXPORT PassPtr deserialise(
     const nlohmann::json& j,
     const std::map<std::string, std::function<Circuit(const Circuit&)>>&
         custom_deserialise = {},

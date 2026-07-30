@@ -16,6 +16,7 @@
 
 #include "Transform.hpp"
 #include "tket/Architecture/Architecture.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -29,7 +30,7 @@ namespace Transforms {
  * Expects: any gates
  * Produces: TK2 and any single-qubit gates
  */
-Transform decompose_multi_qubits_TK2();
+TKET_EXPORT Transform decompose_multi_qubits_TK2();
 
 /**
  * Decomposes all multi-qubit unitary gates into CX and single-qubit gates.
@@ -39,58 +40,58 @@ Transform decompose_multi_qubits_TK2();
  * Expects: any gates
  * Produces: CX and any single-qubit gates
  */
-Transform decompose_multi_qubits_CX();
+TKET_EXPORT Transform decompose_multi_qubits_CX();
 
 /**
  * Decomposes all single-qubit unitary gates into TK1 gates. Ignores boxes.
  */
-Transform decompose_single_qubits_TK1();
+TKET_EXPORT Transform decompose_single_qubits_TK1();
 
 /**
  * Starting with Rz, Ry and multi-qubit gates, replace all singles with TK1.
  */
-Transform decompose_ZYZ_to_TK1();
+TKET_EXPORT Transform decompose_ZYZ_to_TK1();
 
 /**
  * Starting with Rz, Rx and multi-qubit gates, replace all singles with TK1.
  */
-Transform decompose_ZXZ_to_TK1();
+TKET_EXPORT Transform decompose_ZXZ_to_TK1();
 
 // converts all single-qubit gates into Rz and Rx gates
 // Expects: any gates
 // Produces: Rz, Rx and any multi-qubit gates
-Transform decompose_ZX();
+TKET_EXPORT Transform decompose_ZX();
 
 // converts all single-qubit gates into Rz and Ry gates
 // Expects: any gates
 // Produces: Rz, Ry and any multi-qubit gates
-Transform decompose_ZY();
+TKET_EXPORT Transform decompose_ZY();
 
 // converts all single-qubit gates into Rx and Ry gates
 // Expects: any gates
 // Produces: Rx, Ry and any multi-qubit gates
-Transform decompose_XY();
+TKET_EXPORT Transform decompose_XY();
 
 // converts all TK1-gates into rzrx gates
 // Expects: TK1-gates and any multi-qubit gates
 // Produces: Rz, Rx and any multi-qubit gates
-Transform decompose_tk1_to_rzrx();
+TKET_EXPORT Transform decompose_tk1_to_rzrx();
 
 // replaces CXs with ZZMax
 // Expects: CX and any single-qubit gates
 // Produces: ZZMax and any single-qubit gates
-Transform decompose_CX_to_HQS2();
+TKET_EXPORT Transform decompose_CX_to_HQS2();
 
 // replaces Rz-Rx-Rz triples with Rz-PhasedX pairs
 // Expects: Rz, Rx, and any multi-qubit gates
 // Produces: Rz, PhasedX, and any multi-qubit gates
-Transform decompose_ZX_to_HQS1();
+TKET_EXPORT Transform decompose_ZX_to_HQS1();
 
 // converts all CX gates into Molmer-Sorensen gates by recognising exp(-i XX *
 // angle * pi/2) and converting rest to exp(-i XX * pi/4) Expects: CX, Rx, and
 // other single-qubit gates Produces: Molmer-Sorensen, U2, and other
 // single-qubit gates
-Transform decompose_MolmerSorensen();
+TKET_EXPORT Transform decompose_MolmerSorensen();
 
 /**
  * @brief Decomposes each TK2 gate into two-qubit gates.
@@ -120,15 +121,16 @@ Transform decompose_MolmerSorensen();
  * @param allow_swaps Allow implicit swaps (default = true).
  * @return Transform
  */
-Transform decompose_TK2(const TwoQbFidelities& fid, bool allow_swaps = true);
-Transform decompose_TK2(bool allow_swaps = true);
+TKET_EXPORT Transform
+decompose_TK2(const TwoQbFidelities& fid, bool allow_swaps = true);
+TKET_EXPORT Transform decompose_TK2(bool allow_swaps = true);
 
 /**
  * @brief Synthesise ZZPhase gates from CX and Rz, as well as XX/YYPhase.
  *
  * Expects: CX, Rz, XXPhase, YYPhase Produces: ZZPhase, CX, Rz.
  */
-Transform decompose_ZZPhase();
+TKET_EXPORT Transform decompose_ZZPhase();
 
 /**
  * Decompose single-qubit Clifford gates to a standard Cliffford gate set.
@@ -139,14 +141,14 @@ Transform decompose_ZZPhase();
  *
  * @param tk2_to_cx whether to rebase TK2 gates to CX and standard Cliffords
  */
-Transform decompose_cliffords_std(bool tk2_to_cx = true);
+TKET_EXPORT Transform decompose_cliffords_std(bool tk2_to_cx = true);
 
-Transform decompose_ZX_to_cliffords();
+TKET_EXPORT Transform decompose_ZX_to_cliffords();
 
 // converts all valid CX-Rz-CX strings and CX-Rx-CX strings to 2qb
 // PhaseGadgets Expects: CX, Rz, Rx and any other single-qubit gates Produces:
 // PhaseGadgets, and any other gates
-Transform decompose_PhaseGadgets();
+TKET_EXPORT Transform decompose_PhaseGadgets();
 
 /**
  * Recursively replaces all boxes by their decomposition using Box::to_circuit
@@ -157,7 +159,7 @@ Transform decompose_PhaseGadgets();
  * @param included_opgroups optional, only decompose these opgroups
  * returns potentially all gates
  */
-Transform decomp_boxes(
+TKET_EXPORT Transform decomp_boxes(
     const std::unordered_set<OpType>& excluded_types = {},
     const std::unordered_set<std::string>& excluded_opgroups = {},
     const std::optional<std::unordered_set<OpType>>& included_types =
@@ -173,12 +175,12 @@ Transform decomp_boxes(
  * value is 0
  * @return Transformation to perform the conversion
  */
-Transform compose_phase_poly_boxes(unsigned min_size = 0);
+TKET_EXPORT Transform compose_phase_poly_boxes(unsigned min_size = 0);
 
 // converts all SWAP gates to given replacement circuit (not checked to
 // preserve unitary) Expects: SWAP gates, replacement circuit Produces:
 // Instances of the replacement circuit,
-Transform decompose_SWAP(const Circuit& replacement_circuit);
+TKET_EXPORT Transform decompose_SWAP(const Circuit& replacement_circuit);
 
 // converts all SWAP gates to 3 CX gates
 // providing an Architecture will prefer an orientation that reduces H
@@ -187,7 +189,8 @@ Transform decompose_SWAP(const Circuit& replacement_circuit);
 // -X-    -X-C-X-   -C-X-C-
 // Expects: SWAP gates
 // Produces: CX gates
-Transform decompose_SWAP_to_CX(const Architecture& arc = Architecture());
+TKET_EXPORT Transform
+decompose_SWAP_to_CX(const Architecture& arc = Architecture());
 
 // converts all BRIDGE (distance 2 CX) gates to 4 CX gates
 // -B-   -C-   -C---C---   ---C---C-
@@ -198,41 +201,41 @@ Transform decompose_SWAP_to_CX(const Architecture& arc = Architecture());
 //  E
 // Expects: BRIDGE gates
 // Produces: CX gates
-Transform decompose_BRIDGE_to_CX();
+TKET_EXPORT Transform decompose_BRIDGE_to_CX();
 
 // converts -C- gates to -H-X-H- depending on direction of Architecture edges
 //           |              |
 //          -X-          -H-C-H-
 // Expects: CX gates
 // Produces CX and H gates
-Transform decompose_CX_directed(const Architecture& arc);
+TKET_EXPORT Transform decompose_CX_directed(const Architecture& arc);
 
 /**
  * @brief Decompose NPhasedX gates into single-qubit PhasedX gates.
  */
-Transform decompose_NPhasedX();
+TKET_EXPORT Transform decompose_NPhasedX();
 
 // does not use ancillae
 // Expects: CCX + any other gates
 // returns CX, H, T, Tdg + any previous gates
-Transform decomp_CCX();
+TKET_EXPORT Transform decomp_CCX();
 
 // converts arbitrarily controlled Ry gates. It does not use ancillae, so it
 // is not very depth-efficient Expects: CRys and any other gates returns Ry,
 // CX, H, T, Tdg + whatever other gates were there before
-Transform decomp_controlled_Rys();
+TKET_EXPORT Transform decomp_controlled_Rys();
 
 // does not use ancillae
 // Expects: CCX, CnX, CnY, CnZ, CnRy, CnRx, CnRz, and any other gates
 // returns CX and single-qubit gate + any previous gates
-Transform decomp_arbitrary_controlled_gates();
+TKET_EXPORT Transform decomp_arbitrary_controlled_gates();
 
 // For every two CnX gates, we try to reorder their control qubits
 // and adjust the direction of their decomposition (i.e. CnX = CnX.dagger)
 // to improve the chance of gate cancellation. This method will not improve
 // the decomposition when the CnX gates are scattered; but it works the best
 // when CnX gates are very close to each other.
-Transform cnx_pairwise_decomposition();
+TKET_EXPORT Transform cnx_pairwise_decomposition();
 
 }  // namespace Transforms
 

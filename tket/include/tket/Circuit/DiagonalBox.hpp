@@ -17,12 +17,13 @@
 #include <memory>
 
 #include "Boxes.hpp"
+#include "tket_export.h"
 
 namespace tket {
 /**
  * Box to synthesise a diagonal operator
  */
-class DiagonalBox : public Box {
+class TKET_EXPORT DiagonalBox : public Box {
  public:
   /**
    * Construct a circuit that synthesise the given unitary diagonal operator

@@ -15,6 +15,7 @@
 #pragma once
 
 #include "Boxes.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -33,7 +34,7 @@ typedef std::map<std::vector<bool>, std::vector<Op_ptr>> ctrl_tensored_op_map_t;
 /**
  * Multiplexed ops
  */
-class MultiplexorBox : public Box {
+class TKET_EXPORT MultiplexorBox : public Box {
  public:
   /**
    * Construct from a given ctrl_op_map_t.
@@ -115,7 +116,7 @@ struct GateSpec {
 /**
  * Multiplexed single-axis rotations
  */
-class MultiplexedRotationBox : public Box {
+class TKET_EXPORT MultiplexedRotationBox : public Box {
  public:
   /**
    * @brief Construct from a op_map. All ops should be of the same type.
@@ -188,7 +189,7 @@ struct MultiplexedU2Commands {
 /**
  * Multiplexed U2 gate
  */
-class MultiplexedU2Box : public Box {
+class TKET_EXPORT MultiplexedU2Box : public Box {
  public:
   /**
    * @brief Construct from a op_map. Ops must be single-qubit unitary gate types
@@ -261,7 +262,7 @@ class MultiplexedU2Box : public Box {
 /**
  * Multiplexed-Tensored-U2 gate
  */
-class MultiplexedTensoredU2Box : public Box {
+class TKET_EXPORT MultiplexedTensoredU2Box : public Box {
  public:
   /**
    * @brief Construct from a op_map. Ops must be single-qubit unitary gate types

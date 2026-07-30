@@ -16,6 +16,7 @@
 
 #include "tket/Circuit/Boxes.hpp"
 #include "tket/Clifford/UnitaryTableau.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -26,7 +27,7 @@ namespace tket {
  * https://arxiv.org/pdf/quant-ph/0406196.pdf which yield high gate counts in
  * practice.
  */
-class UnitaryTableauBox : public Box {
+class TKET_EXPORT UnitaryTableauBox : public Box {
  public:
   /**
    * Constructor from a given tableau object.

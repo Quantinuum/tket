@@ -15,6 +15,7 @@
 #pragma once
 
 #include "Transform.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -23,16 +24,16 @@ namespace Transforms {
 // multi-qubit patterns that decrease the CX count
 // inserting swaps can sometimes cause errors elsewhere (e.g. routing), so
 // they can be turned off
-Transform multiq_clifford_replacement(bool allow_swaps = false);
+TKET_EXPORT Transform multiq_clifford_replacement(bool allow_swaps = false);
 
 // copies Z through the target of a CX and X through the control
-Transform copy_pi_through_CX();
+TKET_EXPORT Transform copy_pi_through_CX();
 
 /**
  * Apply some of the Clifford rules in the paper "Optimising Clifford Circuits
  * with Quantomatic".
  */
-Transform singleq_clifford_sweep();
+TKET_EXPORT Transform singleq_clifford_sweep();
 
 // In some cases, 2-qubit gates can be saved by:
 // 1) representing end-of-circuit measurements as a collection of single Z
@@ -42,7 +43,7 @@ Transform singleq_clifford_sweep();
 // replacing the end-of-circuit Clifford subcircuit with the mutual
 // diagonalisation circuit and adding classical logic to map the diagonalised
 // Pauli operators back to the desired single Z operators
-Transform push_cliffords_through_measures();
+TKET_EXPORT Transform push_cliffords_through_measures();
 
 }  // namespace Transforms
 

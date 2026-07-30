@@ -17,6 +17,7 @@
 #include "tket/Circuit/Circuit.hpp"
 #include "tket/Utils/Json.hpp"
 #include "tket/Utils/PauliTensor.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -35,9 +36,9 @@ namespace tket {
  * so we have a vector of MeasurementBitMaps for each term to exploit this and
  * effectively get extra shots for free.
  */
-class MeasurementSetup {
+class TKET_EXPORT MeasurementSetup {
  public:
-  struct MeasurementBitMap {
+  struct TKET_EXPORT MeasurementBitMap {
     MeasurementBitMap() : circ_index{0}, invert{false} {}
     MeasurementBitMap(
         unsigned _circ_index, const std::vector<unsigned> &_bits,
@@ -87,7 +88,7 @@ class MeasurementSetup {
   measure_result_map_t result_map;
 };
 
-JSON_DECL(MeasurementSetup::MeasurementBitMap)
-JSON_DECL(MeasurementSetup)
+JSON_DECL_EXPORT(MeasurementSetup::MeasurementBitMap)
+JSON_DECL_EXPORT(MeasurementSetup)
 
 }  // namespace tket
