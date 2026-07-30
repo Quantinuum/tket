@@ -62,9 +62,7 @@ else()
     endif ()
 endif()
 
-if(WIN32)
-    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS yes)
-elseif(APPLE AND INSTALL_NAME_DIR)
+if(APPLE AND INSTALL_NAME_DIR)
     # set correct install_name
     set(CMAKE_INSTALL_NAME_DIR "@loader_path")
     set(CMAKE_BUILD_WITH_INSTALL_NAME_DIR ON)
