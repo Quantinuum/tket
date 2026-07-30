@@ -32,6 +32,8 @@
 
 #include "Json.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /** Type of information held */
@@ -47,7 +49,7 @@ const std::string &q_routing_ancilla_reg();
 const std::string &c_default_reg();
 const std::string &w_default_reg();
 const std::string &r_default_reg();
-const std::string &node_default_reg();
+TKET_EXPORT const std::string &node_default_reg();
 const std::string &c_debug_zero_prefix();
 const std::string &c_debug_one_prefix();
 const std::string &c_debug_default_name();
