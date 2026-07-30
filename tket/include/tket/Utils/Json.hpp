@@ -23,6 +23,11 @@
   void to_json(nlohmann::json& j, const T& type); \
   void from_json(const nlohmann::json& j, T& type);
 
+// macro for type T serialization and deserialization declarations (exported)
+#define JSON_DECL_EXPORT(T)                                   \
+  TKET_EXPORT void to_json(nlohmann::json& j, const T& type); \
+  TKET_EXPORT void from_json(const nlohmann::json& j, T& type);
+
 namespace tket {
 
 class JsonError : public std::logic_error {

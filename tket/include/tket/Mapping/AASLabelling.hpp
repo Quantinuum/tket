@@ -15,10 +15,11 @@
 #pragma once
 
 #include "tket/Mapping/RoutingMethod.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
-class AASLabellingMethod : public RoutingMethod {
+class TKET_EXPORT AASLabellingMethod : public RoutingMethod {
  public:
   /**
    * Checking and Routing methods redefined for dynamically assigning qubits to

@@ -20,6 +20,8 @@
 #include <map>
 #include <vector>
 
+#include "tket_export.h"
+
 namespace tket {
 
 typedef std::vector<std::deque<bool>> GrayCode;
@@ -86,12 +88,13 @@ uint64_t reverse_bits(uint64_t v, unsigned w);
  * convert an unsigned to its binary representation
  * big-endian
  */
-std::vector<bool> dec_to_bin(unsigned long long dec, unsigned width);
+TKET_EXPORT std::vector<bool> dec_to_bin(
+    unsigned long long dec, unsigned width);
 
 /**
  * @brief
  * convert an bit vector to its decimal representation
  * big-endian
  */
-unsigned long long bin_to_dec(const std::vector<bool>& bin);
+TKET_EXPORT unsigned long long bin_to_dec(const std::vector<bool>& bin);
 }  // namespace tket

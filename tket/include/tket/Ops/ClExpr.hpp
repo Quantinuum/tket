@@ -28,6 +28,7 @@
 #include <vector>
 
 #include "tket/Ops/Op.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -92,22 +93,28 @@ NLOHMANN_JSON_SERIALIZE_ENUM(
 /**
  * A bit variable within an expression
  */
-typedef struct ClBitVar {
+typedef struct TKET_EXPORT ClBitVar {
   unsigned index;  /// Identifier for the variable within the expression
   bool operator==(const ClBitVar& other) const { return index == other.index; }
-  friend std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
+  friend TKET_EXPORT std::ostream& operator<<(
+      std::ostream& os, const ClBitVar& var);
 } ClBitVar;
+
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ClBitVar, index)
 
 /**
  * A register variable within an expression
  */
-typedef struct ClRegVar {
+typedef struct TKET_EXPORT ClRegVar {
   unsigned index;  /// Identifier for the variable within the expression
   bool operator==(const ClRegVar& other) const { return index == other.index; }
-  friend std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
+  friend TKET_EXPORT std::ostream& operator<<(
+      std::ostream& os, const ClRegVar& var);
 } ClRegVar;
+
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ClRegVar, index)
 
@@ -151,7 +158,7 @@ void from_json(const nlohmann::json& j, ClExprArg& arg);
  *
  * It may be composed of subexpressions.
  */
-class ClExpr {
+class TKET_EXPORT ClExpr {
  public:
   /**
    * Default constructor
@@ -168,7 +175,8 @@ class ClExpr {
 
   bool operator==(const ClExpr& other) const;
 
-  friend std::ostream& operator<<(std::ostream& os, const ClExpr& expr);
+  friend TKET_EXPORT std::ostream& operator<<(
+      std::ostream& os, const ClExpr& expr);
 
   /**
    * Main operation
@@ -197,6 +205,8 @@ class ClExpr {
   std::set<unsigned> all_reg_vars;
 };
 
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClExpr& expr);
+
 void to_json(nlohmann::json& j, const ClExpr& expr);
 
 void from_json(const nlohmann::json& j, ClExpr& expr);
@@ -211,7 +221,7 @@ void from_json(const nlohmann::json& j, ClExpr& expr);
  * If the output is a register, it must either be disjoint from all of the input
  * registers or exactly match one of them.
  */
-class WiredClExpr {
+class TKET_EXPORT WiredClExpr {
  public:
   /**
    * Default constructor
@@ -235,7 +245,8 @@ class WiredClExpr {
 
   bool operator==(const WiredClExpr& other) const;
 
-  friend std::ostream& operator<<(std::ostream& os, const WiredClExpr& expr);
+  friend TKET_EXPORT std::ostream& operator<<(
+      std::ostream& os, const WiredClExpr& expr);
 
   /**
    * Expression
@@ -272,9 +283,9 @@ class WiredClExpr {
   unsigned total_n_bits;
 };
 
-void to_json(nlohmann::json& j, const WiredClExpr& expr);
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const WiredClExpr& expr);
 
-void from_json(const nlohmann::json& j, WiredClExpr& expr);
+JSON_DECL_EXPORT(WiredClExpr)
 
 class ClExprWiringError : public std::logic_error {
  public:
@@ -282,7 +293,7 @@ class ClExprWiringError : public std::logic_error {
       : std::logic_error(message) {}
 };
 
-class ClExprOp : public Op {
+class TKET_EXPORT ClExprOp : public Op {
  public:
   ClExprOp(const WiredClExpr& expr);
 

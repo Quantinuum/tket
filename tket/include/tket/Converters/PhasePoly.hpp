@@ -16,6 +16,8 @@
 #include "tket/Circuit/Boxes.hpp"
 #include "tket/Circuit/Circuit.hpp"
 #include "tket/Utils/MatrixAnalysis.hpp"
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -39,7 +41,7 @@ Circuit gray_synth(
  * and RZ, as a PhasePolynomial plus a boolean matrix representing an additional
  * linear transformation.
  */
-class PhasePolyBox : public Box {
+class TKET_EXPORT PhasePolyBox : public Box {
  public:
   explicit PhasePolyBox(const Circuit &circ);
   explicit PhasePolyBox(

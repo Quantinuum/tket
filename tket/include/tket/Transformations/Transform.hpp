@@ -18,13 +18,14 @@
 #include <memory>
 
 #include "tket/Circuit/Circuit.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
 /**
  * A transformation of a circuit that preserves its semantics
  */
-class Transform {
+class TKET_EXPORT Transform {
  public:
   /**
    * A function that takes a circuit and (optionally) a relabelling of units.
@@ -76,8 +77,11 @@ class Transform {
    *
    * @return the composite transform
    */
-  friend Transform operator>>(const Transform& lhs, const Transform& rhs);
+  friend TKET_EXPORT Transform
+  operator>>(const Transform& lhs, const Transform& rhs);
 };
+
+TKET_EXPORT Transform operator>>(const Transform& lhs, const Transform& rhs);
 
 namespace Transforms {
 

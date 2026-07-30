@@ -31,6 +31,7 @@
 #include <tklog/TketLog.hpp>
 
 #include "Json.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -42,16 +43,16 @@ typedef std::pair<UnitType, unsigned> register_info_t;
 
 typedef std::optional<register_info_t> opt_reg_info_t;
 
-const std::string &q_default_reg();
-const std::string &q_routing_ancilla_reg();
-const std::string &c_default_reg();
-const std::string &w_default_reg();
-const std::string &r_default_reg();
-const std::string &node_default_reg();
-const std::string &c_debug_zero_prefix();
-const std::string &c_debug_one_prefix();
-const std::string &c_debug_default_name();
-const std::string &c_permutation_scratch_name();
+TKET_EXPORT const std::string &q_default_reg();
+TKET_EXPORT const std::string &q_routing_ancilla_reg();
+TKET_EXPORT const std::string &c_default_reg();
+TKET_EXPORT const std::string &w_default_reg();
+TKET_EXPORT const std::string &r_default_reg();
+TKET_EXPORT const std::string &node_default_reg();
+TKET_EXPORT const std::string &c_debug_zero_prefix();
+TKET_EXPORT const std::string &c_debug_one_prefix();
+TKET_EXPORT const std::string &c_debug_default_name();
+TKET_EXPORT const std::string &c_permutation_scratch_name();
 
 /** Conversion invalid */
 class InvalidUnitConversion : public std::logic_error {
@@ -66,7 +67,7 @@ class InvalidUnitConversion : public std::logic_error {
  * Each location has a name (signifying the 'register' to which it belongs) and
  * an index within that register (which may be multi-dimensional).
  */
-class UnitID {
+class TKET_EXPORT UnitID {
  public:
   UnitID() : data_(std::make_shared<UnitData>()) {}
 
@@ -152,7 +153,7 @@ void json_to_unitid(const nlohmann::json &j, T &unit) {
 }
 
 /** Location holding a qubit */
-class Qubit : public UnitID {
+class TKET_EXPORT Qubit : public UnitID {
  public:
   Qubit() : UnitID("", {}, UnitType::Qubit) {}
 
@@ -187,10 +188,10 @@ class Qubit : public UnitID {
   }
 };
 
-JSON_DECL(Qubit)
+JSON_DECL_EXPORT(Qubit)
 
 /** Location holding a bit */
-class Bit : public UnitID {
+class TKET_EXPORT Bit : public UnitID {
  public:
   Bit() : UnitID("", {}, UnitType::Bit) {}
 
@@ -224,7 +225,7 @@ class Bit : public UnitID {
   }
 };
 
-JSON_DECL(Bit)
+JSON_DECL_EXPORT(Bit)
 
 /** Location holding a wasm UID */
 class WasmState : public UnitID {
@@ -262,10 +263,10 @@ class WasmState : public UnitID {
   }
 };
 
-JSON_DECL(WasmState)
+JSON_DECL_EXPORT(WasmState)
 
 /** Location holding an RNG UID */
-class RngState : public UnitID {
+class TKET_EXPORT RngState : public UnitID {
  public:
   RngState() : UnitID(r_default_reg(), {}, UnitType::RngState) {}
 
@@ -300,7 +301,7 @@ class RngState : public UnitID {
   }
 };
 
-JSON_DECL(RngState)
+JSON_DECL_EXPORT(RngState)
 
 /** Architectural qubit location */
 class Node : public Qubit {
@@ -328,7 +329,7 @@ class Node : public Qubit {
   explicit Node(const UnitID &other) : Qubit(other) {}
 };
 
-JSON_DECL(Node)
+JSON_DECL_EXPORT(Node)
 
 /** WASM UID */
 class WasmNode : public WasmState {

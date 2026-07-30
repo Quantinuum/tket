@@ -15,6 +15,7 @@
 #pragma once
 
 #include "tket/Ops/Op.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -24,7 +25,7 @@ class SubstitutionFailure : public std::logic_error {
       : std::logic_error(message) {}
 };
 
-class Gate : public Op {
+class TKET_EXPORT Gate : public Op {
  public:
   // return hermitian conjugate
   Op_ptr dagger() const override;

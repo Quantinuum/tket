@@ -15,6 +15,7 @@
 #pragma once
 
 #include "tket/ZX/ZXDiagramImpl.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -25,7 +26,7 @@ class Rewrite;
 class ZXDiagramPybind;
 class Flow;
 
-class ZXDiagram {
+class TKET_EXPORT ZXDiagram {
  private:
   /**
    * Underlying representation

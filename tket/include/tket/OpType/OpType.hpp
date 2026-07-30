@@ -15,6 +15,7 @@
 #pragma once
 
 #include "tket/Utils/Json.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -819,6 +820,6 @@ enum class OpType {
   PhasedXX,
 };
 
-JSON_DECL(OpType)
+JSON_DECL_EXPORT(OpType)
 
 }  // namespace tket

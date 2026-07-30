@@ -15,10 +15,11 @@
 #pragma once
 
 #include "tket/Mapping/RoutingMethod.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
-class LexiLabellingMethod : public RoutingMethod {
+class TKET_EXPORT LexiLabellingMethod : public RoutingMethod {
  public:
   /**
    * Checking and Routing methods redefined for dynamically assigning qubits to
