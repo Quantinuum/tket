@@ -10,52 +10,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_test_tket:
-    name: Build and test (tket)
-    strategy:
-      matrix:
-        os: ['ubuntu-26.04', 'macos-15-intel', 'macos-26']
-    runs-on: ${{ matrix.os }}
-    steps:
-    - uses: actions/checkout@v7
-    - name: apt update
-      if: matrix.os == 'ubuntu-26.04'
-      run: sudo apt update
-    - name: Select Python 3.12
-      uses: actions/setup-python@v7
-      with:
-        python-version: '3.12'
-    - name: Install conan
-      uses: turtlebrowser/get-conan@v1.2
-    - name: Set up conan
-      run: |
-        conan profile detect
-        DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/${{ matrix.os }}
-        diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
-        cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
-        conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
-    - name: Install runtime test requirements
-      if: matrix.os == 'ubuntu-26.04' && github.event_name == 'schedule'
-      run: |
-        sudo apt install texlive texlive-latex-extra latexmk
-        mkdir -p ~/texmf/tex/latex
-        wget http://mirrors.ctan.org/graphics/pgf/contrib/quantikz/tikzlibraryquantikz.code.tex -P ~/texmf/tex/latex
-    - name: ccache
-      uses: hendrikmuhs/ccache-action@v1.2
-      with:
-        key: tket-static-${{ matrix.os }}
-    - name: further ccache config
-      run: |
-        ccache --set-config base_dir=${HOME}
-        ccache --set-config compiler_check=content
-        ccache --set-config namespace=WITH_TESTS
-        ccache -p
-    - name: Build tket
-      run: conan create tket -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True
-    - name: Build tket-c-api
-      run: conan create tket-c-api -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True
-
   build_test_tket_windows:
     name: Build and test (tket)
     strategy:
