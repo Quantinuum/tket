@@ -100,6 +100,8 @@ typedef struct TKET_EXPORT ClBitVar {
   friend std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
 } ClBitVar;
 
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ClBitVar, index)
 
 /**
@@ -110,6 +112,8 @@ typedef struct TKET_EXPORT ClRegVar {
   bool operator==(const ClRegVar& other) const { return index == other.index; }
   friend std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
 } ClRegVar;
+
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ClRegVar, index)
 
@@ -199,6 +203,8 @@ class TKET_EXPORT ClExpr {
   std::set<unsigned> all_reg_vars;
 };
 
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClExpr& expr);
+
 void to_json(nlohmann::json& j, const ClExpr& expr);
 
 void from_json(const nlohmann::json& j, ClExpr& expr);
@@ -273,6 +279,8 @@ class TKET_EXPORT WiredClExpr {
   std::vector<unsigned> output_posn;
   unsigned total_n_bits;
 };
+
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const WiredClExpr& expr);
 
 void to_json(nlohmann::json& j, const WiredClExpr& expr);
 
