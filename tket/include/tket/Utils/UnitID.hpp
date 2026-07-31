@@ -68,7 +68,7 @@ class InvalidUnitConversion : public std::logic_error {
  * Each location has a name (signifying the 'register' to which it belongs) and
  * an index within that register (which may be multi-dimensional).
  */
-class UnitID {
+class TKET_EXPORT UnitID {
  public:
   UnitID() : data_(std::make_shared<UnitData>()) {}
 

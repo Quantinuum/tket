@@ -26,6 +26,8 @@
 #include "tket/Utils/MatrixAnalysis.hpp"
 #include "tket/Utils/UnitID.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 extern template class graphs::DirectedGraphBase<Node>;
@@ -69,7 +71,7 @@ class ArchitectureBase : public T {
   using T::T;
 };
 
-class Architecture : public ArchitectureBase<graphs::DirectedGraph<Node>> {
+class TKET_EXPORT Architecture : public ArchitectureBase<graphs::DirectedGraph<Node>> {
  public:
   /** Construct an empty Architecture. */
   Architecture() : ArchitectureBase() {}
@@ -134,7 +136,7 @@ class Architecture : public ArchitectureBase<graphs::DirectedGraph<Node>> {
 JSON_DECL(Architecture::Connection)
 JSON_DECL(Architecture)
 
-class FullyConnected : public ArchitectureBase<graphs::CompleteGraph<Node>> {
+class TKET_EXPORT FullyConnected : public ArchitectureBase<graphs::CompleteGraph<Node>> {
  public:
   FullyConnected() : ArchitectureBase<graphs::CompleteGraph<Node>>() {}
 
@@ -157,7 +159,7 @@ JSON_DECL(FullyConnected)
 
 // Subclass, constructor generates adjacency matrix corresponding to a ring
 // architecture
-class RingArch : public Architecture {
+class TKET_EXPORT RingArch : public Architecture {
  public:
   explicit RingArch(
       unsigned numberOfNodes, const std::string &label = "ringNode");
@@ -171,7 +173,7 @@ class RingArch : public Architecture {
 
 // Subclass, constructor generates adjacency matrix corresponding to a
 // SquareGrid architecture
-class SquareGrid : public Architecture {
+class TKET_EXPORT SquareGrid : public Architecture {
  public:
   // Converts square indexing to qubit indexing
   Vertex squind_to_qind(
