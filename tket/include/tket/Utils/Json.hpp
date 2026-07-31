@@ -20,8 +20,8 @@
 
 // macro for type T serialization and deserialization declarations
 #define JSON_DECL(T)                              \
-  TKET_EXPORT void to_json(nlohmann::json& j, const T& type); \
-  TKET_EXPORT void from_json(const nlohmann::json& j, T& type);
+  void to_json(nlohmann::json& j, const T& type); \
+  void from_json(const nlohmann::json& j, T& type);
 
 namespace tket {
 
