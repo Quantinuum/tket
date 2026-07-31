@@ -20,6 +20,8 @@
 #include "OpType.hpp"
 #include "OpTypeInfo.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /** Optional unsigned integer */
@@ -33,7 +35,7 @@ inline const OptUInt any = std::nullopt;
  *
  * An object of this class holds information about a specific operation type.
  */
-class OpDesc {
+class TKET_EXPORT OpDesc {
  public:
   explicit OpDesc(OpType type);
 

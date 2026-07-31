@@ -17,6 +17,8 @@
 #include "tket/Characterisation/Cycles.hpp"
 #include "tket/Circuit/Circuit.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 // Friend class for testing some private methods in FrameRandomisation
@@ -33,7 +35,7 @@ class FrameRandomisationTester;
 // • OpTypes for vertices in the "out" boundary and are determined from "in"
 //   frame & cycle gates such that the overall circuit unitary is unchanged (up
 //   to global phase)
-class FrameRandomisation {
+class TKET_EXPORT FrameRandomisation {
  public:
   FrameRandomisation() {}
   virtual ~FrameRandomisation() {}
@@ -98,7 +100,7 @@ class FrameRandomisation {
 
 // Instance of FrameRandomisation where cycle_types_ are "hard" Clifford gates
 // frame_types_ are Pauli gates
-class PauliFrameRandomisation : public FrameRandomisation {
+class TKET_EXPORT PauliFrameRandomisation : public FrameRandomisation {
  public:
   PauliFrameRandomisation() {
     cycle_types_ = {OpType::H, OpType::CX, OpType::S};
@@ -112,7 +114,7 @@ class PauliFrameRandomisation : public FrameRandomisation {
 };
 
 // Instance of FrameRandomisation where cycle gates can be modified
-class UniversalFrameRandomisation : public FrameRandomisation {
+class TKET_EXPORT UniversalFrameRandomisation : public FrameRandomisation {
  public:
   UniversalFrameRandomisation() {
     cycle_types_ = {OpType::H, OpType::CX, OpType::Rz};

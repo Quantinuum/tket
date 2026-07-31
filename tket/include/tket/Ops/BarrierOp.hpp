@@ -16,9 +16,11 @@
 
 #include "Op.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
-class BarrierOp : public Op {
+class TKET_EXPORT BarrierOp : public Op {
  public:
   explicit BarrierOp(
       op_signature_t signature = {}, const std::string &_data = "");

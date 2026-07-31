@@ -18,11 +18,13 @@
 
 #include "Boxes.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 /**
  * Box to synthesise a statevector
  */
-class StatePreparationBox : public Box {
+class TKET_EXPORT StatePreparationBox : public Box {
  public:
   /**
    * Construct a circuit that prepares the given statevector

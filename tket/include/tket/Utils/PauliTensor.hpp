@@ -20,6 +20,8 @@
 #include "tket/Utils/Json.hpp"
 #include "tket/Utils/UnitID.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /** Symbols for the Pauli operators (and identity) */
@@ -104,13 +106,13 @@ typedef unsigned quarter_turns_t;
 template <typename CoeffType>
 CoeffType default_coeff() = delete;
 template <>
-no_coeff_t default_coeff<no_coeff_t>();
+TKET_EXPORT no_coeff_t default_coeff<no_coeff_t>();
 template <>
-quarter_turns_t default_coeff<quarter_turns_t>();
+TKET_EXPORT quarter_turns_t default_coeff<quarter_turns_t>();
 template <>
-Complex default_coeff<Complex>();
+TKET_EXPORT Complex default_coeff<Complex>();
 template <>
-Expr default_coeff<Expr>();
+TKET_EXPORT Expr default_coeff<Expr>();
 
 /**
  * Cast a coefficient to a different type.
@@ -128,38 +130,38 @@ Expr default_coeff<Expr>();
 template <typename OriginalCoeff, typename NewCoeff>
 NewCoeff cast_coeff(const OriginalCoeff &coeff) = delete;
 template <>
-no_coeff_t cast_coeff<no_coeff_t, no_coeff_t>(const no_coeff_t &);
+TKET_EXPORT no_coeff_t cast_coeff<no_coeff_t, no_coeff_t>(const no_coeff_t &);
 template <>
-quarter_turns_t cast_coeff<no_coeff_t, quarter_turns_t>(const no_coeff_t &);
+TKET_EXPORT quarter_turns_t cast_coeff<no_coeff_t, quarter_turns_t>(const no_coeff_t &);
 template <>
-Complex cast_coeff<no_coeff_t, Complex>(const no_coeff_t &);
+TKET_EXPORT Complex cast_coeff<no_coeff_t, Complex>(const no_coeff_t &);
 template <>
-Expr cast_coeff<no_coeff_t, Expr>(const no_coeff_t &);
+TKET_EXPORT Expr cast_coeff<no_coeff_t, Expr>(const no_coeff_t &);
 template <>
-no_coeff_t cast_coeff<quarter_turns_t, no_coeff_t>(const quarter_turns_t &);
+TKET_EXPORT no_coeff_t cast_coeff<quarter_turns_t, no_coeff_t>(const quarter_turns_t &);
 template <>
-quarter_turns_t cast_coeff<quarter_turns_t, quarter_turns_t>(
+TKET_EXPORT quarter_turns_t cast_coeff<quarter_turns_t, quarter_turns_t>(
     const quarter_turns_t &coeff);
 template <>
-Complex cast_coeff<quarter_turns_t, Complex>(const quarter_turns_t &coeff);
+TKET_EXPORT Complex cast_coeff<quarter_turns_t, Complex>(const quarter_turns_t &coeff);
 template <>
-Expr cast_coeff<quarter_turns_t, Expr>(const quarter_turns_t &coeff);
+TKET_EXPORT Expr cast_coeff<quarter_turns_t, Expr>(const quarter_turns_t &coeff);
 template <>
-no_coeff_t cast_coeff<Complex, no_coeff_t>(const Complex &);
+TKET_EXPORT no_coeff_t cast_coeff<Complex, no_coeff_t>(const Complex &);
 template <>
-quarter_turns_t cast_coeff<Complex, quarter_turns_t>(const Complex &coeff);
+TKET_EXPORT quarter_turns_t cast_coeff<Complex, quarter_turns_t>(const Complex &coeff);
 template <>
-Complex cast_coeff<Complex, Complex>(const Complex &coeff);
+TKET_EXPORT Complex cast_coeff<Complex, Complex>(const Complex &coeff);
 template <>
-Expr cast_coeff<Complex, Expr>(const Complex &coeff);
+TKET_EXPORT Expr cast_coeff<Complex, Expr>(const Complex &coeff);
 template <>
-no_coeff_t cast_coeff<Expr, no_coeff_t>(const Expr &);
+TKET_EXPORT no_coeff_t cast_coeff<Expr, no_coeff_t>(const Expr &);
 template <>
-quarter_turns_t cast_coeff<Expr, quarter_turns_t>(const Expr &coeff);
+TKET_EXPORT quarter_turns_t cast_coeff<Expr, quarter_turns_t>(const Expr &coeff);
 template <>
-Complex cast_coeff<Expr, Complex>(const Expr &coeff);
+TKET_EXPORT Complex cast_coeff<Expr, Complex>(const Expr &coeff);
 template <>
-Expr cast_coeff<Expr, Expr>(const Expr &coeff);
+TKET_EXPORT Expr cast_coeff<Expr, Expr>(const Expr &coeff);
 
 /**
  * Compare two coefficients of the same type with respect to an ordering.
@@ -180,14 +182,14 @@ Expr cast_coeff<Expr, Expr>(const Expr &coeff);
 template <typename CoeffType>
 int compare_coeffs(const CoeffType &first, const CoeffType &second) = delete;
 template <>
-int compare_coeffs<no_coeff_t>(const no_coeff_t &, const no_coeff_t &);
+TKET_EXPORT int compare_coeffs<no_coeff_t>(const no_coeff_t &, const no_coeff_t &);
 template <>
-int compare_coeffs<quarter_turns_t>(
+TKET_EXPORT int compare_coeffs<quarter_turns_t>(
     const quarter_turns_t &first, const quarter_turns_t &second);
 template <>
-int compare_coeffs<Complex>(const Complex &first, const Complex &second);
+TKET_EXPORT int compare_coeffs<Complex>(const Complex &first, const Complex &second);
 template <>
-int compare_coeffs<Expr>(const Expr &first, const Expr &second);
+TKET_EXPORT int compare_coeffs<Expr>(const Expr &first, const Expr &second);
 
 template <typename CoeffType>
 void print_coeff(std::ostream &os, const CoeffType &coeff) = delete;
@@ -196,14 +198,14 @@ void print_coeff(std::ostream &os, const CoeffType &coeff) = delete;
  * Generates the coefficient prefix for PauliTensor::to_str()
  */
 template <>
-void print_coeff<no_coeff_t>(std::ostream &, const no_coeff_t &);
+TKET_EXPORT void print_coeff<no_coeff_t>(std::ostream &, const no_coeff_t &);
 template <>
-void print_coeff<quarter_turns_t>(
+TKET_EXPORT void print_coeff<quarter_turns_t>(
     std::ostream &os, const quarter_turns_t &coeff);
 template <>
-void print_coeff<Complex>(std::ostream &os, const Complex &coeff);
+TKET_EXPORT void print_coeff<Complex>(std::ostream &os, const Complex &coeff);
 template <>
-void print_coeff<Expr>(std::ostream &os, const Expr &coeff);
+TKET_EXPORT void print_coeff<Expr>(std::ostream &os, const Expr &coeff);
 
 /**
  * Hash a coefficient, combining it with an existing hash of another structure.
@@ -211,14 +213,14 @@ void print_coeff<Expr>(std::ostream &os, const Expr &coeff);
 template <typename CoeffType>
 void hash_combine_coeff(std::size_t &seed, const CoeffType &coeff) = delete;
 template <>
-void hash_combine_coeff<no_coeff_t>(std::size_t &, const no_coeff_t &);
+TKET_EXPORT void hash_combine_coeff<no_coeff_t>(std::size_t &, const no_coeff_t &);
 template <>
-void hash_combine_coeff<quarter_turns_t>(
+TKET_EXPORT void hash_combine_coeff<quarter_turns_t>(
     std::size_t &seed, const quarter_turns_t &coeff);
 template <>
-void hash_combine_coeff<Complex>(std::size_t &seed, const Complex &coeff);
+TKET_EXPORT void hash_combine_coeff<Complex>(std::size_t &seed, const Complex &coeff);
 template <>
-void hash_combine_coeff<Expr>(std::size_t &seed, const Expr &coeff);
+TKET_EXPORT void hash_combine_coeff<Expr>(std::size_t &seed, const Expr &coeff);
 
 /**
  * Multiply together two coefficients of the same type.
@@ -232,14 +234,14 @@ template <typename CoeffType>
 CoeffType multiply_coeffs(const CoeffType &first, const CoeffType &second) =
     delete;
 template <>
-no_coeff_t multiply_coeffs<no_coeff_t>(const no_coeff_t &, const no_coeff_t &);
+TKET_EXPORT no_coeff_t multiply_coeffs<no_coeff_t>(const no_coeff_t &, const no_coeff_t &);
 template <>
-quarter_turns_t multiply_coeffs<quarter_turns_t>(
+TKET_EXPORT quarter_turns_t multiply_coeffs<quarter_turns_t>(
     const quarter_turns_t &first, const quarter_turns_t &second);
 template <>
-Complex multiply_coeffs<Complex>(const Complex &first, const Complex &second);
+TKET_EXPORT Complex multiply_coeffs<Complex>(const Complex &first, const Complex &second);
 template <>
-Expr multiply_coeffs<Expr>(const Expr &first, const Expr &second);
+TKET_EXPORT Expr multiply_coeffs<Expr>(const Expr &first, const Expr &second);
 
 /*******************************************************************************
  * PAULI CONTAINERS
@@ -277,16 +279,16 @@ typedef std::vector<Pauli> DensePauliMap;
 template <typename OriginalContainer, typename NewContainer>
 NewContainer cast_container(const OriginalContainer &cont) = delete;
 template <>
-QubitPauliMap cast_container<QubitPauliMap, QubitPauliMap>(
+TKET_EXPORT QubitPauliMap cast_container<QubitPauliMap, QubitPauliMap>(
     const QubitPauliMap &cont);
 template <>
-QubitPauliMap cast_container<DensePauliMap, QubitPauliMap>(
+TKET_EXPORT QubitPauliMap cast_container<DensePauliMap, QubitPauliMap>(
     const DensePauliMap &cont);
 template <>
-DensePauliMap cast_container<QubitPauliMap, DensePauliMap>(
+TKET_EXPORT DensePauliMap cast_container<QubitPauliMap, DensePauliMap>(
     const QubitPauliMap &cont);
 template <>
-DensePauliMap cast_container<DensePauliMap, DensePauliMap>(
+TKET_EXPORT DensePauliMap cast_container<DensePauliMap, DensePauliMap>(
     const DensePauliMap &cont);
 
 /**
@@ -302,13 +304,13 @@ DensePauliMap cast_container<DensePauliMap, DensePauliMap>(
  * @retval 1 first > second
  */
 template <typename PauliContainer>
-int compare_containers(
+TKET_EXPORT int compare_containers(
     const PauliContainer &first, const PauliContainer &second) = delete;
 template <>
-int compare_containers<QubitPauliMap>(
+TKET_EXPORT int compare_containers<QubitPauliMap>(
     const QubitPauliMap &first, const QubitPauliMap &second);
 template <>
-int compare_containers<DensePauliMap>(
+TKET_EXPORT int compare_containers<DensePauliMap>(
     const DensePauliMap &first, const DensePauliMap &second);
 
 /**
@@ -362,10 +364,10 @@ template <typename PauliContainer>
 bool commuting_containers(
     const PauliContainer &first, const PauliContainer &second) = delete;
 template <>
-bool commuting_containers<QubitPauliMap>(
+TKET_EXPORT bool commuting_containers<QubitPauliMap>(
     const QubitPauliMap &first, const QubitPauliMap &second);
 template <>
-bool commuting_containers<DensePauliMap>(
+TKET_EXPORT bool commuting_containers<DensePauliMap>(
     const DensePauliMap &first, const DensePauliMap &second);
 
 /**
@@ -377,22 +379,22 @@ bool commuting_containers<DensePauliMap>(
 template <typename PauliContainer>
 void print_paulis(std::ostream &os, const PauliContainer &paulis) = delete;
 template <>
-void print_paulis<QubitPauliMap>(std::ostream &os, const QubitPauliMap &paulis);
+TKET_EXPORT void print_paulis<QubitPauliMap>(std::ostream &os, const QubitPauliMap &paulis);
 template <>
-void print_paulis<DensePauliMap>(std::ostream &os, const DensePauliMap &paulis);
+TKET_EXPORT void print_paulis<DensePauliMap>(std::ostream &os, const DensePauliMap &paulis);
 
 /**
  * Hash a Pauli container, combining it with an existing hash of another
  * structure.
  */
 template <typename PauliContainer>
-void hash_combine_paulis(std::size_t &seed, const PauliContainer &paulis) =
+TKET_EXPORT void hash_combine_paulis(std::size_t &seed, const PauliContainer &paulis) =
     delete;
 template <>
-void hash_combine_paulis<QubitPauliMap>(
+TKET_EXPORT void hash_combine_paulis<QubitPauliMap>(
     std::size_t &seed, const QubitPauliMap &paulis);
 template <>
-void hash_combine_paulis<DensePauliMap>(
+TKET_EXPORT void hash_combine_paulis<DensePauliMap>(
     std::size_t &seed, const DensePauliMap &paulis);
 
 /**
@@ -427,10 +429,10 @@ template <typename PauliContainer>
 std::pair<quarter_turns_t, PauliContainer> multiply_strings(
     const PauliContainer &first, const PauliContainer &second) = delete;
 template <>
-std::pair<quarter_turns_t, QubitPauliMap> multiply_strings<QubitPauliMap>(
+TKET_EXPORT std::pair<quarter_turns_t, QubitPauliMap> multiply_strings<QubitPauliMap>(
     const QubitPauliMap &first, const QubitPauliMap &second);
 template <>
-std::pair<quarter_turns_t, DensePauliMap> multiply_strings<DensePauliMap>(
+TKET_EXPORT std::pair<quarter_turns_t, DensePauliMap> multiply_strings<DensePauliMap>(
     const DensePauliMap &first, const DensePauliMap &second);
 
 /**
@@ -452,9 +454,9 @@ std::pair<quarter_turns_t, DensePauliMap> multiply_strings<DensePauliMap>(
 template <typename PauliContainer>
 CmplxSpMat to_sparse_matrix(const PauliContainer &paulis) = delete;
 template <>
-CmplxSpMat to_sparse_matrix<QubitPauliMap>(const QubitPauliMap &paulis);
+TKET_EXPORT CmplxSpMat to_sparse_matrix<QubitPauliMap>(const QubitPauliMap &paulis);
 template <>
-CmplxSpMat to_sparse_matrix<DensePauliMap>(const DensePauliMap &paulis);
+TKET_EXPORT CmplxSpMat to_sparse_matrix<DensePauliMap>(const DensePauliMap &paulis);
 
 /**
  * Evaluates a Pauli container to a sparse matrix describing the tensor product
@@ -473,10 +475,10 @@ template <typename PauliContainer>
 CmplxSpMat to_sparse_matrix(const PauliContainer &paulis, unsigned n_qubits) =
     delete;
 template <>
-CmplxSpMat to_sparse_matrix<QubitPauliMap>(
+TKET_EXPORT CmplxSpMat to_sparse_matrix<QubitPauliMap>(
     const QubitPauliMap &paulis, unsigned n_qubits);
 template <>
-CmplxSpMat to_sparse_matrix<DensePauliMap>(
+TKET_EXPORT CmplxSpMat to_sparse_matrix<DensePauliMap>(
     const DensePauliMap &paulis, unsigned n_qubits);
 
 /**
@@ -491,13 +493,13 @@ CmplxSpMat to_sparse_matrix<DensePauliMap>(
  * 0 -1  0  0
  */
 template <typename PauliContainer>
-CmplxSpMat to_sparse_matrix(
+TKET_EXPORT CmplxSpMat to_sparse_matrix(
     const PauliContainer &paulis, const qubit_vector_t &qubits) = delete;
 template <>
-CmplxSpMat to_sparse_matrix<QubitPauliMap>(
+TKET_EXPORT CmplxSpMat to_sparse_matrix<QubitPauliMap>(
     const QubitPauliMap &paulis, const qubit_vector_t &qubits);
 template <>
-CmplxSpMat to_sparse_matrix<DensePauliMap>(
+TKET_EXPORT CmplxSpMat to_sparse_matrix<DensePauliMap>(
     const DensePauliMap &paulis, const qubit_vector_t &qubits);
 
 /*******************************************************************************
@@ -519,7 +521,7 @@ CmplxSpMat to_sparse_matrix<DensePauliMap>(
  * be available for certain specialisations.
  */
 template <typename PauliContainer, typename CoeffType>
-class PauliTensor {
+class TKET_EXPORT PauliTensor {
   static_assert(
       std::is_same<PauliContainer, QubitPauliMap>::value ||
           std::is_same<PauliContainer, DensePauliMap>::value,

@@ -16,6 +16,8 @@
 
 #include "tket/Utils/Expression.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 // Declare test namespace to grant it direct access to the symbol table
@@ -31,7 +33,7 @@ void clear_symbol_table();
  * When an operation is created using \p get_op_ptr, any symbols in its
  * parameters are added to a global registry of symbols.
  */
-struct SymTable {
+struct TKET_EXPORT SymTable {
   /** Create a new symbol (not currently registered), and register it */
   static Sym fresh_symbol(const std::string &preferred = "a");
 

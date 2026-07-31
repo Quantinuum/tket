@@ -35,6 +35,8 @@
 #include "tket/Utils/PauliTensor.hpp"
 #include "tket/Utils/UnitID.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /** Wrong number of parameters for an operation */
@@ -50,7 +52,7 @@ typedef unsigned port_t;
 /**
  * Abstract class representing an operation type
  */
-class Op : public std::enable_shared_from_this<Op> {
+class TKET_EXPORT Op : public std::enable_shared_from_this<Op> {
  public:
   /**
    * Inverse (of a unitary operation)

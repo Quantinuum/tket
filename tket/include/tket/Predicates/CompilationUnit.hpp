@@ -18,6 +18,8 @@
 
 #include "Predicates.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 class CompilationUnit;
@@ -31,7 +33,7 @@ typedef std::map<std::type_index, std::pair<PredicatePtr, bool>> PredicateCache;
    the compiler. It holds a cache of Predicates
     which are currently satisfied. */
 
-class CompilationUnit {
+class TKET_EXPORT CompilationUnit {
  public:
   explicit CompilationUnit(const Circuit& circ);
   CompilationUnit(const Circuit& circ, const PredicatePtrMap& preds);

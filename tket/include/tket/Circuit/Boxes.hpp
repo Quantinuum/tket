@@ -37,7 +37,7 @@ class Circuit;
 /**
  * Abstract class for an operation from which a circuit can be extracted
  */
-class Box : public Op {
+class TKET_EXPORT Box : public Op {
  public:
   explicit Box(const OpType &type, const op_signature_t &signature = {})
       : Op(type), signature_(signature), circ_(), id_(idgen()) {

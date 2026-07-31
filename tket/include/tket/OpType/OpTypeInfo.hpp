@@ -21,6 +21,8 @@
 #include "EdgeType.hpp"
 #include "OpType.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -46,7 +48,7 @@ struct OpTypeInfo {
 };
 
 /** Information including name and shape of each operation type */
-const std::map<OpType, OpTypeInfo> &optypeinfo();
+TKET_EXPORT const std::map<OpType, OpTypeInfo> &optypeinfo();
 
 /** Operation type not valid in the current context */
 class BadOpType : public std::logic_error {

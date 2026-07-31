@@ -18,6 +18,8 @@
 #include "tket/Utils/Json.hpp"
 #include "tket/Utils/PauliTensor.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -35,7 +37,7 @@ namespace tket {
  * so we have a vector of MeasurementBitMaps for each term to exploit this and
  * effectively get extra shots for free.
  */
-class MeasurementSetup {
+class TKET_EXPORT MeasurementSetup {
  public:
   struct MeasurementBitMap {
     MeasurementBitMap() : circ_index{0}, invert{false} {}

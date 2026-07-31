@@ -19,9 +19,11 @@
 #include "tket/Circuit/Circuit.hpp"
 #include "tket/Placement/QubitGraph.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
-class Placement {
+class TKET_EXPORT Placement {
  public:
   typedef std::shared_ptr<Placement> Ptr;
 
@@ -100,7 +102,7 @@ class Placement {
 
 JSON_DECL(Placement::Ptr);
 
-class GraphPlacement : public Placement {
+class TKET_EXPORT GraphPlacement : public Placement {
  public:
   /**
    * Holds information for constructing a weighted edge in a QubitGraph.
@@ -225,7 +227,7 @@ std::vector<boost::bimap<Qubit, Node>> get_weighted_subgraph_monomorphisms(
     Architecture::UndirectedConnGraph& target_graph, unsigned max_matches,
     unsigned timeout_ms, bool return_best);
 
-class LinePlacement : public GraphPlacement {
+class TKET_EXPORT LinePlacement : public GraphPlacement {
  public:
   explicit LinePlacement(
       const Architecture& _architecture, unsigned _maximum_pattern_gates = 100,
@@ -250,7 +252,7 @@ class LinePlacement : public GraphPlacement {
       std::vector<qubit_vector_t>& line_pattern, unsigned n_qubits) const;
 };
 
-class NoiseAwarePlacement : public GraphPlacement {
+class TKET_EXPORT NoiseAwarePlacement : public GraphPlacement {
  public:
   explicit NoiseAwarePlacement(
       const Architecture& _architecture,

@@ -17,6 +17,8 @@
 #include "tket/Utils/Constants.hpp"
 #include "tket/Utils/EigenConfig.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 class Circuit;
 typedef Eigen::VectorXcd StateVector;
@@ -34,7 +36,7 @@ namespace tket_sim {
  *              (although not in the final dense result).
  *  @param max_number_of_qubits Throw an exception if this limit is exceeded.
  */
-StateVector get_statevector(
+TKET_EXPORT StateVector get_statevector(
     const Circuit& circ, double abs_epsilon = EPS,
     unsigned max_number_of_qubits = 11);
 
@@ -49,7 +51,7 @@ StateVector get_statevector(
  *              many qubits, to prevent users accidentally passing in
  *              huge circuits.
  */
-Eigen::MatrixXcd get_unitary(
+TKET_EXPORT Eigen::MatrixXcd get_unitary(
     const Circuit& circ, double abs_epsilon = EPS,
     unsigned max_number_of_qubits = 11);
 
@@ -65,7 +67,7 @@ Eigen::MatrixXcd get_unitary(
  *              (although not in the final dense result).
  * @param max_number_of_qubits Throw an exception if this limit is exceeded.
  */
-void apply_unitary(
+TKET_EXPORT void apply_unitary(
     const Circuit& circ, Eigen::MatrixXcd& matr, double abs_epsilon = EPS,
     unsigned max_number_of_qubits = 11);
 

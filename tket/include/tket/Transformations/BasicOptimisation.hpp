@@ -17,6 +17,8 @@
 #include "Transform.hpp"
 #include "tket/Characterisation/ErrorTypes.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace Transforms {
@@ -25,18 +27,18 @@ namespace Transforms {
 // and removes redundant gates before measure Expects: Any gates Produces: The
 // same gate set
 bool redundancy_removal(Circuit& circuit);
-Transform remove_redundancies();
+TKET_EXPORT Transform remove_redundancies();
 
 /**
  * Squash all single-qubit gates to TK1.
  */
-Transform squash_1qb_to_tk1();
+TKET_EXPORT Transform squash_1qb_to_tk1();
 
 // moves single qubit operations past multiqubit operations they commute with,
 // towards front of circuit (hardcoded)
 // Expects: Any gates
 // Produces: Any gates
-Transform commute_through_multis();
+TKET_EXPORT Transform commute_through_multis();
 
 // squashes each sequence of two-qubit instructions into their canonical 3-CX
 // form (Cartan/KAK decomposition) The optional CX gate fidelity cx_fidelity
@@ -74,10 +76,10 @@ Transform commute_through_multis();
  * @param allow_swaps Whether to allow implicit wire swaps.
  * @return Transform
  */
-Transform two_qubit_squash(
+TKET_EXPORT Transform two_qubit_squash(
     OpType target_2qb_gate = OpType::CX, double cx_fidelity = 1.,
     bool allow_swaps = true);
-Transform two_qubit_squash(bool allow_swaps);
+TKET_EXPORT Transform two_qubit_squash(bool allow_swaps);
 
 /**
  * general u_squash by converting any chains of p, q gates (p, q in
@@ -91,13 +93,13 @@ Transform two_qubit_squash(bool allow_swaps);
  * Expects: p, q, and any multi-qubit gates
  * Produces: p, q, and any multi-qubit gates
  */
-Transform squash_1qb_to_pqp(
+TKET_EXPORT Transform squash_1qb_to_pqp(
     const OpType& q, const OpType& p, bool strict = false);
 
 // identifies single-qubit chains and squashes them in the target gate set
 // Expects: any gates
 // Produces: singleqs and any multi-qubit gates
-Transform squash_factory(
+TKET_EXPORT Transform squash_factory(
     const OpTypeSet& singleqs,
     const std::function<Circuit(const Expr&, const Expr&, const Expr&)>&
         tk1_replacement,
@@ -106,8 +108,8 @@ Transform squash_factory(
 // commutes single qubit gates through SWAP gates, leaving them on the
 // PhysicalQubit with best fidelity for the given OP Expects: any single qubit
 // gates, SWAP gates Produces: any single qubit gates, SWAP gates
-Transform commute_SQ_gates_through_SWAPS(const avg_node_errors_t& node_errors);
-Transform commute_SQ_gates_through_SWAPS(const op_node_errors_t& node_errors);
+TKET_EXPORT Transform commute_SQ_gates_through_SWAPS(const avg_node_errors_t& node_errors);
+TKET_EXPORT Transform commute_SQ_gates_through_SWAPS(const op_node_errors_t& node_errors);
 
 /**
  * @brief Absorb Rz gates into NPhasedX where possible
@@ -115,25 +117,25 @@ Transform commute_SQ_gates_through_SWAPS(const op_node_errors_t& node_errors);
  * For any gate NPhasedX(𝛼, 𝛽) in the circuit, try to change 𝛽 to reduce the
  * number of surrounding Rz gates.
  */
-Transform absorb_Rz_NPhasedX();
+TKET_EXPORT Transform absorb_Rz_NPhasedX();
 
 /**
  * @brief Converts any ZZPhase with angle in (-1, 1) to two pi Rz gates.
  */
-Transform ZZPhase_to_Rz();
+TKET_EXPORT Transform ZZPhase_to_Rz();
 
 /**
  * @brief Normalises all TK2 gates so that `NormalisedTK2Predicate` is
  * satisfied.
  */
-Transform normalise_TK2();
+TKET_EXPORT Transform normalise_TK2();
 
 /**
  * @brief Squash single qubit gates into PhasedX and Rz gates.
  *
  * Commute Rzs to the back if possible.
  */
-Transform squash_1qb_to_Rz_PhasedX();
+TKET_EXPORT Transform squash_1qb_to_Rz_PhasedX();
 
 /**
  * Generate a transform that rounds all angles to the nearest \f$ \pi / 2^n \f$.
@@ -145,7 +147,7 @@ Transform squash_1qb_to_Rz_PhasedX();
  *
  * @return Transform to perform rounding
  */
-Transform round_angles(unsigned n, bool only_zeros = false);
+TKET_EXPORT Transform round_angles(unsigned n, bool only_zeros = false);
 
 }  // namespace Transforms
 

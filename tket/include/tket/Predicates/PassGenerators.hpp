@@ -24,10 +24,12 @@
 #include "tket/Transformations/ContextualReduction.hpp"
 #include "tket/Transformations/PauliOptimisation.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /* a wrapper method for the rebase_factory in Transforms */
-PassPtr gen_rebase_pass(
+TKET_EXPORT PassPtr gen_rebase_pass(
     const OpTypeSet& allowed_gates, const Circuit& cx_replacement,
     const std::function<Circuit(const Expr&, const Expr&, const Expr&)>&
         tk1_replacement);
@@ -41,7 +43,7 @@ PassPtr gen_rebase_pass(
  *
  * @return rebase pass
  */
-PassPtr gen_rebase_pass_via_tk2(
+TKET_EXPORT PassPtr gen_rebase_pass_via_tk2(
     const OpTypeSet& allowed_gates,
     const std::function<Circuit(const Expr&, const Expr&, const Expr&)>&
         tk2_replacement,
@@ -49,7 +51,7 @@ PassPtr gen_rebase_pass_via_tk2(
         tk1_replacement);
 
 /* a wrapper method for the squash_factory in Transforms */
-PassPtr gen_squash_pass(
+TKET_EXPORT PassPtr gen_squash_pass(
     const OpTypeSet& singleqs,
     const std::function<Circuit(const Expr&, const Expr&, const Expr&)>&
         tk1_replacement,
@@ -63,7 +65,7 @@ PassPtr gen_squash_pass(
  * @param allow_swaps whether to allow implicit wire swaps
  * @return PassPtr
  */
-PassPtr gen_auto_rebase_pass(
+TKET_EXPORT PassPtr gen_auto_rebase_pass(
     const OpTypeSet& allowed_gates, bool allow_swaps = false);
 
 /**
@@ -73,11 +75,11 @@ PassPtr gen_auto_rebase_pass(
  * @param singleqs
  * @return PassPtr
  */
-PassPtr gen_auto_squash_pass(const OpTypeSet& singleqs);
+TKET_EXPORT PassPtr gen_auto_squash_pass(const OpTypeSet& singleqs);
 
-PassPtr gen_euler_pass(const OpType& q, const OpType& p, bool strict = false);
+TKET_EXPORT PassPtr gen_euler_pass(const OpType& q, const OpType& p, bool strict = false);
 
-PassPtr gen_clifford_simp_pass(
+TKET_EXPORT PassPtr gen_clifford_simp_pass(
     bool allow_swaps = true, OpType target_2qb_gate = OpType::CX);
 
 /**
@@ -92,7 +94,7 @@ PassPtr gen_clifford_simp_pass(
  *   argument is not provided)
  * @return pass to perform Clifford resynthesis
  */
-PassPtr gen_clifford_resynthesis_pass(
+TKET_EXPORT PassPtr gen_clifford_resynthesis_pass(
     std::optional<std::function<Circuit(const Circuit&)>> transform =
         std::nullopt,
     bool allow_swaps = true);
@@ -104,7 +106,7 @@ PassPtr gen_clifford_resynthesis_pass(
  *
  * @return pass to resynthesise pre end of circuit measure Clifford subcircuits
  */
-PassPtr gen_clifford_push_through_pass();
+TKET_EXPORT PassPtr gen_clifford_push_through_pass();
 
 /**
  * Pass to remove empty Quantum edges from a Circuit and then relabel
@@ -112,31 +114,31 @@ PassPtr gen_clifford_push_through_pass();
  * Qubits removed from the Circuit are preserved in the bimap, but not updated
  * to a new labelling.
  */
-PassPtr gen_flatten_relabel_registers_pass(const std::string& label);
+TKET_EXPORT PassPtr gen_flatten_relabel_registers_pass(const std::string& label);
 /**
  * Pass to rename some or all qubits according to the given map.
  *
  * Qubits in the map that do not occur in the circuit are ignored.
  */
-PassPtr gen_rename_qubits_pass(const std::map<Qubit, Qubit>& qm);
+TKET_EXPORT PassPtr gen_rename_qubits_pass(const std::map<Qubit, Qubit>& qm);
 
-PassPtr gen_placement_pass(const Placement::Ptr& placement_ptr);
+TKET_EXPORT PassPtr gen_placement_pass(const Placement::Ptr& placement_ptr);
 
-PassPtr gen_naive_placement_pass(const Architecture& arc);
+TKET_EXPORT PassPtr gen_naive_placement_pass(const Architecture& arc);
 /* This higher order function generates a Routing pass using the
 std::vector<RoutingMethodPtr> object */
-PassPtr gen_full_mapping_pass(
+TKET_EXPORT PassPtr gen_full_mapping_pass(
     const Architecture& arc, const Placement::Ptr& placement_ptr,
     const std::vector<RoutingMethodPtr>& config);
-PassPtr gen_default_mapping_pass(
+TKET_EXPORT PassPtr gen_default_mapping_pass(
     const Architecture& arc, bool delay_measures = true);
-PassPtr gen_cx_mapping_pass(
+TKET_EXPORT PassPtr gen_cx_mapping_pass(
     const Architecture& arc, const Placement::Ptr& placement_ptr,
     const std::vector<RoutingMethodPtr>& config, bool directed_cx,
     bool delay_measures);
-PassPtr gen_routing_pass(
+TKET_EXPORT PassPtr gen_routing_pass(
     const Architecture& arc, const std::vector<RoutingMethodPtr>& config);
-PassPtr gen_directed_cx_routing_pass(
+TKET_EXPORT PassPtr gen_directed_cx_routing_pass(
     const Architecture& arc, const std::vector<RoutingMethodPtr>& config);
 
 /**
@@ -149,7 +151,7 @@ PassPtr gen_directed_cx_routing_pass(
  * @param cnotsynthtype parameter for the type of cnot synth
  * @return passpointer to perform architecture aware synthesis
  */
-PassPtr aas_routing_pass(
+TKET_EXPORT PassPtr aas_routing_pass(
     const Architecture& arc, const unsigned lookahead = 1,
     const aas::CNotSynthType cnotsynthtype = aas::CNotSynthType::Rec);
 
@@ -174,7 +176,7 @@ PassPtr aas_routing_pass(
  * in the phase polynomial that are added to the target graph
  * @return passpointer to perform architecture aware synthesis
  */
-PassPtr gen_full_mapping_pass_phase_poly(
+TKET_EXPORT PassPtr gen_full_mapping_pass_phase_poly(
     const Architecture& arc, const unsigned lookahead = 1,
     const aas::CNotSynthType cnotsynthtype = aas::CNotSynthType::Rec,
     unsigned graph_placement_maximum_matches = 2000,
@@ -200,17 +202,17 @@ PassPtr gen_full_mapping_pass_phase_poly(
  * in the phase polynomial that are added to the target graph
  * @return passpointer to perform the mapping
  */
-PassPtr gen_placement_pass_phase_poly(
+TKET_EXPORT PassPtr gen_placement_pass_phase_poly(
     const Architecture& arc, unsigned _maximum_matches = 2000,
     unsigned _timeout = 100, unsigned _maximum_pattern_gates = 100,
     unsigned _maximum_pattern_depth = 100);
 
-PassPtr gen_decompose_routing_gates_to_cxs_pass(
+TKET_EXPORT PassPtr gen_decompose_routing_gates_to_cxs_pass(
     const Architecture& arc = Architecture(), bool directed = false);
 
 /* generates a decomposition pass that converts all SWAPs into a chosen
  * replacement circuit */
-PassPtr gen_user_defined_swap_decomp_pass(const Circuit& replacement_circ);
+TKET_EXPORT PassPtr gen_user_defined_swap_decomp_pass(const Circuit& replacement_circ);
 
 /**
  * @brief Squash sequences of two-qubit operations into minimal form.
@@ -242,7 +244,7 @@ PassPtr gen_user_defined_swap_decomp_pass(const Circuit& replacement_circ);
  * @param allow_swaps Whether to allow implicit wire swaps.
  * @return PassPtr
  */
-PassPtr KAKDecomposition(
+TKET_EXPORT PassPtr KAKDecomposition(
     OpType target_2qb_gate = OpType::CX, double cx_fidelity = 1.,
     bool allow_swaps = true);
 
@@ -280,9 +282,9 @@ PassPtr KAKDecomposition(
  * @param allow_swaps Allow implicit swaps (default = true).
  * @return PassPtr
  */
-PassPtr DecomposeTK2(
+TKET_EXPORT PassPtr DecomposeTK2(
     const Transforms::TwoQbFidelities& fid, bool allow_swaps = true);
-PassPtr DecomposeTK2(bool allow_swaps = true);
+TKET_EXPORT PassPtr DecomposeTK2(bool allow_swaps = true);
 
 /**
  * Resynthesize and squash three-qubit interactions.
@@ -293,7 +295,7 @@ PassPtr DecomposeTK2(bool allow_swaps = true);
  *
  * @param allow_swaps whether to allow introduction of implicit swaps
  */
-PassPtr ThreeQubitSquash(bool allow_swaps = true);
+TKET_EXPORT PassPtr ThreeQubitSquash(bool allow_swaps = true);
 
 /**
  * Performs peephole optimisation including resynthesis of 2-qubit gate
@@ -303,7 +305,7 @@ PassPtr ThreeQubitSquash(bool allow_swaps = true);
  * Produces: CX, TK1
  *
  */
-PassPtr PeepholeOptimise2Q(bool allow_swaps = true);
+TKET_EXPORT PassPtr PeepholeOptimise2Q(bool allow_swaps = true);
 
 /**
  * Performs peephole optimisation including resynthesis of 2- and 3-qubit gate
@@ -313,37 +315,37 @@ PassPtr PeepholeOptimise2Q(bool allow_swaps = true);
  * @param target_2qb_gate target 2-qubit gate (CX or TK2)
  * @param allow_swaps whether to allow introduction of implicit swaps
  */
-PassPtr FullPeepholeOptimise(
+TKET_EXPORT PassPtr FullPeepholeOptimise(
     bool allow_swaps = true, OpType target_2qb_gate = OpType::CX);
 
 /* generates an optimisation pass that converts a circuit into phase
 gadgets and optimises them using techniques from
 https://arxiv.org/abs/1906.01734 */
-PassPtr gen_optimise_phase_gadgets(
+TKET_EXPORT PassPtr gen_optimise_phase_gadgets(
     CXConfigType cx_config = CXConfigType::Snake);
 
 /* generates an optimisation pass that converts a circuit into Pauli
 gadgets and optimises them using techniques from
 https://arxiv.org/abs/1906.01734 */
-PassPtr gen_pairwise_pauli_gadgets(
+TKET_EXPORT PassPtr gen_pairwise_pauli_gadgets(
     CXConfigType cx_config = CXConfigType::Snake);
 
 /* generates an optimisation pass that converts a circuit into a graph
 of PauliExpBoxes */
-PassPtr gen_pauli_exponentials(
+TKET_EXPORT PassPtr gen_pauli_exponentials(
     Transforms::PauliSynthStrat strat = Transforms::PauliSynthStrat::Sets,
     CXConfigType cx_config = CXConfigType::Snake);
 
 /* generates an optimisation pass that converts a circuit into a graph
 of Pauli gadgets and optimises them using strategies from <paper to come> */
-PassPtr gen_synthesise_pauli_graph(
+TKET_EXPORT PassPtr gen_synthesise_pauli_graph(
     Transforms::PauliSynthStrat strat = Transforms::PauliSynthStrat::Sets,
     CXConfigType cx_config = CXConfigType::Snake);
 
 /* generates an optimisation pass that converts a circuit built using
 term sequencing techniques from <paper to come> into a graph of Pauli
 gadgets and optimises them. */
-PassPtr gen_special_UCC_synthesis(
+TKET_EXPORT PassPtr gen_special_UCC_synthesis(
     Transforms::PauliSynthStrat strat = Transforms::PauliSynthStrat::Sets,
     CXConfigType cx_config = CXConfigType::Snake);
 
@@ -361,7 +363,7 @@ PassPtr gen_special_UCC_synthesis(
  * @param trials
  * @return PassPtr
  */
-PassPtr gen_greedy_pauli_simp(
+TKET_EXPORT PassPtr gen_greedy_pauli_simp(
     double discount_rate = 0.7, double depth_weight = 0.3,
     unsigned max_lookahead = 500, unsigned max_tqe_candidates = 500,
     unsigned seed = 0, bool allow_zzphase = false,
@@ -378,7 +380,7 @@ PassPtr gen_greedy_pauli_simp(
  * @param xcirc 1-qubit circuit implementing an X gate (if null, an X gate is
  *      used)
  */
-PassPtr gen_simplify_initial(
+TKET_EXPORT PassPtr gen_simplify_initial(
     Transforms::AllowClassical allow_classical =
         Transforms::AllowClassical::Yes,
     Transforms::CreateAllQubits create_all_qubits =
@@ -392,7 +394,7 @@ PassPtr gen_simplify_initial(
  * @param xcirc 1-qubit circuit implementing an X gate (if null, an X gate is
  *      used)
  */
-PassPtr gen_contextual_pass(
+TKET_EXPORT PassPtr gen_contextual_pass(
     Transforms::AllowClassical allow_classical =
         Transforms::AllowClassical::Yes,
     std::shared_ptr<const Circuit> xcirc = 0);
@@ -401,7 +403,7 @@ PassPtr gen_contextual_pass(
  * Builds a sequence of PauliSimp (gen_synthesise_pauli_graph) and
  * FullPeepholeOptimise
  */
-PassPtr PauliSquash(Transforms::PauliSynthStrat strat, CXConfigType cx_config);
+TKET_EXPORT PassPtr PauliSquash(Transforms::PauliSynthStrat strat, CXConfigType cx_config);
 
 /**
  * Generate a pass that rounds all angles to the nearest \f$ \pi / 2^n \f$.
@@ -416,7 +418,7 @@ PassPtr PauliSquash(Transforms::PauliSynthStrat strat, CXConfigType cx_config);
  *
  * @return compilation pass that performs rounding
  */
-PassPtr RoundAngles(unsigned n, bool only_zeros = false);
+TKET_EXPORT PassPtr RoundAngles(unsigned n, bool only_zeros = false);
 
 /**
  * Generate a custom pass
@@ -429,7 +431,7 @@ PassPtr RoundAngles(unsigned n, bool only_zeros = false);
  *
  * @return compilation pass that applies the supplied transform
  */
-PassPtr CustomPass(
+TKET_EXPORT PassPtr CustomPass(
     std::function<Circuit(const Circuit&)> transform,
     const std::string& label = "");
 
@@ -445,7 +447,7 @@ PassPtr CustomPass(
  *
  * @return compilation pass that applies the supplied transform
  */
-PassPtr CustomPassMap(
+TKET_EXPORT PassPtr CustomPassMap(
     std::function<
         std::pair<Circuit, std::pair<unit_map_t, unit_map_t>>(const Circuit&)>
         transform,

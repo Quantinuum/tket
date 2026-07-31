@@ -19,6 +19,8 @@
 #include "tket/Transformations/Transform.hpp"
 #include "tket/Utils/Json.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 enum class Guarantee;
@@ -82,7 +84,7 @@ struct PostConditions {
 /**
  * @brief Default callback when applying a pass (does nothing)
  */
-void trivial_callback(const CompilationUnit&, const nlohmann::json&);
+void TKET_EXPORT trivial_callback(const CompilationUnit&, const nlohmann::json&);
 
 /* Passes are used to generate full sequences of rewrite rules for Circuits. It
    internally stores pre and postcons which are composed together. Whenever a
@@ -95,7 +97,7 @@ void trivial_callback(const CompilationUnit&, const nlohmann::json&);
 // Predicates
 // TODO: Super Unsafe AKA Cowabunga Mode := check nothing, allow everything
 
-class BasePass {
+class TKET_EXPORT BasePass {
  public:
   BasePass() {}
 
@@ -159,7 +161,7 @@ class BasePass {
 };
 
 /* Basic Pass that all combinators can be used on */
-class StandardPass : public BasePass {
+class TKET_EXPORT StandardPass : public BasePass {
  public:
   /**
    * @brief Construct a new StandardPass object with info about the pass.
@@ -188,7 +190,7 @@ class StandardPass : public BasePass {
 };
 
 /* Runs a sequence of Passes */
-class SequencePass : public BasePass {
+class TKET_EXPORT SequencePass : public BasePass {
  public:
   SequencePass() {}
   explicit SequencePass(const std::vector<PassPtr>& ptvec, bool strict = true);
@@ -216,7 +218,7 @@ class SequencePass : public BasePass {
 /* Repeats a Pass until it returns `false`, or if `strict_check` is `true`
  * until it stops modifying the circuit.
  */
-class RepeatPass : public BasePass {
+class TKET_EXPORT RepeatPass : public BasePass {
  public:
   explicit RepeatPass(const PassPtr& pass, bool strict_check = false);
   bool apply(
@@ -259,7 +261,7 @@ class RepeatPass : public BasePass {
   bool strict_check_;
 };
 
-class RepeatWithMetricPass : public BasePass {
+class TKET_EXPORT RepeatWithMetricPass : public BasePass {
  public:
   RepeatWithMetricPass(const PassPtr& pass, const Transform::Metric& metric);
   bool apply(
@@ -276,7 +278,7 @@ class RepeatWithMetricPass : public BasePass {
   Transform::Metric metric_;
 };
 
-class RepeatUntilSatisfiedPass : public BasePass {
+class TKET_EXPORT RepeatUntilSatisfiedPass : public BasePass {
  public:
   RepeatUntilSatisfiedPass(const PassPtr& pass, const PredicatePtr& to_satisfy);
   RepeatUntilSatisfiedPass(

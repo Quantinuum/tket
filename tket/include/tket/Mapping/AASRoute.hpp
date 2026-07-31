@@ -18,6 +18,8 @@
 #include "tket/Mapping/MappingFrontier.hpp"
 #include "tket/Mapping/RoutingMethod.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 class AASRouteError : public std::logic_error {
@@ -28,7 +30,7 @@ class AASRouteError : public std::logic_error {
 
 // Child class of RoutingMethod, with overloaded methods for routing
 // MappingFrontier objects
-class AASRouteRoutingMethod : public RoutingMethod {
+class TKET_EXPORT AASRouteRoutingMethod : public RoutingMethod {
  public:
   /**
    * Checking and Routing methods for phase poly boxes using architecture aware

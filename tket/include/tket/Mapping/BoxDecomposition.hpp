@@ -17,6 +17,8 @@
 #include "tket/Mapping/MappingFrontier.hpp"
 #include "tket/Mapping/RoutingMethod.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 class BoxDecomposition {
@@ -43,7 +45,7 @@ class BoxDecomposition {
   MappingFrontier_ptr mapping_frontier_;
 };
 
-class BoxDecompositionRoutingMethod : public RoutingMethod {
+class TKET_EXPORT BoxDecompositionRoutingMethod : public RoutingMethod {
  public:
   /**
    * Decompose any boxes on the frontier

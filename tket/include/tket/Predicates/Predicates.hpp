@@ -19,6 +19,8 @@
 #include "tket/Architecture/Architecture.hpp"
 #include "tket/Circuit/Circuit.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 class Predicate;
 
@@ -52,7 +54,7 @@ const std::string& predicate_name(std::type_index idx);
 /////////////////////
 
 // abstract interface class
-class Predicate {
+class TKET_EXPORT Predicate {
  public:
   virtual bool verify(const Circuit& circ) const = 0;
 
@@ -76,7 +78,7 @@ class Predicate {
  * Classically conditioned operations are permitted provided that the
  * conditional operation is of a permitted type.
  */
-class GateSetPredicate : public Predicate {
+class TKET_EXPORT GateSetPredicate : public Predicate {
  public:
   explicit GateSetPredicate(const OpTypeSet& allowed_types)
       : allowed_types_(allowed_types) {}
@@ -94,7 +96,7 @@ class GateSetPredicate : public Predicate {
 /**
  * Asserts that there are no conditional gates in the circuit.
  */
-class NoClassicalControlPredicate : public Predicate {
+class TKET_EXPORT NoClassicalControlPredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -102,7 +104,7 @@ class NoClassicalControlPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class NoFastFeedforwardPredicate : public Predicate {
+class TKET_EXPORT NoFastFeedforwardPredicate : public Predicate {
   // verifies Circuit has no classical bits which are written from quantum gates
   // and then read in later in the Circuit
  public:
@@ -112,7 +114,7 @@ class NoFastFeedforwardPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class NoClassicalBitsPredicate : public Predicate {
+class TKET_EXPORT NoClassicalBitsPredicate : public Predicate {
   // this verifies that the Circuit uses no classical bits
   // (read or write -- so no measures and no classical controls)
  public:
@@ -122,7 +124,7 @@ class NoClassicalBitsPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class NoWireSwapsPredicate : public Predicate {
+class TKET_EXPORT NoWireSwapsPredicate : public Predicate {
   /**
    * Verifies that you can follow the paths of each qubit/bit in the circuit
    * and finish on the same qubit/bit you started with
@@ -134,7 +136,7 @@ class NoWireSwapsPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class MaxTwoQubitGatesPredicate : public Predicate {
+class TKET_EXPORT MaxTwoQubitGatesPredicate : public Predicate {
   // this verifies that the Circuit uses no gates with greater than 2 qubits
   // Barriers are ignored
  public:
@@ -144,7 +146,7 @@ class MaxTwoQubitGatesPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class PlacementPredicate : public Predicate {
+class TKET_EXPORT PlacementPredicate : public Predicate {
  public:
   explicit PlacementPredicate(const Architecture& arch)
       : nodes_(arch.nodes()) {}
@@ -159,7 +161,7 @@ class PlacementPredicate : public Predicate {
   const node_set_t nodes_;
 };
 
-class ConnectivityPredicate : public Predicate {
+class TKET_EXPORT ConnectivityPredicate : public Predicate {
  public:
   explicit ConnectivityPredicate(const Architecture& arch) : arch_(arch) {}
   bool verify(const Circuit& circ) const override;
@@ -172,7 +174,7 @@ class ConnectivityPredicate : public Predicate {
   const Architecture arch_;
 };
 
-class DirectednessPredicate : public Predicate {
+class TKET_EXPORT DirectednessPredicate : public Predicate {
  public:
   explicit DirectednessPredicate(const Architecture& arch) : arch_(arch) {}
   bool verify(const Circuit& circ) const override;
@@ -185,7 +187,7 @@ class DirectednessPredicate : public Predicate {
   const Architecture arch_;
 };
 
-class CliffordCircuitPredicate : public Predicate {
+class TKET_EXPORT CliffordCircuitPredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -193,7 +195,7 @@ class CliffordCircuitPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class UserDefinedPredicate : public Predicate {
+class TKET_EXPORT UserDefinedPredicate : public Predicate {
  public:
   explicit UserDefinedPredicate(const std::function<bool(const Circuit&)>& func)
       : func_(func) {}
@@ -206,7 +208,7 @@ class UserDefinedPredicate : public Predicate {
   const std::function<bool(const Circuit&)> func_;
 };
 
-class DefaultRegisterPredicate : public Predicate {
+class TKET_EXPORT DefaultRegisterPredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -214,7 +216,7 @@ class DefaultRegisterPredicate : public Predicate {
   std::string to_string() const override;
 };
 
-class MaxNQubitsPredicate : public Predicate {
+class TKET_EXPORT MaxNQubitsPredicate : public Predicate {
  public:
   explicit MaxNQubitsPredicate(unsigned n_qubits) : n_qubits_(n_qubits) {}
   bool verify(const Circuit& circ) const override;
@@ -230,7 +232,7 @@ class MaxNQubitsPredicate : public Predicate {
 /**
  * Asserts that the circuit only contains N classical registers or less
  */
-class MaxNClRegPredicate : public Predicate {
+class TKET_EXPORT MaxNClRegPredicate : public Predicate {
  public:
   explicit MaxNClRegPredicate(unsigned _n_cl_reg) : n_cl_reg_(_n_cl_reg) {}
   bool verify(const Circuit& circ) const override;
@@ -246,7 +248,7 @@ class MaxNClRegPredicate : public Predicate {
 /**
  * Asserts that the circuit contains no \ref OpType::Barrier
  */
-class NoBarriersPredicate : public Predicate {
+class TKET_EXPORT NoBarriersPredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -258,7 +260,7 @@ class NoBarriersPredicate : public Predicate {
  * Asserts that any internal measurements can be commuted to the end of the
  * circuit
  */
-class CommutableMeasuresPredicate : public Predicate {
+class TKET_EXPORT CommutableMeasuresPredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -269,7 +271,7 @@ class CommutableMeasuresPredicate : public Predicate {
 /**
  * Asserts that any measurements occur at the end of the circuit
  */
-class NoMidMeasurePredicate : public Predicate {
+class TKET_EXPORT NoMidMeasurePredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -280,7 +282,7 @@ class NoMidMeasurePredicate : public Predicate {
 /**
  * Asserts that no gates in the circuit have symbolic parameters
  */
-class NoSymbolsPredicate : public Predicate {
+class TKET_EXPORT NoSymbolsPredicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;
@@ -300,7 +302,7 @@ class NoSymbolsPredicate : public Predicate {
  *    ordered in non-increasing order and must be in the interval [0, 1/2],
  *    with the exception of the last one that may be in [-1/2, 1/2].
  */
-class NormalisedTK2Predicate : public Predicate {
+class TKET_EXPORT NormalisedTK2Predicate : public Predicate {
  public:
   bool verify(const Circuit& circ) const override;
   bool implies(const Predicate& other) const override;

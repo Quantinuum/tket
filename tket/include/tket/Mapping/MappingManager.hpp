@@ -19,6 +19,8 @@
 #include "tket/Mapping/RoutingMethod.hpp"
 #include "tket/Utils/UnitID.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 // list of error types to throw out
@@ -28,7 +30,7 @@ class MappingManagerError : public std::logic_error {
       : std::logic_error(message) {}
 };
 
-class MappingManager {
+class TKET_EXPORT MappingManager {
  public:
   /* Mapping Manager Constructor */
   // MappingManager object defined by Architecture initialised with

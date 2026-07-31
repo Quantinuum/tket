@@ -24,12 +24,14 @@
 #include "Op.hpp"
 #include "OpPtr.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
  * A purely classical operation.
  */
-class ClassicalOp : public Op {
+class TKET_EXPORT ClassicalOp : public Op {
  public:
   /**
    * Construct a ClassicalOp of specified shape
@@ -83,7 +85,7 @@ class ClassicalOp : public Op {
 /**
  * An opaque classical operation with no parameters and fixed signature
  */
-class OpaqueClassicalOp : public ClassicalOp {
+class TKET_EXPORT OpaqueClassicalOp : public ClassicalOp {
  public:
   /**
    * Construct an OpaqueClassicalOp of specified type
@@ -113,7 +115,7 @@ class OpaqueClassicalOp : public ClassicalOp {
   bool is_equal(const Op &other) const override;
 };
 
-class ClassicalEvalOp : public ClassicalOp {
+class TKET_EXPORT ClassicalEvalOp : public ClassicalOp {
  public:
   /**
    * Construct a ClassicalEvalOp of specified shape
@@ -150,7 +152,7 @@ class ClassicalEvalOp : public ClassicalOp {
 /**
  * A general classical operation where all inputs are also outputs
  */
-class ClassicalTransformOp : public ClassicalEvalOp {
+class TKET_EXPORT ClassicalTransformOp : public ClassicalEvalOp {
  public:
   /**
    * Construct from a truth table.
@@ -185,7 +187,7 @@ class ClassicalTransformOp : public ClassicalEvalOp {
 /**
  * Op containing a classical wasm function call
  */
-class WASMOp : public ClassicalOp {
+class TKET_EXPORT WASMOp : public ClassicalOp {
  public:
   /**
    * contains a wasm op that could be added to a circuit.
@@ -311,7 +313,7 @@ class WASMOp : public ClassicalOp {
 /**
  * An operation to set some bits to specified values
  */
-class SetBitsOp : public ClassicalEvalOp {
+class TKET_EXPORT SetBitsOp : public ClassicalEvalOp {
  public:
   /**
    * Construct from values.
@@ -342,7 +344,7 @@ class SetBitsOp : public ClassicalEvalOp {
  *
  * @param n number of bits copied
  */
-class CopyBitsOp : public ClassicalEvalOp {
+class TKET_EXPORT CopyBitsOp : public ClassicalEvalOp {
  public:
   explicit CopyBitsOp(unsigned n)
       : ClassicalEvalOp(OpType::CopyBits, n, 0, n, "CopyBits") {}
@@ -376,7 +378,7 @@ class PredicateOp : public ClassicalEvalOp {
 /**
  * A predicate defined by a range of values in binary encoding
  */
-class RangePredicateOp : public PredicateOp {
+class TKET_EXPORT RangePredicateOp : public PredicateOp {
  public:
   /**
    * Construct from a lower and upper bound
@@ -419,7 +421,7 @@ class RangePredicateOp : public PredicateOp {
 /**
  * A predicate defined explicitly by a truth table
  */
-class ExplicitPredicateOp : public PredicateOp {
+class TKET_EXPORT ExplicitPredicateOp : public PredicateOp {
  public:
   /**
    * @brief Construct from a table of values
@@ -469,7 +471,7 @@ class ModifyingOp : public ClassicalEvalOp {
 /**
  * A modifying operation defined explicitly by a truth table
  */
-class ExplicitModifierOp : public ModifyingOp {
+class TKET_EXPORT ExplicitModifierOp : public ModifyingOp {
  public:
   /**
    * @brief Construct from a table of values
@@ -507,7 +509,7 @@ class ExplicitModifierOp : public ModifyingOp {
  * The order of arguments is: all arguments to first operation, then all
  * arguments to second operation, and so on.
  */
-class MultiBitOp : public ClassicalEvalOp {
+class TKET_EXPORT MultiBitOp : public ClassicalEvalOp {
  public:
   MultiBitOp(std::shared_ptr<const ClassicalEvalOp> op, unsigned n);
 

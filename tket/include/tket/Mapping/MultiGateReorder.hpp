@@ -16,6 +16,7 @@
 
 #include "tket/Mapping/MappingFrontier.hpp"
 #include "tket/Mapping/RoutingMethod.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -48,7 +49,7 @@ class MultiGateReorder {
   EdgeVec u_frontier_edges_;
 };
 
-class MultiGateReorderRoutingMethod : public RoutingMethod {
+class TKET_EXPORT MultiGateReorderRoutingMethod : public RoutingMethod {
  public:
   /**
    * Checking and Routing methods redefined using MultiGateReorder.

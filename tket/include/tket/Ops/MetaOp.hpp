@@ -16,9 +16,11 @@
 
 #include "Op.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
-class MetaOp : public Op {
+class TKET_EXPORT MetaOp : public Op {
  public:
   explicit MetaOp(
       OpType type, op_signature_t signature = {},

@@ -16,13 +16,15 @@
 
 #include "SymplecticTableau.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 // Forward declare classes for friends
 class Circuit;
 class UnitaryRevTableau;
 
-class UnitaryTableau {
+class TKET_EXPORT UnitaryTableau {
   /**
    * An implementation of the stabilizer-destabilizer tableau for unitary
    * Cliffords in Aaronson & Gottesman, "Improved Simulation of Stabilizer
@@ -179,7 +181,7 @@ JSON_DECL(UnitaryTableau)
 
 std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
 
-class UnitaryRevTableau {
+class TKET_EXPORT UnitaryRevTableau {
   /**
    * Whereas UnitaryTableau rows are over the output segment with fixed single
    * paulis over the input segment, UnitaryRevTableau flips this around with

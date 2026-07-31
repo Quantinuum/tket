@@ -44,11 +44,11 @@ typedef std::pair<UnitType, unsigned> register_info_t;
 
 typedef std::optional<register_info_t> opt_reg_info_t;
 
-const std::string &q_default_reg();
+TKET_EXPORT const std::string &q_default_reg();
 const std::string &q_routing_ancilla_reg();
-const std::string &c_default_reg();
-const std::string &w_default_reg();
-const std::string &r_default_reg();
+TKET_EXPORT const std::string &c_default_reg();
+TKET_EXPORT const std::string &w_default_reg();
+TKET_EXPORT const std::string &r_default_reg();
 TKET_EXPORT const std::string &node_default_reg();
 const std::string &c_debug_zero_prefix();
 const std::string &c_debug_one_prefix();
@@ -154,7 +154,7 @@ void json_to_unitid(const nlohmann::json &j, T &unit) {
 }
 
 /** Location holding a qubit */
-class Qubit : public UnitID {
+class TKET_EXPORT Qubit : public UnitID {
  public:
   Qubit() : UnitID("", {}, UnitType::Qubit) {}
 
@@ -192,7 +192,7 @@ class Qubit : public UnitID {
 JSON_DECL(Qubit)
 
 /** Location holding a bit */
-class Bit : public UnitID {
+class TKET_EXPORT Bit : public UnitID {
  public:
   Bit() : UnitID("", {}, UnitType::Bit) {}
 
