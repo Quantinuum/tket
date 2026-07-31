@@ -118,7 +118,7 @@ class TKET_EXPORT BasePass {
       const PassCallback& before_apply = trivial_callback,
       const PassCallback& after_apply = trivial_callback) const = 0;
 
-  friend PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
+  friend TKET_EXPORT PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
 
   virtual std::string to_string() const = 0;
 
@@ -211,7 +211,7 @@ class TKET_EXPORT SequencePass : public BasePass {
   nlohmann::json get_config() const override;
   std::vector<PassPtr> get_sequence() const { return seq_; }
 
-  friend PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
+  friend TKET_EXPORT PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
 
  private:
   std::vector<PassPtr> seq_;

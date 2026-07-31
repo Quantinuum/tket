@@ -1246,7 +1246,7 @@ class TKET_EXPORT Circuit {
   // given two circuits, adds second circuit to first sequentially by tying
   // qubits together
   // O(E1+V1+q1+E2+V2+q2) -- both circuits are copied here
-  friend Circuit operator>>(const Circuit &c1, const Circuit &c2);
+  friend TKET_EXPORT Circuit operator>>(const Circuit &c1, const Circuit &c2);
 
   // O(E+V+q) -- E,V,q of incirc
   void cut_insert(

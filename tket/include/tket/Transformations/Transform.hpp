@@ -78,7 +78,7 @@ class TKET_EXPORT Transform {
    *
    * @return the composite transform
    */
-  friend Transform operator>>(const Transform& lhs, const Transform& rhs);
+  friend TKET_EXPORT Transform operator>>(const Transform& lhs, const Transform& rhs);
 };
 
 TKET_EXPORT Transform operator>>(const Transform& lhs, const Transform& rhs);
