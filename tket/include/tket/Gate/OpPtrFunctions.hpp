@@ -18,6 +18,8 @@
 #include "tket/Ops/OpPtr.hpp"
 #include "tket/Utils/Expression.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -28,7 +30,7 @@ namespace tket {
  * @param n_qubits number of qubits (only necessary for gates, barrier
  *  and metaops with variable quantum arity)
  */
-Op_ptr get_op_ptr(OpType chosen_type, const Expr &param, unsigned n_qubits = 0);
+TKET_EXPORT Op_ptr get_op_ptr(OpType chosen_type, const Expr &param, unsigned n_qubits = 0);
 
 /**
  * Get an operation from a type, vector of parameters and qubit count
@@ -38,7 +40,7 @@ Op_ptr get_op_ptr(OpType chosen_type, const Expr &param, unsigned n_qubits = 0);
  * @param n_qubits number of qubits (only necessary for gates, barrier
  *  and metaops with variable quantum arity)
  */
-Op_ptr get_op_ptr(
+TKET_EXPORT Op_ptr get_op_ptr(
     OpType chosen_type, const std::vector<Expr> &params = {},
     unsigned n_qubits = 0);
 
