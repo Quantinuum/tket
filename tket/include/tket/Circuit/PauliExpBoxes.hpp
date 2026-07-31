@@ -18,6 +18,8 @@
 #include "tket/Diagonalisation/PauliPartition.hpp"
 #include "tket/Transformations/PauliOptimisation.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 class PauliExpBoxInvalidity : public std::logic_error {
@@ -29,7 +31,7 @@ class PauliExpBoxInvalidity : public std::logic_error {
 /**
  * Operation defined as the exponential of a tensor of Pauli operators
  */
-class PauliExpBox : public Box {
+class TKET_EXPORT PauliExpBox : public Box {
  public:
   /**
    * The operation implements the unitary operator
@@ -90,7 +92,7 @@ class PauliExpBox : public Box {
   CXConfigType cx_config_;
 };
 
-class PauliExpPairBox : public Box {
+class TKET_EXPORT PauliExpPairBox : public Box {
  public:
   PauliExpPairBox(
       const SymPauliTensor &paulis0, const SymPauliTensor &paulis1,
@@ -150,7 +152,7 @@ class PauliExpPairBox : public Box {
   CXConfigType cx_config_;
 };
 
-class PauliExpCommutingSetBox : public Box {
+class TKET_EXPORT PauliExpCommutingSetBox : public Box {
  public:
   PauliExpCommutingSetBox(
       const std::vector<SymPauliTensor> &pauli_gadgets,
@@ -204,7 +206,7 @@ class PauliExpCommutingSetBox : public Box {
   CXConfigType cx_config_;
 };
 
-class TermSequenceBox : public Box {
+class TKET_EXPORT TermSequenceBox : public Box {
  public:
   TermSequenceBox(
       const std::vector<SymPauliTensor> &pauli_gadgets,

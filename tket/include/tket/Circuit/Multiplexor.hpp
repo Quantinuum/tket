@@ -117,7 +117,7 @@ struct GateSpec {
 /**
  * Multiplexed single-axis rotations
  */
-class MultiplexedRotationBox : public Box {
+class TKET_EXPORT MultiplexedRotationBox : public Box {
  public:
   /**
    * @brief Construct from a op_map. All ops should be of the same type.
@@ -190,7 +190,7 @@ struct MultiplexedU2Commands {
 /**
  * Multiplexed U2 gate
  */
-class MultiplexedU2Box : public Box {
+class TKET_EXPORT MultiplexedU2Box : public Box {
  public:
   /**
    * @brief Construct from a op_map. Ops must be single-qubit unitary gate types
@@ -263,7 +263,7 @@ class MultiplexedU2Box : public Box {
 /**
  * Multiplexed-Tensored-U2 gate
  */
-class MultiplexedTensoredU2Box : public Box {
+class TKET_EXPORT MultiplexedTensoredU2Box : public Box {
  public:
   /**
    * @brief Construct from a op_map. Ops must be single-qubit unitary gate types
