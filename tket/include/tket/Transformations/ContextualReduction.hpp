@@ -17,6 +17,8 @@
 #include "Transform.hpp"
 #include "tket/Circuit/Circuit.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace Transforms {
@@ -42,7 +44,7 @@ enum class CreateAllQubits { Yes, No };
  * operations on the same classical units; and C0 followed by C1 is equivalent
  * to the original circuit.
  */
-std::pair<Circuit, Circuit> separate_classical(const Circuit &circ);
+TKET_EXPORT std::pair<Circuit, Circuit> separate_classical(const Circuit &circ);
 
 /**
  * Remove all operations that have no @ref OpType::Output or

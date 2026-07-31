@@ -16,6 +16,8 @@
 
 #include "Transform.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace Transforms {
@@ -34,16 +36,16 @@ NLOHMANN_JSON_SERIALIZE_ENUM(
                       {PauliSynthStrat::Sets, "Sets"},
                       {PauliSynthStrat::Greedy, "Greedy"}});
 
-Transform pairwise_pauli_gadgets(CXConfigType cx_config = CXConfigType::Snake);
+TKET_EXPORT Transform pairwise_pauli_gadgets(CXConfigType cx_config = CXConfigType::Snake);
 
 // always returns true, as it leaves Circuit data structure
-Transform synthesise_pauli_graph(
+TKET_EXPORT Transform synthesise_pauli_graph(
     PauliSynthStrat strat = PauliSynthStrat::Sets,
     CXConfigType cx_config = CXConfigType::Snake);
 
 // Assumes incoming circuit is composed of `CircBox`es with
 // `PauliExpBox`es inside
-Transform special_UCC_synthesis(
+TKET_EXPORT Transform special_UCC_synthesis(
     PauliSynthStrat strat = PauliSynthStrat::Sets,
     CXConfigType cx_config = CXConfigType::Snake);
 

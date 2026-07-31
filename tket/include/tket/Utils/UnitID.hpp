@@ -45,15 +45,15 @@ typedef std::pair<UnitType, unsigned> register_info_t;
 typedef std::optional<register_info_t> opt_reg_info_t;
 
 TKET_EXPORT const std::string &q_default_reg();
-const std::string &q_routing_ancilla_reg();
+TKET_EXPORT const std::string &q_routing_ancilla_reg();
 TKET_EXPORT const std::string &c_default_reg();
 TKET_EXPORT const std::string &w_default_reg();
 TKET_EXPORT const std::string &r_default_reg();
 TKET_EXPORT const std::string &node_default_reg();
-const std::string &c_debug_zero_prefix();
-const std::string &c_debug_one_prefix();
-const std::string &c_debug_default_name();
-const std::string &c_permutation_scratch_name();
+TKET_EXPORT const std::string &c_debug_zero_prefix();
+TKET_EXPORT const std::string &c_debug_one_prefix();
+TKET_EXPORT const std::string &c_debug_default_name();
+TKET_EXPORT const std::string &c_permutation_scratch_name();
 
 /** Conversion invalid */
 class InvalidUnitConversion : public std::logic_error {
@@ -267,7 +267,7 @@ class WasmState : public UnitID {
 JSON_DECL(WasmState)
 
 /** Location holding an RNG UID */
-class RngState : public UnitID {
+class TKET_EXPORT RngState : public UnitID {
  public:
   RngState() : UnitID(r_default_reg(), {}, UnitType::RngState) {}
 

@@ -18,6 +18,8 @@
 
 #include "tket/ZX/ZXDiagram.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 // Forward declare converter for friend access
@@ -36,7 +38,7 @@ namespace zx {
  * `d` approximates the partial order by giving the depth of the measurement
  * from the output, i.e. d(u) < d(v) => v is measured before u.
  */
-class Flow {
+class TKET_EXPORT Flow {
  public:
   Flow(
       const std::map<ZXVert, ZXVertSeqSet>& c,

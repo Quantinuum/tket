@@ -20,6 +20,8 @@
 #include "tket/Circuit/Circuit.hpp"
 #include "tket/Clifford/UnitaryTableau.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace Transforms {
@@ -665,7 +667,7 @@ Circuit greedy_pauli_set_synthesis(
 
 }  // namespace GreedyPauliSimp
 
-Transform greedy_pauli_optimisation(
+TKET_EXPORT Transform greedy_pauli_optimisation(
     double discount_rate = 0.7, double depth_weight = 0.3,
     unsigned max_lookahead = 500, unsigned max_tqe_candidates = 500,
     unsigned seed = 0, bool allow_zzphase = false,

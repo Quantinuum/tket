@@ -17,6 +17,8 @@
 #include "Transform.hpp"
 #include "tket/OpType/OpType.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace Transforms {
@@ -32,7 +34,7 @@ namespace Transforms {
  * @param target_2qb_gate Target 2-qubit gate (either CX or TK2)
  * @return Transform implementing the squash
  */
-Transform three_qubit_squash(OpType target_2qb_gate = OpType::CX);
+TKET_EXPORT Transform three_qubit_squash(OpType target_2qb_gate = OpType::CX);
 
 }  // namespace Transforms
 

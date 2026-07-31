@@ -17,6 +17,8 @@
 #include "tket/OpType/OpType.hpp"
 #include "tket/Transformations/Transform.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace Transforms {
@@ -35,7 +37,7 @@ namespace Transforms {
  * Produces: CX, TK1
  *
  */
-Transform peephole_optimise_2q(bool allow_swaps = true);
+TKET_EXPORT Transform peephole_optimise_2q(bool allow_swaps = true);
 
 /**
  * Peephole optimisation including resynthesis of three-qubit gate sequences.
@@ -47,7 +49,7 @@ Transform peephole_optimise_2q(bool allow_swaps = true);
  *
  * Produces: (CX or TK2) and TK1.
  */
-Transform full_peephole_optimise(
+TKET_EXPORT Transform full_peephole_optimise(
     bool allow_swaps = true, OpType target_2qb_gate = OpType::CX);
 
 /**
@@ -59,7 +61,7 @@ Transform full_peephole_optimise(
  * @param allow_swaps whether to allow introduction of implicit wire swaps
  * @param target_2qb_gate target two-qubit gate
  */
-Transform clifford_simp(
+TKET_EXPORT Transform clifford_simp(
     bool allow_swaps = true, OpType target_2qb_gate = OpType::CX);
 
 //////////////////
@@ -71,16 +73,16 @@ Transform clifford_simp(
 /**
  * Synthesise a circuit consisting of TK2 and TK1 gates only.
  */
-Transform synthesise_tk();
+TKET_EXPORT Transform synthesise_tk();
 
 /**
  * Synthesise a circuit consisting of CX and TK1 gates only.
  */
-Transform synthesise_tket();
+TKET_EXPORT Transform synthesise_tket();
 
 // converts a circuit into the UMD primitives (Rz, PhasedX, XXPhase) whilst
 // optimising Expects: Any gate set Produces: XXPhase, PhasedX, Rz
-Transform synthesise_UMD();
+TKET_EXPORT Transform synthesise_UMD();
 
 /////////////////////////////
 // Pauli Gadget Optimisation//
@@ -91,7 +93,7 @@ Transform synthesise_UMD();
  *
  * Produces CX and TK1 gates.
  */
-Transform optimise_via_PhaseGadget(
+TKET_EXPORT Transform optimise_via_PhaseGadget(
     CXConfigType cx_config = CXConfigType::Snake);
 
 }  // namespace Transforms

@@ -16,6 +16,8 @@
 
 #include "tket/ZX/ZXDiagram.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 namespace zx {
@@ -38,7 +40,7 @@ namespace zx {
  * the rewrites. We decided that interactive rewriting was something we were
  * happy to go without as tket is not intended to be a proof assistant.
  */
-class Rewrite {
+class TKET_EXPORT Rewrite {
  public:
   typedef std::function<bool(ZXDiagram&)> RewriteFun;
   typedef std::function<unsigned(const ZXDiagram&)> Metric;
