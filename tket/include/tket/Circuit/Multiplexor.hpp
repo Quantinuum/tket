@@ -16,6 +16,8 @@
 
 #include "Boxes.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -33,7 +35,7 @@ typedef std::map<std::vector<bool>, std::vector<Op_ptr>> ctrl_tensored_op_map_t;
 /**
  * Multiplexed ops
  */
-class MultiplexorBox : public Box {
+class TKET_EXPORT MultiplexorBox : public Box {
  public:
   /**
    * Construct from a given ctrl_op_map_t.

@@ -16,11 +16,13 @@
 
 #include "Boxes.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 /**
  * Box to express computations that follow the compute-action-uncompute pattern
  */
-class ConjugationBox : public Box {
+class TKET_EXPORT ConjugationBox : public Box {
  public:
   /**
    * @brief Construct a new ConjugationBox object from operations that perform

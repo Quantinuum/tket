@@ -28,6 +28,8 @@
 #include "tket/Utils/MatrixAnalysis.hpp"
 #include "tket/Utils/UnitID.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 class Circuit;
@@ -130,7 +132,7 @@ Op_ptr set_box_id(BoxT &b, boost::uuids::uuid newid) {
 /**
  * Operation defined as a circuit.
  */
-class CircBox : public Box {
+class TKET_EXPORT CircBox : public Box {
  public:
   /**
    * Construct from a given circuit.
@@ -192,7 +194,7 @@ class CircBox : public Box {
 /**
  * One-qubit operation defined as a unitary matrix
  */
-class Unitary1qBox : public Box {
+class TKET_EXPORT Unitary1qBox : public Box {
  public:
   /**
    * Construct from a given 2x2 unitary matrix
@@ -252,7 +254,7 @@ class Unitary1qBox : public Box {
 /**
  * Two-qubit operation defined as a unitary matrix (ILO-BE)
  */
-class Unitary2qBox : public Box {
+class TKET_EXPORT Unitary2qBox : public Box {
  public:
   /**
    * Construct from a given 4x4 unitary matrix
@@ -312,7 +314,7 @@ class Unitary2qBox : public Box {
 /**
  * Three-qubit operation defined as a unitary matrix (ILO-BE)
  */
-class Unitary3qBox : public Box {
+class TKET_EXPORT Unitary3qBox : public Box {
  public:
   /**
    * Construct from a given 8x8 unitary matrix
@@ -374,7 +376,7 @@ class Unitary3qBox : public Box {
  * The unitary corresponding to the matrix A and phase t is exp(i*t*A).
  * Matrix A is stored in ILO-BE form.
  */
-class ExpBox : public Box {
+class TKET_EXPORT ExpBox : public Box {
  public:
   /**
    * Construct from a given 4x4 hermitian matrix and optional phase.
@@ -434,7 +436,7 @@ class ExpBox : public Box {
   double t_;
 };
 
-class CompositeGateDef;
+class TKET_EXPORT CompositeGateDef;
 typedef std::shared_ptr<CompositeGateDef> composite_def_ptr_t;
 
 // CompositeGateDef
@@ -468,7 +470,7 @@ class CompositeGateDef : public std::enable_shared_from_this<CompositeGateDef> {
   CompositeGateDef() {}
 };
 
-class CustomGate : public Box {
+class TKET_EXPORT CustomGate : public Box {
  public:
   CustomGate(const composite_def_ptr_t &gate, const std::vector<Expr> &params);
   CustomGate(const CustomGate &other);
@@ -510,7 +512,7 @@ class CustomGate : public Box {
 /**
  * Wraps another quantum op, adding control qubits
  */
-class QControlBox : public Box {
+class TKET_EXPORT QControlBox : public Box {
  public:
   /**
    * Construct from a given op and number of controls
@@ -574,7 +576,7 @@ class QControlBox : public Box {
   const std::vector<bool> control_state_;
 };
 
-class ProjectorAssertionBox : public Box {
+class TKET_EXPORT ProjectorAssertionBox : public Box {
  public:
   /**
    * Construct from a given 2x2, 4x4 or 8x8 projector matrix
@@ -629,7 +631,7 @@ class ProjectorAssertionBox : public Box {
   mutable std::vector<bool> expected_readouts_;
 };
 
-class StabiliserAssertionBox : public Box {
+class TKET_EXPORT StabiliserAssertionBox : public Box {
  public:
   /**
    * Construct from a set of stabiliser Pauli strings

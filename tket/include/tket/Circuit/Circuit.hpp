@@ -53,6 +53,8 @@
 #include "tket/Utils/SequencedContainers.hpp"
 #include "tket/Utils/UnitID.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 typedef std::vector<EdgeVec> BundleVec;
@@ -210,7 +212,7 @@ enum ReverseType {
  * A circuit comprises some quantum and classical wires and a defined sequence
  * of operations on them with a defined global phase.
  */
-class Circuit {
+class TKET_EXPORT Circuit {
   void _handle_boundaries(Circuit &circ, vertex_map_t &vmap) const;
   void _handle_interior(
       Circuit &circ, vertex_map_t &vmap, V_iterator &vi, V_iterator &vend,
