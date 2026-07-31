@@ -307,7 +307,7 @@ nlohmann::json serialise(const BasePass& bp);
 nlohmann::json serialise(const PassPtr& pp);
 nlohmann::json serialise(const std::vector<PassPtr>& pp);
 
-PassPtr deserialise(
+TKET_EXPORT PassPtr deserialise(
     const nlohmann::json& j,
     const std::map<std::string, std::function<Circuit(const Circuit&)>>&
         custom_deserialise = {},
