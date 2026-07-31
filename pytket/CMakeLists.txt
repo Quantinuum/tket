@@ -108,61 +108,61 @@ set(HEADER_FILES
         binders/include/UnitRegister.hpp
    )
 
-# nanobind_add_module(circuit
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/circuit/boxes.cpp
-#     binders/circuit/Circuit/add_classical_op.cpp
-#     binders/circuit/Circuit/add_op.cpp
-#     binders/circuit/Circuit/main.cpp
-#     binders/circuit/classical.cpp
-#     binders/circuit/clexpr.cpp
-#     binders/circuit/main.cpp
-#     ${HEADER_FILES})
-# target_include_directories(circuit PRIVATE binders/include)
-# target_link_libraries(circuit PRIVATE ${lib_deps})
+nanobind_add_module(circuit
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/circuit/boxes.cpp
+    binders/circuit/Circuit/add_classical_op.cpp
+    binders/circuit/Circuit/add_op.cpp
+    binders/circuit/Circuit/main.cpp
+    binders/circuit/classical.cpp
+    binders/circuit/clexpr.cpp
+    binders/circuit/main.cpp
+    ${HEADER_FILES})
+target_include_directories(circuit PRIVATE binders/include)
+target_link_libraries(circuit PRIVATE ${lib_deps})
 
-# nanobind_add_module(circuit_library
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/circuit_library.cpp ${HEADER_FILES})
-# target_include_directories(circuit_library PRIVATE binders/include)
-# target_link_libraries(circuit_library PRIVATE ${lib_deps})
+nanobind_add_module(circuit_library
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/circuit_library.cpp ${HEADER_FILES})
+target_include_directories(circuit_library PRIVATE binders/include)
+target_link_libraries(circuit_library PRIVATE ${lib_deps})
 
-# nanobind_add_module(unit_id
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/unitid.cpp ${HEADER_FILES})
-# target_include_directories(unit_id PRIVATE binders/include)
-# target_link_libraries(unit_id PRIVATE ${lib_deps})
+nanobind_add_module(unit_id
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/unitid.cpp ${HEADER_FILES})
+target_include_directories(unit_id PRIVATE binders/include)
+target_link_libraries(unit_id PRIVATE ${lib_deps})
 
-# nanobind_add_module(mapping
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/mapping.cpp ${HEADER_FILES})
-# target_include_directories(mapping PRIVATE binders/include)
-# target_link_libraries(mapping PRIVATE ${lib_deps})
+nanobind_add_module(mapping
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/mapping.cpp ${HEADER_FILES})
+target_include_directories(mapping PRIVATE binders/include)
+target_link_libraries(mapping PRIVATE ${lib_deps})
 
-# nanobind_add_module(transform
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/transform.cpp ${HEADER_FILES})
-# target_include_directories(transform PRIVATE binders/include)
-# target_link_libraries(transform PRIVATE ${lib_deps})
+nanobind_add_module(transform
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/transform.cpp ${HEADER_FILES})
+target_include_directories(transform PRIVATE binders/include)
+target_link_libraries(transform PRIVATE ${lib_deps})
 
-# nanobind_add_module(predicates
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/predicates.cpp ${HEADER_FILES})
-# target_include_directories(predicates PRIVATE binders/include)
-# target_link_libraries(predicates PRIVATE ${lib_deps})
+nanobind_add_module(predicates
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/predicates.cpp ${HEADER_FILES})
+target_include_directories(predicates PRIVATE binders/include)
+target_link_libraries(predicates PRIVATE ${lib_deps})
 
-# nanobind_add_module(passes
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/passes.cpp ${HEADER_FILES})
-# target_include_directories(passes PRIVATE binders/include)
-# target_link_libraries(passes PRIVATE ${lib_deps})
+nanobind_add_module(passes
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/passes.cpp ${HEADER_FILES})
+target_include_directories(passes PRIVATE binders/include)
+target_link_libraries(passes PRIVATE ${lib_deps})
 
 nanobind_add_module(architecture
     STABLE_ABI
@@ -171,79 +171,79 @@ nanobind_add_module(architecture
 target_include_directories(architecture PRIVATE binders/include)
 target_link_libraries(architecture PRIVATE ${lib_deps})
 
-# nanobind_add_module(placement
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/placement.cpp ${HEADER_FILES})
-# target_include_directories(placement PRIVATE binders/include)
-# target_link_libraries(placement PRIVATE ${lib_deps})
+nanobind_add_module(placement
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/placement.cpp ${HEADER_FILES})
+target_include_directories(placement PRIVATE binders/include)
+target_link_libraries(placement PRIVATE ${lib_deps})
 
-# nanobind_add_module(partition
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/partition.cpp ${HEADER_FILES})
-# target_include_directories(partition PRIVATE binders/include)
-# target_link_libraries(partition PRIVATE ${lib_deps})
+nanobind_add_module(partition
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/partition.cpp ${HEADER_FILES})
+target_include_directories(partition PRIVATE binders/include)
+target_link_libraries(partition PRIVATE ${lib_deps})
 
-# nanobind_add_module(pauli
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/pauli.cpp ${HEADER_FILES})
-# target_include_directories(pauli PRIVATE binders/include)
-# target_link_libraries(pauli PRIVATE ${lib_deps})
+nanobind_add_module(pauli
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/pauli.cpp ${HEADER_FILES})
+target_include_directories(pauli PRIVATE binders/include)
+target_link_libraries(pauli PRIVATE ${lib_deps})
 
-# nanobind_add_module(logging
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/logging.cpp ${HEADER_FILES})
-# target_include_directories(logging PRIVATE binders/include)
-# target_link_libraries(logging PRIVATE ${lib_deps})
+nanobind_add_module(logging
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/logging.cpp ${HEADER_FILES})
+target_include_directories(logging PRIVATE binders/include)
+target_link_libraries(logging PRIVATE ${lib_deps})
 
-# nanobind_add_module(utils_serialization
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/utils_serialization.cpp ${HEADER_FILES})
-# target_include_directories(utils_serialization PRIVATE binders/include)
-# target_link_libraries(utils_serialization PRIVATE ${lib_deps})
+nanobind_add_module(utils_serialization
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/utils_serialization.cpp ${HEADER_FILES})
+target_include_directories(utils_serialization PRIVATE binders/include)
+target_link_libraries(utils_serialization PRIVATE ${lib_deps})
 
-# nanobind_add_module(tailoring
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/tailoring.cpp ${HEADER_FILES})
-# target_include_directories(tailoring PRIVATE binders/include)
-# target_link_libraries(tailoring PRIVATE ${lib_deps})
+nanobind_add_module(tailoring
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/tailoring.cpp ${HEADER_FILES})
+target_include_directories(tailoring PRIVATE binders/include)
+target_link_libraries(tailoring PRIVATE ${lib_deps})
 
-# nanobind_add_module(tableau
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/tableau.cpp ${HEADER_FILES})
-# target_include_directories(tableau PRIVATE binders/include)
-# target_link_libraries(tableau PRIVATE ${lib_deps})
+nanobind_add_module(tableau
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/tableau.cpp ${HEADER_FILES})
+target_include_directories(tableau PRIVATE binders/include)
+target_link_libraries(tableau PRIVATE ${lib_deps})
 
-# nanobind_add_module(zx
-#     STABLE_ABI
-#     NB_DOMAIN pytket
-#     binders/zx/diagram.cpp
-#     binders/zx/rewrite.cpp
-#     ${HEADER_FILES})
-# target_include_directories(zx PRIVATE binders/include)
-# target_link_libraries(zx PRIVATE ${lib_deps})
+nanobind_add_module(zx
+    STABLE_ABI
+    NB_DOMAIN pytket
+    binders/zx/diagram.cpp
+    binders/zx/rewrite.cpp
+    ${HEADER_FILES})
+target_include_directories(zx PRIVATE binders/include)
+target_link_libraries(zx PRIVATE ${lib_deps})
 
 install(TARGETS
     architecture
-    # circuit
-    # circuit_library
-    # logging
-    # mapping
-    # partition
-    # passes
-    # pauli
-    # placement
-    # predicates
-    # tableau
-    # tailoring
-    # transform
-    # unit_id
-    # utils_serialization
-    # zx
+    circuit
+    circuit_library
+    logging
+    mapping
+    partition
+    passes
+    pauli
+    placement
+    predicates
+    tableau
+    tailoring
+    transform
+    unit_id
+    utils_serialization
+    zx
     LIBRARY DESTINATION lib)
