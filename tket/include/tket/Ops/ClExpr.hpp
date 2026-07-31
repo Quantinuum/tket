@@ -97,7 +97,7 @@ NLOHMANN_JSON_SERIALIZE_ENUM(
 typedef struct TKET_EXPORT ClBitVar {
   unsigned index;  /// Identifier for the variable within the expression
   bool operator==(const ClBitVar& other) const { return index == other.index; }
-  friend std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
+  friend TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
 } ClBitVar;
 
 TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClBitVar& var);
@@ -110,7 +110,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ClBitVar, index)
 typedef struct TKET_EXPORT ClRegVar {
   unsigned index;  /// Identifier for the variable within the expression
   bool operator==(const ClRegVar& other) const { return index == other.index; }
-  friend std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
+  friend TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
 } ClRegVar;
 
 TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClRegVar& var);
@@ -174,7 +174,7 @@ class TKET_EXPORT ClExpr {
 
   bool operator==(const ClExpr& other) const;
 
-  friend std::ostream& operator<<(std::ostream& os, const ClExpr& expr);
+  friend TKET_EXPORT std::ostream& operator<<(std::ostream& os, const ClExpr& expr);
 
   /**
    * Main operation
@@ -243,7 +243,7 @@ class TKET_EXPORT WiredClExpr {
 
   bool operator==(const WiredClExpr& other) const;
 
-  friend std::ostream& operator<<(std::ostream& os, const WiredClExpr& expr);
+  friend TKET_EXPORT std::ostream& operator<<(std::ostream& os, const WiredClExpr& expr);
 
   /**
    * Expression
