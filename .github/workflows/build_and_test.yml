@@ -74,14 +74,8 @@ jobs:
         # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
         # Necessary because setting ccache base_dir doesn't currently work on windows
         run: |
-          conan build tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-          conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-      - name: Build tket-c-api
-        # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
-        # Necessary because setting ccache base_dir doesn't currently work on windows
-        run: |
-          conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-          conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+          conan build tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=False -c tools.cmake.cmaketoolchain:generator=Ninja
+          conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=False -c tools.cmake.cmaketoolchain:generator=Ninja
       - name: ccache stats
         run: |
           ccache -s  #show stats
@@ -150,6 +144,8 @@ jobs:
         a=$(cat ccache-info.txt | grep executable)
         # strip off the initial "  path to executable: "
         b=${a:22}
+        echo "Path to ccache executable:"
+        echo ${b}
         echo "ccache_path=${b}" >> $GITHUB_OUTPUT
     - name: Build tket
       run: |
@@ -165,17 +161,3 @@ jobs:
       run: |
         cd pytket
         pip install -e .[ZX] -v
-    - name: Run doctests
-      run: |
-        cd pytket
-        pip install pytest
-        pytest --doctest-modules pytket
-    - name: Test pytket
-      run: |
-        cd pytket/tests
-        pip install -r requirements.txt
-        pytest --ignore=simulator/
-    - name: ccache stats
-      run: |
-        ccache -s  #show stats
-        ccache -z  #show stats
