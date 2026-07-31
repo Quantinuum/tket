@@ -1242,7 +1242,7 @@ class TKET_EXPORT Circuit {
       const std::vector<unsigned> &bits = {});
 
   // O(E+V+q) -- E,V,q of c2
-  friend Circuit operator*(const Circuit &c1, const Circuit &c2);
+  friend TKET_EXPORT Circuit operator*(const Circuit &c1, const Circuit &c2);
   // given two circuits, adds second circuit to first sequentially by tying
   // qubits together
   // O(E1+V1+q1+E2+V2+q2) -- both circuits are copied here
@@ -1649,6 +1649,7 @@ class TKET_EXPORT Circuit {
 };
 
 TKET_EXPORT Circuit operator>>(const Circuit &c1, const Circuit &c2);
+TKET_EXPORT Circuit operator*(const Circuit &c1, const Circuit &c2);
 
 JSON_DECL(Circuit)
 
