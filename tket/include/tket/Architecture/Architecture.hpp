@@ -134,7 +134,7 @@ class TKET_EXPORT Architecture : public ArchitectureBase<graphs::DirectedGraph<N
 };
 
 JSON_DECL(Architecture::Connection)
-JSON_DECL(Architecture)
+JSON_DECL_EXPORT(Architecture)
 
 class TKET_EXPORT FullyConnected : public ArchitectureBase<graphs::CompleteGraph<Node>> {
  public:
@@ -155,7 +155,7 @@ class TKET_EXPORT FullyConnected : public ArchitectureBase<graphs::CompleteGraph
   }
 };
 
-JSON_DECL(FullyConnected)
+JSON_DECL_EXPORT(FullyConnected)
 
 // Subclass, constructor generates adjacency matrix corresponding to a ring
 // architecture
