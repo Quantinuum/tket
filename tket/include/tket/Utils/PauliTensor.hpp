@@ -304,7 +304,7 @@ TKET_EXPORT DensePauliMap cast_container<DensePauliMap, DensePauliMap>(
  * @retval 1 first > second
  */
 template <typename PauliContainer>
-TKET_EXPORT int compare_containers(
+int compare_containers(
     const PauliContainer &first, const PauliContainer &second) = delete;
 template <>
 TKET_EXPORT int compare_containers<QubitPauliMap>(
@@ -388,7 +388,7 @@ TKET_EXPORT void print_paulis<DensePauliMap>(std::ostream &os, const DensePauliM
  * structure.
  */
 template <typename PauliContainer>
-TKET_EXPORT void hash_combine_paulis(std::size_t &seed, const PauliContainer &paulis) =
+void hash_combine_paulis(std::size_t &seed, const PauliContainer &paulis) =
     delete;
 template <>
 TKET_EXPORT void hash_combine_paulis<QubitPauliMap>(
@@ -493,7 +493,7 @@ TKET_EXPORT CmplxSpMat to_sparse_matrix<DensePauliMap>(
  * 0 -1  0  0
  */
 template <typename PauliContainer>
-TKET_EXPORT CmplxSpMat to_sparse_matrix(
+CmplxSpMat to_sparse_matrix(
     const PauliContainer &paulis, const qubit_vector_t &qubits) = delete;
 template <>
 TKET_EXPORT CmplxSpMat to_sparse_matrix<QubitPauliMap>(
