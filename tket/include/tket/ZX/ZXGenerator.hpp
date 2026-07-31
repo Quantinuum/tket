@@ -229,7 +229,7 @@ class BoundaryGen : public ZXGen {
  * Implementations include PhasedGen for generators with 1 Expr parameter or
  * CliffordGen for Clifford generators with 1 bool parameter.
  */
-class BasicGen : public ZXGen {
+class TKET_EXPORT BasicGen : public ZXGen {
  public:
   BasicGen(ZXType type, QuantumType qtype = QuantumType::Quantum);
 

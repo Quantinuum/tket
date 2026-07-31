@@ -153,7 +153,7 @@ void from_json(const nlohmann::json& j, ClExprArg& arg);
  *
  * It may be composed of subexpressions.
  */
-class ClExpr {
+class TKET_EXPORT ClExpr {
  public:
   /**
    * Default constructor

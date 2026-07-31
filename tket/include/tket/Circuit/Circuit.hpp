@@ -234,7 +234,7 @@ class TKET_EXPORT Circuit {
       const Vertex &vert, std::shared_ptr<const unit_frontier_t> u_frontier,
       std::shared_ptr<const b_frontier_t> prev_b_frontier) const;
 
-  class CommandIterator {
+  class TKET_EXPORT CommandIterator {
    private:
     Command current_command_;
     SliceIterator current_slice_iterator_;
@@ -1647,6 +1647,8 @@ class TKET_EXPORT Circuit {
   /** Signature associated with each named operation group */
   std::map<std::string, op_signature_t> opgroupsigs;
 };
+
+TKET_EXPORT Circuit operator>>(const Circuit &c1, const Circuit &c2);
 
 JSON_DECL(Circuit)
 

@@ -17,6 +17,8 @@
 #include "MeasurementSetup.hpp"
 #include "tket/Diagonalisation/PauliPartition.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -27,7 +29,7 @@ namespace tket {
  * https://arxiv.org/abs/1907.13623, https://arxiv.org/abs/1908.08067,
  * https://arxiv.org/abs/1908.06942, https://arxiv.org/abs/1907.03358
  */
-MeasurementSetup measurement_reduction(
+TKET_EXPORT MeasurementSetup measurement_reduction(
     const std::list<SpPauliString>& strings, PauliPartitionStrat strat,
     GraphColourMethod method = GraphColourMethod::Lazy,
     CXConfigType cx_config = CXConfigType::Snake);

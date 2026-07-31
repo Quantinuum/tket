@@ -28,6 +28,7 @@
 #include "tket/Ops/OpPtr.hpp"
 #include "tket/Utils/Expression.hpp"
 #include "tket/Utils/UnitID.hpp"
+
 namespace tket {
 
 vertex_map_t Circuit::copy_graph(
@@ -123,7 +124,7 @@ vertex_map_t Circuit::copy_graph(
 }
 
 // given two circuits, adds second circuit to first circuit object in parallel
-Circuit operator*(const Circuit& c1, const Circuit& c2) {
+TKET_EXPORT Circuit operator*(const Circuit& c1, const Circuit& c2) {
   // preliminary method to add circuit objects together
   Circuit new_circ;
   new_circ.copy_graph(c1);

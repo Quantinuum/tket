@@ -160,6 +160,8 @@ class TKET_EXPORT BasePass {
       const PassConditions& lhs, const PassConditions& rhs, bool strict = true);
 };
 
+TKET_EXPORT PassPtr operator>>(const PassPtr& lhs, const PassPtr& rhs);
+
 /* Basic Pass that all combinators can be used on */
 class TKET_EXPORT StandardPass : public BasePass {
  public:

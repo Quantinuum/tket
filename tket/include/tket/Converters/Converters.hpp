@@ -20,6 +20,8 @@
 #include "tket/PauliGraph/PauliGraph.hpp"
 #include "tket/ZX/ZXDiagram.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 /**
@@ -164,7 +166,7 @@ Circuit pauli_graph_to_pauli_exp_box_circuit_sets(
  * Return the zx diagram and a map between the zx boundary vertices and the
  * circuit boundary vertices.
  */
-std::pair<zx::ZXDiagram, boost::bimap<zx::ZXVert, Vertex>> circuit_to_zx(
+TKET_EXPORT std::pair<zx::ZXDiagram, boost::bimap<zx::ZXVert, Vertex>> circuit_to_zx(
     const Circuit &circuit);
 
 /**
@@ -172,6 +174,6 @@ std::pair<zx::ZXDiagram, boost::bimap<zx::ZXVert, Vertex>> circuit_to_zx(
  * Produces an equivalent circuit using the gate extraction method from
  * Backens et al., "There and Back Again: A Circuit Extraction Tale".
  */
-Circuit zx_to_circuit(const zx::ZXDiagram &diag);
+TKET_EXPORT Circuit zx_to_circuit(const zx::ZXDiagram &diag);
 
 }  // namespace tket

@@ -39,7 +39,7 @@ namespace tket {
  */
 class TKET_EXPORT MeasurementSetup {
  public:
-  struct MeasurementBitMap {
+  struct TKET_EXPORT MeasurementBitMap {
     MeasurementBitMap() : circ_index{0}, invert{false} {}
     MeasurementBitMap(
         unsigned _circ_index, const std::vector<unsigned> &_bits,

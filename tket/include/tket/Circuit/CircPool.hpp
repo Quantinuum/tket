@@ -569,13 +569,13 @@ Circuit CnX_gray_decomp(unsigned n);
  *   * 8n - 8 T, 8n - 12 CX, 4n - 6 H if zeroed_ancillas = false (for n = 3, the
  * circuit has 14 CX gates)
  */
-Circuit CnX_vchain_decomp(unsigned n, bool zeroed_ancillas = true);
+TKET_EXPORT Circuit CnX_vchain_decomp(unsigned n, bool zeroed_ancillas = true);
 
-Circuit CnRy_normal_decomp(const Op_ptr op, unsigned arity);
+TKET_EXPORT Circuit CnRy_normal_decomp(const Op_ptr op, unsigned arity);
 
-Circuit CnRx_normal_decomp(const Op_ptr op, unsigned arity);
+TKET_EXPORT Circuit CnRx_normal_decomp(const Op_ptr op, unsigned arity);
 
-Circuit CnRz_normal_decomp(const Op_ptr op, unsigned arity);
+TKET_EXPORT Circuit CnRz_normal_decomp(const Op_ptr op, unsigned arity);
 
 /**
  * @brief Given a 2x2 numerical unitary matrix U and the number of control
@@ -584,7 +584,7 @@ Circuit CnRz_normal_decomp(const Op_ptr op, unsigned arity);
  * @param u
  * @return Circuit containing CX, TK1, U1, and CU3
  */
-Circuit CnU_gray_code_decomp(unsigned n, const Eigen::Matrix2cd &u);
+TKET_EXPORT Circuit CnU_gray_code_decomp(unsigned n, const Eigen::Matrix2cd &u);
 
 /**
  * @brief Given a gate and the number of control qubits n,
@@ -594,7 +594,7 @@ Circuit CnU_gray_code_decomp(unsigned n, const Eigen::Matrix2cd &u);
  * @param gate
  * @return Circuit containing CX, CRx, CRy, CRz, CU1, TK1, U1, and CU3
  */
-Circuit CnU_gray_code_decomp(unsigned n, const Gate_ptr &gate);
+TKET_EXPORT Circuit CnU_gray_code_decomp(unsigned n, const Gate_ptr &gate);
 
 /**
  * @brief Linear decomposition method for n-qubit controlled SU(2) gate
@@ -606,32 +606,32 @@ Circuit CnU_gray_code_decomp(unsigned n, const Gate_ptr &gate);
  * @param beta
  * @return Circuit
  */
-Circuit CnSU2_linear_decomp(
+TKET_EXPORT Circuit CnSU2_linear_decomp(
     unsigned n, const Expr &alpha, const Expr &theta, const Expr &beta);
 
 /** Equivalent to Rx, using GPI and GPI2 gates */
-Circuit Rx_using_GPI(const Expr &theta);
+TKET_EXPORT Circuit Rx_using_GPI(const Expr &theta);
 
 /** Equivalent to Ry, using GPI and GPI2 gates */
-Circuit Ry_using_GPI(const Expr &theta);
+TKET_EXPORT Circuit Ry_using_GPI(const Expr &theta);
 
 /** Equivalent to Rz, using GPI gates */
-Circuit Rz_using_GPI(const Expr &theta);
+TKET_EXPORT Circuit Rz_using_GPI(const Expr &theta);
 
 /** Equivalent to XXPhase, using AAMS gates */
-Circuit XXPhase_using_AAMS(const Expr &theta);
+TKET_EXPORT Circuit XXPhase_using_AAMS(const Expr &theta);
 
 /** Equivalent to YYPhase, using AAMS gates */
-Circuit YYPhase_using_AAMS(const Expr &theta);
+TKET_EXPORT Circuit YYPhase_using_AAMS(const Expr &theta);
 
 /** Equivalent to ZZPhase, using AAMS, GPI and GPI2 gates */
-Circuit ZZPhase_using_AAMS(const Expr &theta);
+TKET_EXPORT Circuit ZZPhase_using_AAMS(const Expr &theta);
 
 /** Equivalent to TK1, using GPI and GPI2 gates */
-Circuit TK1_using_GPI(const Expr &alpha, const Expr &beta, const Expr &gamma);
+TKET_EXPORT Circuit TK1_using_GPI(const Expr &alpha, const Expr &beta, const Expr &gamma);
 
 /** Equivalent to TK2, using AAMS, GPI and GPI2 gates */
-Circuit TK2_using_AAMS(const Expr &alpha, const Expr &beta, const Expr &gamma);
+TKET_EXPORT Circuit TK2_using_AAMS(const Expr &alpha, const Expr &beta, const Expr &gamma);
 
 }  // namespace CircPool
 

@@ -539,46 +539,46 @@ class TKET_EXPORT MultiBitOp : public ClassicalEvalOp {
 /**
  * Classical NOT transform
  */
-std::shared_ptr<ClassicalTransformOp> ClassicalX();
+TKET_EXPORT std::shared_ptr<ClassicalTransformOp> ClassicalX();
 
 /**
  * Classical CNOT transform
  */
-std::shared_ptr<ClassicalTransformOp> ClassicalCX();
+TKET_EXPORT std::shared_ptr<ClassicalTransformOp> ClassicalCX();
 
 /**
  * Unary NOT operator
  */
-std::shared_ptr<ExplicitPredicateOp> NotOp();
+TKET_EXPORT std::shared_ptr<ExplicitPredicateOp> NotOp();
 
 /**
  * Binary AND operator
  */
-std::shared_ptr<ExplicitPredicateOp> AndOp();
+TKET_EXPORT std::shared_ptr<ExplicitPredicateOp> AndOp();
 
 /**
  * Binary OR operator
  */
-std::shared_ptr<ExplicitPredicateOp> OrOp();
+TKET_EXPORT std::shared_ptr<ExplicitPredicateOp> OrOp();
 
 /**
  * Binary XOR operator
  */
-std::shared_ptr<ExplicitPredicateOp> XorOp();
+TKET_EXPORT std::shared_ptr<ExplicitPredicateOp> XorOp();
 
 /**
  * In-place AND with another input
  */
-std::shared_ptr<ExplicitModifierOp> AndWithOp();
+TKET_EXPORT std::shared_ptr<ExplicitModifierOp> AndWithOp();
 
 /**
  * In-place OR with another input
  */
-std::shared_ptr<ExplicitModifierOp> OrWithOp();
+TKET_EXPORT std::shared_ptr<ExplicitModifierOp> OrWithOp();
 
 /**
  * In-place XOR with another input
  */
-std::shared_ptr<ExplicitModifierOp> XorWithOp();
+TKET_EXPORT std::shared_ptr<ExplicitModifierOp> XorWithOp();
 
 }  // namespace tket

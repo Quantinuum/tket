@@ -81,6 +81,8 @@ class TKET_EXPORT Transform {
   friend Transform operator>>(const Transform& lhs, const Transform& rhs);
 };
 
+TKET_EXPORT Transform operator>>(const Transform& lhs, const Transform& rhs);
+
 namespace Transforms {
 
 /**

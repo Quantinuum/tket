@@ -19,6 +19,8 @@
 #include "Gate.hpp"
 #include "tket/Ops/OpPtr.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 
 typedef std::shared_ptr<const Gate> Gate_ptr;
@@ -28,6 +30,6 @@ typedef std::shared_ptr<const Gate> Gate_ptr;
  *
  * @throws BadOpType if @p op is not a gate.
  */
-Gate_ptr as_gate_ptr(Op_ptr op);
+TKET_EXPORT Gate_ptr as_gate_ptr(Op_ptr op);
 
 }  // namespace tket

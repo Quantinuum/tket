@@ -17,6 +17,8 @@
 #include "tket/Architecture/Architecture.hpp"
 #include "tket/Circuit/Circuit.hpp"
 
+#include "tket_export.h"
+
 namespace tket {
 /**
  * Check that the circuit respects architectural constraints
@@ -27,7 +29,7 @@ namespace tket {
  * @param bridge_allowed whether 3-qubit \ref OpType::BRIDGE operations are
  * allowed
  */
-bool respects_connectivity_constraints(
+TKET_EXPORT bool respects_connectivity_constraints(
     const Circuit& circ, const Architecture& arch, bool directed,
     bool bridge_allowed = false);
 
