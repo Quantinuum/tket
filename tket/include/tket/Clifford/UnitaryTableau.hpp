@@ -179,7 +179,7 @@ class TKET_EXPORT UnitaryTableau {
 
 JSON_DECL(UnitaryTableau)
 
-std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
 
 class TKET_EXPORT UnitaryRevTableau {
   /**
@@ -320,6 +320,6 @@ class TKET_EXPORT UnitaryRevTableau {
 
 JSON_DECL(UnitaryRevTableau)
 
-std::ostream& operator<<(std::ostream& os, const UnitaryRevTableau& tab);
+TKET_EXPORT std::ostream& operator<<(std::ostream& os, const UnitaryRevTableau& tab);
 
 }  // namespace tket
