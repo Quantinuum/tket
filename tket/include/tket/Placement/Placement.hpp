@@ -100,7 +100,7 @@ class TKET_EXPORT Placement {
   Architecture architecture_;
 };
 
-JSON_DECL(Placement::Ptr);
+JSON_DECL_EXPORT(Placement::Ptr);
 
 class TKET_EXPORT GraphPlacement : public Placement {
  public:

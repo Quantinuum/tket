@@ -303,9 +303,9 @@ class TKET_EXPORT RepeatUntilSatisfiedPass : public BasePass {
   PredicatePtr pred_;
 };
 
-nlohmann::json serialise(const BasePass& bp);
-nlohmann::json serialise(const PassPtr& pp);
-nlohmann::json serialise(const std::vector<PassPtr>& pp);
+TKET_EXPORT nlohmann::json serialise(const BasePass& bp);
+TKET_EXPORT nlohmann::json serialise(const PassPtr& pp);
+TKET_EXPORT nlohmann::json serialise(const std::vector<PassPtr>& pp);
 
 TKET_EXPORT PassPtr deserialise(
     const nlohmann::json& j,

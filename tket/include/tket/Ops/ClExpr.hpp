@@ -282,9 +282,7 @@ class TKET_EXPORT WiredClExpr {
 
 TKET_EXPORT std::ostream& operator<<(std::ostream& os, const WiredClExpr& expr);
 
-void to_json(nlohmann::json& j, const WiredClExpr& expr);
-
-void from_json(const nlohmann::json& j, WiredClExpr& expr);
+JSON_DECL_EXPORT(WiredClExpr)
 
 class ClExprWiringError : public std::logic_error {
  public:

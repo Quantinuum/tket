@@ -89,7 +89,7 @@ class TKET_EXPORT MeasurementSetup {
   measure_result_map_t result_map;
 };
 
-JSON_DECL(MeasurementSetup::MeasurementBitMap)
-JSON_DECL(MeasurementSetup)
+JSON_DECL_EXPORT(MeasurementSetup::MeasurementBitMap)
+JSON_DECL_EXPORT(MeasurementSetup)
 
 }  // namespace tket

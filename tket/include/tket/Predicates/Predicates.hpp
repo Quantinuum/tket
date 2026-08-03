@@ -26,7 +26,7 @@ class Predicate;
 
 typedef std::shared_ptr<Predicate> PredicatePtr;
 
-JSON_DECL(PredicatePtr)
+JSON_DECL_EXPORT(PredicatePtr)
 
 class IncorrectPredicate : public std::logic_error {
  public:

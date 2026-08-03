@@ -1651,7 +1651,7 @@ class TKET_EXPORT Circuit {
 TKET_EXPORT Circuit operator>>(const Circuit &c1, const Circuit &c2);
 TKET_EXPORT Circuit operator*(const Circuit &c1, const Circuit &c2);
 
-JSON_DECL(Circuit)
+JSON_DECL_EXPORT(Circuit)
 
 /** Templated method definitions */
 

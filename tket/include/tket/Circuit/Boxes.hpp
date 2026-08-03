@@ -440,7 +440,7 @@ class TKET_EXPORT CompositeGateDef;
 typedef std::shared_ptr<CompositeGateDef> composite_def_ptr_t;
 
 // CompositeGateDef
-JSON_DECL(composite_def_ptr_t)
+JSON_DECL_EXPORT(composite_def_ptr_t)
 
 class CompositeGateDef : public std::enable_shared_from_this<CompositeGateDef> {
  public:
