@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from typing import ClassVar
+
 from conan import ConanFile
 from conan.errors import ConanInvalidConfiguration
 from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
@@ -25,8 +27,8 @@ class test_tklogRecipe(ConanFile):
     url = "https://github.com/quantinuum/tket"
     description = "Unit tests for tklog"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"with_coverage": [True, False]}
-    default_options = {"with_coverage": False}
+    options: ClassVar[dict[str, list[bool]]] = {"with_coverage": [True, False]}
+    default_options: ClassVar[dict[str, bool]] = {"with_coverage": False}
     exports_sources = "CMakeLists.txt", "src/*"
 
     def configure(self):

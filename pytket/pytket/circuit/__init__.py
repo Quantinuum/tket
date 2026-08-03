@@ -108,7 +108,7 @@ from .logic_exp import (
 )
 
 
-def add_wasm(  # noqa: PLR0913
+def add_wasm(  # noqa: PLR0913 PLR0917
     self: Circuit,
     funcname: str,
     filehandler: wasm.WasmModuleHandler,
@@ -161,7 +161,7 @@ def add_wasm(  # noqa: PLR0913
 setattr(Circuit, "add_wasm", add_wasm)  # noqa: B010
 
 
-def add_wasm_to_reg(  # noqa: PLR0913
+def add_wasm_to_reg(  # noqa: PLR0913 PLR0917
     self: Circuit,
     funcname: str,
     filehandler: wasm.WasmModuleHandler,

@@ -1,4 +1,5 @@
 import os
+from typing import ClassVar
 
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
@@ -16,8 +17,11 @@ class TketCAPIRecipe(ConanFile):
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    options: ClassVar[dict[str, list[bool]]] = {
+        "shared": [True, False],
+        "fPIC": [True, False],
+    }
+    default_options: ClassVar[dict[str, bool]] = {"shared": False, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"

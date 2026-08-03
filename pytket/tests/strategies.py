@@ -56,7 +56,7 @@ def nodes(
 
 
 @st.composite
-def circuits(  # noqa: PLR0913
+def circuits(  # noqa: PLR0913 PLR0917
     draw: Callable[[SearchStrategy[Any]], Any],
     n_qubits: SearchStrategy[int] = st.integers(min_value=0, max_value=4),  # noqa: B008
     n_bits: SearchStrategy[int] = st.integers(min_value=0, max_value=4),  # noqa: B008
