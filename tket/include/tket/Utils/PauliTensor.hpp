@@ -534,8 +534,6 @@ class TKET_EXPORT PauliTensor {
       "PauliTensor must either support no coefficient, quarter turns, or "
       "arbitrary complex (floating point or symbolic) coefficients.");
 
-  static const CoeffType default_coeff;
-
  public:
   PauliContainer string;
   CoeffType coeff;
@@ -543,13 +541,13 @@ class TKET_EXPORT PauliTensor {
   /**
    * Default constructor, giving the empty Pauli string with unit scalar.
    */
-  PauliTensor() : string(), coeff(default_coeff) {}
+  PauliTensor() : string(), coeff(default_coeff<CoeffType>()) {}
 
   /**
    * Constructor directly instantiating the Pauli string and coefficient.
    */
   PauliTensor(
-      const PauliContainer &_string, const CoeffType &_coeff = default_coeff)
+      const PauliContainer &_string, const CoeffType &_coeff = default_coeff<CoeffType>())
       : string(_string), coeff(_coeff) {}
 
   /**
@@ -557,7 +555,7 @@ class TKET_EXPORT PauliTensor {
    */
   template <typename PC = PauliContainer>
   PauliTensor(
-      const Qubit &q, Pauli p, const CoeffType &_coeff = default_coeff,
+      const Qubit &q, Pauli p, const CoeffType &_coeff = default_coeff<CoeffType>(),
       typename std::enable_if<std::is_same<PC, QubitPauliMap>::value>::type * =
           0)
       : string({{q, p}}), coeff(_coeff) {}
@@ -568,7 +566,7 @@ class TKET_EXPORT PauliTensor {
    */
   template <typename PC = PauliContainer>
   PauliTensor(
-      const DensePauliMap &_string, const CoeffType &_coeff = default_coeff,
+      const DensePauliMap &_string, const CoeffType &_coeff = default_coeff<CoeffType>(),
       typename std::enable_if<std::is_same<PC, QubitPauliMap>::value>::type * =
           0)
       : string(cast_container<DensePauliMap, QubitPauliMap>(_string)),
@@ -581,7 +579,7 @@ class TKET_EXPORT PauliTensor {
   template <typename PC = PauliContainer>
   PauliTensor(
       const std::list<Qubit> &qubits, const std::list<Pauli> &paulis,
-      const CoeffType &_coeff = default_coeff,
+      const CoeffType &_coeff = default_coeff<CoeffType>(),
       typename std::enable_if<std::is_same<PC, QubitPauliMap>::value>::type * =
           0)
       : string(), coeff(_coeff) {
@@ -1015,11 +1013,6 @@ class TKET_EXPORT PauliTensor {
     return state.dot(dot_state(state, qubits));
   }
 };
-
-// Initialise default coefficient
-template <typename PauliContainer, typename CoeffType>
-const CoeffType PauliTensor<PauliContainer, CoeffType>::default_coeff =
-    tket::default_coeff<CoeffType>();
 
 template <typename PauliContainer, typename CoeffType>
 void to_json(
