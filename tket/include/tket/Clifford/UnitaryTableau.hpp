@@ -161,8 +161,8 @@ class TKET_EXPORT UnitaryTableau {
   friend void to_json(nlohmann::json& j, const UnitaryTableau& tab);
   friend void from_json(const nlohmann::json& j, UnitaryTableau& tab);
 
-  friend std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
-  friend std::ostream& operator<<(
+  friend TKET_EXPORT std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
+  friend TKET_EXPORT std::ostream& operator<<(
       std::ostream& os, const UnitaryRevTableau& tab);
   bool operator==(const UnitaryTableau& other) const;
 
@@ -310,7 +310,7 @@ class TKET_EXPORT UnitaryRevTableau {
   friend void to_json(nlohmann::json& j, const UnitaryRevTableau& tab);
   friend void from_json(const nlohmann::json& j, UnitaryRevTableau& tab);
 
-  friend std::ostream& operator<<(
+  friend TKET_EXPORT std::ostream& operator<<(
       std::ostream& os, const UnitaryRevTableau& tab);
   bool operator==(const UnitaryRevTableau& other) const;
 
