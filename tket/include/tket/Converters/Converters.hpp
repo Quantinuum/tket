@@ -28,8 +28,8 @@ namespace tket {
  * Construct the tableau for a given circuit.
  * Will throw an exception if it contains non-Clifford gates.
  */
-UnitaryTableau circuit_to_unitary_tableau(const Circuit &circ);
-UnitaryRevTableau circuit_to_unitary_rev_tableau(const Circuit &circ);
+TKET_EXPORT UnitaryTableau circuit_to_unitary_tableau(const Circuit &circ);
+TKET_EXPORT UnitaryRevTableau circuit_to_unitary_rev_tableau(const Circuit &circ);
 
 /**
  * Constructs a circuit producing the same effect as the tableau.
@@ -37,8 +37,8 @@ UnitaryRevTableau circuit_to_unitary_rev_tableau(const Circuit &circ);
  * Stabilizer Circuits, Theorem 8.
  * CAUTION: GATE COUNT IS ATROCIOUS IN PRACTICE
  */
-Circuit unitary_tableau_to_circuit(const UnitaryTableau &tab);
-Circuit unitary_rev_tableau_to_circuit(const UnitaryRevTableau &tab);
+TKET_EXPORT Circuit unitary_tableau_to_circuit(const UnitaryTableau &tab);
+TKET_EXPORT Circuit unitary_rev_tableau_to_circuit(const UnitaryRevTableau &tab);
 
 /**
  * Construct a ChoiMixTableau for a given circuit.
