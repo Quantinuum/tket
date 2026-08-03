@@ -521,7 +521,7 @@ TKET_EXPORT CmplxSpMat to_sparse_matrix<DensePauliMap>(
  * be available for certain specialisations.
  */
 template <typename PauliContainer, typename CoeffType>
-class TKET_EXPORT PauliTensor {
+class PauliTensor {
   static_assert(
       std::is_same<PauliContainer, QubitPauliMap>::value ||
           std::is_same<PauliContainer, DensePauliMap>::value,
