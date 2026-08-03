@@ -25,6 +25,12 @@ namespace tket {
 
 namespace zx {
 
+/**
+ * \cond
+ *
+ * For some reason, doxygen complains about this.
+ */
+
 enum class TKET_EXPORT ZXType {
   /**
    * Boundary vertices
@@ -96,6 +102,10 @@ enum class TKET_EXPORT ZXType {
   // Abstraction of an inner ZX diagram
   ZXBox
 };
+
+/**
+ * \endcond
+ */
 
 typedef std::unordered_set<ZXType> ZXTypeSet;
 
