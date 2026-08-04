@@ -92,7 +92,7 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"># See the License for the specific language governing permissions and</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"># limitations under the License.</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">from</span> numpy <span class="keyword">import</span> array, pi, sqrt, cos, sin, exp, eye, angle, allclose</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">from</span> numpy <span class="keyword">import</span> allclose, angle, array, cos, exp, eye, pi, sin, sqrt</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="" data-end="">
@@ -106,20 +106,20 @@ $(function() {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#ae884a740cf1249e01bfee84f628baea8">   27</a></span>I = eye(2, dtype=complex)  <span class="comment"># noqa: E741</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#ae884a740cf1249e01bfee84f628baea8">   27</a></span>I = eye(2, dtype=complex)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a3543726ffb7fc4a89b2bb31d1cd74ab6">   28</a></span>X = array([[0, 1], [1, 0]], dtype=complex)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#ad6c61526bfb84c3730bdbae5332d1862">   29</a></span>Z = array([[1, 0], [0, -1]], dtype=complex)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a1266105f164567a916f90541b1f2adf7">   30</a></span>S = array([[1, 0], [0, 1j]], dtype=complex)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a3a91c624147545d55f69f38480bbde83">   31</a></span>V = array([[1, -1j], [-1j, 1]], dtype=complex) / sqrt(2)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a912d8f710df9b516f96ce9e3761f676c">   33</a></span>Rx = <span class="keyword">lambda</span> a: array(  <span class="comment"># noqa: E731</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a912d8f710df9b516f96ce9e3761f676c">   33</a></span>Rx = <span class="keyword">lambda</span> a: array(</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    [</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        [cos(pi * a / 2), -1j * sin(pi * a / 2)],</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        [-1j * sin(pi * a / 2), cos(pi * a / 2)],</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    ],</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    dtype=complex,</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a561c578eff865a1ae74823546e72e9a6">   40</a></span>Rz = <span class="keyword">lambda</span> a: array([[exp(-0.5j * pi * a), 0], [0, exp(0.5j * pi * a)]], dtype=complex)  <span class="comment"># noqa: E731</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacestd__clifford__decomp.html#a561c578eff865a1ae74823546e72e9a6">   40</a></span>Rz = <span class="keyword">lambda</span> a: array([[exp(-0.5j * pi * a), 0], [0, exp(0.5j * pi * a)]], dtype=complex)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="foldopen" id="foldopen00043" data-start="" data-end="">
