@@ -8,7 +8,7 @@ var searchData=
   ['finished_5',['finished',['../classtket_1_1SliceIterator.html#a5a441d177607392cc91dbe0ec33863d5',1,'tket::SliceIterator']]],
   ['first_5fsupport_6',['first_support',['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1SingleNode.html#ab24c6b888c4af14a8914e887499402ea',1,'tket::Transforms::GreedyPauliSimp::SingleNode::first_support()'],['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ACPairNode.html#adeedbc534e565780b98462a6e0092225',1,'tket::Transforms::GreedyPauliSimp::ACPairNode::first_support()']]],
   ['flatten_5fregisters_7',['flatten_registers',['../classtket_1_1Circuit.html#a7c0f42bfdcbbadff9e57f5b8a820db8e',1,'tket::Circuit']]],
-  ['flattenregisters_8',['FlattenRegisters',['../namespacetket.html#afdf2f51de87dfbec78c20e072a697576',1,'tket']]],
+  ['flattenregisters_8',['FlattenRegisters',['../namespacetket.html#ace56a1c3f4f3130e9ca2d81d731cea28',1,'tket']]],
   ['flow_9',['Flow',['../classtket_1_1zx_1_1Flow.html#a1d359bed476f857ba1df2450a6d6f593',1,'tket::zx::Flow']]],
   ['flowop_10',['FlowOp',['../classtket_1_1FlowOp.html#a7ea3798c7b8e3c38ad37bbab5d253883',1,'tket::FlowOp::FlowOp(OpType type, std::optional&lt; std::string &gt; label=std::nullopt)'],['../classtket_1_1FlowOp.html#a5da75ba6448cdc0aa91ef23ee90a0ad3',1,'tket::FlowOp::FlowOp()']]],
   ['flush_11',['flush',['../classtket_1_1tket__sim_1_1internal_1_1GateNodesBuffer.html#a08a40837a62e858bb4567486e8cb6fd4',1,'tket::tket_sim::internal::GateNodesBuffer::flush()'],['../classtket_1_1Transforms_1_1PQPSquasher.html#a884a6af989b3e69c540be70cf0b2b606',1,'tket::Transforms::PQPSquasher::flush()'],['../classtket_1_1Transforms_1_1RzPhasedXSquasher.html#a8cd5dcc9c5c93d8abe296e131b22c058',1,'tket::Transforms::RzPhasedXSquasher::flush()'],['../classtket_1_1AbstractSquasher.html#ad8af0e72dcec50c749167ed0dc2b2203',1,'tket::AbstractSquasher::flush()'],['../classtket_1_1Transforms_1_1StandardSquasher.html#a1053cea30657233a32e5e5176f1e43ca',1,'tket::Transforms::StandardSquasher::flush()']]],
@@ -23,10 +23,10 @@ var searchData=
   ['frontier_20',['Frontier',['../structtket_1_1GraphPlacement_1_1Frontier.html#a7f44c4b9ea854b9ae77d993e63e62c00',1,'tket::GraphPlacement::Frontier']]],
   ['frontier_5fconvert_5fvertport_5fto_5fedge_21',['frontier_convert_vertport_to_edge',['../namespacetket.html#abf7deec416a58dac4c1be03f36c41e55',1,'tket']]],
   ['fsim_22',['FSim',['../structtket_1_1internal_1_1GateUnitaryMatrixImplementations.html#a57537a1851f959290492a83a149a8b81',1,'tket::internal::GateUnitaryMatrixImplementations::FSim()'],['../structtket_1_1GateUnitaryMatrixImplementations.html#a57537a1851f959290492a83a149a8b81',1,'tket::GateUnitaryMatrixImplementations::FSim()']]],
-  ['fsim_5fusing_5fcx_23',['FSim_using_CX',['../namespacetket_1_1CircPool.html#ac938b7e07845737f17a8f8e203e29f31',1,'tket::CircPool']]],
-  ['fsim_5fusing_5ftk2_24',['FSim_using_TK2',['../namespacetket_1_1CircPool.html#a0fcaf8aaca2442a9d16eb2aed1dbbfa0',1,'tket::CircPool']]],
-  ['full_5fpeephole_5foptimise_25',['full_peephole_optimise',['../namespacetket_1_1Transforms.html#a4efaf3df279d0c9dadfef959896f4b84',1,'tket::Transforms']]],
-  ['fullpeepholeoptimise_26',['FullPeepholeOptimise',['../namespacetket.html#a12e03da4c412428c09dee4eb579a4823',1,'tket']]],
+  ['fsim_5fusing_5fcx_23',['FSim_using_CX',['../namespacetket_1_1CircPool.html#ae363740b443c307373b61c5703acea1f',1,'tket::CircPool']]],
+  ['fsim_5fusing_5ftk2_24',['FSim_using_TK2',['../namespacetket_1_1CircPool.html#a17288a449bb5e3b204e89856f6580c27',1,'tket::CircPool']]],
+  ['full_5fpeephole_5foptimise_25',['full_peephole_optimise',['../namespacetket_1_1Transforms.html#a01117638911a62ccd06f23dea6a652e9',1,'tket::Transforms']]],
+  ['fullpeepholeoptimise_26',['FullPeepholeOptimise',['../namespacetket.html#ac8f207d43c5aaf5991854a8b6a8bf68e',1,'tket']]],
   ['fully_5freduced_27',['fully_reduced',['../classtket_1_1aas_1_1SteinerTree.html#a3e1ed3ee75b468867954ade8e2e01c4d',1,'tket::aas::SteinerTree']]],
   ['fullyconnected_28',['FullyConnected',['../classtket_1_1FullyConnected.html#afc964efdd3799d74f07ba38f6ff0133d',1,'tket::FullyConnected::FullyConnected()'],['../classtket_1_1FullyConnected.html#ae105c6593f33fbbc23e12bc33f9ad2ea',1,'tket::FullyConnected::FullyConnected(unsigned n, const std::string &amp;label=&quot;fcNode&quot;)']]]
 ];

@@ -94,95 +94,101 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &quot;<a class="el" href="GraphHeaders_8hpp_source.html">tket/Utils/GraphHeaders.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PauliTensor_8hpp_source.html">tket/Utils/PauliTensor.hpp</a>&quot;</code><br />
+<code>#include &quot;tket_export.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PauliPartition.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PauliPartition_8hpp__incl.png" border="0" usemap="#ainclude_2tket_2Diagonalisation_2PauliPartition_8hpp" loading="lazy" alt=""/></div>
 <map name="ainclude_2tket_2Diagonalisation_2PauliPartition_8hpp" id="ainclude_2tket_2Diagonalisation_2PauliPartition_8hpp">
-<area shape="rect" title=" " alt="" coords="730,5,934,50"/>
-<area shape="rect" title=" " alt="" coords="620,98,706,126"/>
-<area shape="poly" title=" " alt="" coords="790,50,705,93,702,88,785,52"/>
-<area shape="rect" href="GraphHeaders_8hpp.html" title=" " alt="" coords="730,98,935,126"/>
-<area shape="poly" title=" " alt="" coords="834,48,834,84,830,81,831,53"/>
-<area shape="rect" href="PauliTensor_8hpp.html" title=" " alt="" coords="1583,98,1767,126"/>
-<area shape="poly" title=" " alt="" coords="934,36,1570,99,1565,101,934,42"/>
-<area shape="rect" title=" " alt="" coords="1244,174,1412,218"/>
-<area shape="poly" title=" " alt="" coords="930,124,1232,173,1226,174,930,129"/>
-<area shape="rect" title=" " alt="" coords="5,182,214,210"/>
-<area shape="poly" title=" " alt="" coords="726,125,718,128,471,149,364,159,226,176,193,181,190,177,225,171,363,154,471,144,717,123,732,124"/>
-<area shape="rect" title=" " alt="" coords="238,182,424,210"/>
-<area shape="poly" title=" " alt="" coords="736,128,437,176,409,181,408,176,436,171,741,125"/>
-<area shape="rect" title=" " alt="" coords="448,174,606,218"/>
-<area shape="poly" title=" " alt="" coords="781,127,622,172,620,167,786,125"/>
-<area shape="rect" title=" " alt="" coords="630,182,826,210"/>
-<area shape="poly" title=" " alt="" coords="818,125,758,174,756,170,813,127"/>
-<area shape="rect" title=" " alt="" coords="851,174,1021,218"/>
-<area shape="poly" title=" " alt="" coords="849,124,900,164,894,163,848,129"/>
-<area shape="rect" title=" " alt="" coords="1045,174,1219,218"/>
-<area shape="poly" title=" " alt="" coords="881,124,1040,169,1035,169,880,129"/>
-<area shape="rect" href="Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="474,275,652,302"/>
-<area shape="poly" title=" " alt="" coords="1609,126,1542,147,1476,176,1462,187,1452,199,1442,211,1425,221,1354,241,1263,253,1159,259,1048,261,831,261,737,263,663,269,633,274,633,269,663,264,737,258,831,256,1048,255,1159,253,1263,247,1353,235,1423,216,1438,207,1448,195,1458,183,1473,171,1540,142,1604,127"/>
-<area shape="rect" href="EigenConfig_8hpp.html" title="Include this file rather than including the Eigen headers directly." alt="" coords="3082,182,3271,210"/>
-<area shape="poly" title=" " alt="" coords="1768,116,3068,188,3063,189,1768,121"/>
-<area shape="rect" href="Expression_8hpp.html" title="Functions related to (possibly symbolic) phase values." alt="" coords="1487,182,1670,210"/>
-<area shape="poly" title=" " alt="" coords="1662,125,1607,174,1604,170,1657,127"/>
-<area shape="rect" href="Json_8hpp.html" title=" " alt="" coords="1798,275,1874,302"/>
-<area shape="poly" title=" " alt="" coords="1688,124,1817,265,1812,263,1686,129"/>
-<area shape="rect" href="UnitID_8hpp.html" title="Named registers of arrays of (quantum or classical) nodes." alt="" coords="2205,182,2358,210"/>
-<area shape="poly" title=" " alt="" coords="1768,123,2192,182,2187,182,1768,128"/>
-<area shape="rect" title=" " alt="" coords="1111,359,1188,387"/>
-<area shape="poly" title=" " alt="" coords="621,300,663,308,904,342,1098,366,1092,366,903,348,662,314,621,306"/>
-<area shape="rect" title=" " alt="" coords="2373,359,2518,387"/>
-<area shape="poly" title=" " alt="" coords="3107,210,3028,235,2987,250,2948,269,2934,280,2924,291,2914,303,2897,313,2829,333,2734,349,2534,368,2533,363,2733,343,2828,328,2895,309,2910,299,2920,288,2930,276,2945,264,2985,245,3026,230,3102,211"/>
-<area shape="rect" title=" " alt="" coords="3406,275,3509,302"/>
-<area shape="poly" title=" " alt="" coords="3219,208,3396,264,3407,270,3402,269,3394,269,3218,213"/>
-<area shape="rect" title=" " alt="" coords="3532,275,3668,302"/>
-<area shape="poly" title=" " alt="" coords="3248,208,3521,264,3540,271,3535,270,3520,269,3247,213"/>
-<area shape="rect" title=" " alt="" coords="2958,266,3170,311"/>
-<area shape="poly" title=" " alt="" coords="3163,209,3104,259,3102,254,3158,211"/>
-<area shape="rect" title=" " alt="" coords="3194,266,3382,311"/>
-<area shape="poly" title=" " alt="" coords="3193,208,3252,257,3247,256,3191,213"/>
-<area shape="poly" title=" " alt="" coords="1520,210,1469,221,1346,234,1242,240,1065,244,889,248,785,255,663,269,633,274,633,269,662,264,785,250,888,242,1065,238,1242,235,1346,228,1468,216,1515,211"/>
-<area shape="rect" title=" " alt="" coords="1510,275,1648,302"/>
-<area shape="poly" title=" " alt="" coords="1581,208,1581,261,1577,258,1577,212"/>
-<area shape="rect" title=" " alt="" coords="675,275,856,302"/>
-<area shape="poly" title=" " alt="" coords="1519,210,1469,221,1300,238,1168,244,1037,251,869,269,839,274,838,269,868,264,1036,245,1168,239,1300,233,1468,216,1514,211"/>
-<area shape="rect" title=" " alt="" coords="880,275,1049,302"/>
-<area shape="poly" title=" " alt="" coords="1517,210,1469,221,1354,236,1264,244,1175,253,1061,269,1035,274,1034,269,1060,264,1174,247,1264,239,1353,231,1468,216,1511,211"/>
-<area shape="rect" title=" " alt="" coords="1072,275,1227,302"/>
-<area shape="poly" title=" " alt="" coords="1514,210,1239,269,1219,273,1218,268,1238,264,1508,211"/>
-<area shape="rect" title=" " alt="" coords="1251,275,1400,302"/>
-<area shape="poly" title=" " alt="" coords="1545,210,1377,272,1376,267,1539,211"/>
-<area shape="rect" title=" " alt="" coords="1723,275,1773,302"/>
-<area shape="poly" title=" " alt="" coords="1604,208,1713,267,1707,267,1603,213"/>
-<area shape="rect" title=" " alt="" coords="1799,359,1873,387"/>
-<area shape="poly" title=" " alt="" coords="1595,208,1662,264,1686,288,1712,309,1751,331,1792,353,1786,352,1749,336,1709,313,1683,292,1658,268,1594,213"/>
-<area shape="rect" title=" " alt="" coords="1898,275,1940,302"/>
-<area shape="poly" title=" " alt="" coords="1671,206,1777,228,1833,244,1888,264,1891,268,1886,267,1886,269,1832,249,1776,233,1671,212"/>
-<area shape="rect" title=" " alt="" coords="1424,275,1486,302"/>
-<area shape="poly" title=" " alt="" coords="1564,209,1486,268,1484,263,1559,211"/>
-<area shape="poly" title=" " alt="" coords="1621,208,1786,264,1794,269,1789,268,1785,269,1621,213"/>
-<area shape="poly" title=" " alt="" coords="1811,303,1786,314,1705,331,1622,345,1458,363,1312,372,1204,374,1204,369,1312,367,1457,358,1621,340,1704,326,1785,308,1806,304"/>
-<area shape="poly" title=" " alt="" coords="1864,300,1888,308,2014,335,2142,352,2260,362,2360,370,2355,370,2260,367,2141,357,2013,340,1886,314,1863,306"/>
-<area shape="poly" title=" " alt="" coords="1838,301,1838,345,1834,342,1834,305"/>
-<area shape="poly" title=" " alt="" coords="2202,199,2117,207,2012,219,1898,239,1786,269,1782,270,1781,265,1785,264,1897,234,2011,214,2117,202,2207,199"/>
-<area shape="poly" title=" " alt="" coords="2350,208,2409,224,2461,246,2480,260,2492,276,2493,294,2482,313,2470,321,2450,328,2392,341,2225,359,2037,369,1889,373,1888,368,2037,363,2224,353,2391,336,2449,323,2467,316,2478,309,2488,292,2487,278,2476,264,2458,251,2407,229,2349,213"/>
-<area shape="poly" title=" " alt="" coords="2207,205,2084,229,2018,247,1953,269,1951,270,1950,265,1951,264,2016,241,2083,224,2202,206"/>
-<area shape="poly" title=" " alt="" coords="2207,205,2056,231,1971,248,1888,269,1879,271,1878,266,1886,264,1970,242,2055,225,2202,206"/>
-<area shape="rect" title=" " alt="" coords="2124,275,2255,302"/>
-<area shape="poly" title=" " alt="" coords="2271,209,2214,267,2212,262,2266,211"/>
-<area shape="rect" title=" " alt="" coords="2279,275,2468,302"/>
-<area shape="poly" title=" " alt="" coords="2296,208,2352,265,2347,263,2294,213"/>
-<area shape="rect" title=" " alt="" coords="2543,275,2620,302"/>
-<area shape="poly" title=" " alt="" coords="2332,208,2525,264,2535,270,2530,269,2523,269,2331,213"/>
-<area shape="rect" title=" " alt="" coords="2644,275,2703,302"/>
-<area shape="poly" title=" " alt="" coords="2359,204,2489,226,2562,242,2633,264,2639,268,2634,268,2631,269,2560,248,2488,231,2359,209"/>
-<area shape="rect" title=" " alt="" coords="2727,275,2801,302"/>
-<area shape="poly" title=" " alt="" coords="2359,201,2524,223,2621,240,2716,264,2725,269,2720,269,2714,269,2620,246,2523,228,2359,207"/>
-<area shape="rect" title=" " alt="" coords="2826,275,2884,302"/>
-<area shape="poly" title=" " alt="" coords="2359,196,2452,202,2567,214,2692,233,2814,264,2822,269,2816,268,2813,269,2690,239,2566,219,2452,207,2359,202"/>
-<area shape="rect" title=" " alt="" coords="1964,275,2101,302"/>
-<area shape="poly" title=" " alt="" coords="2248,210,2083,272,2082,267,2243,211"/>
+<area shape="rect" title=" " alt="" coords="1212,5,1415,50"/>
+<area shape="rect" title=" " alt="" coords="708,98,794,126"/>
+<area shape="poly" title=" " alt="" coords="1209,41,1028,66,809,100,808,95,1027,61,1214,40"/>
+<area shape="rect" href="GraphHeaders_8hpp.html" title=" " alt="" coords="818,98,1023,126"/>
+<area shape="poly" title=" " alt="" coords="1209,51,999,97,998,92,1214,50"/>
+<area shape="rect" href="PauliTensor_8hpp.html" title=" " alt="" coords="1615,98,1799,126"/>
+<area shape="poly" title=" " alt="" coords="1416,48,1631,94,1626,94,1416,53"/>
+<area shape="rect" title=" " alt="" coords="1882,275,1990,302"/>
+<area shape="poly" title=" " alt="" coords="1416,31,1522,38,1637,51,1740,69,1782,81,1812,96,1855,132,1888,176,1913,221,1929,262,1924,259,1908,224,1883,179,1851,136,1809,100,1780,86,1739,75,1636,56,1521,43,1416,36"/>
+<area shape="rect" title=" " alt="" coords="5,174,174,218"/>
+<area shape="poly" title=" " alt="" coords="814,125,806,128,634,141,498,147,363,155,190,176,188,171,362,150,498,142,633,136,805,123,820,124"/>
+<area shape="rect" title=" " alt="" coords="197,182,406,210"/>
+<area shape="poly" title=" " alt="" coords="815,127,418,176,386,182,384,176,417,171,819,123"/>
+<area shape="rect" title=" " alt="" coords="430,182,616,210"/>
+<area shape="poly" title=" " alt="" coords="854,127,602,181,601,176,859,125"/>
+<area shape="rect" title=" " alt="" coords="640,174,798,218"/>
+<area shape="poly" title=" " alt="" coords="890,125,787,170,785,165,885,127"/>
+<area shape="rect" title=" " alt="" coords="822,182,1018,210"/>
+<area shape="poly" title=" " alt="" coords="922,124,922,168,918,165,918,128"/>
+<area shape="rect" title=" " alt="" coords="1043,174,1213,218"/>
+<area shape="poly" title=" " alt="" coords="954,124,1061,167,1056,167,953,129"/>
+<area shape="rect" title=" " alt="" coords="1237,174,1411,218"/>
+<area shape="poly" title=" " alt="" coords="988,124,1224,173,1219,173,987,129"/>
+<area shape="rect" href="Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="393,275,570,302"/>
+<area shape="poly" title=" " alt="" coords="1619,126,1546,147,1475,176,1460,187,1451,199,1440,211,1424,221,1388,233,1345,242,1245,255,1130,261,1007,262,767,261,664,263,582,269,552,274,551,269,581,264,664,257,767,256,1007,257,1129,256,1244,250,1344,237,1386,228,1422,216,1437,206,1447,195,1456,183,1472,171,1544,142,1614,127"/>
+<area shape="rect" href="EigenConfig_8hpp.html" title="Include this file rather than including the Eigen headers directly." alt="" coords="3035,182,3224,210"/>
+<area shape="poly" title=" " alt="" coords="1800,116,3022,188,3016,189,1800,121"/>
+<area shape="rect" href="Expression_8hpp.html" title="Functions related to (possibly symbolic) phase values." alt="" coords="1486,182,1669,210"/>
+<area shape="poly" title=" " alt="" coords="1689,125,1612,176,1610,171,1684,127"/>
+<area shape="rect" href="Json_8hpp.html" title=" " alt="" coords="1642,275,1718,302"/>
+<area shape="poly" title=" " alt="" coords="1707,125,1686,262,1682,258,1703,128"/>
+<area shape="poly" title=" " alt="" coords="1725,124,1910,266,1905,265,1723,129"/>
+<area shape="rect" href="UnitID_8hpp.html" title="Named registers of arrays of (quantum or classical) nodes." alt="" coords="2017,182,2170,210"/>
+<area shape="poly" title=" " alt="" coords="1769,124,2019,178,2014,178,1769,129"/>
+<area shape="rect" title=" " alt="" coords="992,359,1070,387"/>
+<area shape="poly" title=" " alt="" coords="541,300,582,308,801,341,979,366,974,365,800,346,581,314,540,306"/>
+<area shape="rect" title=" " alt="" coords="2320,359,2465,387"/>
+<area shape="poly" title=" " alt="" coords="3102,210,3051,237,2998,269,2984,281,2974,292,2963,303,2947,313,2908,326,2858,337,2733,354,2598,365,2480,371,2480,366,2598,359,2733,348,2857,332,2907,321,2944,309,2960,299,2970,289,2980,277,2995,264,3048,232,3097,211"/>
+<area shape="rect" title=" " alt="" coords="3008,275,3110,302"/>
+<area shape="poly" title=" " alt="" coords="3122,209,3079,265,3077,260,3117,211"/>
+<area shape="rect" title=" " alt="" coords="3134,275,3269,302"/>
+<area shape="poly" title=" " alt="" coords="3141,208,3184,264,3179,262,3139,213"/>
+<area shape="rect" title=" " alt="" coords="3293,266,3504,311"/>
+<area shape="poly" title=" " alt="" coords="3169,208,3322,261,3317,261,3168,213"/>
+<area shape="rect" title=" " alt="" coords="3529,266,3717,311"/>
+<area shape="poly" title=" " alt="" coords="3206,208,3516,266,3511,266,3205,213"/>
+<area shape="poly" title=" " alt="" coords="1519,210,1467,221,1333,235,1219,241,1024,244,830,247,716,254,582,269,551,274,550,269,581,264,715,249,830,241,1024,238,1218,236,1332,229,1466,216,1514,211"/>
+<area shape="rect" title=" " alt="" coords="1429,275,1566,302"/>
+<area shape="poly" title=" " alt="" coords="1568,209,1520,266,1518,261,1564,211"/>
+<area shape="rect" title=" " alt="" coords="594,275,774,302"/>
+<area shape="poly" title=" " alt="" coords="1518,210,1467,221,1276,239,1127,244,978,250,787,269,757,274,756,269,786,264,977,244,1127,239,1276,234,1466,216,1512,211"/>
+<area shape="rect" title=" " alt="" coords="798,275,968,302"/>
+<area shape="poly" title=" " alt="" coords="1517,210,1467,221,1330,237,1223,244,1116,251,979,269,953,274,952,269,978,264,1115,246,1222,239,1330,231,1466,216,1511,211"/>
+<area shape="rect" title=" " alt="" coords="991,275,1145,302"/>
+<area shape="poly" title=" " alt="" coords="1513,210,1467,221,1312,244,1158,269,1136,273,1135,268,1157,264,1312,239,1466,216,1508,211"/>
+<area shape="rect" title=" " alt="" coords="1170,275,1319,302"/>
+<area shape="poly" title=" " alt="" coords="1532,210,1308,273,1307,268,1526,211"/>
+<area shape="rect" title=" " alt="" coords="1743,275,1793,302"/>
+<area shape="poly" title=" " alt="" coords="1609,208,1732,264,1735,268,1730,267,1730,269,1608,213"/>
+<area shape="rect" title=" " alt="" coords="1643,359,1717,387"/>
+<area shape="poly" title=" " alt="" coords="1584,208,1603,255,1632,310,1660,348,1655,346,1627,312,1598,257,1581,212"/>
+<area shape="rect" title=" " alt="" coords="1817,275,1858,302"/>
+<area shape="poly" title=" " alt="" coords="1638,208,1719,231,1807,264,1809,267,1804,266,1804,269,1718,236,1637,213"/>
+<area shape="rect" title=" " alt="" coords="1342,275,1405,302"/>
+<area shape="poly" title=" " alt="" coords="1549,210,1419,269,1414,271,1413,265,1416,264,1543,211"/>
+<area shape="poly" title=" " alt="" coords="1593,208,1656,265,1651,264,1591,213"/>
+<area shape="poly" title=" " alt="" coords="1640,208,1749,232,1872,264,1885,270,1880,270,1870,269,1747,238,1639,213"/>
+<area shape="poly" title=" " alt="" coords="1644,299,1579,314,1301,349,1085,370,1084,365,1301,344,1578,308,1639,299"/>
+<area shape="poly" title=" " alt="" coords="1708,300,1732,308,1888,339,2045,357,2189,366,2307,372,2301,372,2189,371,2044,362,1887,344,1730,314,1707,306"/>
+<area shape="poly" title=" " alt="" coords="1682,301,1682,345,1678,342,1678,305"/>
+<area shape="poly" title=" " alt="" coords="2019,209,1916,235,1806,269,1803,270,1802,265,1805,264,1914,229,2014,210"/>
+<area shape="poly" title=" " alt="" coords="2089,209,2057,262,2033,290,2003,313,1970,330,1934,344,1861,363,1792,372,1733,375,1733,370,1791,367,1860,358,1933,339,1967,326,2000,309,2029,286,2053,259,2085,212"/>
+<area shape="poly" title=" " alt="" coords="2040,210,1958,236,1872,269,1870,270,1869,264,1870,264,1956,231,2034,211"/>
+<area shape="poly" title=" " alt="" coords="2019,207,1882,233,1806,249,1732,269,1723,272,1722,266,1730,264,1805,244,1881,227,2014,208"/>
+<area shape="poly" title=" " alt="" coords="2073,210,1973,269,1971,264,2068,211"/>
+<area shape="rect" title=" " alt="" coords="2488,275,2619,302"/>
+<area shape="poly" title=" " alt="" coords="2171,206,2314,231,2478,264,2497,271,2491,270,2477,269,2313,236,2171,212"/>
+<area shape="rect" title=" " alt="" coords="2643,275,2832,302"/>
+<area shape="poly" title=" " alt="" coords="2171,203,2379,228,2631,264,2662,272,2657,271,2630,269,2378,233,2171,208"/>
+<area shape="rect" title=" " alt="" coords="2857,275,2933,302"/>
+<area shape="poly" title=" " alt="" coords="2170,194,2300,197,2469,207,2657,228,2752,244,2845,264,2856,269,2851,269,2844,269,2751,249,2656,233,2468,212,2300,202,2170,200"/>
+<area shape="rect" title=" " alt="" coords="2064,275,2123,302"/>
+<area shape="poly" title=" " alt="" coords="2095,208,2095,261,2092,258,2092,212"/>
+<area shape="rect" title=" " alt="" coords="2147,275,2221,302"/>
+<area shape="poly" title=" " alt="" coords="2107,208,2163,265,2158,263,2106,213"/>
+<area shape="rect" title=" " alt="" coords="2246,275,2304,302"/>
+<area shape="poly" title=" " alt="" coords="2121,208,2235,264,2238,268,2233,267,2232,269,2120,213"/>
+<area shape="rect" title=" " alt="" coords="2328,275,2465,302"/>
+<area shape="poly" title=" " alt="" coords="2138,208,2340,270,2335,270,2137,213"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -249,8 +255,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa452b69ab77e6daaff1f6cc8ef98faa2" id="r_aa452b69ab77e6daaff1f6cc8ef98faa2"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::list&lt; <a class="el" href="namespacetket.html#a9ae9a8df997149fdb38426b995d6d9a3">SpPauliString</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#aa452b69ab77e6daaff1f6cc8ef98faa2">tket::term_sequence</a> (const std::list&lt; <a class="el" href="namespacetket.html#a9ae9a8df997149fdb38426b995d6d9a3">SpPauliString</a> &gt; &amp;strings, <a class="el" href="namespacetket.html#a2d578ba7a7267e8172ac6a302fab7f67">PauliPartitionStrat</a> strat, <a class="el" href="namespacetket.html#a4e74bb747130174e23260df03944dd0c">GraphColourMethod</a> method=<a class="el" href="namespacetket.html#a4e74bb747130174e23260df03944dd0ca46a9ebdb80117bfa1f0cdea65438290a">GraphColourMethod::Lazy</a>)</td></tr>
-<tr class="memdesc:aa452b69ab77e6daaff1f6cc8ef98faa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partitions a <a class="el" href="namespacetket.html#ae0b84b39477514376664e3e9b5dd3e3b" title="QubitOperator, defined to be useful for diagonalisation and partitioning.">QubitOperator</a> into lists of mutually commuting gadgets.  <br /></td></tr>
+<tr class="memitem:a34a71a627452aee0bac12ac95364c809" id="r_a34a71a627452aee0bac12ac95364c809"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::list&lt; <a class="el" href="namespacetket.html#a9ae9a8df997149fdb38426b995d6d9a3">SpPauliString</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a34a71a627452aee0bac12ac95364c809">tket::term_sequence</a> (const std::list&lt; <a class="el" href="namespacetket.html#a9ae9a8df997149fdb38426b995d6d9a3">SpPauliString</a> &gt; &amp;strings, <a class="el" href="namespacetket.html#a2d578ba7a7267e8172ac6a302fab7f67">PauliPartitionStrat</a> strat, <a class="el" href="namespacetket.html#a4e74bb747130174e23260df03944dd0c">GraphColourMethod</a> method=<a class="el" href="namespacetket.html#a4e74bb747130174e23260df03944dd0ca46a9ebdb80117bfa1f0cdea65438290a">GraphColourMethod::Lazy</a>)</td></tr>
+<tr class="memdesc:a34a71a627452aee0bac12ac95364c809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partitions a <a class="el" href="namespacetket.html#ae0b84b39477514376664e3e9b5dd3e3b" title="QubitOperator, defined to be useful for diagonalisation and partitioning.">QubitOperator</a> into lists of mutually commuting gadgets.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -86,7 +86,6 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">ZXGenerator.hpp File Reference</div></div>
 </div><!--header-->
@@ -95,51 +94,55 @@ $(function() {
 <code>#include &lt;unordered_set&gt;</code><br />
 <code>#include &quot;<a class="el" href="Expression_8hpp_source.html">tket/Utils/Expression.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Types_8hpp_source.html">tket/ZX/Types.hpp</a>&quot;</code><br />
+<code>#include &quot;tket_export.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ZXGenerator.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ZXGenerator_8hpp__incl.png" border="0" usemap="#ainclude_2tket_2ZX_2ZXGenerator_8hpp" loading="lazy" alt=""/></div>
 <map name="ainclude_2tket_2ZX_2ZXGenerator_8hpp" id="ainclude_2tket_2ZX_2ZXGenerator_8hpp">
-<area shape="rect" title=" " alt="" coords="1280,5,1514,33"/>
-<area shape="rect" title=" " alt="" coords="1019,232,1093,260"/>
-<area shape="poly" title=" " alt="" coords="1406,31,1422,63,1435,103,1438,147,1433,167,1422,186,1400,202,1368,215,1284,233,1190,243,1108,247,1108,241,1189,238,1283,228,1367,210,1398,198,1418,183,1428,165,1433,146,1430,104,1417,65,1403,36"/>
-<area shape="rect" title=" " alt="" coords="1293,81,1408,109"/>
-<area shape="poly" title=" " alt="" coords="1391,32,1368,70,1365,66,1387,35"/>
-<area shape="rect" href="Expression_8hpp.html" title="Functions related to (possibly symbolic) phase values." alt="" coords="730,81,913,109"/>
-<area shape="poly" title=" " alt="" coords="1291,34,928,83,928,77,1296,33"/>
-<area shape="rect" href="Types_8hpp.html" title=" " alt="" coords="1483,81,1620,109"/>
-<area shape="poly" title=" " alt="" coords="1425,31,1513,74,1508,74,1424,36"/>
-<area shape="poly" title=" " alt="" coords="899,107,953,125,980,138,1004,155,1031,185,1048,219,1043,217,1026,188,1001,159,977,143,951,130,898,112"/>
-<area shape="rect" title=" " alt="" coords="1066,157,1203,184"/>
-<area shape="poly" title=" " alt="" coords="878,107,1066,152,1060,153,877,112"/>
-<area shape="rect" title=" " alt="" coords="1227,157,1407,184"/>
-<area shape="poly" title=" " alt="" coords="911,107,1215,154,1210,154,910,112"/>
-<area shape="rect" title=" " alt="" coords="143,157,312,184"/>
-<area shape="poly" title=" " alt="" coords="728,110,329,159,328,153,730,105"/>
-<area shape="rect" title=" " alt="" coords="336,157,490,184"/>
-<area shape="poly" title=" " alt="" coords="745,110,502,156,501,151,750,109"/>
-<area shape="rect" title=" " alt="" coords="514,157,664,184"/>
-<area shape="poly" title=" " alt="" coords="782,109,646,154,645,149,777,110"/>
-<area shape="rect" title=" " alt="" coords="688,157,738,184"/>
-<area shape="poly" title=" " alt="" coords="804,108,746,150,744,145,799,110"/>
-<area shape="rect" title=" " alt="" coords="762,157,803,184"/>
-<area shape="poly" title=" " alt="" coords="816,108,798,145,795,141,812,111"/>
-<area shape="rect" title=" " alt="" coords="827,157,890,184"/>
-<area shape="poly" title=" " alt="" coords="829,107,847,144,843,142,827,112"/>
+<area shape="rect" title=" " alt="" coords="1390,5,1623,33"/>
+<area shape="rect" title=" " alt="" coords="827,232,901,260"/>
+<area shape="poly" title=" " alt="" coords="1518,31,1540,62,1561,103,1567,125,1569,147,1565,167,1554,186,1541,195,1519,203,1457,216,1373,226,1276,234,1075,243,917,247,917,242,1075,238,1276,228,1372,220,1456,210,1518,198,1538,190,1550,182,1560,166,1564,146,1562,126,1556,105,1536,65,1516,36"/>
+<area shape="rect" title=" " alt="" coords="1355,81,1469,109"/>
+<area shape="poly" title=" " alt="" coords="1492,33,1442,74,1439,69,1487,35"/>
+<area shape="rect" href="Expression_8hpp.html" title="Functions related to (possibly symbolic) phase values." alt="" coords="668,81,852,109"/>
+<area shape="poly" title=" " alt="" coords="1387,33,868,86,867,80,1392,31"/>
+<area shape="rect" title=" " alt="" coords="1433,157,1540,184"/>
+<area shape="poly" title=" " alt="" coords="1507,31,1492,143,1488,139,1503,35"/>
+<area shape="rect" href="Types_8hpp.html" title=" " alt="" coords="1615,81,1752,109"/>
+<area shape="poly" title=" " alt="" coords="1539,31,1641,75,1636,74,1538,36"/>
+<area shape="poly" title=" " alt="" coords="773,107,813,155,852,220,847,217,808,158,771,112"/>
+<area shape="rect" title=" " alt="" coords="874,157,1011,184"/>
+<area shape="poly" title=" " alt="" coords="793,107,899,151,893,150,792,112"/>
+<area shape="rect" title=" " alt="" coords="1035,157,1215,184"/>
+<area shape="poly" title=" " alt="" coords="826,107,1047,153,1042,153,825,112"/>
+<area shape="rect" title=" " alt="" coords="1239,157,1408,184"/>
+<area shape="poly" title=" " alt="" coords="852,105,1226,156,1221,156,852,111"/>
+<area shape="rect" title=" " alt="" coords="144,157,298,184"/>
+<area shape="poly" title=" " alt="" coords="667,111,314,159,313,154,669,106"/>
+<area shape="rect" title=" " alt="" coords="322,157,472,184"/>
+<area shape="poly" title=" " alt="" coords="692,110,478,156,477,150,697,109"/>
+<area shape="rect" title=" " alt="" coords="496,157,546,184"/>
+<area shape="poly" title=" " alt="" coords="716,109,562,158,561,153,711,110"/>
+<area shape="rect" title=" " alt="" coords="570,157,611,184"/>
+<area shape="poly" title=" " alt="" coords="732,109,626,157,624,152,727,110"/>
+<area shape="rect" title=" " alt="" coords="635,157,698,184"/>
+<area shape="poly" title=" " alt="" coords="746,108,696,149,694,145,741,110"/>
 <area shape="rect" href="Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="5,157,120,184"/>
-<area shape="poly" title=" " alt="" coords="727,102,466,124,303,139,136,159,135,154,302,134,466,118,732,101"/>
-<area shape="rect" href="Json_8hpp.html" title=" " alt="" coords="914,157,990,184"/>
-<area shape="poly" title=" " alt="" coords="845,107,918,149,913,148,844,112"/>
-<area shape="rect" title=" " alt="" coords="400,232,477,260"/>
-<area shape="poly" title=" " alt="" coords="120,180,386,232,383,237,120,186"/>
-<area shape="poly" title=" " alt="" coords="971,182,1028,224,1023,223,970,187"/>
-<area shape="poly" title=" " alt="" coords="916,181,902,187,675,222,493,242,493,237,674,216,901,182,911,182"/>
-<area shape="rect" title=" " alt="" coords="850,232,995,260"/>
-<area shape="poly" title=" " alt="" coords="949,183,935,220,932,216,944,186"/>
-<area shape="rect" title=" " alt="" coords="1496,157,1581,184"/>
-<area shape="poly" title=" " alt="" coords="1551,107,1545,143,1542,139,1547,111"/>
-<area shape="rect" title=" " alt="" coords="1605,157,1664,184"/>
-<area shape="poly" title=" " alt="" coords="1567,107,1611,147,1606,145,1566,112"/>
+<area shape="poly" title=" " alt="" coords="665,104,431,125,136,159,135,154,430,120,670,102"/>
+<area shape="rect" href="Json_8hpp.html" title=" " alt="" coords="722,157,798,184"/>
+<area shape="poly" title=" " alt="" coords="762,107,762,143,758,139,758,111"/>
+<area shape="poly" title=" " alt="" coords="852,99,1103,119,1258,134,1420,156,1415,156,1258,139,1102,124,852,104"/>
+<area shape="rect" title=" " alt="" coords="304,232,381,260"/>
+<area shape="poly" title=" " alt="" coords="113,182,291,229,287,233,112,188"/>
+<area shape="poly" title=" " alt="" coords="779,182,836,224,831,223,778,187"/>
+<area shape="poly" title=" " alt="" coords="724,181,710,187,539,218,397,240,396,235,538,213,709,182,719,182"/>
+<area shape="rect" title=" " alt="" coords="658,232,803,260"/>
+<area shape="poly" title=" " alt="" coords="757,183,743,220,740,216,752,186"/>
+<area shape="rect" title=" " alt="" coords="1717,157,1802,184"/>
+<area shape="poly" title=" " alt="" coords="1698,107,1738,147,1733,145,1696,112"/>
+<area shape="rect" title=" " alt="" coords="1635,157,1693,184"/>
+<area shape="poly" title=" " alt="" coords="1682,108,1673,144,1670,140,1678,111"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -242,42 +245,19 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aba5a90ec4f9cebab727d43b40b655a9f" id="r_aba5a90ec4f9cebab727d43b40b655a9f"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_set&lt; <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#aba5a90ec4f9cebab727d43b40b655a9f">tket::zx::ZXTypeSet</a></td></tr>
+<tr class="memitem:aba5a90ec4f9cebab727d43b40b655a9f" id="r_aba5a90ec4f9cebab727d43b40b655a9f"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_set&lt; ZXType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#aba5a90ec4f9cebab727d43b40b655a9f">tket::zx::ZXTypeSet</a></td></tr>
 <tr class="memitem:ab13a9f53f1ae216aea6bbc948b9b03a1" id="r_ab13a9f53f1ae216aea6bbc948b9b03a1"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; const <a class="el" href="classtket_1_1zx_1_1ZXGen.html">ZXGen</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#ab13a9f53f1ae216aea6bbc948b9b03a1">tket::zx::ZXGen_ptr</a></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ab1dacff6605c3bc8caa5f7fa6e3f5646" id="r_ab1dacff6605c3bc8caa5f7fa6e3f5646"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">tket::zx::ZXType</a> { <br />
-&#160;&#160;<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a324118a6721dd6b8a9b9f4e327df2bf5">tket::zx::Input</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a29c2c02a361c9d7028472e5d92cd4a54">tket::zx::Output</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646ac3bf447eabe632720a3aa1a7ce401274">tket::zx::Open</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646af91c1012cc32302ba7900a3c72c0ad77">tket::zx::ZSpider</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a387f9969109b5a46dd09b441638d66ea">tket::zx::XSpider</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a2489d00ce364c16072a0aef3dde2de5e">tket::zx::Hbox</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a74c53bcd3dcb2bb79993b2fec37d362a">tket::zx::XY</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a27db3b98d01e664c17a6620b222c6469">tket::zx::XZ</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646affa4ba973372c3650fd0881abeca6512">tket::zx::YZ</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a87e6c078833a3c35b65067a50c936b37">tket::zx::PX</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a0c145a13e49b47abccd510e5c899d80c">tket::zx::PY</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a159fe58f8d47011813fb25bd91b46673">tket::zx::PZ</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646a5e5500cb2b82eb72d550de644bd1b64b">tket::zx::Triangle</a>
-, <a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646ab02334dc49c91713dd37a8dab1795037">tket::zx::ZXBox</a>
-<br />
- }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab82aa2ff06a696ddcf79a5c2074497a7" id="r_ab82aa2ff06a696ddcf79a5c2074497a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#ab82aa2ff06a696ddcf79a5c2074497a7">tket::zx::is_boundary_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
+<tr class="memitem:ab82aa2ff06a696ddcf79a5c2074497a7" id="r_ab82aa2ff06a696ddcf79a5c2074497a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#ab82aa2ff06a696ddcf79a5c2074497a7">tket::zx::is_boundary_type</a> (ZXType type)</td></tr>
 <tr class="memdesc:ab82aa2ff06a696ddcf79a5c2074497a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper functions to identify various groups of ZXTypes.  <br /></td></tr>
-<tr class="memitem:a83df4693a006a3cdf9549cca3892884a" id="r_a83df4693a006a3cdf9549cca3892884a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a83df4693a006a3cdf9549cca3892884a">tket::zx::is_basic_gen_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a84a12db5d6af9525a0dc7dce483206ca" id="r_a84a12db5d6af9525a0dc7dce483206ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a84a12db5d6af9525a0dc7dce483206ca">tket::zx::is_spider_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a758e757f35e3f2b820ce9530506190a1" id="r_a758e757f35e3f2b820ce9530506190a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a758e757f35e3f2b820ce9530506190a1">tket::zx::is_directed_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a80f883429bc7127ef2781eed7a2f4858" id="r_a80f883429bc7127ef2781eed7a2f4858"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a80f883429bc7127ef2781eed7a2f4858">tket::zx::is_MBQC_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:ae3c250d04c08e99514bde7d9aa5054d0" id="r_ae3c250d04c08e99514bde7d9aa5054d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#ae3c250d04c08e99514bde7d9aa5054d0">tket::zx::is_phase_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a6da6bec076b120e9da31bcd21423aec2" id="r_a6da6bec076b120e9da31bcd21423aec2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a6da6bec076b120e9da31bcd21423aec2">tket::zx::is_Clifford_gen_type</a> (<a class="el" href="namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
+<tr class="memitem:a83df4693a006a3cdf9549cca3892884a" id="r_a83df4693a006a3cdf9549cca3892884a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a83df4693a006a3cdf9549cca3892884a">tket::zx::is_basic_gen_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a84a12db5d6af9525a0dc7dce483206ca" id="r_a84a12db5d6af9525a0dc7dce483206ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a84a12db5d6af9525a0dc7dce483206ca">tket::zx::is_spider_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a758e757f35e3f2b820ce9530506190a1" id="r_a758e757f35e3f2b820ce9530506190a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a758e757f35e3f2b820ce9530506190a1">tket::zx::is_directed_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a80f883429bc7127ef2781eed7a2f4858" id="r_a80f883429bc7127ef2781eed7a2f4858"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a80f883429bc7127ef2781eed7a2f4858">tket::zx::is_MBQC_type</a> (ZXType type)</td></tr>
+<tr class="memitem:ae3c250d04c08e99514bde7d9aa5054d0" id="r_ae3c250d04c08e99514bde7d9aa5054d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#ae3c250d04c08e99514bde7d9aa5054d0">tket::zx::is_phase_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a6da6bec076b120e9da31bcd21423aec2" id="r_a6da6bec076b120e9da31bcd21423aec2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1zx.html#a6da6bec076b120e9da31bcd21423aec2">tket::zx::is_Clifford_gen_type</a> (ZXType type)</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

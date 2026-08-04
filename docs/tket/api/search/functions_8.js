@@ -100,10 +100,10 @@ var searchData=
   ['is_5fvalid_97',['is_valid',['../namespacetket.html#a9baf176b894f317f5199c0c3af4ef843',1,'tket']]],
   ['is_5fvertex_5fcx_98',['is_vertex_CX',['../namespacetket.html#a0a5eb1dcb9733fcb29a5721c46b5f344',1,'tket']]],
   ['iswap_99',['ISWAP',['../structtket_1_1internal_1_1GateUnitaryMatrixImplementations.html#ab3aaee619c42e016128e988d8b2f1043',1,'tket::internal::GateUnitaryMatrixImplementations::ISWAP()'],['../structtket_1_1GateUnitaryMatrixImplementations.html#ab3aaee619c42e016128e988d8b2f1043',1,'tket::GateUnitaryMatrixImplementations::ISWAP()']]],
-  ['iswap_5fusing_5fcx_100',['ISWAP_using_CX',['../namespacetket_1_1CircPool.html#a75d5400a557e919508634811504cff11',1,'tket::CircPool']]],
-  ['iswap_5fusing_5ftk2_101',['ISWAP_using_TK2',['../namespacetket_1_1CircPool.html#a3e2bce6b84580f21cd024cc87f33f51f',1,'tket::CircPool']]],
+  ['iswap_5fusing_5fcx_100',['ISWAP_using_CX',['../namespacetket_1_1CircPool.html#a4401686ae7972c68291040f442a166a7',1,'tket::CircPool']]],
+  ['iswap_5fusing_5ftk2_101',['ISWAP_using_TK2',['../namespacetket_1_1CircPool.html#a5e6ae452f7022f2edaeb72725a81a44b',1,'tket::CircPool']]],
   ['iswapmax_102',['ISWAPMax',['../structtket_1_1internal_1_1GateUnitaryMatrixImplementations.html#abd58141e207a16057419d887cdb0d666',1,'tket::internal::GateUnitaryMatrixImplementations::ISWAPMax()'],['../structtket_1_1GateUnitaryMatrixImplementations.html#abd58141e207a16057419d887cdb0d666',1,'tket::GateUnitaryMatrixImplementations::ISWAPMax()']]],
-  ['iswapmax_5fusing_5fcx_103',['ISWAPMax_using_CX',['../namespacetket_1_1CircPool.html#a99a846d3c1f3deb9b4269ed6d8929330',1,'tket::CircPool']]],
-  ['iswapmax_5fusing_5ftk2_104',['ISWAPMax_using_TK2',['../namespacetket_1_1CircPool.html#aa0c298539f52e0d6306c02bc746eb279',1,'tket::CircPool']]],
+  ['iswapmax_5fusing_5fcx_103',['ISWAPMax_using_CX',['../namespacetket_1_1CircPool.html#a512ec594d3fc09cc79fab6bc237e6ed5',1,'tket::CircPool']]],
+  ['iswapmax_5fusing_5ftk2_104',['ISWAPMax_using_TK2',['../namespacetket_1_1CircPool.html#ad893a50e74def11fb4bdf6331d1f5dd0',1,'tket::CircPool']]],
   ['iterationorder_105',['IterationOrder',['../classtket_1_1aas_1_1IterationOrder.html#a7febb9be5b5be66b03ec03605bd8dcec',1,'tket::aas::IterationOrder::IterationOrder()'],['../classtket_1_1aas_1_1IterationOrder.html#a29081feee1f28d104f8d4c644803edd8',1,'tket::aas::IterationOrder::IterationOrder(const Architecture &amp;arch)']]]
 ];

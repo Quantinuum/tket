@@ -96,41 +96,42 @@ $(function() {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="MappingFrontier_8hpp.html">tket/Mapping/MappingFrontier.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="RoutingMethod_8hpp.html">tket/Mapping/RoutingMethod.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket.html">tket</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classtket_1_1BoxDecomposition.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="classtket_1_1BoxDecomposition.html#a0827d4f2764667d0a5445af38bc3599a">BoxDecomposition</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_function" href="classtket_1_1BoxDecomposition.html#a0827d4f2764667d0a5445af38bc3599a">BoxDecomposition</a>(</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">ArchitecturePtr</a>&amp; _architecture,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <a class="code hl_typedef" href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">MappingFrontier_ptr</a>&amp; _mapping_frontier);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtket_1_1BoxDecomposition.html#a9b13b9d172236dcec6f90c0e7f3d01e9">solve</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="comment">// Architecture all new physical operations must respect</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_typedef" href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">ArchitecturePtr</a> architecture_;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_typedef" href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">MappingFrontier_ptr</a> mapping_frontier_;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;tket_export.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket.html">tket</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classtket_1_1BoxDecomposition.html">   23</a></span><span class="keyword">class </span><a class="code hl_function" href="classtket_1_1BoxDecomposition.html#a0827d4f2764667d0a5445af38bc3599a">BoxDecomposition</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_function" href="classtket_1_1BoxDecomposition.html#a0827d4f2764667d0a5445af38bc3599a">BoxDecomposition</a>(</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">ArchitecturePtr</a>&amp; _architecture,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <a class="code hl_typedef" href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">MappingFrontier_ptr</a>&amp; _mapping_frontier);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtket_1_1BoxDecomposition.html#a9b13b9d172236dcec6f90c0e7f3d01e9">solve</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// Architecture all new physical operations must respect</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_typedef" href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">ArchitecturePtr</a> architecture_;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_typedef" href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">MappingFrontier_ptr</a> mapping_frontier_;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classtket_1_1BoxDecompositionRoutingMethod.html">   46</a></span><span class="keyword">class </span><a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">BoxDecompositionRoutingMethod</a> : <span class="keyword">public</span> <a class="code hl_function" href="classtket_1_1RoutingMethod.html#a841344c07c4c8a48f62c51b3cccc1459">RoutingMethod</a> {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">BoxDecompositionRoutingMethod</a>();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  std::pair&lt;bool, unit_map_t&gt; <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#adaf485ae3ad991cb7e25b56e7d000a90">routing_method</a>(</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <a class="code hl_typedef" href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">MappingFrontier_ptr</a>&amp; mapping_frontier,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">ArchitecturePtr</a>&amp; architecture) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  nlohmann::json <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a8aabd0e881c4fb6a7b147c02d2a4773a">serialize</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">static</span> <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">BoxDecompositionRoutingMethod</a> <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a56d65c3f0e3c4b0945543f7e04f29474">deserialize</a>(<span class="keyword">const</span> nlohmann::json&amp; <span class="comment">/*j*/</span>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classtket_1_1BoxDecompositionRoutingMethod.html">   47</a></span><span class="keyword">class </span>TKET_EXPORT <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">BoxDecompositionRoutingMethod</a> : <span class="keyword">public</span> <a class="code hl_function" href="classtket_1_1RoutingMethod.html#a841344c07c4c8a48f62c51b3cccc1459">RoutingMethod</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">BoxDecompositionRoutingMethod</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  std::pair&lt;bool, unit_map_t&gt; <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#adaf485ae3ad991cb7e25b56e7d000a90">routing_method</a>(</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <a class="code hl_typedef" href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">MappingFrontier_ptr</a>&amp; mapping_frontier,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">ArchitecturePtr</a>&amp; architecture) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  nlohmann::json <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a8aabd0e881c4fb6a7b147c02d2a4773a">serialize</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">static</span> <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">BoxDecompositionRoutingMethod</a> <a class="code hl_function" href="classtket_1_1BoxDecompositionRoutingMethod.html#a56d65c3f0e3c4b0945543f7e04f29474">deserialize</a>(<span class="keyword">const</span> nlohmann::json&amp; <span class="comment">/*j*/</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}  <span class="comment">// namespace tket</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}  <span class="comment">// namespace tket</span></div>
 <div class="ttc" id="aMappingFrontier_8hpp_html"><div class="ttname"><a href="MappingFrontier_8hpp.html">MappingFrontier.hpp</a></div></div>
 <div class="ttc" id="aRoutingMethod_8hpp_html"><div class="ttname"><a href="RoutingMethod_8hpp.html">RoutingMethod.hpp</a></div></div>
 <div class="ttc" id="aclasstket_1_1BoxDecompositionRoutingMethod_html_a3adc6525e2dc0c5d84eac1adbd4a1eb5"><div class="ttname"><a href="classtket_1_1BoxDecompositionRoutingMethod.html#a3adc6525e2dc0c5d84eac1adbd4a1eb5">tket::BoxDecompositionRoutingMethod::BoxDecompositionRoutingMethod</a></div><div class="ttdeci">BoxDecompositionRoutingMethod()</div><div class="ttdoc">Decompose any boxes on the frontier.</div><div class="ttdef"><b>Definition</b> <a href="BoxDecomposition_8cpp_source.html#l00057">BoxDecomposition.cpp:57</a></div></div>
@@ -142,7 +143,7 @@ $(function() {
 <div class="ttc" id="aclasstket_1_1RoutingMethod_html_a841344c07c4c8a48f62c51b3cccc1459"><div class="ttname"><a href="classtket_1_1RoutingMethod.html#a841344c07c4c8a48f62c51b3cccc1459">tket::RoutingMethod::RoutingMethod</a></div><div class="ttdeci">RoutingMethod()</div><div class="ttdef"><b>Definition</b> <a href="RoutingMethod_8hpp_source.html#l00023">RoutingMethod.hpp:23</a></div></div>
 <div class="ttc" id="anamespacetket_html"><div class="ttname"><a href="namespacetket.html">tket</a></div><div class="ttdoc">Defines tket::DeviceCharacterisation, used in NoiseAwarePlacement and in commute_SQ_gates_through_SWA...</div><div class="ttdef"><b>Definition</b> <a href="Path_8cpp_source.html#l00022">Path.cpp:22</a></div></div>
 <div class="ttc" id="anamespacetket_html_a6f41065ab0b4ecd3f4672c64f3afbecc"><div class="ttname"><a href="namespacetket.html#a6f41065ab0b4ecd3f4672c64f3afbecc">tket::MappingFrontier_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; MappingFrontier &gt; MappingFrontier_ptr</div><div class="ttdef"><b>Definition</b> <a href="MappingFrontier_8hpp_source.html#l00216">MappingFrontier.hpp:216</a></div></div>
-<div class="ttc" id="anamespacetket_html_aa48f675e04cadd3b47c165f6b033e887"><div class="ttname"><a href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">tket::ArchitecturePtr</a></div><div class="ttdeci">std::shared_ptr&lt; Architecture &gt; ArchitecturePtr</div><div class="ttdef"><b>Definition</b> <a href="Architecture_8hpp_source.html#l00211">Architecture.hpp:211</a></div></div>
+<div class="ttc" id="anamespacetket_html_aa48f675e04cadd3b47c165f6b033e887"><div class="ttname"><a href="namespacetket.html#aa48f675e04cadd3b47c165f6b033e887">tket::ArchitecturePtr</a></div><div class="ttdeci">std::shared_ptr&lt; Architecture &gt; ArchitecturePtr</div><div class="ttdef"><b>Definition</b> <a href="Architecture_8hpp_source.html#l00214">Architecture.hpp:214</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

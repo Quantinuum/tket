@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['q_5fdefault_5freg_0',['q_default_reg',['../namespacetket.html#a392f41338f191768e8b7ac91b19bc8ce',1,'tket']]],
+  ['q_5fdefault_5freg_0',['q_default_reg',['../namespacetket.html#a7ffbf689380bff178dc8fba047684fd8',1,'tket']]],
   ['q_5finputs_1',['q_inputs',['../classtket_1_1Circuit.html#a88440574cd835896ddc4eb052f2667c3',1,'tket::Circuit']]],
   ['q_5foutputs_2',['q_outputs',['../classtket_1_1Circuit.html#a4449560b8f21c81f5ce3b692da25aabb',1,'tket::Circuit']]],
-  ['q_5frouting_5fancilla_5freg_3',['q_routing_ancilla_reg',['../namespacetket.html#a0dde2f744cf0077c412db7fa682755ab',1,'tket']]],
+  ['q_5frouting_5fancilla_5freg_3',['q_routing_ancilla_reg',['../namespacetket.html#aec2048b95a77c73eafde73041fab467e',1,'tket']]],
   ['qcontrolbox_4',['QControlBox',['../classtket_1_1QControlBox.html',1,'tket::QControlBox'],['../classtket_1_1QControlBox.html#a39779ab01bef0558b19e9b601958e48a',1,'tket::QControlBox::QControlBox(const Op_ptr &amp;op, unsigned n_controls=1, const std::vector&lt; bool &gt; &amp;control_state={})'],['../classtket_1_1QControlBox.html#a13734d690287f65c6699c662e934fcb4',1,'tket::QControlBox::QControlBox(const QControlBox &amp;other)'],['../classtket_1_1QControlBox.html#a95987ffb7411b8185d43e795bf82e4fd',1,'tket::QControlBox::QControlBox()'],['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a0bdf2d4fd224397ee888ae5ed535ed6c',1,'tket::QControlBox']]],
   ['qind_5fto_5fsquind_5',['qind_to_squind',['../classtket_1_1SquareGrid.html#a872aea98bddd9304fd70002f25a31205',1,'tket::SquareGrid']]],
   ['qmap_6',['QMap',['../namespacetket_1_1tket__sim_1_1internal.html#a49c6834307912bc1478f9c25a4548aec',1,'tket::tket_sim::internal']]],

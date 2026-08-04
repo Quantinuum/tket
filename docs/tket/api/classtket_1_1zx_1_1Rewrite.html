@@ -158,7 +158,7 @@ Public Attributes</h2></td></tr>
 <p>The broad structure is similar to the <a class="el" href="classtket_1_1Transform.html" title="A transformation of a circuit that preserves its semantics.">Transform</a> class for Circuits. Each rewrite is encapsulated by a single method <span class="tt"><a class="el" href="#a7fa49d00a01f84f09c789431ecef8ed6" title="The actual rewrite to be applied.">apply</a></span> which searches for and performs all instances of a rewrite on a given diagram. The <span class="tt"><a class="el" href="#a7fa49d00a01f84f09c789431ecef8ed6" title="The actual rewrite to be applied.">apply</a></span> method has an optional <span class="tt">Subdiagram</span> argument to operate locally on some region of the diagram. This will also update the <span class="tt">Subdiagram</span> to use the new vertices and edges. The <span class="tt"><a class="el" href="#a7fa49d00a01f84f09c789431ecef8ed6" title="The actual rewrite to be applied.">apply</a></span> method returns whether or not a rewrite was performed. The main way to compose rewrites is in sequence or loops. Each rewrite is expected to preserve global semantics of the diagram (or restricted subdiagram) including global scalar.</p>
 <p>Previous designs used a separate method to identify independent matches from performing the rewrite on a single match. This added extra complexity to the structure, more reliance on users to be sensible, and reduced efficiency of the rewrites. We decided that interactive rewriting was something we were happy to go without as tket is not intended to be a proof assistant. </p>
 
-<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00041">41</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00042">42</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a57c261f6d93d161d8018771410e63cca" name="a57c261f6d93d161d8018771410e63cca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a57c261f6d93d161d8018771410e63cca">&#9670;&#160;</a></span>Metric</h2>
@@ -172,7 +172,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00044">44</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00045">45</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
 
 </div>
 </div>
@@ -188,7 +188,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00043">43</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00044">44</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
 
 </div>
 </div>
@@ -919,7 +919,7 @@ Public Attributes</h2></td></tr>
 <p>The actual rewrite to be applied. </p>
 <p>Performs the rewrite in place (optionally restricted to some subdiagram) and returns true iff some change is made. </p>
 
-<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00051">51</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Rewrite_8hpp_source.html#l00052">52</a> of file <a class="el" href="Rewrite_8hpp_source.html">Rewrite.hpp</a>.</p>
 
 </div>
 </div>

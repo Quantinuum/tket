@@ -94,22 +94,25 @@ $(function() {
 <code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;tket_export.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for HelperFunctions.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="HelperFunctions_8hpp__incl.png" border="0" usemap="#ainclude_2tket_2Utils_2HelperFunctions_8hpp" loading="lazy" alt=""/></div>
 <map name="ainclude_2tket_2Utils_2HelperFunctions_8hpp" id="ainclude_2tket_2Utils_2HelperFunctions_8hpp">
-<area shape="rect" title=" " alt="" coords="224,5,382,50"/>
+<area shape="rect" title=" " alt="" coords="264,5,422,50"/>
 <area shape="rect" title=" " alt="" coords="5,98,158,143"/>
-<area shape="poly" title=" " alt="" coords="252,50,149,94,147,89,247,51"/>
+<area shape="poly" title=" " alt="" coords="283,50,159,95,158,90,278,51"/>
 <area shape="rect" title=" " alt="" coords="182,106,248,134"/>
-<area shape="poly" title=" " alt="" coords="284,49,240,97,237,93,280,51"/>
+<area shape="poly" title=" " alt="" coords="315,50,247,100,245,95,310,51"/>
 <area shape="rect" title=" " alt="" coords="272,106,334,134"/>
-<area shape="poly" title=" " alt="" coords="305,48,305,92,301,89,301,52"/>
+<area shape="poly" title=" " alt="" coords="336,49,317,94,313,90,331,52"/>
 <area shape="rect" title=" " alt="" coords="358,106,408,134"/>
-<area shape="poly" title=" " alt="" coords="323,48,364,95,359,94,321,53"/>
+<area shape="poly" title=" " alt="" coords="354,48,373,93,368,91,351,53"/>
 <area shape="rect" title=" " alt="" coords="432,106,494,134"/>
-<area shape="poly" title=" " alt="" coords="342,48,429,99,424,99,340,53"/>
+<area shape="poly" title=" " alt="" coords="372,48,436,97,431,97,370,53"/>
+<area shape="rect" title=" " alt="" coords="518,106,626,134"/>
+<area shape="poly" title=" " alt="" coords="398,48,527,100,522,101,397,53"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -159,10 +162,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5ef2d4e5c20758b53e2c4d7ef7a1c091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check equality of each element of first and second when first and second can provide begin, end iterators.  <br /></td></tr>
 <tr class="memitem:a9f3b65f02545b866e63e409e06932c53" id="r_a9f3b65f02545b866e63e409e06932c53"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a9f3b65f02545b866e63e409e06932c53">tket::reverse_bits</a> (uint64_t v, unsigned w)</td></tr>
 <tr class="memdesc:a9f3b65f02545b866e63e409e06932c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse bits 0,1,...,w-1 of the number v, assuming v &lt; 2^w and w &lt;= 64.  <br /></td></tr>
-<tr class="memitem:a691fbce176a39f6a1d9f749ca483951e" id="r_a691fbce176a39f6a1d9f749ca483951e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a691fbce176a39f6a1d9f749ca483951e">tket::dec_to_bin</a> (unsigned long long dec, unsigned width)</td></tr>
-<tr class="memdesc:a691fbce176a39f6a1d9f749ca483951e"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert an unsigned to its binary representation big-endian  <br /></td></tr>
-<tr class="memitem:a7ac1b11dd9f44f9046eadc92c6a96920" id="r_a7ac1b11dd9f44f9046eadc92c6a96920"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a7ac1b11dd9f44f9046eadc92c6a96920">tket::bin_to_dec</a> (const std::vector&lt; bool &gt; &amp;bin)</td></tr>
-<tr class="memdesc:a7ac1b11dd9f44f9046eadc92c6a96920"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert an bit vector to its decimal representation big-endian  <br /></td></tr>
+<tr class="memitem:ac765d36344eeb07aafcda25b9f15a7dd" id="r_ac765d36344eeb07aafcda25b9f15a7dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#ac765d36344eeb07aafcda25b9f15a7dd">tket::dec_to_bin</a> (unsigned long long dec, unsigned width)</td></tr>
+<tr class="memdesc:ac765d36344eeb07aafcda25b9f15a7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert an unsigned to its binary representation big-endian  <br /></td></tr>
+<tr class="memitem:aff9390fa60b2cf6e7975aaf032765d5c" id="r_aff9390fa60b2cf6e7975aaf032765d5c"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#aff9390fa60b2cf6e7975aaf032765d5c">tket::bin_to_dec</a> (const std::vector&lt; bool &gt; &amp;bin)</td></tr>
+<tr class="memdesc:aff9390fa60b2cf6e7975aaf032765d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert an bit vector to its decimal representation big-endian  <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

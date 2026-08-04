@@ -5,7 +5,7 @@ var searchData=
   ['clexprterm_2',['ClExprTerm',['../namespacetket.html#ac3f067a991c8687a624758689e99c73f',1,'tket']]],
   ['clexprvar_3',['ClExprVar',['../namespacetket.html#ad3884943faf354329352667ff6d26ff8',1,'tket']]],
   ['clock_4',['Clock',['../GraphPlacement_8cpp.html#acfc0968dc9a49c416d02cc7f519714dc',1,'GraphPlacement.cpp']]],
-  ['clregvar_5',['ClRegVar',['../namespacetket.html#a313b8f8d00c7eaa3ace75544f9b06157',1,'tket']]],
+  ['clregvar_5',['ClRegVar',['../namespacetket.html#aa0b2dbddcfed760b855fbb03385872f0',1,'tket']]],
   ['cmplxspmat_6',['CmplxSpMat',['../namespacetket.html#a0b2a87e4bf360a357e15dad177551ed8',1,'tket']]],
   ['col_5fkey_5ft_7',['col_key_t',['../classtket_1_1ChoiMixTableau.html#a0732db68e73ae93d26bebd691c7ec4cc',1,'tket::ChoiMixTableau']]],
   ['color_5fpmap_5ft_8',['color_pmap_t',['../classtket_1_1graphs_1_1detail_1_1TreeSearchBase.html#a1ab8c1ac2cc37687cf1afd55ac02a14f',1,'tket::graphs::detail::TreeSearchBase']]],

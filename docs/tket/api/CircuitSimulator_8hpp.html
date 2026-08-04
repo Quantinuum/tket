@@ -91,16 +91,19 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Constants_8hpp_source.html">tket/Utils/Constants.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EigenConfig_8hpp_source.html">tket/Utils/EigenConfig.hpp</a>&quot;</code><br />
+<code>#include &quot;tket_export.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CircuitSimulator.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CircuitSimulator_8hpp__incl.png" border="0" usemap="#ainclude_2tket_2Circuit_2Simulation_2CircuitSimulator_8hpp" loading="lazy" alt=""/></div>
 <map name="ainclude_2tket_2Circuit_2Simulation_2CircuitSimulator_8hpp" id="ainclude_2tket_2Circuit_2Simulation_2CircuitSimulator_8hpp">
-<area shape="rect" title=" " alt="" coords="142,5,373,50"/>
+<area shape="rect" title=" " alt="" coords="283,5,514,50"/>
 <area shape="rect" href="Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="65,98,242,126"/>
-<area shape="poly" title=" " alt="" coords="232,49,183,90,180,86,228,52"/>
+<area shape="poly" title=" " alt="" coords="331,52,208,95,206,90,336,49"/>
 <area shape="rect" href="EigenConfig_8hpp.html" title="Include this file rather than including the Eigen headers directly." alt="" coords="304,98,493,126"/>
-<area shape="poly" title=" " alt="" coords="295,48,366,90,361,90,294,53"/>
+<area shape="poly" title=" " alt="" coords="400,48,401,84,396,81,397,53"/>
+<area shape="rect" title=" " alt="" coords="517,98,624,126"/>
+<area shape="poly" title=" " alt="" coords="445,48,532,91,527,91,444,53"/>
 <area shape="rect" title=" " alt="" coords="5,182,83,210"/>
 <area shape="poly" title=" " alt="" coords="138,126,75,175,72,170,133,127"/>
 <area shape="rect" title=" " alt="" coords="107,182,253,210"/>
@@ -301,12 +304,12 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abc301a794766730f718b7d042277a46d" id="r_abc301a794766730f718b7d042277a46d"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1tket__sim.html#abc301a794766730f718b7d042277a46d">tket::tket_sim::get_statevector</a> (const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;circ, double abs_epsilon=<a class="el" href="namespacetket.html#a9cdfe3f23ec01d10a956474db74c9fc1">EPS</a>, unsigned max_number_of_qubits=11)</td></tr>
-<tr class="memdesc:abc301a794766730f718b7d042277a46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the unitary matrix of the circuit applied to the state |00...0&gt;, using ILO-BE convention.  <br /></td></tr>
-<tr class="memitem:ac5f358fccedfa3f2503b513b24bc6cd7" id="r_ac5f358fccedfa3f2503b513b24bc6cd7"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1tket__sim.html#ac5f358fccedfa3f2503b513b24bc6cd7">tket::tket_sim::get_unitary</a> (const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;circ, double abs_epsilon=<a class="el" href="namespacetket.html#a9cdfe3f23ec01d10a956474db74c9fc1">EPS</a>, unsigned max_number_of_qubits=11)</td></tr>
-<tr class="memdesc:ac5f358fccedfa3f2503b513b24bc6cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the unitary matrix of the circuit, using ILO-BE convention.  <br /></td></tr>
-<tr class="memitem:afaa256426865c538e79bb9a7215151a5" id="r_afaa256426865c538e79bb9a7215151a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1tket__sim.html#afaa256426865c538e79bb9a7215151a5">tket::tket_sim::apply_unitary</a> (const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;circ, Eigen::MatrixXcd &amp;matr, double abs_epsilon=<a class="el" href="namespacetket.html#a9cdfe3f23ec01d10a956474db74c9fc1">EPS</a>, unsigned max_number_of_qubits=11)</td></tr>
-<tr class="memdesc:afaa256426865c538e79bb9a7215151a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let U be the unitary matrix which represents the given circuit using ILO-BE convention.  <br /></td></tr>
+<tr class="memitem:a1b5ed0965376bd070a1d5cba7fdbfecc" id="r_a1b5ed0965376bd070a1d5cba7fdbfecc"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1tket__sim.html#a1b5ed0965376bd070a1d5cba7fdbfecc">tket::tket_sim::get_statevector</a> (const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;circ, double abs_epsilon=<a class="el" href="namespacetket.html#a9cdfe3f23ec01d10a956474db74c9fc1">EPS</a>, unsigned max_number_of_qubits=11)</td></tr>
+<tr class="memdesc:a1b5ed0965376bd070a1d5cba7fdbfecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the unitary matrix of the circuit applied to the state |00...0&gt;, using ILO-BE convention.  <br /></td></tr>
+<tr class="memitem:a1c288d9b761b0e5a24b65c2c778f9b9a" id="r_a1c288d9b761b0e5a24b65c2c778f9b9a"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1tket__sim.html#a1c288d9b761b0e5a24b65c2c778f9b9a">tket::tket_sim::get_unitary</a> (const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;circ, double abs_epsilon=<a class="el" href="namespacetket.html#a9cdfe3f23ec01d10a956474db74c9fc1">EPS</a>, unsigned max_number_of_qubits=11)</td></tr>
+<tr class="memdesc:a1c288d9b761b0e5a24b65c2c778f9b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the unitary matrix of the circuit, using ILO-BE convention.  <br /></td></tr>
+<tr class="memitem:a2593900e9e5664629f2738952548ee9a" id="r_a2593900e9e5664629f2738952548ee9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1tket__sim.html#a2593900e9e5664629f2738952548ee9a">tket::tket_sim::apply_unitary</a> (const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;circ, Eigen::MatrixXcd &amp;matr, double abs_epsilon=<a class="el" href="namespacetket.html#a9cdfe3f23ec01d10a956474db74c9fc1">EPS</a>, unsigned max_number_of_qubits=11)</td></tr>
+<tr class="memdesc:a2593900e9e5664629f2738952548ee9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let U be the unitary matrix which represents the given circuit using ILO-BE convention.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

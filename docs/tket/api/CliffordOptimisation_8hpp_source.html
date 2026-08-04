@@ -95,40 +95,41 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="Transform_8hpp.html">Transform.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket.html">tket</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket_1_1Transforms.html">Transforms</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// multi-qubit patterns that decrease the CX count</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// inserting swaps can sometimes cause errors elsewhere (e.g. routing), so</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// they can be turned off</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#aecf3aac5977a57e0c88dd2d0b1952cd1">multiq_clifford_replacement</a>(<span class="keywordtype">bool</span> allow_swaps = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// copies Z through the target of a CX and X through the control</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#a6575b6ec25eab321e6b28066f5029ded">copy_pi_through_CX</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#ac4c86d0e3d325777cad289822d9316b5">singleq_clifford_sweep</a>();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// In some cases, 2-qubit gates can be saved by:</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// 1) representing end-of-circuit measurements as a collection of single Z</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// operators 2) transforming each fo these single Z operators to a new Pauli</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// operator by acting on them with an end-of-circuit Clifford subcircuit 3)</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// finding a Clifford that mutually diagonalises these Pauli operators 4)</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// replacing the end-of-circuit Clifford subcircuit with the mutual</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// diagonalisation circuit and adding classical logic to map the diagonalised</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Pauli operators back to the desired single Z operators</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#ac3180967e04a4ef357d49fdff5cd288d">push_cliffords_through_measures</a>();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}  <span class="comment">// namespace Transforms</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}  <span class="comment">// namespace tket</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;tket_export.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket.html">tket</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket_1_1Transforms.html">Transforms</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// multi-qubit patterns that decrease the CX count</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// inserting swaps can sometimes cause errors elsewhere (e.g. routing), so</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// they can be turned off</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>TKET_EXPORT Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#ab6b3811d5f5ab8b05733f2074f4e5472">multiq_clifford_replacement</a>(<span class="keywordtype">bool</span> allow_swaps = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// copies Z through the target of a CX and X through the control</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>TKET_EXPORT Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#aed1ee2023af2592ff8adf249ece3450f">copy_pi_through_CX</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>TKET_EXPORT Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#a52effaf7f9d37aa5389fe3a5b5fa0425">singleq_clifford_sweep</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// In some cases, 2-qubit gates can be saved by:</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// 1) representing end-of-circuit measurements as a collection of single Z</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// operators 2) transforming each fo these single Z operators to a new Pauli</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// operator by acting on them with an end-of-circuit Clifford subcircuit 3)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// finding a Clifford that mutually diagonalises these Pauli operators 4)</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// replacing the end-of-circuit Clifford subcircuit with the mutual</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// diagonalisation circuit and adding classical logic to map the diagonalised</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// Pauli operators back to the desired single Z operators</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>TKET_EXPORT Transform <a class="code hl_function" href="namespacetket_1_1Transforms.html#a9d6f4dd7e85fc0ab0cd01e5a7e0c7f4d">push_cliffords_through_measures</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}  <span class="comment">// namespace Transforms</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace tket</span></div>
 <div class="ttc" id="aTransform_8hpp_html"><div class="ttname"><a href="Transform_8hpp.html">Transform.hpp</a></div></div>
 <div class="ttc" id="anamespacetket_1_1Transforms_html"><div class="ttname"><a href="namespacetket_1_1Transforms.html">tket::Transforms</a></div><div class="ttdef"><b>Definition</b> <a href="BasicOptimisation_8cpp_source.html#l00033">BasicOptimisation.cpp:33</a></div></div>
-<div class="ttc" id="anamespacetket_1_1Transforms_html_a6575b6ec25eab321e6b28066f5029ded"><div class="ttname"><a href="namespacetket_1_1Transforms.html#a6575b6ec25eab321e6b28066f5029ded">tket::Transforms::copy_pi_through_CX</a></div><div class="ttdeci">Transform copy_pi_through_CX()</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00516">CliffordOptimisation.cpp:516</a></div></div>
-<div class="ttc" id="anamespacetket_1_1Transforms_html_ac3180967e04a4ef357d49fdff5cd288d"><div class="ttname"><a href="namespacetket_1_1Transforms.html#ac3180967e04a4ef357d49fdff5cd288d">tket::Transforms::push_cliffords_through_measures</a></div><div class="ttdeci">Transform push_cliffords_through_measures()</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00824">CliffordOptimisation.cpp:824</a></div></div>
-<div class="ttc" id="anamespacetket_1_1Transforms_html_ac4c86d0e3d325777cad289822d9316b5"><div class="ttname"><a href="namespacetket_1_1Transforms.html#ac4c86d0e3d325777cad289822d9316b5">tket::Transforms::singleq_clifford_sweep</a></div><div class="ttdeci">Transform singleq_clifford_sweep()</div><div class="ttdoc">Apply some of the Clifford rules in the paper &quot;Optimising Clifford Circuitswith Quantomatic&quot;.</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00624">CliffordOptimisation.cpp:624</a></div></div>
-<div class="ttc" id="anamespacetket_1_1Transforms_html_aecf3aac5977a57e0c88dd2d0b1952cd1"><div class="ttname"><a href="namespacetket_1_1Transforms.html#aecf3aac5977a57e0c88dd2d0b1952cd1">tket::Transforms::multiq_clifford_replacement</a></div><div class="ttdeci">Transform multiq_clifford_replacement(bool allow_swaps)</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00039">CliffordOptimisation.cpp:39</a></div></div>
+<div class="ttc" id="anamespacetket_1_1Transforms_html_a52effaf7f9d37aa5389fe3a5b5fa0425"><div class="ttname"><a href="namespacetket_1_1Transforms.html#a52effaf7f9d37aa5389fe3a5b5fa0425">tket::Transforms::singleq_clifford_sweep</a></div><div class="ttdeci">Transform singleq_clifford_sweep()</div><div class="ttdoc">Apply some of the Clifford rules in the paper &quot;Optimising Clifford Circuitswith Quantomatic&quot;.</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00624">CliffordOptimisation.cpp:624</a></div></div>
+<div class="ttc" id="anamespacetket_1_1Transforms_html_a9d6f4dd7e85fc0ab0cd01e5a7e0c7f4d"><div class="ttname"><a href="namespacetket_1_1Transforms.html#a9d6f4dd7e85fc0ab0cd01e5a7e0c7f4d">tket::Transforms::push_cliffords_through_measures</a></div><div class="ttdeci">Transform push_cliffords_through_measures()</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00824">CliffordOptimisation.cpp:824</a></div></div>
+<div class="ttc" id="anamespacetket_1_1Transforms_html_ab6b3811d5f5ab8b05733f2074f4e5472"><div class="ttname"><a href="namespacetket_1_1Transforms.html#ab6b3811d5f5ab8b05733f2074f4e5472">tket::Transforms::multiq_clifford_replacement</a></div><div class="ttdeci">Transform multiq_clifford_replacement(bool allow_swaps)</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00039">CliffordOptimisation.cpp:39</a></div></div>
+<div class="ttc" id="anamespacetket_1_1Transforms_html_aed1ee2023af2592ff8adf249ece3450f"><div class="ttname"><a href="namespacetket_1_1Transforms.html#aed1ee2023af2592ff8adf249ece3450f">tket::Transforms::copy_pi_through_CX</a></div><div class="ttdeci">Transform copy_pi_through_CX()</div><div class="ttdef"><b>Definition</b> <a href="CliffordOptimisation_8cpp_source.html#l00516">CliffordOptimisation.cpp:516</a></div></div>
 <div class="ttc" id="anamespacetket_html"><div class="ttname"><a href="namespacetket.html">tket</a></div><div class="ttdoc">Defines tket::DeviceCharacterisation, used in NoiseAwarePlacement and in commute_SQ_gates_through_SWA...</div><div class="ttdef"><b>Definition</b> <a href="Path_8cpp_source.html#l00022">Path.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

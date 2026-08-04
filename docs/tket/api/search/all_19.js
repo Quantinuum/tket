@@ -5,9 +5,9 @@ var searchData=
   ['yx_2',['YX',['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a2a9fe2c5337b6f5d3cea567b75512fa3a923db922542fbe09e7ff87bb31b2f310',1,'tket::Transforms::GreedyPauliSimp']]],
   ['yy_3',['YY',['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a2a9fe2c5337b6f5d3cea567b75512fa3a0867f43e27585e019c13f7f4b7c4ab6b',1,'tket::Transforms::GreedyPauliSimp']]],
   ['yyphase_4',['YYPhase',['../structtket_1_1internal_1_1GateUnitaryMatrixImplementations.html#a32e382db7cecf8f963dc1a21fdfe9ff2',1,'tket::internal::GateUnitaryMatrixImplementations::YYPhase()'],['../structtket_1_1GateUnitaryMatrixImplementations.html#a32e382db7cecf8f963dc1a21fdfe9ff2',1,'tket::GateUnitaryMatrixImplementations::YYPhase()'],['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a6d5eeefd873119001f3a4289b5985230',1,'tket::YYPhase']]],
-  ['yyphase_5fusing_5faams_5',['YYPhase_using_AAMS',['../namespacetket_1_1CircPool.html#a2e5321f6f6683fdbafc84d2ad23484e4',1,'tket::CircPool']]],
-  ['yyphase_5fusing_5fcx_6',['YYPhase_using_CX',['../namespacetket_1_1CircPool.html#a040809b482bb637f19191e6624862d69',1,'tket::CircPool']]],
-  ['yyphase_5fusing_5ftk2_7',['YYPhase_using_TK2',['../namespacetket_1_1CircPool.html#a36f01c92350b6d4bb633df6476181dc0',1,'tket::CircPool']]],
-  ['yyphase_5fusing_5fzzphase_8',['YYPhase_using_ZZPhase',['../namespacetket_1_1CircPool.html#a3e1e8d1db5fd5dfde3a5ae89fdcc548d',1,'tket::CircPool']]],
-  ['yz_9',['YZ',['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a2a9fe2c5337b6f5d3cea567b75512fa3affa4ba973372c3650fd0881abeca6512',1,'tket::Transforms::GreedyPauliSimp::YZ'],['../namespacetket_1_1zx.html#ab1dacff6605c3bc8caa5f7fa6e3f5646affa4ba973372c3650fd0881abeca6512',1,'tket::zx::YZ']]]
+  ['yyphase_5fusing_5faams_5',['YYPhase_using_AAMS',['../namespacetket_1_1CircPool.html#aa0d0efb18b076cd27253dda37258327c',1,'tket::CircPool']]],
+  ['yyphase_5fusing_5fcx_6',['YYPhase_using_CX',['../namespacetket_1_1CircPool.html#aff2600f73f87e45c861959d674b1331e',1,'tket::CircPool']]],
+  ['yyphase_5fusing_5ftk2_7',['YYPhase_using_TK2',['../namespacetket_1_1CircPool.html#ad69a784050e2d8cd0e4b28db935254c2',1,'tket::CircPool']]],
+  ['yyphase_5fusing_5fzzphase_8',['YYPhase_using_ZZPhase',['../namespacetket_1_1CircPool.html#a02eb92f7760805ffbfc1f53386eba013',1,'tket::CircPool']]],
+  ['yz_9',['YZ',['../namespacetket_1_1Transforms_1_1GreedyPauliSimp.html#a2a9fe2c5337b6f5d3cea567b75512fa3affa4ba973372c3650fd0881abeca6512',1,'tket::Transforms::GreedyPauliSimp']]]
 ];

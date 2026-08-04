@@ -15,11 +15,12 @@ var searchData=
   ['colours_12',['colours',['../structtket_1_1graphs_1_1GraphColouringResult.html#aec1c8fd8b14e627cb1474652adac3a47',1,'tket::graphs::GraphColouringResult']]],
   ['commands_13',['commands',['../structtket_1_1MultiplexedU2Commands.html#a94eb9518d02e28756576f8d2e9e6104b',1,'tket::MultiplexedU2Commands']]],
   ['commute_5ftype_5fvec_5f_14',['commute_type_vec_',['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ACPairNode.html#a039dc97772cf852a200f01493a4a4321',1,'tket::Transforms::GreedyPauliSimp::ACPairNode']]],
-  ['coms_5f_15',['coms_',['../classtket_1_1Cycle.html#a6c4867154b0e0e218dd29807bb4ae229',1,'tket::Cycle']]],
-  ['cond_5fbits_5f_16',['cond_bits_',['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ConditionalBlock.html#a9d93ced252f9c950b46b75b95dfde4dc',1,'tket::Transforms::GreedyPauliSimp::ConditionalBlock']]],
-  ['cond_5fvalue_5f_17',['cond_value_',['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ConditionalBlock.html#ae9d1cd2f6edbab88fabb826d29238d8a',1,'tket::Transforms::GreedyPauliSimp::ConditionalBlock']]],
-  ['current_5ftrees_18',['current_trees',['../classtket_1_1aas_1_1SteinerForest.html#ab16720899373b35a7e4086079106dc15',1,'tket::aas::SteinerForest']]],
-  ['cut_5f_19',['cut_',['../classtket_1_1SliceIterator.html#a008edfbb7146649abef499faf871c975',1,'tket::SliceIterator']]],
-  ['cx_5ffidelity_20',['CX_fidelity',['../structtket_1_1Transforms_1_1TwoQbFidelities.html#aefe694c7c3cef8cbd4f3f8fa45faf0bf',1,'tket::Transforms::TwoQbFidelities']]],
-  ['cycle_5ftypes_5f_21',['cycle_types_',['../classtket_1_1FrameRandomisation.html#ab7a97cd2f330ed1ce7f869177900b8ae',1,'tket::FrameRandomisation']]]
+  ['compositegatedef_15',['CompositeGateDef',['../namespacetket.html#a2829a3d68e2ba76617623635879434d3',1,'tket']]],
+  ['coms_5f_16',['coms_',['../classtket_1_1Cycle.html#a6c4867154b0e0e218dd29807bb4ae229',1,'tket::Cycle']]],
+  ['cond_5fbits_5f_17',['cond_bits_',['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ConditionalBlock.html#a9d93ced252f9c950b46b75b95dfde4dc',1,'tket::Transforms::GreedyPauliSimp::ConditionalBlock']]],
+  ['cond_5fvalue_5f_18',['cond_value_',['../classtket_1_1Transforms_1_1GreedyPauliSimp_1_1ConditionalBlock.html#ae9d1cd2f6edbab88fabb826d29238d8a',1,'tket::Transforms::GreedyPauliSimp::ConditionalBlock']]],
+  ['current_5ftrees_19',['current_trees',['../classtket_1_1aas_1_1SteinerForest.html#ab16720899373b35a7e4086079106dc15',1,'tket::aas::SteinerForest']]],
+  ['cut_5f_20',['cut_',['../classtket_1_1SliceIterator.html#a008edfbb7146649abef499faf871c975',1,'tket::SliceIterator']]],
+  ['cx_5ffidelity_21',['CX_fidelity',['../structtket_1_1Transforms_1_1TwoQbFidelities.html#aefe694c7c3cef8cbd4f3f8fa45faf0bf',1,'tket::Transforms::TwoQbFidelities']]],
+  ['cycle_5ftypes_5f_22',['cycle_types_',['../classtket_1_1FrameRandomisation.html#ab7a97cd2f330ed1ce7f869177900b8ae',1,'tket::FrameRandomisation']]]
 ];

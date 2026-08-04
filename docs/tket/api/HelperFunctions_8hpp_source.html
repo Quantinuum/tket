@@ -100,69 +100,72 @@ $(function() {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket.html">tket</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;tket_export.h&quot;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">   25</a></span><span class="keyword">typedef</span> std::vector&lt;std::deque&lt;bool&gt;&gt; <a class="code hl_typedef" href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">GrayCode</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><a class="code hl_typedef" href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">GrayCode</a> <a class="code hl_function" href="namespacetket.html#aaf5bed29c38ac3decc55325da71ec018">gen_graycode</a>(<span class="keywordtype">unsigned</span> n);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacetket.html#a5ef2d4e5c20758b53e2c4d7ef7a1c091">   37</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetket.html#a5ef2d4e5c20758b53e2c4d7ef7a1c091">check_iterators_equality</a>(<span class="keyword">const</span> T&amp; first, <span class="keyword">const</span> T&amp; second) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">auto</span> it1 = first.begin();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">auto</span> f_end = first.end();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">auto</span> it2 = second.begin();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">auto</span> s_end = second.end();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">for</span> (; it1 != f_end; ++it1) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (it2 == s_end || !(*it1 == *it2)) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    ++it2;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// check there were the same number of elements</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">return</span> (it2 == s_end);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetket.html">tket</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">   27</a></span><span class="keyword">typedef</span> std::vector&lt;std::deque&lt;bool&gt;&gt; <a class="code hl_typedef" href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">GrayCode</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_typedef" href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">GrayCode</a> <a class="code hl_function" href="namespacetket.html#aaf5bed29c38ac3decc55325da71ec018">gen_graycode</a>(<span class="keywordtype">unsigned</span> n);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacetket.html#a5ef2d4e5c20758b53e2c4d7ef7a1c091">   39</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetket.html#a5ef2d4e5c20758b53e2c4d7ef7a1c091">check_iterators_equality</a>(<span class="keyword">const</span> T&amp; first, <span class="keyword">const</span> T&amp; second) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">auto</span> it1 = first.begin();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">auto</span> f_end = first.end();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">auto</span> it2 = second.begin();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">auto</span> s_end = second.end();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">for</span> (; it1 != f_end; ++it1) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (it2 == s_end || !(*it1 == *it2)) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    ++it2;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// check there were the same number of elements</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">return</span> (it2 == s_end);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * Convert a map-like object (e.g. &lt;bimap&gt;.right/&lt;bimap&gt;.left) to std::map</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> * This is particularly useful for bimaps. Converting a bimap to a map is</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> * slightly annoying, see</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"> * https://stackoverflow.com/questions/20667187/convert-boostbimap-to-stdmap</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MapT&gt;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">static</span> std::map&lt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    std::remove_const_t&lt;typename MapT::key_type&gt;,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::remove_const_t&lt;typename MapT::mapped_type&gt;&gt;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>bimap_to_map(MapT&amp; bm) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">using </span>retT = std::map&lt;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      std::remove_const_t&lt;typename MapT::key_type&gt;,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      std::remove_const_t&lt;typename MapT::mapped_type&gt;&gt;;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">using </span>funcT = std::function&lt;<span class="keyword">typename</span> retT::value_type(</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keyword">const</span> <span class="keyword">typename</span> MapT::value_type&amp;)&gt;;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  funcT trans = [](<span class="keyword">const</span> <span class="keyword">typename</span> MapT::value_type&amp; val) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> std::make_pair(val.first, val.second);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  };</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">auto</span> it = bm | boost::adaptors::transformed(trans);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">return</span> retT(it.begin(), it.end());</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>uint64_t <a class="code hl_function" href="namespacetket.html#a9f3b65f02545b866e63e409e06932c53">reverse_bits</a>(uint64_t v, <span class="keywordtype">unsigned</span> w);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>std::vector&lt;bool&gt; <a class="code hl_function" href="namespacetket.html#a691fbce176a39f6a1d9f749ca483951e">dec_to_bin</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> dec, <span class="keywordtype">unsigned</span> width);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="namespacetket.html#a7ac1b11dd9f44f9046eadc92c6a96920">bin_to_dec</a>(<span class="keyword">const</span> std::vector&lt;bool&gt;&amp; bin);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}  <span class="comment">// namespace tket</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> * Convert a map-like object (e.g. &lt;bimap&gt;.right/&lt;bimap&gt;.left) to std::map</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"> * This is particularly useful for bimaps. Converting a bimap to a map is</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"> * slightly annoying, see</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"> * https://stackoverflow.com/questions/20667187/convert-boostbimap-to-stdmap</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MapT&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">static</span> std::map&lt;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::remove_const_t&lt;typename MapT::key_type&gt;,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::remove_const_t&lt;typename MapT::mapped_type&gt;&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>bimap_to_map(MapT&amp; bm) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">using </span>retT = std::map&lt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      std::remove_const_t&lt;typename MapT::key_type&gt;,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      std::remove_const_t&lt;typename MapT::mapped_type&gt;&gt;;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">using </span>funcT = std::function&lt;<span class="keyword">typename</span> retT::value_type(</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keyword">const</span> <span class="keyword">typename</span> MapT::value_type&amp;)&gt;;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  funcT trans = [](<span class="keyword">const</span> <span class="keyword">typename</span> MapT::value_type&amp; val) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> std::make_pair(val.first, val.second);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">auto</span> it = bm | boost::adaptors::transformed(trans);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordflow">return</span> retT(it.begin(), it.end());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>uint64_t <a class="code hl_function" href="namespacetket.html#a9f3b65f02545b866e63e409e06932c53">reverse_bits</a>(uint64_t v, <span class="keywordtype">unsigned</span> w);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>TKET_EXPORT std::vector&lt;bool&gt; <a class="code hl_function" href="namespacetket.html#ac765d36344eeb07aafcda25b9f15a7dd">dec_to_bin</a>(</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> dec, <span class="keywordtype">unsigned</span> width);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>TKET_EXPORT <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="namespacetket.html#aff9390fa60b2cf6e7975aaf032765d5c">bin_to_dec</a>(<span class="keyword">const</span> std::vector&lt;bool&gt;&amp; bin);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}  <span class="comment">// namespace tket</span></div>
 <div class="ttc" id="anamespacetket_html"><div class="ttname"><a href="namespacetket.html">tket</a></div><div class="ttdoc">Defines tket::DeviceCharacterisation, used in NoiseAwarePlacement and in commute_SQ_gates_through_SWA...</div><div class="ttdef"><b>Definition</b> <a href="Path_8cpp_source.html#l00022">Path.cpp:22</a></div></div>
-<div class="ttc" id="anamespacetket_html_a5ab9799f95de83b6e55f91ffd1d82087"><div class="ttname"><a href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">tket::GrayCode</a></div><div class="ttdeci">std::vector&lt; std::deque&lt; bool &gt; &gt; GrayCode</div><div class="ttdef"><b>Definition</b> <a href="#l00025">HelperFunctions.hpp:25</a></div></div>
-<div class="ttc" id="anamespacetket_html_a5ef2d4e5c20758b53e2c4d7ef7a1c091"><div class="ttname"><a href="namespacetket.html#a5ef2d4e5c20758b53e2c4d7ef7a1c091">tket::check_iterators_equality</a></div><div class="ttdeci">bool check_iterators_equality(const T &amp;first, const T &amp;second)</div><div class="ttdoc">Check equality of each element of first and second when first and second can provide begin,...</div><div class="ttdef"><b>Definition</b> <a href="#l00037">HelperFunctions.hpp:37</a></div></div>
-<div class="ttc" id="anamespacetket_html_a691fbce176a39f6a1d9f749ca483951e"><div class="ttname"><a href="namespacetket.html#a691fbce176a39f6a1d9f749ca483951e">tket::dec_to_bin</a></div><div class="ttdeci">std::vector&lt; bool &gt; dec_to_bin(unsigned long long dec, unsigned width)</div><div class="ttdoc">convert an unsigned to its binary representation big-endian</div><div class="ttdef"><b>Definition</b> <a href="HelperFunctions_8cpp_source.html#l00049">HelperFunctions.cpp:49</a></div></div>
-<div class="ttc" id="anamespacetket_html_a7ac1b11dd9f44f9046eadc92c6a96920"><div class="ttname"><a href="namespacetket.html#a7ac1b11dd9f44f9046eadc92c6a96920">tket::bin_to_dec</a></div><div class="ttdeci">unsigned long long bin_to_dec(const std::vector&lt; bool &gt; &amp;bin)</div><div class="ttdoc">convert an bit vector to its decimal representation big-endian</div><div class="ttdef"><b>Definition</b> <a href="HelperFunctions_8cpp_source.html#l00059">HelperFunctions.cpp:59</a></div></div>
+<div class="ttc" id="anamespacetket_html_a5ab9799f95de83b6e55f91ffd1d82087"><div class="ttname"><a href="namespacetket.html#a5ab9799f95de83b6e55f91ffd1d82087">tket::GrayCode</a></div><div class="ttdeci">std::vector&lt; std::deque&lt; bool &gt; &gt; GrayCode</div><div class="ttdef"><b>Definition</b> <a href="#l00027">HelperFunctions.hpp:27</a></div></div>
+<div class="ttc" id="anamespacetket_html_a5ef2d4e5c20758b53e2c4d7ef7a1c091"><div class="ttname"><a href="namespacetket.html#a5ef2d4e5c20758b53e2c4d7ef7a1c091">tket::check_iterators_equality</a></div><div class="ttdeci">bool check_iterators_equality(const T &amp;first, const T &amp;second)</div><div class="ttdoc">Check equality of each element of first and second when first and second can provide begin,...</div><div class="ttdef"><b>Definition</b> <a href="#l00039">HelperFunctions.hpp:39</a></div></div>
 <div class="ttc" id="anamespacetket_html_a9f3b65f02545b866e63e409e06932c53"><div class="ttname"><a href="namespacetket.html#a9f3b65f02545b866e63e409e06932c53">tket::reverse_bits</a></div><div class="ttdeci">uint64_t reverse_bits(uint64_t v, unsigned w)</div><div class="ttdoc">Reverse bits 0,1,...,w-1 of the number v, assuming v &lt; 2^w and w &lt;= 64.</div><div class="ttdef"><b>Definition</b> <a href="HelperFunctions_8cpp_source.html#l00040">HelperFunctions.cpp:40</a></div></div>
 <div class="ttc" id="anamespacetket_html_aaf5bed29c38ac3decc55325da71ec018"><div class="ttname"><a href="namespacetket.html#aaf5bed29c38ac3decc55325da71ec018">tket::gen_graycode</a></div><div class="ttdeci">GrayCode gen_graycode(unsigned m_controls)</div><div class="ttdoc">Construct a GrayCode over n bits.</div><div class="ttdef"><b>Definition</b> <a href="HelperFunctions_8cpp_source.html#l00021">HelperFunctions.cpp:21</a></div></div>
+<div class="ttc" id="anamespacetket_html_ac765d36344eeb07aafcda25b9f15a7dd"><div class="ttname"><a href="namespacetket.html#ac765d36344eeb07aafcda25b9f15a7dd">tket::dec_to_bin</a></div><div class="ttdeci">std::vector&lt; bool &gt; dec_to_bin(unsigned long long dec, unsigned width)</div><div class="ttdoc">convert an unsigned to its binary representation big-endian</div><div class="ttdef"><b>Definition</b> <a href="HelperFunctions_8cpp_source.html#l00049">HelperFunctions.cpp:49</a></div></div>
+<div class="ttc" id="anamespacetket_html_aff9390fa60b2cf6e7975aaf032765d5c"><div class="ttname"><a href="namespacetket.html#aff9390fa60b2cf6e7975aaf032765d5c">tket::bin_to_dec</a></div><div class="ttdeci">unsigned long long bin_to_dec(const std::vector&lt; bool &gt; &amp;bin)</div><div class="ttdoc">convert an bit vector to its decimal representation big-endian</div><div class="ttdef"><b>Definition</b> <a href="HelperFunctions_8cpp_source.html#l00059">HelperFunctions.cpp:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

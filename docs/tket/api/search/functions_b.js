@@ -1,9 +1,9 @@
 var searchData=
 [
   ['label_5fframes_0',['label_frames',['../classtket_1_1FrameRandomisation.html#a927d26943175b8b261a1c96160c7af31',1,'tket::FrameRandomisation']]],
-  ['ladder_5fdown_1',['ladder_down',['../namespacetket_1_1CircPool.html#aff71159982634517feca42329a2b3eeb',1,'tket::CircPool']]],
-  ['ladder_5fdown_5f2_2',['ladder_down_2',['../namespacetket_1_1CircPool.html#ab7c657fe9b04058ad1f85190b0dde4a7',1,'tket::CircPool']]],
-  ['ladder_5fup_3',['ladder_up',['../namespacetket_1_1CircPool.html#ad5072cb91fb0cd4ae19525ecd3306b30',1,'tket::CircPool']]],
+  ['ladder_5fdown_1',['ladder_down',['../namespacetket_1_1CircPool.html#aea2482d1cd9fe65ad39108c51a0e609c',1,'tket::CircPool']]],
+  ['ladder_5fdown_5f2_2',['ladder_down_2',['../namespacetket_1_1CircPool.html#ac2f9f52b0a631f896d58b4dad6e7d220',1,'tket::CircPool']]],
+  ['ladder_5fup_3',['ladder_up',['../namespacetket_1_1CircPool.html#a052b2fd3ef11bd524558e115731572ad',1,'tket::CircPool']]],
   ['largecliquesresult_4',['LargeCliquesResult',['../structtket_1_1graphs_1_1LargeCliquesResult.html#a748a6cc7e0ca62dbeac85ce154c2f153',1,'tket::graphs::LargeCliquesResult']]],
   ['latex_5',['latex',['../classtket_1_1OpDesc.html#af6a37decd3f8b5fffc41a95f7a3f91be',1,'tket::OpDesc']]],
   ['lexicographicalcomparison_6',['LexicographicalComparison',['../classtket_1_1LexicographicalComparison.html#ad0618e4563156ce13cea3fa2a7a2c9b5',1,'tket::LexicographicalComparison']]],

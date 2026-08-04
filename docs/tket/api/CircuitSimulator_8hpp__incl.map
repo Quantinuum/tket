@@ -1,9 +1,11 @@
 <map id="include/tket/Circuit/Simulation/CircuitSimulator.hpp" name="include/tket/Circuit/Simulation/CircuitSimulator.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="142,5,373,50"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="283,5,514,50"/>
 <area shape="rect" id="Node000002" href="$Constants_8hpp.html" title="Generally useful typedefs and constants." alt="" coords="65,98,242,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,49,183,90,180,86,228,52"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,52,208,95,206,90,336,49"/>
 <area shape="rect" id="Node000004" href="$EigenConfig_8hpp.html" title="Include this file rather than including the Eigen headers directly." alt="" coords="304,98,493,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,48,366,90,361,90,294,53"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="400,48,401,84,396,81,397,53"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="517,98,624,126"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="445,48,532,91,527,91,444,53"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,182,83,210"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="138,126,75,175,72,170,133,127"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="107,182,253,210"/>

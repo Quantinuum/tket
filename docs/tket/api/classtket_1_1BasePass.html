@@ -132,7 +132,7 @@ Collaboration diagram for tket::BasePass:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c773ebecf6c8dc3c0019d18c09be146" id="r_a0c773ebecf6c8dc3c0019d18c09be146"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c773ebecf6c8dc3c0019d18c09be146">BasePass</a> ()</td></tr>
-<tr class="memitem:a30732de4bde5e9c8452ee30e06cb987a" id="r_a30732de4bde5e9c8452ee30e06cb987a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30732de4bde5e9c8452ee30e06cb987a">apply</a> (<a class="el" href="classtket_1_1CompilationUnit.html">CompilationUnit</a> &amp;c_unit, <a class="el" href="namespacetket.html#ab65820ebbcb1ceb848e855a832420396">SafetyMode</a> safe_mode=<a class="el" href="namespacetket.html#ab65820ebbcb1ceb848e855a832420396a7a1920d61156abc05a60135aefe8bc67">SafetyMode::Default</a>, const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;before_apply=<a class="el" href="namespacetket.html#a68d138f32c4a158dc28a3f04bb390eed">trivial_callback</a>, const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;after_apply=<a class="el" href="namespacetket.html#a68d138f32c4a158dc28a3f04bb390eed">trivial_callback</a>) const =0</td></tr>
+<tr class="memitem:a30732de4bde5e9c8452ee30e06cb987a" id="r_a30732de4bde5e9c8452ee30e06cb987a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30732de4bde5e9c8452ee30e06cb987a">apply</a> (<a class="el" href="classtket_1_1CompilationUnit.html">CompilationUnit</a> &amp;c_unit, <a class="el" href="namespacetket.html#ab65820ebbcb1ceb848e855a832420396">SafetyMode</a> safe_mode=<a class="el" href="namespacetket.html#ab65820ebbcb1ceb848e855a832420396a7a1920d61156abc05a60135aefe8bc67">SafetyMode::Default</a>, const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;before_apply=<a class="el" href="namespacetket.html#a89135b9f734e7b346ca2f40176434af3">trivial_callback</a>, const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;after_apply=<a class="el" href="namespacetket.html#a89135b9f734e7b346ca2f40176434af3">trivial_callback</a>) const =0</td></tr>
 <tr class="memdesc:a30732de4bde5e9c8452ee30e06cb987a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the pass and invoke callbacks.  <br /></td></tr>
 <tr class="memitem:ac41c6c869d96e49a3994c113ea97c71f" id="r_ac41c6c869d96e49a3994c113ea97c71f"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac41c6c869d96e49a3994c113ea97c71f">to_string</a> () const =0</td></tr>
 <tr class="memitem:afd0e55d007d2cd2635c634519b457ad9" id="r_afd0e55d007d2cd2635c634519b457ad9"><td class="memItemLeft" align="right" valign="top">virtual nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd0e55d007d2cd2635c634519b457ad9">get_config</a> () const =0</td></tr>
@@ -164,11 +164,11 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:abeea2e483af8ac732f403f0512e68a0b" id="r_abeea2e483af8ac732f403f0512e68a0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeea2e483af8ac732f403f0512e68a0b">operator&gt;&gt;</a> (const <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> &amp;lhs, const <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> &amp;rhs)</td></tr>
+<tr class="memitem:a9d37c9034f338931d7c603042b28e960" id="r_a9d37c9034f338931d7c603042b28e960"><td class="memItemLeft" align="right" valign="top">TKET_EXPORT <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d37c9034f338931d7c603042b28e960">operator&gt;&gt;</a> (const <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> &amp;lhs, const <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> &amp;rhs)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00098">98</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00100">100</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0c773ebecf6c8dc3c0019d18c09be146" name="a0c773ebecf6c8dc3c0019d18c09be146"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c773ebecf6c8dc3c0019d18c09be146">&#9670;&#160;</a></span>BasePass() <span class="overload">[1/2]</span></h2>
@@ -193,7 +193,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00100">100</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00102">102</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00134">134</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00136">136</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00137">137</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00139">139</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
 
 </div>
 </div>
@@ -278,12 +278,12 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>before_apply</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacetket.html#a68d138f32c4a158dc28a3f04bb390eed">trivial_callback</a></span>, </td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>before_apply</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacetket.html#a89135b9f734e7b346ca2f40176434af3">trivial_callback</a></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>after_apply</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacetket.html#a68d138f32c4a158dc28a3f04bb390eed">trivial_callback</a></span>&#160;) const</td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#ace4fdcd924ef34679db1575bb902d6bd">PassCallback</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>after_apply</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacetket.html#a89135b9f734e7b346ca2f40176434af3">trivial_callback</a></span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -578,8 +578,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="abeea2e483af8ac732f403f0512e68a0b" name="abeea2e483af8ac732f403f0512e68a0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abeea2e483af8ac732f403f0512e68a0b">&#9670;&#160;</a></span>operator&gt;&gt;</h2>
+<a id="a9d37c9034f338931d7c603042b28e960" name="a9d37c9034f338931d7c603042b28e960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d37c9034f338931d7c603042b28e960">&#9670;&#160;</a></span>operator&gt;&gt;</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -588,7 +588,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> operator&gt;&gt; </td>
+          <td class="memname">TKET_EXPORT <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> operator&gt;&gt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
         </tr>
@@ -630,7 +630,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00140">140</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00142">142</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
 
 </div>
 </div>
@@ -654,7 +654,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00139">139</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CompilerPass_8hpp_source.html#l00141">141</a> of file <a class="el" href="CompilerPass_8hpp_source.html">CompilerPass.hpp</a>.</p>
 
 </div>
 </div>

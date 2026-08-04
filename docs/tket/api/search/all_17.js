@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_5fdefault_5freg_0',['w_default_reg',['../namespacetket.html#a7ea5fd5fa5527d487e1704565ba7fcdf',1,'tket']]],
+  ['w_5fdefault_5freg_0',['w_default_reg',['../namespacetket.html#a0100e55e3528631305a0d6731a050893',1,'tket']]],
   ['w_5finputs_1',['w_inputs',['../classtket_1_1Circuit.html#a5b3ed8a0cfdc07099ab3123207e340ac',1,'tket::Circuit']]],
   ['w_5foutputs_2',['w_outputs',['../classtket_1_1Circuit.html#ac9fbf8c844cdda1d6edc2041fca608ec',1,'tket::Circuit']]],
   ['wasm_3',['WASM',['../namespacetket.html#a4c73a949b027dea7f23b1d5a1bdd526eac7dbeb10b3299406a04231654cf6defd',1,'tket::WASM'],['../namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3ac7dbeb10b3299406a04231654cf6defd',1,'tket::WASM']]],

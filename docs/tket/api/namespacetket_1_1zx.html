@@ -133,7 +133,7 @@ Typedefs</h2></td></tr>
 <tr class="memitem:aea9ea33a5d93df5d45b51fa1ccd9d515" id="r_aea9ea33a5d93df5d45b51fa1ccd9d515"><td class="memItemLeft" align="right" valign="top">typedef boost::graph_traits&lt; <a class="el" href="#a9f6e55a9bc3137cdeec27ddd4076e589">ZXGraph</a> &gt;::edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea9ea33a5d93df5d45b51fa1ccd9d515">WireIterator</a></td></tr>
 <tr class="memitem:af1a5af8912bdb344127a0a52280659d0" id="r_af1a5af8912bdb344127a0a52280659d0"><td class="memItemLeft" align="right" valign="top">typedef boost::graph_traits&lt; <a class="el" href="#a9f6e55a9bc3137cdeec27ddd4076e589">ZXGraph</a> &gt;::out_edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a5af8912bdb344127a0a52280659d0">OutWireIterator</a></td></tr>
 <tr class="memitem:a3cb14b20b9445b9a744305b967e9b314" id="r_a3cb14b20b9445b9a744305b967e9b314"><td class="memItemLeft" align="right" valign="top">typedef boost::graph_traits&lt; <a class="el" href="#a9f6e55a9bc3137cdeec27ddd4076e589">ZXGraph</a> &gt;::in_edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cb14b20b9445b9a744305b967e9b314">InWireIterator</a></td></tr>
-<tr class="memitem:aba5a90ec4f9cebab727d43b40b655a9f" id="r_aba5a90ec4f9cebab727d43b40b655a9f"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_set&lt; <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba5a90ec4f9cebab727d43b40b655a9f">ZXTypeSet</a></td></tr>
+<tr class="memitem:aba5a90ec4f9cebab727d43b40b655a9f" id="r_aba5a90ec4f9cebab727d43b40b655a9f"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_set&lt; ZXType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba5a90ec4f9cebab727d43b40b655a9f">ZXTypeSet</a></td></tr>
 <tr class="memitem:ab13a9f53f1ae216aea6bbc948b9b03a1" id="r_ab13a9f53f1ae216aea6bbc948b9b03a1"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; const <a class="el" href="classtket_1_1zx_1_1ZXGen.html">ZXGen</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab13a9f53f1ae216aea6bbc948b9b03a1">ZXGen_ptr</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -153,39 +153,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#a4a9af3f5180d9fb71107b0e917d71a4dac41a31890959544c6523af684561abe5">Target</a>
  }</td></tr>
 <tr class="memdesc:a4a9af3f5180d9fb71107b0e917d71a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ports are used for non-commutative generators, such as directed generators, to distinguish the incident wires.  <a href="#a4a9af3f5180d9fb71107b0e917d71a4d">More...</a><br /></td></tr>
-<tr class="memitem:ab1dacff6605c3bc8caa5f7fa6e3f5646" id="r_ab1dacff6605c3bc8caa5f7fa6e3f5646"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> { <br />
-&#160;&#160;<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a324118a6721dd6b8a9b9f4e327df2bf5">Input</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a29c2c02a361c9d7028472e5d92cd4a54">Output</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646ac3bf447eabe632720a3aa1a7ce401274">Open</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646af91c1012cc32302ba7900a3c72c0ad77">ZSpider</a>
-, <br />
-&#160;&#160;<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a387f9969109b5a46dd09b441638d66ea">XSpider</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a2489d00ce364c16072a0aef3dde2de5e">Hbox</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a74c53bcd3dcb2bb79993b2fec37d362a">XY</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a27db3b98d01e664c17a6620b222c6469">XZ</a>
-, <br />
-&#160;&#160;<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646affa4ba973372c3650fd0881abeca6512">YZ</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a87e6c078833a3c35b65067a50c936b37">PX</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a0c145a13e49b47abccd510e5c899d80c">PY</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a159fe58f8d47011813fb25bd91b46673">PZ</a>
-, <br />
-&#160;&#160;<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646a5e5500cb2b82eb72d550de644bd1b64b">Triangle</a>
-, <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646ab02334dc49c91713dd37a8dab1795037">ZXBox</a>
-<br />
- }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9a547ddff2c5dd69b22d72e899f96653" id="r_a9a547ddff2c5dd69b22d72e899f96653"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a547ddff2c5dd69b22d72e899f96653">find_in_set</a> (const <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> &amp;val, const <a class="el" href="#aba5a90ec4f9cebab727d43b40b655a9f">ZXTypeSet</a> &amp;<a class="el" href="classset.html">set</a>)</td></tr>
-<tr class="memdesc:a9a547ddff2c5dd69b22d72e899f96653"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> CLASS SETS.  <br /></td></tr>
-<tr class="memitem:ab82aa2ff06a696ddcf79a5c2074497a7" id="r_ab82aa2ff06a696ddcf79a5c2074497a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab82aa2ff06a696ddcf79a5c2074497a7">is_boundary_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
+<tr class="memitem:a9a547ddff2c5dd69b22d72e899f96653" id="r_a9a547ddff2c5dd69b22d72e899f96653"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a547ddff2c5dd69b22d72e899f96653">find_in_set</a> (const ZXType &amp;val, const <a class="el" href="#aba5a90ec4f9cebab727d43b40b655a9f">ZXTypeSet</a> &amp;<a class="el" href="classset.html">set</a>)</td></tr>
+<tr class="memdesc:a9a547ddff2c5dd69b22d72e899f96653"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZXType CLASS SETS.  <br /></td></tr>
+<tr class="memitem:ab82aa2ff06a696ddcf79a5c2074497a7" id="r_ab82aa2ff06a696ddcf79a5c2074497a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab82aa2ff06a696ddcf79a5c2074497a7">is_boundary_type</a> (ZXType type)</td></tr>
 <tr class="memdesc:ab82aa2ff06a696ddcf79a5c2074497a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper functions to identify various groups of ZXTypes.  <br /></td></tr>
-<tr class="memitem:a83df4693a006a3cdf9549cca3892884a" id="r_a83df4693a006a3cdf9549cca3892884a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83df4693a006a3cdf9549cca3892884a">is_basic_gen_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a84a12db5d6af9525a0dc7dce483206ca" id="r_a84a12db5d6af9525a0dc7dce483206ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a12db5d6af9525a0dc7dce483206ca">is_spider_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a758e757f35e3f2b820ce9530506190a1" id="r_a758e757f35e3f2b820ce9530506190a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a758e757f35e3f2b820ce9530506190a1">is_directed_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a80f883429bc7127ef2781eed7a2f4858" id="r_a80f883429bc7127ef2781eed7a2f4858"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80f883429bc7127ef2781eed7a2f4858">is_MBQC_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:ae3c250d04c08e99514bde7d9aa5054d0" id="r_ae3c250d04c08e99514bde7d9aa5054d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c250d04c08e99514bde7d9aa5054d0">is_phase_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
-<tr class="memitem:a6da6bec076b120e9da31bcd21423aec2" id="r_a6da6bec076b120e9da31bcd21423aec2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da6bec076b120e9da31bcd21423aec2">is_Clifford_gen_type</a> (<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> type)</td></tr>
+<tr class="memitem:a83df4693a006a3cdf9549cca3892884a" id="r_a83df4693a006a3cdf9549cca3892884a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83df4693a006a3cdf9549cca3892884a">is_basic_gen_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a84a12db5d6af9525a0dc7dce483206ca" id="r_a84a12db5d6af9525a0dc7dce483206ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a12db5d6af9525a0dc7dce483206ca">is_spider_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a758e757f35e3f2b820ce9530506190a1" id="r_a758e757f35e3f2b820ce9530506190a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a758e757f35e3f2b820ce9530506190a1">is_directed_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a80f883429bc7127ef2781eed7a2f4858" id="r_a80f883429bc7127ef2781eed7a2f4858"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80f883429bc7127ef2781eed7a2f4858">is_MBQC_type</a> (ZXType type)</td></tr>
+<tr class="memitem:ae3c250d04c08e99514bde7d9aa5054d0" id="r_ae3c250d04c08e99514bde7d9aa5054d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c250d04c08e99514bde7d9aa5054d0">is_phase_type</a> (ZXType type)</td></tr>
+<tr class="memitem:a6da6bec076b120e9da31bcd21423aec2" id="r_a6da6bec076b120e9da31bcd21423aec2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da6bec076b120e9da31bcd21423aec2">is_Clifford_gen_type</a> (ZXType type)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a3cb14b20b9445b9a744305b967e9b314" name="a3cb14b20b9445b9a744305b967e9b314"></a>
@@ -296,7 +276,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZXGenerator_8hpp_source.html#l00114">114</a> of file <a class="el" href="ZXGenerator_8hpp_source.html">ZXGenerator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZXGenerator_8hpp_source.html#l00125">125</a> of file <a class="el" href="ZXGenerator_8hpp_source.html">ZXGenerator.hpp</a>.</p>
 
 </div>
 </div>
@@ -327,12 +307,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::unordered_set&lt;<a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a>&gt; <a class="el" href="#aba5a90ec4f9cebab727d43b40b655a9f">tket::zx::ZXTypeSet</a></td>
+          <td class="memname">typedef std::unordered_set&lt;ZXType&gt; <a class="el" href="#aba5a90ec4f9cebab727d43b40b655a9f">tket::zx::ZXTypeSet</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ZXGenerator_8hpp_source.html#l00099">99</a> of file <a class="el" href="ZXGenerator_8hpp_source.html">ZXGenerator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ZXGenerator_8hpp_source.html#l00110">110</a> of file <a class="el" href="ZXGenerator_8hpp_source.html">ZXGenerator.hpp</a>.</p>
 
 </div>
 </div>
@@ -490,50 +470,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1dacff6605c3bc8caa5f7fa6e3f5646" name="ab1dacff6605c3bc8caa5f7fa6e3f5646"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">&#9670;&#160;</a></span>ZXType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">tket::zx::ZXType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a324118a6721dd6b8a9b9f4e327df2bf5" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a324118a6721dd6b8a9b9f4e327df2bf5"></a>Input&#160;</td><td class="fielddoc"><p>Boundary vertices. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a29c2c02a361c9d7028472e5d92cd4a54" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a29c2c02a361c9d7028472e5d92cd4a54"></a>Output&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646ac3bf447eabe632720a3aa1a7ce401274" name="ab1dacff6605c3bc8caa5f7fa6e3f5646ac3bf447eabe632720a3aa1a7ce401274"></a>Open&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646af91c1012cc32302ba7900a3c72c0ad77" name="ab1dacff6605c3bc8caa5f7fa6e3f5646af91c1012cc32302ba7900a3c72c0ad77"></a>ZSpider&#160;</td><td class="fielddoc"><p>Symmetric generators. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a387f9969109b5a46dd09b441638d66ea" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a387f9969109b5a46dd09b441638d66ea"></a>XSpider&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a2489d00ce364c16072a0aef3dde2de5e" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a2489d00ce364c16072a0aef3dde2de5e"></a>Hbox&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a74c53bcd3dcb2bb79993b2fec37d362a" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a74c53bcd3dcb2bb79993b2fec37d362a"></a>XY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a27db3b98d01e664c17a6620b222c6469" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a27db3b98d01e664c17a6620b222c6469"></a>XZ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646affa4ba973372c3650fd0881abeca6512" name="ab1dacff6605c3bc8caa5f7fa6e3f5646affa4ba973372c3650fd0881abeca6512"></a>YZ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a87e6c078833a3c35b65067a50c936b37" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a87e6c078833a3c35b65067a50c936b37"></a>PX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a0c145a13e49b47abccd510e5c899d80c" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a0c145a13e49b47abccd510e5c899d80c"></a>PY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a159fe58f8d47011813fb25bd91b46673" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a159fe58f8d47011813fb25bd91b46673"></a>PZ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646a5e5500cb2b82eb72d550de644bd1b64b" name="ab1dacff6605c3bc8caa5f7fa6e3f5646a5e5500cb2b82eb72d550de644bd1b64b"></a>Triangle&#160;</td><td class="fielddoc"><p>Directed (non-commutative) generators. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab1dacff6605c3bc8caa5f7fa6e3f5646ab02334dc49c91713dd37a8dab1795037" name="ab1dacff6605c3bc8caa5f7fa6e3f5646ab02334dc49c91713dd37a8dab1795037"></a>ZXBox&#160;</td><td class="fielddoc"><p>Boxes. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="ZXGenerator_8hpp_source.html#l00027">27</a> of file <a class="el" href="ZXGenerator_8hpp_source.html">ZXGenerator.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a1dfd6ba927de6d65e68751fef88b62e1" name="a1dfd6ba927de6d65e68751fef88b62e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1dfd6ba927de6d65e68751fef88b62e1">&#9670;&#160;</a></span>ZXWireType</h2>
 
@@ -575,7 +511,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::find_in_set </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+          <td class="paramtype">const ZXType &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -585,7 +521,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a> CLASS SETS. </p>
+<p>ZXType CLASS SETS. </p>
 
 <p class="definition">Definition at line <a class="el" href="ZXGenerator_8cpp_source.html#l00030">30</a> of file <a class="el" href="ZXGenerator_8cpp_source.html">ZXGenerator.cpp</a>.</p>
 
@@ -600,7 +536,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_basic_gen_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -619,7 +555,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_boundary_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -640,7 +576,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_Clifford_gen_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -659,7 +595,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_directed_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -678,7 +614,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_MBQC_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -697,7 +633,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_phase_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -716,7 +652,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool tket::zx::is_spider_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab1dacff6605c3bc8caa5f7fa6e3f5646">ZXType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td class="paramtype">ZXType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
