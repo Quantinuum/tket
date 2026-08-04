@@ -1564,8 +1564,10 @@ class _QasmWriter:
             "".join(
                 [
                     f"if({variable}{comparator}{value}) " + f"{dest_bit} = 1;\n",
-                    f"if({variable}{_negate_comparator(comparator)}{value}) "
-                    f"{dest_bit} = 0;\n",
+                    (
+                        f"if({variable}{_negate_comparator(comparator)}{value}) "
+                        f"{dest_bit} = 0;\n"
+                    ),
                 ]
             )
         )

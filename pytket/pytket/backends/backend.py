@@ -531,7 +531,7 @@ class Backend(ABC):
     @overload
     @staticmethod
     def _get_n_shots_as_list(
-        n_shots: None | int | Sequence[int | None],
+        n_shots: int | Sequence[int | None] | None,
         n_circuits: int,
         optional: Literal[False],
     ) -> list[int]: ...
@@ -539,7 +539,7 @@ class Backend(ABC):
     @overload
     @staticmethod
     def _get_n_shots_as_list(
-        n_shots: None | int | Sequence[int | None],
+        n_shots: int | Sequence[int | None] | None,
         n_circuits: int,
         optional: Literal[True],
         set_zero: Literal[True],
@@ -548,7 +548,7 @@ class Backend(ABC):
     @overload
     @staticmethod
     def _get_n_shots_as_list(
-        n_shots: None | int | Sequence[int | None],
+        n_shots: int | Sequence[int | None] | None,
         n_circuits: int,
         optional: bool = True,
         set_zero: bool = False,
@@ -556,7 +556,7 @@ class Backend(ABC):
 
     @staticmethod
     def _get_n_shots_as_list(
-        n_shots: None | int | Sequence[int | None],
+        n_shots: int | Sequence[int | None] | None,
         n_circuits: int,
         optional: bool = True,
         set_zero: bool = False,

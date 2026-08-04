@@ -106,7 +106,7 @@ def get_pauli_expectation_value(
     raise ValueError("Backend does not support counts or shots")
 
 
-def get_operator_expectation_value(  # noqa: PLR0912, PLR0913, PLR0915
+def get_operator_expectation_value(  # noqa: PLR0912 PLR0913 PLR0915 PLR0917
     state_circuit: Circuit,
     operator: QubitPauliOperator,
     backend: "Backend",

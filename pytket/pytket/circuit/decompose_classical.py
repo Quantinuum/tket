@@ -153,7 +153,7 @@ def _get_bit_width(x: int) -> int:
 
 
 class _ClExprDecomposer:
-    def __init__(  # noqa: PLR0913
+    def __init__(  # noqa: PLR0913 PLR0917
         self,
         circ: Circuit,
         bit_posn: dict[int, int],

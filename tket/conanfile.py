@@ -13,11 +13,12 @@
 # limitations under the License.
 
 import os
+from typing import ClassVar
 
 from conan import ConanFile
-from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
-from conan.tools.files import copy, load
 from conan.errors import ConanInvalidConfiguration
+from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
+from conan.tools.files import copy, load
 
 
 class TketConan(ConanFile):
@@ -29,7 +30,7 @@ class TketConan(ConanFile):
     description = "Quantum SDK"
     topics = ("quantum", "computation", "compiler")
     settings = "os", "compiler", "build_type", "arch"
-    options = {
+    options: ClassVar[dict[str, list[bool]]] = {
         "shared": [True, False],
         "fPIC": [True, False],
         "profile_coverage": [True, False],
@@ -37,7 +38,7 @@ class TketConan(ConanFile):
         "with_proptest": [True, False],
         "with_all_tests": [True, False],
     }
-    default_options = {
+    default_options: ClassVar[dict[str, bool]] = {
         "shared": False,
         "fPIC": True,
         "profile_coverage": False,

@@ -12,9 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from typing import ClassVar
+
 from conan import ConanFile
-from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 from conan.errors import ConanInvalidConfiguration
+from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
 
 required_conan_version = ">=2.5"
 
@@ -27,12 +29,16 @@ class TktokenswapConan(ConanFile):
     url = "https://github.com/quantinuum/tket"
     description = "Token swapping algorithms library"
     settings = "os", "compiler", "build_type", "arch"
-    options = {
+    options: ClassVar[dict[str, list[bool]]] = {
         "shared": [True, False],
         "fPIC": [True, False],
         "profile_coverage": [True, False],
     }
-    default_options = {"shared": False, "fPIC": True, "profile_coverage": False}
+    default_options: ClassVar[dict[str, bool]] = {
+        "shared": False,
+        "fPIC": True,
+        "profile_coverage": False,
+    }
     # a hash of the conanfile.py + the files listed here builds the conan revision
     exports_sources = "CMakeLists.txt", "cmake/*", "src/*", "include/*"
 
