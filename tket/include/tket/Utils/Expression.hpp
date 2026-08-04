@@ -32,6 +32,7 @@
 
 #include "Constants.hpp"
 #include "Json.hpp"
+#include "tket_export.h"
 
 /** Helper struct for use with std::visit */
 template <class... Ts>
@@ -104,7 +105,7 @@ SymSet expr_free_symbols(const Expr& e);
 /** Set of all free symbols contained in the expressions in the vector */
 SymSet expr_free_symbols(const std::vector<Expr>& es);
 
-std::optional<double> eval_expr(const Expr& e);
+TKET_EXPORT std::optional<double> eval_expr(const Expr& e);
 
 std::optional<Complex> eval_expr_c(const Expr& e);
 

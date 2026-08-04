@@ -28,6 +28,7 @@
 #include "tket/Ops/OpPtr.hpp"
 #include "tket/Utils/Expression.hpp"
 #include "tket/Utils/UnitID.hpp"
+
 namespace tket {
 
 vertex_map_t Circuit::copy_graph(

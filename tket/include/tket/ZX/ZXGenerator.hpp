@@ -19,12 +19,19 @@
 
 #include "tket/Utils/Expression.hpp"
 #include "tket/ZX/Types.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
 namespace zx {
 
-enum class ZXType {
+/**
+ * \cond
+ *
+ * For some reason, doxygen complains about this.
+ */
+
+enum class TKET_EXPORT ZXType {
   /**
    * Boundary vertices
    */
@@ -96,6 +103,10 @@ enum class ZXType {
   ZXBox
 };
 
+/**
+ * \endcond
+ */
+
 typedef std::unordered_set<ZXType> ZXTypeSet;
 
 /**
@@ -119,7 +130,7 @@ typedef std::shared_ptr<const ZXGen> ZXGen_ptr;
  * to statically cast to a subclass once that is determined. Treatment of ports
  * and QuantumType is handled by each subclass.
  */
-class ZXGen {
+class TKET_EXPORT ZXGen {
  public:
   ZXType get_type() const;
 
@@ -227,7 +238,7 @@ class BoundaryGen : public ZXGen {
  * Implementations include PhasedGen for generators with 1 Expr parameter or
  * CliffordGen for Clifford generators with 1 bool parameter.
  */
-class BasicGen : public ZXGen {
+class TKET_EXPORT BasicGen : public ZXGen {
  public:
   BasicGen(ZXType type, QuantumType qtype = QuantumType::Quantum);
 
@@ -247,7 +258,7 @@ class BasicGen : public ZXGen {
  * - A complex number for Hbox
  * - A real-valued phase in half-turns otherwise
  */
-class PhasedGen : public BasicGen {
+class TKET_EXPORT PhasedGen : public BasicGen {
  public:
   PhasedGen(
       ZXType type, const Expr& param, QuantumType qtype = QuantumType::Quantum);
@@ -270,7 +281,7 @@ class PhasedGen : public BasicGen {
  * The basis is determined by the ZX type, and the boolean parameter determines
  * the discrete phase (false = 0 versus true = 1 half-turn).
  */
-class CliffordGen : public BasicGen {
+class TKET_EXPORT CliffordGen : public BasicGen {
  public:
   CliffordGen(
       ZXType type, bool param, QuantumType qtype = QuantumType::Quantum);
@@ -310,7 +321,7 @@ class ZXDirected : public ZXGen {
  * Triangle). The number of ports is dictated by the ZXType. Generators can be
  * constructed as either QuantumType with all ports having the same type.
  */
-class DirectedGen : public ZXDirected {
+class TKET_EXPORT DirectedGen : public ZXDirected {
  public:
   DirectedGen(ZXType type, QuantumType qtype);
 
@@ -339,7 +350,7 @@ class DirectedGen : public ZXDirected {
  */
 // Forward declaration of ZXDiagram
 class ZXDiagram;
-class ZXBox : public ZXDirected {
+class TKET_EXPORT ZXBox : public ZXDirected {
  public:
   ZXBox(const ZXDiagram& diag);
 

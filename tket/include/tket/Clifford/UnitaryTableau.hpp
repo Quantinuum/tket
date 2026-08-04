@@ -15,6 +15,7 @@
 #pragma once
 
 #include "SymplecticTableau.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -22,7 +23,7 @@ namespace tket {
 class Circuit;
 class UnitaryRevTableau;
 
-class UnitaryTableau {
+class TKET_EXPORT UnitaryTableau {
   /**
    * An implementation of the stabilizer-destabilizer tableau for unitary
    * Cliffords in Aaronson & Gottesman, "Improved Simulation of Stabilizer
@@ -153,14 +154,17 @@ class UnitaryTableau {
    */
   UnitaryTableau conjugate() const;
 
-  friend UnitaryTableau circuit_to_unitary_tableau(const Circuit& circ);
-  friend Circuit unitary_tableau_to_circuit(const UnitaryTableau& tab);
+  friend TKET_EXPORT UnitaryTableau
+  circuit_to_unitary_tableau(const Circuit& circ);
+  friend TKET_EXPORT Circuit
+  unitary_tableau_to_circuit(const UnitaryTableau& tab);
 
   friend void to_json(nlohmann::json& j, const UnitaryTableau& tab);
   friend void from_json(const nlohmann::json& j, UnitaryTableau& tab);
 
-  friend std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
-  friend std::ostream& operator<<(
+  friend TKET_EXPORT std::ostream& operator<<(
+      std::ostream& os, const UnitaryTableau& tab);
+  friend TKET_EXPORT std::ostream& operator<<(
       std::ostream& os, const UnitaryRevTableau& tab);
   bool operator==(const UnitaryTableau& other) const;
 
@@ -177,9 +181,10 @@ class UnitaryTableau {
 
 JSON_DECL(UnitaryTableau)
 
-std::ostream& operator<<(std::ostream& os, const UnitaryTableau& tab);
+TKET_EXPORT std::ostream& operator<<(
+    std::ostream& os, const UnitaryTableau& tab);
 
-class UnitaryRevTableau {
+class TKET_EXPORT UnitaryRevTableau {
   /**
    * Whereas UnitaryTableau rows are over the output segment with fixed single
    * paulis over the input segment, UnitaryRevTableau flips this around with
@@ -302,13 +307,15 @@ class UnitaryRevTableau {
    */
   UnitaryRevTableau conjugate() const;
 
-  friend UnitaryRevTableau circuit_to_unitary_rev_tableau(const Circuit& circ);
-  friend Circuit unitary_rev_tableau_to_circuit(const UnitaryRevTableau& tab);
+  friend TKET_EXPORT UnitaryRevTableau
+  circuit_to_unitary_rev_tableau(const Circuit& circ);
+  friend TKET_EXPORT Circuit
+  unitary_rev_tableau_to_circuit(const UnitaryRevTableau& tab);
 
   friend void to_json(nlohmann::json& j, const UnitaryRevTableau& tab);
   friend void from_json(const nlohmann::json& j, UnitaryRevTableau& tab);
 
-  friend std::ostream& operator<<(
+  friend TKET_EXPORT std::ostream& operator<<(
       std::ostream& os, const UnitaryRevTableau& tab);
   bool operator==(const UnitaryRevTableau& other) const;
 
@@ -318,6 +325,7 @@ class UnitaryRevTableau {
 
 JSON_DECL(UnitaryRevTableau)
 
-std::ostream& operator<<(std::ostream& os, const UnitaryRevTableau& tab);
+TKET_EXPORT std::ostream& operator<<(
+    std::ostream& os, const UnitaryRevTableau& tab);
 
 }  // namespace tket

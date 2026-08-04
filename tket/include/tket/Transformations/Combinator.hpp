@@ -15,6 +15,7 @@
 #pragma once
 
 #include "Transform.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -23,16 +24,17 @@ namespace Transforms {
 // compose transforms in sequence
 // sequences return true if any transform made a change, even if it was
 // overwritten later
-Transform sequence(std::vector<Transform> &tvec);
+TKET_EXPORT Transform sequence(std::vector<Transform> &tvec);
 
 // repeats a transform until it makes no changes (returns false)
-Transform repeat(const Transform &trans);
+TKET_EXPORT Transform repeat(const Transform &trans);
 
 // repeats a transform and stops when the metric stops decreasing
 Transform repeat_with_metric(
     const Transform &trans, const Transform::Metric &eval);
 
-Transform repeat_while(const Transform &cond, const Transform &body);
+TKET_EXPORT Transform
+repeat_while(const Transform &cond, const Transform &body);
 
 }  // namespace Transforms
 

@@ -15,10 +15,11 @@
 #pragma once
 
 #include "tket/Mapping/RoutingMethod.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
-class RoutingMethodCircuit : public RoutingMethod {
+class TKET_EXPORT RoutingMethodCircuit : public RoutingMethod {
  public:
   virtual ~RoutingMethodCircuit() {}
   /**

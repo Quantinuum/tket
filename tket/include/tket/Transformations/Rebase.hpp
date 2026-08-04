@@ -15,6 +15,7 @@
 #pragma once
 
 #include "Transform.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -38,44 +39,44 @@ Transform rebase_factory_via_tk2(
 
 // Multiqs: CX
 // Singleqs: TK1
-Transform rebase_tket();
+TKET_EXPORT Transform rebase_tket();
 
 // Multiqs: CZ
 // Singleqs: PhasedX, Rz
-Transform rebase_cirq();
+TKET_EXPORT Transform rebase_cirq();
 
 // Multiqs: CZ
 // Singleqs: Rx, Rz
-Transform rebase_quil();
+TKET_EXPORT Transform rebase_quil();
 
 // Multiqs: SWAP, CX, CZ
 // Singleqs: H, X, Z, S, T, Rx, Rz
-Transform rebase_pyzx();
+TKET_EXPORT Transform rebase_pyzx();
 
 // Multiqs: SWAP, CRz, CX, CZ
 // Singleqs: H, X, Y, Z, S, T, V, Rx, Ry, Rz
-Transform rebase_projectq();
+TKET_EXPORT Transform rebase_projectq();
 
 // Used for UniversalFrameRandomisation
 // Multiqs: CX
 // Singleqs: Rz, H
-Transform rebase_UFR();
+TKET_EXPORT Transform rebase_UFR();
 
 // Multiqs: ZZMax
 // Singleqs: Rz, PhasedX
-Transform rebase_HQS();
+TKET_EXPORT Transform rebase_HQS();
 
 // Multiqs: TK2
 // Singleqs: TK1
-Transform rebase_TK();
+TKET_EXPORT Transform rebase_TK();
 
 // Multiqs: XXPhase
 // Singleqs: Rz, PhasedX
-Transform rebase_UMD();
+TKET_EXPORT Transform rebase_UMD();
 
 // Multiqs: AAMS
 // Singleqs: GPI, GPI2
-Transform rebase_ionq();
+TKET_EXPORT Transform rebase_ionq();
 
 }  // namespace Transforms
 

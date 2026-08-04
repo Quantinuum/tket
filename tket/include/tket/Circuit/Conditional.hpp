@@ -18,13 +18,14 @@
 // require deserialization of a Box.
 
 #include "tket/Ops/Op.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
 /**
  * Decorates another op, adding a QASM-style classical condition
  */
-class Conditional : public Op {
+class TKET_EXPORT Conditional : public Op {
  public:
   /**
    * Construct from a given op, condition width and value

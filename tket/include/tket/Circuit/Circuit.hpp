@@ -52,6 +52,7 @@
 #include "tket/Utils/Json.hpp"
 #include "tket/Utils/SequencedContainers.hpp"
 #include "tket/Utils/UnitID.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -210,7 +211,7 @@ enum ReverseType {
  * A circuit comprises some quantum and classical wires and a defined sequence
  * of operations on them with a defined global phase.
  */
-class Circuit {
+class TKET_EXPORT Circuit {
   void _handle_boundaries(Circuit &circ, vertex_map_t &vmap) const;
   void _handle_interior(
       Circuit &circ, vertex_map_t &vmap, V_iterator &vi, V_iterator &vend,
@@ -232,7 +233,7 @@ class Circuit {
       const Vertex &vert, std::shared_ptr<const unit_frontier_t> u_frontier,
       std::shared_ptr<const b_frontier_t> prev_b_frontier) const;
 
-  class CommandIterator {
+  class TKET_EXPORT CommandIterator {
    private:
     Command current_command_;
     SliceIterator current_slice_iterator_;
@@ -1240,11 +1241,11 @@ class Circuit {
       const std::vector<unsigned> &bits = {});
 
   // O(E+V+q) -- E,V,q of c2
-  friend Circuit operator*(const Circuit &c1, const Circuit &c2);
+  friend TKET_EXPORT Circuit operator*(const Circuit &c1, const Circuit &c2);
   // given two circuits, adds second circuit to first sequentially by tying
   // qubits together
   // O(E1+V1+q1+E2+V2+q2) -- both circuits are copied here
-  friend Circuit operator>>(const Circuit &c1, const Circuit &c2);
+  friend TKET_EXPORT Circuit operator>>(const Circuit &c1, const Circuit &c2);
 
   // O(E+V+q) -- E,V,q of incirc
   void cut_insert(
@@ -1646,7 +1647,10 @@ class Circuit {
   std::map<std::string, op_signature_t> opgroupsigs;
 };
 
-JSON_DECL(Circuit)
+TKET_EXPORT Circuit operator>>(const Circuit &c1, const Circuit &c2);
+TKET_EXPORT Circuit operator*(const Circuit &c1, const Circuit &c2);
+
+JSON_DECL_EXPORT(Circuit)
 
 /** Templated method definitions */
 

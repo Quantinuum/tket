@@ -15,19 +15,20 @@
 #pragma once
 
 #include "CompilerPass.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
-const PassPtr &SynthesiseTK();
-const PassPtr &SynthesiseTket();
+TKET_EXPORT const PassPtr &SynthesiseTK();
+TKET_EXPORT const PassPtr &SynthesiseTket();
 
-const PassPtr &RemoveRedundancies();
-const PassPtr &CommuteThroughMultis();
-const PassPtr &DecomposeArbitrarilyControlledGates();
+TKET_EXPORT const PassPtr &RemoveRedundancies();
+TKET_EXPORT const PassPtr &CommuteThroughMultis();
+TKET_EXPORT const PassPtr &DecomposeArbitrarilyControlledGates();
 // Expects: CX and any single-qubit gates,
 // but does not break if it encounters others
-const PassPtr &DecomposeMultiQubitsCX();
-const PassPtr &DecomposeSingleQubitsTK1();
+TKET_EXPORT const PassPtr &DecomposeMultiQubitsCX();
+TKET_EXPORT const PassPtr &DecomposeSingleQubitsTK1();
 
 /**
  * Recursively replaces all boxes by their decomposition using Box::to_circuit
@@ -36,7 +37,7 @@ const PassPtr &DecomposeSingleQubitsTK1();
  * @param included_types optional, only decompose these box types
  * @param included_opgroups optional, only decompose these opgroups
  */
-PassPtr DecomposeBoxes(
+TKET_EXPORT PassPtr DecomposeBoxes(
     const std::unordered_set<OpType> &excluded_types = {},
     const std::unordered_set<std::string> &excluded_opgroups = {},
     const std::optional<std::unordered_set<OpType>> &included_types =
@@ -52,50 +53,50 @@ PassPtr DecomposeBoxes(
  * value is 0
  * @return PassPtr to perform the conversion
  */
-PassPtr ComposePhasePolyBoxes(unsigned min_size = 0);
+TKET_EXPORT PassPtr ComposePhasePolyBoxes(unsigned min_size = 0);
 
 /** Squash sequences of single-qubit gates to TK1 gates. */
-const PassPtr &SquashTK1();
+TKET_EXPORT const PassPtr &SquashTK1();
 
 /**
  * @brief Squash single qubit gates into PhasedX and Rz gates.
  * Commute Rzs to the back if possible.
  */
-const PassPtr &SquashRzPhasedX();
+TKET_EXPORT const PassPtr &SquashRzPhasedX();
 
-const PassPtr &RebaseTket();
-const PassPtr &RebaseUFR();
+TKET_EXPORT const PassPtr &RebaseTket();
+TKET_EXPORT const PassPtr &RebaseUFR();
 
 /**
  * @brief Replace all SX in the circuit with Rx(1/2) and all SXdg with Rx(-1/2).
  */
-const PassPtr &RxFromSX();
+TKET_EXPORT const PassPtr &RxFromSX();
 
-const PassPtr &DecomposeBridges();
-const PassPtr &FlattenRegisters();
+TKET_EXPORT const PassPtr &DecomposeBridges();
+TKET_EXPORT const PassPtr &FlattenRegisters();
 
 /** Remove all& \ref OpType::Barrier from the circuit. */
-const PassPtr &RemoveBarriers();
+TKET_EXPORT const PassPtr &RemoveBarriers();
 
 /** Commutes measurements to the end of the circuit.
  * @param allow_partial Whether to allow measurements that cannot be commuted to
  * the end, and delay them as much as possible instead. If false, the pass
  * includes a @ref CommutableMeasuresPredicate precondition.
  */
-const PassPtr &DelayMeasures(bool allow_partial = false);
+TKET_EXPORT const PassPtr &DelayMeasures(bool allow_partial = false);
 
 /**
  * Remove all operations that have no @ref OpType::Output or
  * @ref OpType::ClOutput in their causal future.
  */
-const PassPtr &RemoveDiscarded();
+TKET_EXPORT const PassPtr &RemoveDiscarded();
 
 /**
  * Replace all measured classical maps that are followed by Measure operations
  * whose quantum output is discarded with classical operations following the
  * Measure.
  */
-const PassPtr &SimplifyMeasured();
+TKET_EXPORT const PassPtr &SimplifyMeasured();
 
 /**
  * @brief Normalises all TK2 gates.
@@ -114,13 +115,13 @@ const PassPtr &SimplifyMeasured();
  *
  * @return compilation pass to perform this transformation
  */
-const PassPtr &NormaliseTK2();
+TKET_EXPORT const PassPtr &NormaliseTK2();
 
 /**
  * @brief Converts ZZPhase with angle 1 or -1 to two Rz(1) gates.
  * @return compilation pass to perform this transformation
  */
-const PassPtr &ZZPhaseToRz();
+TKET_EXPORT const PassPtr &ZZPhaseToRz();
 
 /**
  * @brief Decompose CnX gates to 2-qubit gates and single qubit gates.
@@ -130,7 +131,7 @@ const PassPtr &ZZPhaseToRz();
  *
  * @return compilation pass to perform this transformation
  */
-const PassPtr &CnXPairwiseDecomposition();
+TKET_EXPORT const PassPtr &CnXPairwiseDecomposition();
 
 /**
  * @brief Remove any implicit qubit permutation by appending SWAP gates.
@@ -140,7 +141,7 @@ const PassPtr &CnXPairwiseDecomposition();
  *
  * @return compilation pass to perform this transformation
  */
-const PassPtr &RemoveImplicitQubitPermutation();
+TKET_EXPORT const PassPtr &RemoveImplicitQubitPermutation();
 
 /**
  * Attempt to optimise the circuit by simplifying in ZX calculus and extracting
@@ -158,9 +159,9 @@ const PassPtr &RemoveImplicitQubitPermutation();
  *
  * @return compilation pass to perform this transformation
  */
-const PassPtr &ZXGraphlikeOptimisation(bool allow_swaps = true);
+TKET_EXPORT const PassPtr &ZXGraphlikeOptimisation(bool allow_swaps = true);
 
 /** Remove all \ref OpType::Phase (including conditionals) from the circuit. */
-const PassPtr &RemovePhaseOps();
+TKET_EXPORT const PassPtr &RemovePhaseOps();
 
 }  // namespace tket

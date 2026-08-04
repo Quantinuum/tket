@@ -19,6 +19,7 @@
 #include "tket/Clifford/UnitaryTableau.hpp"
 #include "tket/PauliGraph/PauliGraph.hpp"
 #include "tket/ZX/ZXDiagram.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -26,8 +27,9 @@ namespace tket {
  * Construct the tableau for a given circuit.
  * Will throw an exception if it contains non-Clifford gates.
  */
-UnitaryTableau circuit_to_unitary_tableau(const Circuit &circ);
-UnitaryRevTableau circuit_to_unitary_rev_tableau(const Circuit &circ);
+TKET_EXPORT UnitaryTableau circuit_to_unitary_tableau(const Circuit &circ);
+TKET_EXPORT UnitaryRevTableau
+circuit_to_unitary_rev_tableau(const Circuit &circ);
 
 /**
  * Constructs a circuit producing the same effect as the tableau.
@@ -35,8 +37,9 @@ UnitaryRevTableau circuit_to_unitary_rev_tableau(const Circuit &circ);
  * Stabilizer Circuits, Theorem 8.
  * CAUTION: GATE COUNT IS ATROCIOUS IN PRACTICE
  */
-Circuit unitary_tableau_to_circuit(const UnitaryTableau &tab);
-Circuit unitary_rev_tableau_to_circuit(const UnitaryRevTableau &tab);
+TKET_EXPORT Circuit unitary_tableau_to_circuit(const UnitaryTableau &tab);
+TKET_EXPORT Circuit
+unitary_rev_tableau_to_circuit(const UnitaryRevTableau &tab);
 
 /**
  * Construct a ChoiMixTableau for a given circuit.
@@ -164,14 +167,14 @@ Circuit pauli_graph_to_pauli_exp_box_circuit_sets(
  * Return the zx diagram and a map between the zx boundary vertices and the
  * circuit boundary vertices.
  */
-std::pair<zx::ZXDiagram, boost::bimap<zx::ZXVert, Vertex>> circuit_to_zx(
-    const Circuit &circuit);
+TKET_EXPORT std::pair<zx::ZXDiagram, boost::bimap<zx::ZXVert, Vertex>>
+circuit_to_zx(const Circuit &circuit);
 
 /**
  * Takes a unitary ZX diagram in MBQC form with the promise that a gflow exists.
  * Produces an equivalent circuit using the gate extraction method from
  * Backens et al., "There and Back Again: A Circuit Extraction Tale".
  */
-Circuit zx_to_circuit(const zx::ZXDiagram &diag);
+TKET_EXPORT Circuit zx_to_circuit(const zx::ZXDiagram &diag);
 
 }  // namespace tket

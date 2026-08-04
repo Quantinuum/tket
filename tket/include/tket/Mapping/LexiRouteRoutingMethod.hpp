@@ -15,10 +15,11 @@
 #pragma once
 
 #include "tket/Mapping/RoutingMethod.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
-class LexiRouteRoutingMethod : public RoutingMethod {
+class TKET_EXPORT LexiRouteRoutingMethod : public RoutingMethod {
  public:
   /**
    * Checking and Routing methods redefined using LexiRoute. Only circuit depth,

@@ -17,6 +17,7 @@
 #include <memory>
 
 #include "Boxes.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -40,7 +41,7 @@ typedef std::map<std::vector<bool>, std::vector<bool>> state_perm_t;
 /**
  * Box to synthesise a state permutation
  */
-class ToffoliBox : public Box {
+class TKET_EXPORT ToffoliBox : public Box {
  public:
   /**
    * @brief Construct a circuit that synthesise the given state permutation

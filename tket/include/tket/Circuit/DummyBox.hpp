@@ -16,6 +16,7 @@
 
 #include "Boxes.hpp"
 #include "ResourceData.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -35,7 +36,7 @@ class DummyBoxNotDecomposable : public std::logic_error {
  * resource data for a region of a circuit: for example, upper and lower bounds
  * on gate counts and depth. A circuit containing such a box cannot be executed.
  */
-class DummyBox : public Box {
+class TKET_EXPORT DummyBox : public Box {
  public:
   /**
    * @brief Construct a new instance from some resource data.

@@ -18,6 +18,7 @@
 
 #include "tket/Utils/GraphHeaders.hpp"
 #include "tket/Utils/PauliTensor.hpp"
+#include "tket_export.h"
 
 namespace tket {
 
@@ -102,7 +103,7 @@ class PauliPartitionerGraph {
  * to combine them. If it is given non-unique tensors it will produce
  * inefficient results.
  */
-std::list<std::list<SpPauliString>> term_sequence(
+TKET_EXPORT std::list<std::list<SpPauliString>> term_sequence(
     const std::list<SpPauliString>& strings, PauliPartitionStrat strat,
     GraphColourMethod method = GraphColourMethod::Lazy);
 
