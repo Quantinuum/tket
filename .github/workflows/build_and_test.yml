@@ -143,7 +143,7 @@ jobs:
         ccache --set-config namespace=WITH_TESTS
         ccache -p
     - name: Build tket
-      run: conan create tket -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True
+      run: conan create tket -s build_type=Release --user=tket --channel=stable --build=missing -o boost/*:header_only=True -o with_all_tests=True
     - name: Build tket-c-api
       run: conan create tket-c-api -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True
     - name: Upload packages
@@ -308,7 +308,7 @@ jobs:
         ccache -p
     - name: Build tket
       if: needs.check_changes.outputs.tket_changed == 'true'
-      run: conan create tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
+      run: conan create tket --user tket --channel stable --build=missing -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
     - name: Install tket
       if: needs.check_changes.outputs.tket_changed != 'true'
       run: conan install --requires tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
@@ -401,7 +401,7 @@ jobs:
         ccache -p
     - name: Build tket
       if: needs.check_changes.outputs.tket_changed == 'true'
-      run: conan create tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
+      run: conan create tket --user tket --channel stable --build=missing -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
     - name: Install tket
       if: needs.check_changes.outputs.tket_changed != 'true'
       run: conan install --requires tket/${{ needs.check_changes.outputs.tket_ver }}@tket/stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
@@ -525,7 +525,7 @@ jobs:
       if: needs.check_changes.outputs.tket_changed == 'true'
       run: |
         $env:TKET_VSGEN_CCACHE_EXE = '${{ steps.ccache-path.outputs.ccache_path }}'
-        conan build tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
+        conan build tket --user tket --channel stable --build=missing -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
         conan export-pkg tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
     - name: Install tket
       if: needs.check_changes.outputs.tket_changed != 'true'
