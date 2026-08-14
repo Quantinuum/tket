@@ -106,3 +106,8 @@ setattr(  # noqa: B010
 setattr(BitRegister, "__pow__", _gen_binary_method_reg(RegWiseOp.POW, "__pow__"))  # noqa: B010
 setattr(BitRegister, "__lshift__", _gen_binary_method_reg(RegWiseOp.LSH, "__lshift__"))  # noqa: B010
 setattr(BitRegister, "__rshift__", _gen_binary_method_reg(RegWiseOp.RSH, "__rshift__"))  # noqa: B010
+
+__all__ = [
+    "_TEMP_BIT_NAME",
+    "_TEMP_BIT_REG_BASE",
+]

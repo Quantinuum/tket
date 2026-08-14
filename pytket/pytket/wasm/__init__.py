@@ -20,3 +20,8 @@ from .wasm import (
     WasmFileHandler,
     WasmModuleHandler,
 )
+
+__all__ = [
+    "WasmFileHandler",
+    "WasmModuleHandler",
+]

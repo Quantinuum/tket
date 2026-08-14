@@ -8,7 +8,6 @@ import sympy.core.expr
 import pytket._tket.architecture
 import pytket._tket.circuit
 import pytket._tket.mapping
-import pytket._tket.placement
 import pytket._tket.predicates
 import pytket._tket.transform
 import pytket._tket.unit_id
@@ -441,7 +440,7 @@ def RoutingPass(arc: pytket._tket.architecture.Architecture) -> BasePass:
     :return: a pass that routes to the given device architecture
     """
 
-def PlacementPass(placer: pytket._tket.placement.Placement) -> BasePass:
+def PlacementPass(placer: "tket::Placement") -> BasePass:
     """
     :param placer: The Placement used for relabelling.
     :return: a pass to relabel :py:class:`~.Circuit` Qubits to :py:class:`~.Architecture` Nodes
@@ -468,7 +467,7 @@ def RenameQubitsPass(qubit_map: Mapping[pytket._tket.unit_id.Qubit, pytket._tket
     :param qubit_map: map from old to new qubit names
     """
 
-def FullMappingPass(arc: pytket._tket.architecture.Architecture, placer: pytket._tket.placement.Placement, config: Sequence[pytket._tket.mapping.RoutingMethod]) -> BasePass:
+def FullMappingPass(arc: pytket._tket.architecture.Architecture, placer: "tket::Placement", config: Sequence[pytket._tket.mapping.RoutingMethod]) -> BasePass:
     """
     Construct a pass to relabel :py:class:`~.Circuit` Qubits to :py:class:`~.Architecture` Nodes, and then route to the connectivity graph of an :py:class:`~.Architecture`. Edge direction is ignored.
 
@@ -510,7 +509,7 @@ def ComposePhasePolyBoxes(min_size: int = 0) -> BasePass:
     :return: a pass to perform the composition
     """
 
-def CXMappingPass(arc: pytket._tket.architecture.Architecture, placer: pytket._tket.placement.Placement, **kwargs: Any) -> BasePass:
+def CXMappingPass(arc: pytket._tket.architecture.Architecture, placer: "tket::Placement", **kwargs: Any) -> BasePass:
     r"""
     Construct a pass to convert all gates to CX, relabel :py:class:`~.Circuit` Qubits to :py:class:`~.Architecture` Nodes, route to the connectivity graph of a :py:class:`~.Architecture` and decompose additional routing gates (SWAP and BRIDGE) to CX gates.
 
