@@ -378,12 +378,12 @@ def ZXGraphlikeOptimisation(allow_swaps: bool = True) -> BasePass:
 
 @overload
 def RebaseCustom(gateset: Set[pytket._tket.circuit.OpType], cx_replacement: pytket._tket.circuit.Circuit, tk1_replacement: Callable[[Union[sympy.core.expr.Expr, float], Union[sympy.core.expr.Expr, float], Union[sympy.core.expr.Expr, float]], pytket._tket.circuit.Circuit]) -> BasePass:
-    r"""
+    """
     Construct a custom rebase pass, given user-defined rebases for TK1 and CX. This pass:
 
     1. decomposes multi-qubit gates not in the set of gate types `gateset` to CX gates;
     2. if CX is not in `gateset`, replaces CX gates with `cx_replacement`;
-    3. converts any single-qubit gates not in the gate type set to the form :math:`\mathrm{Rz}(a)\mathrm{Rx}(b)\mathrm{Rz}(c)` (in matrix-multiplication order, i.e. reverse order in the circuit);
+    3. converts any single-qubit gates not in the gate type set to the form :math:`\\mathrm{Rz}(a)\\mathrm{Rx}(b)\\mathrm{Rz}(c)` (in matrix-multiplication order, i.e. reverse order in the circuit);
     4. applies the `tk1_replacement` function to each of these triples :math:`(a,b,c)` to generate replacement circuits.
 
     :param gateset: the allowed operations in the rebased circuit (in addition, Measure and Reset operations are always allowed and are left alone; conditional operations may be present; and Phase gates may also be introduced by the rebase)
@@ -488,7 +488,7 @@ def DefaultMappingPass(arc: pytket._tket.architecture.Architecture, delay_measur
     """
 
 def AASRouting(arc: pytket._tket.architecture.Architecture, **kwargs: Any) -> BasePass:
-    r"""
+    """
     Construct a pass to relabel :py:class:`~.Circuit` Qubits to :py:class:`~.Architecture` Nodes, and then use architecture-aware synthesis to route the circuit. In the steps of the pass the circuit will be converted to CX, Rz, H gateset. The limited connectivity of the :py:class:`~.Architecture` is used for the routing. The direction of the edges is ignored. The placement used is GraphPlacement. This pass can take a few parameters for the routing, described below:
 
     - (unsigned) lookahead=1: parameter for the recursive iteration
@@ -497,7 +497,7 @@ def AASRouting(arc: pytket._tket.architecture.Architecture, **kwargs: Any) -> Ba
     NB: The circuit needs to have at most as many qubits as the architecture has nodes. The resulting circuit will always have the same number of qubits as the architecture has nodes, even if the input circuit had fewer.
 
     :param arc: target architecture
-    :param \**kwargs: parameters for routing (described above)
+    :param \\**kwargs: parameters for routing (described above)
     :return: a pass to perform the remapping
     """
 
@@ -511,12 +511,12 @@ def ComposePhasePolyBoxes(min_size: int = 0) -> BasePass:
     """
 
 def CXMappingPass(arc: pytket._tket.architecture.Architecture, placer: pytket._tket.placement.Placement, **kwargs: Any) -> BasePass:
-    r"""
+    """
     Construct a pass to convert all gates to CX, relabel :py:class:`~.Circuit` Qubits to :py:class:`~.Architecture` Nodes, route to the connectivity graph of a :py:class:`~.Architecture` and decompose additional routing gates (SWAP and BRIDGE) to CX gates.
 
     :param arc: The Architecture used for connectivity information.
     :param placer: The placement used for relabelling.
-    :param \**kwargs: Parameters for routing: (bool)directed_cx=false, (bool)delay_measures=true
+    :param \\**kwargs: Parameters for routing: (bool)directed_cx=false, (bool)delay_measures=true
     :return: a pass to perform the remapping
     """
 
@@ -656,11 +656,11 @@ def CnXPairwiseDecomposition() -> BasePass:
     """
 
 def RoundAngles(n: int, only_zeros: bool = False) -> BasePass:
-    r"""
-    Round angles to the nearest :math:`\pi / 2^n`. 
+    """
+    Round angles to the nearest :math:`\\pi / 2^n`. 
 
     :param n: precision parameter, must be >= 0 and < 32 
-    :param only_zeros: if True, only round angles less than :math:`\pi / 2^{n+1}` to zero, leave other angles alone (default False)
+    :param only_zeros: if True, only round angles less than :math:`\\pi / 2^{n+1}` to zero, leave other angles alone (default False)
     """
 
 def RemoveImplicitQubitPermutation() -> BasePass:
