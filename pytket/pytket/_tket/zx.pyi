@@ -133,12 +133,12 @@ class ZXGen:
 
     @overload
     @staticmethod
-    def create(type: ZXType, qtype: QuantumType = QuantumType.Quantum) -> ZXGen:
-        """Create a boundary type generator."""
+    def create(type: ZXType, qtype: QuantumType = QuantumType.Quantum) -> ZXGen: ...
 
     @overload
     @staticmethod
-    def create(type: ZXType, param: Union[sympy.core.expr.Expr, float], qtype: QuantumType = QuantumType.Quantum) -> ZXGen: ...
+    def create(type: ZXType, param: Union[sympy.core.expr.Expr, float], qtype: QuantumType = QuantumType.Quantum) -> ZXGen:
+        """Create a boundary type generator."""
 
     @property
     def type(self) -> ZXType:

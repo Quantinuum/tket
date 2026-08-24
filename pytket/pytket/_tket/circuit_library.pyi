@@ -116,13 +116,13 @@ def C4X_normal_decomp() -> pytket._tket.circuit.Circuit:
     """Equivalent to CCCCX, using 36 CX"""
 
 def CnX_vchain_decomp(n: int, zeroed_ancillas: bool = True) -> pytket._tket.circuit.Circuit:
-    r"""
+    """
     CnX decomposition from https://arxiv.org/abs/1906.01734/1508.03273.
 
     :param n: Number of control qubits
-    :param zeroed_ancillas: If True, the gate will be implemented assuming that all ancilla qubits start in state :math:`\ket{0}`. If False, ancilla qubits may be initialized in any state, at the cost of higher CX-count.
+    :param zeroed_ancillas: If True, the gate will be implemented assuming that all ancilla qubits start in state :math:`\\ket{0}`. If False, ancilla qubits may be initialized in any state, at the cost of higher CX-count.
 
-    :return: Circuit with control qubits at indices :math:`0, \ldots, n-1`, target qubit :math:`n`, and ancilla qubits :math:`n+1, \ldots, n + \lfloor(n-1)/2\rfloor`.
+    :return: Circuit with control qubits at indices :math:`0, \\ldots, n-1`, target qubit :math:`n`, and ancilla qubits :math:`n+1, \\ldots, n + \\lfloor(n-1)/2\\rfloor`.
     """
 
 def ladder_down() -> pytket._tket.circuit.Circuit:

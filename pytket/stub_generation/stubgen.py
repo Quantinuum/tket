@@ -129,7 +129,7 @@ class PytketStubGen(StubGen):
                 not self.include_private
                 and name
                 and not is_type_alias
-                and len(name) > 2
+                and len(name) > 1
                 and (
                     (name[0] == "_" and name[1] != "_")
                     or (name[-1] == "_" and name[-2] != "_")
@@ -145,15 +145,21 @@ class PytketStubGen(StubGen):
                 if len(self.stack) != 1:
                     value_name_s = value.__name__.split(".")
                     module_name_s = self.module.__name__.split(".")
-                    is_external = value_name_s[0] != module_name_s[0]
-                    if not self.include_external_imports and is_external:
+                    if not self.include_external_imports and value_name_s[0] != module_name_s[0]:
                         return
 
-                    # Do not include submodules in the same stub, but include a directive to import them
-                    self.import_object(value.__name__, name=None, as_name=name)
+                    # Skip bindings of ancestor modules, which the import
+                    # machinery plants into submodule namespaces
+                    if module_name_s[: len(value_name_s)] == value_name_s:
+                        return
+
+                    # Bind the module so that it stays accessible through this stub
+                    self.bind(value.__name__, name=name, export=True)
+
+                    in_recursive_mode = self.recursive and self.output_file is not None
 
                     # If the user requested this, generate recursive stub files as well
-                    if self.recursive and value_name_s[:-1] == module_name_s and self.output_file:
+                    if in_recursive_mode and value_name_s[:-1] == module_name_s and self.output_file:
                         if create_subdirectory_for_module(value):
                             # Create a new subdirectory and start with an __init__.pyi file there
                             dir_name = self.output_file.parents[0] / value_name_s[-1]
@@ -200,10 +206,7 @@ class PytketStubGen(StubGen):
                 value = cast(NbType, value)
                 self.put_type(value, name)
             elif tp_mod == "nanobind":
-                if tp_name == "nb_method":
-                    value = cast(NbFunction, value)
-                    self.put_function(value, name)
-                elif tp_name == "nb_static_property":
+                if tp_name == "nb_static_property":
                     value = cast(NbStaticProperty, value)
                     self.put_nb_static_property(name, value)
             elif tp_mod == "builtins":
@@ -223,8 +226,10 @@ class PytketStubGen(StubGen):
 
     def put_function(self, fn: Callable[..., Any], name: Optional[str] = None, parent: Optional[object] = None):
         """Append a function of an arbitrary type to the stub"""
-        # Don't generate a constructor for nanobind classes that aren't constructible
-        if name == "__init__" and type(parent).__name__.startswith("nb_type"):
+        # A nanobind class without a bound constructor exposes a '__init__'
+        # wrapper descriptor for its error-raising default 'tp_init'. Skip it.
+        if name == "__init__" and isinstance(fn, types.WrapperDescriptorType) \
+                and type(parent).__name__ == "nb_type":
             return
 
         fn_module = getattr(fn, "__module__", None)
@@ -272,7 +277,7 @@ class PytketStubGen(StubGen):
 
         for i, fno in enumerate(overloads):
             if len(overloads) > 1:
-                overload = self.import_object("typing", "overload")
+                overload = self.bind("typing", "overload")
                 self.write_ln(f"@{overload}")
 
             try:
@@ -284,7 +289,7 @@ class PytketStubGen(StubGen):
                 sig_str = f"{name}{self.signature_str(sig)}"
             else:
                 # If inspect.signature fails, use a maximally permissive type.
-                any_type = self.import_object("typing", "Any")
+                any_type = self.bind("typing", "Any")
                 sig_str = f"{name}(*args, **kwargs) -> {any_type}"
 
             # Potentially copy docstring from the implementation function

@@ -356,8 +356,8 @@ class Transform:
 
     @staticmethod
     def round_angles(n: int, only_zeros: bool = False) -> Transform:
-        r"""
-        :param only_zeros: if True, only round angles less than :math:`\pi / 2^{n+1}` to zero, leave other angles alone (default False)
+        """
+        :param only_zeros: if True, only round angles less than :math:`\\pi / 2^{n+1}` to zero, leave other angles alone (default False)
         """
 
 def separate_classical(circ: pytket._tket.circuit.Circuit) -> tuple[pytket._tket.circuit.Circuit, pytket._tket.circuit.Circuit]:
