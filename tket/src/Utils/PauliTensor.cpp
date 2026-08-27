@@ -547,7 +547,7 @@ get_mult_matrix() {
           {{Pauli::Z, Pauli::X}, {1, Pauli::Y}},
           {{Pauli::Z, Pauli::Y}, {3, Pauli::X}},
           {{Pauli::Z, Pauli::Z}, {0, Pauli::I}},
-      };
+  };
   return mult_matrix;
 }
 

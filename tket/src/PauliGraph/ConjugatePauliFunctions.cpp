@@ -130,7 +130,7 @@ void conjugate_PauliTensor(
           {{Pauli::Z, Pauli::X}, {Pauli::Z, Pauli::X, false}},
           {{Pauli::Z, Pauli::Y}, {Pauli::I, Pauli::Y, false}},
           {{Pauli::Z, Pauli::Z}, {Pauli::I, Pauli::Z, false}},
-      };
+  };
   if (op != OpType::CX) {
     throw BadOpType("Conjugations of Pauli strings only defined for CXs", op);
   }

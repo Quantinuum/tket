@@ -36,7 +36,7 @@ static const std::map<std::pair<Pauli, Pauli>, std::list<OpType>>
         {{Pauli::Z, Pauli::X}, {OpType::S}},
         {{Pauli::Z, Pauli::Y}, {}},
         {{Pauli::Z, Pauli::Z}, {}},
-    };
+};
 
 static const std::map<Pauli, OpType> pauli_to_pauli_gate_lut{
     {Pauli::X, OpType::X},
