@@ -433,7 +433,7 @@ SCENARIO("Phase Gadget test") {
         expected_vector[2 * nn + 1] = std::conj(previous_entries_copy[nn]);
       }
     }
-    const auto calc_entries = internal::GateUnitaryMatrixImplementations ::
+    const auto calc_entries = internal::GateUnitaryMatrixImplementations::
         PhaseGadget_diagonal_entries(qubits, alpha);
     INFO("for " << qubits << " qubits, alpha=" << alpha);
     REQUIRE(calc_entries.isApprox(expected_vector));

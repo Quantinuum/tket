@@ -128,7 +128,7 @@ static std::map<unsigned, std::list<SpPauliString>>
 get_partitioned_paulis_for_exhaustive_method(const PauliACGraph& pac_graph) {
   const AbstractGraphData data(pac_graph);
   const graphs::GraphColouringResult colouring =
-      graphs::GraphColouringRoutines ::get_colouring(data.get_adjacency_data());
+      graphs::GraphColouringRoutines::get_colouring(data.get_adjacency_data());
 
   TKET_ASSERT(data.get_vertex_map().size() == colouring.colours.size());
 
