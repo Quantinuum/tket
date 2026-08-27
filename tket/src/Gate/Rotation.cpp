@@ -142,6 +142,11 @@ static std::tuple<Expr, Expr, Expr> xyx_angles_from_coeffs(
   // 2 * atan2(B, A).
   // Finally, note that u must be well-defined because we have already dealt
   // with all cases where s = 0.
+  //
+  // NOTE: Although the above symengine issue is fixed as of version 0.15.0, we
+  // retain the "workaround" since it gives better simplifications: symengine is
+  // not good at evaluating expressions combining sign and trig functions (e.g.
+  // "sign(cos(pi/4))".
   TKET_ASSERT(!s_zero);
   if (approx_0(SymEngine::expand(i * j + s * k))) {
     Expr u = expr_div(i, s);

@@ -40,10 +40,9 @@ jobs:
     - name: Install symengine
       run: |
         cd ${TMP_DIR}
-        wget https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz
-        tar xzvf v0.14.0.tar.gz
-        cd symengine-0.14.0/
-        sed -i -e 's/cmake_minimum_required(VERSION 2.8.12)/cmake_minimum_required(VERSION 3.5)/g' cmake/SymEngineConfig.cmake.in
+        wget https://github.com/symengine/symengine/archive/refs/tags/v0.15.0.tar.gz
+        tar xzvf v0.15.0.tar.gz
+        cd symengine-0.15.0/
         mkdir build
         cd build
         cmake -GNinja -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTS=OFF -DBUILD_BENCHMARKS=OFF -DWITH_SYMENGINE_THREAD_SAFE=ON ..
