@@ -119,6 +119,14 @@ class PytketStubGen(StubGen):
             if name in SKIP_LIST:
                 return
 
+            # Members with a custom signature are emitted verbatim, even if private
+            sig = self.member_signature_override(value)
+            if sig is not None:
+                for line in sig.splitlines():
+                    self.write_ln(line)
+                self.write("\n")
+                return
+
             is_type_alias = typing.get_origin(value) or (
                 isinstance(value, type)
                 and (value.__name__ != name or value.__module__ != self.module.__name__)
@@ -194,9 +202,10 @@ class PytketStubGen(StubGen):
                     return
                 else:
                     self.apply_pattern(self.prefix + ".__prefix__", None)
-                    # using value.__dict__ rather than inspect.getmembers
-                    # to preserve insertion order
-                    for name, child in value.__dict__.items():
+                    # using value.__dict__ rather than inspect.getmembers to
+                    # preserve insertion order. Copy it: emitting a member may
+                    # import a submodule, which binds an attribute here.
+                    for name, child in list(value.__dict__.items()):
                         self.put(child, name=name, parent=value)
                     self.apply_pattern(self.prefix + ".__suffix__", None)
             elif self.is_function(tp):
