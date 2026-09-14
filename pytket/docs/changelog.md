@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+- Fix bug in `DelayMeasures` when multi-qubit gate follows final measurement.
+
 ## 2.18.1 (July 2026)
 
 ## 2.18.0 (May 2026)
