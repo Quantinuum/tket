@@ -257,6 +257,7 @@ std::pair<bool, bool> run_delay_measures(
     Vertex v = p.first;
     Edge current_edge = p.second;
     Vertex current_vertex = circ.target(current_edge);
+    port_t current_port = circ.get_target_port(current_edge);
 
     Edge in_edge = circ.get_nth_in_edge(v, 0);
     Edge out_edge = circ.get_nth_out_edge(v, 0);
@@ -270,7 +271,7 @@ std::pair<bool, bool> run_delay_measures(
     circ.add_edge(
         {circ.source(current_edge), circ.get_source_port(current_edge)}, {v, 0},
         EdgeType::Quantum);
-    circ.add_edge({v, 0}, {current_vertex, 0}, EdgeType::Quantum);
+    circ.add_edge({v, 0}, {current_vertex, current_port}, EdgeType::Quantum);
     circ.remove_edge(current_edge);
   }
   return {true, true};
