@@ -1476,6 +1476,16 @@ SCENARIO("Commute measurements to the end of a circuit") {
     CompilationUnit cu(c);
     CHECK_FALSE(try_delay_pass->apply(cu));
   }
+  GIVEN("Reuse of measured qubit") {
+    // https://github.com/Quantinuum/tket/issues/2229
+    Circuit c(2, 1);
+    c.add_measure(0, 0);
+    c.add_op<unsigned>(OpType::T, {0});
+    c.add_op<unsigned>(OpType::CX, {1, 0});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit c1 = cu.get_circ_ref();
+  }
 }
 
 SCENARIO("RemoveRedundancies and phase") {
