@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+Features:
+
+- Improve performance of `FullPeepholeOptimise` in some cases by applying
+  `RemoveRedundancies` at the beginning.
+
 ## 2.18.2 (September 2026)
 
 Fixes:
