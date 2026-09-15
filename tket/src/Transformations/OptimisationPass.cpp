@@ -45,13 +45,15 @@ Transform full_peephole_optimise(bool allow_swaps, OpType target_2qb_gate) {
   switch (target_2qb_gate) {
     case OpType::CX:
       return (
-          synthesise_tket() >> two_qubit_squash(false) >>
-          clifford_simp(allow_swaps) >> synthesise_tket() >>
-          two_qubit_squash(allow_swaps) >> three_qubit_squash() >>
-          clifford_simp(allow_swaps) >> synthesise_tket());
+          remove_redundancies() >> synthesise_tket() >>
+          two_qubit_squash(false) >> clifford_simp(allow_swaps) >>
+          synthesise_tket() >> two_qubit_squash(allow_swaps) >>
+          three_qubit_squash() >> clifford_simp(allow_swaps) >>
+          synthesise_tket());
     case OpType::TK2:
       return (
-          synthesise_tk() >> two_qubit_squash(OpType::TK2, 1., allow_swaps) >>
+          remove_redundancies() >> synthesise_tk() >>
+          two_qubit_squash(OpType::TK2, 1., allow_swaps) >>
           clifford_simp(allow_swaps, OpType::TK2) >>
           two_qubit_squash(OpType::TK2, 1., allow_swaps) >> synthesise_tk() >>
           three_qubit_squash(OpType::TK2) >>
