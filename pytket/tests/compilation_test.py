@@ -24,6 +24,7 @@ from pytket.passes import (
 )
 from pytket.placement import Placement
 from pytket.unit_id import _TEMP_BIT_NAME, _TEMP_BIT_REG_BASE
+from pytket.utils.stats import gate_counts
 
 
 def test_compilation() -> None:
@@ -311,3 +312,19 @@ def test_resize_scratch_registers() -> None:
     c_compiled = circ.copy()
     scratch_reg_resize_pass(10).apply(c_compiled)
     assert circ == c_compiled
+
+
+@pytest.mark.parametrize("with_cswaps", [False, True])
+def test_full_peephole_optimise_gatecount(with_cswaps: bool) -> None:
+    # https://github.com/Quantinuum/tket/issues/2232
+    c = Circuit(5)
+    c.H(2)
+    if with_cswaps:
+        c.CSWAP(4, 2, 3).CSWAP(4, 2, 3)
+    c.CH(2, 0).CH(2, 0)
+    c.CSWAP(2, 1, 3).CSWAP(2, 1, 3)
+    c.CCX(2, 4, 0).CZ(1, 2).measure_all()
+    FullPeepholeOptimise().apply(c)
+    counts = gate_counts(c)
+    assert counts[OpType.TK1] <= 10
+    assert counts[OpType.CX] <= 7
