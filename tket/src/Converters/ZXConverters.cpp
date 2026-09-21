@@ -655,6 +655,7 @@ void clean_frontier(
       if ((nt0 == ZXType::Input && nt1 == ZXType::Output) ||
           (nt0 == ZXType::Output && nt1 == ZXType::Input)) {
         diag.add_wire(ns.at(0), ns.at(1));
+        qubit_map.erase(f);
         diag.remove_vertex(f);
         auto input_found = input_qubits.find(f);
         if (input_found != input_qubits.end()) input_qubits.erase(f);
