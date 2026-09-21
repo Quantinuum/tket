@@ -1291,3 +1291,23 @@ def test_greedy_pauli_synth_nested_conditional() -> None:
     assert op.op.type == OpType.X
     assert op.width == 2
     assert op.value == 1  # little-endian
+
+    # A more complex and deeply nested example
+    c = Circuit(1, 7)
+    cond0 = Conditional(Op.create(OpType.X), 1, 1)  # apply X if bits are [1]
+    cond1 = Conditional(cond0, 1, 1)  # apply cond0 if bits are [1]
+    cond2 = Conditional(cond1, 2, 3)  # apply cond1 if bits are [1,1]
+    cond3 = Conditional(cond2, 1, 0)  # apply cond2 if bits are [0]
+    cond4 = Conditional(cond3, 2, 2)  # apply cond3 if bits are [0,1]
+    c.add_gate(
+        cond4, [Bit(i) for i in range(7)] + [Qubit(0)]
+    )  # apply X if bits are [0,1,0,1,1,1,1]
+    GreedyPauliSimp().apply(c)
+    cmd = c.get_commands()[0]
+    args = cmd.args
+    op = cmd.op
+    assert args == [Bit(i) for i in range(7)] + [Qubit(0)]
+    assert op.type == OpType.Conditional
+    assert op.op.type == OpType.X
+    assert op.width == 7
+    assert op.value == 122  # little-endian
