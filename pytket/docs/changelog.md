@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+
+- Fix occasional error in `ZXGraphlikeOptimisation` when vertex addresses are
+  reused.
+
 ## 2.18.3 (September 2026)
 
 Features:
@@ -10,6 +17,7 @@ Features:
 ## 2.18.2 (September 2026)
 
 Fixes:
+
 - Fix bug in `DelayMeasures` when multi-qubit gate follows final measurement.
 
 ## 2.18.1 (July 2026)
@@ -17,12 +25,14 @@ Fixes:
 ## 2.18.0 (May 2026)
 
 Fixes:
+
 - Fix bug in circuit slicing logic that caused crashes when computing depth
   under certain circumstances.
 
 ## 2.17.0 (May 2026)
 
 Fixes:
+
 - Fix handling of wasm function calls in circuit boxes.
 - Fix handling of symbolic circuits in Transforms::squash_1qb_to_Rz_PhasedX().
 
