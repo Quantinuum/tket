@@ -6,6 +6,7 @@ Fixes:
 
 - Fix occasional error in `ZXGraphlikeOptimisation` when vertex addresses are
   reused.
+- Fix endianness of nested conditional values in `GreedyPauliSimp`.
 
 ## 2.18.3 (September 2026)
 
