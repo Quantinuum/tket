@@ -289,6 +289,7 @@ void GPGraph::apply_gate_at_end(
   unit_vector_t args = cmd.get_args();
   qubit_vector_t qbs = cmd.get_qubits();
   OpType type = op->get_type();
+  unsigned cond_width = cond_bits.size();
   for (const UnitID& arg : args) {
     if (arg.type() == UnitType::Qubit) {
       auto it = end_measures_.left.find(arg.index().at(0));
@@ -323,7 +324,7 @@ void GPGraph::apply_gate_at_end(
         cond_bits.push_back(Bit(args.at(i)).index().at(0));
       for (unsigned i = cond.get_width(); i < args.size(); ++i)
         inner_args.push_back(args.at(i));
-      cond_value = (cond_value << cond.get_width()) + cond.get_value();
+      cond_value += cond.get_value() << cond_width;
       apply_gate_at_end(
           Command(cond.get_op(), inner_args), true, cond_bits, cond_value);
       return;
