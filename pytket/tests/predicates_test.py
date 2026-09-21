@@ -1287,7 +1287,7 @@ def test_greedy_pauli_synth_nested_conditional() -> None:
     args = cmd.args
     op = cmd.op
     assert args == [Bit(0), Bit(1), Qubit(0)]
-    assert op.type == OpType.Conditional
+    assert isinstance(op, Conditional)
     assert op.op.type == OpType.X
     assert op.width == 2
     assert op.value == 1  # little-endian
@@ -1307,7 +1307,7 @@ def test_greedy_pauli_synth_nested_conditional() -> None:
     args = cmd.args
     op = cmd.op
     assert args == [Bit(i) for i in range(7)] + [Qubit(0)]
-    assert op.type == OpType.Conditional
+    assert isinstance(op, Conditional)
     assert op.op.type == OpType.X
     assert op.width == 7
     assert op.value == 122  # little-endian
