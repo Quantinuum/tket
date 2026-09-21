@@ -1274,3 +1274,20 @@ def test_zx_vertex_reuse() -> None:
     ZXGraphlikeOptimisation(allow_swaps=False).apply(c)
     u1 = c.get_unitary()
     assert compare_unitaries(u0, u1)
+
+
+def test_greedy_pauli_synth_nested_conditional() -> None:
+    # https://github.com/Quantinuum/tket/issues/2237
+    c = Circuit(1, 2)
+    cond0 = Conditional(Op.create(OpType.X), 1, 0)  # apply X if bits are [0]
+    cond1 = Conditional(cond0, 1, 1)  # apply cond0 if bits are [1]
+    c.add_gate(cond1, [Bit(0), Bit(1), Qubit(0)])  # apply X if bits are [1,0]
+    GreedyPauliSimp().apply(c)
+    cmd = c.get_commands()[0]
+    args = cmd.args
+    op = cmd.op
+    assert args == [Bit(0), Bit(1), Qubit(0)]
+    assert op.type == OpType.Conditional
+    assert op.op.type == OpType.X
+    assert op.width == 2
+    assert op.value == 1  # little-endian
