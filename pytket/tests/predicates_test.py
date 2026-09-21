@@ -112,6 +112,7 @@ from pytket.predicates import (
     PlacementPredicate,
 )
 from pytket.transform import CXConfigType, PauliSynthStrat, Transform
+from pytket.utils import compare_unitaries
 
 circ2 = Circuit(1)
 circ2.Rx(0.25, 0)
@@ -1264,3 +1265,12 @@ def test_rx_from_sx() -> None:
     assert c == Circuit(2).H(0).CX(0, 1).Rx(0.5, 0).H(0).Rx(0.5, 0).Rx(-0.5, 1).H(
         1
     ).add_phase(0.25)
+
+
+def test_zx_vertex_reuse() -> None:
+    # https://github.com/Quantinuum/tket/issues/2236
+    c = Circuit(4).CX(0, 3).CX(1, 2).CZ(3, 0).Rz(0.25, 2).Rz(0.5, 0).X(2)
+    u0 = c.get_unitary()
+    ZXGraphlikeOptimisation(allow_swaps=False).apply(c)
+    u1 = c.get_unitary()
+    assert compare_unitaries(u0, u1)
