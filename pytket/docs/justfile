@@ -1,5 +1,6 @@
 prepare:
     cp -R pytket-docs-theming/_static .
+    cp -R static/* _static/
     cp pytket-docs-theming/conf.py .
 
 install: prepare
