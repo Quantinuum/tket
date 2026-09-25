@@ -446,8 +446,9 @@ jobs:
         python -m pip install mypy nanobind==3.1.0
         cd pytket
         ./stub_generation/regenerate_stubs
-        git diff --exit-code pytket/_tket && echo "Stubs are up-to-date" # https://github.com/Quantinuum/tket/issues/2203
-        # git diff --exit-code pytket/_tket && echo "Stubs are up-to-date" || exit 1  # fail if stubs change after regeneration
+        git diff --exit-code pytket/_tket && echo "Stubs are up-to-date" || exit 1  # fail if stubs change after regeneration
+        ./stub_generation/regenerate_stubs
+        git diff --exit-code pytket/_tket && echo "Stub generation is deterministic" || exit 1  # regression check for https://github.com/Quantinuum/tket/issues/2203
         python -m mypy --config-file=mypy.ini --no-incremental -p pytket -p tests
     - name: Upload package
       if: github.event_name == 'push' && needs.check_changes.outputs.tket_changed == 'true'
