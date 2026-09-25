@@ -1,0 +1,14 @@
+{% extends "!components/view-this-page.html" %}
+
+{% block link_available %}
+{{ super() }}
+{% if show_source and has_source and sourcename %}
+<div class="copy-as-markdown-container">
+  <button type="button" class="copy-as-markdown-btn" data-source-url="{{ pathto('_sources/' + sourcename, true) }}" title="{{ _('Copy page as Markdown') }}" aria-label="{{ _('Copy page as Markdown') }}">
+    <svg class="icon-default"><use href="#svg-markdown-copy"></use></svg>
+    <svg class="icon-success"><use href="#svg-check"></use></svg>
+    <span class="btn-text">{{ _('Copy Markdown') }}</span>
+  </button>
+</div>
+{% endif %}
+{% endblock %}
