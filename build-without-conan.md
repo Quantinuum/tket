@@ -139,7 +139,7 @@ tar xzvf v3.1.0.tar.gz
 cd nanobind-3.1.0/
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=$(INSTALL_DIR) -DNB_TEST=OFF -DNB_USE_SUBMODULE_DEPS=OFF ..
+cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DNB_TEST=OFF -DNB_USE_SUBMODULE_DEPS=OFF ..
 cmake --build .
 cmake --install .
 ```
