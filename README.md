@@ -6,11 +6,11 @@
 
 ## Introduction
 
-TKET (pronounced "ticket") is a high-performance quantum compiler that can optimise circuits for a wide range of quantum computing architectures.
+TKET (pronounced "ticket") is a high-performance quantum compiler that can optimize circuits for a wide range of quantum computing architectures.
 
-This repository contains the full source code for TKET and its python bindings.
+This repository contains the full source code for TKET and its Python bindings.
 
-The standard way of using TKET is via its pytket python API.
+The standard way of using TKET is via its pytket Python API.
 
 If you just want to use TKET via Python, the easiest way is to install pytket with
 `pip`:
@@ -37,11 +37,11 @@ The source content for the manual and notebook examples can be found in the [pyt
 
 ## Extensions
 
-In addition to the core pytket package there are pytket extension modules which allow pytket to interface with quantum devices and simulators. Some extensions also provide interoperability with other software libraries such as qiskit, cirq and pennylane.
+In addition to the core pytket package there are pytket extension modules which allow pytket to interface with quantum devices and simulators. Some extensions also provide interoperability with other software libraries such as Qiskit, Cirq and PennyLane.
 
 For a list of available pytket extensions see the [extensions index page](https://docs.quantinuum.com/tket/api-docs/extensions.html).
 
-These extensions are installed as separate python packages and the source code for each extension lives in its own github repository.
+These extensions are installed as separate Python packages and the source code for each extension lives in its own GitHub repository.
 
 ## How to build TKET and pytket
 
@@ -84,7 +84,7 @@ with `pip`:
 pip install conan
 ```
 
-You will need at least cmake version 3.26, and conan version 2.
+You will need at least CMake version 3.26, and conan version 2.
 
 
 #### Set up `conan` profile
@@ -116,7 +116,7 @@ choco install ninja ccache
 On MacOS/Linux:
 
 - If installed, `ccache` is used automatically
-- `ninja` must either be set as the default Cmake generator using the following command:
+- `ninja` must either be set as the default CMake generator using the following command:
   ```shell
   echo "tools.cmake.cmaketoolchain:generator = Ninja" >> $(conan config home)/global.conf
   ```
@@ -125,7 +125,7 @@ On MacOS/Linux:
 
 On Windows:
 - Set `ninja` as generator as described above (less reliable than the default `Visual Studio` generator)
-- `ccache` will be used automatically *only* when using `Ninja` or `Makefile` as the Cmake generator. It can
+- `ccache` will be used automatically *only* when using `Ninja` or `Makefile` as the CMake generator. It can
   also be used with `Visual Studio` generators by setting the environment
   variable `TKET_VSGEN_CCACHE_EXE` to the path of the `ccache` executable. **Note: this
   must be the path to the actual binary, not a symlink or shim (as used by Chocolatey)**. If using Chocolatey
