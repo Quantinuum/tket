@@ -21,6 +21,7 @@
 #include "tket/Mapping/LexiRouteRoutingMethod.hpp"
 #include "tket/Mapping/MappingManager.hpp"
 #include "tket/Mapping/Verification.hpp"
+#include "tket/Ops/ClExpr.hpp"
 #include "tket/Ops/ClassicalOps.hpp"
 #include "tket/Placement/Placement.hpp"
 #include "tket/Predicates/CompilationUnit.hpp"
@@ -2386,5 +2387,32 @@ SCENARIO("Lexi route produces incorrect bimaps") {
       std::make_shared<LexiRouteRoutingMethod>()};
   REQUIRE(mm.route_circuit_with_maps(circ, config, maps));
   REQUIRE(check_permutation(circ, maps));
+}
+SCENARIO("Lexi route with ClExprOps in the lookahead slice") {
+  // segfault Github #2180: advance_next_2qb_slice read the quantum in-edge of
+  // a purely classical vertex, which has none.
+  Circuit circ(3, 3);
+  circ.add_op<unsigned>(OpType::CX, {0, 1});
+  circ.add_op<unsigned>(OpType::CX, {2, 1});
+  circ.add_conditional_gate<unsigned>(OpType::H, {}, {2}, {2}, 1);
+  ClExpr bit_or(ClOp::BitOr, {ClBitVar{0}, ClBitVar{1}});
+  circ.add_op<unsigned>(
+      std::make_shared<const ClExprOp>(
+          WiredClExpr(bit_or, {{0, 0}, {1, 1}}, {}, {2})),
+      {1, 2, 0});
+  ClExpr bit_and(ClOp::BitAnd, {ClBitVar{0}, ClBitVar{1}});
+  circ.add_op<unsigned>(
+      std::make_shared<const ClExprOp>(
+          WiredClExpr(bit_and, {{0, 0}, {1, 1}}, {}, {2})),
+      {1, 0, 2});
+  circ.add_op<unsigned>(OpType::CX, {0, 2});
+  circ.add_op<unsigned>(OpType::CX, {0, 2});
+  Architecture arc({{Node(0), Node(1)}, {Node(1), Node(2)}});
+  MappingManager mm(std::make_shared<Architecture>(arc));
+  std::vector<RoutingMethodPtr> config = {
+      std::make_shared<LexiLabellingMethod>(),
+      std::make_shared<LexiRouteRoutingMethod>()};
+  REQUIRE(mm.route_circuit(circ, config));
+  REQUIRE(respects_connectivity_constraints(circ, arc, false));
 }
 }  // namespace tket

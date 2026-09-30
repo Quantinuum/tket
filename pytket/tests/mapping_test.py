@@ -17,7 +17,7 @@ import numpy as np
 
 from pytket import Circuit, OpType
 from pytket.architecture import Architecture
-from pytket.circuit import CircBox, Node, PhasePolyBox, Qubit, UnitID
+from pytket.circuit import Bit, CircBox, Node, PhasePolyBox, Qubit, UnitID
 from pytket.circuit.named_types import UnitIdMap
 from pytket.mapping import (
     AASLabellingMethod,
@@ -439,3 +439,20 @@ def test_BoxDecompositionRoutingMethod() -> None:
     )
     assert circ.valid_connectivity(arc, directed=False)
     assert len(circ.get_commands()) == 4
+
+
+def test_LexiRoute_with_clexpr_in_lookahead() -> None:
+    # https://github.com/Quantinuum/tket/issues/2180
+    circ = Circuit(3, 3)
+    circ.CX(0, 1)
+    circ.CX(2, 1)
+    circ.H(2, condition_bits=[2])
+    circ.add_clexpr_from_logicexp(Bit(1) | Bit(2), [Bit(0)])
+    circ.add_clexpr_from_logicexp(Bit(1) & Bit(0), [Bit(2)])
+    circ.CX(0, 2)
+    circ.CX(0, 2)
+    arc = Architecture([(0, 1), (1, 2)])
+    MappingManager(arc).route_circuit(
+        circ, [LexiLabellingMethod(), LexiRouteRoutingMethod()]
+    )
+    assert circ.valid_connectivity(arc, directed=False)

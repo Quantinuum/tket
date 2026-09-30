@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+
+- Fix segfault in `LexiRouteRoutingMethod` (and so `DefaultMappingPass`) when
+  a `ClExprOp` is reached while looking ahead to the next two-qubit slice.
+
 ## 2.18.4 (September 2026)
 
 Fixes:

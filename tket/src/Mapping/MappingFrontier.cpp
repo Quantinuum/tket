@@ -253,8 +253,10 @@ void MappingFrontier::advance_next_2qb_slice(unsigned max_advance) {
       }
       EdgeVec in_edges =
           this->circuit_.get_in_edges_of_type(vert, EdgeType::Quantum);
-      // More than 1 edge means we want to keep edges, so continue
-      if (in_edges.size() > 1) {
+      // More than 1 edge means we want to keep edges, so continue. No edge
+      // means a purely classical vertex (e.g. ClExprOp), which has no quantum
+      // boundary to advance.
+      if (in_edges.size() != 1) {
         continue;
       }
       // can guarantee that we update now as non-updating cases have been
