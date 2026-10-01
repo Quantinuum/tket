@@ -6,6 +6,8 @@ Fixes:
 
 - Fix segfault in `LexiRouteRoutingMethod` (and so `DefaultMappingPass`) when
   a `ClExprOp` is reached while looking ahead to the next two-qubit slice.
+- Fix out-of-bounds accesses in `LinePlacement` for circuits with no two-qubit
+  interactions, and in Pauli partitioning with no terms.
 
 ## 2.18.4 (September 2026)
 

@@ -32,8 +32,6 @@ SCENARIO("Small sets of Gadgets are partitioned correctly") {
       GraphColourMethod::LargestFirst, GraphColourMethod::Exhaustive,
       GraphColourMethod::Lazy};
 
-// https://github.com/Quantinuum/tket/issues/2199
-#ifdef NDEBUG
   GIVEN("No gadgets") {
     for (auto colouring_method : colouring_methods) {
       for (PauliPartitionStrat strat : strats) {
@@ -44,7 +42,6 @@ SCENARIO("Small sets of Gadgets are partitioned correctly") {
       }
     }
   }
-#endif
 
   GIVEN("Two anti-commuting gadgets") {
     /* We know the correct order, as QubitOperator orders

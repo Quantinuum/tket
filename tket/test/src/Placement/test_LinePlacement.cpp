@@ -24,8 +24,6 @@ SCENARIO("LinePlacement class") {
     REQUIRE_THROWS_AS(LinePlacement(architecture), std::logic_error);
   }
 
-// https://github.com/Quantinuum/tket/issues/2199
-#ifdef NDEBUG
   GIVEN("Empty circuit, two qubit Architecture, LinePlacement::Place.") {
     std::vector<std::pair<unsigned, unsigned>> edges = {{0, 1}};
     Architecture architecture(edges);
@@ -34,7 +32,6 @@ SCENARIO("LinePlacement class") {
     placement.place(circuit);
     REQUIRE(circuit.n_qubits() == 0);
   }
-#endif
 
   GIVEN("Single qubit circuit, two qubit Architecture, LinePlacement::Place") {
     std::vector<std::pair<unsigned, unsigned>> edges = {{0, 1}};
