@@ -117,7 +117,7 @@ nairobi_device = IBMQBackend('ibm_nairobi')
 
 # Compile Circuit to use supported gates of IBMQ Nairobi
 compiled_circ = nairobi_device.get_compiled_circuit(circ)
-result = backend.run_circuit(compiled_circ, n_shots=100)
+result = nairobi_device.run_circuit(compiled_circ, n_shots=100)
 ```
 
 Here the default compilation pass is applied by `IBMQBackend.get_compiled_circuit`. See [this page](https://docs.quantinuum.com/tket/extensions/pytket-qiskit/#default-compilation) for more details.
