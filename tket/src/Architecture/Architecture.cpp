@@ -112,6 +112,9 @@ static bool lexicographical_comparison(
 
 std::optional<Node> Architecture::find_worst_node(
     const Architecture& original_arch) {
+  if (n_nodes() == 0) {
+    return std::nullopt;
+  }
   node_set_t ap = get_articulation_points();
   node_set_t min_nodes = min_degree_nodes();
 

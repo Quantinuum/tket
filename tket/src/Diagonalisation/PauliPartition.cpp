@@ -167,7 +167,7 @@ get_partitioned_paulis_for_largest_first_method(const PauliACGraph& pac_graph) {
       unsigned*,
       boost::property_map<PauliACGraph, boost::vertex_index_t>::const_type>
       colour_prop_map(
-          &colour_vec.front(), boost::get(boost::vertex_index, pac_graph));
+          colour_vec.data(), boost::get(boost::vertex_index, pac_graph));
   boost::sequential_vertex_coloring(
       pac_graph,
       boost::make_iterator_property_map(
