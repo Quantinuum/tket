@@ -249,7 +249,7 @@ $(function() {
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      <span class="keywordtype">unsigned</span>*,</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      boost::property_map&lt;PauliACGraph, boost::vertex_index_t&gt;::const_type&gt;</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      colour_prop_map(</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>          &amp;colour_vec.front(), boost::get(boost::vertex_index, pac_graph));</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>          colour_vec.data(), boost::get(boost::vertex_index, pac_graph));</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  boost::sequential_vertex_coloring(</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      pac_graph,</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      boost::make_iterator_property_map(</div>
