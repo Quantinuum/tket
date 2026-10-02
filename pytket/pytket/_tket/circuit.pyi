@@ -49,7 +49,7 @@ class EdgeType(enum.Enum):
 
 class OpType(enum.IntEnum):
     """
-    Enum for available operations compatible with tket :py:class:`~.Circuit` s.
+    Enum for available operations compatible with tket :py:class:`~.Circuit`s.
     """
 
     Phase = 21
@@ -611,19 +611,19 @@ class Op:
 
     def __repr__(self) -> str: ...
 
-    def free_symbols(self) -> set[sympy.core.symbol.Symbol]: ...
+    def free_symbols(self) -> set[sympy.core.symbol.Symbol]: """Return the set of free symbols in the operation parameters""": ...
 
-    def get_unitary(self) -> Annotated[NDArray[numpy.complex128], dict(shape=(None, None), order='F')]: ...
+    def get_unitary(self) -> Annotated[NDArray[numpy.complex128], dict(shape=(None, None), order='F')]: """Return the unitary matrix representation of the operation""": ...
 
     def is_clifford_type(self) -> bool:
-        """Check if the operation is one of the Clifford :py:class:`~.OpType` s."""
+        """Check if the operation is one of the Clifford :py:class:`~.OpType`s."""
 
     def is_clifford(self) -> bool:
         """
         Test whether the operation is in the Clifford group. A return value of true guarantees that the operation is Clifford. However, the converse is not the case as some Clifford operations may not be detected as such.
         """
 
-    def is_gate(self) -> bool: ...
+    def is_gate(self) -> bool: """Return True if the operation is a gate (as opposed to a measurement, reset, or other non-gate operation)""": ...
 
 class BasisOrder(enum.Enum):
     """
@@ -3217,7 +3217,7 @@ class MultiplexedU2Box(Op):
     @overload
     def __init__(self, op_map: dict[tuple[bool, ...], Op], impl_diag: bool = True) -> None:
         """
-        Construct from a map from bitstrings to :py:class:`~.Op` s.Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
+        Construct from a map from bitstrings to :py:class:`~.Op`s.Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
 
         :param op_map: Map from bitstrings to :py:class:`~.Op` s
         :param impl_diag: Whether to implement the final diagonal gate, default to True.
@@ -3253,7 +3253,7 @@ class MultiplexedTensoredU2Box(Op):
     @overload
     def __init__(self, op_map: dict[tuple[bool, ...], Sequence[Op]]) -> None:
         """
-        Construct from a map from bitstrings to equal-sized lists of :py:class:`~.Op` s. Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
+        Construct from a map from bitstrings to equal-sized lists of :py:class:`~.Op`s. Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
 
         :param op_map: Map from bitstrings to lists of :py:class:`~.Op` s
         """
