@@ -1,0 +1,91 @@
+/* Copy as Markdown Button Styling */
+.copy-as-markdown-container {
+  display: flex;
+  align-items: center;
+}
+
+.copy-as-markdown-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-foreground-secondary, #6b7280);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.copy-as-markdown-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  stroke-width: 1.75;
+  flex-shrink: 0;
+}
+
+.copy-as-markdown-btn .icon-success {
+  display: none;
+  color: #16a34a;
+}
+
+.copy-as-markdown-btn:hover {
+  background-color: var(--color-background-hover, rgba(0, 0, 0, 0.05));
+  color: var(--color-foreground-primary, #111827);
+  border-color: var(--color-background-border, rgba(0, 0, 0, 0.1));
+}
+
+.copy-as-markdown-btn.copy-success {
+  color: #16a34a !important;
+  background-color: rgba(22, 163, 74, 0.1) !important;
+  border-color: rgba(22, 163, 74, 0.25) !important;
+}
+
+.copy-as-markdown-btn.copy-success .icon-default {
+  display: none;
+}
+
+.copy-as-markdown-btn.copy-success .icon-success {
+  display: inline-block;
+}
+
+.copy-as-markdown-btn.copy-failure {
+  color: #dc2626 !important;
+  background-color: rgba(220, 38, 38, 0.1) !important;
+  border-color: rgba(220, 38, 38, 0.25) !important;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .copy-as-markdown-btn,
+body[data-theme="dark"] .copy-as-markdown-btn {
+  color: var(--color-foreground-secondary, #9ca3af);
+}
+
+[data-theme="dark"] .copy-as-markdown-btn:hover,
+body[data-theme="dark"] .copy-as-markdown-btn:hover {
+  background-color: var(--color-background-hover, rgba(255, 255, 255, 0.08));
+  color: var(--color-foreground-primary, #f9fafb);
+  border-color: var(--color-background-border, rgba(255, 255, 255, 0.15));
+}
+
+[data-theme="dark"] .copy-as-markdown-btn.copy-success,
+body[data-theme="dark"] .copy-as-markdown-btn.copy-success {
+  color: #4ade80 !important;
+  background-color: rgba(74, 222, 128, 0.15) !important;
+  border-color: rgba(74, 222, 128, 0.3) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 67em) {
+  .copy-as-markdown-btn .btn-text {
+    display: none;
+  }
+  .copy-as-markdown-btn {
+    padding: 0.35rem;
+  }
+}
