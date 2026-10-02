@@ -1,4 +1,4 @@
-﻿from collections.abc import Iterator, Mapping, Sequence, Set
+from collections.abc import Iterator, Mapping, Sequence, Set
 import enum
 import types
 from typing import Annotated, Any, Union, overload
@@ -49,7 +49,7 @@ class EdgeType(enum.Enum):
 
 class OpType(enum.IntEnum):
     """
-    Enum for available operations compatible with tket :py:class:`~.Circuit`Ã¢â‚¬Â¯s.
+    Enum for available operations compatible with tket :py:class:`~.Circuit`s.
     """
 
     Phase = 21
@@ -386,7 +386,7 @@ class OpType(enum.IntEnum):
 
     XXPhase3 = 77
     """
-    A 3-qubit gate XXPhase3(ÃŽÂ±) consists of pairwise 2-qubit XXPhase(ÃŽÂ±) interactions. Equivalent to XXPhase(ÃŽÂ±)[0, 1] XXPhase(ÃŽÂ±)[1, 2] XXPhase(ÃŽÂ±)[0, 2].
+    A 3-qubit gate XXPhase3(α) consists of pairwise 2-qubit XXPhase(α) interactions. Equivalent to XXPhase(α)[0, 1] XXPhase(α)[1, 2] XXPhase(α)[0, 2].
     """
 
     PhasedX = 71
@@ -617,6 +617,18 @@ class Op:
 
     def is_clifford_type(self) -> bool:
         """Check if the operation is one of the Clifford :py:class:`~.OpType`s."""
+
+    def is_clifford(self) -> bool:
+        """
+        Test whether the operation is in the Clifford group. A return value of true guarantees that the operation is Clifford. However, the converse is not the case as some Clifford operations may not be detected as such.
+        """
+
+    def is_gate(self) -> bool: """Return True if the operation is a gate (as opposed to a measurement, reset, or other non-gate operation)""": ...
+
+class BasisOrder(enum.Enum):
+    """
+    Enum for readout basis and ordering.
+    Readouts are viewed in increasing lexicographic order (ILO) of the bit's UnitID. This is our default convention for column indexing for ALL readout forms (shots, counts, statevector, and unitaries). e.g. :math:`\\lvert abc \\rangle` corresponds to the readout: ('c', 0) --> :math:`a`, ('c', 1) --> :math:`b`, ('d', 0) --> :math:`c`
     For statevector and unitaries, the string abc is interpreted as an index in a big-endian (BE) fashion. e.g. the statevector :math:`(a_{00}, a_{01}, a_{10}, a_{11})`
     Some backends (Qiskit, ProjectQ, etc.) use a DLO-BE (decreasing lexicographic order, big-endian) convention. This is the same as ILO-LE (little-endian) for statevectors and unitaries, but gives shot tables/readouts in a counter-intuitive manner.
     Every backend and matrix-based box has a BasisOrder option which can toggle between ILO-BE (ilo) and DLO-BE (dlo).
@@ -2681,7 +2693,7 @@ class PauliExpBox(Op):
         """:return: the :py:class:`~.Circuit` described by the box"""
 
     def get_paulis(self) -> list[pytket._tket.pauli.Pauli]:
-        """:return: the corresponding list of :py:class:`~.Pauli`Ã¢â‚¬Â¯s"""
+        """:return: the corresponding list of :py:class:`~.Pauli` s"""
 
     def get_phase(self) -> Union[sympy.core.expr.Expr, float]:
         """:return: the corresponding phase parameter"""
@@ -2706,7 +2718,7 @@ class PauliExpPairBox(Op):
 
     def get_paulis_pair(self) -> tuple[list[pytket._tket.pauli.Pauli], list[pytket._tket.pauli.Pauli]]:
         """
-        :return: A tuple containing the two corresponding lists of :py:class:`~.Pauli`Ã¢â‚¬Â¯s
+        :return: A tuple containing the two corresponding lists of :py:class:`~.Pauli` s
         """
 
     def get_phase_pair(self) -> tuple[Union[sympy.core.expr.Expr, float], Union[sympy.core.expr.Expr, float]]:
@@ -2864,14 +2876,18 @@ class ResourceData:
     """
     An object holding resource data for use in a :py:class:`~.DummyBox`.
 
-    The object holds several fields representing minimum and maximum values for certain resources. The absence of an :py:class:`~.OpType`s.`~.Circuit.get_resources` for how to use this data.
+    The object holds several fields representing minimum and maximum values for certain resources. The absence of an :py:class:`~.OpType` in one of these fields is interpreted as the absence of gates of that type in the (imagined) circuit.
+
+    See :py:meth:`~.Circuit.get_resources` for how to use this data.
     """
 
     def __init__(self, op_type_count: Mapping[OpType, ResourceBounds], gate_depth: ResourceBounds, op_type_depth: Mapping[OpType, ResourceBounds], two_qubit_gate_depth: ResourceBounds) -> None:
         """
         Constructs a ResourceData object.
 
-        :param op_type_count: dictionary of counts of selected :py:class:`~.OpType`s.`~.OpType`
+        :param op_type_count: dictionary of counts of selected :py:class:`~.OpType`
+        :param gate_depth: overall gate depth
+        :param op_type_depth: dictionary of depths of selected :py:class:`~.OpType`
         :param two_qubit_gate_depth: overall two-qubit-gate depth
         """
 
@@ -3113,23 +3129,23 @@ class StabiliserAssertionBox(Op):
 
 class MultiplexorBox(Op):
     """
-    A user-defined multiplexor (i.e. uniformly controlled operations) specified by a map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯sor a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯s pairs
+    A user-defined multiplexor (i.e. uniformly controlled operations) specified by a map from bitstrings to :py:class:`~.Op` sor a list of bitstring-:py:class:`~.Op` s pairs
     """
 
     @overload
     def __init__(self, bistring_to_op_list: Sequence[tuple[Sequence[bool], Op]]) -> None:
         """
-        Construct from a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        Construct from a list of bitstring-:py:class:`~.Op` spairs
 
-        :param bitstring_to_op_list: List of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        :param bitstring_to_op_list: List of bitstring-:py:class:`~.Op` spairs
         """
 
     @overload
     def __init__(self, op_map: dict[tuple[bool, ...], Op]) -> None:
         """
-        Construct from a map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯s
+        Construct from a map from bitstrings to :py:class:`~.Op` s
 
-        :param op_map: Map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯s
+        :param op_map: Map from bitstrings to :py:class:`~.Op` s
         """
 
     def get_circuit(self) -> Circuit:
@@ -3143,25 +3159,25 @@ class MultiplexorBox(Op):
 
 class MultiplexedRotationBox(Op):
     """
-    A user-defined multiplexed rotation gate (i.e. uniformly controlled single-axis rotations) specified by a map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯sor a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯s pairs. Implementation based on arxiv.org/abs/quant-ph/0410066. The decomposed circuit has at most 2^k single-qubit rotations, 2^k CX gates, and two additional H gates if the rotation axis is X. k is the number of control qubits.
+    A user-defined multiplexed rotation gate (i.e. uniformly controlled single-axis rotations) specified by a map from bitstrings to :py:class:`~.Op` sor a list of bitstring-:py:class:`~.Op` s pairs. Implementation based on arxiv.org/abs/quant-ph/0410066. The decomposed circuit has at most 2^k single-qubit rotations, 2^k CX gates, and two additional H gates if the rotation axis is X. k is the number of control qubits.
     """
 
     @overload
     def __init__(self, bistring_to_op_list: Sequence[tuple[Sequence[bool], Op]]) -> None:
         """
-        Construct from a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        Construct from a list of bitstring-:py:class:`~.Op` spairs
 
-        All :py:class:`~.Op`Ã¢â‚¬Â¯s  must share the same single-qubit rotation type: Rx, Ry, or Rz.
+        All :py:class:`~.Op` s  must share the same single-qubit rotation type: Rx, Ry, or Rz.
 
-        :param bitstring_to_op_list: List of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        :param bitstring_to_op_list: List of bitstring-:py:class:`~.Op` spairs
         """
 
     @overload
     def __init__(self, op_map: dict[tuple[bool, ...], Op]) -> None:
         """
-        Construct from a map from bitstrings to :py:class:`~.Op` s.All :py:class:`~.Op`Ã¢â‚¬Â¯s  must share the same single-qubit rotation type: Rx, Ry, or Rz.
+        Construct from a map from bitstrings to :py:class:`~.Op` s.All :py:class:`~.Op` s  must share the same single-qubit rotation type: Rx, Ry, or Rz.
 
-        :param op_map: Map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯s
+        :param op_map: Map from bitstrings to :py:class:`~.Op` s
         """
 
     @overload
@@ -3184,26 +3200,26 @@ class MultiplexedRotationBox(Op):
 
 class MultiplexedU2Box(Op):
     """
-    A user-defined multiplexed U2 gate (i.e. uniformly controlled U2 gate) specified by a map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯sor a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯s pairsImplementation based on arxiv.org/abs/quant-ph/0410066. The decomposed circuit has at most 2^k single-qubit gates, 2^k -1 CX gates, and a k+1 qubit DiagonalBox at the end. k is the number of control qubits.
+    A user-defined multiplexed U2 gate (i.e. uniformly controlled U2 gate) specified by a map from bitstrings to :py:class:`~.Op` sor a list of bitstring-:py:class:`~.Op` s pairsImplementation based on arxiv.org/abs/quant-ph/0410066. The decomposed circuit has at most 2^k single-qubit gates, 2^k -1 CX gates, and a k+1 qubit DiagonalBox at the end. k is the number of control qubits.
     """
 
     @overload
     def __init__(self, bistring_to_op_list: Sequence[tuple[Sequence[bool], Op]], impl_diag: bool = True) -> None:
         """
-        Construct from a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        Construct from a list of bitstring-:py:class:`~.Op` spairs
 
         Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
 
-        :param op_map: List of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        :param op_map: List of bitstring-:py:class:`~.Op` spairs
         :param impl_diag: Whether to implement the final diagonal gate, default to True.
         """
 
     @overload
     def __init__(self, op_map: dict[tuple[bool, ...], Op], impl_diag: bool = True) -> None:
         """
-        Construct from a map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯s.Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
+        Construct from a map from bitstrings to :py:class:`~.Op`s.Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
 
-        :param op_map: Map from bitstrings to :py:class:`~.Op`Ã¢â‚¬Â¯s
+        :param op_map: Map from bitstrings to :py:class:`~.Op` s
         :param impl_diag: Whether to implement the final diagonal gate, default to True.
         """
 
@@ -3221,25 +3237,25 @@ class MultiplexedU2Box(Op):
 
 class MultiplexedTensoredU2Box(Op):
     """
-    A user-defined multiplexed tensor product of U2 gates specified by a map from bitstrings to lists of :py:class:`~.Op`Ã¢â‚¬Â¯sor a list of bitstring-list(:py:class:`~.Op`Ã¢â‚¬Â¯s) pairs. A box with k control qubits and t target qubits is implemented as t k-controlled multiplexed-U2 gates with their diagonal components merged and commuted to the end. The resulting circuit contains t non-diagonal components of the multiplexed-U2 decomposition, t k-controlled multiplexed-Rz boxes, and a k-qubit DiagonalBox at the end. The total CX count is at most 2^k(2t+1)-t-2.
+    A user-defined multiplexed tensor product of U2 gates specified by a map from bitstrings to lists of :py:class:`~.Op` sor a list of bitstring-list(:py:class:`~.Op` s) pairs. A box with k control qubits and t target qubits is implemented as t k-controlled multiplexed-U2 gates with their diagonal components merged and commuted to the end. The resulting circuit contains t non-diagonal components of the multiplexed-U2 decomposition, t k-controlled multiplexed-Rz boxes, and a k-qubit DiagonalBox at the end. The total CX count is at most 2^k(2t+1)-t-2.
     """
 
     @overload
     def __init__(self, bistring_to_op_list: Sequence[tuple[Sequence[bool], Sequence[Op]]]) -> None:
         """
-        Construct from a list of bitstring-:py:class:`~.Op`Ã¢â‚¬Â¯spairs
+        Construct from a list of bitstring-:py:class:`~.Op` spairs
 
         Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
 
-        :param bitstring_to_op_list: List of bitstring-List of :py:class:`~.Op`Ã¢â‚¬Â¯s pairs
+        :param bitstring_to_op_list: List of bitstring-List of :py:class:`~.Op` s pairs
         """
 
     @overload
     def __init__(self, op_map: dict[tuple[bool, ...], Sequence[Op]]) -> None:
         """
-        Construct from a map from bitstrings to equal-sized lists of :py:class:`~.Op`Ã¢â‚¬Â¯s. Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
+        Construct from a map from bitstrings to equal-sized lists of :py:class:`~.Op`s. Only supports single qubit unitary gate types and :py:class:`~.Unitary1qBox`.
 
-        :param op_map: Map from bitstrings to lists of :py:class:`~.Op`Ã¢â‚¬Â¯s
+        :param op_map: Map from bitstrings to lists of :py:class:`~.Op` s
         """
 
     def get_circuit(self) -> Circuit:
