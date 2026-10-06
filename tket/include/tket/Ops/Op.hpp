@@ -99,7 +99,9 @@ class TKET_EXPORT Op : public std::enable_shared_from_this<Op> {
   /** Get operation type */
   OpType get_type() const { return type_; }
 
-  /** Set of all free symbols occurring in operation parameters. */
+  /**
+   * Return the set of free symbols occurring in the operation parameters.
+   */
   virtual SymSet free_symbols() const = 0;
 
   /**
@@ -175,8 +177,8 @@ class TKET_EXPORT Op : public std::enable_shared_from_this<Op> {
   };
 
   /**
-   * If meaningful and implemented, return the numerical unitary matrix
-   * (in ILO-BE convention) which this Op represents.
+   * Return the numerical unitary matrix (in ILO-BE convention) represented
+   * by this operation, when meaningful and implemented.
    *
    * @pre No symbolic parameters.
    * @return unitary matrix (ILO-BE) which this Op represents
