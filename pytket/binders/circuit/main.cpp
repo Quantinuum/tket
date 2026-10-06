@@ -661,7 +661,8 @@ NB_MODULE(circuit, m) {
           "detected as such.")
       .def(
           "is_gate", [](const Op &op) { return op.get_desc().is_gate(); },
-          "Return True if the operation is a gate (as opposed to a measurement, "
+          "Return True if the operation is a gate (as opposed to a "
+          "measurement, "
           "reset, or other non-gate operation)");
 
   nb::enum_<BasisOrder>(
