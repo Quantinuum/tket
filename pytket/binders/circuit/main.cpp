@@ -642,8 +642,12 @@ NB_MODULE(circuit, m) {
       .def("__eq__", &py_equals<Op>)
       .def("__hash__", &deletedHash<Op>, deletedHashDocstring)
       .def("__repr__", [](const Op &op) { return op.get_name(); })
-      .def("free_symbols", [](const Op &op) { return op.free_symbols(); })
-      .def("get_unitary", [](const Op *op) { return op->get_unitary(); })
+      .def(
+          "free_symbols", [](const Op &op) { return op.free_symbols(); },
+          "Return the set of free symbols in the operation parameters")
+      .def(
+          "get_unitary", [](const Op *op) { return op->get_unitary(); },
+          "Return the unitary matrix representation of the operation")
       .def(
           "is_clifford_type",
           [](const Op &op) { return op.get_desc().is_clifford_gate(); },
@@ -655,7 +659,11 @@ NB_MODULE(circuit, m) {
           "of true guarantees that the operation is Clifford. However, the "
           "converse is not the case as some Clifford operations may not be "
           "detected as such.")
-      .def("is_gate", [](const Op &op) { return op.get_desc().is_gate(); });
+      .def(
+          "is_gate", [](const Op &op) { return op.get_desc().is_gate(); },
+          "Return True if the operation is a gate (as opposed to a "
+          "measurement, "
+          "reset, or other non-gate operation)");
 
   nb::enum_<BasisOrder>(
       m, "BasisOrder",

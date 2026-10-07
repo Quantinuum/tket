@@ -611,9 +611,11 @@ class Op:
 
     def __repr__(self) -> str: ...
 
-    def free_symbols(self) -> set[sympy.core.symbol.Symbol]: ...
+    def free_symbols(self) -> set[sympy.core.symbol.Symbol]:
+        """Return the set of free symbols in the operation parameters"""
 
-    def get_unitary(self) -> Annotated[NDArray[numpy.complex128], dict(shape=(None, None), order='F')]: ...
+    def get_unitary(self) -> Annotated[NDArray[numpy.complex128], dict(shape=(None, None), order='F')]:
+        """Return the unitary matrix representation of the operation"""
 
     def is_clifford_type(self) -> bool:
         """Check if the operation is one of the Clifford :py:class:`~.OpType` s."""
@@ -623,7 +625,10 @@ class Op:
         Test whether the operation is in the Clifford group. A return value of true guarantees that the operation is Clifford. However, the converse is not the case as some Clifford operations may not be detected as such.
         """
 
-    def is_gate(self) -> bool: ...
+    def is_gate(self) -> bool:
+        """
+        Return True if the operation is a gate (as opposed to a measurement, reset, or other non-gate operation)
+        """
 
 class BasisOrder(enum.Enum):
     """
