@@ -71,7 +71,10 @@ class TKET_EXPORT OpDesc {
   /** Whether the operation is a box of some kind */
   bool is_box() const;
 
-  /** Whether the operation is a normal (quantum or classical) gate */
+  /**
+   * Return whether the operation is a gate, as opposed to a measurement,
+   * reset, or other non-gate operation.
+   */
   bool is_gate() const;
 
   /** Whether the operation is for control flow */
