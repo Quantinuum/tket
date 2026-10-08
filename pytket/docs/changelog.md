@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.18.5 (October 2026)
 
 Fixes:
 
