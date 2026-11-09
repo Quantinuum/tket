@@ -1,6 +1,7 @@
 import numpy as np
+import pytest
 
-from pytket.circuit import Circuit, PhasePolyBox, Qubit
+from pytket.circuit import Bit, Circuit, OpType, PhasePolyBox, Qubit
 from pytket.circuit.named_types import PhasePolynomialDict, PhasePolynomialSequence
 from pytket.passes import ComposePhasePolyBoxes, DecomposeBoxes
 from pytket.utils import compare_unitaries
@@ -170,6 +171,61 @@ def test_compose_phase_polybox_custom_registers() -> None:
     breg = c.add_q_register("b", 1)
     c.CX(areg[0], breg[0]).CX(areg[1], areg[0])
     ComposePhasePolyBoxes().apply(c)
+
+
+@pytest.mark.parametrize("min_size", [0, 2, 10])
+@pytest.mark.parametrize(
+    "qubits",
+    [
+        [Qubit("p", i) for i in range(3)],
+        [Qubit("a", 1), Qubit("b", 4), Qubit("z", [2, 3])],
+        [Qubit(i) for i in (1, 3, 7)],
+        [Qubit(0), Qubit("a", 2), Qubit("b", 4)],
+    ],
+)
+def test_compose_phase_polybox_custom_register_boundaries(
+    qubits: list[Qubit], min_size: int
+) -> None:
+    c = Circuit()
+    for qubit in qubits:
+        c.add_qubit(qubit)
+    a, b, d = qubits
+    c.CX(a, b).T(b).CX(a, b).H(a).CX(a, d)
+    c.T(d).CX(a, d).CX(a, b).T(b).H(a).CX(a, b)
+    c.add_barrier(qubits)
+    c.Rz(0.3, b).CX(b, d)
+    c.add_phase(0.37)
+    expected_unitary = c.get_unitary()
+    expected_qubits = c.qubits
+
+    assert ComposePhasePolyBoxes(min_size=min_size).apply(c)
+    assert c.qubits == expected_qubits
+    if min_size == 0:
+        assert c.n_gates_of_type(OpType.PhasePolyBox) > 0
+    if min_size == 10:
+        assert c.n_gates_of_type(OpType.PhasePolyBox) == 0
+    DecomposeBoxes().apply(c)
+    np.testing.assert_allclose(c.get_unitary(), expected_unitary, atol=1e-10)
+
+
+@pytest.mark.parametrize("min_size", [0, 10])
+def test_compose_phase_polybox_custom_classical_registers(min_size: int) -> None:
+    a, b = Qubit("p", 3), Qubit("p", 7)
+    first, second = Bit("readout", 2), Bit("flag", 5)
+    c = Circuit()
+    for qubit in (a, b):
+        c.add_qubit(qubit)
+    for bit in (first, second):
+        c.add_bit(bit)
+    c.H(a).Measure(a, first).CX(a, b)
+    c.Reset(a).add_gate(OpType.Collapse, [b])
+    c.Measure(b, second).H(b).CX(a, b).Measure(a, first)
+    expected = c.copy()
+    assert ComposePhasePolyBoxes(min_size=min_size).apply(c)
+    assert c.qubits == expected.qubits
+    assert c.bits == expected.bits
+    DecomposeBoxes().apply(c)
+    assert c == expected
 
 
 def test_add_and_decompose_phase_polybox_custom_registers() -> None:
