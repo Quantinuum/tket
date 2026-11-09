@@ -266,6 +266,37 @@ def test_outcomearray() -> None:
     )
 
 
+@pytest.mark.parametrize("big_endian", [False, True])
+@pytest.mark.parametrize("ints", [[8, 1], [1, 8], [-1, 1], [1, -1]])
+def test_outcomearray_from_ints_invalid_values(
+    ints: list[int], big_endian: bool
+) -> None:
+    with pytest.raises(ValueError, match="fit in the specified width"):
+        OutcomeArray.from_ints(ints, 3, big_endian=big_endian)
+
+
+@pytest.mark.parametrize("ints", [[], [0]])
+def test_outcomearray_from_ints_negative_width(ints: list[int]) -> None:
+    with pytest.raises(ValueError, match="non-negative"):
+        OutcomeArray.from_ints(ints, -1)
+
+
+@pytest.mark.parametrize("big_endian", [False, True])
+@pytest.mark.parametrize("width", [0, 1, 7, 8, 9, 64, 65])
+def test_outcomearray_from_ints_boundaries(width: int, big_endian: bool) -> None:
+    maximum = (1 << width) - 1
+    outcomes = OutcomeArray.from_ints([0, maximum], width, big_endian=big_endian)
+    assert outcomes.to_readouts().tolist() == [[0] * width, [1] * width]
+    assert outcomes.width == width
+    assert outcomes.n_outcomes == 2
+
+
+@pytest.mark.parametrize("big_endian", [False, True])
+def test_outcomearray_from_ints_zero_width_invalid_value(big_endian: bool) -> None:
+    with pytest.raises(ValueError, match="fit in the specified width"):
+        OutcomeArray.from_ints([1, 0], 0, big_endian=big_endian)
+
+
 def test_pauli_expectation_value() -> None:
     c = Circuit(2).H(0).CX(0, 1)
     qps_zz = QubitPauliString({Qubit(0): Pauli.Z, Qubit(1): Pauli.Z})

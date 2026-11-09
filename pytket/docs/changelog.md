@@ -4,6 +4,8 @@
 
 Fixes:
 
+- Reject negative or oversized integers in `OutcomeArray.from_ints` instead
+  of silently corrupting outcomes. Negative widths are also rejected.
 - Support deserialization of `CliffordResynthesis` and
   `CliffordPushThroughMeasures`, preserving the `allow_swaps` setting for
   `CliffordResynthesis`. Custom resynthesis callbacks cannot be deserialized.
