@@ -149,6 +149,8 @@
             "NaivePlacementPass",
             "RenameQubitsPass",
             "CliffordSimp",
+            "CliffordResynthesis",
+            "CliffordPushThroughMeasures",
             "DecomposeSwapsToCXs",
             "DecomposeSwapsToCircuit",
             "OptimisePhaseGadgets",
@@ -222,7 +224,12 @@
         },
         "allow_swaps": {
           "type": "boolean",
-          "description": "Permit Clifford simplifications that introduce implicit swaps. Used in \"CliffordSimp\"."
+          "description": "Permit Clifford simplifications that introduce implicit swaps. Used in \"CliffordSimp\" and \"CliffordResynthesis\"."
+        },
+        "transform": {
+          "type": "string",
+          "const": "USER_DEFINED_TRANSFORM",
+          "description": "Marks a custom CliffordResynthesis callback, which cannot be deserialized."
         },
         "qubit_map": {
           "type": "array",

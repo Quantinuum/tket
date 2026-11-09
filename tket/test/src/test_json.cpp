@@ -1183,6 +1183,38 @@ SCENARIO("Test compiler pass serializations") {
   }
 }
 
+SCENARIO("Test Clifford pass serialization") {
+  GIVEN("CliffordResynthesis with either swap setting") {
+    for (bool allow_swaps : {false, true}) {
+      PassPtr pass = gen_clifford_resynthesis_pass(std::nullopt, allow_swaps);
+      nlohmann::json config = serialise(pass);
+      CHECK(config.at("StandardPass").at("allow_swaps") == allow_swaps);
+      PassPtr restored = deserialise(config);
+      CHECK(serialise(restored) == config);
+    }
+  }
+  GIVEN("A legacy CliffordResynthesis configuration") {
+    nlohmann::json config = {
+        {"pass_class", "StandardPass"},
+        {"StandardPass", {{"name", "CliffordResynthesis"}}}};
+    CHECK(
+        serialise(deserialise(config)) ==
+        serialise(gen_clifford_resynthesis_pass()));
+  }
+  GIVEN("CliffordResynthesis with a custom transform") {
+    std::function<Circuit(const Circuit&)> transform = [](const Circuit& circ) {
+      return circ;
+    };
+    PassPtr pass = gen_clifford_resynthesis_pass(transform);
+    CHECK_THROWS_AS(deserialise(serialise(pass)), PassNotSerializable);
+  }
+  GIVEN("CliffordPushThroughMeasures") {
+    PassPtr pass = gen_clifford_push_through_pass();
+    PassPtr restored = deserialise(serialise(pass));
+    CHECK(serialise(restored) == serialise(pass));
+  }
+}
+
 SCENARIO("Test compiler pass combinator serializations") {
   GIVEN("Sequences of passes") {
     Circuit circ = CircuitsForTesting::get().uccsd;

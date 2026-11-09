@@ -336,6 +336,11 @@ PassPtr gen_clifford_resynthesis_pass(
   PostConditions pc{{}, {}, Guarantee::Preserve};
   nlohmann::json j;
   j["name"] = "CliffordResynthesis";
+  j["allow_swaps"] = allow_swaps;
+  if (transform) {
+    // A callable cannot be reconstructed from JSON.
+    j["transform"] = "USER_DEFINED_TRANSFORM";
+  }
   return std::make_shared<StandardPass>(precons, t, pc, j);
 }
 

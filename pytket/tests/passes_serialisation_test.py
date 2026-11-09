@@ -34,6 +34,8 @@ from pytket.mapping import (
 from pytket.passes import (
     AASRouting,
     BasePass,
+    CliffordPushThroughMeasures,
+    CliffordResynthesis,
     CommuteThroughMultis,
     CustomPass,
     CustomPassMap,
@@ -145,6 +147,9 @@ PREDICATES.update(PARAM_PREDICATES)
 
 # Parametrized passes that satisfy pass.from_dict(d).to_dict()==d
 TWO_WAY_PARAM_PASSES = {
+    "CliffordResynthesis": standard_pass_dict(
+        {"name": "CliffordResynthesis", "allow_swaps": False}
+    ),
     "KAKDecomposition": standard_pass_dict(
         {
             "name": "KAKDecomposition",
@@ -335,6 +340,7 @@ TWO_WAY_PARAM_PASSES = {
 
 # non-parametrized passes that satisfy pass.from_dict(d).to_dict()==d
 TWO_WAY_NONPARAM_PASSES = [
+    "CliffordPushThroughMeasures",
     "CommuteThroughMultis",
     "DecomposeArbitrarilyControlledGates",
     "DecomposeMultiQubitsCX",
@@ -494,6 +500,51 @@ def test_passes_one_way_serialisation() -> None:
             check_pass_serialisation(p, check_roundtrip=False)
         except ValidationError as e:  # noqa: PERF203
             raise ValueError(f"Pass {k} failed serialisation test.") from e
+
+
+@pytest.mark.parametrize("allow_swaps", [False, True])
+def test_clifford_resynthesis_roundtrip(allow_swaps: bool) -> None:
+    original = CliffordResynthesis(allow_swaps=allow_swaps)
+    check_pass_serialisation(original.to_dict())
+    restored = BasePass.from_dict(original.to_dict())
+    assert restored.to_dict() == original.to_dict()
+    assert restored.to_dict()["StandardPass"]["allow_swaps"] == allow_swaps
+
+    circuit = Circuit(2).CX(0, 1).CX(1, 0).CX(0, 1)
+    expected = circuit.copy()
+    original.apply(expected)
+    restored.apply(circuit)
+    assert circuit == expected
+    if not allow_swaps:
+        assert circuit.implicit_qubit_permutation() == {
+            Qubit(0): Qubit(0),
+            Qubit(1): Qubit(1),
+        }
+
+
+def test_clifford_resynthesis_legacy_deserialisation() -> None:
+    legacy = BasePass.from_dict(nonparam_pass_dict("CliffordResynthesis"))
+    assert legacy.to_dict() == CliffordResynthesis().to_dict()
+
+
+def test_clifford_resynthesis_custom_transform_deserialisation() -> None:
+    custom = CliffordResynthesis(transform=lambda circuit: circuit.copy())
+    pass_validator.validate(custom.to_dict())
+    with pytest.raises(RuntimeError, match="Pass not serializable"):
+        BasePass.from_dict(custom.to_dict())
+
+
+def test_clifford_push_through_measures_roundtrip() -> None:
+    original = CliffordPushThroughMeasures()
+    check_pass_serialisation(original.to_dict())
+    restored = BasePass.from_dict(original.to_dict())
+    assert restored.to_dict() == original.to_dict()
+    circuit = Circuit(2, 2).CX(0, 1).measure_all()
+    expected = circuit.copy()
+    original.apply(expected)
+    restored.apply(circuit)
+    assert circuit == expected
+    assert circuit.n_gates_of_type(OpType.CX) == 0
 
 
 def test_predicate_serialisation() -> None:
