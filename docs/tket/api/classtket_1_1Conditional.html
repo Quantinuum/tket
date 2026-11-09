@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ed4be419894151b11b712716f258835" id="r_a8ed4be419894151b11b712716f258835"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a75405147f5ffd3ff1ff1118fba63bcd0">Op_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ed4be419894151b11b712716f258835">symbol_substitution</a> (const SymEngine::map_basic_basic &amp;sub_map) const override</td></tr>
 <tr class="memdesc:a8ed4be419894151b11b712716f258835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation with values for symbols substituted.  <br /></td></tr>
 <tr class="memitem:a19f5bb8a06605fb5ad14569c99ab5c17" id="r_a19f5bb8a06605fb5ad14569c99ab5c17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#ac74e9f3dd71c2a79be4ab7887d943fc2">SymSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19f5bb8a06605fb5ad14569c99ab5c17">free_symbols</a> () const override</td></tr>
-<tr class="memdesc:a19f5bb8a06605fb5ad14569c99ab5c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of all free symbols occurring in operation parameters.  <br /></td></tr>
+<tr class="memdesc:a19f5bb8a06605fb5ad14569c99ab5c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of free symbols occurring in the operation parameters.  <br /></td></tr>
 <tr class="memitem:a99b18f9e1d60dd18fe233be22394287b" id="r_a99b18f9e1d60dd18fe233be22394287b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99b18f9e1d60dd18fe233be22394287b">is_equal</a> (const <a class="el" href="classtket_1_1Op.html#a0b15cfc17edca81e9b4b4fe353ebbb93">Op</a> &amp;other) const override</td></tr>
 <tr class="memdesc:a99b18f9e1d60dd18fe233be22394287b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality check between two <a class="el" href="classtket_1_1Conditional.html" title="Decorates another op, adding a QASM-style classical condition.">Conditional</a> instances.  <br /></td></tr>
 <tr class="memitem:abdd2d8b5753b5936e5dfac0d0885ddd6" id="r_abdd2d8b5753b5936e5dfac0d0885ddd6"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdd2d8b5753b5936e5dfac0d0885ddd6">n_qubits</a> () const override</td></tr>
@@ -172,7 +172,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa2cdcc72b3bc0ca1ca6c362cee08fb0 inherit pub_methods_classtket_1_1Op" id="r_afa2cdcc72b3bc0ca1ca6c362cee08fb0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Op.html#afa2cdcc72b3bc0ca1ca6c362cee08fb0">has_symmetry</a> (unsigned port1, unsigned port2) const</td></tr>
 <tr class="memdesc:afa2cdcc72b3bc0ca1ca6c362cee08fb0 inherit pub_methods_classtket_1_1Op"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for symmetry of port pairs.  <br /></td></tr>
 <tr class="memitem:a8036a6e71f1a9c064f692aedb654ddec inherit pub_methods_classtket_1_1Op" id="r_a8036a6e71f1a9c064f692aedb654ddec"><td class="memItemLeft" align="right" valign="top">virtual Eigen::MatrixXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Op.html#a8036a6e71f1a9c064f692aedb654ddec">get_unitary</a> () const</td></tr>
-<tr class="memdesc:a8036a6e71f1a9c064f692aedb654ddec inherit pub_methods_classtket_1_1Op"><td class="mdescLeft">&#160;</td><td class="mdescRight">If meaningful and implemented, return the numerical unitary matrix (in ILO-BE convention) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents.  <br /></td></tr>
+<tr class="memdesc:a8036a6e71f1a9c064f692aedb654ddec inherit pub_methods_classtket_1_1Op"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the numerical unitary matrix (in ILO-BE convention) represented by this operation, when meaningful and implemented.  <br /></td></tr>
 <tr class="memitem:a275e7d96c068388cdeadb225d5e1ff74 inherit pub_methods_classtket_1_1Op" id="r_a275e7d96c068388cdeadb225d5e1ff74"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Op.html#a275e7d96c068388cdeadb225d5e1ff74">~Op</a> ()</td></tr>
 <tr class="memitem:a39cd9465081544753134817fb3959a57 inherit pub_methods_classtket_1_1Op" id="r_a39cd9465081544753134817fb3959a57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Op.html#a39cd9465081544753134817fb3959a57">operator==</a> (const <a class="el" href="classtket_1_1Op.html#a0b15cfc17edca81e9b4b4fe353ebbb93">Op</a> &amp;other) const</td></tr>
 </table><table class="memberdecls">
@@ -453,7 +453,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set of all free symbols occurring in operation parameters. </p>
+<p>Return the set of free symbols occurring in the operation parameters. </p>
 
 <p>Implements <a class="el" href="classtket_1_1Op.html#aaf39768595adfe922e0278dfed20ecf6">tket::Op</a>.</p>
 

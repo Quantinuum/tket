@@ -228,7 +228,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab36355c0f04fd893d986aed73ffd5f95" id="r_ab36355c0f04fd893d986aed73ffd5f95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3">OpType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab36355c0f04fd893d986aed73ffd5f95">get_type</a> () const</td></tr>
 <tr class="memdesc:ab36355c0f04fd893d986aed73ffd5f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get operation type.  <br /></td></tr>
 <tr class="memitem:aaf39768595adfe922e0278dfed20ecf6" id="r_aaf39768595adfe922e0278dfed20ecf6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacetket.html#ac74e9f3dd71c2a79be4ab7887d943fc2">SymSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf39768595adfe922e0278dfed20ecf6">free_symbols</a> () const =0</td></tr>
-<tr class="memdesc:aaf39768595adfe922e0278dfed20ecf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of all free symbols occurring in operation parameters.  <br /></td></tr>
+<tr class="memdesc:aaf39768595adfe922e0278dfed20ecf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of free symbols occurring in the operation parameters.  <br /></td></tr>
 <tr class="memitem:adb04ed6bfa73d9127bd0cf131308d33b" id="r_adb04ed6bfa73d9127bd0cf131308d33b"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="namespacetket.html#a342a289d54f4f5f5a405373c07aca66a">Pauli</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb04ed6bfa73d9127bd0cf131308d33b">commuting_basis</a> (<a class="el" href="namespacetket.html#a85e7f8d119b3b35dd331a339729f4cfb">port_t</a> i) const</td></tr>
 <tr class="memdesc:adb04ed6bfa73d9127bd0cf131308d33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which <a class="el" href="namespacetket.html#a342a289d54f4f5f5a405373c07aca66a" title="Symbols for the Pauli operators (and identity).">Pauli</a>, if any, commutes with the operation at a given port.  <br /></td></tr>
 <tr class="memitem:a06dfb70fa5742a25784ca1b5c9fd6a1b" id="r_a06dfb70fa5742a25784ca1b5c9fd6a1b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06dfb70fa5742a25784ca1b5c9fd6a1b">commutes_with_basis</a> (const std::optional&lt; <a class="el" href="namespacetket.html#a342a289d54f4f5f5a405373c07aca66a">Pauli</a> &gt; &amp;colour, <a class="el" href="namespacetket.html#a85e7f8d119b3b35dd331a339729f4cfb">port_t</a> i) const</td></tr>
@@ -244,7 +244,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa2cdcc72b3bc0ca1ca6c362cee08fb0" id="r_afa2cdcc72b3bc0ca1ca6c362cee08fb0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa2cdcc72b3bc0ca1ca6c362cee08fb0">has_symmetry</a> (unsigned port1, unsigned port2) const</td></tr>
 <tr class="memdesc:afa2cdcc72b3bc0ca1ca6c362cee08fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for symmetry of port pairs.  <br /></td></tr>
 <tr class="memitem:a8036a6e71f1a9c064f692aedb654ddec" id="r_a8036a6e71f1a9c064f692aedb654ddec"><td class="memItemLeft" align="right" valign="top">virtual Eigen::MatrixXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8036a6e71f1a9c064f692aedb654ddec">get_unitary</a> () const</td></tr>
-<tr class="memdesc:a8036a6e71f1a9c064f692aedb654ddec"><td class="mdescLeft">&#160;</td><td class="mdescRight">If meaningful and implemented, return the numerical unitary matrix (in ILO-BE convention) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents.  <br /></td></tr>
+<tr class="memdesc:a8036a6e71f1a9c064f692aedb654ddec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the numerical unitary matrix (in ILO-BE convention) represented by this operation, when meaningful and implemented.  <br /></td></tr>
 <tr class="memitem:a77ea214cee91f2366aa4ee3f2aabcd4f" id="r_a77ea214cee91f2366aa4ee3f2aabcd4f"><td class="memItemLeft" align="right" valign="top">virtual nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77ea214cee91f2366aa4ee3f2aabcd4f">serialize</a> () const</td></tr>
 <tr class="memitem:a275e7d96c068388cdeadb225d5e1ff74" id="r_a275e7d96c068388cdeadb225d5e1ff74"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a275e7d96c068388cdeadb225d5e1ff74">~Op</a> ()</td></tr>
 <tr class="memitem:a39cd9465081544753134817fb3959a57" id="r_a39cd9465081544753134817fb3959a57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39cd9465081544753134817fb3959a57">operator==</a> (const <a class="el" href="#a0b15cfc17edca81e9b4b4fe353ebbb93">Op</a> &amp;other) const</td></tr>
@@ -290,7 +290,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00191">191</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00193">193</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00206">206</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00208">208</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +358,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00124">124</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00126">126</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1Conditional.html#a4207c9101eba1f28c50735a199ccc884">tket::Conditional</a>, and <a class="el" href="classtket_1_1Gate.html#a51baf7616a2924c720937e822a37d153">tket::Gate</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00113">113</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00115">115</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -467,7 +467,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set of all free symbols occurring in operation parameters. </p>
+<p>Return the set of free symbols occurring in the operation parameters. </p>
 
 <p>Implemented in <a class="el" href="classtket_1_1BarrierOp.html#a5d13a809949764c5912eaa6f8e6bbd17">tket::BarrierOp</a>, <a class="el" href="classtket_1_1CircBox.html#ab5713420133db6902ade7785dabab0f3">tket::CircBox</a>, <a class="el" href="classtket_1_1ClassicalOp.html#a75e2ca0cab2ba773546e5003200f7c85">tket::ClassicalOp</a>, <a class="el" href="classtket_1_1ClExprOp.html#a43e8579970a6cbb7ec630dccbc9be588">tket::ClExprOp</a>, <a class="el" href="classtket_1_1Conditional.html#a19f5bb8a06605fb5ad14569c99ab5c17">tket::Conditional</a>, <a class="el" href="classtket_1_1ConjugationBox.html#a66f6011a959a32116acc8c9a3b8a3ce7">tket::ConjugationBox</a>, <a class="el" href="classtket_1_1CustomGate.html#a711621bd1aadab0d0979568fbcd4203c">tket::CustomGate</a>, <a class="el" href="classtket_1_1DiagonalBox.html#aa8490ec0718ec1a944c0f7e9a848a690">tket::DiagonalBox</a>, <a class="el" href="classtket_1_1DummyBox.html#a5201cc4eaa1628e7226dee171d3ea02c">tket::DummyBox</a>, <a class="el" href="classtket_1_1ExpBox.html#a9afed0ae70e1829e9018066c756a7add">tket::ExpBox</a>, <a class="el" href="classtket_1_1FlowOp.html#a22557941c01609caaf91ccb2277b8e32">tket::FlowOp</a>, <a class="el" href="classtket_1_1Gate.html#a1de8a6be1c1ee667053bc75369eeee2e">tket::Gate</a>, <a class="el" href="classtket_1_1MetaOp.html#aa501b78486c1b27758407ed184470948">tket::MetaOp</a>, <a class="el" href="classtket_1_1MultiplexedRotationBox.html#a4b2f92c111057d1763aedf3f72139848">tket::MultiplexedRotationBox</a>, <a class="el" href="classtket_1_1MultiplexedTensoredU2Box.html#ab149761d4c3124f3a51c2bc211309216">tket::MultiplexedTensoredU2Box</a>, <a class="el" href="classtket_1_1MultiplexedU2Box.html#a785fa32a264287d5ba5f3ac3369883da">tket::MultiplexedU2Box</a>, <a class="el" href="classtket_1_1MultiplexorBox.html#abd26af0b073af230b6717451942ed4bc">tket::MultiplexorBox</a>, <a class="el" href="classtket_1_1PauliExpBox.html#ab44b9ecd471e988ea60c93904d706b0c">tket::PauliExpBox</a>, <a class="el" href="classtket_1_1PauliExpCommutingSetBox.html#a51ee101d4d68d455b2e12d428f36d157">tket::PauliExpCommutingSetBox</a>, <a class="el" href="classtket_1_1PauliExpPairBox.html#a585de6c0e68f3a8173938dd81df360eb">tket::PauliExpPairBox</a>, <a class="el" href="classtket_1_1PhasePolyBox.html#a219fd970dd03f5d72cef0a11480be949">tket::PhasePolyBox</a>, <a class="el" href="classtket_1_1ProjectorAssertionBox.html#a7768d30c57e4cf132b3a2d81023cd87a">tket::ProjectorAssertionBox</a>, <a class="el" href="classtket_1_1QControlBox.html#ac4f3909c49ccccaeebaffae9064015e9">tket::QControlBox</a>, <a class="el" href="classtket_1_1StabiliserAssertionBox.html#a5296b82b2c3479c7d9058afd1f4f0708">tket::StabiliserAssertionBox</a>, <a class="el" href="classtket_1_1StatePreparationBox.html#a87d475ef2a0c2f5187c0f5b2e9017418">tket::StatePreparationBox</a>, <a class="el" href="classtket_1_1TermSequenceBox.html#a20f7533e46e6dc5d676d713e7cda573e">tket::TermSequenceBox</a>, <a class="el" href="classtket_1_1ToffoliBox.html#a720ca21161fb41302ebc32ae5d3441a0">tket::ToffoliBox</a>, <a class="el" href="classtket_1_1Unitary1qBox.html#a171865eeb4e8e9eed20e735f1e0c99af">tket::Unitary1qBox</a>, <a class="el" href="classtket_1_1Unitary2qBox.html#afb12b937fe1397704752d940d36d1d11">tket::Unitary2qBox</a>, <a class="el" href="classtket_1_1Unitary3qBox.html#a9f88136a70e0d64fe9d1f4b15b6223db">tket::Unitary3qBox</a>, and <a class="el" href="classtket_1_1UnitaryTableauBox.html#aa76536d7f8315546bc4e8654f65c29d9">tket::UnitaryTableauBox</a>.</p>
 
@@ -707,7 +707,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If meaningful and implemented, return the numerical unitary matrix (in ILO-BE convention) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents. </p>
+<p>Return the numerical unitary matrix (in ILO-BE convention) represented by this operation, when meaningful and implemented. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>No symbolic parameters. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>unitary matrix (ILO-BE) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -719,7 +719,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1Box.html#a0447431c9a03a28e3687285c04b3198d">tket::Box</a>, and <a class="el" href="classtket_1_1Gate.html#ae11edd0093980d96ec12d5da3bc6cb8a">tket::Gate</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00185">185</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00187">187</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -761,7 +761,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1Gate.html#a7761aecc9ae83f896d94fe9191c2c9c6">tket::Gate</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00173">173</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00175">175</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -799,7 +799,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1BarrierOp.html#a176c38ef15e2b71c79629843af23ed3c">tket::BarrierOp</a>, <a class="el" href="classtket_1_1CircBox.html#a82b2ad472cb0cad596c7035707e857d4">tket::CircBox</a>, <a class="el" href="classtket_1_1CustomGate.html#a3b393843dcd88e9df6e6b3722855ab92">tket::CustomGate</a>, <a class="el" href="classtket_1_1Gate.html#adfa3f26f8a39613cef32f34cc44455d0">tket::Gate</a>, <a class="el" href="classtket_1_1MetaOp.html#a5fa139733fd6e4dee833807cdfbf5717">tket::MetaOp</a>, <a class="el" href="classtket_1_1PauliExpBox.html#a6c5116125cbfbda4072c402f4762e18c">tket::PauliExpBox</a>, <a class="el" href="classtket_1_1PauliExpCommutingSetBox.html#adb3cc8ba0d0022d597a4df65c43ebe87">tket::PauliExpCommutingSetBox</a>, <a class="el" href="classtket_1_1PauliExpPairBox.html#a3b6a9451f8f5b1e72d7b3d4d2d447b42">tket::PauliExpPairBox</a>, <a class="el" href="classtket_1_1PhasePolyBox.html#a87a1468fa56253f7c0797bc6aa742851">tket::PhasePolyBox</a>, <a class="el" href="classtket_1_1TermSequenceBox.html#aa020c53f477c16c8853ae834911478ea">tket::TermSequenceBox</a>, <a class="el" href="classtket_1_1Unitary1qBox.html#a126f11f4a3f643f1c62943883636a99b">tket::Unitary1qBox</a>, and <a class="el" href="classtket_1_1UnitaryTableauBox.html#ada653ebc46b4d2344b87e79dbd64bd8e">tket::UnitaryTableauBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00162">162</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00164">164</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -832,7 +832,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1BarrierOp.html#a1ad95e5d9d813ab7f471ae81c5cd6ac7">tket::BarrierOp</a>, <a class="el" href="classtket_1_1CircBox.html#a10ffdedb2dde9eb8b8c898589689be54">tket::CircBox</a>, <a class="el" href="classtket_1_1ClassicalEvalOp.html#aa4fbacd93f4d7b0afe09550ff701c1bd">tket::ClassicalEvalOp</a>, <a class="el" href="classtket_1_1ClassicalOp.html#a80a698b6ed393fe9a8c783ee38aedcc4">tket::ClassicalOp</a>, <a class="el" href="classtket_1_1Conditional.html#a99b18f9e1d60dd18fe233be22394287b">tket::Conditional</a>, <a class="el" href="classtket_1_1ConjugationBox.html#a3851c6bcac74691c388bd6dff5a8d9be">tket::ConjugationBox</a>, <a class="el" href="classtket_1_1CustomGate.html#ab65c88961430c2c68ce7cd3fd61d2668">tket::CustomGate</a>, <a class="el" href="classtket_1_1DiagonalBox.html#aa48fae5a8579cac6f7cc895088a05d15">tket::DiagonalBox</a>, <a class="el" href="classtket_1_1DummyBox.html#a6fc39942b5dd041b54402e67a6205d78">tket::DummyBox</a>, <a class="el" href="classtket_1_1ExpBox.html#a7c6f56a507edecb38b7c1c0cdaa36034">tket::ExpBox</a>, <a class="el" href="classtket_1_1FlowOp.html#a7e9ff04a3efc9c770000fa10053c5dd2">tket::FlowOp</a>, <a class="el" href="classtket_1_1Gate.html#ada477ee36fb87f860100addf87f331b2">tket::Gate</a>, <a class="el" href="classtket_1_1MultiBitOp.html#af92f2915773152a5c0f36b33b6b3b750">tket::MultiBitOp</a>, <a class="el" href="classtket_1_1MultiplexedRotationBox.html#aefc8b2f83f13cf1dd29d12f061dcb5f8">tket::MultiplexedRotationBox</a>, <a class="el" href="classtket_1_1MultiplexedTensoredU2Box.html#a0d1148e9e6ee49b3df199a8c74530de7">tket::MultiplexedTensoredU2Box</a>, <a class="el" href="classtket_1_1MultiplexedU2Box.html#a8ea892c2a5aad507f183c4a25f60e570">tket::MultiplexedU2Box</a>, <a class="el" href="classtket_1_1MultiplexorBox.html#acc26f74897ce02beea488d49ca4311c0">tket::MultiplexorBox</a>, <a class="el" href="classtket_1_1OpaqueClassicalOp.html#af52d942f29732d15f605604e6a3a7645">tket::OpaqueClassicalOp</a>, <a class="el" href="classtket_1_1PauliExpBox.html#aa07e441e99be9f635a1bd786ff6de79b">tket::PauliExpBox</a>, <a class="el" href="classtket_1_1PauliExpCommutingSetBox.html#a91b133b963cd987c90aa850cc78bb6ed">tket::PauliExpCommutingSetBox</a>, <a class="el" href="classtket_1_1PauliExpPairBox.html#a6d720ff0eca0ed2cfa0b3819a883f2ac">tket::PauliExpPairBox</a>, <a class="el" href="classtket_1_1PhasePolyBox.html#abbf897493b4070fa280e179fbe7ff723">tket::PhasePolyBox</a>, <a class="el" href="classtket_1_1ProjectorAssertionBox.html#ac0f43b91efeaec2c262957740fe24ba9">tket::ProjectorAssertionBox</a>, <a class="el" href="classtket_1_1QControlBox.html#acad790fb817b489636a72dfe2b31071a">tket::QControlBox</a>, <a class="el" href="classtket_1_1RangePredicateOp.html#a906b05850f4d1206aecf4000dd5a453c">tket::RangePredicateOp</a>, <a class="el" href="classtket_1_1StabiliserAssertionBox.html#a93764b25e2c78a82e504040100587557">tket::StabiliserAssertionBox</a>, <a class="el" href="classtket_1_1StatePreparationBox.html#af8898311bdb9206dbf1255efac504231">tket::StatePreparationBox</a>, <a class="el" href="classtket_1_1TermSequenceBox.html#a7ba9056573f7eb42b6c69d2c3cc993b4">tket::TermSequenceBox</a>, <a class="el" href="classtket_1_1ToffoliBox.html#aedb31279abb4dcd4d610e46f596287dc">tket::ToffoliBox</a>, <a class="el" href="classtket_1_1Unitary1qBox.html#a6ab286703e25f0294101b05088318671">tket::Unitary1qBox</a>, <a class="el" href="classtket_1_1Unitary2qBox.html#a41d3923683b416a14b8d003fd692857a">tket::Unitary2qBox</a>, <a class="el" href="classtket_1_1Unitary3qBox.html#aad0d18af4b8c00c86fa5d1a9d93244ca">tket::Unitary3qBox</a>, <a class="el" href="classtket_1_1UnitaryTableauBox.html#a17c8e2f1b05c173f80e706e95959159e">tket::UnitaryTableauBox</a>, and <a class="el" href="classtket_1_1WASMOp.html#a00fb0144f7c1837039687f85fc68a37f">tket::WASMOp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00203">203</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00205">205</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -863,7 +863,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1WASMOp.html#a594b8090ff1fa15d68acb85ea69eabc8">tket::WASMOp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00138">138</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00140">140</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -901,7 +901,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1Gate.html#a7bd4affb15b40b0c24637c75bc42215a">tket::Gate</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00149">149</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00151">151</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -957,7 +957,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00193">193</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00195">195</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -986,7 +986,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classtket_1_1BarrierOp.html#a8a398c68dde9fa519ad97f416f30568c">tket::BarrierOp</a>, <a class="el" href="classtket_1_1Box.html#addabb883016cedf81dd28311190d1e1a">tket::Box</a>, <a class="el" href="classtket_1_1ClassicalOp.html#a6ed48aa70b522b5fb1bdb6e5d6beb186">tket::ClassicalOp</a>, <a class="el" href="classtket_1_1ClExprOp.html#a3d3a1f4976d018aecb74f8528f3c2831">tket::ClExprOp</a>, <a class="el" href="classtket_1_1Conditional.html#a7a2076f6af8669b0d186a5c4c2921fec">tket::Conditional</a>, <a class="el" href="classtket_1_1Gate.html#a51140cc1a7bae94f56e681485b73bb3d">tket::Gate</a>, <a class="el" href="classtket_1_1OpaqueClassicalOp.html#a469e61424cd8377a8c92026eee2c0050">tket::OpaqueClassicalOp</a>, and <a class="el" href="classtket_1_1WASMOp.html#ad3bc16260edf918abede540afbaef6fb">tket::WASMOp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00187">187</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00189">189</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -1080,7 +1080,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Operation descriptor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00207">207</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00209">209</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1106,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Operation type. </p>
 
-<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00208">208</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Op_8hpp_source.html#l00210">210</a> of file <a class="el" href="Op_8hpp_source.html">Op.hpp</a>.</p>
 
 </div>
 </div>

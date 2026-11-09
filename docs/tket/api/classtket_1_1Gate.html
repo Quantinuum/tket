@@ -137,7 +137,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a505d613f52118d9828c09182de9da5a0" id="r_a505d613f52118d9828c09182de9da5a0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetket.html#a6817cd1c8a5630b406c86a59173edd21">Expr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a505d613f52118d9828c09182de9da5a0">get_params_reduced</a> () const override</td></tr>
 <tr class="memdesc:a505d613f52118d9828c09182de9da5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sequence of phase parameters reduced to canonical range, if applicable.  <br /></td></tr>
 <tr class="memitem:a1de8a6be1c1ee667053bc75369eeee2e" id="r_a1de8a6be1c1ee667053bc75369eeee2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#ac74e9f3dd71c2a79be4ab7887d943fc2">SymSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1de8a6be1c1ee667053bc75369eeee2e">free_symbols</a> () const override</td></tr>
-<tr class="memdesc:a1de8a6be1c1ee667053bc75369eeee2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of all free symbols occurring in operation parameters.  <br /></td></tr>
+<tr class="memdesc:a1de8a6be1c1ee667053bc75369eeee2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of free symbols occurring in the operation parameters.  <br /></td></tr>
 <tr class="memitem:a4f7d24fa47670d643081678e66a11695" id="r_a4f7d24fa47670d643081678e66a11695"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f7d24fa47670d643081678e66a11695">n_qubits</a> () const override</td></tr>
 <tr class="memitem:a51baf7616a2924c720937e822a37d153" id="r_a51baf7616a2924c720937e822a37d153"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespacetket.html#a342a289d54f4f5f5a405373c07aca66a">Pauli</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51baf7616a2924c720937e822a37d153">commuting_basis</a> (<a class="el" href="namespacetket.html#a85e7f8d119b3b35dd331a339729f4cfb">port_t</a> i) const override</td></tr>
 <tr class="memdesc:a51baf7616a2924c720937e822a37d153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which <a class="el" href="namespacetket.html#a342a289d54f4f5f5a405373c07aca66a" title="Symbols for the Pauli operators (and identity).">Pauli</a>, if any, commutes with the operation at a given port.  <br /></td></tr>
@@ -151,7 +151,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7761aecc9ae83f896d94fe9191c2c9c6" id="r_a7761aecc9ae83f896d94fe9191c2c9c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7761aecc9ae83f896d94fe9191c2c9c6">has_symmetry</a> (unsigned port1, unsigned port2) const override</td></tr>
 <tr class="memdesc:a7761aecc9ae83f896d94fe9191c2c9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for symmetry of port pairs.  <br /></td></tr>
 <tr class="memitem:ae11edd0093980d96ec12d5da3bc6cb8a" id="r_ae11edd0093980d96ec12d5da3bc6cb8a"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae11edd0093980d96ec12d5da3bc6cb8a">get_unitary</a> () const override</td></tr>
-<tr class="memdesc:ae11edd0093980d96ec12d5da3bc6cb8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">If meaningful and implemented, return the numerical unitary matrix (in ILO-BE convention) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents.  <br /></td></tr>
+<tr class="memdesc:ae11edd0093980d96ec12d5da3bc6cb8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the numerical unitary matrix (in ILO-BE convention) represented by this operation, when meaningful and implemented.  <br /></td></tr>
 <tr class="memitem:ad2fea3887a4b224d8bdae3a27074bddd" id="r_ad2fea3887a4b224d8bdae3a27074bddd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2fea3887a4b224d8bdae3a27074bddd">~Gate</a> () override</td></tr>
 <tr class="memitem:ada477ee36fb87f860100addf87f331b2" id="r_ada477ee36fb87f860100addf87f331b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada477ee36fb87f860100addf87f331b2">is_equal</a> (const <a class="el" href="classtket_1_1Op.html#a0b15cfc17edca81e9b4b4fe353ebbb93">Op</a> &amp;other) const override</td></tr>
 <tr class="memdesc:ada477ee36fb87f860100addf87f331b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality check between two <a class="el" href="classtket_1_1Gate.html">Gate</a> instances.  <br /></td></tr>
@@ -394,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set of all free symbols occurring in operation parameters. </p>
+<p>Return the set of free symbols occurring in the operation parameters. </p>
 
 <p>Implements <a class="el" href="classtket_1_1Op.html#aaf39768595adfe922e0278dfed20ecf6">tket::Op</a>.</p>
 
@@ -603,7 +603,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If meaningful and implemented, return the numerical unitary matrix (in ILO-BE convention) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents. </p>
+<p>Return the numerical unitary matrix (in ILO-BE convention) represented by this operation, when meaningful and implemented. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>No symbolic parameters. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>unitary matrix (ILO-BE) which this <a class="el" href="classtket_1_1Op.html" title="Abstract class representing an operation type.">Op</a> represents </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
