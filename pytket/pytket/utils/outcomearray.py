@@ -140,12 +140,18 @@ class OutcomeArray(np.ndarray):
         """Create OutcomeArray from iterator of integers corresponding to outcomes
          where the bitwise representation of the integer corresponds to the readouts.
 
-        :param ints: Iterable of outcome integers
-        :param width: Number of qubit measurements
+        :param ints: Iterable of outcome integers in the range ``0 <= x < 2**width``
+        :param width: Non-negative number of qubit measurements
         :param big_endian: whether to use big endian encoding (or little endian
             if False), defaults to True
         :return: OutcomeArray instance
+        :raises ValueError: If the width is negative or an integer does not fit
+            in the specified width.
         """
+        if width < 0:
+            raise ValueError("Width must be non-negative.")
+        if any(int_val < 0 or int_val >= (1 << width) for int_val in ints):
+            raise ValueError("Outcome integers must fit in the specified width.")
         n_ints = len(ints)
         bitstrings = (
             f"{int_val:b}".zfill(width)[:: (-1) ** (not big_endian)] for int_val in ints
