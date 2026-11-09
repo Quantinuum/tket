@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+
+- Reject negative or oversized integers in `OutcomeArray.from_ints` instead
+  of silently corrupting outcomes. Negative widths are also rejected.
+
 ## 2.18.5 (October 2026)
 
 Fixes:
