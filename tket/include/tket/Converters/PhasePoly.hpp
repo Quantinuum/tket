@@ -130,11 +130,9 @@ class CircToPhasePolyConversion {
   enum class QubitType { pre, in, post };
   void add_phase_poly_box();
   unsigned nq_;
-  unsigned nb_;
   unsigned min_size_;
   unsigned box_size_;
   std::map<Qubit, unsigned> qubit_indices_;
-  std::map<Bit, unsigned> bit_indices_;
   std::vector<QubitType> qubit_types_;
   qubit_vector_t all_qu_;
   Circuit input_circ_;

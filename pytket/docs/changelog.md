@@ -6,9 +6,12 @@ Fixes:
 
 - Reject negative or oversized integers in `OutcomeArray.from_ints` instead
   of silently corrupting outcomes. Negative widths are also rejected.
+- Preserve qubit and bit identifiers in `ComposePhasePolyBoxes` when gates
+  separate phase-polynomial regions or a region is smaller than `min_size`.
+  This also fixes `AASRouting` for circuits with custom registers.
 - Support deserialization of `CliffordResynthesis` and
   `CliffordPushThroughMeasures`, preserving the `allow_swaps` setting for
-  `CliffordResynthesis`. Custom resynthesis callbacks cannot be deserialized.
+  `CliffordResynthesis`. Custom resynthesis callbacks cannot be deserialized.  
 
 ## 2.18.5 (October 2026)
 
