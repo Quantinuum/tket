@@ -535,7 +535,7 @@ def test_clifford_resynthesis_custom_transform_deserialisation() -> None:
 
 
 def test_clifford_push_through_measures_roundtrip() -> None:
-    original = SequencePass([CliffordPushThroughMeasures()])
+    original = CliffordPushThroughMeasures()
     check_pass_serialisation(original.to_dict())
     restored = BasePass.from_dict(original.to_dict())
     assert restored.to_dict() == original.to_dict()
