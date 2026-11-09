@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from pytket.architecture import Architecture
+from pytket.architecture import Architecture, RingArch
 from pytket.circuit import Circuit, OpType
 from pytket.passes import AASRouting, CNotSynthType, ComposePhasePolyBoxes
 from pytket.predicates import CompilationUnit
@@ -209,3 +209,15 @@ def test_compose_ppb() -> None:
     assert pass1.apply(cu)
     out_circ = cu.circuit
     assert out_circ.depth() == 6
+
+
+def test_aasrouting_custom_register_measurements() -> None:
+    circ = Circuit(2, 2, "subcirc_4")
+    circ.add_q_register("qreg", 1)
+    circ.measure_all()
+    original_bits = circ.bits
+    architecture = RingArch(circ.n_qubits)
+    assert AASRouting(architecture).apply(circ)
+    assert circ.bits == original_bits
+    assert circ.n_gates_of_type(OpType.Measure) == 3
+    assert set(circ.qubits) == set(architecture.nodes)

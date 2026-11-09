@@ -387,19 +387,12 @@ CircToPhasePolyConversion::CircToPhasePolyConversion(
   box_size_ = 0;
 
   nq_ = circ_.n_qubits();
-  nb_ = circ_.n_bits();
 
   qubit_types_ = std::vector<QubitType>(nq_, QubitType::pre);
 
   unsigned i = 0;
   for (const Qubit& qb : circ_.all_qubits()) {
     qubit_indices_.insert({qb, i});
-    ++i;
-  }
-
-  i = 0;
-  for (const Bit& b : circ_.all_bits()) {
-    bit_indices_.insert({b, i});
     ++i;
   }
 
@@ -432,25 +425,13 @@ void CircToPhasePolyConversion::add_phase_poly_box() {
   } else {
     for (const Command& com : box_circ_) {
       OpType ot = com.get_op_ptr()->get_type();
-      unit_vector_t qbs = com.get_args();
-      switch (ot) {
-        case OpType::CX: {
-          unsigned ctrl = qubit_indices_.at(Qubit(qbs[0]));
-          unsigned target = qubit_indices_.at(Qubit(qbs[1]));
-          circ_.add_op<unsigned>(ot, {ctrl, target});
-          break;
-        }
-        case OpType::Rz: {
-          unsigned qb = qubit_indices_.at(Qubit(qbs[0]));
-          auto angle = com.get_op_ptr()->get_params().at(0);
-          circ_.add_op<unsigned>(ot, angle, {qb});
-          break;
-        }
-        default: {
-          // no other types should be in this circuit
-          TKET_ASSERT(!"invalid op type in phase poly box construction");
-        }
+      TKET_ASSERT(ot == OpType::CX || ot == OpType::Rz);
+      unit_vector_t args;
+      for (const UnitID& qb : com.get_args()) {
+        // box_circ_ uses dense default indices; circ_ uses the original units.
+        args.push_back(all_qu_.at(qb.index().at(0)));
       }
+      circ_.add_op<UnitID>(com.get_op_ptr(), args);
     }
   }
 
@@ -460,14 +441,7 @@ void CircToPhasePolyConversion::add_phase_poly_box() {
     bool expected = (post_ot == OpType::H) || (post_ot == OpType::Measure) ||
                     (post_ot == OpType::Collapse) || (post_ot == OpType::Reset);
     TKET_ASSERT(expected);
-    unit_vector_t qbs = post_com.get_args();
-    unsigned qb = qubit_indices_.at(Qubit(qbs[0]));
-    if (post_ot == OpType::Measure) {
-      unsigned b = bit_indices_.at(Bit(qbs[1]));
-      circ_.add_op<unsigned>(post_ot, {qb, b});
-    } else {
-      circ_.add_op<unsigned>(post_ot, {qb});
-    }
+    circ_.add_op<UnitID>(post_com.get_op_ptr(), post_com.get_args());
   }
 
   post_circ_ = Circuit(empty_circ_);
@@ -628,16 +602,16 @@ qubits states are reset to pre.
         unsigned qb = qubit_indices_.at(Qubit(qbs[0]));
         switch (qubit_types_[qb]) {
           case QubitType::pre: {
-            circ_.add_op<unsigned>(ot, {qb});
+            circ_.add_op<UnitID>(ot, {qbs[0]});
             break;
           }
           case QubitType::in: {
-            post_circ_.add_op<unsigned>(ot, {qb});
+            post_circ_.add_op<UnitID>(ot, {qbs[0]});
             qubit_types_[qb] = QubitType::post;
             break;
           }
           case QubitType::post: {
-            post_circ_.add_op<unsigned>(ot, {qb});
+            post_circ_.add_op<UnitID>(ot, {qbs[0]});
             break;
           }
           default: {
@@ -649,20 +623,19 @@ qubits states are reset to pre.
       }
       case OpType::Measure: {
         unsigned qb = qubit_indices_.at(Qubit(qbs[0]));
-        unsigned b = bit_indices_.at(Bit(qbs[1]));
 
         switch (qubit_types_[qb]) {
           case QubitType::pre: {
-            circ_.add_op<unsigned>(ot, {qb, b});
+            circ_.add_op<UnitID>(ot, {qbs[0], qbs[1]});
             break;
           }
           case QubitType::in: {
-            post_circ_.add_op<unsigned>(ot, {qb, b});
+            post_circ_.add_op<UnitID>(ot, {qbs[0], qbs[1]});
             qubit_types_[qb] = QubitType::post;
             break;
           }
           case QubitType::post: {
-            post_circ_.add_op<unsigned>(ot, {qb, b});
+            post_circ_.add_op<UnitID>(ot, {qbs[0], qbs[1]});
             break;
           }
           default: {

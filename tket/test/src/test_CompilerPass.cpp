@@ -921,6 +921,43 @@ SCENARIO("FullPeepholeOptimise with various options") {
   }
 }
 
+SCENARIO("ComposePhasePolyBoxes preserves custom registers across boundaries") {
+  const nlohmann::json data = nlohmann::json::parse(R"({
+    "bits": [], "phase": "0.37",
+    "qubits": [["q", [0]], ["q", [1]], ["q", [2]]],
+    "implicit_permutation": [
+      [["q", [0]], ["q", [0]]],
+      [["q", [1]], ["q", [1]]],
+      [["q", [2]], ["q", [2]]]
+    ],
+    "commands": [
+      {"op": {"type": "H"}, "args": [["q", [2]]]},
+      {"op": {"type": "CX"}, "args": [["q", [0]], ["q", [1]]]},
+      {"op": {"type": "Rz", "params": ["0.25"]}, "args": [["q", [1]]]},
+      {"op": {"type": "H"}, "args": [["q", [0]]]},
+      {"op": {"type": "CX"}, "args": [["q", [0]], ["q", [2]]]}
+    ]
+  })");
+  for (unsigned min_size : {0u, 3u}) {
+    Circuit circ = data.get<Circuit>();
+    circ.rename_units<Qubit, Qubit>(
+        {{Qubit(0), Qubit("p", 3)},
+         {Qubit(1), Qubit("p", 7)},
+         {Qubit(2), Qubit("p", 11)}});
+    CompilationUnit cu(circ);
+    REQUIRE(ComposePhasePolyBoxes(min_size)->apply(cu));
+    const Circuit& result = cu.get_circ_ref();
+    const bool same_qubits = result.all_qubits() == circ.all_qubits();
+    CHECK(same_qubits);
+    CHECK(tket_sim::get_unitary(circ).isApprox(tket_sim::get_unitary(result)));
+    if (min_size == 0) {
+      CHECK(result.count_gates(OpType::PhasePolyBox) > 0);
+    } else {
+      CHECK(result.count_gates(OpType::PhasePolyBox) == 0);
+    }
+  }
+}
+
 SCENARIO("rebase and decompose PhasePolyBox test") {
   GIVEN("rebase and decompose I") {
     Circuit circ(2);

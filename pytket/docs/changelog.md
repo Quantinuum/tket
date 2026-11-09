@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+
+- Preserve qubit and bit identifiers in `ComposePhasePolyBoxes` when gates
+  separate phase-polynomial regions or a region is smaller than `min_size`.
+  This also fixes `AASRouting` for circuits with custom registers.
+
 ## 2.18.5 (October 2026)
 
 Fixes:
