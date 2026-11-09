@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+Fixes:
+
+- Support deserialization of `CliffordResynthesis` and
+  `CliffordPushThroughMeasures`, preserving the `allow_swaps` setting for
+  `CliffordResynthesis`. Custom resynthesis callbacks cannot be deserialized.
+
 ## 2.18.5 (October 2026)
 
 Fixes:

@@ -501,6 +501,14 @@ PassPtr deserialise(
     } else if (passname == "RenameQubitsPass") {
       pp = gen_rename_qubits_pass(
           content.at("qubit_map").get<std::map<Qubit, Qubit>>());
+    } else if (passname == "CliffordResynthesis") {
+      if (content.contains("transform")) {
+        throw PassNotSerializable(passname);
+      }
+      pp = gen_clifford_resynthesis_pass(
+          std::nullopt, content.value("allow_swaps", true));
+    } else if (passname == "CliffordPushThroughMeasures") {
+      pp = gen_clifford_push_through_pass();
     } else if (passname == "CliffordSimp") {
       pp = gen_clifford_simp_pass(
           content.at("allow_swaps").get<bool>(),

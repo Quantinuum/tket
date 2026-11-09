@@ -10,6 +10,16 @@ Rebase passes can be used to convert a circuit to a desired gateset. See {py:met
 
 For more on pytket passes see the [compilation](https://docs.quantinuum.com/tket/user-guide/manual/manual_compiler.html) section of the user manual or the [notebook tutorials](https://docs.quantinuum.com/tket/user-guide)
 
+{py:meth}`~.passes.CliffordResynthesis` and
+{py:meth}`~.passes.CliffordPushThroughMeasures` can be serialized with
+{py:meth}`~.passes.BasePass.to_dict` and restored with
+{py:meth}`~.passes.BasePass.from_dict`. Serialization preserves the
+`allow_swaps` setting of `CliffordResynthesis`. A pass constructed with a
+custom `transform` callback cannot be deserialized.
+Older name-only `CliffordResynthesis` dictionaries are restored with the
+default resynthesis method and `allow_swaps=True`, since they do not record
+the original settings.
+
 ```{eval-rst}
 .. currentmodule:: pytket.passes
 ```
