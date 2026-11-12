@@ -13,7 +13,12 @@
 # limitations under the License.
 
 
+import subprocess
+import sys
+from textwrap import dedent
+
 import numpy as np
+import pytest
 
 from pytket import Circuit, OpType
 from pytket.architecture import Architecture
@@ -412,6 +417,53 @@ def test_MultiGateReorderRoutingMethod_with_LexiLabelling() -> None:
     assert len(commands) == 7
     assert commands[4].op.type == OpType.CZ
     assert commands[5].op.type == OpType.SWAP
+
+
+@pytest.mark.parametrize("mode", ["default", "decompose"])
+def test_routing_two_qubit_box_terminates(mode: str) -> None:
+    # Use a subprocess so a regression cannot leave the test suite in a native loop.
+    script = dedent("""
+        import sys
+        import numpy as np
+        from pytket import Circuit
+        from pytket.architecture import Architecture
+        from pytket.circuit import Node, Qubit, Unitary2qBox
+        from pytket.mapping import (
+            BoxDecompositionRoutingMethod, LexiLabellingMethod, LexiRouteRoutingMethod,
+            MappingManager,
+        )
+        from pytket.passes import RoutingPass
+
+        unitary = np.array([
+            [0, 1, 0, 0], [0, 0, 0, -1], [1, 0, 0, 0], [0, 0, -1j, 0],
+        ])
+        circuit = Circuit(2).add_unitary2qbox(Unitary2qBox(unitary), 0, 1)
+        circuit.rename_units({Qubit(0): Node(0), Qubit(1): Node(1)})
+        architecture = Architecture([(0, 1)])
+        if sys.argv[1] == "default":
+            try:
+                RoutingPass(architecture).apply(circuit)
+            except RuntimeError as error:
+                assert "No RoutingMethod suitable" in str(error)
+            else:
+                raise AssertionError("Routing an undecomposed box should fail")
+        else:
+            methods = [
+                LexiLabellingMethod(), LexiRouteRoutingMethod(),
+                BoxDecompositionRoutingMethod(),
+            ]
+            MappingManager(architecture).route_circuit(circuit, methods)
+            assert circuit.valid_connectivity(architecture, directed=False)
+            np.testing.assert_allclose(circuit.get_unitary(), unitary, atol=1e-10)
+    """)
+    result = subprocess.run(
+        [sys.executable, "-c", script, mode],
+        capture_output=True,
+        text=True,
+        timeout=60,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
 
 
 def test_BoxDecompositionRoutingMethod() -> None:

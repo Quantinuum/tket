@@ -766,8 +766,9 @@ bool LexiRoute::solve_labelling() {
   bool all_labelled = this->set_interacting_uids(
       AssignedOnly::No, CheckRoutingValidity::No, CheckLabellingValidity::Yes);
   if (!all_labelled) {
-    this->update_labelling();
-    return true;
+    // Boxes can block the frontier even when all their qubits are placed.
+    // Let later routing methods run if labelling does not change anything.
+    return this->update_labelling();
   }
   return false;
 }
