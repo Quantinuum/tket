@@ -552,8 +552,7 @@ SCENARIO("LexiLabelling reports no progress for already placed boxes") {
     Eigen::Matrix4cd unitary = Eigen::Matrix4cd::Identity();
     circ.add_op<unsigned>(std::make_shared<Unitary2qBox>(unitary), {0, 1});
     if (initially_placed) {
-      circ.rename_units(
-          std::map<Qubit, Node>{{Qubit(0), Node(0)}, {Qubit(1), Node(1)}});
+      circ.rename_units(unit_map_t{{Qubit(0), Node(0)}, {Qubit(1), Node(1)}});
     }
     MappingFrontier_ptr frontier = std::make_shared<MappingFrontier>(circ);
     LexiLabellingMethod labelling;
