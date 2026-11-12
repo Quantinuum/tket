@@ -4,6 +4,8 @@
 
 Fixes:
 
+- Fix routing hangs on undecomposed two-qubit boxes by allowing labelling to
+  yield to other routing methods when it makes no new assignments.
 - Reject negative or oversized integers in `OutcomeArray.from_ints` instead
   of silently corrupting outcomes. Negative widths are also rejected.
 - Preserve qubit and bit identifiers in `ComposePhasePolyBoxes` when gates

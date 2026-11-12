@@ -16,6 +16,7 @@
 #include <fstream>
 
 #include "testutil.hpp"
+#include "tket/Circuit/Boxes.hpp"
 #include "tket/Mapping/LexiLabelling.hpp"
 #include "tket/Mapping/LexiRoute.hpp"
 #include "tket/Mapping/LexiRouteRoutingMethod.hpp"
@@ -540,6 +541,31 @@ SCENARIO("Test LexiRoute::solve and LexiRoute::solve_labelling") {
     MappingFrontier_ptr mf = std::make_shared<MappingFrontier>(circ);
     LexiRoute lr(shared_arc, mf);
     REQUIRE_THROWS_AS(lr.solve_labelling(), LexiRouteError);
+  }
+}
+
+SCENARIO("LexiLabelling reports no progress for already placed boxes") {
+  ArchitecturePtr architecture = std::make_shared<Architecture>(
+      std::vector<std::pair<unsigned, unsigned>>{{0, 1}});
+  for (bool initially_placed : {false, true}) {
+    Circuit circ(2);
+    Eigen::Matrix4cd unitary = Eigen::Matrix4cd::Identity();
+    circ.add_op<unsigned>(std::make_shared<Unitary2qBox>(unitary), {0, 1});
+    if (initially_placed) {
+      circ.rename_units(
+          std::map<Qubit, Node>{{Qubit(0), Node(0)}, {Qubit(1), Node(1)}});
+    }
+    MappingFrontier_ptr frontier = std::make_shared<MappingFrontier>(circ);
+    LexiLabellingMethod labelling;
+    if (!initially_placed) {
+      CHECK(labelling.routing_method(frontier, architecture).first);
+    }
+    CHECK_FALSE(labelling.routing_method(frontier, architecture).first);
+    CHECK_FALSE(labelling.routing_method(frontier, architecture).first);
+    for (const Qubit& qubit : circ.all_qubits()) {
+      CHECK(architecture->node_exists(Node(qubit)));
+    }
+    CHECK(circ.count_gates(OpType::Unitary2qBox) == 1);
   }
 }
 
