@@ -22,6 +22,8 @@ The steps outlined below can be performed with the [just command runner](https:/
 
 ## Install (requires a [uv](https://docs.astral.sh/uv/) installation).
 
+The documentation build requires Python 3.11.5 or newer.
+
 To install the dependencies needed for the local docs build, run
 
 ```shell

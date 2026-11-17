@@ -3,7 +3,7 @@ name = "pytket-api-docs"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.10,<4"
+requires-python = ">=3.11.5,<4"
 dependencies = [
   "sphinx~=8.0.0",
   "sphinx-copybutton>=0.5.2,<0.6.0",
