@@ -1440,6 +1440,70 @@ SCENARIO("Commute measurements to the end of a circuit") {
     CompilationUnit cu(c);
     REQUIRE(try_delay_pass->apply(cu));
   }
+  GIVEN("Each measurement is followed by a gate that reads its result") {
+    Circuit c(1, 2);
+    for (unsigned bit = 0; bit < 2; ++bit) {
+      c.add_measure(0, bit);
+      c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {bit}, 1);
+    }
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+  }
+  GIVEN("Measure blocked by a gate that follows a conditional reader") {
+    // https://github.com/Quantinuum/tket/issues/2270
+    Circuit c(2, 1);
+    c.add_measure(0, 0);
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    c.add_op<unsigned>(OpType::CZ, {0, 1});
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+    REQUIRE_THROWS_AS(delay_pass->apply(cu), UnsatisfiedPredicate);
+  }
+  GIVEN("Measure can cross an independent gate before a dependent gate") {
+    Circuit c(2, 1);
+    c.add_measure(0, 0);
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    c.add_op<unsigned>(OpType::Z, {0});
+    c.add_op<unsigned>(OpType::CZ, {0, 1});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(2, 1);
+    expected.add_op<unsigned>(OpType::Z, {0});
+    expected.add_measure(0, 0);
+    expected.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    expected.add_op<unsigned>(OpType::CZ, {0, 1});
+    REQUIRE(result == expected);
+  }
+  GIVEN("Delaying one measurement blocks delaying another") {
+    Circuit c(2, 2);
+    c.add_measure(0, 0);
+    c.add_measure(1, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {1}, {0}, 1);
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+    // Either measurement can move, leaving a chain of alternating operations.
+    check_command_types(
+        result, {OpType::Measure, OpType::Conditional, OpType::Measure,
+                 OpType::Conditional});
+  }
+  GIVEN("Measure blocked by a dependent read before a bit is overwritten") {
+    Circuit c(3, 2);
+    c.add_measure(0, 0);
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0, 1}, 1);
+    c.add_measure(2, 1);
+    c.add_op<unsigned>(OpType::CX, {0, 2});
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+  }
   GIVEN("Measure blocked by conditional SWAP") {
     Circuit c(2, 2);
     c.add_op<unsigned>(OpType::CZ, {0, 1});
