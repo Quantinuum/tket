@@ -229,11 +229,19 @@ static bool delay_measures_partially(Circuit& circ) {
     Edge c_out_edge = circ.get_nth_out_edge(v, 1);
     if (!circ.detect_final_Op(circ.target(c_out_edge))) continue;
     Edge out_edge = circ.get_nth_out_edge(v, 0);
-    if (circ.detect_final_Op(circ.target(out_edge))) continue;
+    Vertex first_gate = circ.target(out_edge);
+    if (circ.detect_final_Op(first_gate)) continue;
+    // Skip measurements that cannot cross even their first quantum successor.
+    const auto next_port = op_commutes(
+        circ.get_Op_ptr_from_Vertex(first_gate), circ.get_target_port(out_edge),
+        false);
+    if (!next_port) continue;
+
     const VertexSet dependents = measurement_result_dependents(circ, v);
-    Edge destination =
-        follow_until_noncommuting(circ, out_edge, false, &dependents);
-    if (destination == out_edge) continue;
+    if (dependents.contains(first_gate)) continue;
+    Edge destination = follow_until_noncommuting(
+        circ, circ.get_nth_out_edge(first_gate, *next_port), false,
+        &dependents);
     move_measure(circ, v, destination);
     changed = true;
   }
