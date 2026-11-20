@@ -1440,6 +1440,16 @@ SCENARIO("Commute measurements to the end of a circuit") {
     CompilationUnit cu(c);
     REQUIRE(try_delay_pass->apply(cu));
   }
+  GIVEN("Each measurement is followed by a gate that reads its result") {
+    Circuit c(1, 2);
+    for (unsigned bit = 0; bit < 2; ++bit) {
+      c.add_measure(0, bit);
+      c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {bit}, 1);
+    }
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+  }
   GIVEN("Measure blocked by a gate that follows a conditional reader") {
     // https://github.com/Quantinuum/tket/issues/2270
     Circuit c(2, 1);

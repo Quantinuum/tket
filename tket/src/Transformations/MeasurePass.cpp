@@ -14,7 +14,9 @@
 
 #include "tket/Transformations/MeasurePass.hpp"
 
+#include <algorithm>
 #include <optional>
+#include <utility>
 
 #include "tket/Circuit/DAGDefs.hpp"
 #include "tket/OpType/EdgeType.hpp"
@@ -195,9 +197,9 @@ static void move_measure(Circuit& circ, Vertex v, Edge destination) {
   circ.remove_edge(destination);
 }
 
-static VertexSet measurement_result_dependents(const Circuit& circ, Vertex v) {
+static VertexSet measurement_result_dependents(
+    const Circuit& circ, VertexVec pending) {
   VertexSet dependents;
-  VertexVec pending = circ.get_successors_of_type(v, EdgeType::Boolean);
   while (!pending.empty()) {
     Vertex dependent = pending.back();
     pending.pop_back();
@@ -237,7 +239,11 @@ static bool delay_measures_partially(Circuit& circ) {
         false);
     if (!next_port) continue;
 
-    const VertexSet dependents = measurement_result_dependents(circ, v);
+    // A direct reader blocks the first step without a dependency traversal.
+    VertexVec readers = circ.get_successors_of_type(v, EdgeType::Boolean);
+    if (std::ranges::find(readers, first_gate) != readers.end()) continue;
+    const VertexSet dependents =
+        measurement_result_dependents(circ, std::move(readers));
     if (dependents.contains(first_gate)) continue;
     Edge destination = follow_until_noncommuting(
         circ, circ.get_nth_out_edge(first_gate, *next_port), false,
