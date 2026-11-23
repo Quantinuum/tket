@@ -1466,6 +1466,19 @@ SCENARIO("Commute measurements to the end of a circuit") {
     REQUIRE(try_delay_pass->apply(cu));
     REQUIRE(cu.get_circ_ref() == expected);
   }
+  GIVEN("Reader-free measurements can be delayed on independent wires") {
+    Circuit c(3, 3);
+    Circuit expected(3, 3);
+    for (unsigned wire = 0; wire < 3; ++wire) {
+      c.add_measure(wire, wire);
+      c.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_measure(wire, wire);
+    }
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == expected);
+  }
   GIVEN("Measure blocked by a gate that follows a conditional reader") {
     // https://github.com/Quantinuum/tket/issues/2270
     Circuit c(2, 1);
@@ -1547,6 +1560,24 @@ SCENARIO("Commute measurements to the end of a circuit") {
     expected.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
     expected.add_measure(0, 0);
     expected.add_conditional_gate<unsigned>(OpType::Z, {}, {1}, {0}, 1);
+    REQUIRE(result == expected);
+  }
+  GIVEN("A reader-free measurement can affect a later dependency search") {
+    Circuit c(2, 2);
+    c.add_measure(0, 0);
+    c.add_measure(1, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    c.add_op<unsigned>(OpType::CX, {1, 0});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(2, 2);
+    expected.add_measure(1, 1);
+    expected.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    expected.add_measure(0, 0);
+    expected.add_op<unsigned>(OpType::CX, {1, 0});
     REQUIRE(result == expected);
   }
   GIVEN("Measure blocked by a dependent read before a bit is overwritten") {

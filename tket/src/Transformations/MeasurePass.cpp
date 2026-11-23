@@ -330,27 +330,33 @@ static bool delay_measures_partially(Circuit& circ) {
   VertexVec commands;
   commands.reserve(circ.n_gates());
   VertexVec measurements;
+  bool needs_order = false;
   // Command order already respects read-before-overwrite dependencies.
   for (const Command& com : circ) {
-    commands.push_back(com.get_vertex());
-    if (com.get_op_ptr()->get_type() == OpType::Measure) {
-      measurements.push_back(com.get_vertex());
-    }
+    const Vertex v = com.get_vertex();
+    commands.push_back(v);
+    if (com.get_op_ptr()->get_type() != OpType::Measure) continue;
+    const Edge c_out_edge = circ.get_nth_out_edge(v, 1);
+    if (!circ.detect_final_Op(circ.target(c_out_edge))) continue;
+    measurements.push_back(v);
+    needs_order =
+        needs_order || circ.n_out_edges_of_type(v, EdgeType::Boolean) != 0;
   }
   if (measurements.empty()) return false;
-  CommandOrder order(std::move(commands));
+  std::optional<CommandOrder> order;
+  if (needs_order) order.emplace(std::move(commands));
 
-  // Each move may change which operations depend on a later measurement.
+  // When a later measurement can use the order, every move must maintain it.
   bool changed = false;
   for (Vertex v : measurements) {
-    Edge c_out_edge = circ.get_nth_out_edge(v, 1);
-    if (!circ.detect_final_Op(circ.target(c_out_edge))) continue;
     Edge out_edge = circ.get_nth_out_edge(v, 0);
-    Edge destination = find_partial_delay_destination(circ, v, out_edge, order);
+    Edge destination =
+        order ? find_partial_delay_destination(circ, v, out_edge, *order)
+              : follow_until_noncommuting(circ, out_edge, false);
     if (destination == out_edge) continue;
     const Vertex last_gate = circ.source(destination);
     move_measure(circ, v, destination);
-    order.update_after_move(circ, v, last_gate);
+    if (order) order->update_after_move(circ, v, last_gate);
     changed = true;
   }
   return changed;
