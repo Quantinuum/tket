@@ -1580,6 +1580,33 @@ SCENARIO("Commute measurements to the end of a circuit") {
     expected.add_op<unsigned>(OpType::CX, {1, 0});
     REQUIRE(result == expected);
   }
+  GIVEN("Dependency checks continue after the order repair budget runs out") {
+    const unsigned n_independent = 64;
+    const unsigned q0 = n_independent;
+    const unsigned q1 = n_independent + 1;
+    Circuit c(n_independent + 2, n_independent + 2);
+    Circuit expected(n_independent + 2, n_independent + 2);
+    for (unsigned wire = 0; wire < n_independent; ++wire) {
+      c.add_measure(wire, wire);
+      c.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_measure(wire, wire);
+    }
+    c.add_measure(q0, q0);
+    c.add_measure(q1, q1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {q0}, {q1}, 1);
+    c.add_op<unsigned>(OpType::CX, {q1, q0});
+
+    expected.add_measure(q1, q1);
+    expected.add_conditional_gate<unsigned>(OpType::Z, {}, {q0}, {q1}, 1);
+    expected.add_measure(q0, q0);
+    expected.add_op<unsigned>(OpType::CX, {q1, q0});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+    REQUIRE(result == expected);
+  }
   GIVEN("Measure blocked by a dependent read before a bit is overwritten") {
     Circuit c(3, 2);
     c.add_measure(0, 0);
