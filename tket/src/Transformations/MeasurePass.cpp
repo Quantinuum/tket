@@ -15,6 +15,7 @@
 #include "tket/Transformations/MeasurePass.hpp"
 
 #include <algorithm>
+#include <cstddef>
 #include <optional>
 #include <utility>
 
@@ -193,15 +194,78 @@ static void move_measure(Circuit& circ, Vertex v, Edge destination) {
   circ.remove_edge(destination);
 }
 
+class CommandOrder {
+ public:
+  explicit CommandOrder(VertexVec commands) : commands_(std::move(commands)) {
+    positions_.reserve(commands_.size());
+    for (std::size_t i = 0; i < commands_.size(); ++i) {
+      positions_.emplace(commands_[i], i);
+    }
+  }
+
+  std::optional<std::size_t> position(Vertex v) const {
+    const auto it = positions_.find(v);
+    if (it == positions_.end()) return std::nullopt;
+    return it->second;
+  }
+
+  void update_after_move(
+      const Circuit& circ, Vertex measure, Vertex last_gate) {
+    const std::size_t first = positions_.at(measure);
+    const std::size_t last = positions_.at(last_gate);
+    VertexSet delayed{measure};
+    VertexVec delayed_in_order;
+    std::size_t next = first;
+
+    // Only the new edge from last_gate to measure goes backward in the old
+    // order. Move the measurement and its descendants in this interval after
+    // last_gate, preserving the relative order within each group.
+    const auto defer_if_in_interval = [&](Vertex successor) {
+      const auto rank = position(successor);
+      if (rank && *rank <= last) delayed.insert(successor);
+    };
+    for (std::size_t i = first; i <= last; ++i) {
+      const Vertex v = commands_[i];
+      if (!delayed.contains(v)) {
+        commands_[next++] = v;
+        continue;
+      }
+      delayed_in_order.push_back(v);
+      for (const Edge& out : circ.get_all_out_edges(v)) {
+        defer_if_in_interval(circ.target(out));
+      }
+      // Each Boolean read precedes the next write to that bit.
+      for (const Edge& read : circ.get_in_edges_of_type(v, EdgeType::Boolean)) {
+        const Vertex next_write = circ.target(circ.get_linear_edge(read));
+        if (next_write != v) defer_if_in_interval(next_write);
+      }
+    }
+    for (Vertex v : delayed_in_order) {
+      commands_[next++] = v;
+    }
+    for (std::size_t i = first; i <= last; ++i) {
+      positions_.at(commands_[i]) = i;
+    }
+  }
+
+ private:
+  VertexVec commands_;
+  IndexMap positions_;
+};
+
 static bool depends_on_measurement_result(
     const Circuit& circ, Vertex gate, const VertexSet& readers,
-    VertexSet& visited) {
+    const CommandOrder& order, std::size_t first_reader, VertexSet& visited) {
   VertexVec pending{gate};
   while (!pending.empty()) {
     Vertex current = pending.back();
     pending.pop_back();
-    if (readers.contains(current)) return true;
     if (!visited.insert(current).second) continue;
+    // Boundaries are unranked. Inputs precede every reader and outputs cannot
+    // be ancestors of a gate.
+    const auto rank = order.position(current);
+    if (!rank || *rank < first_reader) continue;
+    if (readers.contains(current)) return true;
     for (const Edge& input : circ.get_in_edges(current)) {
       Vertex source = circ.source(input);
       pending.push_back(source);
@@ -218,8 +282,10 @@ static bool depends_on_measurement_result(
 }
 
 static Edge find_partial_delay_destination(
-    const Circuit& circ, Vertex measure, Edge current_edge) {
+    const Circuit& circ, Vertex measure, Edge current_edge,
+    const CommandOrder& order) {
   std::optional<VertexSet> readers;
+  std::size_t first_reader = 0;
   VertexSet visited;
   Vertex gate = circ.target(current_edge);
   while (!circ.detect_final_Op(gate)) {
@@ -239,12 +305,19 @@ static Edge find_partial_delay_destination(
               circ, circ.get_nth_out_edge(gate, *next_port), false);
         }
         readers.emplace(direct_readers.begin(), direct_readers.end());
+        first_reader = order.position(direct_readers.front()).value();
+        for (Vertex reader : direct_readers) {
+          first_reader = std::min(first_reader, order.position(reader).value());
+        }
         visited.insert(measure);
       }
       // The preceding vertex is already safe. All vertices visited by an
       // earlier search are also safe, since we stop at the first reader found.
       visited.insert(circ.source(current_edge));
-      if (depends_on_measurement_result(circ, gate, *readers, visited)) break;
+      if (depends_on_measurement_result(
+              circ, gate, *readers, order, first_reader, visited)) {
+        break;
+      }
     }
 
     current_edge = circ.get_nth_out_edge(gate, *next_port);
@@ -254,12 +327,18 @@ static Edge find_partial_delay_destination(
 }
 
 static bool delay_measures_partially(Circuit& circ) {
+  VertexVec commands;
+  commands.reserve(circ.n_gates());
   VertexVec measurements;
+  // Command order already respects read-before-overwrite dependencies.
   for (const Command& com : circ) {
+    commands.push_back(com.get_vertex());
     if (com.get_op_ptr()->get_type() == OpType::Measure) {
       measurements.push_back(com.get_vertex());
     }
   }
+  if (measurements.empty()) return false;
+  CommandOrder order(std::move(commands));
 
   // Each move may change which operations depend on a later measurement.
   bool changed = false;
@@ -267,9 +346,11 @@ static bool delay_measures_partially(Circuit& circ) {
     Edge c_out_edge = circ.get_nth_out_edge(v, 1);
     if (!circ.detect_final_Op(circ.target(c_out_edge))) continue;
     Edge out_edge = circ.get_nth_out_edge(v, 0);
-    Edge destination = find_partial_delay_destination(circ, v, out_edge);
+    Edge destination = find_partial_delay_destination(circ, v, out_edge, order);
     if (destination == out_edge) continue;
+    const Vertex last_gate = circ.source(destination);
     move_measure(circ, v, destination);
+    order.update_after_move(circ, v, last_gate);
     changed = true;
   }
   return changed;
