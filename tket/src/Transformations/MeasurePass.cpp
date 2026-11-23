@@ -217,6 +217,34 @@ static VertexSet measurement_result_dependents(
   return dependents;
 }
 
+static Edge find_partial_delay_destination(
+    const Circuit& circ, Vertex measure, Edge current_edge) {
+  Vertex gate = circ.target(current_edge);
+  while (!circ.detect_final_Op(gate)) {
+    const auto next_port = op_commutes(
+        circ.get_Op_ptr_from_Vertex(gate), circ.get_target_port(current_edge),
+        false);
+    if (!next_port) break;
+
+    // Dependencies from result readers can only enter this wire through an
+    // additional input.
+    if (circ.n_in_edges(gate) > 1) {
+      VertexVec readers =
+          circ.get_successors_of_type(measure, EdgeType::Boolean);
+      if (std::ranges::find(readers, gate) != readers.end()) break;
+      const VertexSet dependents =
+          measurement_result_dependents(circ, std::move(readers));
+      if (dependents.contains(gate)) break;
+      return follow_until_noncommuting(
+          circ, circ.get_nth_out_edge(gate, *next_port), false, &dependents);
+    }
+
+    current_edge = circ.get_nth_out_edge(gate, *next_port);
+    gate = circ.target(current_edge);
+  }
+  return current_edge;
+}
+
 static bool delay_measures_partially(Circuit& circ) {
   VertexVec measurements;
   for (const Command& com : circ) {
@@ -231,23 +259,8 @@ static bool delay_measures_partially(Circuit& circ) {
     Edge c_out_edge = circ.get_nth_out_edge(v, 1);
     if (!circ.detect_final_Op(circ.target(c_out_edge))) continue;
     Edge out_edge = circ.get_nth_out_edge(v, 0);
-    Vertex first_gate = circ.target(out_edge);
-    if (circ.detect_final_Op(first_gate)) continue;
-    // Skip measurements that cannot cross even their first quantum successor.
-    const auto next_port = op_commutes(
-        circ.get_Op_ptr_from_Vertex(first_gate), circ.get_target_port(out_edge),
-        false);
-    if (!next_port) continue;
-
-    // A direct reader blocks the first step without a dependency traversal.
-    VertexVec readers = circ.get_successors_of_type(v, EdgeType::Boolean);
-    if (std::ranges::find(readers, first_gate) != readers.end()) continue;
-    const VertexSet dependents =
-        measurement_result_dependents(circ, std::move(readers));
-    if (dependents.contains(first_gate)) continue;
-    Edge destination = follow_until_noncommuting(
-        circ, circ.get_nth_out_edge(first_gate, *next_port), false,
-        &dependents);
+    Edge destination = find_partial_delay_destination(circ, v, out_edge);
+    if (destination == out_edge) continue;
     move_measure(circ, v, destination);
     changed = true;
   }
