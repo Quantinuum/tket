@@ -87,21 +87,19 @@ bool check_only_end_measures(const Command& com, unit_set_t& measured_units) {
 }
 
 /**
- * Follows an edge in the circuit's DAG until it reaches a non-commuting or
- * blocked operation. By default, it allows commutation
+ * Follows an edge in the circuit's DAG until it reaches a non-commuting
+ * operation. By default, it allows commutation
  * through SWAPs, gates that commute on the Pauli Z basis, and recursively
  * checks inside boxes and conditional operations.
  * @param circ The circuit
  * @param current_edge The edge to start following.
  * @param only_boxes Whether to only commute through straight wires in boxes or
  * conditional operations.
- * @param blocked_vertices Operations that the measurement must stay before.
  * @return The edge leading to the first operation that cannot be crossed, or to
  * the quantum output.
  **/
 static Edge follow_until_noncommuting(
-    const Circuit& circ, Edge current_edge, bool only_boxes,
-    const VertexSet* blocked_vertices = nullptr);
+    const Circuit& circ, Edge current_edge, bool only_boxes);
 
 /**
  * Checks if the operation can commute. By default, it allows commutation
@@ -156,13 +154,11 @@ static std::optional<port_t> op_commutes(
 }
 
 static Edge follow_until_noncommuting(
-    const Circuit& circ, Edge current_edge, bool only_boxes,
-    const VertexSet* blocked_vertices) {
+    const Circuit& circ, Edge current_edge, bool only_boxes) {
   port_t current_port = circ.get_target_port(current_edge);
   Vertex current_vertex = circ.target(current_edge);
   OpType current_optype = circ.get_OpType_from_Vertex(current_vertex);
   while (!is_final_q_type(current_optype)) {
-    if (blocked_vertices && blocked_vertices->contains(current_vertex)) break;
     Op_ptr op = circ.get_Op_ptr_from_Vertex(current_vertex);
     std::optional<port_t> next_port = op_commutes(op, current_port, only_boxes);
     if (next_port.has_value()) {
@@ -197,28 +193,34 @@ static void move_measure(Circuit& circ, Vertex v, Edge destination) {
   circ.remove_edge(destination);
 }
 
-static VertexSet measurement_result_dependents(
-    const Circuit& circ, VertexVec pending) {
-  VertexSet dependents;
+static bool depends_on_measurement_result(
+    const Circuit& circ, Vertex gate, const VertexSet& readers,
+    VertexSet& visited) {
+  VertexVec pending{gate};
   while (!pending.empty()) {
-    Vertex dependent = pending.back();
+    Vertex current = pending.back();
     pending.pop_back();
-    if (!dependents.insert(dependent).second) continue;
-    for (Vertex successor : circ.get_successors(dependent)) {
-      pending.push_back(successor);
-    }
-    // The next write to a bit must wait for readers of its previous value.
-    for (const Edge& read :
-         circ.get_in_edges_of_type(dependent, EdgeType::Boolean)) {
-      Vertex next_write = circ.target(circ.get_linear_edge(read));
-      if (next_write != dependent) pending.push_back(next_write);
+    if (readers.contains(current)) return true;
+    if (!visited.insert(current).second) continue;
+    for (const Edge& input : circ.get_in_edges(current)) {
+      Vertex source = circ.source(input);
+      pending.push_back(source);
+      if (circ.get_edgetype(input) != EdgeType::Classical) continue;
+      // A write must also wait for readers of the previous value on this port.
+      for (const Edge& read :
+           circ.get_nth_b_out_bundle(source, circ.get_source_port(input))) {
+        Vertex reader = circ.target(read);
+        if (reader != current) pending.push_back(reader);
+      }
     }
   }
-  return dependents;
+  return false;
 }
 
 static Edge find_partial_delay_destination(
     const Circuit& circ, Vertex measure, Edge current_edge) {
+  std::optional<VertexSet> readers;
+  VertexSet visited;
   Vertex gate = circ.target(current_edge);
   while (!circ.detect_final_Op(gate)) {
     const auto next_port = op_commutes(
@@ -229,14 +231,20 @@ static Edge find_partial_delay_destination(
     // Dependencies from result readers can only enter this wire through an
     // additional input.
     if (circ.n_in_edges(gate) > 1) {
-      VertexVec readers =
-          circ.get_successors_of_type(measure, EdgeType::Boolean);
-      if (std::ranges::find(readers, gate) != readers.end()) break;
-      const VertexSet dependents =
-          measurement_result_dependents(circ, std::move(readers));
-      if (dependents.contains(gate)) break;
-      return follow_until_noncommuting(
-          circ, circ.get_nth_out_edge(gate, *next_port), false, &dependents);
+      if (!readers) {
+        const auto direct_readers =
+            circ.get_successors_of_type(measure, EdgeType::Boolean);
+        if (direct_readers.empty()) {
+          return follow_until_noncommuting(
+              circ, circ.get_nth_out_edge(gate, *next_port), false);
+        }
+        readers.emplace(direct_readers.begin(), direct_readers.end());
+        visited.insert(measure);
+      }
+      // The preceding vertex is already safe. All vertices visited by an
+      // earlier search are also safe, since we stop at the first reader found.
+      visited.insert(circ.source(current_edge));
+      if (depends_on_measurement_result(circ, gate, *readers, visited)) break;
     }
 
     current_edge = circ.get_nth_out_edge(gate, *next_port);

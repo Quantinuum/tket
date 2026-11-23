@@ -1495,6 +1495,24 @@ SCENARIO("Commute measurements to the end of a circuit") {
     expected.add_op<unsigned>(OpType::CZ, {0, 1});
     REQUIRE(result == expected);
   }
+  GIVEN("Measure crosses only the independent two-qubit gate") {
+    Circuit c(3, 1);
+    c.add_measure(0, 0);
+    c.add_op<unsigned>(OpType::CZ, {0, 2});
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    c.add_op<unsigned>(OpType::CZ, {0, 1});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(3, 1);
+    expected.add_op<unsigned>(OpType::CZ, {0, 2});
+    expected.add_measure(0, 0);
+    expected.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    expected.add_op<unsigned>(OpType::CZ, {0, 1});
+    REQUIRE(result == expected);
+  }
   GIVEN("Delaying one measurement blocks delaying another") {
     Circuit c(2, 2);
     c.add_measure(0, 0);
