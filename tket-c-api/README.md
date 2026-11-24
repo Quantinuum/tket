@@ -6,14 +6,15 @@ available, but callers don't need them to construct a circuit, create a pass
 pipeline or read its output.
 
 The gate vocabulary covers all unitary `TketOp` operations in tket2, plus
-PhasedX, ZZPhase and PhasedXX for the Helios and Sol platforms. TK1, SWAP,
+PhasedX, ZZPhase and PhasedXX for the Helios and Sol platforms. TK1, TK2, SWAP,
 XXPhase, YYPhase and ZZMax are also supported. Parameters use TKET half-turns,
 including the phase-axis parameters of PhasedX and PhasedXX. Global phase is
 returned separately as the exponent in `exp(i*pi*phase)`.
 
 Measurement, reset and barriers have explicit operation identifiers. Measurement
 arguments are a qubit followed by a bit. Creation and discard are circuit
-boundary annotations. Runtime allocation failure, lazy measurement futures and
+boundary annotations. Query them with `tket_circuit_is_created` and
+`tket_circuit_is_discarded` when reading a circuit. Runtime allocation failure, lazy measurement futures and
 leakage results still belong to the runtime adapter; treating them as unitary
 operations would lose their semantics. Symbolic parameters return an error from
 the numeric iterator rather than being approximated or dropped.

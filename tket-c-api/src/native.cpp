@@ -19,6 +19,36 @@ OpType op_type(TketGate gate) {
   switch (gate) {
     case TKET_GATE_H:
       return OpType::H;
+    case TKET_GATE_X:
+      return OpType::X;
+    case TKET_GATE_Y:
+      return OpType::Y;
+    case TKET_GATE_Z:
+      return OpType::Z;
+    case TKET_GATE_S:
+      return OpType::S;
+    case TKET_GATE_SDG:
+      return OpType::Sdg;
+    case TKET_GATE_T:
+      return OpType::T;
+    case TKET_GATE_TDG:
+      return OpType::Tdg;
+    case TKET_GATE_V:
+      return OpType::V;
+    case TKET_GATE_VDG:
+      return OpType::Vdg;
+    case TKET_GATE_RX:
+      return OpType::Rx;
+    case TKET_GATE_RY:
+      return OpType::Ry;
+    case TKET_GATE_RZ:
+      return OpType::Rz;
+    case TKET_GATE_PHASEDX:
+      return OpType::PhasedX;
+    case TKET_GATE_TK1:
+      return OpType::TK1;
+    case TKET_GATE_TK2:
+      return OpType::TK2;
     case TKET_GATE_CX:
       return OpType::CX;
     case TKET_GATE_CY:
@@ -27,48 +57,20 @@ OpType op_type(TketGate gate) {
       return OpType::CZ;
     case TKET_GATE_CRZ:
       return OpType::CRz;
-    case TKET_GATE_T:
-      return OpType::T;
-    case TKET_GATE_TDG:
-      return OpType::Tdg;
-    case TKET_GATE_S:
-      return OpType::S;
-    case TKET_GATE_SDG:
-      return OpType::Sdg;
-    case TKET_GATE_X:
-      return OpType::X;
-    case TKET_GATE_Y:
-      return OpType::Y;
-    case TKET_GATE_Z:
-      return OpType::Z;
-    case TKET_GATE_RX:
-      return OpType::Rx;
-    case TKET_GATE_RY:
-      return OpType::Ry;
-    case TKET_GATE_RZ:
-      return OpType::Rz;
     case TKET_GATE_CCX:
       return OpType::CCX;
-    case TKET_GATE_V:
-      return OpType::V;
-    case TKET_GATE_VDG:
-      return OpType::Vdg;
-    case TKET_GATE_PHASEDX:
-      return OpType::PhasedX;
-    case TKET_GATE_ZZPHASE:
-      return OpType::ZZPhase;
-    case TKET_GATE_PHASEDXX:
-      return OpType::PhasedXX;
-    case TKET_GATE_TK1:
-      return OpType::TK1;
     case TKET_GATE_SWAP:
       return OpType::SWAP;
     case TKET_GATE_XXPHASE:
       return OpType::XXPhase;
     case TKET_GATE_YYPHASE:
       return OpType::YYPhase;
+    case TKET_GATE_ZZPHASE:
+      return OpType::ZZPhase;
     case TKET_GATE_ZZMAX:
       return OpType::ZZMax;
+    case TKET_GATE_PHASEDXX:
+      return OpType::PhasedXX;
     case TKET_GATE_MEASURE:
       return OpType::Measure;
     case TKET_GATE_RESET:
@@ -82,6 +84,36 @@ TketGate gate_type(OpType op) {
   switch (op) {
     case OpType::H:
       return TKET_GATE_H;
+    case OpType::X:
+      return TKET_GATE_X;
+    case OpType::Y:
+      return TKET_GATE_Y;
+    case OpType::Z:
+      return TKET_GATE_Z;
+    case OpType::S:
+      return TKET_GATE_S;
+    case OpType::Sdg:
+      return TKET_GATE_SDG;
+    case OpType::T:
+      return TKET_GATE_T;
+    case OpType::Tdg:
+      return TKET_GATE_TDG;
+    case OpType::V:
+      return TKET_GATE_V;
+    case OpType::Vdg:
+      return TKET_GATE_VDG;
+    case OpType::Rx:
+      return TKET_GATE_RX;
+    case OpType::Ry:
+      return TKET_GATE_RY;
+    case OpType::Rz:
+      return TKET_GATE_RZ;
+    case OpType::PhasedX:
+      return TKET_GATE_PHASEDX;
+    case OpType::TK1:
+      return TKET_GATE_TK1;
+    case OpType::TK2:
+      return TKET_GATE_TK2;
     case OpType::CX:
       return TKET_GATE_CX;
     case OpType::CY:
@@ -90,48 +122,20 @@ TketGate gate_type(OpType op) {
       return TKET_GATE_CZ;
     case OpType::CRz:
       return TKET_GATE_CRZ;
-    case OpType::T:
-      return TKET_GATE_T;
-    case OpType::Tdg:
-      return TKET_GATE_TDG;
-    case OpType::S:
-      return TKET_GATE_S;
-    case OpType::Sdg:
-      return TKET_GATE_SDG;
-    case OpType::X:
-      return TKET_GATE_X;
-    case OpType::Y:
-      return TKET_GATE_Y;
-    case OpType::Z:
-      return TKET_GATE_Z;
-    case OpType::Rx:
-      return TKET_GATE_RX;
-    case OpType::Ry:
-      return TKET_GATE_RY;
-    case OpType::Rz:
-      return TKET_GATE_RZ;
     case OpType::CCX:
       return TKET_GATE_CCX;
-    case OpType::V:
-      return TKET_GATE_V;
-    case OpType::Vdg:
-      return TKET_GATE_VDG;
-    case OpType::PhasedX:
-      return TKET_GATE_PHASEDX;
-    case OpType::ZZPhase:
-      return TKET_GATE_ZZPHASE;
-    case OpType::PhasedXX:
-      return TKET_GATE_PHASEDXX;
-    case OpType::TK1:
-      return TKET_GATE_TK1;
     case OpType::SWAP:
       return TKET_GATE_SWAP;
     case OpType::XXPhase:
       return TKET_GATE_XXPHASE;
     case OpType::YYPhase:
       return TKET_GATE_YYPHASE;
+    case OpType::ZZPhase:
+      return TKET_GATE_ZZPHASE;
     case OpType::ZZMax:
       return TKET_GATE_ZZMAX;
+    case OpType::PhasedXX:
+      return TKET_GATE_PHASEDXX;
     case OpType::Measure:
       return TKET_GATE_MEASURE;
     case OpType::Reset:
@@ -306,17 +310,46 @@ TketError tket_circuit_mark_discarded(TketCircuit *tc, uint32_t q) {
     tc->state->circuit.qubit_discard(Qubit(q));
   });
 }
+// Create and Discard are boundary vertices, which the operation iterator skips.
+TketError tket_circuit_is_created(
+    const TketCircuit *tc, uint32_t qubit, bool *out_created) {
+  return protect([&] {
+    nonnull(tc);
+    nonnull(out_created);
+    const auto &circuit = tc->state->circuit;
+    const Qubit wire(qubit);
+    require(
+        circuit.contains_unit(wire), TKET_ERROR_INVALID_ARGUMENT,
+        "Input qubit is outside the circuit");
+    *out_created = circuit.is_created(wire);
+  });
+}
+TketError tket_circuit_is_discarded(
+    const TketCircuit *tc, uint32_t qubit, bool *out_discarded) {
+  return protect([&] {
+    nonnull(tc);
+    nonnull(out_discarded);
+    const auto &circuit = tc->state->circuit;
+    const Qubit wire(qubit);
+    require(
+        circuit.contains_unit(wire), TKET_ERROR_INVALID_ARGUMENT,
+        "Output qubit is outside the circuit");
+    *out_discarded = circuit.is_discarded(wire);
+  });
+}
 TketError tket_circuit_output_qubit(
     const TketCircuit *tc, uint32_t input, uint32_t *output) {
   return protect([&] {
     nonnull(tc);
     nonnull(output);
-    const auto permutation = tc->state->circuit.implicit_qubit_permutation();
-    const auto it = permutation.find(Qubit(input));
+    const auto &circuit = tc->state->circuit;
+    const Qubit qubit(input);
     require(
-        it != permutation.end(), TKET_ERROR_INVALID_ARGUMENT,
+        circuit.contains_unit(qubit), TKET_ERROR_INVALID_ARGUMENT,
         "Input qubit is outside the circuit");
-    *output = wire(it->second).index;
+    // Follow this wire only, so querying every output walks each path once.
+    const auto path = circuit.unit_path(qubit);
+    *output = wire(circuit.get_id_from_out(path.back().first)).index;
   });
 }
 TketError tket_circuit_has_implicit_swaps(const TketCircuit *tc, bool *swaps) {

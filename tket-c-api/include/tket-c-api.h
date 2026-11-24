@@ -82,7 +82,6 @@ const char *tket_last_error_message(void);
  */
 const char *tket_error_string(TketError error);
 
-
 // ===========================================================================
 // The JSON interface
 // ===========================================================================
@@ -123,7 +122,6 @@ TketError tket_circuit_to_json(const TketCircuit *circuit, char **json_str);
  */
 TketPass *tket_pass_from_json(const char *json_str);
 
-
 // ===========================================================================
 // The direct interface: building a circuit
 // ===========================================================================
@@ -146,34 +144,40 @@ TketPass *tket_pass_from_json(const char *json_str);
 typedef uint32_t TketGate;
 enum {
   TKET_GATE_H = 1,
-  TKET_GATE_CX = 2,
-  TKET_GATE_CY = 3,
-  TKET_GATE_CZ = 4,
-  TKET_GATE_CRZ = 5,
-  TKET_GATE_T = 6,
-  TKET_GATE_TDG = 7,
-  TKET_GATE_S = 8,
-  TKET_GATE_SDG = 9,
-  TKET_GATE_X = 10,
-  TKET_GATE_Y = 11,
-  TKET_GATE_Z = 12,
-  TKET_GATE_RX = 13,
-  TKET_GATE_RY = 14,
-  TKET_GATE_RZ = 15,
-  TKET_GATE_CCX = 16,
-  TKET_GATE_V = 17,
-  TKET_GATE_VDG = 18,
-  TKET_GATE_PHASEDX = 19,
-  TKET_GATE_ZZPHASE = 20,
-  TKET_GATE_PHASEDXX = 21,
-  TKET_GATE_TK1 = 22,
-  TKET_GATE_SWAP = 23,
-  TKET_GATE_XXPHASE = 24,
-  TKET_GATE_YYPHASE = 25,
+  TKET_GATE_X = 2,
+  TKET_GATE_Y = 3,
+  TKET_GATE_Z = 4,
+  TKET_GATE_S = 5,
+  TKET_GATE_SDG = 6,
+  TKET_GATE_T = 7,
+  TKET_GATE_TDG = 8,
+  TKET_GATE_V = 9,
+  TKET_GATE_VDG = 10,
+
+  TKET_GATE_RX = 11,
+  TKET_GATE_RY = 12,
+  TKET_GATE_RZ = 13,
+  TKET_GATE_PHASEDX = 14,
+
+  TKET_GATE_TK1 = 15,
+  TKET_GATE_TK2 = 16,
+
+  TKET_GATE_CX = 17,
+  TKET_GATE_CY = 18,
+  TKET_GATE_CZ = 19,
+  TKET_GATE_CRZ = 20,
+  TKET_GATE_CCX = 21,
+  TKET_GATE_SWAP = 22,
+
+  TKET_GATE_XXPHASE = 23,
+  TKET_GATE_YYPHASE = 24,
+  TKET_GATE_ZZPHASE = 25,
   TKET_GATE_ZZMAX = 26,
-  TKET_GATE_MEASURE = 27,
-  TKET_GATE_RESET = 28,
-  TKET_GATE_BARRIER = 29,
+  TKET_GATE_PHASEDXX = 27,
+
+  TKET_GATE_MEASURE = 28,
+  TKET_GATE_RESET = 29,
+  TKET_GATE_BARRIER = 30,
 };
 
 typedef uint32_t TketWireKind;
@@ -212,12 +216,13 @@ TketError tket_circuit_create(
  * @param args_count Number of wires in args, matching the operation's arity
  * @param params Borrowed array of params_count finite angles in half-turns
  *     (1.0 is pi radians). PhasedX and PhasedXX take [rotation angle,
- *     phase-axis angle], and TK1 takes [a, b, c] for Rz(a) Rx(b) Rz(c).
+ *     phase-axis angle]. TK1 takes [a, b, c] for Rz(a) Rx(b) Rz(c), and
+ *     TK2 takes [a, b, c] for XXPhase(a) YYPhase(b) ZZPhase(c).
  *     May be NULL only when params_count is zero. The array is borrowed for
  *     this call only.
  * @param params_count Number of elements in params: one for Rx, Ry, Rz, CRz,
  *     XXPhase, YYPhase and ZZPhase, two for PhasedX and PhasedXX, three for
- *     TK1, and zero for all other supported operations
+ *     TK1 and TK2, and zero for all other supported operations
  * @return TKET_SUCCESS if successful, error code otherwise
  */
 TketError tket_circuit_add_operation(
@@ -271,9 +276,9 @@ TketError tket_circuit_mark_discarded(TketCircuit *circuit, uint32_t qubit);
 // parameters. Unsupported operations, register names and symbolic parameters
 // return an error.
 //
-// The global phase and any implicit output permutation are available
-// separately. Check these too when we need to reproduce the complete circuit
-// behaviour.
+// Global phase, the output permutation and qubit boundary annotations are
+// available separately. Use the creation and discard queries to tell which
+// qubits start in |0> and which outputs are discarded.
 
 // Opaque handle to a circuit command iterator
 typedef struct TketCommandIterator TketCommandIterator;
@@ -296,8 +301,8 @@ typedef struct {
   /**
    * Borrowed array of params_count finite angles in half-turns (1.0 is pi
    * radians). PhasedX and PhasedXX return [rotation angle, phase-axis angle],
-   * and TK1 returns [a, b, c]. Valid until the next tket_iterator_next call
-   * or until the iterator is freed. May be NULL when params_count is zero.
+   * and TK1 and TK2 return [a, b, c]. Valid until the next tket_iterator_next
+   * call or until the iterator is freed. May be NULL when params_count is zero.
    */
   const double *params;
   /** Number of angle parameters in params. */
@@ -351,6 +356,28 @@ TketError tket_iterator_next(
  * @return TKET_SUCCESS if successful, error code otherwise
  */
 TketError tket_circuit_get_phase(const TketCircuit *circuit, double *out_phase);
+
+/**
+ * Check whether an input qubit is prepared in |0>
+ *
+ * @param circuit Non-NULL circuit to read
+ * @param qubit Zero-based index of an existing input qubit in the q register
+ * @param out_created Non-NULL output pointer receiving the creation flag
+ * @return TKET_SUCCESS if successful, error code otherwise
+ */
+TketError tket_circuit_is_created(
+    const TketCircuit *circuit, uint32_t qubit, bool *out_created);
+
+/**
+ * Check whether an output qubit is discarded
+ *
+ * @param circuit Non-NULL circuit to read
+ * @param qubit Zero-based index of an existing output qubit in the q register
+ * @param out_discarded Non-NULL output pointer receiving the discard flag
+ * @return TKET_SUCCESS if successful, error code otherwise
+ */
+TketError tket_circuit_is_discarded(
+    const TketCircuit *circuit, uint32_t qubit, bool *out_discarded);
 
 /**
  * Find the output wire reached by an input qubit

@@ -73,6 +73,7 @@ void all_gates_round_trip() {
       {TKET_GATE_ZZPHASE, {q2, q0}, {0.37}},
       {TKET_GATE_PHASEDXX, {q2, q0}, {0.37, 0.19}},
       {TKET_GATE_TK1, {q0}, {0.37, 0.19, 0.23}},
+      {TKET_GATE_TK2, {q2, q0}, {0.37, 0.19, 0.13}},
       {TKET_GATE_SWAP, {q2, q0}, {}},
       {TKET_GATE_XXPHASE, {q2, q0}, {0.37}},
       {TKET_GATE_YYPHASE, {q2, q0}, {0.37}},
@@ -200,6 +201,29 @@ void passes_and_errors() {
       std::string(tket_last_error_message()).size() > 0,
       "Expected an error message");
 }
+void squash_to_tk2_and_iterate() {
+  auto c = circuit();
+  // Squashing two non-cancelling CX gates with a TK2 target should leave a
+  // TK2 interaction, which callers need to read back through the direct API.
+  add(c.get(), TKET_GATE_CX, {q0, q1});
+  add(c.get(), TKET_GATE_H, {q1});
+  add(c.get(), TKET_GATE_CX, {q0, q1});
+  check(tket_two_qubit_squash(c.get(), TKET_TARGET_TK2, 1.0, false));
+  auto it = iterator(c);
+  TketOperationView op{};
+  bool has = false;
+  bool seen_tk2 = false;
+  while (true) {
+    check(tket_iterator_next(it.get(), &op, &has));
+    if (!has) break;
+    if (op.gate == TKET_GATE_TK2) {
+      expect(op.args_count == 2 && op.params_count == 3, "Invalid TK2 view");
+      seen_tk2 = true;
+    }
+  }
+  expect(seen_tk2, "Expected the TK2-targeted squash to return a TK2 gate");
+}
+
 void symbolic_operations_and_wire_permutations() {
   // JSON can load operations which the numeric iterator can't represent.
   // Those operations should produce explicit errors when we reach them, so
@@ -235,7 +259,8 @@ void symbolic_operations_and_wire_permutations() {
   // are no SWAP operations for an iterator to return, so callers need the
   // separate permutation query to recover which output belongs to each input.
   const char *permuted = R"({"bits":[],"qubits":[["q",[0]],["q",[1]]],
-    "commands":[],"phase":"0","implicit_permutation":
+    "commands":[],"phase":"0","created_qubits":[["q",[0]]],
+    "discarded_qubits":[["q",[1]]],"implicit_permutation":
       [[["q",[0]],["q",[1]]],[["q",[1]],["q",[0]]]]})";
   c.reset(tket_circuit_from_json(permuted));
   expect(bool(c), "Could not construct permuted reference circuit");
@@ -245,6 +270,22 @@ void symbolic_operations_and_wire_permutations() {
   uint32_t output = 99;
   check(tket_circuit_output_qubit(c.get(), 0, &output));
   expect(output == 1, "Wrong direction for implicit permutation");
+  check(tket_circuit_output_qubit(c.get(), 1, &output));
+  expect(output == 0, "The other qubit should reach output zero");
+  expect(
+      tket_circuit_output_qubit(c.get(), 2, &output) ==
+          TKET_ERROR_INVALID_ARGUMENT,
+      "An absent input qubit should fail");
+  // The imported boundary flags belong to their respective input and output
+  // indices, even when the circuit implicitly swaps those wires.
+  for (uint32_t qubit : {0u, 1u}) {
+    bool created = false;
+    bool discarded = false;
+    check(tket_circuit_is_created(c.get(), qubit, &created));
+    check(tket_circuit_is_discarded(c.get(), qubit, &discarded));
+    expect(created == (qubit == 0), "Wrong creation flag");
+    expect(discarded == (qubit == 1), "Wrong discard flag");
+  }
 
   c = circuit();
   check(tket_circuit_mark_created(c.get(), 0));
@@ -274,6 +315,7 @@ int main() {
     all_gates_round_trip();
     causal_order_and_lifetime();
     passes_and_errors();
+    squash_to_tk2_and_iterate();
     symbolic_operations_and_wire_permutations();
     std::cout << "Native C API checks passed\n";
   } catch (const std::exception &e) {
