@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import pickle
+from itertools import product
 from typing import Any
 
 import numpy as np
@@ -34,6 +35,7 @@ from pytket.circuit import (
     SetBitsOp,
     Unitary1qBox,
     Unitary2qBox,
+    UnitID,
 )
 from pytket.circuit.named_types import ParamType, RenameUnitsMap
 from pytket.circuit.named_types import ParamType as Param
@@ -1076,6 +1078,56 @@ def test_clifford_push_through_measures() -> None:
     assert coms[5].op.type == OpType.ExplicitModifier
     assert coms[6].op.type == OpType.ExplicitModifier
     assert coms[7].op.type == OpType.CopyBits
+
+
+@pytest.mark.parametrize(
+    "circ",
+    [
+        pytest.param(
+            Circuit(3, 3).X(1).CX(1, 2).Measure(1, 1).Measure(2, 2),
+            id="offset-wires",
+        ),
+        pytest.param(
+            Circuit(3, 3).CX(0, 2).CX(2, 0).Measure(0, 0).Measure(2, 2),
+            id="nonconsecutive-wires",
+        ),
+    ],
+)
+def test_clifford_push_through_measures_on_subset(circ: Circuit) -> None:
+    # https://github.com/Quantinuum/tket/issues/2271
+    def final_bits(c: Circuit, initial: tuple[bool, ...]) -> list[bool]:
+        qubits = dict(zip(c.qubits, initial, strict=True))
+        bits: dict[UnitID, bool] = dict.fromkeys(c.bits, False)
+        for cmd in c.get_commands():
+            op = cmd.op
+            match op.type:
+                case OpType.X:
+                    qubits[cmd.qubits[0]] ^= True
+                case OpType.CX:
+                    control, target = cmd.qubits
+                    qubits[target] ^= qubits[control]
+                case OpType.Measure:
+                    bits[cmd.bits[0]] = qubits[cmd.qubits[0]]
+                case OpType.SetBits:
+                    assert isinstance(op, SetBitsOp)
+                    bits.update(zip(cmd.args, op.values, strict=True))
+                case OpType.ExplicitModifier:
+                    assert op.get_name() == "XOR"
+                    source, target_bit = cmd.args
+                    bits[target_bit] ^= bits[source]
+                case OpType.CopyBits:
+                    half = len(cmd.args) // 2
+                    values = [bits[b] for b in cmd.args[:half]]
+                    bits.update(zip(cmd.args[half:], values, strict=True))
+                case _:
+                    pytest.fail(f"Unexpected command {cmd}")
+        return [bits[b] for b in circ.bits]
+
+    optimised = circ.copy()
+    assert CliffordPushThroughMeasures().apply(optimised)
+    assert optimised.n_2qb_gates() == 0
+    for initial in product((False, True), repeat=circ.n_qubits):
+        assert final_bits(optimised, initial) == final_bits(circ, initial)
 
 
 def test_greedy_pauli_synth() -> None:  # noqa: PLR0915
