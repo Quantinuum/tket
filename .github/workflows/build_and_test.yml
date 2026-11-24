@@ -218,17 +218,21 @@ jobs:
           key: tket-static-${{ matrix.os }}-${{ steps.current_time.outputs.formattedTime }}
           restore-keys: |
             tket-static-${{ matrix.os }}-
-      - name: Build tket
+      - name: Build and test tket
         # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
         # Necessary because setting ccache base_dir doesn't currently work on windows
         run: |
           conan build tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+      - name: Export tket package
+        run: |
           conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
       - name: Build tket-c-api
         # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
         # Necessary because setting ccache base_dir doesn't currently work on windows
         run: |
           conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
+      - name: Export tket-c-api package
+        run: |
           conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
       - name: Upload packages
         if: github.event_name == 'push'
@@ -524,9 +528,15 @@ jobs:
         echo "ccache_path=${b}" >> $GITHUB_OUTPUT
     - name: Build tket
       if: needs.check_changes.outputs.tket_changed == 'true'
+      env:
+        TKET_VSGEN_CCACHE_EXE: ${{ steps.ccache-path.outputs.ccache_path }}
       run: |
-        $env:TKET_VSGEN_CCACHE_EXE = '${{ steps.ccache-path.outputs.ccache_path }}'
         conan build tket --user tket --channel stable --build=missing -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True
+    - name: Export tket package
+      if: needs.check_changes.outputs.tket_changed == 'true'
+      env:
+        TKET_VSGEN_CCACHE_EXE: ${{ steps.ccache-path.outputs.ccache_path }}
+      run: |
         conan export-pkg tket --user tket --channel stable -o boost/*:header_only=True -o tklog/*:shared=True -o tket/*:shared=True -tf ""
     - name: Install tket
       if: needs.check_changes.outputs.tket_changed != 'true'
