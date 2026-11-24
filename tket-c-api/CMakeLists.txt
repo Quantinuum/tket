@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(tket-c-api CXX)
+project(tket-c-api C CXX)
 
 # TKET dependency
 find_package(tket REQUIRED)
@@ -58,10 +58,20 @@ if (NOT TARGET gmp::gmp)
 endif()
 
 # Library and headers to be installed
-add_library(tket-c-api src/tket-c-api.cpp)
+add_library(tket-c-api src/tket-c-api.cpp src/native.cpp)
 target_include_directories(tket-c-api PUBLIC include)
 
 target_link_libraries(tket-c-api PRIVATE tket::tket Eigen3::Eigen)
 
 set_target_properties(tket-c-api PROPERTIES PUBLIC_HEADER "include/tket-c-api.h")
 install(TARGETS tket-c-api)
+
+include(CTest)
+if(BUILD_TESTING)
+    add_executable(tket-c-api-native-tests tests/native.cpp)
+    target_link_libraries(tket-c-api-native-tests PRIVATE tket-c-api)
+    add_test(NAME native-c-api COMMAND tket-c-api-native-tests)
+    add_executable(tket-c-api-c-header tests/header.c)
+    target_link_libraries(tket-c-api-c-header PRIVATE tket-c-api)
+    add_test(NAME c-header COMMAND tket-c-api-c-header)
+endif()
