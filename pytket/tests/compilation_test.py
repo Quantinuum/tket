@@ -18,8 +18,10 @@ from pytket.architecture import Architecture
 from pytket.circuit import Circuit, OpType, reg_eq
 from pytket.passes import (
     CXMappingPass,
+    DelayMeasures,
     FullPeepholeOptimise,
     PassSelector,
+    RemoveRedundancies,
     scratch_reg_resize_pass,
 )
 from pytket.placement import Placement
@@ -328,3 +330,17 @@ def test_full_peephole_optimise_gatecount(with_cswaps: bool) -> None:
     counts = gate_counts(c)
     assert counts[OpType.TK1] <= 10
     assert counts[OpType.CX] <= 7
+
+
+def test_delay_measures_with_conditional_dependency() -> None:
+    # https://github.com/Quantinuum/tket/issues/2270
+    c = Circuit(2, 1)
+    c.Measure(0, 0)
+    c.X(1, condition_bits=[0], condition_value=1)
+    c.CZ(0, 1)
+    commands = c.get_commands()
+
+    assert not DelayMeasures().apply(c)
+    assert c.n_gates == 3
+    assert c.get_commands() == commands
+    RemoveRedundancies().apply(c)

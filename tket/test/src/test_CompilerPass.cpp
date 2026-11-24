@@ -1440,6 +1440,183 @@ SCENARIO("Commute measurements to the end of a circuit") {
     CompilationUnit cu(c);
     REQUIRE(try_delay_pass->apply(cu));
   }
+  GIVEN("Each measurement is followed by a gate that reads its result") {
+    Circuit c(1, 2);
+    for (unsigned bit = 0; bit < 2; ++bit) {
+      c.add_measure(0, bit);
+      c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {bit}, 1);
+    }
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+  }
+  GIVEN("Each measurement can cross a gate on its own wire") {
+    Circuit c(2, 2);
+    Circuit expected(2, 2);
+    for (unsigned bit = 0; bit < 2; ++bit) {
+      c.add_measure(0, bit);
+      c.add_op<unsigned>(OpType::Z, {0});
+      c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {bit}, 1);
+
+      expected.add_op<unsigned>(OpType::Z, {0});
+      expected.add_measure(0, bit);
+      expected.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {bit}, 1);
+    }
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == expected);
+  }
+  GIVEN("Reader-free measurements can be delayed on independent wires") {
+    Circuit c(3, 3);
+    Circuit expected(3, 3);
+    for (unsigned wire = 0; wire < 3; ++wire) {
+      c.add_measure(wire, wire);
+      c.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_measure(wire, wire);
+    }
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == expected);
+  }
+  GIVEN("Measure blocked by a gate that follows a conditional reader") {
+    // https://github.com/Quantinuum/tket/issues/2270
+    Circuit c(2, 1);
+    c.add_measure(0, 0);
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    c.add_op<unsigned>(OpType::CZ, {0, 1});
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+    REQUIRE_THROWS_AS(delay_pass->apply(cu), UnsatisfiedPredicate);
+  }
+  GIVEN("Measure can cross an independent gate before a dependent gate") {
+    Circuit c(2, 1);
+    c.add_measure(0, 0);
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    c.add_op<unsigned>(OpType::Z, {0});
+    c.add_op<unsigned>(OpType::CZ, {0, 1});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(2, 1);
+    expected.add_op<unsigned>(OpType::Z, {0});
+    expected.add_measure(0, 0);
+    expected.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    expected.add_op<unsigned>(OpType::CZ, {0, 1});
+    REQUIRE(result == expected);
+  }
+  GIVEN("Measure crosses only the independent two-qubit gate") {
+    Circuit c(3, 1);
+    c.add_measure(0, 0);
+    c.add_op<unsigned>(OpType::CZ, {0, 2});
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    c.add_op<unsigned>(OpType::CZ, {0, 1});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(3, 1);
+    expected.add_op<unsigned>(OpType::CZ, {0, 2});
+    expected.add_measure(0, 0);
+    expected.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0}, 1);
+    expected.add_op<unsigned>(OpType::CZ, {0, 1});
+    REQUIRE(result == expected);
+  }
+  GIVEN("Delaying one measurement blocks delaying another") {
+    Circuit c(2, 2);
+    c.add_measure(0, 0);
+    c.add_measure(1, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {1}, {0}, 1);
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+    // Either measurement can move, leaving a chain of alternating operations.
+    check_command_types(
+        result, {OpType::Measure, OpType::Conditional, OpType::Measure,
+                 OpType::Conditional});
+  }
+  GIVEN(
+      "Delaying a measurement also moves its reader in the dependency order") {
+    Circuit c(2, 2);
+    c.add_measure(0, 0);
+    c.add_measure(1, 1);
+    c.add_op<unsigned>(OpType::Z, {0});
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {1}, {0}, 1);
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(2, 2);
+    expected.add_op<unsigned>(OpType::Z, {0});
+    expected.add_measure(1, 1);
+    expected.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    expected.add_measure(0, 0);
+    expected.add_conditional_gate<unsigned>(OpType::Z, {}, {1}, {0}, 1);
+    REQUIRE(result == expected);
+  }
+  GIVEN("A reader-free measurement can affect a later dependency search") {
+    Circuit c(2, 2);
+    c.add_measure(0, 0);
+    c.add_measure(1, 1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    c.add_op<unsigned>(OpType::CX, {1, 0});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+
+    Circuit expected(2, 2);
+    expected.add_measure(1, 1);
+    expected.add_conditional_gate<unsigned>(OpType::Z, {}, {0}, {1}, 1);
+    expected.add_measure(0, 0);
+    expected.add_op<unsigned>(OpType::CX, {1, 0});
+    REQUIRE(result == expected);
+  }
+  GIVEN("Dependency checks continue after the order repair budget runs out") {
+    const unsigned n_independent = 64;
+    const unsigned q0 = n_independent;
+    const unsigned q1 = n_independent + 1;
+    Circuit c(n_independent + 2, n_independent + 2);
+    Circuit expected(n_independent + 2, n_independent + 2);
+    for (unsigned wire = 0; wire < n_independent; ++wire) {
+      c.add_measure(wire, wire);
+      c.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_op<unsigned>(OpType::Z, {wire});
+      expected.add_measure(wire, wire);
+    }
+    c.add_measure(q0, q0);
+    c.add_measure(q1, q1);
+    c.add_conditional_gate<unsigned>(OpType::Z, {}, {q0}, {q1}, 1);
+    c.add_op<unsigned>(OpType::CX, {q1, q0});
+
+    expected.add_measure(q1, q1);
+    expected.add_conditional_gate<unsigned>(OpType::Z, {}, {q0}, {q1}, 1);
+    expected.add_measure(q0, q0);
+    expected.add_op<unsigned>(OpType::CX, {q1, q0});
+    CompilationUnit cu(c);
+    REQUIRE(try_delay_pass->apply(cu));
+    Circuit result = cu.get_circ_ref();
+    REQUIRE_NOTHROW(result.vertices_in_order());
+    REQUIRE(result == expected);
+  }
+  GIVEN("Measure blocked by a dependent read before a bit is overwritten") {
+    Circuit c(3, 2);
+    c.add_measure(0, 0);
+    c.add_conditional_gate<unsigned>(OpType::X, {}, {1}, {0, 1}, 1);
+    c.add_measure(2, 1);
+    c.add_op<unsigned>(OpType::CX, {0, 2});
+    CompilationUnit cu(c);
+    REQUIRE_FALSE(try_delay_pass->apply(cu));
+    REQUIRE(cu.get_circ_ref() == c);
+  }
   GIVEN("Measure blocked by conditional SWAP") {
     Circuit c(2, 2);
     c.add_op<unsigned>(OpType::CZ, {0, 1});

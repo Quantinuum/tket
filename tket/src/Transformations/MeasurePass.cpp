@@ -14,7 +14,10 @@
 
 #include "tket/Transformations/MeasurePass.hpp"
 
+#include <algorithm>
+#include <cstddef>
 #include <optional>
+#include <utility>
 
 #include "tket/Circuit/DAGDefs.hpp"
 #include "tket/OpType/EdgeType.hpp"
@@ -85,7 +88,7 @@ bool check_only_end_measures(const Command& com, unit_set_t& measured_units) {
 }
 
 /**
- * Follows and edge in the circuit's DAG until it reaches a non-commuting
+ * Follows an edge in the circuit's DAG until it reaches a non-commuting
  * operation. By default, it allows commutation
  * through SWAPs, gates that commute on the Pauli Z basis, and recursively
  * checks inside boxes and conditional operations.
@@ -93,7 +96,8 @@ bool check_only_end_measures(const Command& com, unit_set_t& measured_units) {
  * @param current_edge The edge to start following.
  * @param only_boxes Whether to only commute through straight wires in boxes or
  * conditional operations.
- * @return The edge leading to the first non-commuting operation.
+ * @return The edge leading to the first operation that cannot be crossed, or to
+ * the quantum output.
  **/
 static Edge follow_until_noncommuting(
     const Circuit& circ, Edge current_edge, bool only_boxes);
@@ -172,14 +176,229 @@ static Edge follow_until_noncommuting(
   return current_edge;
 }
 
+static void move_measure(Circuit& circ, Vertex v, Edge destination) {
+  Edge in_edge = circ.get_nth_in_edge(v, 0);
+  Edge out_edge = circ.get_nth_out_edge(v, 0);
+  circ.add_edge(
+      {circ.source(in_edge), circ.get_source_port(in_edge)},
+      {circ.target(out_edge), circ.get_target_port(out_edge)},
+      EdgeType::Quantum);
+  circ.remove_edge(in_edge);
+  circ.remove_edge(out_edge);
+  circ.add_edge(
+      {circ.source(destination), circ.get_source_port(destination)}, {v, 0},
+      EdgeType::Quantum);
+  circ.add_edge(
+      {v, 0}, {circ.target(destination), circ.get_target_port(destination)},
+      EdgeType::Quantum);
+  circ.remove_edge(destination);
+}
+
+class CommandOrder {
+ public:
+  CommandOrder(VertexVec commands, std::size_t work_budget)
+      : commands_(std::move(commands)), remaining_work_(work_budget) {
+    positions_.reserve(commands_.size());
+    for (std::size_t i = 0; i < commands_.size(); ++i) {
+      positions_.emplace(commands_[i], i);
+    }
+  }
+
+  std::optional<std::size_t> position(Vertex v) const {
+    const auto it = positions_.find(v);
+    if (it == positions_.end()) return std::nullopt;
+    return it->second;
+  }
+
+  // An incomplete repair leaves this index unusable.
+  bool update_after_move(
+      const Circuit& circ, Vertex measure, Vertex last_gate) {
+    const std::size_t first = positions_.at(measure);
+    const std::size_t last = positions_.at(last_gate);
+    // Charge for both scanning the interval and reindexing it.
+    if (!spend_work(2 * (last - first + 1))) return false;
+    VertexSet delayed{measure};
+    VertexVec delayed_in_order;
+    std::size_t next = first;
+
+    // Only the new edge from last_gate to measure goes backward in the old
+    // order. Move the measurement and its descendants in this interval after
+    // last_gate, preserving the relative order within each group.
+    const auto defer_if_in_interval = [&](Vertex successor) {
+      const auto rank = position(successor);
+      if (rank && *rank <= last) delayed.insert(successor);
+    };
+    for (std::size_t i = first; i <= last; ++i) {
+      const Vertex v = commands_[i];
+      if (!delayed.contains(v)) {
+        commands_[next++] = v;
+        continue;
+      }
+      if (!spend_work(std::size_t{circ.n_in_edges(v)} + circ.n_out_edges(v))) {
+        return false;
+      }
+      delayed_in_order.push_back(v);
+      for (const Edge& out : circ.get_all_out_edges(v)) {
+        defer_if_in_interval(circ.target(out));
+      }
+      // Each Boolean read precedes the next write to that bit.
+      for (const Edge& read : circ.get_in_edges_of_type(v, EdgeType::Boolean)) {
+        // Resolving this dependency can scan the value's outgoing edges.
+        if (!spend_work(circ.n_out_edges(circ.source(read)))) return false;
+        const Vertex next_write = circ.target(circ.get_linear_edge(read));
+        if (next_write != v) defer_if_in_interval(next_write);
+      }
+    }
+    for (Vertex v : delayed_in_order) {
+      commands_[next++] = v;
+    }
+    for (std::size_t i = first; i <= last; ++i) {
+      positions_.at(commands_[i]) = i;
+    }
+    return true;
+  }
+
+ private:
+  bool spend_work(std::size_t work) {
+    if (work > remaining_work_) return false;
+    remaining_work_ -= work;
+    return true;
+  }
+
+  VertexVec commands_;
+  IndexMap positions_;
+  std::size_t remaining_work_;
+};
+
+static bool depends_on_measurement_result(
+    const Circuit& circ, Vertex gate, const VertexSet& readers,
+    const CommandOrder* order, std::size_t first_reader, VertexSet& visited) {
+  VertexVec pending{gate};
+  while (!pending.empty()) {
+    Vertex current = pending.back();
+    pending.pop_back();
+    if (!visited.insert(current).second) continue;
+    if (order) {
+      // Boundaries are unranked. Inputs precede every reader and outputs cannot
+      // be ancestors of a gate.
+      const auto rank = order->position(current);
+      if (!rank || *rank < first_reader) continue;
+    }
+    if (readers.contains(current)) return true;
+    for (const Edge& input : circ.get_in_edges(current)) {
+      Vertex source = circ.source(input);
+      pending.push_back(source);
+      if (circ.get_edgetype(input) != EdgeType::Classical) continue;
+      // A write must also wait for readers of the previous value on this port.
+      for (const Edge& read :
+           circ.get_nth_b_out_bundle(source, circ.get_source_port(input))) {
+        Vertex reader = circ.target(read);
+        if (reader != current) pending.push_back(reader);
+      }
+    }
+  }
+  return false;
+}
+
+static Edge find_partial_delay_destination(
+    const Circuit& circ, Vertex measure, Edge current_edge,
+    const CommandOrder* order) {
+  std::optional<VertexSet> readers;
+  std::size_t first_reader = 0;
+  VertexSet visited;
+  Vertex gate = circ.target(current_edge);
+  while (!circ.detect_final_Op(gate)) {
+    const auto next_port = op_commutes(
+        circ.get_Op_ptr_from_Vertex(gate), circ.get_target_port(current_edge),
+        false);
+    if (!next_port) break;
+
+    // Dependencies from result readers can only enter this wire through an
+    // additional input.
+    if (circ.n_in_edges(gate) > 1) {
+      if (!readers) {
+        const auto direct_readers =
+            circ.get_successors_of_type(measure, EdgeType::Boolean);
+        if (direct_readers.empty()) {
+          return follow_until_noncommuting(
+              circ, circ.get_nth_out_edge(gate, *next_port), false);
+        }
+        readers.emplace(direct_readers.begin(), direct_readers.end());
+        if (order) {
+          first_reader = order->position(direct_readers.front()).value();
+          for (Vertex reader : direct_readers) {
+            first_reader =
+                std::min(first_reader, order->position(reader).value());
+          }
+        }
+        visited.insert(measure);
+      }
+      // The preceding vertex is already safe. All vertices visited by an
+      // earlier search are also safe, since we stop at the first reader found.
+      visited.insert(circ.source(current_edge));
+      if (depends_on_measurement_result(
+              circ, gate, *readers, order, first_reader, visited)) {
+        break;
+      }
+    }
+
+    current_edge = circ.get_nth_out_edge(gate, *next_port);
+    gate = circ.target(current_edge);
+  }
+  return current_edge;
+}
+
+static bool delay_measures_partially(Circuit& circ) {
+  VertexVec commands;
+  commands.reserve(circ.n_gates());
+  VertexVec measurements;
+  bool has_result_readers = false;
+  // Command order already respects read-before-overwrite dependencies.
+  for (const Command& com : circ) {
+    const Vertex v = com.get_vertex();
+    commands.push_back(v);
+    if (com.get_op_ptr()->get_type() != OpType::Measure) continue;
+    const Edge c_out_edge = circ.get_nth_out_edge(v, 1);
+    if (!circ.detect_final_Op(circ.target(c_out_edge))) continue;
+    measurements.push_back(v);
+    has_result_readers = has_result_readers ||
+                         circ.n_out_edges_of_type(v, EdgeType::Boolean) != 0;
+  }
+  if (measurements.empty()) return false;
+  std::optional<CommandOrder> order;
+  if (has_result_readers) {
+    constexpr std::size_t order_repair_budget_multiplier = 4;
+    const std::size_t graph_size =
+        std::size_t{circ.n_vertices()} + circ.n_edges();
+    order.emplace(
+        std::move(commands), order_repair_budget_multiplier * graph_size);
+  }
+
+  // When a later measurement can use the order, every move must maintain it.
+  bool changed = false;
+  for (Vertex v : measurements) {
+    Edge out_edge = circ.get_nth_out_edge(v, 0);
+    Edge destination = has_result_readers
+                           ? find_partial_delay_destination(
+                                 circ, v, out_edge, order ? &*order : nullptr)
+                           : follow_until_noncommuting(circ, out_edge, false);
+    if (destination == out_edge) continue;
+    const Vertex last_gate = circ.source(destination);
+    move_measure(circ, v, destination);
+    if (order && !order->update_after_move(circ, v, last_gate)) {
+      order.reset();
+    }
+    changed = true;
+  }
+  return changed;
+}
+
 std::pair<bool, bool> run_delay_measures(
     Circuit& circ, bool allow_partial, bool dry_run) {
-  if (allow_partial && dry_run) {
-    // All circuits are valid in a partial run
-    return {false, true};
+  if (allow_partial) {
+    return {!dry_run && delay_measures_partially(circ), true};
   }
-  // Collect the vertices to swap to the end of the circuit, along with their
-  // target edges
+  // In strict mode, check the whole circuit before moving any measurement.
   std::vector<std::pair<Vertex, Edge>> to_delay;
   for (const Command& com : circ) {
     Vertex v = com.get_vertex();
@@ -187,23 +406,18 @@ std::pair<bool, bool> run_delay_measures(
     if (optype == OpType::Measure) {
       Edge c_out_edge = circ.get_nth_out_edge(v, 1);
       bool measurement_is_final = circ.detect_final_Op(circ.target(c_out_edge));
-      if (allow_partial) {
-        if (!measurement_is_final) continue;
-      } else {
-        if (!measurement_is_final ||
-            circ.n_out_edges_of_type(v, EdgeType::Boolean) != 0) {
-          if (dry_run) return {false, false};
-          throw CircuitInvalidity(
-              "Cannot commute Measure through classical operations to the end "
-              "of the circuit");
-        }
+      if (!measurement_is_final ||
+          circ.n_out_edges_of_type(v, EdgeType::Boolean) != 0) {
+        if (dry_run) return {false, false};
+        throw CircuitInvalidity(
+            "Cannot commute Measure through classical operations to the end "
+            "of the circuit");
       }
       Edge out_edge = circ.get_nth_out_edge(v, 0);
       Edge current_edge = follow_until_noncommuting(circ, out_edge, false);
       Vertex current_vertex = circ.target(current_edge);
       // If we haven't reached an output, we can't continue
-      if (!allow_partial &&
-          !is_final_q_type(circ.get_OpType_from_Vertex(current_vertex))) {
+      if (!is_final_q_type(circ.get_OpType_from_Vertex(current_vertex))) {
         if (dry_run) return {false, false};
         throw CircuitInvalidity(
             "Cannot commute Measure through quantum gates to the end of the "
@@ -214,9 +428,6 @@ std::pair<bool, bool> run_delay_measures(
       if (current_edge == out_edge) continue;
       to_delay.push_back({v, current_edge});
     } else {
-      // Measurements inside boxes are never modified, so there is no need to
-      // check them during a partial run.
-      if (allow_partial) continue;
       // Raise an error if there are any boxes or conditionals with internal
       // mid-measures.
       unit_set_t measured_units;
@@ -249,32 +460,10 @@ std::pair<bool, bool> run_delay_measures(
     }
   }
 
-  if (to_delay.empty()) {
-    return {false, true};
+  for (const auto& [v, destination] : to_delay) {
+    move_measure(circ, v, destination);
   }
-  // Swap all the measures to the end
-  for (auto& p : to_delay) {
-    Vertex v = p.first;
-    Edge current_edge = p.second;
-    Vertex current_vertex = circ.target(current_edge);
-    port_t current_port = circ.get_target_port(current_edge);
-
-    Edge in_edge = circ.get_nth_in_edge(v, 0);
-    Edge out_edge = circ.get_nth_out_edge(v, 0);
-    // Rewire measure
-    circ.add_edge(
-        {circ.source(in_edge), circ.get_source_port(in_edge)},
-        {circ.target(out_edge), circ.get_target_port(out_edge)},
-        EdgeType::Quantum);
-    circ.remove_edge(in_edge);
-    circ.remove_edge(out_edge);
-    circ.add_edge(
-        {circ.source(current_edge), circ.get_source_port(current_edge)}, {v, 0},
-        EdgeType::Quantum);
-    circ.add_edge({v, 0}, {current_vertex, current_port}, EdgeType::Quantum);
-    circ.remove_edge(current_edge);
-  }
-  return {true, true};
+  return {!to_delay.empty(), true};
 }
 
 }  // namespace DelayMeasures
