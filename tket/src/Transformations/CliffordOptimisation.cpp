@@ -14,6 +14,7 @@
 
 #include "tket/Transformations/CliffordOptimisation.hpp"
 
+#include <boost/bimap.hpp>
 #include <vector>
 
 #include "tket/Circuit/CircPool.hpp"
@@ -829,34 +830,46 @@ Transform push_cliffords_through_measures() {
     VertexSet clifford_vertices = clifford_info.first;
     std::vector<MeasureVertices> measure_vertices = clifford_info.second;
 
-    // Initialize vectors to track various information
     std::vector<Qubit> qubits;
     std::vector<Bit> bits;
-    QubitPauliMap base;
+    std::map<Edge, Qubit> measured_wires;
     VertexSet final_measure_vertices;
 
-    // Populate qubits, bits, basic measurement operators and final measurement
-    // vertices
     for (const MeasureVertices &mv : measure_vertices) {
       qubits.push_back(mv.qubit);
       bits.push_back(mv.bit);
-      base.insert({mv.qubit, Pauli::I});
+      measured_wires.emplace(circ.get_nth_in_edge(mv.measure, 0), mv.qubit);
       final_measure_vertices.insert(mv.measure);
     }
 
-    // Construct a circuit with Clifford gates
-    Circuit clifford_circuit =
-        circ.subcircuit(circ.make_subcircuit(clifford_vertices));
-    UnitaryRevTableau cliff_tab =
+    const Subcircuit clifford = circ.make_subcircuit(clifford_vertices);
+    const Circuit clifford_circuit = circ.subcircuit(clifford);
+    const UnitaryRevTableau cliff_tab =
         circuit_to_unitary_rev_tableau(clifford_circuit);
 
-    // Generate updated measurement operator for each end of circuit measurement
+    // The extracted circuit numbers its wires in boundary order. Each output
+    // edge leads to a final measurement in the parent circuit.
+    boost::bimap<Qubit, Qubit> local_to_parent;
+    for (unsigned i = 0; i < clifford.out_hole.size(); ++i) {
+      local_to_parent.insert(
+          {Qubit(i), measured_wires.at(clifford.out_hole[i].value())});
+    }
+
     std::list<SpSymPauliTensor> measurement_operators;
     for (const Qubit &q : qubits) {
-      QubitPauliMap copy = base;
-      copy[q] = Pauli::Z;
-      SpPauliStabiliser sps(copy, 2);
-      measurement_operators.push_back(cliff_tab.get_row_product(sps));
+      auto local = local_to_parent.right.find(q);
+      if (local == local_to_parent.right.end()) {
+        measurement_operators.push_back(SpPauliStabiliser(q, Pauli::Z, 2));
+        continue;
+      }
+      const SpPauliStabiliser local_op = cliff_tab.get_row_product(
+          SpPauliStabiliser(local->second, Pauli::Z, 2));
+      QubitPauliMap parent_string;
+      for (const auto &[local_qubit, pauli] : local_op.string) {
+        parent_string.emplace(local_to_parent.left.at(local_qubit), pauli);
+      }
+      measurement_operators.push_back(
+          SpPauliStabiliser(parent_string, local_op.coeff));
     }
 
     // Mutually diagonalize updated measurement operators
