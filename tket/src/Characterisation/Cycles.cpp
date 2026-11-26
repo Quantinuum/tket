@@ -14,6 +14,8 @@
 
 #include "tket/Characterisation/Cycles.hpp"
 
+#include <algorithm>
+#include <iterator>
 #include <numeric>
 
 #include "tket/Circuit/Slices.hpp"
@@ -82,6 +84,15 @@ void CycleFinder::erase_keys(
   for (const unsigned& key : all_erased) erase_from.erase(key);
 }
 
+static void append_following_writes(
+    const Circuit& circ, Vertex v, VertexVec& successors) {
+  // A Boolean read must precede the next write to the same bit.
+  for (const Edge& read : circ.get_in_edges_of_type(v, EdgeType::Boolean)) {
+    const Vertex next_write = circ.target(circ.get_linear_edge(read));
+    if (next_write != v) successors.push_back(next_write);
+  }
+}
+
 // Adds a new cycle to this->cycle_history.key_to_cycle
 std::pair<unsigned, std::set<unsigned>> CycleFinder::make_cycle(
     const Vertex& v, const EdgeVec& out_edges, const CutFrontier& cut) {
@@ -130,6 +141,20 @@ std::pair<unsigned, std::set<unsigned>> CycleFinder::make_cycle(
   Cycle new_cycle(
       new_cycle_boundary, {{circ.get_OpType_from_Vertex(v), op_indices, v}});
   this->cycle_history.key_to_cycle[this->cycle_history.key] = {new_cycle};
+  vertex_to_cycle_key.emplace(v, cycle_history.key);
+  // The cycle boundary already describes its quantum edges.
+  if (circ.n_out_edges(v) != out_edges.size()) {
+    for (const Edge& out : circ.get_all_out_edges(v)) {
+      if (circ.get_edgetype(out) != EdgeType::Quantum) {
+        cycle_non_quantum_successors[cycle_history.key].push_back(
+            circ.target(out));
+      }
+    }
+  }
+  if (circ.n_in_edges(v) != out_edges.size()) {
+    append_following_writes(
+        circ, v, cycle_non_quantum_successors[cycle_history.key]);
+  }
 
   this->cycle_history.history.push_back(
       std::vector<UnitID>(new_boundary_uids.begin(), new_boundary_uids.end()));
@@ -272,9 +297,69 @@ void Cycle::merge(Cycle& new_cycle) {
   coms_.insert(coms_.end(), new_cycle.coms_.begin(), new_cycle.coms_.end());
 }
 
-void CycleFinder::merge_cycles(unsigned new_key, std::set<unsigned>& old_keys) {
+void CycleFinder::append_cycle_successors(
+    unsigned key, VertexVec& successors) const {
+  for (const auto& [in, out] :
+       cycle_history.key_to_cycle.at(key).boundary_edges_) {
+    // An initial placeholder has no gate on this wire.
+    if (in != out) successors.push_back(circ.target(out));
+  }
+  const auto extra = cycle_non_quantum_successors.find(key);
+  if (extra != cycle_non_quantum_successors.end()) {
+    successors.insert(
+        successors.end(), extra->second.begin(), extra->second.end());
+  }
+}
+
+bool CycleFinder::merge_is_acyclic(
+    const std::set<unsigned>& keys, const VertexSet& frontier_targets) const {
+  VertexVec pending;
+  for (unsigned key : keys) append_cycle_successors(key, pending);
+  std::erase_if(pending, [&](Vertex v) {
+    const auto owner = vertex_to_cycle_key.find(v);
+    return owner != vertex_to_cycle_key.end() && keys.contains(owner->second);
+  });
+
+  VertexSet visited_vertices;
+  std::set<unsigned> visited_cycles;
+  while (!pending.empty()) {
+    const Vertex v = pending.back();
+    pending.pop_back();
+    // Commands beyond this cut cannot reach an already processed cycle.
+    if (frontier_targets.contains(v)) continue;
+    const auto owner = vertex_to_cycle_key.find(v);
+    if (owner != vertex_to_cycle_key.end()) {
+      const unsigned key = owner->second;
+      if (keys.contains(key)) return false;
+      // A framed group executes as a block. Entering it reaches all its
+      // outputs.
+      if (visited_cycles.insert(key).second) {
+        append_cycle_successors(key, pending);
+      }
+    } else if (visited_vertices.insert(v).second) {
+      const VertexVec successors = circ.get_successors(v);
+      pending.insert(pending.end(), successors.begin(), successors.end());
+      append_following_writes(circ, v, pending);
+    }
+  }
+  return true;
+}
+
+void CycleFinder::merge_cycles(
+    unsigned new_key, std::set<unsigned>& old_keys,
+    const VertexSet& frontier_targets) {
   // boundary_keys is a std::set<unsigned> so is ordered
   order_keys(new_key, old_keys);
+  if (old_keys.size() < 2) return;
+  if (!merge_is_acyclic(old_keys, frontier_targets)) {
+    // Keep the new cycle and retry the older candidates, newest first.
+    std::set<unsigned> safe_keys{new_key};
+    for (auto it = std::next(old_keys.rbegin()); it != old_keys.rend(); ++it) {
+      safe_keys.insert(*it);
+      if (!merge_is_acyclic(safe_keys, frontier_targets)) safe_keys.erase(*it);
+    }
+    old_keys.swap(safe_keys);
+  }
   // all cycles corresponding to keys in boundary_keys should be merged into
   // boundary with smallest value
   std::set<unsigned>::iterator it = old_keys.begin();
@@ -282,8 +367,20 @@ void CycleFinder::merge_cycles(unsigned new_key, std::set<unsigned>& old_keys) {
   std::advance(it, 1);
   for (; it != old_keys.end(); ++it) {
     unsigned merge_key = *it;
-    this->cycle_history.key_to_cycle[base_key].merge(
-        this->cycle_history.key_to_cycle[merge_key]);
+    auto& merged_cycle = cycle_history.key_to_cycle.at(merge_key);
+    for (const CycleCom& com : merged_cycle.coms_) {
+      if (com.address != Vertex{}) {
+        vertex_to_cycle_key.at(com.address) = base_key;
+      }
+    }
+    const auto extra = cycle_non_quantum_successors.find(merge_key);
+    if (extra != cycle_non_quantum_successors.end()) {
+      auto& base_successors = cycle_non_quantum_successors[base_key];
+      base_successors.insert(
+          base_successors.end(), extra->second.begin(), extra->second.end());
+      cycle_non_quantum_successors.erase(extra);
+    }
+    this->cycle_history.key_to_cycle.at(base_key).merge(merged_cycle);
     this->cycle_history.key_to_cycle.erase(merge_key);
     // update this->cycle_history.history for "base_key"
     for (const UnitID& u0 : this->cycle_history.history[merge_key]) {
@@ -296,6 +393,14 @@ void CycleFinder::merge_cycles(unsigned new_key, std::set<unsigned>& old_keys) {
 }
 
 void CycleFinder::extend_cycles(const CutFrontier& cut) {
+  VertexSet frontier_targets;
+  for (const auto& [unit, edge] : cut.u_frontier->get<TagKey>()) {
+    frontier_targets.insert(circ.target(edge));
+  }
+  for (const auto& [bit, edges] : cut.b_frontier->get<TagKey>()) {
+    for (const Edge& edge : edges) frontier_targets.insert(circ.target(edge));
+  }
+
   // For each vertex in slice
   // Make a new "cycle"
   // If any in edge to new cycle matches an out edge to a previous cycle,
@@ -309,7 +414,7 @@ void CycleFinder::extend_cycles(const CutFrontier& cut) {
     std::pair<unsigned, std::set<unsigned>> all_keys =
         make_cycle(v, out_edges, cut);
     if (all_keys.second.size() > 0) {
-      merge_cycles(all_keys.first, all_keys.second);
+      merge_cycles(all_keys.first, all_keys.second, frontier_targets);
     }
   }
 }

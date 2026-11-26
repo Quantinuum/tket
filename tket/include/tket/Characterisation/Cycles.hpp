@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <unordered_map>
+
 #include "tket/Circuit/Circuit.hpp"
 
 namespace tket {
@@ -110,6 +112,8 @@ class CycleFinder {
 
   // Stores data structures for tracking created Cycles and associated UnitID's
   CycleHistory cycle_history;
+  std::unordered_map<Vertex, unsigned> vertex_to_cycle_key;
+  std::map<unsigned, VertexVec> cycle_non_quantum_successors;
 
   // Given a new CutFrontier object, creates new cycles from interior vertices
   // and merges them with previous cycles where possible
@@ -123,7 +127,15 @@ class CycleFinder {
 
   // Uses CycleHistory to merge Cycle attributed to new_key with Cycles
   // attributed to old_keys Cycles are merged in to Cycle with smallest key
-  void merge_cycles(unsigned new_key, std::set<unsigned>& old_keys);
+  void merge_cycles(
+      unsigned new_key, std::set<unsigned>& old_keys,
+      const VertexSet& frontier_targets);
+
+  // Check for a path that leaves the proposed merge and returns to it.
+  bool merge_is_acyclic(
+      const std::set<unsigned>& keys, const VertexSet& frontier_targets) const;
+
+  void append_cycle_successors(unsigned key, VertexVec& successors) const;
 
   // Updates cycle_out_edges with new Edge
   // UnitID should not be new, so error thrown if not found

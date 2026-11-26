@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import pytest
+
 from pytket.circuit import Circuit, OpType, Qubit
 from pytket.pauli import Pauli, QubitPauliString, QubitPauliTensor
 from pytket.tailoring import (
@@ -21,6 +23,7 @@ from pytket.tailoring import (
     apply_clifford_basis_change,
     apply_clifford_basis_change_tensor,
 )
+from pytket.utils import compare_unitaries
 
 
 def test_single_cycle_single_frame_randomisation() -> None:
@@ -108,6 +111,35 @@ def test_universal_frame_randomisation() -> None:
     assert coms_15[3].op.params[0] == 0.2
     assert coms_15[6].op.type == OpType.noop
     assert coms_15[7].op.type == OpType.noop
+
+
+@pytest.mark.parametrize(
+    "randomiser_type", [PauliFrameRandomisation, UniversalFrameRandomisation]
+)
+@pytest.mark.parametrize(
+    "with_h",
+    [pytest.param(False, id="separate_cycles"), pytest.param(True, id="partial_merge")],
+)
+def test_frame_randomisation_with_intervening_cz(
+    randomiser_type: type[PauliFrameRandomisation | UniversalFrameRandomisation],
+    with_h: bool,
+) -> None:
+    # https://github.com/Quantinuum/tket/issues/2280
+    circ = Circuit(3).CX(2, 1).CZ(0, 1)
+    if with_h:
+        # The H can join the final CX even when the first CX cannot.
+        circ.H(0)
+    circ.CX(2, 0)
+    expected = circ.get_unitary()
+    randomiser = randomiser_type()
+
+    all_circuits = randomiser.get_all_circuits(circ)
+    assert len(all_circuits) == 256
+    assert all(compare_unitaries(expected, c.get_unitary()) for c in all_circuits)
+
+    samples = randomiser.sample_circuits(circ, 1)
+    assert len(samples) == 1
+    assert compare_unitaries(expected, samples[0].get_unitary())
 
 
 def test_apply_clifford_basis_change() -> None:

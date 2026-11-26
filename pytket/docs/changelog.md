@@ -12,6 +12,11 @@ Fixes:
 - Support deserialization of `CliffordResynthesis` and
   `CliffordPushThroughMeasures`, preserving the `allow_swaps` setting for
   `CliffordResynthesis`. Custom resynthesis callbacks cannot be deserialized.  
+- Fix incorrect measurement results from `CliffordPushThroughMeasures` when
+  the Clifford subcircuit acts on a subset of the circuit's qubits.
+- Fix crashes in `PauliFrameRandomisation` and `UniversalFrameRandomisation`
+  when merging frame cycles would create a dependency cycle. Both randomisers
+  can still merge compatible cycles, avoiding unnecessary frame combinations.
 
 ## 2.18.5 (October 2026)
 
