@@ -15,6 +15,7 @@
 #include "tket/Characterisation/Cycles.hpp"
 
 #include <algorithm>
+#include <iterator>
 #include <numeric>
 
 #include "tket/Circuit/Slices.hpp"
@@ -349,8 +350,15 @@ void CycleFinder::merge_cycles(
     const VertexSet& frontier_targets) {
   // boundary_keys is a std::set<unsigned> so is ordered
   order_keys(new_key, old_keys);
-  if (old_keys.size() < 2 || !merge_is_acyclic(old_keys, frontier_targets)) {
-    return;
+  if (old_keys.size() < 2) return;
+  if (!merge_is_acyclic(old_keys, frontier_targets)) {
+    // Keep the new cycle and retry the older candidates, newest first.
+    std::set<unsigned> safe_keys{new_key};
+    for (auto it = std::next(old_keys.rbegin()); it != old_keys.rend(); ++it) {
+      safe_keys.insert(*it);
+      if (!merge_is_acyclic(safe_keys, frontier_targets)) safe_keys.erase(*it);
+    }
+    old_keys.swap(safe_keys);
   }
   // all cycles corresponding to keys in boundary_keys should be merged into
   // boundary with smallest value

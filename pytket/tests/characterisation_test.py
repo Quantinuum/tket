@@ -116,11 +116,20 @@ def test_universal_frame_randomisation() -> None:
 @pytest.mark.parametrize(
     "randomiser_type", [PauliFrameRandomisation, UniversalFrameRandomisation]
 )
+@pytest.mark.parametrize(
+    "with_h",
+    [pytest.param(False, id="separate_cycles"), pytest.param(True, id="partial_merge")],
+)
 def test_frame_randomisation_with_intervening_cz(
     randomiser_type: type[PauliFrameRandomisation | UniversalFrameRandomisation],
+    with_h: bool,
 ) -> None:
     # https://github.com/Quantinuum/tket/issues/2280
-    circ = Circuit(3).CX(2, 1).CZ(0, 1).CX(2, 0)
+    circ = Circuit(3).CX(2, 1).CZ(0, 1)
+    if with_h:
+        # The H can join the final CX even when the first CX cannot.
+        circ.H(0)
+    circ.CX(2, 0)
     expected = circ.get_unitary()
     randomiser = randomiser_type()
 
