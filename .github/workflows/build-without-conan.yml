@@ -203,11 +203,12 @@ jobs:
         cd pytket/tests
         pip install -r requirements.txt
         pytest
-    - name: Install tket-c-api
+    - name: Build, test and install tket-c-api
       run: |
         cd tket-c-api
         mkdir build
         cd build
-        cmake -GNinja -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..
+        cmake -GNinja -DBUILD_TESTING=ON -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DCMAKE_POSITION_INDEPENDENT_CODE=ON ..
         cmake --build . -j2
+        ctest --output-on-failure --no-tests=error
         cmake --install .

@@ -19,6 +19,10 @@ struct TketCircuitState {
   uint64_t revision = 0;
 };
 struct TketCircuit {
+  // Builder IDs stay tied to the original declarations. Reading a pass
+  // result uses fresh IDs from its iterator.
+  std::vector<tket::UnitID> declared_wires;
+  bool named = false;
   std::shared_ptr<TketCircuitState> state =
       std::make_shared<TketCircuitState>();
 };
@@ -58,6 +62,12 @@ TketError protect(F &&body) noexcept {
   } catch (const std::bad_alloc &) {
     std::snprintf(last_error, sizeof(last_error), "Out of memory");
     return TKET_ERROR_OUT_OF_MEMORY;
+  } catch (const std::invalid_argument &e) {
+    std::snprintf(last_error, sizeof(last_error), "%s", e.what());
+    return TKET_ERROR_INVALID_ARGUMENT;
+  } catch (const tket::Unsupported &e) {
+    std::snprintf(last_error, sizeof(last_error), "%s", e.what());
+    return TKET_ERROR_UNSUPPORTED_OPERATION;
   } catch (const std::exception &e) {
     std::snprintf(last_error, sizeof(last_error), "%s", e.what());
     return TKET_ERROR_INTERNAL;
@@ -73,10 +83,8 @@ inline void require_finite(double x) {
   require(
       std::isfinite(x), TKET_ERROR_INVALID_ARGUMENT, "Angle must be finite");
 }
-// A circuit loaded from JSON may contain symbolic expressions. The direct
-// interface promises finite doubles, so we report an error if evaluating an
-// expression can't produce one. The caller can still use the JSON interface
-// to work with circuits containing those expressions.
+// The numeric calls return finite doubles. If an angle still contains a
+// symbol, the expression calls let the caller read it without evaluating it.
 inline double numeric(const tket::Expr &expr) {
   auto value = tket::eval_expr(expr);
   require(

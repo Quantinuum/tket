@@ -1,64 +1,76 @@
 # Native C API
 
-The numeric API in `include/tket-c-api.h` constructs circuits directly and exposes
-operations through a pull iterator. The existing JSON entry points are still
-available, but callers don't need them to construct a circuit, create a pass
-pipeline or read its output.
+The C API offers two ways to move a circuit into and out of TKET. Use the
+[direct interface](include/tket-c-api.h) when you already have the operations
+and want to append them to TKET's graph and walk the result one command at a
+time. Use the JSON interface to load or save a circuit in TKET's exchange format.
+The same pass handle works with circuits built either way.
 
-The gate vocabulary covers all unitary `TketOp` operations in tket2, plus
-PhasedX, ZZPhase and PhasedXX for the Helios and Sol platforms. TK1, TK2, SWAP,
-XXPhase, YYPhase and ZZMax are also supported. Parameters use TKET half-turns,
-including the phase-axis parameters of PhasedX and PhasedXX. Global phase is
-returned separately as the exponent in `exp(i*pi*phase)`.
+## What the direct API can represent
 
-Measurement, reset and barriers have explicit operation identifiers. Measurement
-arguments are a qubit followed by a bit. Creation and discard are circuit
-boundary annotations. Query them with `tket_circuit_is_created` and
-`tket_circuit_is_discarded` when reading a circuit. Runtime allocation failure, lazy measurement futures and
-leakage results still belong to the runtime adapter; treating them as unitary
-operations would lose their semantics. Symbolic parameters return an error from
-the numeric iterator rather than being approximated or dropped.
+| Feature | Default-register API | Named-wire API |
+| --- | --- | --- |
+| Wire identity | Single-index qubits in `q` and bits in `c`. Register counts and the output-permutation builder require contiguous indices from zero. | Named qubits and bits with multidimensional indices, plus the standard WASM and RNG state wires. A register has one wire kind and index dimension. |
+| Operations | The typed `TKET_GATE_*` operations in the header. Payload accessors cover barriers, `SetBits` and `CircBox`. | The same typed operations, with optional operation groups. Other operations can be passed individually as opaque CBOR when TKET supports their operation schema. |
+| Angles | Finite doubles or SymEngine expressions. Read angles with the iterator that matches the representation you need. | SymEngine expressions, including symbolic angles. |
+| Circuit metadata | Name, global phase, input creation, output discard and implicit qubit permutations. | The same metadata. The wire table includes boundary flags and the output reached by each input wire. |
+
+The typed operations include the listed one- and two-qubit gates, Toffoli,
+SWAP, measurement, reset, barriers, `SetBits`, circuit boxes, zero-wire
+`Phase`, and `noop`. A barrier can read a bit without consuming its wire.
+Iteration preserves that read's position relative to writes to the bit.
+Angles are in half-turns, so 1.0 is π radians. The numeric iterator reports
+`TKET_ERROR_SYMBOLIC_PARAMETER` if an angle cannot be evaluated as a double.
+
+Operations outside the typed list, such as controlled Hadamard, conditionals
+and other box types, have no typed builder or view. The named iterator reports
+`TKET_GATE_OPAQUE` for them. Use its payload accessor to read a CBOR encoding of
+the operation using TKET's operation schema. The default-register iterator reports
+`TKET_ERROR_UNSUPPORTED_OPERATION` for the same operations.
+
+The API builds, inspects and transforms circuits. To execute a circuit or
+obtain measurement results, use a simulator or execution backend. Use the
+native pass constructors for AutoRebase, RemoveRedundancies,
+CommuteThroughMultis and pass sequences. AutoRebase requires a basis for which
+TKET has known decompositions. The API also exposes two-qubit squash,
+Clifford simplification and PhasedX/Rz squash as immediate transforms. Load
+other pass definitions through the JSON interface.
 
 ## Iteration and ownership
 
 Create an iterator with `tket_circuit_iterator_create`, then call
-`tket_iterator_next` until `out_has_operation` is false. The returned argument
-and parameter arrays belong to the iterator and remain valid until its next
-`next` call or destruction. No caller callback runs while TKET is traversing the
-circuit.
+`tket_iterator_next` or `tket_iterator_next_with_expressions` until
+`out_has_operation` is false. The returned argument and parameter arrays
+belong to the iterator and remain valid until it advances or is freed.
 
 The iterator keeps the circuit's storage alive, so freeing the circuit handle
-first is safe. Mutating a circuit invalidates existing iterators; their next call
-returns `TKET_ERROR_ITERATOR_INVALIDATED`. Handles aren't safe for concurrent
-access, including access through another handle sharing the same storage.
+first is safe. Mutating a circuit invalidates its iterators. Their next call
+returns `TKET_ERROR_ITERATOR_INVALIDATED`. Synchronise access to any handles
+that share circuit storage.
 
-Traversal uses a ready-vertex frontier and an edge-to-wire map. It doesn't
-materialise a command list or use the slice-based command iterator. Independent
-operations may be returned in a different order from JSON export. Argument port
-order is preserved, including control/target order.
+The iterator walks the circuit graph in dependency order. Independent
+operations can appear in a different order from JSON export. Each operation's
+arguments are returned in port order, including controls and targets.
 
-The numeric API uses default, single-index `q` and `c` registers. Other register
-names or shapes, unsupported operations and symbolic gate parameters report
-errors. After an iterator error, free the iterator. C++ exceptions are caught at
-the C boundary; `tket_last_error_message` explains the error on the calling
+For named wires, use `tket_circuit_create_named` and pass the declared IDs to
+the named builders. After optimisation, create a named iterator and look up
+the wire IDs it assigns to the result. Each operation view includes its group
+if it has one.
+
+After an iterator error, free the iterator. C++ exceptions are caught at the
+C boundary. Use `tket_last_error_message` to read the details on the calling
 thread. Free functions accept NULL. Native output handles are set to NULL on
 failure.
 
 ## Building and checking
 
-From the repository root, enter devenv and run the source build:
+Follow the [source build guide](../build-without-conan.md#tket-c-api) to build
+and test the C API with CMake. Use the resulting install prefix as
+`TKET_C_API_PATH` when building a client that uses that variable to locate TKET.
 
-```sh
-devenv shell -- bash tket-c-api/scripts/build-from-source.sh
-```
+The Conan recipe also runs the C API tests when the build host can run the
+target binaries.
 
-The shell supplies the compiler tools and third-party dependencies. The script
-builds the libraries under `libs/`, the TKET core and the C API from this
-checkout, then runs the C API tests. The install prefix is
-`build/native/source/install`. Use that directory as `TKET_C_API_PATH` when
-building a caller such as selene-qblaze against this build.
-
-The tests compile the header as C and exercise every operation, argument order,
-iterator lifetime, invalidation, exhaustion, phase, native passes and error
-handling. Each operation's argument and parameter buffers can be borrowed directly
-from the iterator in Rust; no text or circuit snapshot needs to cross the ABI.
+The [C example](tests/header.c) builds and walks a circuit using the public
+header. The [native tests](tests/native.cpp) walk through symbolic angles,
+pass application, circuit boxes, named wires and opaque operations.

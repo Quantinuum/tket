@@ -263,11 +263,15 @@ used.)
 
 ## `tket-c-api`
 
+Build and test the C API after installing the TKET core and its dependencies.
+
 ```
-cd ${TKET_DIR}/tket-c-api
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
-cmake --build .
-cmake --install .
+cd "${TKET_DIR}/tket-c-api"
+cmake -S . -B build \
+  -DCMAKE_PREFIX_PATH="${INSTALL_DIR}" \
+  -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}" \
+  -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=ON
+cmake --build build
+ctest --test-dir build --output-on-failure --no-tests=error
+cmake --install build
 ```

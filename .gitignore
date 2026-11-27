@@ -45,3 +45,7 @@ pytket/docs/quantinuum-sphinx/**
 *.jupyter_cache
 jupyter_execute/
 
+
+# devenv
+.devenv/
+.devenv.flake.nix
