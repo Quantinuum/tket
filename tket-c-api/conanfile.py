@@ -2,6 +2,7 @@ import os
 from typing import ClassVar
 
 from conan import ConanFile
+from conan.tools.build import can_run
 from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
 from conan.tools.files import copy, load
 
@@ -24,7 +25,7 @@ class TketCAPIRecipe(ConanFile):
     default_options: ClassVar[dict[str, bool]] = {"shared": False, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
-    exports_sources = "CMakeLists.txt", "src/*", "include/*"
+    exports_sources = "CMakeLists.txt", "src/*", "include/*", "tests/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -63,12 +64,20 @@ class TketCAPIRecipe(ConanFile):
         deps = CMakeDeps(self)
         deps.generate()
         tc = CMakeToolchain(self)
+        tc.variables["BUILD_TESTING"] = self._run_tests()
         tc.generate()
 
     def build(self):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
+        if self._run_tests():
+            cmake.ctest(cli_args=["--output-on-failure", "--no-tests=error"])
+
+    def _run_tests(self) -> bool:
+        return can_run(self) and not self.conf.get(
+            "tools.build:skip_test", default=False, check_type=bool
+        )
 
     def package(self):
         cmake = CMake(self)

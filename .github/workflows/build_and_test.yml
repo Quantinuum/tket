@@ -23,6 +23,7 @@ jobs:
     outputs:
       tket_or_workflow_changed: ${{ steps.filter.outputs.tket_or_workflow }}
       tket_or_c_api_changed: ${{ steps.filter.outputs.tket_or_c_api }}
+      c_api_tests_or_workflow_changed: ${{ steps.filter.outputs.c_api_tests_or_workflow }}
       tket_changed: ${{ steps.filter.outputs.tket }}
       doxyfile_or_workflow_changed: ${{ steps.filter.outputs.doxyfile_or_workflow }}
       pytket_or_workflow_changed: ${{ steps.filter.outputs.pytket_or_workflow }}
@@ -46,6 +47,10 @@ jobs:
           tket_or_c_api:
             - '{tket/src/**,tket/include/**,tket/conanfile.py,tket/CMakeLists.txt,tket/cmake/**,tket/test/**,tket/proptest/**,TKET_VERSION}'
             - '{tket-c-api/src/**,tket-c-api/include/**,tket-c-api/conanfile.py,tket-c-api/CMakeLists.txt}'
+          c_api_tests_or_workflow:
+            - 'tket-c-api/tests/**'
+            - 'tket-c-api/test_package/**'
+            - '.github/workflows/build_and_test.yml'
           doxyfile_or_workflow:
             - '{tket/Doxyfile}'
             - '.github/workflows/build_and_test.yml'
@@ -102,7 +107,7 @@ jobs:
   build_test_tket:
     name: Build and test (tket)
     needs: check_changes
-    if: needs.check_changes.outputs.tket_or_c_api_changed == 'true'
+    if: needs.check_changes.outputs.tket_or_c_api_changed == 'true' || needs.check_changes.outputs.c_api_tests_or_workflow_changed == 'true'
     strategy:
       matrix:
         os: ['ubuntu-26.04', 'macos-15-intel', 'macos-26']
@@ -144,10 +149,10 @@ jobs:
         ccache -p
     - name: Build tket
       run: conan create tket -s build_type=Release --user=tket --channel=stable --build=missing -o boost/*:header_only=True -o with_all_tests=True
-    - name: Build tket-c-api
+    - name: Build and test tket-c-api
       run: conan create tket-c-api -s build_type=Release --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True
     - name: Upload packages
-      if: github.event_name == 'push'
+      if: github.event_name == 'push' && needs.check_changes.outputs.tket_or_c_api_changed == 'true'
       run: |
         ccache --set-config namespace=WITHOUT_TESTS
         conan create tket --user=tket --channel=stable -o boost/*:header_only=True
@@ -159,7 +164,7 @@ jobs:
   build_test_tket_windows:
     name: Build and test (tket)
     needs: check_changes
-    if: needs.check_changes.outputs.tket_or_c_api_changed == 'true'
+    if: needs.check_changes.outputs.tket_or_c_api_changed == 'true' || needs.check_changes.outputs.c_api_tests_or_workflow_changed == 'true'
     strategy:
       matrix:
         os: ['windows-2025-vs2026']
@@ -224,14 +229,14 @@ jobs:
         run: |
           conan build tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
           conan export-pkg tket --user=tket --channel=stable -o boost/*:header_only=True -o with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
-      - name: Build tket-c-api
+      - name: Build and test tket-c-api
         # On windows use build + export-pkg so build directory is consistent across runs (i.e. don't build from conan cache)
         # Necessary because setting ccache base_dir doesn't currently work on windows
         run: |
           conan build tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
           conan export-pkg tket-c-api --user=tket --channel=stable -o boost/*:header_only=True -o tket/*:with_all_tests=True -c tools.cmake.cmaketoolchain:generator=Ninja
       - name: Upload packages
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && needs.check_changes.outputs.tket_or_c_api_changed == 'true'
         run: |
           ccache --set-config namespace=WITHOUT_TESTS
           conan build tket --user=tket --channel=stable -o boost/*:header_only=True
